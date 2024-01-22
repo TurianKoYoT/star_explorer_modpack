@@ -1,0 +1,134 @@
+building_phanon_alloy_forge = {
+    base_buildtime = 900
+    can_build = no
+    country_modifier = {
+        country_resource_max_alloys_add = 15000
+    }
+    category = manufacturing
+    allow = {
+        has_phanon_capital = yes
+    }
+    upgrades = {
+        building_stellarite_alloy_forge
+    }
+    potential = {
+        NOT = {
+            has_global_flag = aot_phanon_content_OFF
+        }
+        exists = owner
+        owner = {
+            has_technology = tech_phanon_alloy_foundry
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        modifier = {
+            job_phanon_alloydrone_add = 4
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        modifier = {
+            job_phanon_alloydrone_add = 4
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+        }
+        modifier = {
+            job_phanon_alloyman_add = 4
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_catalytic_empire = no
+            }
+        }
+        modifier = {
+            planet_metallurgists_alloys_produces_add = 4
+            planet_metallurgists_minerals_upkeep_add = 5
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_catalytic_empire = yes
+            }
+        }
+        modifier = {
+            planet_metallurgists_alloys_produces_add = 3.75
+            planet_metallurgists_food_upkeep_add = 6
+        }
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            trigger = {
+                has_modifier = acot_modifier_ascended_city
+            }
+            alloys = 40
+        }
+        cost = {
+            energy = 2000
+            minerals = 2000
+            aot_sr_runic_power = 800
+        }
+        upkeep = {
+            energy = 20
+            aot_sr_runic_power = 10
+            sr_dark_matter = 20
+            acot_sr_dark_energy = 20
+        }
+    }
+    prerequisites = {
+        tech_phanon_alloy_foundry
+    }
+    ai_weight = {
+        weight = 100000
+        modifier = {
+            factor = 50
+            owner = {
+                has_monthly_income = {
+                    resource = alloys
+                    value < 5
+                }
+            }
+        }
+        modifier = {
+            factor = 0
+            owner = {
+                has_monthly_income = {
+                    resource = sr_dark_matter
+                    value <= 2
+                }
+            }
+        }
+        modifier = {
+            factor = 0
+            free_jobs > 0
+        }
+    }
+    ai_resource_production = {
+        alloys = 30
+        trigger = {
+            always = yes
+        }
+    }
+}

@@ -1,0 +1,36 @@
+tech_gigas_stellar_manip_2 = {
+    cost = @tier5cost2
+    area = engineering
+    tier = 5
+    category = {
+        materials
+    }
+    is_rare = yes
+    weight = @tier5weight2
+    prerequisites = {
+        "tech_gigas_stellar_manip_1"
+    }
+    prereqfor_desc = {
+        custom = {
+            title = "advanced_stellar_manip1"
+            desc = "advanced_stellar_manip1_desc"
+        }
+    }
+    prereqfor_desc = {
+        custom = {
+            title = "advanced_stellar_manip2"
+            desc = "advanced_stellar_manip2_desc"
+        }
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 1.25
+        }
+    }
+    ai_weight = {
+        factor = 3
+        modifier = {
+            factor = 1.25
+        }
+    }
+}

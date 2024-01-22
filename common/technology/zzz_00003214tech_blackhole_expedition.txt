@@ -1,0 +1,21 @@
+tech_blackhole_expedition = {
+    cost = @tier4cost1
+    area = physics
+    tier = 4
+    category = {
+        particles
+    }
+    weight = 0
+    is_rare = yes
+    modifier = {
+    }
+    prereqfor_desc = {
+        custom = {
+            title = "BLACK_HOLE_EXPEDITION"
+            desc = "BLACK_HOLE_EXPEDITION_DESC"
+        }
+    }
+    ai_weight = {
+        factor = 20
+    }
+}

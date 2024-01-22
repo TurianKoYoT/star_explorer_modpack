@@ -1,0 +1,209 @@
+@resolution_weight_unpopular = 5
+@resolution_cost_t4 = 250
+@resolution_flag_timer = 360
+resolution_mutualdefense_castigation_proclamation = {
+    icon = "GFX_resolution_mutual_defense"
+    potential = {
+        has_federations_dlc = yes
+    }
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t4
+        }
+    }
+    target = no
+    level = 4
+    modifier = {
+        resolution_mutualdefense_the_readied_shield = 1
+        resolution_mutualdefense_naval_weight = 3
+    }
+    triggered_modifier = {
+        potential = {
+            is_militarist = no
+        }
+        modifier = {
+            militarist_attraction_NGS = 3
+        }
+    }
+    effect = {
+        custom_tooltip = resolution_mutualdefense_castigation_proclamation_tooltip
+        hidden_effect = {
+            set_timed_country_flag = {
+                flag = galactic_community_resolution_passed_mutualdefense
+                days = @resolution_flag_timer
+            }
+            set_timed_country_flag = {
+                flag = galcom_resolution_passed_anti_prosperity
+                days = 7200
+            }
+            set_timed_country_flag = {
+                flag = galcom_resolution_passed_anti_isolationist
+                days = 7200
+            }
+            add_modifier = {
+                modifier = resolution_passed_diplomatic_weight
+                days = 2200
+            }
+        }
+    }
+    fail_effects = {
+        hidden_effect = {
+            set_timed_country_flag = {
+                flag = galactic_community_resolution_failed_mutualdefense
+                days = @resolution_flag_timer
+            }
+            add_modifier = {
+                modifier = resolution_failed_diplomatic_weight
+                days = 2200
+            }
+        }
+    }
+    breach = {
+        used_naval_capacity_percent < 0.5
+        is_subject = no
+        NOT = {
+            has_country_flag = constitutional_immunity
+        }
+        in_breach_of = resolution_mutualdefense_military_readiness_act
+    }
+    allow = {
+        is_active_resolution = "resolution_mutualdefense_enemy_of_my_enemy"
+    }
+    ai_weight = {
+        base = @resolution_weight_unpopular
+        modifier = {
+            factor = 0.25
+            is_active_resolution = resolution_emperor_pax_galactica
+            NOR = {
+                has_global_flag = war_in_heaven_ongoing
+                any_country = {
+                    OR = {
+                        is_country_type = awakened_fallen_empire
+                        is_country_type = fallen_empire
+                    }
+                }
+                has_global_flag = marauder_crisis_ongoing
+                has_global_flag = gray_goo_crisis_active
+                any_playable_country = {
+                    has_been_declared_crisis = yes
+                }
+                any_playable_country = {
+                    has_country_flag = crisis_sphere_revealed
+                }
+                has_crisis_stage_4 = yes
+                has_crisis_stage_3 = yes
+                has_crisis_stage_2 = yes
+                has_crisis_stage_1 = yes
+                any_neighbor_country = {
+                    is_crisis_faction = yes
+                }
+            }
+            desc = eu_galactic_peace
+        }
+        modifier = {
+            factor = 2
+            is_militarist = yes
+            desc = ethic_militarist
+        }
+        modifier = {
+            factor = 0.9
+            is_xenophile = yes
+            desc = ethic_xenophile
+        }
+        modifier = {
+            factor = 0.8
+            has_valid_civic = civic_hive_empath
+            desc = civic_hive_empath
+        }
+        modifier = {
+            factor = 1.2
+            is_gestalt = yes
+            desc = ethic_gestalt_consciousness
+        }
+        modifier = {
+            factor = 0.75
+            OR = {
+                has_valid_civic = civic_agrarian_idyll
+                has_valid_civic = civic_inwards_perfection
+            }
+            desc = gal_com_opposing_civics
+        }
+        modifier = {
+            factor = 0.8
+            OR = {
+                has_policy_flag = diplo_stance_cooperative
+                has_policy_flag = diplo_stance_mercantile
+            }
+            desc = gal_com_opposing_policy
+        }
+        modifier = {
+            factor = 1.15
+            OR = {
+                has_policy_flag = diplo_stance_belligerent
+                has_policy_flag = diplo_stance_supremacist
+            }
+            desc = gal_com_supporting_policy
+        }
+        modifier = {
+            factor = 1.25
+            OR = {
+                has_valid_civic = civic_citizen_service
+                has_valid_civic = civic_distinguished_admiralty
+                has_valid_civic = civic_warrior_culture
+                has_valid_civic = civic_private_military_companies
+                has_valid_civic = civic_naval_contractors
+                has_valid_civic = civic_hive_subspace_ephapse
+                has_valid_civic = civic_hive_strength_of_legions
+                has_valid_civic = civic_machine_warbots
+            }
+            desc = gal_com_supporting_civics
+        }
+        modifier = {
+            factor = 2
+            has_ethic = ethic_fanatic_militarist
+            desc = ethic_militarist
+        }
+        modifier = {
+            factor = 0.25
+            is_civic_diplomatic_corps = yes
+            desc = gal_com_diplo_civic
+        }
+        modifier = {
+            factor = 0.25
+            is_civic_free_traders = yes
+            desc = gal_com_trade_civic
+        }
+        modifier = {
+            factor = 0.25
+            OR = {
+                has_modifier = resolution_denounced
+                is_in_breach_of_any = yes
+            }
+            desc = gal_com_target_could_be_me
+        }
+        modifier = {
+            factor = 1.2
+            OR = {
+                is_at_war = yes
+                has_crisis = yes
+            }
+            desc = gal_com_war
+        }
+        modifier = {
+            factor = 0.1
+            used_naval_capacity_percent < 0.5
+            desc = gal_com_low_naval_capacity_percent
+        }
+        modifier = {
+            factor = 0
+            is_pacifist = yes
+            desc = ethic_pacifist
+        }
+        modifier = {
+            factor = 0
+            in_breach_of = resolution_mutualdefense_castigation_proclamation
+            desc = gal_com_in_breach_of_proposed_resolution
+        }
+    }
+}

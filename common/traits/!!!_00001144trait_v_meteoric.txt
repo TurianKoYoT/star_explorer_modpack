@@ -1,0 +1,28 @@
+trait_v_meteoric = {
+    cost = 1
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_v_rooted"
+        "trait_v_adv_rooted"
+        "trait_v_living_mountain"
+        "trait_v_mycorrhizal_a"
+        "trait_v_adv_mycorrhizal_a"
+        "trait_v_mycorrhizal_b"
+        "trait_v_adv_mycorrhizal_b"
+        "trait_v_adv_meteoric"
+    }
+    inline_script = "allowed_archetypes/LITHOID"
+    custom_tooltip_with_modifiers = TRAIT_METEORIC_EFFECT
+    modifier = {
+        pop_resettlement_cost_mult = -0.25
+        army_attack_health_mult = 0.5
+        army_defense_health_mult = 0.5
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

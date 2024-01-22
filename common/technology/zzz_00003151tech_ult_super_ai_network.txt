@@ -1,0 +1,20 @@
+tech_ult_super_ai_network = {
+    area = physics
+    cost = 30000
+    tier = 4
+    category = {
+        computing
+    }
+    is_rare = yes
+    prerequisites = {
+        "tech_ult_nano_drone_colony"
+        "tech_self_aware_logic"
+    }
+    weight = 20
+    modifier = {
+        planet_jobs_produces_mult = 0.1
+        empire_size_districts_mult = -0.25
+        empire_size_colonies_mult = -0.25
+        intel_decryption_add = 10
+    }
+}

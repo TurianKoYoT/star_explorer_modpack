@@ -1,0 +1,31 @@
+trait_v_pack_behaviour = {
+    cost = 2
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_decadent"
+        "trait_hive_mind"
+        "trait_v_social_parasite"
+        "trait_invasive"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    modifier = {
+        pop_cat_worker_happiness = 0.1
+        pop_cat_slave_happiness = 0.1
+    }
+    slave_cost = {
+        energy = 2000
+    }
+}

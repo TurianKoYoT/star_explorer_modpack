@@ -1,0 +1,27 @@
+tech_pki_warforge = {
+    area = engineering
+    cost = @tier2cost2
+    weight = @tier2cost2
+    tier = 2
+    category = {
+        voidcraft
+    }
+    potential = {
+        OR = {
+            pki_is_katzprotektorat = yes
+            AND = {
+                pki_is_katzenartig_imperium = yes
+                has_country_flag = unified_flusion
+            }
+        }
+    }
+    prereqfor_desc = {
+        custom = {
+            title = "PKI_TECH_UNLOCK_WARFORGE_CONSTRUCTION_TITLE"
+            desc = "PKI_TECH_UNLOCK_WARFORGE_CONSTRUCTION_DESC"
+        }
+    }
+    ai_weight = {
+        base = 9999
+    }
+}

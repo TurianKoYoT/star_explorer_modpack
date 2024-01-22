@@ -1,0 +1,29 @@
+tech_avb_construction_templates_4 = {
+    cost = @avbtier9cost2
+    area = engineering
+    tier = 9
+    is_rare = yes
+    category = {
+        industry
+    }
+    prerequisites = {
+        "tech_construction_templates"
+    }
+    weight = @avbtier9weight2
+    modifier = {
+        planet_building_build_speed_mult = 0.25
+    }
+    weight_modifier = {
+        factor = 0.5
+        modifier = {
+            factor = 1.25
+            OR = {
+                has_ethic = ethic_militarist
+                has_ethic = ethic_fanatic_militarist
+            }
+        }
+    }
+    ai_weight = {
+        factor = 4
+    }
+}

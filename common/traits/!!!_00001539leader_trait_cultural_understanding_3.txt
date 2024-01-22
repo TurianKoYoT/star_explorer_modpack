@@ -1,0 +1,37 @@
+leader_trait_cultural_understanding_3 = {
+    veteran_class_locked_trait = yes
+    replace_traits = {
+        "leader_trait_cultural_understanding_2"
+    }
+    inline_script = {
+        script = trait/icon
+        CLASS = official
+        ICON = "GFX_leader_trait_courtroom_training"
+        RARITY = veteran
+        COUNCIL = no
+        TIER = 3
+    }
+    leader_potential_add = {
+        from = {
+            is_galactic_emperor = yes
+        }
+    }
+    custom_tooltip_with_modifiers = "leader_trait_cultural_understanding_3_tooltip"
+    triggered_galcom_modifier = {
+        potential = {
+            owner = {
+                is_galactic_emperor = yes
+            }
+        }
+        country_trust_cap_add = 60
+        envoys_add = 3
+    }
+    leader_class = {
+        official
+    }
+    opposites = {
+        "leader_trait_military_awe"
+        "leader_trait_military_awe_2"
+        "leader_trait_military_awe_3"
+    }
+}

@@ -1,0 +1,140 @@
+@buildings_t1 = 1
+building_penal_habitat_administration = {
+    capital = yes
+    can_build = no
+    can_demolish = no
+    can_be_ruined = no
+    can_be_disabled = no
+    position_priority = 0
+    icon = building_penal_colony_administration
+    category = government
+    potential = {
+        has_vp_prisonresortthrallhabitats = yes
+        uses_habitat_capitals = yes
+        exists = owner
+        owner = {
+            is_fallen_empire = no
+        }
+    }
+    convert_to = {
+        building_hab_capital
+        building_hab_fe_capital
+    }
+    resources = {
+        category = planet_buildings_hab_capital
+        upkeep = {
+            energy = 3
+            alloys = 5
+        }
+        upkeep = {
+            trigger = {
+                owner = {
+                    has_active_tradition = tr_domination_adopt_void
+                }
+            }
+            alloys = -1
+        }
+    }
+    triggered_country_modifier = {
+        potential = {
+            is_capital = yes
+            exists = owner
+            owner = {
+                has_councilor = {
+                    COUNCILOR = "councilor_feudal_realm"
+                }
+            }
+        }
+        country_naval_cap_add = 1
+        mult = value:naval_cap_vassals_councilor_feudal_realm
+    }
+    planet_modifier = {
+        job_warden_add = 1
+        job_enforcer_add = 1
+        planet_housing_add = 3
+        planet_amenities_add = 3
+        planet_max_buildings_add = @buildings_t1
+    }
+    inline_script = {
+        script = buildings/on_all_capital_buildings
+    }
+    triggered_planet_modifier = {
+        modifier = {
+            planet_stability_add = 1
+        }
+        mult = modifier:habitat_stability_add
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_active_tradition = tr_domination_imperious_architecture
+            }
+        }
+        planet_housing_add = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_active_tradition = tr_prosperity_void_works
+            }
+        }
+        planet_max_buildings_add = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_active_tradition = tr_synthetics_finish
+            }
+        }
+        job_roboticist_add = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_ascension_perk = ap_voidborn
+            }
+        }
+        planet_max_buildings_add = 2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_active_tradition = tr_cybernetics_organ_harvesting
+            }
+            has_current_purge = yes
+            growing_species = {
+                has_trait = trait_cybernetic
+            }
+        }
+        pop_growth_speed = 0.1
+    }
+    triggered_desc = {
+        trigger = {
+            always = yes
+        }
+        text = job_warden_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            always = yes
+        }
+        text = job_enforcer_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                has_active_tradition = tr_synthetics_finish
+            }
+        }
+        text = job_roboticist_effect_desc
+    }
+    upgrades = {
+        building_penal_habitat_complex
+    }
+}

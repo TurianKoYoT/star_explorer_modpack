@@ -1,0 +1,17 @@
+opinion_katzen_militarism = {
+    trigger = {
+        is_country_type = default
+        NOT = {
+            pki_is_katzprotektorat = yes
+        }
+        from = {
+            has_origin = origin_katzen
+        }
+    }
+    opinion = {
+        base = -2.5
+        modifier = {
+            multiply = trigger:years_passed
+        }
+    }
+}

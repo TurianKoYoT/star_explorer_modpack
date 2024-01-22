@@ -1,0 +1,24 @@
+tech_acot_army_se = {
+    area = society
+    cost = @acot_tier8cost1
+    tier = 8
+    category = {
+        military_theory
+    }
+    prerequisites = {
+        tech_dark_matter_power_core_se
+        tech_acot_army_ae
+    }
+    weight = 10
+    potential = {
+        NOT = {
+            has_global_flag = acot_army_forbidden
+        }
+        has_technology = tech_dark_matter_power_core_se
+    }
+    weight_modifier = {
+        factor = 1
+    }
+    ai_weight = {
+    }
+}

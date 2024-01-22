@@ -1,0 +1,54 @@
+trait_v_robot_materialistic = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_synthetic_workers
+            NOT = {
+                has_policy_flag = ai_outlawed
+            }
+        }
+    }
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+            has_technology = tech_v_robot_neural_mimicry
+        }
+    }
+    species_possible_merge_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    allowed_archetypes = {
+        ROBOT
+    }
+    allowed_ethics = {
+        ethic_materialist
+        ethic_fanatic_materialist
+    }
+    valid_for_all_ethics = no
+    custom_tooltip = TRAIT_MATERIALISTIC_EFFECT
+    opposites = {
+        "trait_machine_unit"
+        "trait_v_robot_ascetic"
+        "trait_v_robot_scholastic"
+        "trait_v_robot_proselytizing"
+        "trait_v_robot_astrology"
+        "trait_v_robot_druidic"
+        "trait_v_robot_machine_priests"
+    }
+    triggered_pop_modifier = {
+        potential = {
+            has_ethic = ethic_materialist
+        }
+        pop_housing_usage_mult = 0.1
+        planet_pops_consumer_goods_upkeep_mult = 0.1
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

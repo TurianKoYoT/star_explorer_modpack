@@ -1,0 +1,15 @@
+tech_ult_networked_ai_terminal = {
+    area = physics
+    cost = 30000
+    tier = 4
+    category = {
+        computing
+    }
+    is_rare = yes
+    is_reverse_engineerable = no
+    prerequisites = {
+        "tech_ult_super_ai_network"
+        "tech_combat_computers_2"
+    }
+    weight = 20
+}

@@ -1,0 +1,55 @@
+building_alpha_embassy_corp = {
+    icon = building_ae_embassy
+    base_buildtime = 480
+    owner_type = corporate
+    category = government
+    can_build = no
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            is_criminal_syndicate = no
+        }
+    }
+    allow = {
+        has_upgraded_capital = yes
+    }
+    prerequisites = {
+        tech_ae_embassy
+    }
+    show_tech_unlock_if = {
+        is_megacorp = yes
+        is_criminal_syndicate = no
+    }
+    country_modifier = {
+        diplo_weight_economy_mult = 0.25
+    }
+    planet_modifier = {
+        job_ae_clerk_add = 2
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            energy = 1500
+            minerals = 1500
+            sr_dark_matter = 500
+            acot_sr_dark_energy = 500
+        }
+        upkeep = {
+            energy = 30
+            sr_dark_matter = 6
+            acot_sr_dark_energy = 6
+        }
+    }
+    upgrades = {
+        building_phanon_embassy_corp
+    }
+    ai_weight = {
+        weight = 50
+        modifier = {
+            factor = 10
+            branch_office_owner = {
+                is_galactic_community_member = yes
+            }
+        }
+    }
+}

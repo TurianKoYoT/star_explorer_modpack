@@ -1,0 +1,25 @@
+katzen_trait_blitzkrieg = {
+    inline_script = {
+        script = trait/icon
+        CLASS = commander
+        ICON = "GFX_leader_trait_ai_aided_design"
+        RARITY = common
+        COUNCIL = no
+        TIER = 1
+    }
+    fleet_modifier = {
+        ship_armor_mult = 0.1
+        ship_speed_mult = 0.15
+    }
+    leader_class = {
+        commander
+    }
+    leader_potential_add = {
+        exists = owner
+        exists = event_target:flusion_primitives_country
+        owner = {
+            is_same_empire = event_target:flusion_primitives_country
+        }
+    }
+    selectable_weight = 1000
+}

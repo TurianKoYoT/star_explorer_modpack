@@ -1,0 +1,31 @@
+opinion_chosen_of_the_shroud = {
+    trigger = {
+        is_country_type = default
+    }
+    opinion = {
+        modifier = {
+            add = -1000
+            NAND = {
+                has_origin = origin_chosen_of_the_shroud
+                overlord = {
+                    is_same_value = FROM
+                }
+            }
+            FROM = {
+                has_origin = origin_chosen_of_the_shroud
+            }
+        }
+        modifier = {
+            add = -1000
+            has_origin = origin_chosen_of_the_shroud
+            FROM = {
+                NAND = {
+                    has_origin = origin_chosen_of_the_shroud
+                    overlord = {
+                        is_same_value = FROM
+                    }
+                }
+            }
+        }
+    }
+}

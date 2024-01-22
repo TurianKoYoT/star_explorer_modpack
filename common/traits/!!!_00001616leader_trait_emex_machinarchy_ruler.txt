@@ -1,0 +1,24 @@
+leader_trait_emex_machinarchy_ruler = {
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = GFX_leader_trait_caretaker
+        RARITY = common
+        COUNCIL = yes
+        TIER = none
+    }
+    triggered_councilor_modifier = {
+        potential = {
+            always = yes
+        }
+        planet_stability_add = 5
+        country_ruler_influence_produces_add = 0.5
+    }
+    leader_class = {
+        official
+        scientist
+        commander
+    }
+    initial = no
+    randomized = no
+}

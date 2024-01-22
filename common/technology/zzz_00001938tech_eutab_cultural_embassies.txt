@@ -1,0 +1,19 @@
+tech_eutab_cultural_embassies = {
+    cost = @tier3cost3
+    area = society
+    tier = 3
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_manifest_destiny"
+        "tech_starbase_3"
+    }
+    weight = @tier3weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_xenophile = yes
+        has_ascension_perk = ap_grasp_the_void
+    }
+    gateway = eu_grasp
+}

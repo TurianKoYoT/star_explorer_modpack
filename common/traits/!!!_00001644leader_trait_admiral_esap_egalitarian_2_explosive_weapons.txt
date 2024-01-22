@@ -1,0 +1,26 @@
+leader_trait_admiral_esap_egalitarian_2_explosive_weapons = {
+    cost = 0
+    icon = "gfx/interface/icons/traits/leader_traits/leader_trait_esap_egalitarian_2_explosive_weapons.dds"
+    fleet_modifier = {
+        weapon_type_explosive_weapon_damage_mult = 0.08
+        weapon_type_explosive_weapon_fire_rate_mult = 0.04
+    }
+    councilor_modifier = {
+        weapon_type_explosive_weapon_damage_mult = 0.04
+        weapon_type_explosive_weapon_fire_rate_mult = 0.02
+    }
+    leader_potential_add = {
+        from = {
+            has_ascension_perk = ap_esap_egalitarian_2
+        }
+    }
+    leader_class = {
+        commander
+    }
+    initial = no
+    randomized = yes
+    selectable_weight = {
+        weight = @class_trait_weight
+        inline_script = paragon/council_weight_mult
+    }
+}

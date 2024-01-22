@@ -1,0 +1,134 @@
+building_avb_enforcement_4 = {
+    base_buildtime = @avb_g5_time
+    category = government
+    can_build = no
+    potential = {
+        owner = {
+            is_gestalt = no
+        }
+        NOT = {
+            has_modifier = slave_colony
+        }
+        if = {
+            limit = {
+                owner = {
+                    is_ai = yes
+                }
+            }
+            NOT = {
+                has_forbidden_jobs = enforcer
+            }
+            NOT = {
+                has_available_jobs = enforcer
+            }
+        }
+        OR = {
+            has_z_expanded_mod = no
+            AND = {
+                has_z_expanded_mod = yes
+                NOT = {
+                    has_planet_flag = planetary_station
+                }
+            }
+        }
+    }
+    allow = {
+        has_upgraded_capital_4 = yes
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            is_regular_empire = no
+        }
+    }
+    planet_modifier = {
+        job_enforcer_add = @avb_g5_jobs
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            trigger = {
+                exists = owner
+                OR = {
+                    has_z_expanded_mod = no
+                    AND = {
+                        has_z_expanded_mod = yes
+                        owner = {
+                            is_civic_plant_organic = no
+                        }
+                    }
+                }
+            }
+            minerals = @avb_g5_minerals
+            volatile_motes = @avb_g5_rare_cost
+        }
+        cost = {
+            trigger = {
+                exists = owner
+                OR = {
+                    has_z_expanded_mod = no
+                    AND = {
+                        has_z_expanded_mod = yes
+                        owner = {
+                            is_civic_plant_organic = yes
+                        }
+                    }
+                }
+            }
+            minerals = @avb_g5_hive_cost
+            food = @avb_g5_food_cost
+            volatile_motes = @avb_g5_rare_cost
+        }
+        upkeep = {
+            trigger = {
+                exists = owner
+                OR = {
+                    has_z_expanded_mod = no
+                    AND = {
+                        has_z_expanded_mod = yes
+                        owner = {
+                            is_civic_plant_organic = yes
+                        }
+                    }
+                }
+            }
+            energy = @avb_g5_hive_upkeep
+            food = @avb_g5_food_upkeep
+            volatile_motes = @avb_g5_rare_upkeep
+        }
+        upkeep = {
+            trigger = {
+                exists = owner
+                OR = {
+                    has_z_expanded_mod = no
+                    AND = {
+                        has_z_expanded_mod = yes
+                        owner = {
+                            is_civic_plant_organic = no
+                        }
+                    }
+                }
+            }
+            energy = @avb_g5_upkeep
+            volatile_motes = @avb_g5_rare_upkeep
+        }
+        upkeep = {
+            trigger = {
+                owner = {
+                    has_global_flag = ethic_civic_classic_active
+                    has_civic = civic_police_state
+                }
+            }
+            energy = 2
+        }
+    }
+    prerequisites = {
+        "tech_avb_capital_4"
+    }
+    triggered_desc = {
+        text = job_enforcer_effect_desc
+    }
+    show_tech_unlock_if = {
+        is_gestalt = no
+    }
+}

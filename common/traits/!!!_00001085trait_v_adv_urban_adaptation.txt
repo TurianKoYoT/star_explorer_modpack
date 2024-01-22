@@ -1,0 +1,82 @@
+trait_v_adv_urban_adaptation = {
+    cost = 3
+    inline_script = "traits/no_randomized"
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    potential_crossbreeding_chance = 1
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_v_zoological_transgenesis
+        }
+    }
+    opposites = {
+        "trait_invasive"
+        "trait_hive_mind"
+        "trait_v_hive_microclimate"
+        "trait_v_urban_adaptation"
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/adv_biological_traits/BIOLOGICAL"
+    inline_script = "allowed_archetypes/adv_biological_traits/LITHOID"
+    inline_script = "species_class/REP"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/FUN"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/LITHOID"
+    inline_script = "species_class/NECROID"
+    inline_script = "species_class/AQUATIC"
+    custom_tooltip = TRAIT_URBAN_ADAPTATION_EFFECT
+    triggered_pop_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                OR = {
+                    is_planet_class = pc_city
+                    is_pd_arcology = yes
+                }
+            }
+        }
+        pop_housing_usage_mult = -0.3
+        planet_pops_consumer_goods_upkeep_mult = -0.3
+        pop_amenities_usage_mult = -0.3
+    }
+    triggered_pop_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                NOR = {
+                    is_planet_class = pc_city
+                    is_pd_arcology = yes
+                }
+            }
+        }
+        pop_housing_usage_mult = -0.02
+        planet_pops_consumer_goods_upkeep_mult = -0.02
+        pop_amenities_usage_mult = -0.02
+        mult = planet.value:count_v_polluting_districts_c
+    }
+    triggered_planet_growth_habitability_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                NOR = {
+                    is_planet_class = pc_city
+                    is_pd_arcology = yes
+                }
+            }
+        }
+        pop_environment_tolerance = 0.025
+        mult = planet.value:count_v_polluting_districts_c
+    }
+    slave_cost = {
+        energy = 2000
+    }
+}

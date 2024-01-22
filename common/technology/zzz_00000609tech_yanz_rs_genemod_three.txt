@@ -1,0 +1,25 @@
+tech_yanz_rs_genemod_three = {
+    area = society
+    start_tech = no
+    cost = @tier5cost3
+    is_rare = yes
+    tier = 5
+    category = {
+        biology
+    }
+    prerequisites = {
+        tech_yanz_rs_genemod_second
+    }
+    weight = @tier3weight3
+    modifier = {
+        description = tech_yanz_rs_genemod_three_info
+        BIOLOGICAL_species_trait_points_add = 10
+        LITHOID_species_trait_points_add = 10
+    }
+    prereqfor_desc = {
+        custom = {
+            title = ""
+            desc = ""
+        }
+    }
+}

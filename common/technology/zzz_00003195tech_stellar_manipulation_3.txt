@@ -1,0 +1,41 @@
+tech_stellar_manipulation_3 = {
+    cost = @tier4cost2
+    area = society
+    tier = 4
+    is_reverse_engineerable = no
+    category = {
+        new_worlds
+    }
+    weight = @tier4weight2
+    weight_modifier = {
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_new_worlds
+            }
+        }
+    }
+    is_rare = yes
+    is_dangerous = yes
+    prerequisites = {
+        "tech_stellar_manipulation_2"
+        "tech_climate_restoration"
+    }
+    ai_weight = {
+        factor = 0
+    }
+    potential = {
+        has_ascension_perk = ap_stellar_manipulation
+        OR = {
+            has_ascension_perk = ap_world_shaper
+            has_ascension_perk = ap_hive_worlds
+            has_ascension_perk = ap_machine_worlds
+        }
+    }
+    prereqfor_desc = {
+        custom = {
+            title = "ALLOW_PLANETARY_PROJECT_3_TITLE"
+            desc = "ALLOW_PLANETARY_PROJECT_3_DESC"
+        }
+    }
+}

@@ -1,0 +1,86 @@
+building_ult_ecological_station = {
+    base_buildtime = 240
+    base_cap_amount = 1
+    category = amenity
+    prerequisites = {
+        "tech_ult_paradise_homeplanet"
+    }
+    potential = {
+        owner = {
+            is_machine_empire = no
+        }
+        NOT = {
+            is_planet_class = pc_machine
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            owner = {
+                is_machine_empire = yes
+            }
+            is_planet_class = pc_machine
+        }
+    }
+    planet_modifier = {
+        pop_environment_tolerance = 0.2
+        planet_jobs_food_produces_mult = 0.3
+        pop_growth_speed = 0.2
+        biological_pop_happiness = 0.1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+        }
+        modifier = {
+            job_ult_ecologist_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_spawning_drone_add = 2
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 500
+        }
+        upkeep = {
+            energy = 5
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_agri_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = job_ult_ecologist_effect_desc
+    }
+    ai_resource_production = {
+        food = 10
+        trigger = {
+            always = yes
+        }
+    }
+}

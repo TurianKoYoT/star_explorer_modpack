@@ -1,0 +1,18 @@
+tech_eutab_universal_b_income = {
+    cost = @tier3cost2
+    area = society
+    tier = 3
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_planetary_unification"
+    }
+    weight = @tier3weight2
+    is_custom_tech_1 = yes
+    potential = {
+        is_egalitarian = yes
+        has_ascension_perk = ap_one_vision
+    }
+    gateway = eu_vision
+}

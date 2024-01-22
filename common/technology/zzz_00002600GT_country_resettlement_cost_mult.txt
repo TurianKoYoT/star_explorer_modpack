@@ -1,0 +1,26 @@
+GT_country_resettlement_cost_mult = {
+    cost = @tier4cost3
+    area = society
+    tier = 4
+    category = {
+        new_worlds
+    }
+    prerequisites = {
+        "tech_colonization_4"
+    }
+    weight = @tier4weight3
+    modifier = {
+        country_resettlement_cost_mult = -0.3
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            num_researched_techs_of_tier = {
+                tier = 4
+                value > 5
+            }
+        }
+    }
+    ai_weight = {
+    }
+}

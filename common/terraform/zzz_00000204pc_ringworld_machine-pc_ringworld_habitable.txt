@@ -1,0 +1,74 @@
+terraform_link = {
+    from = "pc_ringworld_machine"
+    to = "pc_ringworld_habitable"
+    resources = {
+        category = terraforming
+        cost = {
+            energy = 10000
+        }
+    }
+    duration = 1800
+    condition = {
+        has_technology = tech_climate_restoration
+    }
+    ai_weight = {
+        weight = 5
+        modifier = {
+            factor = 0
+            has_authority = auth_machine_intelligence
+        }
+    }
+    effect = {
+        from = {
+            remove_planet_flag = giga_rw_machine
+        }
+        if = {
+            limit = {
+                from = {
+                    has_planet_flag = giga_ringworld_gar
+                }
+            }
+            giga_set_ringworld_graphical_culture = {
+                TARGET = from
+                SOURCE = this
+                SIZE = gargantuan
+                TYPE = gaia_habitable
+            }
+        }
+        else_if = {
+            limit = {
+                from = {
+                    has_planet_flag = giga_ringworld_beh
+                }
+            }
+            giga_set_ringworld_graphical_culture = {
+                TARGET = from
+                SOURCE = this
+                SIZE = behemoth
+                TYPE = gaia_habitable
+            }
+        }
+        else_if = {
+            limit = {
+                from = {
+                    has_planet_flag = giga_ringworld_tit
+                }
+            }
+            giga_set_ringworld_graphical_culture = {
+                TARGET = from
+                SOURCE = this
+                SIZE = titanic
+                TYPE = gaia_habitable
+            }
+        }
+        else = {
+            giga_set_ringworld_graphical_culture = {
+                TARGET = from
+                SOURCE = this
+                SIZE = vanilla
+                TYPE = gaia_habitable
+                VANILLA_TYPE = habitable
+            }
+        }
+    }
+}

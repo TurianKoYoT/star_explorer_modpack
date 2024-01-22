@@ -1,0 +1,129 @@
+building_avb_sentinel_posts_2 = {
+    base_buildtime = @avb_g4_time
+    can_build = no
+    category = government
+    potential = {
+        exists = owner
+        owner = {
+            is_gestalt = yes
+        }
+    }
+    allow = {
+        hidden_trigger = {
+            OR = {
+                owner = {
+                    is_ai = no
+                }
+                AND = {
+                    NOT = {
+                        has_building = building_sentinel_posts
+                    }
+                    NOT = {
+                        has_forbidden_jobs = patrol_drone
+                    }
+                    NOT = {
+                        has_available_jobs = patrol_drone
+                    }
+                }
+            }
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        NOT = {
+            owner = {
+                is_gestalt = yes
+            }
+        }
+    }
+    planet_modifier = {
+        job_patrol_drone_add = 4
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_g4_minerals
+        }
+        upkeep = {
+            energy = @avb_g4_upkeep
+        }
+        cost = {
+            trigger = {
+                has_z_expanded_mod = yes
+                exists = owner
+                owner = {
+                    OR = {
+                        is_lithoid_empire = yes
+                        is_machine_empire = yes
+                    }
+                }
+            }
+            minerals = @avb_g4_minerals
+        }
+        cost = {
+            trigger = {
+                has_z_expanded_mod = yes
+                exists = owner
+                owner = {
+                    NOT = {
+                        has_valid_civic = civic_integrated_bioarchitecture
+                    }
+                    is_lithoid_empire = no
+                    is_machine_empire = no
+                }
+            }
+            minerals = @avb_g4_hive_cost
+            food = @avb_g4_food_cost
+        }
+        cost = {
+            trigger = {
+                has_z_expanded_mod = yes
+                exists = owner
+                owner = {
+                    has_valid_civic = civic_integrated_bioarchitecture
+                    is_lithoid_empire = no
+                    is_machine_empire = no
+                }
+            }
+            food = @avb_g4_hive_cost
+        }
+        upkeep = {
+            trigger = {
+                has_z_expanded_mod = yes
+                exists = owner
+                owner = {
+                    is_lithoid_empire = no
+                    is_machine_empire = no
+                }
+            }
+            energy = @avb_g4_hive_upkeep
+            food = @avb_g4_food_upkeep
+        }
+        upkeep = {
+            trigger = {
+                has_z_expanded_mod = yes
+                exists = owner
+                owner = {
+                    OR = {
+                        is_lithoid_empire = yes
+                        is_machine_empire = yes
+                    }
+                    NOT = {
+                        has_valid_civic = civic_integrated_bioarchitecture
+                    }
+                }
+            }
+            energy = @avb_g4_hive_upkeep
+            minerals = @avb_g4_food_upkeep
+        }
+    }
+    prerequisites = {
+        "tech_galactic_administration"
+    }
+    triggered_desc = {
+        text = job_patrol_drone_effect_desc
+    }
+    show_tech_unlock_if = {
+        is_gestalt = yes
+    }
+}

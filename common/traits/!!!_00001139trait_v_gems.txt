@@ -1,0 +1,22 @@
+trait_v_gems = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_hive_mind"
+        "trait_v_pearl_makers"
+        "trait_v_adv_pearl_makers"
+    }
+    inline_script = "allowed_archetypes/LITHOID"
+    custom_tooltip = TRAIT_PEARL_MAKERS_EFFECT
+    slave_cost = {
+        energy = 1000
+    }
+}

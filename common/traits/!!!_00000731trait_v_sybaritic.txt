@@ -1,0 +1,50 @@
+trait_v_sybaritic = {
+    cost = -2
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    species_possible_merge_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    species_possible_remove = {
+        OR = {
+            can_remove_beneficial_genetic_traits = yes
+            AND = {
+                exists = from
+                from = {
+                    is_gestalt = yes
+                }
+            }
+        }
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    allowed_ethics = {
+        ethic_materialist
+        ethic_fanatic_materialist
+    }
+    valid_for_all_ethics = no
+    opposites = {
+        "trait_hive_mind"
+        "trait_v_ascetic"
+        "trait_v_scholastic"
+        "trait_v_proselytizing"
+        "trait_v_astrology"
+        "trait_v_druidic"
+        "trait_v_machine_priests"
+    }
+    modifier = {
+        pop_ethic_materialist_attraction_mult = 0.05
+        pop_amenities_usage_mult = 0.25
+    }
+    slave_cost = {
+        energy = -1000
+    }
+}

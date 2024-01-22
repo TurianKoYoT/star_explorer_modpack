@@ -1,0 +1,32 @@
+leader_trait_AAA_endless_curiosity = {
+    cost = 0
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = "GFX_leader_trait_deep_space_explorer"
+        RARITY = paragon
+        COUNCIL = no
+        TIER = none
+    }
+    modifier = {
+        ship_archaeological_site_clues_add = 3
+        ship_archaeological_site_excavation_speed_mult = 0.5
+        science_ship_survey_speed = 0.5
+    }
+    triggered_self_modifier = {
+        potential = {
+            always = yes
+        }
+        leader_scientists_physics_research_produces_add = 0.5
+        leader_scientists_society_research_produces_add = 0.5
+        leader_scientists_engineering_research_produces_add = 0.5
+        mult = AAA_curiosity
+    }
+    custom_tooltip_with_modifiers = leader_trait_AAA_endless_curiosity_effects
+    leader_class = {
+        scientist
+    }
+    initial = no
+    randomized = no
+    ai_weight = 100
+}

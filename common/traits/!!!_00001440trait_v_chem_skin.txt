@@ -1,0 +1,25 @@
+trait_v_chem_skin = {
+    cost = 2
+    initial = no
+    species_potential_add = {
+        can_add_cybernetic_traits = yes
+    }
+    species_possible_remove = {
+        can_remove_cybernetic_traits = yes
+    }
+    randomized = no
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    icon = "gfx/interface/icons/traits/trait_v_automated_chemistry.dds"
+    opposites = {
+        "trait_v_solar_skin_b"
+        "trait_v_solar_skin_l"
+        "trait_v_cyborg_stealth"
+        "trait_v_cyborg_exotic_augments"
+    }
+    modifier = {
+        planet_jobs_volatile_motes_produces_mult = 0.1
+        planet_jobs_rare_crystals_produces_mult = 0.1
+        planet_jobs_exotic_gases_produces_mult = 0.1
+    }
+}

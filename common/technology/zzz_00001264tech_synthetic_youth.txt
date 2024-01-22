@@ -1,0 +1,16 @@
+tech_synthetic_youth = {
+    area = society
+    cost = 30000
+    tier = 5
+    levels = 1
+    start_tech = no
+    prerequisites = {
+        tech_synthetic_youth
+    }
+    category = {
+        biology
+    }
+    ai_update_type = all
+    weight = 0
+    is_rare = yes
+}

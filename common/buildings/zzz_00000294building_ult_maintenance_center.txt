@@ -1,0 +1,36 @@
+building_ult_maintenance_center = {
+    base_buildtime = 360
+    base_cap_amount = 1
+    category = amenity
+    potential = {
+        exists = owner
+        owner = {
+            is_gestalt = yes
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            is_gestalt = no
+        }
+    }
+    planet_modifier = {
+        planet_housing_mult = 0.3
+        planet_amenities_add = 100
+        planet_jobs_upkeep_mult = 0.1
+        planet_pop_assembly_mult = 0.2
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 1000
+        }
+        upkeep = {
+            energy = 10
+            minerals = 5
+        }
+    }
+    prerequisites = {
+        "tech_ult_edenization"
+    }
+}

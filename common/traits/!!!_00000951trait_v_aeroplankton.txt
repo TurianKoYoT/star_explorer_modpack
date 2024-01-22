@@ -1,0 +1,32 @@
+trait_v_aeroplankton = {
+    cost = 1
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_sedentary"
+        "trait_nomadic"
+        "trait_v_flying"
+    }
+    inline_script = "traits/vanilla_opposites_pop_growth"
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/ART"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/FUN"
+    custom_tooltip_with_modifiers = TRAIT_AEROPLANKTON_EFFECT
+    modifier = {
+        pop_resettlement_cost_mult = -0.5
+    }
+    triggered_planet_growth_habitability_modifier = {
+        pop_growth_speed = 0.05
+        mult = planet.value:count_aeroplankton
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

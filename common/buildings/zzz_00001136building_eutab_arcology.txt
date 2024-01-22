@@ -1,0 +1,75 @@
+building_eutab_arcology = {
+    base_buildtime = @b2_time
+    can_build = no
+    category = amenity
+    potential = {
+        NOT = {
+            has_modifier = slave_colony
+        }
+        exists = owner
+        owner = {
+            is_materialist = yes
+        }
+    }
+    allow = {
+        has_upgraded_capital = yes
+    }
+    planet_modifier = {
+        planet_housing_add = 8
+        job_clerk_add = 2
+        job_farmer_add = 3
+        job_researcher_add = 3
+        planet_max_buildings_add = 1
+    }
+    inline_script = "buildings/eutab_dev_structures_modifiers"
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_active_tradition = tr_domination_imperious_architecture
+            }
+        }
+        modifier = {
+            planet_housing_add = 1
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            alloys = @b2_rare_cost
+        }
+        upkeep = {
+            alloys = 2
+        }
+    }
+    prerequisites = {
+        "tech_eutab_arcology"
+    }
+    triggered_desc = {
+        text = job_clerk_effect_desc
+    }
+    triggered_desc = {
+        text = job_farmer_effect_desc
+    }
+    triggered_desc = {
+        text = job_researcher_effect_desc
+    }
+    upgrades = {
+        building_eutab_comp_arcology
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_materialist = no
+                prev = {
+                    has_modifier = slave_colony
+                }
+            }
+        }
+    }
+    convert_to = {
+        building_eutab_dev_district
+    }
+}

@@ -1,0 +1,49 @@
+giga_tech_psychic_hypersiphon = {
+    cost = @tier5cost3
+    area = society
+    tier = 5
+    category = {
+        psionics
+    }
+    is_rare = yes
+    is_dangerous = yes
+    prerequisites = {
+        tech_mega_engineering
+        giga_tech_shroud_conduit
+    }
+    weight = @tier5weight3
+    icon = giga_tech_psychic_hypersiphon_5
+    prereqfor_desc = {
+        custom = {
+            title = giga_psy_siphon_interaction_title
+            desc = giga_psy_siphon_interaction_desc
+        }
+    }
+    potential = {
+        has_utopia = yes
+        has_tradition = tr_psionics_finish
+    }
+    weight_modifier = {
+        factor = 0.5
+        modifier = {
+            factor = 0
+            has_global_flag = siphon_disabled
+        }
+        modifier = {
+            factor = @ap_technological_ascendancy_rare_tech
+            has_ascension_perk = ap_technological_ascendancy
+        }
+        modifier = {
+            factor = @federation_perk_factor
+            has_federation = yes
+            federation = {
+                has_federation_perk = rare_tech_boost
+                any_member = {
+                    has_technology = giga_tech_psychic_hypersiphon
+                }
+            }
+        }
+    }
+    ai_weight = {
+    }
+}

@@ -1,0 +1,15 @@
+tech_doa_ascended_industries = {
+    area = engineering
+    cost = 0
+    tier = 0
+    category = {
+        industry
+    }
+    weight = 0
+    potential = {
+        has_country_flag = doa_tech_3
+    }
+    ai_weight = {
+        factor = 0
+    }
+}

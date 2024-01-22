@@ -1,0 +1,21 @@
+tech_macrocannon_se = {
+    area = engineering
+    tier = 8
+    cost = @acot_tier8cost2
+    category = {
+        propulsion
+    }
+    ai_update_type = military
+    is_reverse_engineerable = no
+    prerequisites = {
+        "tech_autocannons_se"
+        "tech_macrocannon_ae"
+    }
+    weight = 5
+    potential = {
+        NOT = {
+            has_global_flag = acot_weapons_forbidden
+        }
+        has_technology = tech_dark_matter_power_core_se
+    }
+}

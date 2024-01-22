@@ -1,0 +1,62 @@
+ship_section_template = {
+    key = "NANITE_HEAVY_TITAN_MID"
+    ship_size = titan
+    fits_on_slot = mid
+    should_draw_components = yes
+    entity = "titan_mid_entity"
+    icon = "GFX_ship_part_core_mid"
+    prerequisites = {
+        tech_nanite_ship_section
+    }
+    ai_weight = {
+        factor = 5
+    }
+    component_slot = {
+        name = "LARGE_GUN_01"
+        template = "large_turret"
+        locatorname = "large_gun_01"
+    }
+    component_slot = {
+        name = "LARGE_GUN_02"
+        template = "large_turret"
+        locatorname = "large_gun_01"
+    }
+    component_slot = {
+        name = "LARGE_GUN_03"
+        template = "large_turret"
+        locatorname = "large_gun_02"
+    }
+    component_slot = {
+        name = "LARGE_GUN_04"
+        template = "large_turret"
+        locatorname = "large_gun_02"
+    }
+    component_slot = {
+        name = "LARGE_GUN_05"
+        template = "large_turret"
+        locatorname = "large_gun_03"
+    }
+    component_slot = {
+        name = "LARGE_GUN_06"
+        template = "large_turret"
+        locatorname = "large_gun_03"
+    }
+    component_slot = {
+        name = "LARGE_GUN_07"
+        template = "large_turret"
+        locatorname = "large_gun_04"
+    }
+    component_slot = {
+        name = "LARGE_GUN_08"
+        template = "large_turret"
+        locatorname = "large_gun_04"
+    }
+    large_utility_slots = 8
+    resources = {
+        category = ship_sections
+        cost = {
+            alloys = 400
+            nanites = 350
+        }
+    }
+}

@@ -1,0 +1,37 @@
+trait_v_magpie = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/TOX"
+    inline_script = "species_class/NECROID"
+    custom_tooltip = TRAIT_MAGPIE_EFFECT
+    opposites = {
+        "trait_hive_mind"
+        "trait_invasive"
+        "trait_v_adv_magpie"
+        "trait_v_pearl_makers"
+        "trait_v_adv_pearl_makers"
+        "trait_v_gems"
+        "trait_clone_soldier_infertile"
+        "trait_clone_soldier_infertile_full_potential"
+        "trait_vat_grown"
+        "trait_v_asexual_reproduction"
+    }
+    triggered_planet_growth_habitability_modifier = {
+        pop_growth_speed = 0.0025
+        mult = solar_system.value:count_v_magpie
+    }
+    slave_cost = {
+        energy = 2000
+    }
+}

@@ -1,0 +1,18 @@
+tech_ult_ultimate_technology = {
+    area = physics
+    cost = 30000
+    tier = 4
+    category = {
+        statecraft
+    }
+    is_rare = yes
+    prerequisites = {
+        "tech_ult_ascending_way"
+        "tech_basic_science_lab_3"
+    }
+    weight = 20
+    modifier = {
+        all_technology_research_speed = 0.1
+        num_tech_alternatives_add = 1
+    }
+}

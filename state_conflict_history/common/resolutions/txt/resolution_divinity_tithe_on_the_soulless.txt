@@ -1,0 +1,159 @@
+@resolution_weight_popular = 6.5
+@resolution_cost_t2 = 150
+@resolution_flag_timer = 360
+resolution_divinity_tithe_on_the_soulless = {
+    icon = "GFX_resolution_robots_bad"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t2
+        }
+    }
+    target = no
+    level = 2
+    modifier = {
+        resolution_divinity_comfort_the_fallen = 1
+        resolution_divinity_tithe_on_the_soulless = 1
+    }
+    triggered_modifier = {
+        potential = {
+            is_spiritualist = no
+        }
+        modifier = {
+            spiritualist_attraction_NGS = 2
+        }
+    }
+    effect = {
+        hidden_effect = {
+            set_timed_country_flag = {
+                flag = galactic_community_resolution_passed_divinity
+                days = @resolution_flag_timer
+            }
+            set_timed_country_flag = {
+                flag = galcom_resolution_passed_anti_technologist
+                days = 7200
+            }
+            add_modifier = {
+                modifier = resolution_passed_diplomatic_weight
+                days = 2200
+            }
+        }
+    }
+    fail_effects = {
+        hidden_effect = {
+            set_timed_country_flag = {
+                flag = galactic_community_resolution_failed_divinity
+                days = @resolution_flag_timer
+            }
+            add_modifier = {
+                modifier = resolution_failed_diplomatic_weight
+                days = 2200
+            }
+        }
+    }
+    allow = {
+        is_active_resolution = "resolution_divinity_comfort_the_fallen"
+    }
+    ai_weight = {
+        base = @resolution_weight_popular
+        modifier = {
+            factor = 0.5
+            is_civic_materialist = yes
+            desc = ethic_materialist
+        }
+        modifier = {
+            factor = 0.5
+            has_ethic = ethic_materialist
+            desc = ethic_materialist
+        }
+        modifier = {
+            factor = 0
+            has_origin = origin_shroud_pact
+            desc = origin_shroud_pact
+        }
+        modifier = {
+            factor = 0
+            has_origin = origin_iron_despot
+            desc = origin_iron_despot
+        }
+        modifier = {
+            factor = 3
+            has_origin = origin_shroud_pact
+            desc = origin_shroud_pact
+        }
+        modifier = {
+            factor = 0.5
+            has_ai_personality_behaviour = robot_exploiter
+            is_spiritualist = no
+            desc = personality_type_robot_exploiter
+        }
+        modifier = {
+            factor = 0.25
+            has_ai_personality_behaviour = robot_liberator
+            is_spiritualist = no
+            desc = personality_type_robot_liberator
+        }
+        modifier = {
+            factor = 0.8
+            is_gestalt = yes
+            desc = ethic_gestalt_consciousness
+        }
+        modifier = {
+            factor = 0
+            is_synthetic_empire = yes
+            desc = ap_synthetic_evolution
+        }
+        modifier = {
+            factor = 1.5
+            NOR = {
+                has_ai_personality_behaviour = robot_exploiter
+                has_ai_personality_behaviour = robot_liberator
+            }
+            desc = gal_com_supporting_personality
+        }
+        modifier = {
+            factor = 2
+            is_spiritualist = yes
+            desc = ethic_spiritualist
+        }
+        modifier = {
+            factor = 2
+            has_ethic = ethic_fanatic_spiritualist
+            desc = ethic_spiritualist
+        }
+        modifier = {
+            factor = 2
+            is_civic_spiritualist = yes
+            desc = ethic_spiritualist
+        }
+        modifier = {
+            factor = 0
+            has_valid_civic = civic_machine_cult
+            desc = civic_machine_cult
+        }
+        modifier = {
+            factor = 0.75
+            is_militarist = yes
+            desc = ethic_militarist
+            OR = {
+                has_ai_personality_behaviour = robot_exploiter
+                has_ai_personality_behaviour = robot_liberator
+            }
+        }
+        modifier = {
+            factor = 0
+            has_ai_personality = decadent_technocracy
+            desc = gal_com_opposing_personality
+        }
+        modifier = {
+            factor = 2
+            is_materialist = no
+            is_robot_empire = no
+            OR = {
+                has_global_flag = ai_invasion_ongoing
+                has_global_flag = ai_invasion_defeated
+            }
+            desc = gal_com_wary_of_contingency
+        }
+    }
+}

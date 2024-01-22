@@ -1,0 +1,134 @@
+@giga_birch_sector_cost = 1500
+@giga_birch_sector_alt_cost = 500
+@giga_birch_sector_time = 360
+@giga_birch_sector_maintenance = 5
+@giga_birch_sector_alt_maintenance = 5
+@sector_jobs = 7
+@sector_workers = -7
+district_giga_birch_physma_farm = {
+    base_buildtime = @giga_birch_sector_time
+    is_capped_by_modifier = yes
+    show_on_uncolonized = {
+        uses_district_set = giga_birch
+        has_district = district_giga_birch_physma
+    }
+    potential = {
+        uses_district_set = giga_birch
+        has_district = district_giga_birch_physma
+    }
+    allow = {
+        giga_birch_district_allow = {
+            category = physma
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = @giga_birch_sector_cost
+            alloys = @giga_birch_sector_alt_cost
+        }
+        upkeep = {
+            energy = @giga_birch_sector_maintenance
+            alloys = @giga_birch_sector_alt_maintenance
+        }
+    }
+    planet_modifier = {
+        giga_birch_district_physma_tag = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_anglers_empire = no
+            }
+        }
+        job_farmer_add = @sector_jobs
+        job_giga_birch_physma_worker_add = @sector_workers
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_anglers_empire = no
+            }
+        }
+        text = job_farmer_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_anglers_empire = yes
+            }
+        }
+        job_angler_add = 4
+        job_pearl_diver_add = 3
+        job_giga_birch_physma_worker_add = @sector_workers
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_anglers_empire = yes
+            }
+        }
+        text = job_aqu_angler_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_anglers_empire = yes
+            }
+        }
+        text = job_pearl_diver_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        job_agri_drone_add = @sector_jobs
+        job_giga_birch_physma_worker_drone_add = @sector_workers
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_agri_drone_effect_desc
+    }
+    on_queued = {
+        giga_birch_district_queued = {
+            category = physma
+            type = physma_farm
+        }
+    }
+    on_unqueued = {
+        giga_birch_district_unqueued = {
+            category = physma
+            type = physma_farm
+        }
+    }
+    on_built = {
+        giga_birch_district_built = {
+            category = physma
+            type = physma_farm
+        }
+    }
+    on_destroy = {
+        giga_birch_district_destroy = {
+            category = physma
+            type = physma_farm
+        }
+    }
+}

@@ -1,0 +1,65 @@
+@ring_building_time = 1000
+@mega_housing_cost = 200
+@mega_housing_birch_cost = 10000
+@mega_housing_upkeep = 0.4
+building_giga_mega_housing = {
+    category = amenity
+    base_buildtime = @ring_building_time
+    prerequisites = {
+        giga_tech_ringworld_buildings
+    }
+    show_tech_unlock_if = {
+        is_gestalt = no
+    }
+    potential = {
+        exists = owner
+        owner = {
+            is_gestalt = no
+        }
+        giga_has_ringworld_buildings = yes
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            is_gestalt = yes
+        }
+    }
+    convert_to = {
+        building_giga_mega_housing_hive
+        building_giga_mega_housing_machine
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            trigger = {
+                giga_is_birch_world = no
+            }
+            minerals = @mega_housing_cost
+            multiplier = value:giga_ring_world_building_size
+        }
+        cost = {
+            trigger = {
+                giga_is_birch_world = yes
+            }
+            minerals = @mega_housing_birch_cost
+        }
+        upkeep = {
+            energy = @mega_housing_upkeep
+            multiplier = value:giga_ring_world_building_size
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            giga_is_birch_world = yes
+        }
+        text = giga_ring_world_building_scaling
+    }
+    triggered_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        planet_housing_add = 1
+        planet_amenities_add = 0.4
+        multiplier = value:giga_ring_world_building_size
+    }
+}

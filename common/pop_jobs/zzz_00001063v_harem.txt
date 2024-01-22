@@ -1,0 +1,84 @@
+v_harem = {
+    category = worker
+    is_capped_by_modifier = yes
+    building_icon = building_palace
+    clothes_texture_index = 3
+    possible_pre_triggers = {
+        has_planet = yes
+        is_sapient = yes
+    }
+    possible = {
+        NOR = {
+            has_trait = trait_hive_mind
+            has_slavery_type = {
+                type = slavery_livestock
+            }
+        }
+        OR = {
+            has_trait = trait_v_polygynous
+            has_trait = trait_v_adv_polygynous
+        }
+    }
+    resources = {
+        category = planet_entertainers
+        produces = {
+            unity = 1
+        }
+        upkeep = {
+            consumer_goods = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        planet_amenities_add = 5
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_councilor = {
+                COUNCILOR = "councilor_corporate_hedonism"
+            }
+        }
+        trade_value_add = @councilor_corporate_hedonism_entertainer_trade_value
+        mult = value:scripted_modifier_councilor_level_mult|MODIFIER|pop_job_trade_mult|TYPE|councilor_corporate_hedonism|
+    }
+    resources = {
+        upkeep = {
+            trigger = {
+                is_v_prismatic = yes
+            }
+            consumer_goods = -1
+            energy = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_pleasure_seeker = yes
+            }
+        }
+        modifier = {
+            pop_growth_speed = 0.01
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_v_pseudocopulative = yes
+        }
+        modifier = {
+            pop_growth_speed = 0.02
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            is_v_prismatic = yes
+        }
+        planet_immigration_pull_add = 5
+    }
+    weight = {
+        weight = @specialist_job_weight
+    }
+}

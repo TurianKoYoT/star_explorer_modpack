@@ -1,0 +1,22 @@
+tech_acot_army_auth = {
+    cost = @acot_tier6cost2
+    area = society
+    category = {
+        military_theory
+    }
+    tier = 6
+    is_rare = yes
+    prerequisites = {
+        "tech_acot_army_dm"
+    }
+    weight = 20
+    potential = {
+        has_ethic = ethic_fanatic_authoritarian
+        NOT = {
+            has_global_flag = acot_army_forbidden
+        }
+    }
+    ai_weight = {
+        factor = 3
+    }
+}

@@ -1,0 +1,231 @@
+building_avb_energy_grid_4 = {
+    base_buildtime = @avb_rs5_time
+    can_build = no
+    category = resource
+    allow = {
+        has_upgraded_capital_5 = yes
+    }
+    destroy_trigger = {
+        OR = {
+            has_modifier = resort_colony
+            has_modifier = crucible_colony
+            AND = {
+                exists = owner
+                owner = {
+                    is_ai = yes
+                }
+                has_any_generator_district_or_building = no
+            }
+        }
+    }
+    planet_modifier = {
+        planet_technician_energy_produces_add = 6
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_ringworld_output_boost = yes
+        }
+        modifier = {
+            planet_technician_energy_produces_add = 6
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        modifier = {
+            job_technician_add = @avb_rs5_jobs
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_fallen_empire_spiritualist = yes
+            }
+        }
+        modifier = {
+            job_fe_acolyte_generator_add = @avb_rs5_jobs
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_technician_drone_add = @avb_rs5_jobs
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_robot_empire = yes
+            }
+            NOR = {
+                is_planet_class = pc_habitat
+                is_planet_class = pc_machine
+                is_planet_class = pc_hive
+                is_planet_class = pc_city
+            }
+        }
+        modifier = {
+            district_generator_max = 8
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_global_flag = bug_branch_active
+            exists = owner
+            owner = {
+                is_bugged_functional_architecture = yes
+            }
+            NOR = {
+                is_planet_class = pc_habitat
+                is_planet_class = pc_machine
+                is_planet_class = pc_hive
+                is_planet_class = pc_city
+            }
+        }
+        modifier = {
+            district_generator_max = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_global_flag = bug_branch_active
+            exists = owner
+            owner = {
+                has_policy_flag = economic_stance_bugged_free_market
+            }
+        }
+        modifier = {
+            trade_value_add = 40
+        }
+    }
+    inline_script = {
+        script = job_groups/technician_add
+        trigger = "has_z_expanded_mod = yes"
+        hive = @avb_rs5_jobs
+        machine = @avb_rs5_jobs
+        regular = @avb_rs5_jobs
+        desc = " "
+        machine_bonus = " "
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+            has_global_flag = EcologyMod_active
+        }
+        modifier = {
+            planet_technician_waste_produces_add = 6
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+            exists = owner
+            owner = {
+                has_technology = tech_akx_worm_1
+            }
+        }
+        modifier = {
+            planet_technician_energy_produces_mult = 0.1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_global_flag = ethic_civic_classic_active
+                has_policy_flag = economic_stance_market
+            }
+        }
+        modifier = {
+            trade_value_add = 25
+            planet_jobs_energy_produces_mult = 0.1
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_rs5_minerals
+            exotic_gases = @avb_rs5_rare_cost
+        }
+        cost = {
+            trigger = {
+                owner = {
+                    is_robot_empire = yes
+                }
+            }
+            minerals = @avb_rs5_minerals
+            alloys = 500
+        }
+        upkeep = {
+            energy = @avb_rs5_upkeep
+            exotic_gases = @avb_rs5_rare_upkeep
+        }
+    }
+    prerequisites = {
+        "tech_avb_power_hub_4"
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_technician_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        text = job_technician_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_fallen_empire_spiritualist = yes
+            }
+        }
+        text = job_fe_acolyte_generator_effect_desc
+    }
+    ai_resource_production = {
+        energy = 6
+        trigger = {
+            always = yes
+        }
+    }
+    ai_resource_production = {
+        energy = 10
+        trigger = {
+            str_num_districts_generator = {
+                operator = > num
+                 = 2
+            }
+        }
+    }
+    ai_resource_production = {
+        energy = 20
+        trigger = {
+            str_num_districts_generator = {
+                operator = > num
+                 = 4
+            }
+        }
+    }
+}

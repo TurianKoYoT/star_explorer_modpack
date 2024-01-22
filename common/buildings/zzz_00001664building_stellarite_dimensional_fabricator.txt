@@ -1,0 +1,63 @@
+building_stellarite_dimensional_fabricator = {
+    base_buildtime = 900
+    can_demolish = yes
+    can_build = no
+    category = resource
+    potential = {
+        exists = owner
+        owner = {
+            has_technology = tech_stellarite_dimensional_fabricator
+        }
+    }
+    prerequisites = {
+        "tech_stellarite_dimensional_fabricator"
+    }
+    allow = {
+        has_stellarite_capital = yes
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 5000
+            minerals = 5000
+            acot_sr_stellarite = 750
+        }
+        produces = {
+            minerals = @auto_minerals_se
+            rare_crystals = @auto_sr_se
+            exotic_gases = @auto_sr_se
+            volatile_motes = @auto_sr_se
+            sr_zro = @auto_sr_se
+            sr_living_metal = @auto_sr_se
+            sr_dark_matter = @auto_sr_se
+            acot_sr_dark_energy = @auto_sr_se
+        }
+        upkeep = {
+            acot_sr_stellarite = 20
+        }
+    }
+    upgrades = {
+    }
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 5
+            owner = {
+                has_monthly_income = {
+                    resource = minerals
+                    value < 10
+                }
+            }
+        }
+    }
+    ai_resource_production = {
+        minerals = 1000
+        rare_crystals = 50
+        exotic_gases = 50
+        volatile_motes = 50
+        sr_living_metal = 25
+        trigger = {
+            always = yes
+        }
+    }
+}

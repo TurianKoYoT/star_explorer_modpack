@@ -1,0 +1,46 @@
+xte_commander_trait_ancestral_knowledge = {
+    inline_script = {
+        script = trait/xte_icon
+        CLASS = commander
+        ICON = GFX_xte_leader_trait_ancestral_knowledge
+        RARITY = xte_positive
+        COUNCIL = no
+        TIER = none
+    }
+    cost = 0
+    randomized = no
+    planet_modifier = {
+        planet_jobs_ruler_produces_mult = @xte_negative_planet_job_mult
+        planet_jobs_specialist_produces_mult = @xte_negative_planet_job_mult
+        planet_jobs_worker_produces_mult = @xte_planet_job_mult
+        planet_jobs_slave_produces_mult = @xte_planet_job_mult
+        job_soldier_or_warrior_add = 2
+        planet_crime_add = -2
+        species_empire_size_mult = @xte_planet_empire_size
+    }
+    sector_modifier = {
+        planet_jobs_ruler_produces_mult = @negative_planet_job_mult
+        planet_jobs_specialist_produces_mult = @negative_planet_job_mult
+        planet_jobs_worker_produces_mult = @planet_job_mult
+        planet_jobs_slave_produces_mult = @planet_job_mult
+        job_soldier_or_warrior_add = 1
+        planet_crime_add = -1
+        species_empire_size_mult = @planet_empire_size
+    }
+    background_planet_modifier = {
+        planet_stability_add = 1
+    }
+    fleet_modifier = {
+        ship_fire_rate_mult = 0.06
+        ship_disengage_opportunities_add = 0.4
+    }
+    army_modifier = {
+        army_damage_mult = 0.1
+    }
+    leader_potential_add = {
+        always = no
+    }
+    leader_class = {
+        commander
+    }
+}

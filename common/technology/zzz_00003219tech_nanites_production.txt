@@ -1,0 +1,20 @@
+tech_nanites_production = {
+    cost = @tier4cost2
+    area = engineering
+    tier = 4
+    category = {
+        industry
+    }
+    weight = @tier4weight2
+    is_rare = yes
+    potential = {
+        has_ascension_perk = ap_nano_to_nanite
+    }
+    modifier = {
+        country_base_nanites_produces_add = 3
+        planet_jobs_produces_mult = 0.1
+    }
+    ai_weight = {
+        factor = 20
+    }
+}

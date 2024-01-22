@@ -1,0 +1,38 @@
+trait_v_autolatry = {
+    cost = -1
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    species_possible_merge_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_hive_mind"
+        "trait_v_organizational"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    allowed_ethics = {
+        ethic_egalitarian
+        ethic_fanatic_egalitarian
+    }
+    valid_for_all_ethics = no
+    custom_tooltip_with_modifiers = TRAIT_AUTOLATRY_EFFECT
+    modifier = {
+        pop_ethic_egalitarian_attraction_mult = 0.1
+    }
+    slave_cost = {
+        energy = -500
+    }
+}

@@ -1,0 +1,47 @@
+building_delta_xeno_tourism_agency = {
+    icon = building_affluence_center
+    base_buildtime = 600
+    base_cap_amount = 1
+    owner_type = corporate
+    category = government
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            is_ai = no
+        }
+    }
+    allow = {
+        num_pops >= 25
+    }
+    country_modifier = {
+        planet_immigration_pull_mult = 1
+    }
+    planet_modifier = {
+        trade_value_mult = 0.25
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            minerals = 1000
+            sr_dark_matter = 200
+            acot_sr_dark_energy = 200
+        }
+        upkeep = {
+            energy = 20
+            sr_dark_matter = 2
+            acot_sr_dark_energy = 2
+        }
+    }
+    prerequisites = {
+        tech_dm_commercial_megaplex
+    }
+    show_tech_unlock_if = {
+        is_megacorp = yes
+    }
+    upgrades = {
+        building_alpha_xeno_tourism_agency
+    }
+    ai_weight = {
+        weight = 50
+    }
+}

@@ -1,0 +1,12 @@
+planet_telepaths = {
+    parent = planet_administrators
+    generate_add_modifiers = {
+        produces
+        upkeep
+    }
+    generate_mult_modifiers = {
+        produces
+        upkeep
+    }
+    modifier_category = pop
+}

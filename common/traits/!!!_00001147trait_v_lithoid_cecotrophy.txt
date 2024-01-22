@@ -1,0 +1,49 @@
+trait_v_lithoid_cecotrophy = {
+    cost = 1
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 0
+    icon = "gfx/interface/icons/traits/trait_v_cecotrophy.dds"
+    inline_script = "allowed_archetypes/LITHOID"
+    opposites = {
+        "trait_invasive"
+        "trait_v_cecotrophy"
+        "trait_v_adv_cecotrophy"
+        "trait_v_hematophage"
+        "trait_v_adv_hematophage"
+        "trait_v_lithotrophic"
+        "trait_v_sanguinary"
+        "trait_v_kleptoplasty"
+        "trait_plantoid_phototrophic"
+        "trait_advanced_phototrophic"
+        "trait_plantoid_radiotrophic"
+        "trait_harvested_radiotrophic"
+        "trait_lithoid_radiotrophic"
+        "trait_radiotrophic_mutants"
+        "trait_advanced_radiotrophic"
+        "trait_v_efficient_digestion_l"
+        "trait_v_efficient_digestion"
+        "trait_v_inefficient_digestion"
+        "trait_v_inefficient_digestion_l"
+        "trait_v_old_instincts"
+        "trait_v_locust"
+        "trait_v_rockust"
+        "trait_v_complex_digestive_system"
+        "trait_voidling"
+        "trait_v_petrolophage"
+        "trait_v_nectarivore"
+        "trait_v_adv_nectarivore"
+    }
+    custom_tooltip_with_modifiers = TRAIT_CECOTROPHY_EFFECT
+    modifier = {
+        planet_pops_organics_minerals_upkeep_mult = -0.2
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

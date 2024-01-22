@@ -1,0 +1,100 @@
+subject_can_not_do_diplomacy = {
+    term = subject_diplomacy
+    loyalty_change = -15
+    ai_acceptance = {
+        overlord = 90
+        subject = -75
+    }
+    activate_effect = {
+        set_rule_can_subject_vote = no
+        set_rule_can_subject_do_diplomacy = no
+    }
+    target_modifier = {
+        monthly_loyalty = -1
+    }
+    possible = {
+        custom_tooltip = {
+            fail_text = not_allowed_for_comvas
+            NOT = {
+                agreement_preset = preset_comvas
+            }
+        }
+        custom_tooltip = {
+            fail_text = not_allowed_for_tributary
+            NOT = {
+                agreement_preset = preset_tributary
+            }
+        }
+        custom_tooltip = {
+            fail_text = not_allowed_for_feudal_society
+            NOT = {
+                owner = {
+                    has_civic = civic_feudal_realm
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = not_allowed_for_franchising
+            NOT = {
+                owner = {
+                    has_civic = civic_franchising
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = not_allowed_for_subsidiary
+            NOT = {
+                agreement_preset = preset_subsidiary
+            }
+        }
+        custom_tooltip = {
+            fail_text = not_allowed_for_satrapy
+            NOT = {
+                agreement_preset = preset_relic_satrapy
+            }
+        }
+        custom_tooltip = {
+            fail_text = not_allowed_for_galcom_resolution
+            not_allowed_for_galcom_resolution_trigger = {
+                RESOLUTION = resolution_intergalacticdirective_a_voice_for_all
+            }
+        }
+        if = {
+            limit = {
+                has_global_flag = gf_veru_activated
+            }
+            custom_tooltip = {
+                fail_text = not_allowed_for_auto_state
+                NOT = {
+                    agreement_preset = preset_auto_state
+                }
+            }
+            custom_tooltip = {
+                fail_text = not_allowed_for_ver_devolved
+                NOT = {
+                    agreement_preset = preset_ver_devolved
+                }
+            }
+            custom_tooltip = {
+                fail_text = not_allowed_for_ver_condo
+                NOT = {
+                    agreement_preset = preset_ver_condo
+                }
+            }
+            custom_tooltip = {
+                fail_text = not_allowed_for_ver_foederatus
+                NOT = {
+                    agreement_preset = preset_ver_foederatus
+                }
+            }
+        }
+    }
+    potential = {
+        OR = {
+            is_imperial_province_agreement = no
+            target = {
+                has_modifier = province_civil_war_punishment
+            }
+        }
+    }
+}

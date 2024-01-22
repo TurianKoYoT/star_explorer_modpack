@@ -1,0 +1,34 @@
+trait_v_adv_hive_microclimate = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+            has_technology = tech_v_hive_transgenesis
+        }
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/adv_biological_traits/BIOLOGICAL"
+    inline_script = "allowed_archetypes/adv_biological_traits/LITHOID"
+    opposites = {
+        "trait_invasive"
+        "trait_v_urban_adaptation"
+        "trait_v_adv_urban_adaptation"
+        "trait_v_hive_microclimate"
+    }
+    custom_tooltip = TRAIT_HIVE_MICROCLIMATE_EFFECT
+    triggered_planet_growth_habitability_modifier = {
+        pop_environment_tolerance = 0.01
+        mult = planet.value:count_v_hive_microclimate
+    }
+}

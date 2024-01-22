@@ -1,0 +1,37 @@
+tech_acot_army_gene = {
+    cost = @acot_tier6cost2
+    area = society
+    category = {
+        biology
+    }
+    tier = 7
+    is_rare = yes
+    prerequisites = {
+        tech_gene_seed_purification
+    }
+    weight = 15
+    potential = {
+        NOT = {
+            has_authority = auth_machine_intelligence
+        }
+        NOT = {
+            has_global_flag = acot_army_forbidden
+        }
+        has_ascension_perk = ap_engineered_evolution
+        OR = {
+            has_technology = tech_acot_army_dm
+            has_technology = tech_acot_army_hive_dm
+        }
+    }
+    ai_weight = {
+        factor = 3
+        modifier = {
+            factor = 1.25
+            has_ethic = ethic_militarist
+        }
+        modifier = {
+            factor = 1.5
+            has_ethic = ethic_fanatic_militarist
+        }
+    }
+}

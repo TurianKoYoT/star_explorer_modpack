@@ -1,0 +1,57 @@
+tech_pki_submarine = {
+    cost = @tier2cost3
+    area = physics
+    tier = 2
+    category = {
+        field_manipulation
+    }
+    prerequisites = {
+        "tech_cloaking_1"
+        "tech_torpedoes_1"
+    }
+    weight = @tier2weight3
+    is_rare = yes
+    prereqfor_desc = {
+        ship = {
+            title = "PKI_TECH_UNLOCK_SUBMARINE_CONSTRUCTION_TITLE"
+            desc = "PKI_TECH_UNLOCK_SUBMARINE_CONSTRUCTION_DESC"
+        }
+    }
+    potential = {
+        pki_is_katzenartig_imperium = yes
+    }
+    modifier = {
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0.1
+            NOT = {
+                years_passed > 50
+            }
+        }
+        modifier = {
+            factor = 15
+            has_technology = tech_cloaking_1
+        }
+        modifier = {
+            factor = 2
+            years_passed > 60
+        }
+        modifier = {
+            factor = 3
+            years_passed > 65
+        }
+        modifier = {
+            factor = 4
+            years_passed > 70
+        }
+        modifier = {
+            factor = 1.25
+            has_tradition = tr_supremacy_adopt
+        }
+    }
+    ai_weight = {
+        factor = @ai_ship_types_factor
+        factor = 999
+    }
+}

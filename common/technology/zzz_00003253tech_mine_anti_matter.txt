@@ -1,0 +1,32 @@
+tech_mine_anti_matter = {
+    cost = @tier3cost1
+    area = physics
+    tier = 3
+    category = {
+        particles
+    }
+    prerequisites = {
+    }
+    potential = {
+        has_ascension_perk = ap_antimatter
+    }
+    weight = @tier3weight1
+    weight_modifier = {
+        factor = 1.5
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_particles
+            }
+        }
+    }
+    ai_weight = {
+        factor = 2
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_particles
+            }
+        }
+    }
+}

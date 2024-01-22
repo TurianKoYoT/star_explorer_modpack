@@ -1,0 +1,14 @@
+building_mp_primitive_bnw_controller_chancellery = {
+    icon = building_disinformation_center
+    capital = no
+    can_build = no
+    can_demolish = yes
+    can_be_ruined = no
+    ai_weight = {
+        weight = 10
+    }
+    planet_modifier = {
+        job_mp_primitive_bnw_alpha_add = 1
+        planet_housing_add = 2
+    }
+}

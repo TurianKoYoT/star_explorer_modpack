@@ -1,0 +1,128 @@
+district_giga_frameworld_supertensiles = {
+    base_buildtime = @b2_time
+    icon = district_giga_supertensiles
+    is_capped_by_modifier = no
+    prerequisites = {
+        giga_tech_amb_supertensiles
+    }
+    show_tech_unlock_if = {
+        giga_has_frameworld_origin = yes
+    }
+    show_on_uncolonized = {
+        has_global_flag = @giga_amb_flag
+        exists = from
+        from = {
+            has_technology = giga_tech_amb_supertensiles
+        }
+        uses_district_set = giga_frameworld
+        is_voidframe_upgraded = no
+    }
+    potential = {
+        has_global_flag = @giga_amb_flag
+        exists = owner
+        owner = {
+            has_technology = giga_tech_amb_supertensiles
+        }
+        uses_district_set = giga_frameworld
+        OR = {
+            is_voidframe_upgraded = no
+            AND = {
+                NOR = {
+                    has_building = building_giga_megaworkshop_acot_delta
+                    has_building = building_giga_megaworkshop_acot_alpha
+                    has_building = building_giga_megaworkshop_acot_phanon
+                    has_building = building_giga_megaworkshop_acot_sigma
+                }
+                is_voidframe_upgraded = yes
+            }
+        }
+    }
+    resources = {
+        category = planet_districts_industrial
+        cost = {
+            minerals = @b2_minerals
+        }
+        upkeep = {
+            energy = @b2_upkeep
+        }
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_giga_frameworld_supertensiles
+        district_giga_voidframe_supertensiles_dm
+        district_giga_voidframe_supertensiles_de
+        district_giga_voidframe_supertensiles_pe
+        district_giga_voidframe_supertensiles_se
+    }
+    planet_modifier = {
+        planet_housing_add = 2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        modifier = {
+            job_giga_megaengineer_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_giga_megaengineer_drone_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_fallen_empire_spiritualist = yes
+            }
+        }
+        modifier = {
+            job_giga_amb_fe_acolyte_foundry_add = 2
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        text = job_giga_megaengineer_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_giga_megaengineer_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_fallen_empire_spiritualist = yes
+            }
+        }
+        text = job_giga_amb_fe_acolyte_foundry_effect_desc
+    }
+    ai_resource_production = {
+        giga_sr_amb_megaconstruction = 2
+        trigger = {
+            always = yes
+        }
+    }
+}

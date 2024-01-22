@@ -1,0 +1,11 @@
+eng_cult_1c = {
+    trigger = {
+        has_ethic = "ethic_spiritualist"
+        FROM = {
+            is_machine_cult_emex = yes
+        }
+    }
+    opinion = {
+        base = -15
+    }
+}

@@ -1,0 +1,78 @@
+district_forest = {
+    base_buildtime = 300
+    min_for_deposits_on_planet = 1
+    max_for_deposits_on_planet = 10
+    conversion_ratio = 1
+    convert_to = {
+        district_forest_uncapped
+    }
+    show_on_uncolonized = {
+        OR = {
+            sartek_standard_pd_enhanced = yes
+            sartek_machine_mod_or_machine_vanilla = yes
+        }
+        from = {
+            OR = {
+                has_ascension_perk = ap_pyramidal_society
+                has_country_flag = ap_pyramidal_society
+            }
+            is_hive_empire = yes
+        }
+    }
+    potential = {
+        OR = {
+            sartek_standard_pd_enhanced = yes
+            sartek_machine_mod_or_machine_vanilla = yes
+        }
+        exists = owner
+        owner = {
+            OR = {
+                has_ascension_perk = ap_pyramidal_society
+                has_country_flag = ap_pyramidal_society
+            }
+            is_hive_empire = yes
+        }
+    }
+    allow = {
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            trigger = {
+                owner = {
+                    is_lithoid_empire = no
+                }
+            }
+            food = 500
+        }
+        cost = {
+            trigger = {
+                owner = {
+                    is_lithoid_empire = yes
+                }
+            }
+            minerals = 500
+        }
+        produces = {
+            food = 2
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 4
+        job_botanist_add = 4
+        job_u_biologist_drone_add = 1
+    }
+    ai_weight = {
+        weight = 2
+    }
+    ai_resource_production = {
+        food = 4
+        trigger = {
+            always = yes
+        }
+    }
+}

@@ -1,0 +1,19 @@
+pouchkinn_trait_deranged = {
+    inline_script = {
+        script = trait/icon_psionic
+        CLASS = scientist
+        ICON = "GFX_leader_trait_oracle"
+        RARITY = free_or_veteran
+        COUNCIL = no
+        TIER = none
+    }
+    modifier = {
+        all_technology_research_speed = 0.1
+        ship_weapon_damage = 0.1
+    }
+    leader_class = {
+        scientist
+    }
+    initial = no
+    randomized = no
+}

@@ -1,0 +1,32 @@
+tech_bombardment_se = {
+    area = society
+    tier = 8
+    cost = @acot_tier8cost2
+    category = {
+        military_theory
+    }
+    ai_update_type = all
+    is_reverse_engineerable = no
+    prerequisites = {
+        "tech_bombardment_ae"
+    }
+    weight = @tier5weight2
+    potential = {
+        NOT = {
+            has_global_flag = acot_shipcom_forbidden
+        }
+        has_se_tier_munitions = yes
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 1.25
+            has_tradition = tr_discovery_adopt
+        }
+    }
+    ai_weight = {
+        factor = 1.25
+    }
+    modifier = {
+        description = TECH_UNLOCK_SE_BOMBARD_TITLE
+    }
+}

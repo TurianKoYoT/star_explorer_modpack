@@ -1,0 +1,2 @@
+l_english:
+ mod_planet_jobs_energy_upkeep_mult:1000 "Energy Upkeep Multiplier"

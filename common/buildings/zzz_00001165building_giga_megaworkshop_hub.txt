@@ -1,0 +1,112 @@
+building_giga_megaworkshop_hub = {
+    base_buildtime = @b4_time
+    category = manufacturing
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b4_minerals
+        }
+        upkeep = {
+            energy = @b4_upkeep
+        }
+    }
+    prerequisites = {
+        giga_tech_amb_supertensiles
+    }
+    potential = {
+        nor = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+        }
+        has_global_flag = @giga_amb_flag
+    }
+    allow = {
+        has_upgraded_capital = yes
+    }
+    empire_limit = {
+        base = 0
+        modifier = {
+            is_variable_set = giga_amb_cap
+            add = giga_amb_cap
+        }
+    }
+    destroy_trigger = {
+        OR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+            NOT = {
+                has_global_flag = @giga_amb_flag
+            }
+        }
+    }
+    upgrades = {
+        building_giga_megaworkshop_hub_acot_delta
+    }
+    country_modifier = {
+        country_resource_max_giga_sr_amb_megaconstruction_add = 2000
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_giga_megaengineering_overseer_drone_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        modifier = {
+            job_giga_megaengineering_overseer_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_fallen_empire_spiritualist = yes
+            }
+        }
+        modifier = {
+            job_giga_amb_fe_celestial_architect_add = 2
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        text = job_giga_megaengineering_overseer_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_giga_megaengineering_overseer_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_fallen_empire_spiritualist = yes
+            }
+        }
+        text = job_giga_amb_fe_celestial_architect_effect_desc
+    }
+}

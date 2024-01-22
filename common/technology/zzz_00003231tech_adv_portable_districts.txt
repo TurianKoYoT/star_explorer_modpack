@@ -1,0 +1,19 @@
+tech_adv_portable_districts = {
+    cost = @tier3cost2
+    area = engineering
+    tier = 3
+    is_reverse_engineerable = no
+    category = {
+        voidcraft
+    }
+    prerequisites = {
+        "tech_factory_ship"
+    }
+    potential = {
+        has_ascension_perk = ap_civilian_activities
+    }
+    weight = @tier3weight2
+    ai_weight = {
+        factor = 6
+    }
+}

@@ -1,0 +1,21 @@
+tech_katzen_flusioarc = {
+    cost = @tier3cost1
+    area = society
+    tier = 3
+    category = {
+        statecraft
+    }
+    potential = {
+        has_country_flag = finished_flusiocentrism
+    }
+    prerequisites = {
+        tech_capital_productivity_1
+    }
+    weight = 0
+    ai_weight = {
+        modifier = {
+            factor = @housing_ai_tech_factor
+            num_pops >= 100
+        }
+    }
+}

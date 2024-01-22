@@ -1,0 +1,16 @@
+tech_doa_ascended_starbase_design = {
+    area = engineering
+    cost = 0
+    tier = 0
+    category = {
+        materials
+    }
+    weight = 0
+    potential = {
+        has_country_flag = doa_accepted_ships
+    }
+    modifier = {
+        shipclass_starbase_damage_mult = 0.25
+        shipclass_starbase_hull_mult = 0.25
+    }
+}

@@ -1,0 +1,18 @@
+tech_eutab_m_command_control = {
+    cost = @tier4cost3
+    area = physics
+    tier = 4
+    category = {
+        field_manipulation
+    }
+    prerequisites = {
+        "tech_embodied_dynamism"
+        "tech_mine_dark_matter"
+    }
+    weight = @tier4weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_machine_empire = yes
+        has_ascension_perk = ap_machine_worlds
+    }
+}

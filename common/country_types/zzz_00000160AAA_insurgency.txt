@@ -1,0 +1,38 @@
+AAA_insurgency = {
+    sub_title = "COUNTRY_AAA_INSURGENT"
+    sub_title_desc = "COUNTRY_AAA_INSURGENT_DESC"
+    playable = no
+    is_enclave = yes
+    has_pulse_events = yes
+    has_deficits = no
+    piracy_risk = no
+    needs_survey = no
+    diplomatic_wars = no
+    ship_disengagement = yes
+    army_disengagement = no
+    observable = yes
+    can_use_invalid_technology = no
+    can_receive_envoys = yes
+    ownership_limits = default
+    custom_diplomacy = yes
+    custom_opinion = yes
+    ai = {
+        enabled = no
+    }
+    modules = {
+        basic_technology_module = {
+        }
+        standard_event_module = {
+        }
+        standard_leader_module = {
+        }
+        exclusive_diplomacy_module = {
+        }
+    }
+    faction = {
+        needs_border_access = no
+        auto_delete = no
+        needs_colony = no
+        hostile = yes
+    }
+}

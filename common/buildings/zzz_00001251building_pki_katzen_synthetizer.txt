@@ -1,0 +1,34 @@
+building_pki_katzen_synthetizer = {
+    base_buildtime = 360
+    icon = building_giga_katzen_synthetizer
+    category = manufacturing
+    potential = {
+        owner = {
+            pki_is_katzenartig_imperium = yes
+        }
+    }
+    prerequisites = {
+        "tech_katzen_rr"
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+        }
+        upkeep = {
+            energy = @b3_upkeep
+        }
+    }
+    inline_script = {
+        script = jobs/refiner_add
+        AMOUNT = 2
+    }
+    inline_script = {
+        script = jobs/chemist_add
+        AMOUNT = 2
+    }
+    inline_script = {
+        script = jobs/translucer_add
+        AMOUNT = 2
+    }
+}

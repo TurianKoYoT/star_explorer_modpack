@@ -1,0 +1,85 @@
+tech_wp_dw_manipulation_4 = {
+    cost = @tier5cost1
+    area = society
+    category = {
+        biology
+    }
+    tier = 5
+    is_rare = yes
+    weight = @tier5weight3
+    prerequisites = {
+        "tech_morphogenetics_3"
+    }
+    gateway = dangerous_wildlife_complete
+    potential = {
+        NOR = {
+            has_authority = auth_machine_intelligence
+            has_civic = civic_fanatic_purifiers
+            has_civic = civic_hive_devouring_swarm
+            has_ethic = ethic_fanatic_xenophobe
+        }
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            NOR = {
+                any_owned_planet = {
+                    wp_dw_has_remnant_wildlife = yes
+                }
+            }
+        }
+        modifier = {
+            factor = 0
+            OR = {
+                has_authority = auth_machine_intelligence
+                has_civic = civic_fanatic_purifiers
+                has_civic = civic_hive_devouring_swarm
+                has_ethic = ethic_fanatic_xenophobe
+            }
+        }
+        modifier = {
+            factor = 0.5
+        }
+        modifier = {
+            factor = 3
+            has_technology = tech_amoeba_strike_craft_1
+        }
+        modifier = {
+            factor = 1.5
+            OR = {
+                has_ethic = ethic_xenophile
+                has_ethic = ethic_militarist
+            }
+        }
+        modifier = {
+            factor = 3
+            OR = {
+                has_ethic = ethic_fanatic_xenophile
+                has_ethic = ethic_fanatic_militarist
+            }
+        }
+    }
+    ai_weight = {
+        modifier = {
+            factor = 0
+            OR = {
+                has_authority = auth_machine_intelligence
+                has_civic = civic_fanatic_purifiers
+                has_civic = civic_hive_devouring_swarm
+                has_ethic = ethic_fanatic_xenophobe
+            }
+        }
+        modifier = {
+            factor = 0
+            NOR = {
+                any_owned_planet = {
+                    wp_dw_has_remnant_wildlife = yes
+                }
+            }
+        }
+        modifier = {
+            factor = 0
+            num_owned_planets < 2
+        }
+    }
+}

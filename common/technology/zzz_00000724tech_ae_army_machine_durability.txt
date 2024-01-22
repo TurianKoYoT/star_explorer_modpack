@@ -1,0 +1,31 @@
+tech_ae_army_machine_durability = {
+    area = society
+    cost = @acot_tier7cost1
+    tier = 7
+    category = {
+        military_theory
+    }
+    prerequisites = {
+        "tech_dark_matter_power_core_ae"
+    }
+    weight = 20
+    potential = {
+        is_machine_empire = yes
+        NOT = {
+            has_global_flag = acot_army_forbidden
+        }
+        OR = {
+            has_technology = tech_acot_army_hive_ae
+        }
+    }
+    modifier = {
+        description = tech_ae_army_machine_durability_tooltip
+        army_damage_mult = 0.5
+        armies_cost_mult = -0.25
+    }
+    weight_modifier = {
+        factor = 1
+    }
+    ai_weight = {
+    }
+}

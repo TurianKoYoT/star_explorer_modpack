@@ -1,0 +1,34 @@
+@ssh_ascension_cost = 250
+@ssh_ascension_district_buildtime = 1000
+district_ssh_ascension_portal = {
+    base_buildtime = @ssh_ascension_district_buildtime
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        uses_district_set = ascension_portal
+        exists = from
+    }
+    potential = {
+        exists = owner
+        uses_district_set = ascension_portal
+        owner = {
+            has_country_flag = ssh_dimensional_ascension_empire
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            sr_dark_matter = @ssh_ascension_cost
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_country_flag = ssh_dimensional_ascension_empire
+            }
+        }
+        modifier = {
+            country_resource_max_add = 100000
+        }
+    }
+}

@@ -1,0 +1,60 @@
+building_fe_stronghold = {
+    can_build = no
+    potential = {
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                is_fallen_empire = no
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            job_acot_enforcer_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                is_fallen_empire = no
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_acot_enforcer_drone_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                is_fallen_empire = yes
+            }
+        }
+        modifier = {
+            job_fe_protector_add = 5
+        }
+    }
+    ai_weight = {
+        weight = 1
+        modifier = {
+            factor = 50
+            owner = {
+                used_naval_capacity_percent > 1.1
+            }
+        }
+        modifier = {
+            factor = 0.05
+            owner = {
+                used_naval_capacity_percent < 0.9
+            }
+        }
+    }
+    resources = {
+        category = planet_buildings
+        upkeep = {
+        }
+    }
+    upgrades = {
+        building_ae_stronghold
+    }
+}

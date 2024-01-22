@@ -1,0 +1,11 @@
+collectivist_anticorp = {
+    trigger = {
+        has_valid_civic = civic_collectivism
+        from = {
+            has_authority = auth_corporate
+        }
+    }
+    opinion = {
+        base = -100
+    }
+}

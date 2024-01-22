@@ -1,0 +1,54 @@
+ult_ecologist = {
+    category = specialist
+    condition_string = SPECIALIST_JOB_TRIGGER
+    building_icon = building_ult_ecological_station
+    clothes_texture_index = 2
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_specialist_job
+    resources = {
+        category = planet_researchers
+        produces = {
+            society_research = 25
+        }
+    }
+    planet_modifier = {
+        planet_amenities_add = 15
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+        pop_environment_tolerance = 0.05
+    }
+    weight = {
+        weight = @specialist_job_weight
+        modifier = {
+            factor = 0.2
+            has_citizenship_rights = no
+            NOT = {
+                has_trait = trait_mechanical
+            }
+        }
+        modifier = {
+            factor = 0.1
+            can_take_servant_job = yes
+        }
+        modifier = {
+            factor = 2
+            OR = {
+                has_trait = trait_robot_logic_engines
+                has_trait = trait_intelligent
+                has_trait = trait_brainslug
+            }
+        }
+        modifier = {
+            factor = 4
+            has_trait = trait_ult_gaia_connection
+        }
+        modifier = {
+            factor = 4
+            has_trait = trait_natural_sociologists
+        }
+    }
+}

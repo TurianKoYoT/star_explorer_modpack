@@ -1,0 +1,41 @@
+building_nanite_forge_1 = {
+    base_buildtime = @b1_time
+    category = resource
+    destroy_trigger = {
+        owner = {
+            NOT = {
+                has_valid_civic = civic_machine_selfreplicating_machines
+            }
+        }
+    }
+    potential = {
+        NOT = {
+            has_modifier = resort_colony
+        }
+        owner = {
+            has_valid_civic = civic_machine_selfreplicating_machines
+        }
+    }
+    planet_modifier = {
+        job_nanite_synthesiser_add = 1
+        planet_pop_assemblers_produces_mult = 0.05
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+        }
+        upkeep = {
+            energy = @b2_upkeep
+        }
+    }
+    upgrades = {
+        "building_nanite_forge_2"
+    }
+    triggered_desc = {
+        text = job_nanite_synthesiser_effect_desc
+    }
+    ai_weight = {
+        weight = 10
+    }
+}

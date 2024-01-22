@@ -1,0 +1,37 @@
+leader_trait_fast_explorer = {
+    cost = 1
+    inline_script = {
+        script = trait/icon
+        CLASS = scientist
+        ICON = "gfx/interface/icons/traits/leader_traits/leader_trait_fast_explorer.dds"
+        RARITY = common
+        COUNCIL = no
+        TIER = none
+    }
+    icon = "gfx/interface/icons/traits/leader_traits/leader_trait_fast_explorer.dds"
+    modifier = {
+        science_ship_survey_speed = 0.75
+    }
+    leader_class = {
+        scientist
+    }
+    opposites = {
+        "leader_trait_carefree"
+        "leader_trait_roamer"
+        "leader_trait_xeno_cataloger"
+    }
+    leader_potential_add = {
+        OR = {
+            from = {
+                has_technology = tech_expandable_brain_1
+            }
+            has_global_flag = ap_expandable_brain_1
+        }
+    }
+    ai_categories = {
+        survey
+    }
+    ai_weight = {
+        weight = 50
+    }
+}

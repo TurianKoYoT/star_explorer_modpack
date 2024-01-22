@@ -1,0 +1,53 @@
+building_stellarite_nourishment_center = {
+    base_buildtime = 900
+    can_demolish = yes
+    can_build = no
+    category = resource
+    potential = {
+        exists = owner
+        owner = {
+            has_technology = tech_stellarite_nourishment_center
+        }
+    }
+    prerequisites = {
+        "tech_stellarite_nourishment_center"
+    }
+    allow = {
+        has_stellarite_capital = yes
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 5000
+            minerals = 5000
+            acot_sr_stellarite = 750
+        }
+        produces = {
+            food = @auto_food_se
+        }
+        upkeep = {
+            energy = 40
+            acot_sr_stellarite = 20
+        }
+    }
+    upgrades = {
+    }
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 5
+            owner = {
+                has_monthly_income = {
+                    resource = food
+                    value < 10
+                }
+            }
+        }
+    }
+    ai_resource_production = {
+        food = 10
+        trigger = {
+            always = yes
+        }
+    }
+}

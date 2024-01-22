@@ -1,0 +1,61 @@
+weapon_component_template = {
+    key = "ARCHAEO_MISSILE"
+    size = small
+    icon = "GFX_ship_part_archaeo_missiles"
+    icon_frame = 1
+    type = missile
+    prerequisites = {
+        "tech_archaeo_missiles"
+    }
+    component_set = "ARCHAEO_MISSILE"
+    projectile_gfx = "cloud_missile"
+    tags = {
+        weapon_type_explosive
+        weapon_archaeotech
+    }
+    ai_tags = {
+        weapon_role_artillery
+        artillery
+        energy_torpedoes
+    }
+    ai_tag_weight = 0
+    resources = {
+        category = ship_components
+        cost = {
+            alloys = @s_t3_cost
+            minor_artifacts = @minor_artifacts_cost_m
+        }
+        upkeep = {
+            energy = @s_t3_upkeep_energy
+            alloys = @s_t3_upkeep_alloys
+        }
+    }
+    upgrades_to = ACOT_MISSILE_DM
+    ai_weight = {
+        weight = 0
+        modifier = {
+            add = 2.5
+            owner = {
+                has_ascension_perk = ap_archaeoengineers
+            }
+        }
+        modifier = {
+            factor = 0
+            owner = {
+                has_monthly_income = {
+                    resource = minor_artifacts
+                    value < 3
+                }
+            }
+        }
+        modifier = {
+            factor = 1.3
+            owner = {
+                resource_stockpile_compare = {
+                    resource = minor_artifacts
+                    value > 250
+                }
+            }
+        }
+    }
+}

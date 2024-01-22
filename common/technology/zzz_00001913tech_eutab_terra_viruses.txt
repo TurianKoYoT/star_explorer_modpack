@@ -1,0 +1,29 @@
+tech_eutab_terra_viruses = {
+    cost = @tier3cost1
+    area = society
+    tier = 3
+    category = {
+        new_worlds
+    }
+    prerequisites = {
+        "tech_terrestrial_sculpting"
+    }
+    weight = @tier3weight1
+    is_custom_tech_1 = yes
+    potential = {
+        is_xenophobe = yes
+        has_ascension_perk = ap_world_shaper
+    }
+    gateway = eu_dominion
+    modifier = {
+        terraforming_cost_mult = -0.05
+        terraform_speed_mult = 0.1
+        deposit_blockers_cost_mult = -0.15
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 3
+            has_ethic = ethic_fanatic_xenophobe
+        }
+    }
+}

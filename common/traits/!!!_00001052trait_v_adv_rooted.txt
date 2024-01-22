@@ -1,0 +1,42 @@
+trait_v_adv_rooted = {
+    cost = -2
+    icon = "gfx/interface/icons/traits/trait_v_rooted.dds"
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    potential_crossbreeding_chance = 1
+    species_potential_add = {
+        exists = from
+        from = {
+            OR = {
+                has_technology = tech_plantoid_transgenesis
+                has_technology = tech_v_zoological_transgenesis
+            }
+        }
+    }
+    species_possible_remove = {
+        has_v_mobility_enabler = no
+    }
+    opposites = {
+        "trait_v_rooted"
+        "trait_nomadic"
+        "trait_sedentary"
+        "trait_v_flying"
+        "trait_clone_soldier_infertile"
+        "trait_clone_soldier_infertile_full_potential"
+        "trait_vat_grown"
+        "trait_v_living_mountain"
+    }
+    inline_script = "allowed_archetypes/adv_biological_traits/BIOLOGICAL"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/REP"
+    custom_tooltip = TRAIT_ROOTED_EFFECT
+    slave_cost = {
+        energy = -1000
+    }
+}

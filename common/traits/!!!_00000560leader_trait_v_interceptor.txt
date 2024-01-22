@@ -1,0 +1,23 @@
+leader_trait_v_interceptor = {
+    cost = 0
+    initial = no
+    randomized = no
+    inline_script = {
+        script = trait/icon
+        CLASS = admiral
+        ICON = "GFX_leader_trait_v_interceptor"
+        RARITY = common
+        COUNCIL = no
+        TIER = none
+    }
+    leader_class = {
+        commander
+    }
+    modifier = {
+        ship_tracking_mult = 0.15
+        weapon_type_strike_craft_weapon_damage_mult = 0.15
+        weapon_type_strike_craft_speed_mult = 0.15
+    }
+    notify_on_gained = no
+    fleet_specialization_tag = carrier
+}

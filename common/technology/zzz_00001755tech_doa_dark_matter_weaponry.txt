@@ -1,0 +1,16 @@
+tech_doa_dark_matter_weaponry = {
+    area = physics
+    cost = 0
+    tier = 0
+    category = {
+        particles
+    }
+    ai_update_type = all
+    weight = 0
+    potential = {
+        has_country_flag = doa_tech_8
+    }
+    ai_weight = {
+        factor = 0
+    }
+}

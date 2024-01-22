@@ -1,0 +1,45 @@
+trait_v_cecotrophy = {
+    cost = 1
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 0
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/ART"
+    inline_script = "species_class/TOX"
+    opposites = {
+        "trait_invasive"
+        "trait_lithoid"
+        "trait_v_adv_cecotrophy"
+        "trait_v_lithoid_cecotrophy"
+        "trait_v_kleptoplasty"
+        "trait_plantoid_phototrophic"
+        "trait_advanced_phototrophic"
+        "trait_plantoid_radiotrophic"
+        "trait_harvested_radiotrophic"
+        "trait_lithoid_radiotrophic"
+        "trait_advanced_radiotrophic"
+        "trait_v_efficient_digestion_l"
+        "trait_v_efficient_digestion"
+        "trait_v_inefficient_digestion"
+        "trait_v_inefficient_digestion_l"
+        "trait_v_locust"
+        "trait_v_rockust"
+        "trait_v_complex_digestive_system"
+        "trait_voidling"
+        "trait_v_weak_immune_system"
+    }
+    custom_tooltip_with_modifiers = TRAIT_CECOTROPHY_EFFECT
+    modifier = {
+        planet_pops_organics_food_upkeep_mult = -0.2
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

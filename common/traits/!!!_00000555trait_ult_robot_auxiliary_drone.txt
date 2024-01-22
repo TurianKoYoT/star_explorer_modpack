@@ -1,0 +1,21 @@
+trait_ult_robot_auxiliary_drone = {
+    cost = 3
+    initial = no
+    species_potential_add = {
+        exists = from
+        from = {
+            OR = {
+                has_technology = tech_ult_super_machine_enhance
+                has_technology = tech_ult_super_robot_enhance
+            }
+        }
+    }
+    allowed_archetypes = {
+        ROBOT
+        MACHINE
+    }
+    modifier = {
+        planet_jobs_produces_mult = 0.2
+        army_damage_mult = 0.25
+    }
+}

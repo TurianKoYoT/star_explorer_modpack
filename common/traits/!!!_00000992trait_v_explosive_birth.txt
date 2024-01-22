@@ -1,0 +1,25 @@
+trait_v_explosive_birth = {
+    cost = -1
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/FUN"
+    inline_script = "species_class/LITHOID"
+    custom_tooltip = TRAIT_EXPLOSIVE_BIRTH_EFFECT
+    opposites = {
+        "trait_v_adv_explosive_birth"
+        "trait_v_silken_birth"
+        "trait_v_adv_silken_birth"
+        "trait_clone_soldier_infertile"
+        "trait_clone_soldier_infertile_full_potential"
+        "trait_vat_grown"
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

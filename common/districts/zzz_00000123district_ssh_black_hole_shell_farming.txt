@@ -1,0 +1,145 @@
+@ssh_sh_cost = 1500
+@ssh_sh_cost_sr = 50
+@ssh_sh_maintenance = 5
+@ssh_sh_maintenance_sr = 2
+@ssh_sh_district_buildtime = 360
+district_ssh_black_hole_shell_farming = {
+    base_buildtime = @ssh_sh_district_buildtime
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        uses_district_set = black_hole_shell_world
+    }
+    potential = {
+        uses_district_set = black_hole_shell_world
+        NOT = {
+            AND = {
+                owner = {
+                    is_ai = yes
+                }
+                owner = {
+                    country_uses_food = no
+                }
+            }
+        }
+        has_planet_flag = ssh_black_hole_shell_has_star
+    }
+    conversion_ratio = 0.5
+    convert_to = {
+        district_ssh_black_hole_shell_city
+        district_ssh_black_hole_shell_nexus
+        district_ssh_black_hole_shell_hive
+    }
+    resources = {
+        category = planet_districts_rw_farming
+        cost = {
+            minerals = @ssh_sh_cost
+            volatile_motes = @ssh_sh_cost_sr
+        }
+        upkeep = {
+            energy = @ssh_sh_maintenance
+            volatile_motes = @ssh_sh_maintenance_sr
+        }
+    }
+    triggered_planet_modifier = {
+        modifier = {
+            planet_housing_add = 10
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        modifier = {
+            planet_housing_add = 5
+            job_agri_drone_add = 15
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        modifier = {
+            job_agri_drone_add = 10
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        modifier = {
+            job_farmer_add = 10
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_fallen_empire_spiritualist = yes
+            }
+        }
+        modifier = {
+            job_fe_acolyte_farm_add = 10
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_valid_civic = civic_agrarian_idyll
+            }
+        }
+        modifier = {
+            planet_housing_add = 5
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_technology = tech_housing_agrarian_idyll
+                has_valid_civic = civic_agrarian_idyll
+            }
+        }
+        modifier = {
+            planet_housing_add = 5
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_agri_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        text = job_farmer_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_fallen_empire_spiritualist = yes
+            }
+        }
+        text = job_fe_acolyte_farm_effect_desc
+    }
+}

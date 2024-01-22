@@ -1,0 +1,58 @@
+building_avb_machine_assembly_plant_2 = {
+    icon = building_avb_robot_assembly_plant_2
+    base_buildtime = @avb_b4_time
+    can_build = no
+    category = pop_assembly
+    potential = {
+        exists = owner
+        owner = {
+            is_machine_empire = yes
+        }
+        NOT = {
+            has_modifier = crucible_colony
+        }
+    }
+    allow = {
+        has_upgraded_capital_4 = yes
+    }
+    convert_to = {
+        building_avb_robot_assembly_plant_2
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            owner = {
+                is_robot_empire = no
+            }
+            AND = {
+                owner = {
+                    is_ai = yes
+                }
+                free_district_slots = 0
+                free_building_slots = 0
+                free_housing <= 0
+                free_jobs <= 0
+            }
+        }
+    }
+    planet_modifier = {
+        job_replicator_add = 6
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_b3_minerals
+            rare_crystals = 350
+        }
+        upkeep = {
+            energy = @avb_b3_upkeep
+            rare_crystals = 6
+        }
+    }
+    triggered_desc = {
+        text = job_replicator_effect_desc
+    }
+    prerequisites = {
+        "tech_avb_machine_assembly_plant_2"
+    }
+}

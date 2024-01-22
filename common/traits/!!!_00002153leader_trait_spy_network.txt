@@ -1,0 +1,26 @@
+leader_trait_spy_network = {
+    cost = 1
+    inline_script = {
+        script = trait/icon
+        CLASS = governor
+        ICON = "gfx/interface/icons/traits/leader_traits/leader_trait_spy_network.dds"
+        RARITY = common
+        COUNCIL = no
+        TIER = none
+    }
+    icon = "gfx/interface/icons/traits/leader_traits/leader_trait_spy_network.dds"
+    modifier = {
+        planet_crime_mult = -0.3
+    }
+    leader_potential_add = {
+        OR = {
+            from = {
+                has_technology = tech_expandable_brain_1
+            }
+            has_global_flag = ap_expandable_brain_1
+        }
+    }
+    leader_class = {
+        official
+    }
+}

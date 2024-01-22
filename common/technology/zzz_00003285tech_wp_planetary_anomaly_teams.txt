@@ -1,0 +1,83 @@
+tech_wp_planetary_anomaly_teams = {
+    cost = @tier3cost1
+    area = society
+    tier = 3
+    category = {
+        new_worlds
+    }
+    prerequisites = {
+        "tech_colonization_1"
+    }
+    weight = @tier3weight1
+    weight_groups = {
+        deposit_blockers
+    }
+    mod_weight_if_group_picked = {
+        deposit_blockers = 0.5
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 2
+        }
+        modifier = {
+            factor = 1.25
+            has_tradition = tr_expansion_adopt
+        }
+        modifier = {
+            factor = 4
+            has_ascension_perk = ap_mastery_of_nature
+        }
+        modifier = {
+            factor = 0
+            NOR = {
+                any_owned_planet = {
+                    has_deposit = d_agnostic_blocker_simple_7
+                }
+                any_owned_planet = {
+                    has_deposit = d_agnostic_blocker_simple_8
+                }
+                any_owned_planet = {
+                    has_deposit = d_agnostic_blocker_simple_9
+                }
+                any_owned_planet = {
+                    has_deposit = d_agnostic_blocker_difficult_5
+                }
+                any_owned_planet = {
+                    has_deposit = d_agnostic_blocker_difficult_6
+                }
+                any_owned_planet = {
+                    has_deposit = d_agnostic_blocker_challenging_3
+                }
+            }
+        }
+    }
+    ai_weight = {
+        modifier = {
+            factor = 0
+            num_owned_planets < 2
+        }
+        modifier = {
+            factor = 0
+            NOR = {
+                any_owned_planet = {
+                    has_deposit = d_agnostic_blocker_simple_7
+                }
+                any_owned_planet = {
+                    has_deposit = d_agnostic_blocker_simple_8
+                }
+                any_owned_planet = {
+                    has_deposit = d_agnostic_blocker_simple_9
+                }
+                any_owned_planet = {
+                    has_deposit = d_agnostic_blocker_difficult_5
+                }
+                any_owned_planet = {
+                    has_deposit = d_agnostic_blocker_difficult_6
+                }
+                any_owned_planet = {
+                    has_deposit = d_agnostic_blocker_challenging_3
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+trait_v_soft_robotics = {
+    cost = 3
+    inline_script = "traits/no_randomized"
+    opposites = {
+        "trait_v_fabricators"
+        "trait_v_automated_chemistry"
+    }
+    allowed_archetypes = {
+        ROBOT
+        MACHINE
+    }
+    custom_tooltip_with_modifiers = TRAIT_SOFT_ROBOTICS_EFFECT
+    modifier = {
+        planet_doctors_society_research_produces_add = 1
+    }
+    triggered_pop_modifier = {
+        planet_researchers_society_research_produces_add = 0.25
+        mult = planet.value:natural_blocker_count
+    }
+    slave_cost = {
+        energy = 2000
+    }
+}

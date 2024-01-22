@@ -1,0 +1,36 @@
+tech_fleetsupremacy = {
+    cost = @acot_tier6cost2
+    area = society
+    tier = 6
+    category = {
+        military_theory
+    }
+    prerequisites = {
+        "tech_galactic_campaigns"
+        "tech_doctrine_fleet_size_4"
+    }
+    weight = 25
+    potential = {
+        NOT = {
+            has_global_flag = acot_ethictech_forbidden
+        }
+        is_regular_empire = yes
+    }
+    modifier = {
+        admiral_skill_levels = 5
+        command_limit_add = 50
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            NOT = {
+                any_owned_leader = {
+                    leader_class = admiral
+                    has_skill >= 8
+                }
+            }
+        }
+    }
+    ai_weight = {
+    }
+}

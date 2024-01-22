@@ -1,0 +1,40 @@
+pc_ascension_portal = {
+    entity = "neutron_outbursts_entity"
+    entity_scale = @planet_standard_scale
+    icon = GFX_planet_type_black_hole
+    picture = pc_ascension_portal
+    climate = "wet"
+    starting_planet = no
+    spawn_odds = 0
+    atmosphere_color = hsv {
+        0
+        0
+        0
+    }
+    atmosphere_intensity = 1
+    atmosphere_width = 0.5
+    city_color_lut = "gfx/portraits/misc/colorcorrection_continental.dds"
+    planet_size = {
+        min = 1
+        max = 1
+    }
+    moon_size = {
+        min = @habitable_moon_min_size
+        max = @habitable_moon_max_size
+    }
+    colonizable = yes
+    show_city = no
+    uses_alternative_skies_for_moons = no
+    district_set = ascension_portal
+    carry_cap_per_free_district = @carry_cap_normal
+    can_be_moon = no
+    chance_of_ring = 0
+    modifier = {
+        pop_growth_speed = -2
+        habitability_ceil_add = -2
+        planet_orbital_bombardment_damage = -5
+        defense_armies_add = 50
+        army_defense_damage_mult = 5
+        army_defense_health_mult = 5
+    }
+}

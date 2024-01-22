@@ -1,0 +1,60 @@
+building_katzencaches_delta_synthesizer = {
+    base_buildtime = 360
+    category = manufacturing
+    potential = {
+        owner = {
+            has_origin = origin_katzen
+        }
+    }
+    prerequisites = {
+        "tech_katzen_rr"
+        "tech_dark_matter_power_core_dm"
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 1000
+            alloys = 250
+            rare_crystals = 100
+            volatile_motes = 100
+            exotic_gases = 100
+        }
+        produces = {
+            minerals = 125
+            rare_crystals = 15
+            exotic_gases = 15
+            volatile_motes = 15
+            sr_zro = 15
+            sr_living_metal = 15
+        }
+        upkeep = {
+            energy = 20
+            acot_sr_dark_energy = 3
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            job_acot_transmute_man_add = 3
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_acot_transmute_drone_add = 3
+        }
+    }
+    upgrades = {
+        building_katzencaches_alpha_synthesizer
+    }
+}

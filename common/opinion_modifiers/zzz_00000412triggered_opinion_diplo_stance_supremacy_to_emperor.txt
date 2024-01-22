@@ -1,0 +1,11 @@
+triggered_opinion_diplo_stance_supremacy_to_emperor = {
+    trigger = {
+        has_policy_flag = diplo_stance_supremacist
+        FROM = {
+            is_galactic_emperor = yes
+        }
+    }
+    opinion = {
+        base = -200
+    }
+}

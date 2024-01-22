@@ -1,0 +1,44 @@
+trait_v_self_decoration = {
+    cost = 1
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_v_adv_self_decoration"
+        "trait_v_active_camouflage"
+        "trait_v_adv_active_camouflage"
+        "trait_v_cyborg_stealth"
+        "trait_v_overgrown"
+        "trait_void_dweller_1"
+        "trait_v_biophobia"
+        "trait_v_pest_sensitive"
+        "trait_v_adv_pest_sensitive"
+        "trait_v_efficient_digestion_l"
+        "trait_v_inefficient_digestion_l"
+        "trait_v_living_mountain"
+        "trait_v_lithoid_cecotrophy"
+        "trait_v_lithoid_embryonic_diapause"
+        "trait_v_lithoid_mycorrhizal"
+        "trait_v_overtuned_digestion_l"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/REP"
+    inline_script = "species_class/ART"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/AQUATIC"
+    custom_tooltip_with_modifiers = TRAIT_SELF_DECORATION_EFFECT
+    modifier = {
+        planet_pops_organics_food_upkeep_mult = -0.1
+    }
+    slave_cost = {
+        energy = 2000
+    }
+}

@@ -1,0 +1,33 @@
+trait_v_weaver = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_v_adv_weaver"
+        "trait_v_fungus_farmer"
+        "trait_v_adv_fungus_farmer"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/ART"
+    custom_tooltip = TRAIT_WEAVER_EFFECT
+    triggered_pop_modifier = {
+        potential = {
+            NOT = {
+                has_trait = trait_hive_mind
+            }
+        }
+        planet_farmers_consumer_goods_produces_add = 1
+        planet_farmers_food_produces_add = -1
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

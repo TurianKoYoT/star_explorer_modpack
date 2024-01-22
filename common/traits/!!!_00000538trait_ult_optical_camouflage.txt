@@ -1,0 +1,20 @@
+trait_ult_optical_camouflage = {
+    cost = 1
+    potential_crossbreeding_chance = 1
+    initial = no
+    randomized = no
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_ult_nano_drone_enhance
+        }
+    }
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    modifier = {
+        pop_job_amenities_mult = 0.1
+        army_health = 0.25
+    }
+}

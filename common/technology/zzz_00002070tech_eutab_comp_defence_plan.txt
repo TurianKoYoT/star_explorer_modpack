@@ -1,0 +1,39 @@
+tech_eutab_comp_defence_plan = {
+    cost = @tier3cost3
+    area = society
+    tier = 3
+    category = {
+        military_theory
+    }
+    prerequisites = {
+        "tech_interstellar_campaigns"
+    }
+    weight = @tier3weight3
+    is_custom_tech_1 = yes
+    potential = {
+        has_ascension_perk = ap_eternal_vigilance
+        OR = {
+            has_ascension_perk = ap_enigmatic_engineering
+            has_ascension_perk = ap_defender_of_the_galaxy
+            has_ascension_perk = ap_galactic_contender
+        }
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0.75
+            NOT = {
+                has_trait_in_council = {
+                    TRAIT = leader_trait_expertise_military_theory
+                }
+            }
+        }
+        modifier = {
+            factor = 1.5
+            has_ethic = ethic_pacifist
+        }
+        modifier = {
+            factor = 2
+            has_ethic = ethic_fanatic_pacifist
+        }
+    }
+}

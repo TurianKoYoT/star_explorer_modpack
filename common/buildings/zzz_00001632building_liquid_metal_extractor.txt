@@ -1,0 +1,47 @@
+building_liquid_metal_extractor = {
+    base_buildtime = 360
+    base_cap_amount = 1
+    category = manufacturing
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 500
+        }
+        upkeep = {
+            energy = 6
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            job_living_metal_extractor_add = 3
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_living_metal_extractor_drone_add = 3
+        }
+    }
+    prerequisites = {
+        tech_mine_living_metal
+    }
+    potential = {
+        owner = {
+            has_ascension_perk = ap_legendary_forge
+        }
+    }
+    show_tech_unlock_if = {
+        has_ascension_perk = ap_legendary_forge
+    }
+}

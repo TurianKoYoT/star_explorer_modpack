@@ -1,0 +1,37 @@
+building_phanon_plant = {
+    base_buildtime = 900
+    can_be_ruined = yes
+    can_be_disabled = yes
+    can_build = no
+    category = government
+    potential = {
+        exists = owner
+        has_building = building_phanon_tower
+    }
+    destroy_trigger = {
+        NOT = {
+            has_building = building_phanon_tower
+        }
+    }
+    allow = {
+    }
+    show_tech_unlock_if = {
+        is_regular_empire = yes
+    }
+    planet_modifier = {
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            energy = 2500
+            minerals = 2500
+            alloys = 2500
+            consumer_goods = 2500
+        }
+        cost = {
+        }
+    }
+    ai_weight = {
+        weight = 100
+    }
+}

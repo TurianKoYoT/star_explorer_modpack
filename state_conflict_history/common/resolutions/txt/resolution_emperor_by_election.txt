@@ -1,0 +1,104 @@
+@resolution_weight_disliked = 4
+@resolution_cost_t3 = 200
+resolution_emperor_by_election = {
+    icon = "GFX_resolution_imperial_council_diplomatic_weight"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t3
+        }
+    }
+    target = no
+    modifier = {
+    }
+    effect = {
+        custom_tooltip = resolution_emperor_by_election_tooltip
+        hidden_effect = {
+            every_playable_country = {
+                limit = {
+                    is_galactic_community_member = yes
+                    is_part_of_galactic_council = yes
+                    is_galactic_emperor = no
+                    is_permanent_councillor = yes
+                }
+                remove_permanent_councillor = yes
+            }
+            if = {
+                limit = {
+                    is_active_resolution = "resolution_emperor_trial_of_advancement"
+                }
+                cancel_resolution = "resolution_emperor_trial_of_advancement"
+            }
+            else_if = {
+                limit = {
+                    is_active_resolution = "resolution_emperor_by_appointment"
+                }
+                cancel_resolution = "resolution_emperor_by_appointment"
+            }
+        }
+    }
+    fail_effects = {
+    }
+    potential = {
+        has_nemesis = yes
+        is_galactic_emperor = yes
+        NOT = {
+            has_global_flag = imperial_unification_start
+        }
+    }
+    active = {
+        has_galactic_emperor = yes
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = "resolution_already_active"
+            NOT = {
+                is_active_resolution = "resolution_emperor_by_election"
+            }
+        }
+    }
+    ai_weight = {
+        base = @resolution_weight_disliked
+        modifier = {
+            factor = 10
+            num_council_positions = 1
+            galactic_community_rank = 1
+            is_part_of_galactic_council = no
+            desc = gal_com_empire_council_candidate
+        }
+        modifier = {
+            factor = 10
+            num_council_positions = 2
+            galactic_community_rank = 2
+            is_part_of_galactic_council = no
+            desc = gal_com_empire_council_candidate
+        }
+        modifier = {
+            factor = 10
+            num_council_positions = 3
+            galactic_community_rank = 3
+            is_part_of_galactic_council = no
+            desc = gal_com_empire_council_candidate
+        }
+        modifier = {
+            factor = 10
+            num_council_positions = 4
+            galactic_community_rank = 4
+            is_part_of_galactic_council = no
+            desc = gal_com_empire_council_candidate
+        }
+        modifier = {
+            factor = 10
+            num_council_positions = 5
+            galactic_community_rank = 5
+            is_part_of_galactic_council = no
+            desc = gal_com_empire_council_candidate
+        }
+        modifier = {
+            factor = 0
+            galactic_community_rank <= 2
+            is_part_of_galactic_council = no
+            desc = gal_com_top_two_rank
+        }
+    }
+}

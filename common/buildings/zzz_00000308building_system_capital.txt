@@ -1,0 +1,239 @@
+@buildings_t4 = 4
+@tier_4_capital_defense_armies = 16
+building_system_capital = {
+    base_buildtime = @b4_time
+    capital = yes
+    can_build = no
+    can_demolish = no
+    can_be_ruined = no
+    can_be_disabled = no
+    position_priority = 0
+    category = government
+    potential = {
+        exists = owner
+        owner = {
+            is_regular_empire = yes
+            is_fallen_empire = no
+        }
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            AND = {
+                has_modifier = penal_colony
+                has_z_expanded_mod = yes
+            }
+        }
+    }
+    convert_to = {
+        building_hive_major_capital
+        building_machine_major_capital
+        building_major_capital
+        building_resort_major_capital
+        building_slave_major_capital
+        building_ancient_control_center
+        building_ancient_palace
+        building_penal_major_capital
+    }
+    allow = {
+        num_pops >= 50
+    }
+    prerequisites = {
+        "tech_galactic_administration"
+    }
+    show_tech_unlock_if = {
+        is_regular_empire = yes
+    }
+    planet_modifier = {
+        job_enforcer_add = 3
+        planet_housing_add = 12
+        planet_amenities_add = 12
+        planet_max_buildings_add = @buildings_t4
+        planet_max_branch_office_buildings_add = 4
+        defense_armies_add = @tier_4_capital_defense_armies
+    }
+    inline_script = {
+        script = "capitals/regular/avb_capitals_together"
+        tier = c3
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b4_minerals
+        }
+        upkeep = {
+            energy = @b4_upkeep
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    is_galactic_custodian = yes
+                }
+                OR = {
+                    is_active_resolution = "resolution_ccrimes_consortium"
+                    is_active_resolution = "resolution_ccrimes_shadows"
+                    is_active_resolution = "resolution_ccrimes_smugglers"
+                    is_active_resolution = "resolution_ccrimes_crisis"
+                    is_active_resolution = "resolution_ccrimes_bobafett"
+                }
+                planet_crime > 10
+            }
+            energy = 5
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    is_galactic_custodian = yes
+                }
+                OR = {
+                    is_active_resolution = "resolution_ccrimes_consortium"
+                    is_active_resolution = "resolution_ccrimes_shadows"
+                    is_active_resolution = "resolution_ccrimes_smugglers"
+                    is_active_resolution = "resolution_ccrimes_crisis"
+                    is_active_resolution = "resolution_ccrimes_bobafett"
+                }
+                planet_crime > 20
+            }
+            energy = 15
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    is_galactic_custodian = yes
+                }
+                OR = {
+                    is_active_resolution = "resolution_ccrimes_consortium"
+                    is_active_resolution = "resolution_ccrimes_shadows"
+                    is_active_resolution = "resolution_ccrimes_smugglers"
+                    is_active_resolution = "resolution_ccrimes_crisis"
+                    is_active_resolution = "resolution_ccrimes_bobafett"
+                }
+                planet_crime > 30
+            }
+            energy = 20
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    is_galactic_custodian = yes
+                }
+                OR = {
+                    is_active_resolution = "resolution_ccrimes_consortium"
+                    is_active_resolution = "resolution_ccrimes_shadows"
+                    is_active_resolution = "resolution_ccrimes_smugglers"
+                    is_active_resolution = "resolution_ccrimes_crisis"
+                    is_active_resolution = "resolution_ccrimes_bobafett"
+                }
+                planet_crime > 40
+            }
+            energy = 25
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    is_galactic_custodian = yes
+                }
+                OR = {
+                    is_active_resolution = "resolution_ccrimes_consortium"
+                    is_active_resolution = "resolution_ccrimes_shadows"
+                    is_active_resolution = "resolution_ccrimes_smugglers"
+                    is_active_resolution = "resolution_ccrimes_crisis"
+                    is_active_resolution = "resolution_ccrimes_bobafett"
+                }
+                planet_crime > 50
+            }
+            energy = 35
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    is_galactic_custodian = yes
+                }
+                OR = {
+                    is_active_resolution = "resolution_ccrimes_consortium"
+                    is_active_resolution = "resolution_ccrimes_shadows"
+                    is_active_resolution = "resolution_ccrimes_smugglers"
+                    is_active_resolution = "resolution_ccrimes_crisis"
+                    is_active_resolution = "resolution_ccrimes_bobafett"
+                }
+                planet_crime > 60
+            }
+            energy = 40
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    is_galactic_custodian = yes
+                }
+                OR = {
+                    is_active_resolution = "resolution_ccrimes_consortium"
+                    is_active_resolution = "resolution_ccrimes_shadows"
+                    is_active_resolution = "resolution_ccrimes_smugglers"
+                    is_active_resolution = "resolution_ccrimes_crisis"
+                    is_active_resolution = "resolution_ccrimes_bobafett"
+                }
+                planet_crime > 70
+            }
+            energy = 45
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    is_galactic_custodian = yes
+                }
+                OR = {
+                    is_active_resolution = "resolution_ccrimes_consortium"
+                    is_active_resolution = "resolution_ccrimes_shadows"
+                    is_active_resolution = "resolution_ccrimes_smugglers"
+                    is_active_resolution = "resolution_ccrimes_crisis"
+                    is_active_resolution = "resolution_ccrimes_bobafett"
+                }
+                planet_crime > 80
+            }
+            energy = 55
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    is_galactic_custodian = yes
+                }
+                OR = {
+                    is_active_resolution = "resolution_ccrimes_consortium"
+                    is_active_resolution = "resolution_ccrimes_shadows"
+                    is_active_resolution = "resolution_ccrimes_smugglers"
+                    is_active_resolution = "resolution_ccrimes_crisis"
+                    is_active_resolution = "resolution_ccrimes_bobafett"
+                }
+                planet_crime > 90
+            }
+            energy = 60
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    is_galactic_custodian = yes
+                }
+                OR = {
+                    is_active_resolution = "resolution_ccrimes_consortium"
+                    is_active_resolution = "resolution_ccrimes_shadows"
+                    is_active_resolution = "resolution_ccrimes_smugglers"
+                    is_active_resolution = "resolution_ccrimes_crisis"
+                    is_active_resolution = "resolution_ccrimes_bobafett"
+                }
+                planet_crime > 100
+            }
+            energy = 65
+        }
+    }
+    upgrades = {
+        building_avb_capital_4
+        building_imperial_capital
+        building_galactic_senate
+        building_grand_dvorets
+        building_just_dvorets
+        building_csenatec
+        building_cgranhq
+        building_cspire
+        building_cfcouncil
+        building_ccathedral
+    }
+}

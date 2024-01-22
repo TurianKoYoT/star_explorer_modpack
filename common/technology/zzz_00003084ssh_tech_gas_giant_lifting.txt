@@ -1,0 +1,76 @@
+ssh_tech_gas_giant_lifting = {
+    cost = 40000
+    area = engineering
+    tier = 4
+    category = {
+        voidcraft
+    }
+    prerequisites = {
+        "ssh_tech_shellworlds"
+        "tech_rare_crystals"
+    }
+    weight = @tier4weight2
+    is_rare = yes
+    modifier = {
+        megastructure_build_speed_mult = 0.05
+    }
+    weight_modifier = {
+        modifier = {
+            factor = @ap_technological_ascendancy_rare_tech
+            has_ascension_perk = ap_technological_ascendancy
+        }
+        modifier = {
+            factor = @federation_perk_factor
+            has_federation = yes
+            federation = {
+                has_federation_perk = rare_tech_boost
+                any_member = {
+                    has_technology = ssh_tech_gas_giant_shellworlds
+                }
+            }
+        }
+        modifier = {
+            factor = 2
+            OR = {
+                has_civic = civic_inwards_perfection
+                has_civic = civic_pompous_purists
+                has_civic = civic_machine_builder
+            }
+        }
+        modifier = {
+            factor = value:tech_weight_likelihood
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_voidcraft
+            }
+        }
+        modifier = {
+            factor = 0
+            has_utopia = no
+        }
+    }
+    ai_weight = {
+        factor = 10
+        modifier = {
+            factor = 1.5
+            has_origin = origin_void_dwellers
+        }
+        modifier = {
+            factor = 5
+            is_materialist = yes
+        }
+        modifier = {
+            factor = 0.5
+            is_spiritualist = yes
+        }
+        modifier = {
+            factor = value:tech_weight_likelihood
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_voidcraft
+            }
+        }
+        modifier = {
+            factor = 0
+            has_utopia = no
+        }
+    }
+}

@@ -1,0 +1,19 @@
+trait_blokkat_blokkimous = {
+    cost = 0
+    leader_potential_add = {
+        always = no
+    }
+    icon = "gfx/interface/icons/traits/trait_blokkat_blokkimous.dds"
+    immortal_leaders = yes
+    councilor_modifier = {
+        category_particles_research_speed_mult = 0.5
+        category_field_manipulation_research_speed_mult = 0.5
+        category_materials_research_speed_mult = 0.5
+    }
+    leader_class = all
+    initial = no
+    randomized = no
+    ai_weight = {
+        weight = 0
+    }
+}

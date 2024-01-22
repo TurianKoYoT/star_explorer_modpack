@@ -1,0 +1,29 @@
+leader_trait_eutab_tactical_genius = {
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = GFX_eutab_leader_trait_tactical_genius
+        RARITY = common
+        COUNCIL = no
+        TIER = none
+    }
+    self_modifier = {
+        species_leader_exp_gain = 0.33
+    }
+    fleet_modifier = {
+        ship_speed_mult = 0.2
+        ship_evasion_mult = 0.05
+        ship_fire_rate_mult = 0.05
+    }
+    army_modifier = {
+        army_morale = 0.2
+        army_damage_mult = 0.1
+    }
+    leader_class = {
+        commander
+    }
+    prerequisites = {
+        "tech_eutab_tactical_intuit"
+    }
+    selectable_weight = @class_trait_weight
+}

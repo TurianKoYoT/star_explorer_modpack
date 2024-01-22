@@ -1,0 +1,19 @@
+leader_trait_admiral_youth = {
+    cost = 0
+    icon = "gfx/interface/icons/traits/trait_youth.dds"
+    requires_traits = {
+        trait_youth
+    }
+    modifier = {
+        ship_armor_regen_add_perc = 0.1
+        ship_hull_regen_add_perc = 0.1
+    }
+    leader_trait = {
+        admiral
+    }
+    leader_class = {
+        admiral
+    }
+    initial = no
+    randomized = no
+}

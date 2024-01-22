@@ -1,0 +1,30 @@
+trait_yanz_universal_adaptability = {
+    cost = 6
+    initial = no
+    randomized = no
+    species_potential_add = {
+        from = {
+            has_technology = tech_yanz_quantum_biology
+        }
+    }
+    potential_crossbreeding_chance = 0.1
+    opposites = {
+        "trait_extremely_adaptive"
+        "trait_adaptive"
+        "trait_nonadaptive"
+        "trait_yanz_extremely_nonadaptive"
+    }
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    sorting_priority = 6
+    icon = "gfx/interface/icons/traits/bio_path/trait_yanz_universal_adaptability.dds"
+    modifier = {
+        leader_lifespan_add = 10
+        pop_environment_tolerance = 0.4
+    }
+    slave_cost = {
+        energy = 600
+    }
+}

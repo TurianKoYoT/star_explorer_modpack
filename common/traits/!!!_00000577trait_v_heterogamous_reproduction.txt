@@ -1,0 +1,31 @@
+trait_v_heterogamous_reproduction = {
+    cost = 1
+    initial = no
+    sapient = no
+    host_has_dlc = "Plantoids Species Pack"
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_v_asexual_reproduction"
+        "trait_clone_soldier_infertile"
+        "trait_clone_soldier_infertile_full_potential"
+        "trait_v_difficult_reproduction"
+        "trait_humanoid_existential_iteroparity"
+        "trait_humanoid_psychological_infertility"
+    }
+    inline_script = "traits/vanilla_opposites_pop_growth"
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+        PRESAPIENT
+    }
+    custom_tooltip = TRAIT_HETEROGAMOUS_REPRODUCTION_EFFECT
+    species_possible_remove = {
+        can_remove_presapient_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    species_possible_merge_add = {
+        always = no
+    }
+}

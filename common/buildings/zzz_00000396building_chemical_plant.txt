@@ -1,0 +1,89 @@
+building_chemical_plant = {
+    base_buildtime = @b2_time
+    icon = building_chemical_plant
+    exempt_from_ai_planet_specialization = no
+    category = manufacturing
+    potential = {
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+            AND = {
+                has_z_expanded_mod = yes
+                has_planet_flag = planetary_station
+            }
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            job_chemist_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_chemist_drone_add = 1
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+        }
+        upkeep = {
+            energy = 3
+        }
+    }
+    prerequisites = {
+        "tech_volatile_motes"
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = job_chemist_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_chemist_drone_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+            exists = owner
+            owner = {
+                is_ai = yes
+                str_force_motes = yes
+            }
+            NOT = {
+                has_building = building_chemical_plant
+            }
+        }
+        modifier = {
+            job_starnet_spice_melange_farmer_add = 2
+            job_starnet_spice_melange_antifarmer_add = -2
+        }
+    }
+    upgrades = {
+        "building_avb_chemical_plant_2"
+    }
+}

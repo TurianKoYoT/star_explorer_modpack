@@ -1,0 +1,34 @@
+tech_stellar_manipulation_1 = {
+    cost = @tier2cost1
+    area = engineering
+    tier = 2
+    is_reverse_engineerable = no
+    category = {
+        materials
+    }
+    weight = @tier2weight2
+    weight_modifier = {
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_materials
+            }
+        }
+    }
+    is_rare = yes
+    is_dangerous = yes
+    prerequisites = {
+    }
+    ai_weight = {
+        factor = 5
+    }
+    potential = {
+        has_ascension_perk = ap_stellar_manipulation
+    }
+    prereqfor_desc = {
+        custom = {
+            title = "ALLOW_PLANETARY_PROJECT_1_TITLE"
+            desc = "ALLOW_PLANETARY_PROJECT_1_DESC"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+trait_ssh_robot_organic_layers = {
+    cost = 3
+    opposites = {
+        "trait_robot_uncanny"
+    }
+    initial = no
+    randomized = no
+    prerequisites = {
+        "ssh_tech_advanced_dna_resequencing"
+    }
+    allowed_archetypes = {
+        ROBOT
+        MACHINE
+    }
+    modifier = {
+        pop_job_amenities_mult = 0.3
+        op_cat_infiltration_difficulty_mult = -0.15
+        op_cat_infiltration_speed_mult = 0.1
+    }
+    slave_cost = {
+        energy = 750
+    }
+}

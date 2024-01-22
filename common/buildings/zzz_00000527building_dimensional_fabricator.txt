@@ -1,0 +1,66 @@
+building_dimensional_fabricator = {
+    can_build = yes
+    can_demolish = yes
+    potential = {
+        custom_tooltip = {
+            exists = owner
+            OR = {
+                owner = {
+                    is_fallen_empire = yes
+                }
+                owner = {
+                    has_country_flag = dimensional_fabricator_can_build
+                }
+                has_planet_flag = fallen_empire_world
+            }
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = ancrel.10004.failtext
+            owner = {
+                check_variable = {
+                    which = dimensional_fabricator_build_count
+                    value >= 1
+                }
+            }
+        }
+    }
+    planet_modifier = {
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            minerals = 200
+            rare_crystals = 20
+            exotic_gases = 20
+            volatile_motes = 20
+            sr_zro = 10
+            nanites = 10
+            sr_dark_matter = 10
+            acot_sr_dark_energy = 10
+            sr_living_metal = 10
+        }
+        upkeep = {
+        }
+    }
+    on_queued = {
+        owner = {
+            subtract_variable = {
+                which = dimensional_fabricator_build_count
+                value = 1
+            }
+        }
+    }
+    on_unqueued = {
+        owner = {
+            change_variable = {
+                which = dimensional_fabricator_build_count
+                value = 1
+            }
+        }
+    }
+    upgrades = {
+        building_ae_dimensional_fabricator
+    }
+}

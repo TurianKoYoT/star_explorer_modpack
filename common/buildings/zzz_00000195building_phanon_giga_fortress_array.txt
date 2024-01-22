@@ -1,0 +1,88 @@
+building_phanon_giga_fortress_array = {
+    base_buildtime = 1200
+    add_to_first_building_slot = yes
+    can_be_ruined = no
+    can_be_disabled = no
+    can_demolish = no
+    can_build = no
+    planetary_ftl_inhibitor = yes
+    category = army
+    position_priority = 100
+    potential = {
+        NOT = {
+            has_global_flag = aot_phanon_content_OFF
+        }
+        exists = owner
+        owner = {
+            has_technology = tech_phanon_giga_fortress
+        }
+    }
+    allow = {
+        has_phanon_capital = yes
+    }
+    upgrades = {
+        building_stellarite_giga_fortress_array
+    }
+    planet_modifier = {
+        planet_amenities_add = 20
+        planet_housing_add = 15
+        planet_stability_add = 15
+    }
+    army_modifier = {
+        army_defense_damage_mult = 2
+        army_defense_health_mult = 2
+        army_defense_morale_mult = 2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        job_phanon_giga_fortress_operator_add = 2
+        job_phanon_giga_fortress_operator_mentat_add = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        job_phanon_giga_fortress_operator_drone_add = 2
+        job_phanon_giga_fortress_operator_mentat_drone_add = 2
+    }
+    country_modifier = {
+        country_naval_cap_add = 400
+        starbase_shipyard_build_speed_mult = 0.2
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            unity = 100
+            influence = 2
+            food = 100
+        }
+        cost = {
+            energy = 50000
+            minerals = 30000
+            aot_sr_runic_power = 10000
+        }
+        upkeep = {
+            energy = 10
+            volatile_motes = 2
+            exotic_gases = 2
+            rare_crystals = 2
+            sr_dark_matter = 5
+            acot_sr_dark_energy = 5
+            aot_sr_runic_power = 5
+        }
+    }
+    prerequisites = {
+        tech_phanon_giga_fortress
+    }
+    ai_weight = {
+        weight = 150000
+    }
+}

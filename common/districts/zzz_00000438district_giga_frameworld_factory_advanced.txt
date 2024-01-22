@@ -1,0 +1,181 @@
+@advanced_cost = 1000
+@advanced_rare_cost = 50
+@advanced_upkeep = 5
+@advanced_rare_upkeep = 1
+@advanced_time = 720
+district_giga_frameworld_factory_advanced = {
+    base_buildtime = @advanced_time
+    icon = district_arcology_civilian_industry
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        exists = from
+        uses_district_set = giga_frameworld
+        has_planet_flag = frameworld_advanced_industrial
+        from = {
+            or = {
+                is_gestalt = no
+                has_valid_civic = civic_machine_servitor
+                country_uses_consumer_goods = yes
+            }
+        }
+        is_voidframe_upgraded = no
+    }
+    potential = {
+        exists = owner
+        uses_district_set = giga_frameworld
+        has_planet_flag = frameworld_advanced_industrial
+        owner = {
+            or = {
+                is_gestalt = no
+                has_valid_civic = civic_machine_servitor
+                country_uses_consumer_goods = yes
+            }
+        }
+        OR = {
+            is_voidframe_upgraded = no
+            AND = {
+                NOR = {
+                    has_building = building_fe_factory
+                    has_building = building_ae_factory
+                    has_building = building_phanon_civilian_factory
+                    has_building = building_stellarite_civilian_factory
+                }
+                is_voidframe_upgraded = yes
+            }
+        }
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_giga_frameworld_factory
+        district_giga_voidframe_factory_dm
+        district_giga_voidframe_factory_de
+        district_giga_voidframe_factory_pe
+        district_giga_voidframe_factory_se
+    }
+    resources = {
+        category = planet_districts_industrial
+        cost = {
+            minerals = @advanced_cost
+            rare_crystals = @advanced_rare_cost
+        }
+        upkeep = {
+            energy = @advanced_upkeep
+            rare_crystals = @advanced_rare_upkeep
+        }
+        upkeep = {
+            trigger = {
+                exists = owner
+                owner = {
+                    has_edict = industrial_maintenance
+                }
+            }
+            energy = 2
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_crafter_empire = yes
+            }
+        }
+        modifier = {
+            planet_max_buildings_add = 0.34
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = no
+            }
+        }
+        modifier = {
+            job_artisan_add = 4
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = yes
+            }
+        }
+        modifier = {
+            job_artificer_add = 4
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_artisan_drone_add = 4
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = no
+            }
+        }
+        text = job_artisan_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = yes
+            }
+        }
+        text = job_artificer_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_artisan_drone_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                has_edict = industrial_maintenance
+            }
+        }
+        modifier = {
+            job_maintenance_drone_add = 1
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                has_edict = industrial_maintenance
+            }
+        }
+        text = job_maintenance_drone_effect_desc
+    }
+    ai_resource_production = {
+        consumer_goods = 10
+        trigger = {
+            always = yes
+        }
+    }
+}

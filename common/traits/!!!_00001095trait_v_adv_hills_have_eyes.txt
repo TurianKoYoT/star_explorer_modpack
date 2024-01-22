@@ -1,0 +1,44 @@
+trait_v_adv_hills_have_eyes = {
+    cost = 2
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_potential_add = {
+        exists = from
+        from = {
+            OR = {
+                has_technology = tech_plantoid_transgenesis
+                has_technology = tech_lithoid_transgenesis
+            }
+        }
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/adv_biological_traits/BIOLOGICAL"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/REP"
+    inline_script = "species_class/ART"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/NECROID"
+    inline_script = "species_class/AQUATIC"
+    inline_script = "species_class/TOX"
+    opposites = {
+        "trait_invasive"
+        "trait_v_hills_have_eyes"
+    }
+    modifier = {
+        army_defense_damage_mult = 0.5
+        army_defense_health_mult = 0.5
+    }
+    custom_tooltip_with_modifiers = TRAIT_HILLS_HAVE_EYES_EFFECT
+    slave_cost = {
+        energy = 1000
+    }
+}

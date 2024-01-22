@@ -1,0 +1,7 @@
+ssh_opinion_mirror_wave_negative = {
+    opinion = {
+        base = -100
+    }
+    monthly = yes
+    decay = 2
+}

@@ -1,0 +1,25 @@
+tech_avb_bureaucratic_4 = {
+    cost = @tier5cost2
+    area = society
+    tier = 5
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_galactic_bureaucracy"
+    }
+    weight = @tier5weight2
+    modifier = {
+        country_edict_fund_add = 20
+    }
+    potential = {
+        is_hive_empire = no
+    }
+    weight_modifier = {
+        factor = 4
+        inline_script = "tech_weights/avb_government_weight"
+    }
+    ai_weight = {
+        factor = 4
+    }
+}

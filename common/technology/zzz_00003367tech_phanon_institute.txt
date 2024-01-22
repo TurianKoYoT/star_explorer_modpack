@@ -1,0 +1,49 @@
+tech_phanon_institute = {
+    area = physics
+    tier = 8
+    cost = @acot_tier8cost3
+    category = {
+        computing
+    }
+    prerequisites = {
+        tech_ae_institute
+        tech_civil_phanon_application
+    }
+    weight = @tier5weight1
+    potential = {
+        NOR = {
+            has_global_flag = aot_phanon_content_OFF
+            is_fallen_empire = yes
+        }
+        has_technology = tech_civil_phanon_application
+        has_technology = tech_ae_institute
+    }
+    weight_modifier = {
+        factor = 1.5
+        modifier = {
+            factor = 0.25
+            NOR = {
+                has_trait_in_council = {
+                    TRAIT = leader_trait_expertise_computing
+                }
+                has_trait_in_council = {
+                    TRAIT = leader_trait_curator
+                }
+            }
+        }
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_computing
+            }
+        }
+    }
+    ai_weight = {
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_computing
+            }
+        }
+    }
+}

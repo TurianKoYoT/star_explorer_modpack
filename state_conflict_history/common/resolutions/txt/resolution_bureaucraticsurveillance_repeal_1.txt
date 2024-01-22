@@ -1,0 +1,93 @@
+@resolution_weight_disliked = 4
+@resolution_cost_t1 = 100
+resolution_bureaucraticsurveillance_repeal_1 = {
+    icon = "GFX_resolution_council_veto"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t1
+        }
+    }
+    target = no
+    fire_and_forget = yes
+    potential = {
+        has_overlord_dlc = yes
+        is_active_resolution = "resolution_bureaucraticsurveillance_administrative_insight"
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = "resolution_already_in_lower_house_session"
+            NOT = {
+                has_global_flag = lh_recent_resolution_bureaucraticsurveillance_repeal_1
+            }
+        }
+    }
+    effect = {
+        galcom_success_effect_repeal = {
+            RESOLUTION = resolution_bureaucraticsurveillance_administrative_insight
+            FLAG = galactic_community_resolution_passed_bureaucraticsurveillance_repeal
+        }
+        hidden_effect = {
+            set_timed_country_flag = {
+                flag = galcom_resolution_passed_anti_totalitarian
+                days = 7200
+            }
+            set_timed_country_flag = {
+                flag = galcom_resolution_passed_anti_supremacist
+                days = 7200
+            }
+            every_galcom_member = {
+                limit = {
+                    is_subject = yes
+                }
+                galcom_downgrade_ethic_modifier_effect = yes
+            }
+        }
+    }
+    fail_effects = {
+        galcom_fail_effects = {
+            FLAG = galactic_community_resolution_failed_bureaucraticsurveillance_repeal
+        }
+    }
+    ai_weight = {
+        base = @resolution_weight_disliked
+        modifier = {
+            factor = 3
+            is_subject = yes
+            desc = galcom_is_subject
+        }
+        modifier = {
+            factor = 0.25
+            is_overlord = yes
+            is_xenophile = no
+            is_egalitarian = no
+            desc = galcom_is_overlord
+        }
+        modifier = {
+            factor = 2
+            is_egalitarian = yes
+            desc = ethic_egalitarian
+        }
+        modifier = {
+            factor = 0.25
+            is_authoritarian = yes
+            desc = ethic_authoritarian
+        }
+        modifier = {
+            factor = 0.5
+            is_xenophobe = yes
+            is_subject = no
+            desc = ethic_xenophobe
+        }
+        modifier = {
+            factor = 2
+            has_civic = civic_feudal_realm
+            desc = civic_feudal_realm
+        }
+        modifier = {
+            factor = 2
+            has_civic = civic_franchising
+            desc = civic_franchising
+        }
+    }
+}

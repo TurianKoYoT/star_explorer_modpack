@@ -1,0 +1,23 @@
+xte_trait_truculent = {
+    cost = -3
+    initial = yes
+    randomized = yes
+    opposites = {
+        "trait_nerve_stapled"
+        "trait_traditional"
+    }
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    potential_crossbreeding_chance = 1
+    modifier = {
+        pop_demotion_time_mult = 0.5
+        planet_jobs_unity_produces_mult = -0.25
+        army_attack_damage_mult = 0.15
+    }
+    custom_tooltip_with_modifiers = xte_added_by_notification
+    slave_cost = {
+        energy = -700
+    }
+}

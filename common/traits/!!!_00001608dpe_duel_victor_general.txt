@@ -1,0 +1,19 @@
+dpe_duel_victor_general = {
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = "GFX_leader_trait_glory_seeker"
+        RARITY = common
+        COUNCIL = no
+        TIER = none
+    }
+    modifier = {
+        army_morale = 0.1
+        army_morale_damage_mult = 0.1
+    }
+    leader_class = {
+        general
+    }
+    initial = no
+    randomized = no
+}

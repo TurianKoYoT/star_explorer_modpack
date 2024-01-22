@@ -1,0 +1,78 @@
+building_enclave_museum = {
+    base_buildtime = @b1_time
+    category = government
+    empire_limit = {
+        base = 1
+    }
+    potential = {
+        exists = owner
+        owner = {
+            has_country_flag = AAA_museum_enclave_building_purchased
+        }
+        NOT = {
+            has_modifier = slave_colony
+        }
+        owner = {
+            OR = {
+                NOT = {
+                    has_ethic = ethic_gestalt_consciousness
+                }
+                has_civic = civic_machine_servitor
+            }
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            has_modifier = slave_colony
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                NOT = {
+                    has_ethic = ethic_gestalt_consciousness
+                }
+            }
+        }
+        modifier = {
+            job_custodian_add = 3
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_civic = civic_machine_servitor
+            }
+        }
+        modifier = {
+            job_AAA_custodian_servitor_drone_add = 3
+        }
+    }
+    resources = {
+        category = AAA_planet_buildings_museums
+        cost = {
+            minerals = 500
+        }
+        upkeep = {
+            energy = 2
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+        }
+        text = job_custodian_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                has_civic = civic_machine_servitor
+            }
+        }
+        text = job_AAA_custodian_servitor_drone_effect_desc
+    }
+}

@@ -1,0 +1,30 @@
+tech_acot_army_hive_5 = {
+    cost = @tier5cost2
+    area = society
+    category = {
+        biology
+    }
+    tier = 5
+    prerequisites = {
+        "tech_acot_army_hive_3"
+    }
+    weight = @tier5weight2
+    potential = {
+        is_hive_empire = yes
+        NOT = {
+            has_global_flag = acot_army_forbidden
+        }
+    }
+    modifier = {
+        army_morale_damage_mult = 1
+    }
+    weight_modifier = {
+        modifier = {
+            factor = @ap_technological_ascendancy_rare_tech
+            has_ascension_perk = ap_technological_ascendancy
+        }
+    }
+    ai_weight = {
+        factor = 3
+    }
+}

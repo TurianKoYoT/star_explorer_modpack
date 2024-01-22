@@ -1,0 +1,34 @@
+trait_v_cyborg_bubble = {
+    cost = 1
+    initial = no
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        can_add_cybernetic_traits = yes
+    }
+    species_possible_remove = {
+        can_remove_cybernetic_traits = yes
+    }
+    opposites = {
+        "trait_v_plague"
+        "trait_v_adv_plague"
+        "trait_v_vector"
+        "trait_v_adv_vector"
+        "trait_v_lithoid_aeroplankton"
+        "trait_v_asbestos_webbing"
+    }
+    randomized = no
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    custom_tooltip_with_modifiers = TRAIT_BUBBLE_EFFECT
+    triggered_planet_growth_habitability_modifier = {
+        pop_environment_tolerance = 0.01
+        mult = planet.value:count_v_cyborg_bubble
+    }
+    triggered_planet_growth_habitability_modifier = {
+        pop_environment_tolerance = 0.0025
+        mult = planet.value:count_v_blooming_b
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

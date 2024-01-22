@@ -1,0 +1,49 @@
+district_giga_alderson_commercial = {
+    base_buildtime = @giga_alderson_district_buildtime
+    is_capped_by_modifier = no
+    icon = district_rw_commercial
+    show_on_uncolonized = {
+        uses_district_set = giga_alderson_gaia
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    potential = {
+        uses_district_set = giga_alderson_gaia
+        exists = owner
+        owner = {
+            is_gestalt = no
+        }
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_giga_alderson_generator
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = @giga_alderson_cost
+            rare_crystals = @giga_alderson_cost_sr
+        }
+        upkeep = {
+            energy = @giga_alderson_maintenance
+            rare_crystals = @giga_alderson_maintenance_sr
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            planet_housing_add = @alderson_auto_housing
+            job_trader_add = @alderson_auto_jobs
+        }
+    }
+    triggered_desc = {
+        text = job_trader_effect_desc
+    }
+}

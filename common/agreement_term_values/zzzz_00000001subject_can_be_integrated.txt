@@ -1,0 +1,134 @@
+subject_can_be_integrated = {
+    term = subject_integration
+    loyalty_change = -50
+    ai_acceptance = {
+        overlord = 300
+        subject = -250
+    }
+    activate_effect = {
+        set_rule_can_subject_be_integrated = yes
+    }
+    target_modifier = {
+        monthly_loyalty = -4
+    }
+    possible = {
+        custom_tooltip = {
+            fail_text = not_allowed_for_comvas
+            NOT = {
+                agreement_preset = preset_comvas
+            }
+        }
+        custom_tooltip = {
+            fail_text = not_allowed_for_bulwark
+            NOT = {
+                agreement_preset = preset_bulwark
+            }
+        }
+        custom_tooltip = {
+            fail_text = not_allowed_for_scholarium
+            NOT = {
+                agreement_preset = preset_scholarium
+            }
+        }
+        custom_tooltip = {
+            fail_text = not_allowed_for_prospectorium
+            NOT = {
+                agreement_preset = preset_prospectorium
+            }
+        }
+        custom_tooltip = {
+            fail_text = not_allowed_for_tributary
+            NOT = {
+                agreement_preset = preset_tributary
+            }
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_global_flag = gf_veru_activated
+                }
+            }
+            custom_tooltip = {
+                fail_text = not_allowed_for_subsidiary
+                NOT = {
+                    agreement_preset = preset_subsidiary
+                }
+            }
+            custom_tooltip = {
+                fail_text = not_allowed_for_satrapy
+                NOT = {
+                    agreement_preset = preset_relic_satrapy
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = not_allowed_for_galcom_resolution
+            not_allowed_for_galcom_resolution_trigger = {
+                RESOLUTION = resolution_intergalacticdirective_ensured_sovereignty
+            }
+        }
+        custom_tooltip = {
+            fail_text = not_allowed_for_galcom_resolution
+            not_allowed_for_galcom_resolution_trigger = {
+                RESOLUTION = resolution_intergalacticdirective_a_voice_for_all
+            }
+        }
+        custom_tooltip = {
+            fail_text = pki_only_tier_3_subject_integration
+            NAND = {
+                OR = {
+                    agreement_preset = preset_katzen
+                    agreement_preset = preset_katzen_gestalt
+                }
+                OR = {
+                    specialist_tier = 1
+                    specialist_tier = 2
+                }
+            }
+        }
+        if = {
+            limit = {
+                has_global_flag = gf_veru_activated
+            }
+            custom_tooltip = {
+                fail_text = not_allowed_for_megacorp
+                owner = {
+                    is_megacorp = no
+                }
+            }
+            custom_tooltip = {
+                fail_text = not_allowed_for_auto_state
+                NOT = {
+                    agreement_preset = preset_auto_state
+                }
+            }
+            custom_tooltip = {
+                fail_text = not_allowed_for_ver_devolved
+                NOT = {
+                    agreement_preset = preset_ver_devolved
+                }
+            }
+            custom_tooltip = {
+                fail_text = not_allowed_for_ver_organic
+                NOT = {
+                    agreement_preset = preset_ver_organic
+                }
+            }
+            custom_tooltip = {
+                fail_text = not_allowed_for_ver_foederatus
+                NOT = {
+                    agreement_preset = preset_ver_foederatus
+                }
+            }
+            custom_tooltip = {
+                fail_text = not_allowed_for_ver_condo
+                NOT = {
+                    agreement_preset = preset_ver_condo
+                }
+            }
+        }
+    }
+    potential = {
+        is_imperial_province_agreement = no
+    }
+}

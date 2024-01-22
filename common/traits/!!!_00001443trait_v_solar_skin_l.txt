@@ -1,0 +1,36 @@
+trait_v_solar_skin_l = {
+    cost = 1
+    initial = no
+    species_potential_add = {
+        can_add_cybernetic_traits = yes
+    }
+    species_possible_remove = {
+        can_remove_cybernetic_traits = yes
+    }
+    randomized = no
+    icon = "gfx/interface/icons/traits/trait_v_solar_panels.dds"
+    host_has_dlc = "Plantoids Species Pack"
+    inline_script = "allowed_archetypes/LITHOID"
+    opposites = {
+        "trait_v_cyborg_stealth"
+        "trait_v_chem_skin"
+        "trait_v_solar_skin_b"
+        "trait_plantoid_phototrophic"
+        "trait_plantoid_radiotrophic"
+        "trait_harvested_radiotrophic"
+        "trait_lithoid_radiotrophic"
+        "trait_voidling"
+        "trait_cave_dweller"
+        "trait_v_lithotrophic"
+        "trait_v_kleptoplasty"
+        "trait_v_hematophage"
+        "trait_v_cyborg_exotic_augments"
+        "trait_v_active_camouflage"
+        "trait_v_adv_active_camouflage"
+        "trait_v_overgrown"
+    }
+    custom_tooltip_with_modifiers = TRAIT_LITHOID_PHOTOTROPHIC_EFFECT
+    slave_cost = {
+        energy = 750
+    }
+}

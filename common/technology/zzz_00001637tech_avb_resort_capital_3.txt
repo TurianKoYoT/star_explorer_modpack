@@ -1,0 +1,44 @@
+tech_avb_resort_capital_3 = {
+    cost = @tier5cost3
+    area = society
+    tier = 5
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_resort_colonies"
+        "tech_avb_capital_4"
+    }
+    weight = @tier5weight3
+    gateway = capital
+    weight_modifier = {
+        factor = 4
+        modifier = {
+            factor = 2
+            is_xenophile = yes
+        }
+        modifier = {
+            factor = 2.5
+            is_fanatic_xenophile = yes
+        }
+    }
+    ai_weight = {
+        factor = @capital_tech_ai_factor
+        modifier = {
+            factor = 0
+            NOT = {
+                any_owned_planet = {
+                    has_modifier = resort_colony
+                }
+            }
+        }
+        modifier = {
+            factor = 2
+            is_xenophile = yes
+        }
+        modifier = {
+            factor = 2.5
+            is_fanatic_xenophile = yes
+        }
+    }
+}

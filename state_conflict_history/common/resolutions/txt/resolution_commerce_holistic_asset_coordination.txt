@@ -1,0 +1,81 @@
+@resolution_weight_unpopular = 5
+@resolution_cost_t4 = 250
+@resolution_flag_timer = 360
+resolution_commerce_holistic_asset_coordination = {
+    icon = "GFX_resolution_galactic_commerce"
+    potential = {
+        has_federations_dlc = yes
+    }
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t4
+        }
+    }
+    target = no
+    level = 4
+    modifier = {
+        resolution_commerce_buzzword_standardization = 1
+        resolution_commerce_leveraged_privateering = 1
+        resolution_commerce_underdeveloped_system_utilization = 1
+        resolution_commerce_holistic_asset_coordination = 1
+    }
+    effect = {
+        if = {
+            limit = {
+                has_global_flag = starbase_expanded_installed
+            }
+            custom_tooltip = resolution_commerce_holistic_asset_coordination_tooltip
+        }
+        hidden_effect = {
+            set_global_flag = galactic_community_resolution_passed
+            set_timed_country_flag = {
+                flag = galactic_community_resolution_passed_commerce
+                days = @resolution_flag_timer
+            }
+            add_modifier = {
+                modifier = resolution_passed_diplomatic_weight
+                days = 2200
+            }
+        }
+    }
+    fail_effects = {
+        hidden_effect = {
+            set_timed_country_flag = {
+                flag = galactic_community_resolution_failed_commerce
+                days = @resolution_flag_timer
+            }
+            add_modifier = {
+                modifier = resolution_failed_diplomatic_weight
+                days = 2200
+            }
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = "resolution_already_in_lower_house_session"
+            NOT = {
+                has_global_flag = lh_recent_resolution_commerce_holistic_asset_coordination
+            }
+        }
+        is_active_resolution = "resolution_commerce_underdeveloped_system_utilization"
+    }
+    ai_weight = {
+        base = @resolution_weight_unpopular
+        modifier = {
+            factor = 2
+            is_megacorp = yes
+            desc = gov_megacorporation
+        }
+        modifier = {
+            factor = 2
+            has_valid_civic = civic_corporate_dominion
+            desc = civic_corporate_dominion
+        }
+        modifier = {
+            factor = 0.1
+            is_gestalt = yes
+            desc = ethic_gestalt_consciousness
+        }
+    }
+}

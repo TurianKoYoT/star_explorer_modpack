@@ -1,0 +1,38 @@
+building_stellarite_sky_dome = {
+    base_buildtime = 900
+    can_build = no
+    category = amenity
+    prerequisites = {
+        "tech_stellarite_sky_dome"
+    }
+    potential = {
+        exists = owner
+        owner = {
+            has_technology = tech_stellarite_sky_dome
+        }
+    }
+    allow = {
+        has_stellarite_capital = yes
+    }
+    planet_modifier = {
+        planet_housing_add = @auto_housing_se
+        planet_amenities_add = @auto_amenities_se
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 5000
+            minerals = 5000
+            acot_sr_stellarite = 750
+        }
+        upkeep = {
+            energy = 200
+            acot_sr_stellarite = 40
+        }
+    }
+    upgrades = {
+    }
+    ai_weight = {
+        weight = 5
+    }
+}

@@ -1,0 +1,305 @@
+@resolution_weight_unpopular = 5
+@resolution_cost_t3 = 200
+resolution_galacticreforms_unseat_custodian = {
+    icon = "GFX_resolution_end_custodianship"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t3
+        }
+    }
+    target = yes
+    harmful = yes
+    valid_target = {
+        is_galactic_custodian = yes
+    }
+    modifier = {
+    }
+    effect = {
+        custom_tooltip = resolution_galacticreforms_unseat_custodian_tooltip
+        hidden_effect = {
+            if = {
+                limit = {
+                    is_active_resolution = "resolution_custodian_perpetual_custodianship"
+                }
+                cancel_resolution = "resolution_custodian_perpetual_custodianship"
+            }
+            country_event = {
+                id = custodian.16
+            }
+        }
+    }
+    fail_effects = {
+    }
+    potential = {
+        is_galactic_custodian = no
+    }
+    active = {
+        has_galactic_custodian = yes
+    }
+    ai_weight = {
+        base = @resolution_weight_unpopular
+        modifier = {
+            factor = 1.6
+            is_xenophobe = yes
+            desc = ethic_xenophobe
+            NOT = {
+                any_neighbor_country = {
+                    is_crisis_faction = yes
+                }
+            }
+        }
+        modifier = {
+            factor = 0.2
+            any_country = {
+                is_crisis_faction = yes
+            }
+            desc = gal_com_someone_is_revealed_crisis
+        }
+        modifier = {
+            factor = 0.2
+            any_playable_country = {
+                has_been_declared_crisis = yes
+            }
+            desc = gal_com_someone_declared_crisis
+        }
+        modifier = {
+            factor = 0.2
+            has_global_flag = gray_goo_crisis_active
+            desc = gal_com_ongoing_grey_goo_crisis
+        }
+        modifier = {
+            factor = 0.2
+            has_global_flag = marauder_crisis_ongoing
+            desc = gal_com_ongoing_great_khan_crisis
+        }
+        modifier = {
+            factor = 0.2
+            any_neighbor_country = {
+                is_crisis_faction = yes
+            }
+            desc = gal_com_neighboring_crisis_empire
+        }
+        modifier = {
+            factor = 0.2
+            any_neighbor_country = {
+                is_crisis_faction = yes
+            }
+            desc = gal_com_neighboring_crisis_empire
+        }
+        modifier = {
+            factor = 0.1
+            has_crisis_stage_2 = yes
+            desc = gal_com_crisis_stage_2
+        }
+        modifier = {
+            factor = 0
+            has_crisis_stage_3 = yes
+            desc = gal_com_crisis_stage_3
+        }
+        modifier = {
+            factor = 0
+            has_crisis_stage_4 = yes
+            desc = gal_com_crisis_stage_4
+        }
+        modifier = {
+            factor = 0
+            any_playable_country = {
+                has_country_flag = crisis_sphere_revealed
+            }
+            desc = gal_com_crisis_sphere_revealed
+        }
+        modifier = {
+            factor = 20
+            has_ascension_perk = ap_become_the_crisis
+            desc = gal_com_we_have_crisis_perk
+        }
+        modifier = {
+            factor = 0
+            is_galactic_custodian = yes
+            desc = gal_com_is_the_custodian
+        }
+        modifier = {
+            factor = 20
+            is_subject = yes
+            overlord = {
+                OR = {
+                    is_country_type = fallen_empire
+                    is_country_type = awakened_fallen_empire
+                }
+            }
+            desc = gal_com_subject_of_fallen_empire
+        }
+        modifier = {
+            factor = 20
+            is_rival = from
+            desc = gal_com_target_is_rival
+        }
+        modifier = {
+            factor = 5
+            is_at_war_with = from
+            desc = gal_com_target_is_rival
+        }
+        modifier = {
+            factor = 20
+            desc = gal_com_custodian_threat
+            from = {
+                has_country_flag = tried_to_become_emperor
+            }
+            OR = {
+                is_egalitarian = yes
+                is_xenophobe = yes
+                is_xenophobic_isolationists = yes
+                is_civic_cutthroat_politics = yes
+                is_civic_machine_servitor = yes
+            }
+            is_authoritarian = no
+            is_civic_authoritarian = no
+        }
+        modifier = {
+            factor = 10
+            desc = gal_com_custodian_threat
+            from = {
+                has_country_flag = tried_to_become_emperor
+            }
+            NOR = {
+                is_egalitarian = yes
+                is_xenophobe = yes
+                is_xenophobic_isolationists = yes
+                is_authoritarian = yes
+                is_civic_authoritarian = yes
+                is_civic_cutthroat_politics = yes
+                is_civic_machine_servitor = yes
+            }
+        }
+        modifier = {
+            factor = 3
+            desc = gal_com_custodian_threat
+            from = {
+                has_country_flag = tried_to_become_emperor
+            }
+            has_galactic_republic = yes
+            is_authoritarian = no
+            is_civic_authoritarian = no
+        }
+        modifier = {
+            factor = 0.2
+            any_country = {
+                is_country_type = awakened_fallen_empire
+            }
+            desc = gal_com_exists_awakened_fallen_empire
+        }
+        modifier = {
+            factor = 0.2
+            has_global_flag = war_in_heaven_ongoing
+            desc = gal_com_ongoing_war_in_heaven
+        }
+        modifier = {
+            factor = 3
+            is_xenophobic_isolationists = yes
+            desc = gal_com_isolationist_civic
+        }
+        modifier = {
+            factor = 2
+            is_xenophobe = yes
+            desc = ethic_xenophobe
+        }
+        modifier = {
+            factor = 2
+            is_civic_cutthroat_politics = yes
+            desc = gal_com_cutthroat_civic
+            is_galactic_custodian = no
+        }
+        modifier = {
+            factor = 0.5
+            is_civic_machine_servitor = yes
+            desc = civic_machine_servitor
+        }
+        modifier = {
+            factor = 0.25
+            is_civic_diplomatic_corps = yes
+            desc = gal_com_diplo_civic
+        }
+        modifier = {
+            factor = 0.5
+            from = {
+                is_galactic_community_member = yes
+            }
+            opinion_level = {
+                who = from
+                level > neutral
+            }
+            NOT = {
+                opinion_level = {
+                    who = from
+                    level > good
+                }
+            }
+            desc = good_opinion
+        }
+        modifier = {
+            factor = 0
+            from = {
+                is_galactic_community_member = yes
+            }
+            opinion_level = {
+                who = from
+                level > good
+            }
+            desc = excellent_opinion
+        }
+        modifier = {
+            factor = 1.25
+            from = {
+                is_in_breach_of_any = yes
+            }
+            desc = in_breach_eu
+        }
+        modifier = {
+            factor = 1.75
+            from = {
+                is_galactic_community_member = yes
+            }
+            opinion_level = {
+                who = from
+                level < neutral
+            }
+            NOT = {
+                is_rival = from
+            }
+            NOT = {
+                opinion_level = {
+                    who = from
+                    level < poor
+                }
+            }
+            desc = bad_opinion
+        }
+        modifier = {
+            factor = 3
+            from = {
+                is_galactic_community_member = yes
+            }
+            NOT = {
+                is_rival = from
+            }
+            opinion_level = {
+                who = from
+                level < poor
+            }
+            desc = terrible_opinion
+        }
+        modifier = {
+            factor = 1.25
+            is_active_resolution = resolution_custodian_perpetual_custodianship
+            is_egalitarian = no
+            desc = infinite_custodianship_eu
+        }
+        modifier = {
+            factor = 2
+            is_active_resolution = resolution_custodian_perpetual_custodianship
+            is_egalitarian = yes
+            desc = infinite_custodianship_eu
+        }
+    }
+}

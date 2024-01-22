@@ -1,0 +1,26 @@
+trait_v_sickly = {
+    cost = -3
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    opposites = {
+        "trait_v_hale"
+        "trait_v_mayfly"
+        "trait_v_adv_mayfly"
+        "trait_v_biological_immortality"
+        "trait_v_adv_biological_immortality"
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    modifier = {
+        leader_lifespan_mult = -0.2
+    }
+    slave_cost = {
+        energy = -3000
+    }
+}

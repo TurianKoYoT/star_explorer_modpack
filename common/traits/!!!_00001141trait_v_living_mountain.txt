@@ -1,0 +1,34 @@
+trait_v_living_mountain = {
+    cost = 1
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    species_possible_remove = {
+        has_v_mobility_enabler = no
+    }
+    potential_crossbreeding_chance = 0
+    opposites = {
+        "trait_invasive"
+        "trait_nomadic"
+        "trait_sedentary"
+        "trait_v_elytra"
+        "trait_v_flying"
+        "trait_clone_soldier_infertile"
+        "trait_clone_soldier_infertile_full_potential"
+        "trait_vat_grown"
+        "trait_v_mycorrhizal_a"
+        "trait_v_mycorrhizal_b"
+        "trait_v_rooted"
+        "trait_v_vein_network"
+        "trait_v_vein_link"
+    }
+    inline_script = "allowed_archetypes/LITHOID"
+    triggered_pop_modifier = {
+        planet_pops_organics_minerals_upkeep_mult = -0.01
+        mult = planet.value:count_v_planet_size
+    }
+    custom_tooltip = TRAIT_LIVING_MOUNTAIN_EFFECT
+    slave_cost = {
+        energy = -1000
+    }
+}

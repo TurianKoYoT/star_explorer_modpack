@@ -1,0 +1,56 @@
+trait_v_competetive = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    species_possible_merge_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    species_possible_remove = {
+        OR = {
+            can_remove_beneficial_genetic_traits = yes
+            AND = {
+                exists = from
+                from = {
+                    is_gestalt = yes
+                }
+            }
+        }
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_hive_mind"
+        "trait_invasive"
+        "trait_v_organizational"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    allowed_ethics = {
+        ethic_egalitarian
+        ethic_fanatic_egalitarian
+    }
+    valid_for_all_ethics = no
+    custom_tooltip_with_modifiers = TRAIT_COMPETETIVE_EFFECT
+    modifier = {
+        leaders_cost_mult = -0.25
+        leaders_upkeep_mult = -0.25
+        pop_ethic_egalitarian_attraction_mult = 0.1
+    }
+    triggered_pop_modifier = {
+        potential = {
+            has_ethic = ethic_egalitarian
+        }
+        planet_jobs_produces_mult = 0.05
+        pop_political_power = 0.1
+    }
+    slave_cost = {
+        energy = 500
+    }
+}

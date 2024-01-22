@@ -1,0 +1,43 @@
+GT_large_weapon_damage_mult = {
+    cost = @tier3cost1
+    area = physics
+    tier = 3
+    category = {
+        particles
+    }
+    prerequisites = {
+        "tech_antimatter_power"
+    }
+    weight = @tier3weight1
+    modifier = {
+        shipclass_starbase_damage_mult = 0.25
+        shipclass_military_station_damage_mult = 0.25
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            num_researched_techs_of_tier = {
+                tier = 3
+                value > 8
+            }
+        }
+        modifier = {
+            factor = 1.25
+            has_ethic = ethic_militarist
+        }
+        modifier = {
+            factor = 1.5
+            has_ethic = ethic_fanatic_militarist
+        }
+    }
+    ai_weight = {
+        modifier = {
+            factor = 1.25
+            has_ethic = ethic_militarist
+        }
+        modifier = {
+            factor = 1.5
+            has_ethic = ethic_fanatic_militarist
+        }
+    }
+}

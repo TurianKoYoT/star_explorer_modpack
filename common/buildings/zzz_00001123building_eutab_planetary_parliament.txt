@@ -1,0 +1,67 @@
+building_eutab_planetary_parliament = {
+    base_buildtime = @b2_time
+    can_build = no
+    category = government
+    potential = {
+        exists = owner
+        owner = {
+            is_egalitarian = yes
+        }
+    }
+    allow = {
+        has_upgraded_capital = yes
+    }
+    planet_modifier = {
+        job_bureaucrat_add = 2
+        job_bureaucrat_per_pop = 0.05
+        planet_jobs_unity_produces_mult = 0.15
+        planet_stability_add = 5
+        planet_max_buildings_add = 1
+    }
+    inline_script = "buildings/eutab_dev_structures_modifiers"
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            rare_crystals = 40
+        }
+        upkeep = {
+            energy = @b2_upkeep
+            rare_crystals = @b2_rare_upkeep
+        }
+        produces = {
+            trigger = {
+                exists = owner
+                owner = {
+                    has_technology = tech_eutab_dd_implants
+                }
+            }
+            unity = 2
+            multiplier = trigger:num_pops
+        }
+    }
+    triggered_desc = {
+        text = job_bureaucrat_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                has_valid_civic = civic_parliamentary_system
+            }
+        }
+        text = job_clerk_effect_desc
+    }
+    prerequisites = {
+        "tech_eutab_planetary_parliament"
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            is_egalitarian = no
+        }
+    }
+    convert_to = {
+        building_eutab_dev_district
+    }
+}

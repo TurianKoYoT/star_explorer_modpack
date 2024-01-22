@@ -1,0 +1,20 @@
+trait_ult_reinforced_exoskeleton = {
+    cost = 1
+    potential_crossbreeding_chance = 1
+    initial = no
+    randomized = no
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_ult_nano_drone_enhance
+        }
+    }
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    modifier = {
+        army_health = 0.5
+        pop_environment_tolerance = 0.05
+    }
+}

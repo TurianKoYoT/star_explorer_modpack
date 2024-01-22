@@ -1,0 +1,30 @@
+xte_trait_lazy = {
+    cost = -1
+    initial = yes
+    randomized = yes
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    opposites = {
+        "trait_nerve_stapled"
+        "trait_syncretic_proles"
+        "trait_industrious"
+    }
+    potential_crossbreeding_chance = 1
+    modifier = {
+        planet_jobs_minerals_produces_mult = -0.1
+    }
+    custom_tooltip_with_modifiers = xte_added_by_notification
+    slave_cost = {
+        energy = -150
+    }
+    assembly_score = {
+        modifier = {
+            add = -1
+            from = {
+                has_mining_designation = yes
+            }
+        }
+    }
+}

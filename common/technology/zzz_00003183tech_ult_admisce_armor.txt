@@ -1,0 +1,15 @@
+tech_ult_admisce_armor = {
+    area = engineering
+    cost = 30000
+    tier = 4
+    category = {
+        materials
+    }
+    is_rare = yes
+    is_reverse_engineerable = no
+    prerequisites = {
+        "tech_ult_ultra_compress"
+        "tech_ship_armor_5"
+    }
+    weight = 20
+}

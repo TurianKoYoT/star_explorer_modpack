@@ -1,0 +1,25 @@
+tech_eutab_failsafe_alert = {
+    cost = @tier2cost3
+    area = engineering
+    tier = 2
+    category = {
+        materials
+    }
+    prerequisites = {
+        "tech_galactic_ambitions"
+    }
+    weight = @tier2weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_pacifist = yes
+        has_ascension_perk = ap_galactic_contender
+        OR = {
+            has_ascension_perk = ap_defender_of_the_galaxy
+            has_ascension_perk = ap_galactic_force_projection
+        }
+    }
+    gateway = eu_contender
+    modifier = {
+        planet_sensor_range_add = 2
+    }
+}

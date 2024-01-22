@@ -1,0 +1,8 @@
+opinion_fallen_empire_remnant_contact = {
+    opinion = {
+        base = -40
+    }
+    decay = {
+        base = 2
+    }
+}

@@ -1,0 +1,52 @@
+building_stellarite_nano_forge = {
+    base_buildtime = 900
+    can_demolish = yes
+    can_build = no
+    category = manufacturing
+    prerequisites = {
+        "tech_stellarite_nano_forge"
+    }
+    potential = {
+        exists = owner
+        owner = {
+            has_technology = tech_stellarite_nano_forge
+        }
+    }
+    allow = {
+        has_stellarite_capital = yes
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 5000
+            minerals = 5000
+            acot_sr_stellarite = 1000
+        }
+        produces = {
+            alloys = @auto_alloy_se
+        }
+        upkeep = {
+            acot_sr_stellarite = 20
+        }
+    }
+    upgrades = {
+    }
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 5
+            owner = {
+                has_monthly_income = {
+                    resource = alloys
+                    value < 30
+                }
+            }
+        }
+    }
+    ai_resource_production = {
+        alloys = 100
+        trigger = {
+            always = yes
+        }
+    }
+}

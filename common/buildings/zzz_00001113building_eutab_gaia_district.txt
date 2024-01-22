@@ -1,0 +1,69 @@
+building_eutab_gaia_district = {
+    base_buildtime = @b2_time
+    can_build = no
+    category = amenity
+    potential = {
+        NOR = {
+            is_planet_class = pc_habitat
+            has_modifier = slave_colony
+        }
+        exists = owner
+        owner = {
+            is_regular_empire = yes
+            NOT = {
+                has_valid_civic = civic_shared_burden
+            }
+        }
+    }
+    allow = {
+        has_upgraded_capital = yes
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            rare_crystals = @b2_rare_cost
+        }
+        upkeep = {
+            energy = @b2_upkeep
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 9
+        planet_amenities_add = 15
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_active_tradition = tr_domination_imperious_architecture
+            }
+        }
+        planet_housing_add = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        planet_housing_add = 1
+        multiplier = modifier:eutab_gaia_district_housing_add
+    }
+    prerequisites = {
+        "tech_eutab_gaia_district"
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_regular_empire = no
+                has_valid_civic = civic_shared_burden
+            }
+        }
+        has_modifier = slave_colony
+    }
+    convert_to = {
+        building_drone_megastorage
+        building_expanded_warren
+        building_communal_housing_large
+    }
+}

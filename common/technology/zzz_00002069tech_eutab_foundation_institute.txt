@@ -1,0 +1,45 @@
+tech_eutab_foundation_institute = {
+    cost = @tier3cost3
+    area = physics
+    tier = 3
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_global_research_initiative"
+    }
+    weight = @tier3weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_gestalt = no
+        has_ascension_perk = ap_technological_ascendancy
+        has_tradition = tr_discovery_finish
+    }
+    modifier = {
+        num_tech_alternatives_add = 1
+    }
+    prereqfor_desc = {
+        custom = {
+            title = EUTAB_INSTITUTE_UPGRADE_TITLE
+            desc = eutab_not_independant_building
+        }
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0.75
+            NOT = {
+                has_trait_in_council = {
+                    TRAIT = leader_trait_expertise_particles
+                }
+            }
+        }
+        modifier = {
+            factor = 2
+            has_ethic = ethic_materialist
+        }
+        modifier = {
+            factor = 3
+            has_ethic = ethic_fanatic_materialist
+        }
+    }
+}

@@ -1,0 +1,21 @@
+tech_emex_mineral_composition_upgrade = {
+    cost = @tier3cost1
+    area = engineering
+    tier = 3
+    category = {
+        industry
+    }
+    prerequisites = {
+    }
+    weight = @tier3weight1
+    potential = {
+        has_valid_civic = civic_machine_mineral_compositions
+    }
+    modifier = {
+        planet_jobs_minerals_produces_mult = 0.15
+        description = tech_emex_mineral_composition_upgrade_tt
+    }
+    weight_modifier = {
+        factor = 1
+    }
+}

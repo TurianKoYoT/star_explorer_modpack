@@ -1,0 +1,25 @@
+trait_v_nacre_shell = {
+    cost = 2
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    opposites = {
+        "trait_invasive"
+        "trait_v_adv_nacre_shell"
+        "trait_v_active_camouflage"
+        "trait_v_adv_active_camouflage"
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/AQUATIC"
+    modifier = {
+        army_health = 1
+    }
+    slave_cost = {
+        energy = 2000
+    }
+}

@@ -1,0 +1,168 @@
+building_avb_production_center_2 = {
+    base_buildtime = @avb_b4_time
+    can_build = no
+    category = manufacturing
+    potential = {
+        exists = owner
+        owner = {
+            is_gestalt = yes
+        }
+        OR = {
+            owner = {
+                is_ai = no
+            }
+            has_any_industry_district = yes
+        }
+        NOT = {
+            has_modifier = crucible_colony
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            owner = {
+                is_gestalt = no
+            }
+            AND = {
+                owner = {
+                    is_ai = yes
+                }
+                has_any_industry_district = no
+            }
+            has_modifier = crucible_colony
+        }
+    }
+    allow = {
+        has_fully_upgraded_capital = yes
+        OR = {
+            owner = {
+                is_ai = no
+            }
+            planet_resource_compare = {
+                resource = alloys
+                value > 40
+            }
+            planet_resource_compare = {
+                resource = consumer_goods
+                value > 80
+            }
+            has_designation = col_foundry
+            has_designation = col_factory
+            has_designation = col_ecu_foundry
+            has_designation = col_mac_foundry
+            has_designation = col_habitat_factory
+            has_designation = col_habitat_foundry
+        }
+    }
+    planet_modifier = {
+        planet_metallurgists_produces_mult = 0.3
+        planet_artisans_produces_mult = 0.3
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_b4_minerals
+            volatile_motes = 50
+            rare_crystals = 50
+        }
+        upkeep = {
+            energy = @avb_b4_upkeep
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        job_alloy_drone_add = 3
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        job_fabricator_add = 2
+    }
+    prerequisites = {
+        "tech_avb_global_production_strategy_2"
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        text = job_alloy_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        text = job_fabricator_effect_desc
+    }
+    show_tech_unlock_if = {
+        is_gestalt = yes
+    }
+    ai_resource_production = {
+        trigger = {
+            always = yes
+        }
+        alloys = 3
+    }
+    ai_resource_production = {
+        trigger = {
+            owner = {
+                country_uses_consumer_goods = yes
+            }
+        }
+        consumer_goods = 6
+    }
+    ai_resource_production = {
+        alloys = 3
+        trigger = {
+            planet_resource_compare = {
+                resource = alloys
+                value >= 20
+                type = produces
+            }
+        }
+    }
+    ai_resource_production = {
+        alloys = 3
+        trigger = {
+            planet_resource_compare = {
+                resource = alloys
+                value >= 40
+                type = produces
+            }
+        }
+    }
+    ai_resource_production = {
+        consumer_goods = 5
+        trigger = {
+            planet_resource_compare = {
+                resource = consumer_goods
+                value >= 33
+                type = produces
+            }
+        }
+    }
+    ai_resource_production = {
+        consumer_goods = 5
+        trigger = {
+            planet_resource_compare = {
+                resource = consumer_goods
+                value >= 66
+                type = produces
+            }
+        }
+    }
+}

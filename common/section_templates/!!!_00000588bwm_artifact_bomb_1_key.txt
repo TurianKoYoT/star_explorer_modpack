@@ -1,0 +1,9 @@
+ship_section_template = {
+    key = "bwm_artifact_bomb_1_key"
+    ship_size = bwm_artifact_bomb_1
+    fits_on_slot = mid
+    entity = "bwm_artifact_bomb_1_hull_entity"
+    icon = "GFX_ship_part_core_mid"
+    large_utility_slots = 5
+    aux_utility_slots = 1
+}

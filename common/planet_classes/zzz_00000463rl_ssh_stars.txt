@@ -1,0 +1,15 @@
+random_list = {
+    name = "rl_ssh_stars"
+    planets = {
+        "pc_black_hole"
+        "pc_a_star"
+        "pc_b_star"
+        "pc_f_star"
+        "pc_g_star"
+        "pc_t_star"
+        "pc_k_star"
+        "pc_m_star"
+        "pc_neutron_star"
+        "pc_pulsar"
+    }
+}

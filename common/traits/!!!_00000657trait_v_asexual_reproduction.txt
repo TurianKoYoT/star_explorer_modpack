@@ -1,0 +1,61 @@
+trait_v_asexual_reproduction = {
+    cost = -2
+    host_has_dlc = "Plantoids Species Pack"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_clone_soldier_infertile"
+        "trait_clone_soldier_infertile_full_potential"
+        "trait_necrophage"
+        "trait_rapid_breeders"
+        "trait_slow_breeders"
+        "trait_rapid_breeders_lithoid"
+        "trait_fertile"
+        "trait_preplanned_growth"
+        "trait_incubator"
+        "trait_humanoid_existential_iteroparity"
+        "trait_humanoid_psychological_infertility"
+        "trait_v_strobilation"
+        "trait_plantoid_budding"
+        "trait_lithoid_budding"
+        "trait_advanced_budding"
+        "trait_v_difficult_reproduction"
+        "trait_v_edc_sensitive"
+        "trait_v_lithoid_edc_sensitive"
+        "trait_v_brood_parasite"
+        "trait_v_adv_brood_parasite"
+        "trait_v_nectaries"
+        "trait_v_adv_nectaries"
+        "trait_v_mycorrhizal_a"
+        "trait_v_adv_mycorrhizal_a"
+        "trait_v_mycorrhizal_b"
+        "trait_v_adv_mycorrhizal_b"
+        "trait_v_pseudocopulative"
+        "trait_v_adv_pseudocopulative"
+        "trait_v_aeroplankton"
+        "trait_v_adv_aeroplankton"
+        "trait_v_parthenocarpy"
+        "trait_v_adv_parthenocarpy"
+        "trait_v_lithoid_parthenocarpy"
+        "trait_v_behavioral_sink"
+        "trait_v_adv_behavioral_sink"
+        "trait_v_cyborg_reproduction"
+        "trait_v_heterogamous_reproduction"
+    }
+    inline_script = "traits/vanilla_opposites_pop_growth"
+    infertile = yes
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    custom_tooltip = TRAIT_ASEXUAL_REPRODUCTION_EFFECT
+    slave_cost = {
+        energy = -1000
+    }
+}

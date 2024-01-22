@@ -1,0 +1,13 @@
+trait_v_terror_weapons = {
+    cost = 1
+    allowed_archetypes = {
+        ROBOT
+        MACHINE
+    }
+    modifier = {
+        army_morale_damage_mult = 1
+    }
+    slave_cost = {
+        energy = 250
+    }
+}

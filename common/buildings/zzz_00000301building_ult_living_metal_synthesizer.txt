@@ -1,0 +1,34 @@
+building_ult_living_metal_synthesizer = {
+    base_buildtime = 720
+    category = manufacturing
+    potential = {
+        NOT = {
+            has_modifier = resort_colony
+        }
+        NOT = {
+            has_modifier = slave_colony
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 1000
+        }
+        produces = {
+            sr_living_metal = 3
+        }
+        upkeep = {
+            minerals = 30
+            energy = 10
+        }
+    }
+    prerequisites = {
+        "tech_ult_strategic_resources_production"
+    }
+    ai_resource_production = {
+        sr_living_metal = 2
+        trigger = {
+            always = yes
+        }
+    }
+}

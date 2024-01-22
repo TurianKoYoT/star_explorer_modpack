@@ -1,0 +1,163 @@
+building_supercomputer = {
+    base_buildtime = @b2_time
+    empire_limit = {
+        base = 1
+        modifier = {
+            add = 1
+            exists = owner
+            owner = {
+                is_galactic_community_member = yes
+                is_active_resolution = resolution_custodian_galactic_academy_of_sciences
+            }
+        }
+    }
+    icon = building_institute
+    category = research
+    potential = {
+        exists = owner
+        owner = {
+            is_gestalt = yes
+        }
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+        }
+    }
+    allow = {
+        has_major_upgraded_capital = yes
+        OR = {
+            owner = {
+                is_ai = no
+            }
+            planet_resource_compare = {
+                resource = physics_research
+                value > 60
+            }
+            has_designation = col_research
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+            owner = {
+                is_regular_empire = yes
+            }
+        }
+    }
+    convert_to = {
+        building_institute
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            exotic_gases = @b2_rare_cost
+        }
+        upkeep = {
+            energy = @b2_upkeep
+            exotic_gases = @b2_rare_upkeep
+        }
+    }
+    country_modifier = {
+        country_scientist_cap_add = 1
+        all_technology_research_speed = 0.05
+    }
+    inline_script = {
+        script = jobs/researchers_add
+        AMOUNT = 2
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        text = job_brain_drone_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_galactic_community_member = yes
+                is_active_resolution = resolution_custodian_galactic_academy_of_sciences
+            }
+            OR = {
+                AND = {
+                    exists = leader
+                    leader = {
+                        leader_class = scientist
+                    }
+                }
+                sector = {
+                    exists = leader
+                    leader = {
+                        leader_class = scientist
+                    }
+                }
+            }
+        }
+        planet_researchers_physics_research_produces_add = 0.4
+        planet_researchers_society_research_produces_add = 0.4
+        planet_researchers_engineering_research_produces_add = 0.4
+        mult = value:building_institute_galactic_academy_of_sciences_governor_modifier
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_global_flag = bug_branch_active
+            exists = owner
+            owner = {
+                has_civic = civic_bugged_machine_researcher
+            }
+        }
+        modifier = {
+            job_bugged_examinatron_add = 1
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            has_global_flag = bug_branch_active
+            exists = owner
+            owner = {
+                has_civic = civic_bugged_machine_researcher
+            }
+        }
+        text = job_bugged_examinatron_effect_desc
+    }
+    prerequisites = {
+        "tech_global_research_initiative"
+    }
+    show_tech_unlock_if = {
+        is_gestalt = yes
+    }
+    ai_resource_production = {
+        trigger = {
+            planet_resource_compare = {
+                resource = physics_research
+                value >= 20
+            }
+        }
+        physics_research = 3
+        society_research = 3
+        engineering_research = 3
+    }
+    ai_resource_production = {
+        trigger = {
+            planet_resource_compare = {
+                resource = physics_research
+                value >= 40
+            }
+        }
+        physics_research = 3
+        society_research = 3
+        engineering_research = 3
+    }
+    upgrades = {
+        "building_avb_supercomputer_2"
+        "building_eutab_hypercomputing_complex"
+    }
+}

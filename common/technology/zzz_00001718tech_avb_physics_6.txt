@@ -1,0 +1,21 @@
+tech_avb_physics_6 = {
+    cost = @avbtier7cost2
+    area = physics
+    tier = 7
+    category = {
+        computing
+    }
+    prerequisites = {
+        "tech_avb_physics_5"
+    }
+    weight = @avbtier7weight2
+    modifier = {
+        planet_researchers_physics_research_produces_mult = 0.2
+    }
+    weight_modifier = {
+        factor = 4
+    }
+    ai_weight = {
+        weight = 10
+    }
+}

@@ -1,0 +1,26 @@
+tech_avb_noble_estates_2 = {
+    cost = @tier5cost2
+    area = society
+    tier = 5
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_avb_capital_4"
+    }
+    weight = @tier5weight2
+    gateway = capital
+    potential = {
+        OR = {
+            has_valid_civic = civic_aristocratic_elite
+            has_civic = civic_harmonious_hierarchy
+        }
+    }
+    weight_modifier = {
+        factor = 4
+        inline_script = "tech_weights/avb_government_weight"
+    }
+    ai_weight = {
+        factor = 10
+    }
+}

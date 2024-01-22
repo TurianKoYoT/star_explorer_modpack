@@ -1,0 +1,28 @@
+xte_leader_trait_maladroit = {
+    inline_script = {
+        script = trait/icon_negative_no_tiers
+        ICON = GFX_xte_leader_trait_maladroit
+        COUNCIL = yes
+    }
+    cost = 0
+    randomized = no
+    negative = yes
+    triggered_councilor_modifier = {
+        potential = {
+            always = yes
+        }
+        station_gatherers_volatile_motes_produces_mult = -0.2
+        station_gatherers_exotic_gases_produces_mult = -0.2
+        station_gatherers_rare_crystals_produces_mult = -0.2
+        multiplier = value:xte_anti_stacking_value|LEADER_TRAIT|xte_leader_trait_maladroit|
+    }
+    custom_tooltip_with_modifiers = xte_councilor_trait_efficiency_notification
+    leader_potential_add = {
+        always = no
+    }
+    leader_class = {
+        commander
+        scientist
+        official
+    }
+}

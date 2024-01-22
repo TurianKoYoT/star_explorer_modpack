@@ -1,0 +1,43 @@
+giga_tech_asteroid_manufactory = {
+    cost = @tier3cost2
+    area = society
+    tier = 3
+    category = {
+        new_worlds
+    }
+    prerequisites = {
+        tech_starbase_3
+        tech_space_mining_2
+    }
+    weight = @tier3weight2
+    potential = {
+        has_utopia = yes
+        NOT = {
+            has_global_flag = asteroid_manufactory_disabled
+        }
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0.1
+            NOT = {
+                years_passed > 50
+            }
+        }
+        modifier = {
+            factor = 10
+            any_neighbor_country = {
+                has_technology = giga_tech_asteroid_manufactory
+            }
+        }
+        modifier = {
+            factor = 1.25
+            has_tradition = tr_macroengineering_adopt
+        }
+        modifier = {
+            factor = 1.25
+            has_tradition = tr_macroengineering_finish
+        }
+    }
+    ai_weight = {
+    }
+}

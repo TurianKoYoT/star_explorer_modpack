@@ -1,0 +1,19 @@
+trait_v_cyborg_bulletproofing = {
+    cost = 2
+    initial = no
+    species_potential_add = {
+        can_add_cybernetic_traits = yes
+    }
+    species_possible_remove = {
+        can_remove_cybernetic_traits = yes
+    }
+    randomized = no
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    modifier = {
+        army_health = 1
+    }
+    slave_cost = {
+        energy = 750
+    }
+}

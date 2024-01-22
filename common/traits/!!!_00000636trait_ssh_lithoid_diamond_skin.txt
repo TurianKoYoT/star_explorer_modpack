@@ -1,0 +1,37 @@
+trait_ssh_lithoid_diamond_skin = {
+    cost = 4
+    initial = no
+    randomized = no
+    prerequisites = {
+        "ssh_tech_neural_tampering"
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+    }
+    #
+     {
+        "trait_drake_scaled"
+    }
+    allowed_archetypes = {
+        LITHOID
+    }
+    modifier = {
+        army_damage_mult = 0.5
+        army_attack_health_mult = 0.75
+        army_defense_health_mult = 1
+        army_defense_morale_mult = 1
+        leader_lifespan_add = 75
+        planet_livestock_rare_crystals_produces_add = 0.5
+    }
+    icon = "gfx/interface/icons/traits/trait_ssh_lithoid_diamondoid_skin.dds"
+    slave_cost = {
+        energy = 1250
+    }
+}

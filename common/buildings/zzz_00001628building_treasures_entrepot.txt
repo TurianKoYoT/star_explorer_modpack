@@ -1,0 +1,64 @@
+building_treasures_entrepot = {
+    base_buildtime = 360
+    base_cap_amount = 5
+    category = manufacturing
+    potential = {
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+        }
+    }
+    allow = {
+        has_upgraded_capital = yes
+    }
+    prerequisites = {
+        tech_treasures
+    }
+    destroy_trigger = {
+        OR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+        }
+        modifier = {
+            job_treasures_collector_add = 2
+            trade_value_add = 8
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_treasures_collector_drone_add = 2
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 400
+        }
+        produces = {
+            trigger = {
+                exists = owner
+                owner = {
+                    is_gestalt = yes
+                }
+            }
+            energy = 6
+        }
+    }
+    planet_modifier = {
+        planet_crime_add = -10
+    }
+}

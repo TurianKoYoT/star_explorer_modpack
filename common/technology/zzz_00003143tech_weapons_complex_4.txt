@@ -1,0 +1,19 @@
+tech_weapons_complex_4 = {
+    cost = 1600000
+    area = physics
+    tier = 5
+    category = {
+        particles
+    }
+    prerequisites = {
+        "tech_weapons_complex_3"
+    }
+    potential = {
+        has_ascension_perk = ap_weapons_complex
+    }
+    weight = 100
+    ai_weight = {
+        factor = 100
+    }
+    is_dangerous = yes
+}

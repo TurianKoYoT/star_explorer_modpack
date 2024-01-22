@@ -1,0 +1,20 @@
+leader_trait_AAA_disconnected = {
+    cost = 0
+    inline_script = {
+        script = trait/icon_negative
+        CLASS = leader
+        ICON = "GFX_leader_trait_melancholic"
+        COUNCIL = no
+        TIER = none
+    }
+    inline_script = {
+        script = paragon/leader_resource_upkeep
+        RESOURCE = unity
+        AMOUNT = 20
+    }
+    leader_class = {
+        scientist
+    }
+    initial = no
+    randomized = no
+}

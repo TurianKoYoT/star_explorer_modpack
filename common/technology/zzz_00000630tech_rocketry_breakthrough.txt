@@ -1,0 +1,74 @@
+tech_rocketry_breakthrough = {
+    cost = {
+        factor = @tier2cost3
+        modifier = {
+            factor = 2
+            has_technology = tech_materials_breakthrough
+        }
+        modifier = {
+            factor = 2
+            has_technology = tech_industry_breakthrough
+        }
+        modifier = {
+            factor = 2
+            has_technology = tech_voidcraft_breakthrough
+        }
+        modifier = {
+            factor = 2
+            has_technology = tech_field_manipulation_breakthrough
+        }
+        modifier = {
+            factor = 2
+            has_technology = tech_computing_breakthrough
+        }
+        modifier = {
+            factor = 2
+            has_technology = tech_particles_breakthrough
+        }
+        modifier = {
+            factor = 2
+            has_technology = tech_military_theory_breakthrough
+        }
+        modifier = {
+            factor = 2
+            has_technology = tech_biology_breakthrough
+        }
+        modifier = {
+            factor = 2
+            has_technology = tech_statecraft_breakthrough
+        }
+        modifier = {
+            factor = 2
+            has_technology = tech_new_worlds_breakthrough
+        }
+        modifier = {
+            factor = 2
+            has_technology = tech_psionics_breakthrough
+        }
+        modifier = {
+            factor = 2
+            has_technology = tech_archeo_breakthrough
+        }
+    }
+    area = engineering
+    tier = 2
+    category = {
+        propulsion
+    }
+    is_rare = yes
+    weight = 1
+    modifier = {
+        planet_researchers_engineering_research_produces_add = 1
+        ship_speed_mult = 0.25
+        ship_evasion_add = 10
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            always = yes
+        }
+    }
+    ai_weight = {
+        factor = 100
+    }
+}

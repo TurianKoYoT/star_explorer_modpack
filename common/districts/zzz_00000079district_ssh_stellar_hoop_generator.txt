@@ -1,0 +1,105 @@
+@ssh_sh_cost = 1000
+@ssh_sh_cost_sr = 50
+@ssh_sh_maintenance = 5
+@ssh_sh_maintenance_sr = 2
+@ssh_sh_district_buildtime = 360
+district_ssh_stellar_hoop_generator = {
+    base_buildtime = @ssh_sh_district_buildtime
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        uses_district_set = stellar_hoop_world
+        exists = from
+    }
+    potential = {
+        exists = owner
+        uses_district_set = stellar_hoop_world
+    }
+    convert_to = {
+        district_ssh_stellar_hoop_science
+    }
+    resources = {
+        category = planet_districts_generator
+        cost = {
+            minerals = @ssh_sh_cost
+            rare_crystals = @ssh_sh_cost_sr
+        }
+        upkeep = {
+            energy = @ssh_sh_maintenance
+            rare_crystals = @ssh_sh_maintenance_sr
+        }
+    }
+    triggered_planet_modifier = {
+        planet_housing_add = 15
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        job_ssh_stellar_technician_drone_add = 10
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        planet_housing_add = 5
+        job_ssh_stellar_technician_drone_add = 15
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        modifier = {
+            job_ssh_stellar_technician_add = 10
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_fallen_empire_spiritualist = yes
+            }
+        }
+        modifier = {
+            job_fe_acolyte_generator_add = 10
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            planet = {
+                has_deposit = d_arcane_generator
+                NOT = {
+                    has_district = district_rw_generator
+                }
+            }
+        }
+        text = arcane_generator_upkeep_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        text = job_ssh_stellar_technician_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_fallen_empire_spiritualist = yes
+            }
+        }
+        text = job_fe_acolyte_generator_effect_desc
+    }
+}

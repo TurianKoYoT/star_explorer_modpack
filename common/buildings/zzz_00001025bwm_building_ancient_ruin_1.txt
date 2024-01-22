@@ -1,0 +1,18 @@
+bwm_building_ancient_ruin_1 = {
+    can_build = no
+    can_demolish = yes
+    icon = "building_old_ruins"
+    position_priority = 500
+    category = resources
+    potential = {
+    }
+    upgrades = {
+        bwm_building_nourishment_center
+        bwm_building_master_archive
+        bwm_building_class_4_singularity
+        bwm_building_dimensional_fabricator
+        bwm_building_nano_forge
+    }
+    prerequisites = {
+    }
+}

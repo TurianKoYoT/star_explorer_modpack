@@ -1,0 +1,37 @@
+xte_leader_trait_hateful = {
+    inline_script = {
+        script = trait/icon_negative_no_tiers
+        ICON = GFX_xte_leader_trait_hateful
+        COUNCIL = yes
+    }
+    cost = 1
+    negative = yes
+    opposites = {
+        "xte_leader_trait_domineering"
+        "xte_leader_trait_indulgent"
+        "xte_leader_trait_spineless"
+        "xte_leader_trait_peacemonger"
+        "xte_leader_trait_warmonger"
+        "xte_leader_trait_superstitious"
+        "xte_leader_trait_cynical"
+    }
+    triggered_councilor_modifier = {
+        potential = {
+            always = yes
+        }
+        country_trade_fee = 0.1
+        country_trust_growth = -0.25
+        diplomacy_upkeep_mult = 0.25
+        pop_ethic_xenophile_attraction_mult = 0.5
+        multiplier = value:xte_anti_stacking_value|LEADER_TRAIT|xte_leader_trait_hateful|
+    }
+    custom_tooltip_with_modifiers = xte_councilor_trait_efficiency_notification
+    leader_potential_add = {
+        always = no
+    }
+    leader_class = {
+        commander
+        scientist
+        official
+    }
+}

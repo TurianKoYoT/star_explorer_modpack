@@ -1,0 +1,38 @@
+xte_leader_trait_domineering = {
+    inline_script = {
+        script = trait/icon_negative_no_tiers
+        ICON = GFX_xte_leader_trait_domineering
+        COUNCIL = yes
+    }
+    cost = 1
+    negative = yes
+    opposites = {
+        "trait_ruler_champion_of_the_people"
+        "trait_ruler_champion_of_the_people_2"
+        "xte_leader_trait_indulgent"
+        "xte_leader_trait_spineless"
+        "xte_leader_trait_hateful"
+        "xte_leader_trait_peacemonger"
+        "xte_leader_trait_warmonger"
+        "xte_leader_trait_superstitious"
+        "xte_leader_trait_cynical"
+    }
+    triggered_councilor_modifier = {
+        potential = {
+            always = yes
+        }
+        pop_happiness = -0.05
+        country_leader_pool_size = -1
+        pop_ethic_egalitarian_attraction_mult = 0.5
+        multiplier = value:xte_anti_stacking_value|LEADER_TRAIT|xte_leader_trait_valiant|
+    }
+    custom_tooltip_with_modifiers = xte_councilor_trait_efficiency_notification
+    leader_potential_add = {
+        always = no
+    }
+    leader_class = {
+        commander
+        scientist
+        official
+    }
+}

@@ -1,0 +1,58 @@
+building_phanon_class_7_singularity = {
+    base_buildtime = 900
+    can_demolish = yes
+    can_build = no
+    category = resource
+    prerequisites = {
+        tech_phanon_class_7_singularity
+    }
+    potential = {
+        NOT = {
+            has_global_flag = aot_phanon_content_OFF
+        }
+        exists = owner
+        owner = {
+            has_technology = tech_phanon_class_7_singularity
+        }
+    }
+    allow = {
+        has_phanon_capital = yes
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 2500
+            minerals = 2500
+            aot_sr_runic_power = 750
+        }
+        produces = {
+            energy = @auto_energy_pe
+        }
+        upkeep = {
+            aot_sr_runic_power = 60
+            sr_dark_matter = 20
+            acot_sr_dark_energy = 20
+        }
+    }
+    upgrades = {
+        building_stellarite_class_11_singularity
+    }
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 5
+            owner = {
+                has_monthly_income = {
+                    resource = energy
+                    value < 20
+                }
+            }
+        }
+    }
+    ai_resource_production = {
+        energy = 800
+        trigger = {
+            always = yes
+        }
+    }
+}

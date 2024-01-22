@@ -1,0 +1,100 @@
+@resolution_weight_disliked = 4
+@resolution_cost_t3 = 200
+resolution_emperor_revoke_imperial_charter = {
+    icon = "GFX_resolution_imperial_trade_company"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t3
+        }
+    }
+    target = yes
+    harmful = yes
+    fire_and_forget = yes
+    valid_target = {
+        is_country_type = default
+        is_galactic_community_member = yes
+        is_megacorp = yes
+        is_galactic_emperor = no
+        has_modifier = imperial_charter
+    }
+    effect = {
+        hidden_effect = {
+            remove_global_flag = imperial_charter_granted
+            remove_modifier = imperial_charter
+            every_galaxy_planet = {
+                limit = {
+                    has_planet_flag = imp_concession_port
+                }
+                remove_holding = {
+                    holding = building_imperial_concession_port
+                    owner = planet.branch_office_owner
+                }
+                remove_planet_flag = imp_concession_port
+            }
+            random_playable_country = {
+                limit = {
+                    is_galactic_emperor = yes
+                }
+                set_variable = {
+                    which = "imp_concession_ports"
+                    value = 0
+                }
+                add_imp_concession_ports_0 = yes
+            }
+        }
+        hidden_effect = {
+            pass_resolution_no_cooldown = resolution_category_imperial_members_reset_cooldown
+        }
+        from_pass_resolution_modifier = {
+            CATEGORY = general
+        }
+    }
+    fail_effects = {
+        from_fail_resolution_modifier = {
+            CATEGORY = general
+        }
+    }
+    potential = {
+        has_nemesis = yes
+        OR = {
+            is_galactic_emperor = yes
+            and = {
+                has_galactic_emperor = yes
+                is_part_of_galactic_council = yes
+                is_active_resolution = "resolution_emperor_expand_power_of_council"
+            }
+            is_country_type = imperial_senator
+        }
+        has_global_flag = imperial_charter_granted
+    }
+    ai_weight = {
+        weight = @resolution_weight_disliked
+        modifier = {
+            factor = 3
+            OR = {
+                is_megacorp = yes
+                has_ascension_perk = ap_expactriate_service
+            }
+            NOT = {
+                is_same_value = ROOT
+            }
+            desc = gal_com_targets_competitor
+        }
+        modifier = {
+            factor = 0
+            is_same_value = ROOT
+            desc = gal_com_target_is_me
+        }
+        modifier = {
+            factor = 20
+            is_galactic_emperor = yes
+            OR = {
+                is_hostile_to = FROM
+                is_domineering_to = FROM
+                is_unfriendly_to = FROM
+            }
+            desc = gal_com_emperor_unfriendly_to_proposer
+        }
+    }
+}

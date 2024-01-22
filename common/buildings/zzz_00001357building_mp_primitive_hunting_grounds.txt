@@ -1,0 +1,20 @@
+building_mp_primitive_hunting_grounds = {
+    icon = building_mp_primitive_hunting_grounds
+    capital = no
+    can_build = no
+    can_demolish = yes
+    can_be_ruined = no
+    ai_weight = {
+        weight = 10
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            society_research = 5
+        }
+    }
+    planet_modifier = {
+        job_mp_primitive_warrior_2_add = 4
+        job_mp_primitive_purifier_add = 4
+    }
+}

@@ -1,0 +1,108 @@
+namespace = anomaly
+ship_event = {
+    id = anomaly.6663
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        from = {
+            NOT = {
+                exists = space_owner
+            }
+            gpm_is_planet_class_normal_habitable = no
+            is_colonizable = no
+            gpm_has_precursor_modifiers = no
+            has_deposit_for = shipclass_mining_station
+            OR = {
+                has_modifier = hazardous_weather
+                has_modifier = strong_magnetic_field
+                has_modifier = gpm_strong_magnetic_field_2
+                has_modifier = gpm_strong_magnetic_field_gas_giant
+                has_modifier = dune_world
+                has_modifier = dust_world
+                has_modifier = young_world
+                has_modifier = fog_world
+                has_modifier = swamp_world
+                has_modifier = boreal_world
+                has_modifier = geothermal_world
+                has_modifier = incessant_thunderstorm
+                has_modifier = terrible_hurricanes
+                has_modifier = diamond_rings
+                has_modifier = active_processes
+                has_modifier = sulfur_world
+                has_modifier = hot_jupiter
+                has_modifier = puffy_planet
+                has_modifier = ice_giant
+            }
+            NOR = {
+                has_deposit = d_energy_5
+                has_deposit = d_energy_6
+                has_deposit = d_energy_7
+                has_deposit = d_energy_8
+                has_deposit = d_energy_9
+                has_deposit = d_energy_10
+                has_deposit = d_guardian_dragon_hoard
+            }
+        }
+    }
+    immediate = {
+        if = {
+            limit = {
+                from = {
+                    is_colonizable = no
+                }
+            }
+            from = {
+                clear_deposits = yes
+                random_list = {
+                    1 = {
+                        add_deposit = d_energy_5
+                    }
+                    3 = {
+                        add_deposit = d_energy_4
+                    }
+                    4 = {
+                        add_deposit = d_energy_3
+                    }
+                    2 = {
+                        add_deposit = d_energy_2
+                    }
+                }
+            }
+        }
+        else_if = {
+            limit = {
+                from = {
+                    OR = {
+                        is_arctic_world = yes
+                        is_tundra_world = yes
+                        is_savannah_world = yes
+                        is_desert_world = yes
+                        is_arid_world = yes
+                    }
+                }
+            }
+            from = {
+                add_deposit = d_geothermal_vent
+            }
+        }
+        else_if = {
+            limit = {
+                from = {
+                    OR = {
+                        is_gaia_world = yes
+                        is_ocean_world = yes
+                        is_nuked_world = yes
+                    }
+                }
+            }
+            from = {
+                add_deposit = d_underwater_vent
+            }
+        }
+        else = {
+            from = {
+                add_deposit = d_tempestous_mountain
+            }
+        }
+    }
+}

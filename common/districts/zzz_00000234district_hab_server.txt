@@ -1,0 +1,62 @@
+@hab_cost = 500
+@hab_maintenance = 2
+district_hab_server = {
+    base_buildtime = 240
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        sartek_additional_merg_habitats = yes
+        has_planet_flag = culture_habitat
+        owner = {
+            is_machine_empire = yes
+            NOT = {
+                has_valid_civic = civic_machine_servitor
+            }
+        }
+    }
+    potential = {
+        sartek_additional_merg_habitats = yes
+        has_planet_flag = culture_habitat
+        exists = owner
+        owner = {
+            is_machine_empire = yes
+            NOT = {
+                has_valid_civic = civic_machine_servitor
+            }
+        }
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_hab_administrative
+        district_hab_ecclesiastical
+        district_hab_synapse
+    }
+    resources = {
+        category = planet_districts_hab_culture
+        cost = {
+            minerals = @hab_cost
+        }
+        upkeep = {
+            energy = @hab_maintenance
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 3
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                NOT = {
+                    has_valid_civic = civic_machine_servitor
+                }
+            }
+        }
+        modifier = {
+            job_coordinator_add = 3
+        }
+    }
+    triggered_desc = {
+        text = job_coordinator_effect_desc
+    }
+}

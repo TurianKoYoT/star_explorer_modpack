@@ -1,0 +1,23 @@
+tech_ascended_battlecruiser_hull_1 = {
+    area = engineering
+    cost = @tier4cost3
+    tier = @fallentechtier
+    category = {
+        ascended_technologies
+    }
+    weight = @tier4weight1
+    prerequisites = {
+        "tech_doa_battlecruiser"
+        "tech_doa_ascended_materials"
+    }
+    potential = {
+        has_technology = tech_doa_ascended_materials
+    }
+    modifier = {
+        custom_tooltip = tech_doa_battlecruiser_hull_effect
+        shipsize_doa_battlecruiser_hull_mult = 0.3
+    }
+    ai_weight = {
+        factor = 2
+    }
+}

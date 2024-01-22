@@ -1,0 +1,28 @@
+tech_yanz_life_theory_boom = {
+    area = society
+    start_tech = no
+    cost = @tier4cost3
+    is_rare = yes
+    tier = 3
+    category = {
+        biology
+    }
+    prerequisites = {
+        "tech_yanz_life_theory_soup"
+    }
+    weight = @tier3weight3
+    potential = {
+        has_civic = "civic_yanz_machine_servitor"
+    }
+    modifier = {
+        planet_bio_trophies_unity_produces_add = 0.25
+        planet_bio_trophies_society_research_produces_add = 0.5
+        country_society_research_produces_mult = 0.05
+    }
+    prereqfor_desc = {
+        custom = {
+            title = ""
+            desc = ""
+        }
+    }
+}

@@ -1,0 +1,37 @@
+building_avb_slave_huts_2 = {
+    base_buildtime = @avb_b2_time
+    can_build = no
+    category = amenity
+    potential = {
+        has_modifier = slave_colony
+    }
+    allow = {
+        has_upgraded_capital_4 = yes
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            owner = {
+                is_gestalt = yes
+            }
+            NOT = {
+                has_modifier = slave_colony
+            }
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 16
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_b2_minerals
+        }
+        upkeep = {
+            energy = @avb_b2_upkeep
+        }
+    }
+    prerequisites = {
+        "tech_avb_slave_huts_2"
+    }
+}

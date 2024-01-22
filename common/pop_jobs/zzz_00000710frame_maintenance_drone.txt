@@ -1,0 +1,158 @@
+frame_maintenance_drone = {
+    category = simple_drone
+    condition_string = DRONE_JOB_TRIGGER
+    building_icon = building_maintenance_depot
+    icon = maintenance_drone
+    possible_pre_triggers = {
+        has_owner = yes
+        is_enslaved = no
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_drone_job
+    resources = {
+        category = planet_jobs
+        produces = {
+            trigger = {
+                exists = owner
+                owner = {
+                    has_valid_civic = civic_machine_maintenance_protocols
+                }
+            }
+            unity = 0.25
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+        produces = {
+            trigger = {
+                is_robot_pop = no
+                is_lithoid = no
+            }
+            food = 0.5
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+        produces = {
+            trigger = {
+                is_lithoid = yes
+            }
+            minerals = 0.5
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+        produces = {
+            trigger = {
+                is_robot_pop = yes
+            }
+            energy = 0.5
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+    }
+    planet_modifier = {
+        planet_jobs_productive_upkeep_mult = 0.0025
+        planet_jobs_productive_produces_mult = 0.0025
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        planet_pop_assembly_add = -0.125
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+            planet = {
+                free_housing < 0
+            }
+        }
+        planet_pop_assembly_add = -0.125
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+            planet = {
+                not = {
+                    has_modifier = frameworld_crucible
+                }
+            }
+        }
+        planet_pop_assembly_add = -0.125
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+            planet = {
+                free_housing < 0
+                not = {
+                    has_modifier = frameworld_crucible
+                }
+            }
+        }
+        planet_pop_assembly_add = -0.125
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+            planet = {
+                has_modifier = frameworld_crucible
+            }
+        }
+        giga_pop_growth_speed_extra_add = -0.125
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+            planet = {
+                free_housing < 0
+                has_modifier = frameworld_crucible
+            }
+        }
+        giga_pop_growth_speed_extra_add = -0.125
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        planet_pop_assembly_organic_add = -0.25
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+            planet = {
+                free_housing < 0
+            }
+        }
+        planet_pop_assembly_organic_add = -0.25
+    }
+    weight = {
+        weight = @special_job_weight
+        modifier = {
+            factor = -10000
+            planet = {
+                giga_frameworld_has_expanded_maintenance_modifier = no
+            }
+        }
+    }
+}

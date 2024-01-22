@@ -1,0 +1,37 @@
+pc_edersphere = {
+    entity = "ssh_edersphere_planet"
+    entity_scale = @planet_standard_scale
+    icon = GFX_planet_type_edersphere
+    picture = pc_edersphere
+    enable_tilt = no
+    starting_planet = no
+    atmosphere_color = hsv {
+        0
+        0
+        0
+    }
+    atmosphere_intensity = 0.1
+    atmosphere_width = 0.5
+    city_color_lut = "gfx/portraits/misc/ssh_colorcorrection_dark.dds"
+    climate = "cold"
+    colonizable = yes
+    planet_size = {
+        min = 30
+        max = 30
+    }
+    spawn_odds = 0
+    uses_alternative_skies_for_moons = no
+    district_set = edersphere_world
+    carry_cap_per_free_district = @carry_cap_normal
+    can_be_moon = no
+    chance_of_ring = 0
+    is_artificial_planet = yes
+    orbit_lines = no
+    modifier = {
+        habitability_floor_add = 2
+        planet_jobs_energy_upkeep_mult = 0.2
+        planet_max_buildings_add = 24
+        planet_housing_add = 12
+    }
+    ideal = yes
+}

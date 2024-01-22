@@ -1,0 +1,51 @@
+tech_avb_crops_5 = {
+    cost = @tier4cost1
+    area = society
+    tier = 4
+    category = {
+        biology
+    }
+    prerequisites = {
+        "tech_nano_vitality_crops"
+    }
+    weight = @tier4weight1
+    modifier = {
+        planet_farmers_food_produces_mult = 0.2
+        starbase_constructions_food_produces_mult = 0.1
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0.01
+            is_machine_empire = yes
+            NOR = {
+                has_valid_civic = civic_machine_servitor
+                has_valid_civic = civic_machine_assimilator
+                any_owned_planet = {
+                    num_districts = {
+                        type = district_farming
+                        value > 0
+                    }
+                }
+            }
+        }
+        modifier = {
+            factor = 1.25
+            has_ethic = ethic_pacifist
+        }
+        modifier = {
+            factor = 1.5
+            has_ethic = ethic_fanatic_pacifist
+        }
+    }
+    ai_weight = {
+        factor = 1.5
+        modifier = {
+            factor = 1.25
+            has_ethic = ethic_pacifist
+        }
+        modifier = {
+            factor = 1.5
+            has_ethic = ethic_fanatic_pacifist
+        }
+    }
+}

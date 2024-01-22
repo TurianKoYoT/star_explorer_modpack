@@ -1,0 +1,108 @@
+building_delta_organic_sanctuary = {
+    icon = building_fe_dome
+    base_buildtime = 520
+    category = unity
+    potential = {
+        exists = owner
+        owner = {
+            has_valid_civic = civic_machine_servitor
+        }
+    }
+    allow = {
+        has_enigmatic_capital = yes
+    }
+    destroy_trigger = {
+        exists = owner
+        NOT = {
+            owner = {
+                has_valid_civic = civic_machine_servitor
+            }
+        }
+    }
+    convert_to = {
+        building_fe_mansion
+        building_fe_hive_depot
+        building_dm_ancient_cryo_chamber
+    }
+    prerequisites = {
+        tech_dark_mansion
+    }
+    show_tech_unlock_if = {
+        owner = {
+            has_valid_civic = civic_machine_servitor
+        }
+    }
+    planet_modifier = {
+        job_bio_trophy_add = 40
+        job_acot_artisan_add = 2
+        job_maintenance_drone_add = 2
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            trigger = {
+                has_modifier = acot_modifier_ascended_city
+            }
+            unity = 15
+        }
+        cost = {
+            minerals = 450
+            sr_dark_matter = 50
+        }
+        upkeep = {
+            trigger = {
+                has_modifier = acot_modifier_ascended_city
+            }
+            acot_sr_dark_energy = 1
+            sr_dark_matter = 1
+        }
+    }
+    triggered_desc = {
+        text = job_bio_trophy_effect_desc
+    }
+    triggered_desc = {
+        text = job_artisan_drone_effect_desc
+    }
+    triggered_desc = {
+        text = job_maintenance_drone_effect_desc
+    }
+    upgrades = {
+        building_alpha_organic_sanctuary
+    }
+    ai_resource_production = {
+        unity = 40
+        physics_research = 40
+        trigger = {
+            has_unemployed_pop_of_category = bio_trophy
+            planet_resource_compare = {
+                resource = physics_research
+                value >= 200
+                type = produces
+            }
+        }
+    }
+    ai_resource_production = {
+        unity = 40
+        alloys = 40
+        trigger = {
+            has_unemployed_pop_of_category = bio_trophy
+            planet_resource_compare = {
+                resource = alloys
+                value >= 200
+                type = produces
+            }
+        }
+    }
+    ai_resource_production = {
+        unity = 40
+        consumer_goods = 40
+        trigger = {
+            has_unemployed_pop_of_category = bio_trophy
+            planet_resource_compare = {
+                resource = consumer_goods
+                value >= 200
+                type = produces
+            }
+        }
+    }
+}

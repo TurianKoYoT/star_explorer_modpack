@@ -1,0 +1,13 @@
+tech_eutab_coop_processing = {
+    cost = @tier4cost2
+    area = society
+    tier = 4
+    is_custom_tech_1 = yes
+    category = {
+        statecraft
+    }
+    weight = @tier4weight2
+    potential = {
+        is_machine_empire = yes
+    }
+}

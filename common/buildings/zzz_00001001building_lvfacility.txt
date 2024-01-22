@@ -1,0 +1,43 @@
+building_lvfacility = {
+    base_buildtime = 1080
+    base_cap_amount = 1
+    category = manufacturing
+    prerequisites = {
+        tech_yanz_lvindapp
+    }
+    allow = {
+        has_upgraded_capital = yes
+    }
+    potential = {
+        exists = owner
+        owner = {
+            is_regular_empire = yes
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            food = 25000
+            alloys = 10000
+            minerals = 10000
+            exotic_gases = 1000
+        }
+        upkeep = {
+            energy = 30
+            food = 30
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+        }
+        modifier = {
+            planet_metallurgists_alloys_produces_add = 3
+            planet_metallurgists_exotic_gases_produces_add = 0.3
+            planet_metallurgists_food_upkeep_add = 10
+        }
+    }
+}

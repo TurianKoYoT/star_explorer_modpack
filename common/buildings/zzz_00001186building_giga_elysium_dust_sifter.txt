@@ -1,0 +1,35 @@
+building_giga_elysium_dust_sifter = {
+    base_buildtime = 350
+    base_cap_amount = 4
+    category = manufacturing
+    ai_weight = {
+        weight = 2
+    }
+    potential = {
+        always = no
+    }
+    destroy_trigger = {
+        always = no
+    }
+    allow = {
+        has_upgraded_capital = yes
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 600
+        }
+        produces = {
+            volatile_motes = 1
+        }
+        upkeep = {
+            energy = 3.5
+        }
+    }
+    ai_resource_production = {
+        volatile_motes = 1
+        trigger = {
+            always = yes
+        }
+    }
+}

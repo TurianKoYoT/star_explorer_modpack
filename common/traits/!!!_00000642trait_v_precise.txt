@@ -1,0 +1,45 @@
+trait_v_precise = {
+    cost = 1
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_v_imprecise"
+        "trait_v_extremely_precise"
+        "trait_v_adv_extremely_precise"
+        "trait_invasive"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    modifier = {
+        army_collateral_damage_mult = -0.2
+        army_damage_mult = 0.1
+        planet_jobs_specialist_produces_mult = 0.025
+    }
+    slave_cost = {
+        energy = 1000
+    }
+    assembly_score = {
+        modifier = {
+            add = 0.25
+            from = {
+                OR = {
+                    has_farming_designation = yes
+                    has_generator_designation = yes
+                    has_mining_designation = yes
+                    has_rural_designation = yes
+                }
+            }
+        }
+        modifier = {
+            add = 0.75
+            from = {
+                has_fortress_designation = yes
+            }
+        }
+    }
+}

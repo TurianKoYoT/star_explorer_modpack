@@ -1,0 +1,27 @@
+trait_v_soft_augmentations = {
+    cost = 3
+    icon = "gfx/interface/icons/traits/trait_v_soft_robotics.dds"
+    initial = no
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        can_add_cybernetic_traits = yes
+    }
+    species_possible_remove = {
+        can_remove_cybernetic_traits = yes
+    }
+    randomized = no
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    custom_tooltip_with_modifiers = TRAIT_CYBORG_SOFT_ROBOTICS_EFFECT
+    modifier = {
+        planet_doctors_society_research_produces_add = 1
+    }
+    triggered_pop_modifier = {
+        planet_researchers_society_research_produces_add = 0.25
+        planet_researchers_society_research_produces_add = 0.5
+        mult = planet.value:natural_blocker_count
+    }
+    slave_cost = {
+        energy = 2000
+    }
+}

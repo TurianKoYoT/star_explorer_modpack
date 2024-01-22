@@ -1,0 +1,21 @@
+ship_section_template = {
+    key = "CIVILIAN_FACTORY_ADVANCED_CORE_SECTION"
+    ship_size = civilian_factory
+    fits_on_slot = "mid"
+    should_draw_components = yes
+    entity = "cargo_transport_tanker_entity"
+    icon = "GFX_ship_part_core_mid"
+    medium_utility_slots = 3
+    large_utility_slots = 3
+    aux_utility_slots = 10
+    prerequisites = {
+        tech_factory_ship_2
+    }
+    resources = {
+        category = ship_sections
+        cost = {
+            alloys = 650
+            energy = 300
+        }
+    }
+}

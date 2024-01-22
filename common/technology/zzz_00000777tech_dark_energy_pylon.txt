@@ -1,0 +1,21 @@
+tech_dark_energy_pylon = {
+    cost = @acot_tier6cost2
+    area = physics
+    tier = 6
+    category = {
+        field_manipulation
+    }
+    prerequisites = {
+        "tech_dark_matter_power_core_dm"
+        "tech_mine_dark_energy"
+    }
+    weight = @tier5weight1
+    potential = {
+        NOT = {
+            has_global_flag = acot_building_forbidden
+        }
+    }
+    ai_weight = {
+        factor = 5
+    }
+}

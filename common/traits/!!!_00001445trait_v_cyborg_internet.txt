@@ -1,0 +1,32 @@
+trait_v_cyborg_internet = {
+    cost = 4
+    initial = no
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        can_add_cybernetic_traits = yes
+    }
+    species_possible_remove = {
+        can_remove_cybernetic_traits = yes
+    }
+    randomized = no
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    opposites = {
+        "trait_v_cyborg_servitor"
+        "trait_hive_mind"
+    }
+    custom_tooltip_with_modifiers = CYBORG_INTERNET_EFFECT
+    modifier = {
+        planet_jobs_worker_produces_mult = -0.25
+    }
+    triggered_pop_modifier = {
+        planet_jobs_unity_produces_mult = 0.00125
+        planet_jobs_physics_research_produces_mult = 0.00125
+        planet_jobs_society_research_produces_mult = 0.00125
+        planet_jobs_engineering_research_produces_mult = 0.00125
+        mult = owner.value:count_v_cyborg_internet
+    }
+    slave_cost = {
+        energy = 750
+    }
+}

@@ -1,0 +1,35 @@
+building_pki_foundry = {
+    base_buildtime = @b2_time
+    icon = building_katzen_foundry
+    category = manufacturing
+    potential = {
+        owner = {
+            pki_is_katzenartig_imperium = yes
+        }
+    }
+    prerequisites = {
+        "tech_katzen_forge"
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+        }
+        upkeep = {
+            energy = @b3_upkeep
+        }
+    }
+    destroy_trigger = {
+        OR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+        }
+    }
+    planet_modifier = {
+        pop_environment_tolerance = -0.05
+    }
+    inline_script = {
+        script = jobs/foundry_add
+        AMOUNT = 6
+    }
+}

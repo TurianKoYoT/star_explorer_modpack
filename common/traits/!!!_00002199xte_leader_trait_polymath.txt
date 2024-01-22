@@ -1,0 +1,28 @@
+xte_leader_trait_polymath = {
+    inline_script = {
+        script = trait/xte_icon
+        CLASS = leader
+        ICON = GFX_xte_leader_trait_polymath
+        RARITY = xte_positive
+        COUNCIL = yes
+        TIER = none
+    }
+    cost = 0
+    randomized = no
+    triggered_councilor_modifier = {
+        potential = {
+            always = yes
+        }
+        num_tech_alternatives_add = 1.03
+        multiplier = value:xte_anti_stacking_value|LEADER_TRAIT|xte_leader_trait_polymath|
+    }
+    custom_tooltip_with_modifiers = xte_councilor_trait_efficiency_notification
+    leader_potential_add = {
+        always = no
+    }
+    leader_class = {
+        commander
+        scientist
+        official
+    }
+}

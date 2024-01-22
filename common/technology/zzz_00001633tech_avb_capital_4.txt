@@ -1,0 +1,23 @@
+tech_avb_capital_4 = {
+    cost = @tier4cost3
+    area = society
+    tier = 4
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_galactic_administration"
+    }
+    weight = @tier4weight3
+    gateway = capital
+    modifier = {
+        country_leader_cap_add = 1
+    }
+    weight_modifier = {
+        factor = 4
+        inline_script = "tech_weights/avb_government_weight"
+    }
+    ai_weight = {
+        factor = @capital_tech_ai_factor
+    }
+}

@@ -1,0 +1,34 @@
+shipengineer_utopia_gestalt = {
+    category = complex_drone
+    condition_string = DRONE_JOB_TRIGGER
+    building_icon = pre_shipyard
+    clothes_texture_index = 1
+    icon = warrior_drone
+    possible_pre_triggers = {
+        has_owner = yes
+        is_enslaved = no
+        is_being_purged = no
+        is_being_assimilated = no
+    }
+    country_modifier = {
+        country_naval_cap_add = 10
+        ship_shield_mult = 0.01
+        ship_armor_mult = 0.01
+    }
+    planet_modifier = {
+    }
+    resources = {
+        category = planet_researchers
+        produces = {
+            physics_research = 6
+            engineering_research = 6
+        }
+        upkeep = {
+            minerals = 14
+            alloys = 9
+        }
+    }
+    weight = {
+        weight = @complex_drone_job_weight
+    }
+}

@@ -1,0 +1,40 @@
+tech_stellarite_machine_dome = {
+    cost = @acot_tier9cost2
+    area = engineering
+    tier = 9
+    category = {
+        industry
+    }
+    prerequisites = {
+        tech_dark_matter_power_core_se
+        tech_phanon_machine_dome
+    }
+    weight = @tier5weight1
+    potential = {
+        has_ascension_perk = ap_synthetic_age
+        NOR = {
+            has_global_flag = acot_building_forbidden
+            is_fallen_empire = yes
+        }
+        has_technology = tech_dark_matter_power_core_se
+        has_technology = tech_phanon_machine_dome
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_industry
+                LEVEL > 2
+            }
+        }
+    }
+    ai_weight = {
+        weight = 2
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_industry
+            }
+        }
+    }
+}

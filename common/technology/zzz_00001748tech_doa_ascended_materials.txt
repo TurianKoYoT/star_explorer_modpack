@@ -1,0 +1,19 @@
+tech_doa_ascended_materials = {
+    area = engineering
+    cost = 0
+    tier = 0
+    category = {
+        materials
+    }
+    weight = 0
+    potential = {
+        has_country_flag = doa_tech_4
+    }
+    modifier = {
+        country_alloys_produces_mult = -0.05
+        ship_armor_mult = 0.1
+    }
+    ai_weight = {
+        factor = 0
+    }
+}

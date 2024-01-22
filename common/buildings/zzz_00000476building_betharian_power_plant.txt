@@ -1,0 +1,67 @@
+building_betharian_power_plant = {
+    base_buildtime = @b1_time
+    icon = building_betharian_power_plant
+    is_capped_by_modifier = yes
+    category = resource
+    potential = {
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = crucible_colony
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 200
+        }
+        produces = {
+            energy = 10
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            job_technician_add = 4
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_technician_drone_add = 4
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_technician_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = job_technician_effect_desc
+    }
+    prerequisites = {
+        "tech_mine_betharian"
+    }
+    upgrades = {
+        "building_avb_betharian_power_plant_2"
+    }
+}

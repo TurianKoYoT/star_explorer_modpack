@@ -1,0 +1,29 @@
+tech_energy_torpedo_theta = {
+    area = physics
+    category = {
+        particles
+    }
+    cost = 7680000
+    tier = 8
+    weight = 1
+    ai_update_type = military
+    is_reverse_engineerable = no
+    is_rare = yes
+    potential = {
+        NOT = {
+            has_global_flag = acot_weapons_forbidden
+        }
+        has_technology = tech_dark_matter_power_core_theta
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            NOT = {
+                has_technology = tech_dark_matter_power_core_theta
+            }
+        }
+    }
+    ai_weight = {
+        factor = 20
+    }
+}

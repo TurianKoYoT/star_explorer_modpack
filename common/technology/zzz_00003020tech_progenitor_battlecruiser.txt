@@ -1,0 +1,19 @@
+@acot_tier10cost2 = 1280000
+tech_progenitor_battlecruiser = {
+    cost = @acot_tier10cost2
+    area = engineering
+    tier = 10
+    category = {
+        voidcraft
+    }
+    weight = 0
+    is_rare = yes
+    potential = {
+        is_progenitor_empires = yes
+    }
+    modifier = {
+    }
+    ai_weight = {
+        factor = 3
+    }
+}

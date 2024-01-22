@@ -1,0 +1,44 @@
+trait_v_adv_pneumoconiosis = {
+    cost = -2
+    icon = "gfx/interface/icons/traits/trait_v_pneumoconiosis.dds"
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    potential_crossbreeding_chance = 1
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_v_zoological_transgenesis
+        }
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/adv_biological_traits/BIOLOGICAL"
+    inline_script = "allowed_archetypes/adv_biological_traits/LITHOID"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/REP"
+    inline_script = "species_class/ART"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/FUN"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/LITHOID"
+    inline_script = "species_class/NECROID"
+    inline_script = "species_class/AQUATIC"
+    opposites = {
+        "trait_v_pneumoconiosis"
+        "trait_v_double_respiration"
+        "trait_v_adv_double_respiration"
+        "trait_noxious"
+        "trait_v_urbanobiont"
+        "trait_v_adv_urbanobiont"
+    }
+    modifier = {
+        habitability_ceil_add = -0.3
+    }
+    slave_cost = {
+        energy = -2000
+    }
+}

@@ -1,0 +1,29 @@
+tech_ult_ultimate_citadel = {
+    area = society
+    cost = 30000
+    tier = 4
+    category = {
+        military_theory
+    }
+    is_rare = yes
+    prerequisites = {
+        "tech_ult_supreme_power"
+        "tech_ult_ultimate_technology"
+        "tech_starbase_4"
+    }
+    weight = 20
+    modifier = {
+        country_starbase_capacity_add = 5
+        starbase_upgrade_speed_mult = 1
+        starbase_defense_platform_capacity_add = 20
+        shipclass_military_station_damage_mult = 1
+        shipclass_military_station_hull_mult = 1
+    }
+    prereqfor_desc = {
+        hide_prereq_for_desc = starbase_building
+        custom = {
+            title = "TECH_UNLOCK_ULT_ULTIMATE_CITADEL_TITLE"
+            desc = "TECH_UNLOCK_ULT_ULTIMATE_CITADEL_DESC"
+        }
+    }
+}

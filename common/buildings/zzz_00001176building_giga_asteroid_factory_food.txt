@@ -1,0 +1,46 @@
+building_giga_asteroid_factory_food = {
+    inline_script = {
+        script = buildings/asteroid_industry/building_giga_asteroid_factory
+        cap_modifier = building_giga_asteroid_factory_food_country_max
+        unlock = "country_uses_food = yes"
+        modifiers = "
+triggered_planet_modifier = {
+potential = {
+solar_system = {
+any_system_megastructure = {
+is_megastructure_type = asteroid_manufactory_food
+}
+}
+}
+planet_farmers_produces_mult = 0.05
+}
+triggered_planet_modifier = {
+potential = {
+exists = owner
+owner = {
+is_anglers_empire = yes
+}
+solar_system = {
+any_system_megastructure = {
+is_megastructure_type = asteroid_manufactory_food
+}
+}
+}
+planet_artisans_food_upkeep_mult = -0.1
+}
+inline_script = {
+script = planet/food/giga_farmer_job_swap
+jobs = @asteroid_industry_job_count
+}
+triggered_desc = {
+text = building_giga_asteroid_factory_food_effect
+}
+"
+    }
+    ai_resource_production = {
+        trigger = {
+            has_farming_designation = yes
+        }
+        ai_unobtainium = 1000
+    }
+}

@@ -1,0 +1,13 @@
+action_open_borders = {
+    icon = "GFX_diplomacy_status_open_borders"
+    auto_accepted = yes
+    requires_actor_independence = no
+    requires_recipient_independence = no
+    should_show_auto_accept_message_recipient = yes
+    action_type = positive
+    possible = {
+        homicidal_diplomacy_restrictions = {
+            mirror = yes
+        }
+    }
+}

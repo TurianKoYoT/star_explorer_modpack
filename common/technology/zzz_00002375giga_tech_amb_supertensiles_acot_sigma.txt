@@ -1,0 +1,45 @@
+giga_tech_amb_supertensiles_acot_sigma = {
+    cost = @acot_tier9cost2
+    area = physics
+    tier = 9
+    category = {
+        field_manipulation
+    }
+    prerequisites = {
+        giga_tech_amb_supertensiles_acot_phanon
+        tech_dark_matter_power_core_se
+    }
+    weight = @tier5weight1
+    potential = {
+        has_acot = yes
+        has_global_flag = has_aot_mod
+        has_global_flag = @giga_amb_flag
+        NOT = {
+            has_global_flag = acot_building_forbidden
+        }
+        has_technology = tech_dark_matter_power_core_se
+    }
+    weight_modifier = {
+        modifier = {
+            factor = value:tech_weight_likelihood
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_field_manipulation
+            }
+        }
+        modifier = {
+            factor = 0
+            not = {
+                has_global_flag = @giga_amb_flag
+            }
+        }
+    }
+    ai_weight = {
+        factor = @giga_aiweight_multiplier_medium
+        modifier = {
+            factor = value:tech_weight_likelihood
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_field_manipulation
+            }
+        }
+    }
+}

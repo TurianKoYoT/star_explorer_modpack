@@ -1,0 +1,63 @@
+@diff_t4 = 8
+operation_weaken_galactic_empire = {
+    target = none
+    categories = {
+        op_cat_subterfuge
+        op_cat_imperium
+    }
+    picture = GFX_evt_galactic_empire
+    desc = operation_weaken_galactic_empire_desc
+    stages = 3
+    resources = {
+        category = operations
+        cost = {
+            influence = 80
+        }
+        upkeep = {
+            energy = 7
+        }
+    }
+    spy_power_cost = 35
+    potential = {
+        has_nemesis = yes
+        target = {
+            is_primitive = no
+        }
+        has_galactic_emperor = yes
+        target = {
+            is_galactic_emperor = yes
+        }
+        root.owner = {
+            is_galactic_community_member = yes
+            is_galactic_emperor = no
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            is_running_espionage_operation = no
+            fail_text = operation_one_at_a_time
+        }
+    }
+    stage = {
+        difficulty = @diff_t4
+        icon = GFX_espionage_chapter_icon_motion
+        event = operation.6000
+    }
+    stage = {
+        difficulty = @diff_t4
+        icon = GFX_espionage_chapter_icon_surveillance
+        event = operation.6005
+    }
+    stage = {
+        difficulty = @diff_t4
+        icon = GFX_espionage_chapter_icon_target
+        event = operation.6010
+    }
+    on_roll_failed = {
+        standard_espionage_operation_on_roll_failed = {
+            RANDOM_EVENTS = operation_random_events_generic
+        }
+    }
+    on_create = {
+    }
+}

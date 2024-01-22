@@ -1,0 +1,15 @@
+tech_eutab_solar_tracker = {
+    cost = @tier1cost3
+    area = physics
+    tier = 1
+    category = {
+        computing
+    }
+    is_custom_tech_1 = yes
+    prerequisites = {
+        "tech_mineral_purification_1"
+        "tech_power_plant_2"
+        "tech_solar_panel_network"
+    }
+    weight = @tier1weight3
+}

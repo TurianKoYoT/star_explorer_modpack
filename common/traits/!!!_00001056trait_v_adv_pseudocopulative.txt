@@ -1,0 +1,55 @@
+trait_v_adv_pseudocopulative = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    host_has_dlc = "Plantoids Species Pack"
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    potential_crossbreeding_chance = 1
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_plantoid_transgenesis
+        }
+    }
+    opposites = {
+        "trait_invasive"
+        "trait_necrophage"
+        "trait_clone_soldier_infertile"
+        "trait_clone_soldier_infertile_full_potential"
+        "trait_vat_grown"
+        "trait_v_asexual_reproduction"
+        "trait_clone_soldier_fertile"
+        "trait_incubator"
+        "trait_v_brood_parasite"
+        "trait_v_adv_brood_parasite"
+        "trait_v_pseudocopulative"
+    }
+    inline_script = "traits/vanilla_opposites_pop_growth"
+    inline_script = "allowed_archetypes/adv_biological_traits/BIOLOGICAL"
+    inline_script = "allowed_archetypes/adv_biological_traits/LITHOID"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/REP"
+    inline_script = "species_class/ART"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/LITHOID"
+    inline_script = "species_class/NECROID"
+    inline_script = "species_class/AQUATIC"
+    inline_script = "species_class/TOX"
+    custom_tooltip = TRAIT_PSEUDOCOPULATIVE_EFFECT
+    triggered_planet_growth_habitability_modifier = {
+        pop_growth_speed = 0.01
+        mult = planet.value:count_v_pseudocopulative
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

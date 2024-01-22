@@ -1,0 +1,18 @@
+tech_eutab_starbase_contracts = {
+    cost = @tier3cost3
+    area = society
+    tier = 3
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_interstellar_campaigns"
+        "tech_manifest_destiny"
+    }
+    weight = @tier3weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_egalitarian = yes
+        has_ascension_perk = ap_grasp_the_void
+    }
+}

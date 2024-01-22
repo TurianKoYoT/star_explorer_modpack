@@ -1,0 +1,42 @@
+custodian_drone = {
+    category = complex_drone
+    condition_string = DRONE_JOB_TRIGGER
+    building_icon = building_museum
+    possible_pre_triggers = {
+        has_owner = yes
+        is_enslaved = no
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_drone_job
+    possible = {
+        can_think = yes
+    }
+    resources = {
+        category = planet_administrators
+        produces = {
+            unity = 3
+        }
+        upkeep = {
+            minerals = 3
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        planet_amenities_add = 4
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        planet_amenities_mult = 0.05
+    }
+    weight = {
+        weight = @complex_drone_job_weight
+        mult = value:job_weights_modifier|JOB|custodian_drone|RESOURCE|unity|
+    }
+}

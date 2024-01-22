@@ -1,0 +1,23 @@
+tech_eutab_spawning_garden = {
+    cost = @tier3cost3
+    area = society
+    tier = 3
+    is_custom_tech_1 = yes
+    category = {
+        biology
+    }
+    prerequisites = {
+        "tech_autonomous_agents"
+        "tech_collective_production_methods"
+    }
+    weight = @tier3weight3
+    potential = {
+        is_hive_empire = yes
+    }
+    prereqfor_desc = {
+        custom = {
+            title = EUTAB_SPAWNING_UPGRADE_TITLE
+            desc = eutab_not_independant_building
+        }
+    }
+}

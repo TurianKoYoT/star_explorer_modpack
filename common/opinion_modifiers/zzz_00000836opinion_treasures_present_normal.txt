@@ -1,0 +1,9 @@
+opinion_treasures_present_normal = {
+    opinion = {
+        base = 70
+    }
+    accumulative = yes
+    decay = {
+        base = 2
+    }
+}

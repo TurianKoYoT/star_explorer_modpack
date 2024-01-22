@@ -1,0 +1,28 @@
+trait_v_repletes = {
+    cost = 2
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_v_social_parasite"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/ART"
+    custom_tooltip = TRAIT_REPLETE_EFFECT
+    slave_cost = {
+        energy = 2000
+    }
+    assembly_score = {
+        modifier = {
+            add = 1.5
+            from = {
+                has_trade_designation = yes
+            }
+        }
+    }
+}

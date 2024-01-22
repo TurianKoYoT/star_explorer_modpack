@@ -1,0 +1,78 @@
+@resolution_weight_normal = 6
+@resolution_cost_t4 = 250
+@resolution_flag_timer = 360
+resolution_development_aides_repeal = {
+    icon = "GFX_resolution_development_aides"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t4
+        }
+    }
+    target = no
+    fire_and_forget = yes
+    effect = {
+        cancel_resolution = "resolution_development_aides"
+        pass_resolution_modifier = {
+            CATEGORY = development_aides_repeal
+        }
+    }
+    fail_effects = {
+        fail_resolution_modifier = {
+            CATEGORY = development_aides_repeal
+        }
+    }
+    potential = {
+        is_active_resolution = resolution_development_aides
+    }
+    ai_weight = {
+        base = @resolution_weight_normal
+        modifier = {
+            factor = 0.5
+            is_authoritarian = yes
+            desc = ethic_authoritarian
+        }
+        modifier = {
+            factor = 0.9
+            OR = {
+                is_part_of_galactic_council = yes
+                AND = {
+                    is_subject = yes
+                    overlord = {
+                        opinion_level = {
+                            who = prev
+                            level >= neutral
+                        }
+                        is_part_of_galactic_council = yes
+                    }
+                }
+            }
+            desc = gal_com_they_or_overlord_on_galatic_council
+        }
+        modifier = {
+            factor = 2
+            galactic_community_rank > 5
+            NAND = {
+                is_subject = yes
+                overlord = {
+                    opinion_level = {
+                        who = prev
+                        level >= neutral
+                    }
+                    is_part_of_galactic_council = yes
+                }
+            }
+            desc = gal_com_they_nor_overlord_not_on_galatic_council
+        }
+        modifier = {
+            factor = 0.1
+            is_part_of_galactic_council = no
+            OR = {
+                has_deficit = minerals
+                has_deficit = energy
+                has_deficit = food
+            }
+            desc = unstable_economy
+        }
+    }
+}

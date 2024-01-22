@@ -1,0 +1,56 @@
+trait_v_adv_behavioral_sink = {
+    cost = -3
+    inline_script = "traits/no_randomized"
+    icon = "gfx/interface/icons/traits/trait_v_behavioral_sink.dds"
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    potential_crossbreeding_chance = 1
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_v_zoological_transgenesis
+        }
+    }
+    opposites = {
+        "trait_hive_mind"
+        "trait_v_behavioral_sink"
+        "trait_clone_soldier_infertile"
+        "trait_clone_soldier_infertile_full_potential"
+        "trait_vat_grown"
+        "trait_clone_soldier_fertile"
+    }
+    inline_script = "traits/vanilla_opposites_pop_growth"
+    inline_script = "allowed_archetypes/adv_biological_traits/BIOLOGICAL"
+    inline_script = "allowed_archetypes/adv_biological_traits/LITHOID"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/REP"
+    inline_script = "species_class/ART"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/FUN"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/LITHOID"
+    inline_script = "species_class/NECROID"
+    inline_script = "species_class/AQUATIC"
+    custom_tooltip_with_modifiers = TRAIT_BEHAVIORAL_SINK_EFFECT
+    modifier = {
+        negative_leader_traits_species = 1
+    }
+    triggered_pop_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                NOT = {
+                    has_planet_flag = v_behavioral_sink_flag
+                }
+            }
+        }
+        pop_happiness = -0.25
+    }
+    slave_cost = {
+        energy = -2000
+    }
+}

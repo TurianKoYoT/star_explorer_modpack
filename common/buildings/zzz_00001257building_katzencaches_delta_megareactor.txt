@@ -1,0 +1,56 @@
+building_katzencaches_delta_megareactor = {
+    base_buildtime = 360
+    category = resource
+    potential = {
+        owner = {
+            has_origin = origin_katzen
+        }
+    }
+    prerequisites = {
+        "tech_katzen_reactor"
+        "tech_dark_matter_power_core_dm"
+    }
+    country_modifier = {
+        country_resource_max_energy_add = 7500
+    }
+    planet_modifier = {
+        planet_jobs_energy_produces_mult = 0.05
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 1000
+            sr_dark_matter = 150
+        }
+        produces = {
+            energy = 325
+            acot_sr_dark_energy = 15
+            sr_dark_matter = 15
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+        }
+        modifier = {
+            job_acot_energyman_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_acot_energydrone_add = 2
+        }
+    }
+    upgrades = {
+        building_katzencaches_alpha_megareactor
+    }
+}

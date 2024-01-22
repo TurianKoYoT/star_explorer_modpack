@@ -1,0 +1,21 @@
+tech_primitive_initiatives = {
+    cost = @tier3cost3
+    area = society
+    tier = 3
+    category = {
+        statecraft
+    }
+    weight = @tier3weight3
+    is_rare = yes
+    potential = {
+        any_planet_within_border = {
+            has_observation_outpost = yes
+        }
+    }
+    modifier = {
+        country_society_research_produces_mult = 0.05
+    }
+    ai_weight = {
+        factor = 20
+    }
+}

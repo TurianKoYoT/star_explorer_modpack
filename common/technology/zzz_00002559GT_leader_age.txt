@@ -1,0 +1,29 @@
+GT_leader_age = {
+    cost = @tier1cost2
+    area = society
+    tier = 1
+    category = {
+        biology
+    }
+    prerequisites = {
+        "tech_genome_mapping"
+    }
+    weight = @tier1weight2
+    potential = {
+        is_machine_empire = no
+    }
+    modifier = {
+        leader_age = 15
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            num_researched_techs_of_tier = {
+                tier = 1
+                value > 8
+            }
+        }
+    }
+    ai_weight = {
+    }
+}

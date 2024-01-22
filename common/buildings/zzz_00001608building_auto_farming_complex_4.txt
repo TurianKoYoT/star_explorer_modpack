@@ -1,0 +1,25 @@
+building_auto_farming_complex_4 = {
+    base_buildtime = 180
+    can_build = no
+    allow = {
+        has_upgraded_capital = yes
+    }
+    resources = {
+        category = planet_farmers
+        cost = {
+            automatic_drone = 200
+        }
+        produces = {
+            food = 20
+        }
+        upkeep = {
+            automatic_drone = 4
+        }
+    }
+    upgrades = {
+        building_auto_farming_complex_5
+    }
+    prerequisites = {
+        tech_gene_crops
+    }
+}

@@ -1,0 +1,19 @@
+tech_weapons_complex_1 = {
+    cost = 200000
+    area = physics
+    tier = 5
+    category = {
+        voidcraft
+    }
+    prerequisites = {
+        "tech_weapons_complex_0"
+    }
+    potential = {
+        has_ascension_perk = ap_weapons_complex
+    }
+    weight = 100
+    ai_weight = {
+        factor = 100
+    }
+    is_dangerous = yes
+}

@@ -1,0 +1,30 @@
+building_auto_power_plant_1 = {
+    base_buildtime = 180
+    can_build = no
+    resources = {
+        category = planet_technician
+        cost = {
+            automatic_drone = 200
+        }
+        produces = {
+            energy = 5
+        }
+        upkeep = {
+            automatic_drone = 1
+        }
+    }
+    upgrades = {
+        building_auto_power_plant_2
+    }
+    prerequisites = {
+        tech_power_plant_2
+    }
+    potential = {
+        owner = {
+            has_ascension_perk = ap_nano_drones
+        }
+    }
+    show_tech_unlock_if = {
+        has_ascension_perk = ap_nano_drones
+    }
+}

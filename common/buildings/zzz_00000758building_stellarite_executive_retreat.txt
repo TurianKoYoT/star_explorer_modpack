@@ -1,0 +1,44 @@
+building_stellarite_executive_retreat = {
+    icon = building_stellarite_mansion
+    base_buildtime = 600
+    owner_type = corporate
+    category = amenity
+    can_build = no
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            is_ai = no
+        }
+        has_global_flag = has_aot_mod
+    }
+    allow = {
+        num_pops >= 25
+    }
+    country_modifier = {
+        planet_amenities_mult = 1.5
+    }
+    planet_modifier = {
+        trade_value_mult = 0.8
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            energy = 5000
+            minerals = 5000
+            acot_sr_stellarite = 1500
+        }
+        upkeep = {
+            energy = 80
+            acot_sr_stellarite = 16
+        }
+    }
+    prerequisites = {
+        tech_stellarite_mansion
+    }
+    show_tech_unlock_if = {
+        is_megacorp = yes
+    }
+    ai_weight = {
+        factor = 100
+    }
+}

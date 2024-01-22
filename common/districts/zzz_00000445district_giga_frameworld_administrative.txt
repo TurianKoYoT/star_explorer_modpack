@@ -1,0 +1,101 @@
+@advanced_cost = 1000
+@advanced_rare_cost = 50
+@advanced_upkeep = 5
+@advanced_rare_upkeep = 1
+@advanced_time = 720
+district_giga_frameworld_administrative = {
+    base_buildtime = @advanced_time
+    icon = district_arcology_administrative
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        exists = from
+        from = {
+            is_gestalt = no
+            giga_country_uses_priests = no
+            has_technology = "tech_colonial_bureaucracy"
+        }
+        uses_district_set = giga_frameworld
+        is_voidframe_upgraded = no
+    }
+    potential = {
+        exists = owner
+        owner = {
+            is_gestalt = no
+            giga_country_uses_priests = no
+            has_technology = "tech_colonial_bureaucracy"
+        }
+        uses_district_set = giga_frameworld
+        OR = {
+            is_voidframe_upgraded = no
+            AND = {
+                NOR = {
+                    has_building = building_dm_bureaucratic
+                    has_building = building_ae_bureaucratic
+                    has_building = building_phanon_bureaucratic
+                    has_building = building_stellarite_bureaucratic
+                }
+                is_voidframe_upgraded = yes
+            }
+        }
+    }
+    prerequisites = {
+        tech_colonial_bureaucracy
+    }
+    show_tech_unlock_if = {
+        giga_has_frameworld_origin = yes
+        is_gestalt = no
+        giga_country_uses_priests = no
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_giga_frameworld_administrative
+        district_giga_voidframe_admin_dm
+        district_giga_voidframe_admin_de
+        district_giga_voidframe_admin_pe
+        district_giga_voidframe_admin_se
+        district_giga_frameworld_temple
+        district_giga_voidframe_temple_dm
+        district_giga_voidframe_temple_de
+        district_giga_voidframe_temple_pe
+        district_giga_voidframe_temple_se
+        district_giga_frameworld_simulator
+        district_giga_voidframe_simulation_dm
+        district_giga_voidframe_simulation_de
+        district_giga_voidframe_simulation_pe
+        district_giga_voidframe_simulation_se
+        district_giga_frameworld_synapse
+        district_giga_voidframe_synapse_dm
+        district_giga_voidframe_synapse_de
+        district_giga_voidframe_synapse_pe
+        district_giga_voidframe_synapse_se
+        district_giga_frameworld_sanctuary
+        district_giga_voidframe_sanctuary_dm
+        district_giga_voidframe_sanctuary_de
+        district_giga_voidframe_sanctuary_pe
+        district_giga_voidframe_sanctuary_se
+    }
+    resources = {
+        category = planet_districts_hab_research
+        cost = {
+            minerals = @advanced_cost
+            rare_crystals = @advanced_rare_cost
+        }
+        upkeep = {
+            energy = @advanced_upkeep
+            rare_crystals = @advanced_rare_upkeep
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 2
+    }
+    inline_script = {
+        script = planet/unity/giga_bureaucrat_swap
+        jobs = 4
+    }
+    ai_resource_production = {
+        unity = 1
+        trigger = {
+            always = yes
+        }
+    }
+}

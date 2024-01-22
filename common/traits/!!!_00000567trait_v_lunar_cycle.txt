@@ -1,0 +1,79 @@
+trait_v_lunar_cycle = {
+    cost = 1
+    initial = no
+    sapient = no
+    species_possible_remove = {
+        can_remove_presapient_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    species_possible_merge_add = {
+        always = no
+    }
+    opposites = {
+        "trait_void_dweller_1"
+    }
+    allowed_archetypes = {
+        BIOLOGICAL
+        PRESAPIENT
+        LITHOID
+    }
+    custom_tooltip = TRAIT_LUNAR_CYCLE_EFFECT
+    triggered_planet_growth_habitability_modifier = {
+        potential = {
+            exists = planet
+            OR = {
+                planet = {
+                    has_moon = yes
+                }
+                planet = {
+                    is_moon = yes
+                }
+            }
+            planet = {
+                NOT = {
+                    is_planet_class = pc_habitat
+                }
+            }
+            NAND = {
+                planet = {
+                    any_moon = {
+                        is_planet_class = pc_habitat
+                    }
+                }
+                planet = {
+                    num_moons = 1
+                }
+            }
+        }
+        pop_environment_tolerance = 0.2
+    }
+    triggered_planet_growth_habitability_modifier = {
+        potential = {
+            exists = planet
+            OR = {
+                NOR = {
+                    planet = {
+                        has_moon = yes
+                    }
+                    planet = {
+                        is_moon = yes
+                    }
+                }
+                planet = {
+                    is_planet_class = pc_habitat
+                }
+                OR = {
+                    planet = {
+                        any_moon = {
+                            is_planet_class = pc_habitat
+                        }
+                        num_moons = 1
+                    }
+                }
+            }
+        }
+        pop_environment_tolerance = -0.2
+    }
+}

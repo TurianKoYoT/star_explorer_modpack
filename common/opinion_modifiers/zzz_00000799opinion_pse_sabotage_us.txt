@@ -1,0 +1,10 @@
+opinion_pse_sabotage_us = {
+    opinion = {
+        base = -0.1
+    }
+    decay = {
+        base = 5
+    }
+    min = -200
+    accumulative = yes
+}

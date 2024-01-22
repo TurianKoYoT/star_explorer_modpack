@@ -1,0 +1,173 @@
+@resolution_weight_normal = 6
+@resolution_cost_t1 = 100
+@resolution_flag_timer = 360
+resolution_pre_ftl_stances_equal_standing = {
+    icon = "GFX_resolution_pre_ftl_stances"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t1
+        }
+    }
+    target = no
+    modifier = {
+        op_cat_infiltration_difficulty_add = 2
+    }
+    effect = {
+        custom_tooltip = resolution_pre_ftl_stances_equal_standing_tooltip
+        hidden_effect = {
+            every_playable_country = {
+                limit = {
+                    is_galactic_community_member = yes
+                    has_met_primitives = yes
+                    OR = {
+                        has_policy_flag = interference_not_allowed
+                        has_policy_flag = interference_aggressive
+                    }
+                    can_set_policy = {
+                        policy = interference
+                        option = interference_active
+                    }
+                }
+                country_event = {
+                    id = preftl.10000
+                }
+            }
+            set_global_flag = resolution_with_breach_effect_passed
+            set_global_flag = galactic_community_resolution_passed
+            set_timed_country_flag = {
+                flag = galactic_community_resolution_passed_pre_ftl_stances
+                days = @resolution_flag_timer
+            }
+            add_modifier = {
+                modifier = resolution_passed_diplomatic_weight
+                days = 2200
+            }
+        }
+    }
+    fail_effects = {
+        hidden_effect = {
+            set_timed_country_flag = {
+                flag = galactic_community_resolution_failed_pre_ftl_stances
+                days = @resolution_flag_timer
+            }
+            add_modifier = {
+                modifier = resolution_failed_diplomatic_weight
+                days = 2200
+            }
+        }
+    }
+    potential = {
+        has_first_contact_dlc = yes
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = "resolution_already_active"
+            NOT = {
+                is_active_resolution = "resolution_pre_ftl_stances_equal_standing"
+            }
+        }
+        custom_tooltip = {
+            fail_text = "exclusive_resolution_already_active"
+            NOR = {
+                is_active_resolution = "resolution_pre_ftl_stances_non_interference"
+                is_active_resolution = "resolution_pre_ftl_stances_exploitation"
+            }
+        }
+    }
+    breach = {
+        NOT = {
+            has_country_flag = constitutional_immunity
+        }
+        has_met_primitives = yes
+        OR = {
+            has_policy_flag = interference_not_allowed
+            has_policy_flag = interference_aggressive
+            has_country_flag = resolution_breached_pre_ftl_stances_equal_standing
+        }
+    }
+    ai_weight = {
+        base = @resolution_weight_normal
+        modifier = {
+            factor = 1.2
+            has_ethic = ethic_egalitarian
+            is_xenophobe = no
+            desc = ethic_egalitarian
+        }
+        modifier = {
+            factor = 2
+            is_xenophile = yes
+            desc = ethic_xenophile
+        }
+        modifier = {
+            factor = 0.5
+            is_xenophobe = yes
+            is_pacifist = no
+            desc = ethic_xenophobe
+        }
+        modifier = {
+            factor = 0.8
+            is_authoritarian = yes
+            is_xenophile = no
+            desc = ethic_authoritarian
+        }
+        modifier = {
+            factor = 0.8
+            has_ethic = ethic_fanatic_authoritarian
+            desc = ethic_authoritarian
+        }
+        modifier = {
+            factor = 0.5
+            is_megacorp = yes
+            is_xenophile = no
+            desc = gov_megacorporation
+        }
+        modifier = {
+            factor = 1.4
+            has_ethic = ethic_fanatic_egalitarian
+            is_xenophobe = no
+            desc = ethic_fanatic_egalitarian
+        }
+        modifier = {
+            factor = 2
+            OR = {
+                is_shared_burden_empire = yes
+                is_worker_coop_empire = yes
+                is_civic_machine_servitor = yes
+                has_valid_civic = civic_machine_exploration_protocol
+            }
+            desc = gal_com_supporting_civics
+        }
+        modifier = {
+            factor = 1.2
+            OR = {
+                is_agrarian_empire = {
+                    allow_invalid = yes
+                }
+                is_civic_free_haven = yes
+                is_inwards_perfection_empire = yes
+                is_pompous_empire = yes
+                is_civic_machine_servitor = yes
+            }
+            desc = gal_com_supporting_civics
+        }
+        modifier = {
+            factor = 0.8
+            is_civic_authoritarian = yes
+            desc = gal_com_opposing_civics
+        }
+        modifier = {
+            factor = 0.8
+            is_gestalt = yes
+            desc = ethic_gestalt_consciousness
+        }
+        modifier = {
+            factor = 0
+            OR = {
+                is_slaver = yes
+                has_slaver_civic = yes
+            }
+            desc = gal_com_slaver_empire
+        }
+    }
+}

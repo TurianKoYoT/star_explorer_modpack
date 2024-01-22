@@ -1,0 +1,33 @@
+GT_starbase_defense_platform_capacity_add2 = {
+    cost = @tier3cost3
+    area = engineering
+    tier = 3
+    category = {
+        voidcraft
+    }
+    prerequisites = {
+        "tech_starbase_3"
+        "GT_starbase_defense_platform_capacity_add"
+    }
+    weight = @tier3weight3
+    modifier = {
+        ship_military_station_small_cost_mult = -0.2
+        ship_military_station_small_upkeep_mult = -0.2
+        starbase_defense_platform_capacity_add = 10
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            num_researched_techs_of_tier = {
+                tier = 3
+                value > 8
+            }
+        }
+        modifier = {
+            factor = 2
+            is_at_war = yes
+        }
+    }
+    ai_weight = {
+    }
+}

@@ -1,0 +1,15 @@
+tech_ult_singularity_accelerator = {
+    area = physics
+    cost = 40000
+    tier = 5
+    category = {
+        field_manipulation
+    }
+    is_rare = yes
+    is_reverse_engineerable = no
+    prerequisites = {
+        "tech_ult_phase_railgun"
+        "tech_mass_accelerator_2"
+    }
+    weight = 20
+}

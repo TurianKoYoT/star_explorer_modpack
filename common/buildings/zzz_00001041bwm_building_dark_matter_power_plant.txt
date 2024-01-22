@@ -1,0 +1,25 @@
+bwm_building_dark_matter_power_plant = {
+    can_build = no
+    can_demolish = yes
+    icon = "building_dark_matter_power_plant"
+    category = resources
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 500
+        }
+        produces = {
+            energy = 15
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            text = "requires_building_ancient_monolith"
+            planet = {
+                has_building = "bwm_building_ancient_monolith_2"
+            }
+        }
+    }
+    prerequisites = {
+    }
+}

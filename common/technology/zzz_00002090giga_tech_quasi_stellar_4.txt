@@ -1,0 +1,54 @@
+giga_tech_quasi_stellar_4 = {
+    cost = 250000
+    area = physics
+    tier = 5
+    category = {
+        computing
+    }
+    prerequisites = {
+        giga_tech_quasi_stellar_3
+    }
+    is_rare = yes
+    weight = @tier5weight2
+    prereqfor_desc = {
+        hide_prereq_for_desc = ship
+        hide_prereq_for_desc = component
+        hide_prereq_for_desc = feature
+        hide_prereq_for_desc = resource
+        custom = {
+            title = "allow_qso_p3"
+            desc = "desc_qso_p3"
+        }
+    }
+    weight_modifier = {
+        modifier = {
+            factor = value:tech_weight_likelihood
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_computing
+            }
+        }
+        modifier = {
+            factor = @ap_technological_ascendancy_rare_tech
+            has_ascension_perk = ap_technological_ascendancy
+        }
+        modifier = {
+            factor = @federation_perk_factor
+            has_federation = yes
+            federation = {
+                has_federation_perk = rare_tech_boost
+                any_member = {
+                    has_technology = giga_tech_quasi_stellar_4
+                }
+            }
+        }
+    }
+    ai_weight = {
+        factor = @giga_aiweight_multiplier_insane
+        modifier = {
+            factor = value:tech_weight_likelihood
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_computing
+            }
+        }
+    }
+}

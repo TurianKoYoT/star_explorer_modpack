@@ -1,0 +1,32 @@
+trait_v_stock_bot = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    opposites = {
+        "trait_v_processing_power_donation"
+    }
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_synthetic_workers
+            NOT = {
+                has_policy_flag = ai_outlawed
+            }
+        }
+    }
+    allowed_archetypes = {
+        ROBOT
+    }
+    custom_tooltip = TRAIT_PEARL_MAKERS_EFFECT
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_droid_workers
+            NOT = {
+                has_policy_flag = ai_outlawed
+            }
+        }
+    }
+    slave_cost = {
+        energy = 4000
+    }
+}

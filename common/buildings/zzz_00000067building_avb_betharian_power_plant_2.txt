@@ -1,0 +1,67 @@
+@avb_d4_time = 960
+building_avb_betharian_power_plant_2 = {
+    base_buildtime = @avb_d4_time
+    can_build = no
+    category = resource
+    potential = {
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = crucible_colony
+        }
+    }
+    allow = {
+        has_fully_upgraded_capital = yes
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_d4_minerals
+        }
+        produces = {
+            energy = @avb_d4_upkeep
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            job_technician_add = @avb_d4_jobs2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_technician_drone_add = @avb_d4_jobs2
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_technician_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = job_technician_effect_desc
+    }
+    prerequisites = {
+        "tech_avb_betharian_power_plant_2"
+    }
+}

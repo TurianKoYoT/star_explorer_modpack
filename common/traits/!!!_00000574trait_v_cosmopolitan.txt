@@ -1,0 +1,32 @@
+trait_v_cosmopolitan = {
+    cost = 1
+    opposites = {
+        "trait_v_endemic"
+        "trait_nonadaptive"
+        "trait_adaptive"
+        "trait_robust"
+        "trait_adaptive_lithoid"
+        "trait_extremely_adaptive"
+        "trait_robust"
+    }
+    initial = no
+    sapient = no
+    species_possible_remove = {
+        can_remove_presapient_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    species_possible_merge_add = {
+        always = no
+    }
+    potential_crossbreeding_chance = 1
+    allowed_archetypes = {
+        BIOLOGICAL
+        PRESAPIENT
+        LITHOID
+    }
+    modifier = {
+        pop_environment_tolerance = 0.5
+    }
+}

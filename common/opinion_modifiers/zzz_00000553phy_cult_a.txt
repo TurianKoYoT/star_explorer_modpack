@@ -1,0 +1,11 @@
+phy_cult_a = {
+    trigger = {
+        is_nihil_cult_emex = yes
+        FROM = {
+            has_ethic = "ethic_materialist"
+        }
+    }
+    opinion = {
+        base = 10
+    }
+}

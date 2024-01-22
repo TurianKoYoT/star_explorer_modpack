@@ -1,0 +1,57 @@
+joins_subject_wars_offensive = {
+    term = joins_subject_wars
+    loyalty_change = 10
+    ai_acceptance = {
+        overlord = -60
+        subject = 50
+    }
+    activate_effect = {
+        set_rule_join_subject_wars = offensive
+    }
+    deactivate_effect = {
+        set_rule_join_subject_wars = none
+    }
+    target_modifier = {
+        monthly_loyalty = 1
+    }
+    possible = {
+        custom_tooltip = {
+            fail_text = not_allowed_for_scholarium
+            NOT = {
+                agreement_preset = preset_scholarium
+            }
+        }
+        custom_tooltip = {
+            fail_text = not_allowed_for_protectorate
+            NOT = {
+                agreement_preset = preset_protectorate
+            }
+        }
+        custom_tooltip = {
+            fail_text = not_allowed_for_tributary
+            NOT = {
+                agreement_preset = preset_tributary
+            }
+        }
+        custom_tooltip = {
+            fail_text = not_allowed_for_imperial_fiefdom
+            NOT = {
+                owner = {
+                    has_ai_personality = imperial_origin_overlord_ai
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = not_allowed_for_katzen_protektorat
+            NOT = {
+                OR = {
+                    agreement_preset = preset_katzen
+                    agreement_preset = preset_katzen_gestalt
+                }
+            }
+        }
+    }
+    potential = {
+        is_imperial_province_agreement = no
+    }
+}

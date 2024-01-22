@@ -1,0 +1,19 @@
+tech_space_mining_5 = {
+    cost = @tier3cost1
+    area = engineering
+    tier = 3
+    category = {
+        industry
+    }
+    prerequisites = {
+        "tech_space_mining_4"
+    }
+    weight = @tier3weight1
+    modifier = {
+        station_gatherers_produces_mult = 0.1
+    }
+    weight_modifier = {
+    }
+    ai_weight = {
+    }
+}

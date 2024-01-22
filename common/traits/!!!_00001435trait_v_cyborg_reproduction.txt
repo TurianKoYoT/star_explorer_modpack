@@ -1,0 +1,21 @@
+trait_v_cyborg_reproduction = {
+    cost = 1
+    initial = no
+    species_potential_add = {
+        can_add_cybernetic_traits = yes
+    }
+    species_possible_remove = {
+        can_remove_cybernetic_traits = yes
+    }
+    randomized = no
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    inline_script = "traits/vanilla_opposites_pop_growth"
+    custom_tooltip_with_modifiers = CYBORG_ENERGY_UPKEEP_EFFECT
+    modifier = {
+        pop_growth_speed = 0.2
+    }
+    slave_cost = {
+        energy = 750
+    }
+}

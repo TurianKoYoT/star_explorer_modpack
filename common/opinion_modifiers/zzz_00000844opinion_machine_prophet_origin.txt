@@ -1,0 +1,5 @@
+opinion_machine_prophet_origin = {
+    opinion = {
+        base = 5000
+    }
+}

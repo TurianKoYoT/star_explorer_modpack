@@ -1,0 +1,10 @@
+opinion_apsr_dark_angel_destroy_my_world = {
+    opinion = {
+        base = -1000
+    }
+    accumulative = yes
+    min = -5000
+    decay = {
+        base = 1
+    }
+}

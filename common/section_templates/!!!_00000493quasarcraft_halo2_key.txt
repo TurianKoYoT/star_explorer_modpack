@@ -1,0 +1,159 @@
+ship_section_template = {
+    key = "quasarcraft_halo2_key"
+    ship_size = agx_quasarcraft
+    fits_on_slot = "halo2"
+    entity = "qsc_01_locators_entity"
+    icon = "GFX_ship_part_core_mid"
+    component_slot = {
+        name = "XL_GUN_01"
+        template = "extra_large_turret"
+        locatorname = "ringgun_r1"
+    }
+    component_slot = {
+        name = "XL_GUN_02"
+        template = "extra_large_turret"
+        locatorname = "ringgun_r2"
+    }
+    component_slot = {
+        name = "XL_GUN_03"
+        template = "extra_large_turret"
+        locatorname = "ringgun_r3"
+    }
+    component_slot = {
+        name = "XL_GUN_04"
+        template = "extra_large_turret"
+        locatorname = "ringgun_r4"
+    }
+    component_slot = {
+        name = "XL_GUN_05"
+        template = "extra_large_turret"
+        locatorname = "ringgun_r5"
+    }
+    component_slot = {
+        name = "XL_GUN_06"
+        template = "extra_large_turret"
+        locatorname = "ringgun_r6"
+    }
+    component_slot = {
+        name = "XL_GUN_07"
+        template = "extra_large_turret"
+        locatorname = "ringgun_r7"
+    }
+    component_slot = {
+        name = "XL_GUN_08"
+        template = "extra_large_turret"
+        locatorname = "ringgun_r8"
+    }
+    component_slot = {
+        name = "XL_GUN_09"
+        template = "extra_large_turret"
+        locatorname = "ringgun_r9"
+    }
+    component_slot = {
+        name = "XL_GUN_10"
+        template = "extra_large_turret"
+        locatorname = "ringgun_r10"
+    }
+    component_slot = {
+        name = "XL_GUN_11"
+        template = "extra_large_turret"
+        locatorname = "ringgun_r11"
+    }
+    component_slot = {
+        name = "XL_GUN_12"
+        template = "extra_large_turret"
+        locatorname = "ringgun_r12"
+    }
+    component_slot = {
+        name = "XL_GUN_13"
+        template = "extra_large_turret"
+        locatorname = "ringgun_r13"
+    }
+    component_slot = {
+        name = "XL_GUN_14"
+        template = "extra_large_turret"
+        locatorname = "ringgun_r14"
+    }
+    component_slot = {
+        name = "XL_GUN_15"
+        template = "extra_large_turret"
+        locatorname = "ringgun_r15"
+    }
+    component_slot = {
+        name = "XL_GUN_16"
+        template = "extra_large_turret"
+        locatorname = "ringgun_br1"
+    }
+    component_slot = {
+        name = "XL_GUN_17"
+        template = "extra_large_turret"
+        locatorname = "ringgun_br2"
+    }
+    component_slot = {
+        name = "XL_GUN_18"
+        template = "extra_large_turret"
+        locatorname = "ringgun_br3"
+    }
+    component_slot = {
+        name = "XL_GUN_19"
+        template = "extra_large_turret"
+        locatorname = "ringgun_br4"
+    }
+    component_slot = {
+        name = "XL_GUN_20"
+        template = "extra_large_turret"
+        locatorname = "ringgun_br5"
+    }
+    component_slot = {
+        name = "XL_GUN_21"
+        template = "extra_large_turret"
+        locatorname = "ringgun_br6"
+    }
+    component_slot = {
+        name = "XL_GUN_22"
+        template = "extra_large_turret"
+        locatorname = "ringgun_br7"
+    }
+    component_slot = {
+        name = "XL_GUN_23"
+        template = "extra_large_turret"
+        locatorname = "ringgun_br8"
+    }
+    component_slot = {
+        name = "XL_GUN_24"
+        template = "extra_large_turret"
+        locatorname = "ringgun_br9"
+    }
+    component_slot = {
+        name = "XL_GUN_25"
+        template = "extra_large_turret"
+        locatorname = "ringgun_br10"
+    }
+    component_slot = {
+        name = "XL_GUN_26"
+        template = "extra_large_turret"
+        locatorname = "ringgun_br11"
+    }
+    component_slot = {
+        name = "XL_GUN_27"
+        template = "extra_large_turret"
+        locatorname = "ringgun_br12"
+    }
+    component_slot = {
+        name = "XL_GUN_28"
+        template = "extra_large_turret"
+        locatorname = "ringgun_br13"
+    }
+    component_slot = {
+        name = "XL_GUN_29"
+        template = "extra_large_turret"
+        locatorname = "ringgun_br14"
+    }
+    component_slot = {
+        name = "XL_GUN_30"
+        template = "extra_large_turret"
+        locatorname = "ringgun_br15"
+    }
+    large_utility_slots = 20
+    aux_utility_slots = 5
+}

@@ -1,0 +1,20 @@
+tech_acot_army_machine_special = {
+    cost = @acot_tier6cost2
+    area = engineering
+    tier = 7
+    category = {
+        industry
+    }
+    prerequisites = {
+        "tech_acot_army_machine_ae"
+    }
+    weight = 20
+    potential = {
+        has_authority = auth_machine_intelligence
+        NOT = {
+            has_global_flag = acot_army_forbidden
+        }
+    }
+    ai_weight = {
+    }
+}

@@ -1,0 +1,16 @@
+triggered_opinion_AAA_hidden_crisis = {
+    trigger = {
+        is_country_type = default
+        NOT = {
+            has_origin = origin_AAA_hidden_crisis
+        }
+        FROM = {
+            has_origin = origin_AAA_hidden_crisis
+        }
+    }
+    opinion = {
+        modifier = {
+            add = -5000
+        }
+    }
+}

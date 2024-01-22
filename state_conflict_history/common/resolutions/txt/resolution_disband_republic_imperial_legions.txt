@@ -1,0 +1,13 @@
+resolution_disband_republic_imperial_legions = {
+    icon = "GFX_resolution_emergency_measure"
+    resources = {
+        category = resolutions
+    }
+    target = no
+    potential = {
+        always = no
+    }
+    ai_weight = {
+        weight = 0
+    }
+}

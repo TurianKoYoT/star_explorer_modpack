@@ -1,0 +1,19 @@
+bwm_building_shipwreck_1 = {
+    base_buildtime = 960
+    can_build = no
+    can_demolish = yes
+    icon = "building_bwm_lex_shipwreck"
+    position_priority = 2
+    category = resources
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 5000
+            influence = 100
+        }
+    }
+    allow = {
+    }
+    prerequisites = {
+    }
+}

@@ -1,0 +1,32 @@
+tech_tma_pk_matter_corrupter = {
+    cost = @tier5cost2
+    area = physics
+    tier = 5
+    category = {
+        particles
+    }
+    prerequisites = {
+    }
+    is_rare = yes
+    weight = @tier5weight1
+    potential = {
+        OR = {
+            has_country_flag = tma_ascended
+            is_country_type = master_ai_country
+        }
+    }
+    weight_modifier = {
+        factor = 1
+    }
+    ai_weight = {
+        factor = 5
+        modifier = {
+            factor = 1.25
+            has_ethic = ethic_militarist
+        }
+        modifier = {
+            factor = 1.5
+            has_ethic = ethic_fanatic_militarist
+        }
+    }
+}

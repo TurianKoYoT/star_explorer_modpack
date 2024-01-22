@@ -1,0 +1,23 @@
+tech_avb_autocurating_vault_2 = {
+    cost = @tier4cost1
+    area = society
+    category = {
+        statecraft
+    }
+    tier = 4
+    prerequisites = {
+        "tech_autocurating_vault"
+    }
+    weight = @tier4weight1
+    potential = {
+        NOR = {
+            has_ethic = ethic_spiritualist
+            has_ethic = ethic_fanatic_spiritualist
+            has_valid_civic = civic_machine_servitor
+        }
+    }
+    weight_modifier = {
+    }
+    ai_weight = {
+    }
+}

@@ -1,0 +1,32 @@
+leader_trait_dimension_navigator_2 = {
+    replace_traits = {
+        "leader_trait_dimension_navigator"
+    }
+    inline_script = {
+        script = trait/icon_simpleicon
+        CLASS = leader
+        ICON = "GFX_leader_trait_dimension_navigator"
+        RARITY = common
+        COUNCIL = no
+        TIER = 2
+    }
+    fleet_modifier = {
+        ship_ftl_jumpdrive_range_mult = 0.3
+        ship_jumpdrive_cooldown_mult = -0.15
+        ship_windup_mult = -0.2
+        fleet_mia_time_mult = -0.4
+    }
+    leader_class = {
+        commander
+        scientist
+    }
+    leader_potential_add = {
+        from = {
+            is_galactic_community_member = yes
+            OR = {
+                is_active_resolution = resolution_custodian_ina
+                is_active_resolution = resolution_emperor_ina
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+tech_sm_summon_physics = {
+    area = physics
+    category = {
+        field_manipulation
+    }
+    tier = 5
+    cost = 20000000
+    weight = 1
+    is_rare = yes
+    potential = {
+        has_event_chain = shroud_master_summoning
+    }
+    prereqfor_desc = {
+        custom = {
+            title = "tech_sm_summon_1"
+        }
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            NOT = {
+                has_country_flag = can_research_summon_tech
+            }
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                any_owned_leader = {
+                    is_councilor = yes
+                    leader_class = scientist
+                    has_sm_research_skills = yes
+                }
+            }
+        }
+    }
+    ai_weight = {
+        factor = 100
+    }
+}

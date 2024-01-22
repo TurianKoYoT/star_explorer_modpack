@@ -1,0 +1,33 @@
+trait_v_adv_hive_epigenetic_castes = {
+    cost = 3
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+            has_technology = tech_v_hive_transgenesis
+        }
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/adv_biological_traits/BIOLOGICAL"
+    inline_script = "allowed_archetypes/adv_biological_traits/LITHOID"
+    custom_tooltip = TRAIT_EPIGENETIC_CASTES_EFFECT
+    opposites = {
+        "trait_invasive"
+        "trait_v_hive_epigenetic_castes"
+        "trait_v_reanimation"
+        "trait_v_adv_reanimation"
+        "trait_v_explosive_autothysis"
+        "trait_v_adv_explosive_autothysis"
+        "trait_v_living_reactors"
+        "trait_v_adv_living_reactors"
+    }
+}

@@ -1,0 +1,43 @@
+tech_macrocannon_dm = {
+    area = engineering
+    cost = @acot_tier6cost2
+    tier = 6
+    category = {
+        propulsion
+    }
+    ai_update_type = military
+    prerequisites = {
+        "tech_autocannons_dm"
+    }
+    weight = @tier5weight2
+    is_reverse_engineerable = no
+    potential = {
+        NOT = {
+            has_global_flag = acot_weapons_forbidden
+        }
+        NOT = {
+            has_global_flag = acot_delta_forbidden
+        }
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 1.25
+            has_ethic = ethic_militarist
+        }
+        modifier = {
+            factor = 1.5
+            has_ethic = ethic_fanatic_militarist
+        }
+    }
+    ai_weight = {
+        factor = 2
+        modifier = {
+            factor = 1.25
+            has_ethic = ethic_militarist
+        }
+        modifier = {
+            factor = 1.5
+            has_ethic = ethic_fanatic_militarist
+        }
+    }
+}

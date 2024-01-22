@@ -1,0 +1,22 @@
+tech_avb_planetary_shield_generator_3 = {
+    area = physics
+    cost = @tier5cost1
+    tier = 5
+    category = {
+        field_manipulation
+    }
+    ai_update_type = all
+    is_rare = yes
+    prerequisites = {
+        "tech_avb_planetary_shield_generator_2"
+        "tech_shields_5"
+    }
+    weight = @tier5weight1
+    weight_modifier = {
+        factor = 0.5
+        modifier = {
+            factor = @ap_technological_ascendancy_rare_tech
+            has_ascension_perk = ap_technological_ascendancy
+        }
+    }
+}

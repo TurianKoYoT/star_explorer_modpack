@@ -1,0 +1,56 @@
+trait_v_materialistic = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    species_possible_merge_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    species_possible_remove = {
+        OR = {
+            can_remove_beneficial_genetic_traits = yes
+            AND = {
+                exists = from
+                from = {
+                    is_gestalt = yes
+                }
+            }
+        }
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    allowed_ethics = {
+        ethic_materialist
+        ethic_fanatic_materialist
+    }
+    valid_for_all_ethics = no
+    custom_tooltip = TRAIT_MATERIALISTIC_EFFECT
+    opposites = {
+        "trait_hive_mind"
+        "trait_invasive"
+        "trait_v_ascetic"
+        "trait_v_scholastic"
+        "trait_v_proselytizing"
+        "trait_v_astrology"
+        "trait_v_druidic"
+        "trait_v_machine_priests"
+    }
+    triggered_pop_modifier = {
+        potential = {
+            has_ethic = ethic_materialist
+        }
+        pop_housing_usage_mult = 0.1
+        planet_pops_consumer_goods_upkeep_mult = 0.1
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

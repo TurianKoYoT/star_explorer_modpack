@@ -1,0 +1,54 @@
+trait_v_endemic = {
+    cost = -6
+    opposites = {
+        "trait_v_cosmopolitan"
+        "trait_nonadaptive"
+        "trait_adaptive"
+        "trait_robust"
+        "trait_adaptive_lithoid"
+        "trait_extremely_adaptive"
+        "trait_robust"
+        "trait_noxious"
+        "trait_cave_dweller"
+        "trait_v_living_mountain"
+        "trait_v_rooted"
+        "trait_v_fossorial"
+        "trait_v_adv_fossorial"
+        "trait_v_weak_immune_system"
+        "trait_v_plague"
+        "trait_v_fertilising"
+        "trait_v_infertilising"
+        "trait_v_soil_maker"
+    }
+    initial = no
+    sapient = no
+    species_possible_remove = {
+        can_remove_presapient_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    species_possible_merge_add = {
+        always = no
+    }
+    potential_crossbreeding_chance = 1
+    allowed_archetypes = {
+        BIOLOGICAL
+        PRESAPIENT
+        LITHOID
+    }
+    custom_tooltip = TRAIT_ENDEMIC_EFFECT
+    modifier = {
+    }
+    triggered_planet_growth_habitability_modifier = {
+        potential = {
+            exists = from.home_planet
+            NOT = {
+                from.home_planet = {
+                    is_same_value = prev
+                }
+            }
+        }
+        habitability_ceil_add = -1
+    }
+}

@@ -1,0 +1,28 @@
+trait_ult_robot_quantum_matrix = {
+    cost = 4
+    initial = no
+    species_potential_add = {
+        exists = from
+        from = {
+            OR = {
+                has_technology = tech_ult_super_machine_enhance
+                has_technology = tech_ult_super_robot_enhance
+            }
+            NOT = {
+                has_policy_flag = ai_outlawed
+            }
+        }
+    }
+    allowed_archetypes = {
+        ROBOT
+        MACHINE
+    }
+    modifier = {
+        planet_jobs_society_research_produces_mult = 0.2
+        planet_jobs_physics_research_produces_mult = 0.2
+        planet_jobs_engineering_research_produces_mult = 0.2
+        planet_jobs_unity_produces_mult = 0.1
+        species_leader_exp_gain = 0.5
+        negative_leader_traits_species = -1
+    }
+}

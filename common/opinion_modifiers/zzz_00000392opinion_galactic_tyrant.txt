@@ -1,0 +1,22 @@
+opinion_galactic_tyrant = {
+    trigger = {
+        is_galactic_community_member = no
+    }
+    opinion = {
+        base = 0
+        modifier = {
+            add = -800
+            is_federation_leader = yes
+            FROM = {
+                is_galactic_emperor = yes
+            }
+        }
+        modifier = {
+            add = -200
+            has_federation = yes
+            FROM = {
+                is_galactic_emperor = yes
+            }
+        }
+    }
+}

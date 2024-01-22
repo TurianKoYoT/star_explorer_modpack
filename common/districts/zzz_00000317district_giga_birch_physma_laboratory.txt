@@ -1,0 +1,119 @@
+@giga_birch_sector_cost = 1500
+@giga_birch_sector_sr_cost = 200
+@giga_birch_sector_time = 360
+@giga_birch_sector_maintenance = 5
+@giga_birch_sector_sr_maintenance = 2
+@sector_jobs = 7
+@sector_workers = -7
+district_giga_birch_physma_laboratory = {
+    base_buildtime = @giga_birch_sector_time
+    is_capped_by_modifier = yes
+    show_on_uncolonized = {
+        uses_district_set = giga_birch
+        has_district = district_giga_birch_physma
+    }
+    potential = {
+        uses_district_set = giga_birch
+        has_district = district_giga_birch_physma
+    }
+    allow = {
+        giga_birch_district_allow = {
+            category = physma
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = @giga_birch_sector_cost
+            exotic_gases = @giga_birch_sector_sr_cost
+        }
+        upkeep = {
+            energy = @giga_birch_sector_maintenance
+            exotic_gases = @giga_birch_sector_sr_maintenance
+        }
+    }
+    planet_modifier = {
+        giga_birch_district_physma_tag = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        job_researcher_add = @sector_jobs
+        job_giga_birch_physma_worker_add = @sector_workers
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = job_researcher_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        job_brain_drone_add = @sector_jobs
+        job_giga_birch_physma_worker_drone_add = @sector_workers
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        text = job_brain_drone_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        job_calculator_add = @sector_jobs
+        job_giga_birch_physma_worker_drone_add = @sector_workers
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        text = job_calculator_effect_desc
+    }
+    on_queued = {
+        giga_birch_district_queued = {
+            category = physma
+            type = physma_laboratory
+        }
+    }
+    on_unqueued = {
+        giga_birch_district_unqueued = {
+            category = physma
+            type = physma_laboratory
+        }
+    }
+    on_built = {
+        giga_birch_district_built = {
+            category = physma
+            type = physma_laboratory
+        }
+    }
+    on_destroy = {
+        giga_birch_district_destroy = {
+            category = physma
+            type = physma_laboratory
+        }
+    }
+}

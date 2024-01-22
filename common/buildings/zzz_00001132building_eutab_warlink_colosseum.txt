@@ -1,0 +1,52 @@
+building_eutab_warlink_colosseum = {
+    base_buildtime = @b3_time
+    can_build = no
+    category = army
+    potential = {
+        exists = owner
+        owner = {
+            is_militarist = yes
+        }
+    }
+    allow = {
+        has_upgraded_capital = yes
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            alloys = @b3_rare_cost
+        }
+        upkeep = {
+            energy = @b3_upkeep
+        }
+    }
+    army_modifier = {
+        army_starting_experience_add = 200
+    }
+    planet_modifier = {
+        job_eutab_gladiator_add = 8
+        pop_happiness = 0.05
+        planet_max_buildings_add = 1
+    }
+    inline_script = "buildings/eutab_dev_structures_modifiers"
+    triggered_desc = {
+        text = job_eutab_gladiator_effect_desc
+    }
+    prerequisites = {
+        "tech_eutab_warlink_colosseum"
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                has_ascension_perk = ap_the_flesh_is_weak
+                has_ascension_perk = ap_synthetic_evolution
+                is_militarist = no
+            }
+        }
+    }
+    convert_to = {
+        building_eutab_wargame
+    }
+}

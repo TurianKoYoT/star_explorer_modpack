@@ -1,0 +1,73 @@
+district_acot_soulsphere_fortress = {
+    base_buildtime = 360
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        uses_district_set = theta_soulsphere
+    }
+    allow = {
+    }
+    potential = {
+        uses_district_set = theta_soulsphere
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = 1000000
+            sm_sr_perfect_runic_energy = 150
+        }
+        produces = {
+            unity = 500
+        }
+        upkeep = {
+            sm_sr_perfect_runic_energy = 1
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 20
+        planet_crime_add = -100
+        planet_stability_add = 100
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            job_sm_acot_enforcer_add = 4
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_sm_acot_enforcer_drone_add = 4
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                is_gestalt = no
+            }
+        }
+        job_sm_acot_giga_fortress_operator_add = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        job_sm_acot_giga_fortress_operator_drone_add = 1
+    }
+    ai_weight = {
+        weight = 0
+        modifier = {
+            weight = 5
+            free_housing < 10
+        }
+    }
+}

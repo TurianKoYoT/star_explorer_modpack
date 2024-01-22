@@ -1,0 +1,23 @@
+tech_yanz_rs_trophy_sleep = {
+    area = society
+    start_tech = no
+    cost = @tier3cost3
+    is_rare = yes
+    tier = 2
+    category = {
+        biology
+    }
+    weight = @tier2weight2
+    potential = {
+        has_civic = "civic_yanz_machine_servitor"
+    }
+    modifier = {
+        planet_jobs_food_produces_mult = 0.1
+    }
+    prereqfor_desc = {
+        custom = {
+            title = ""
+            desc = ""
+        }
+    }
+}

@@ -1,0 +1,13 @@
+merg_is_gas_giant = {
+    OR = {
+        is_planet_class = pc_gas_giant
+        is_planet_class = pc_hot_gas_giant
+        is_planet_class = pc_cloudless_gas_giant
+        is_planet_class = pc_cold_gas_giant
+        atw_is_gas_giant = yes
+        is_aso_gg_ice_giant = yes
+        is_planet_class = pc_azur_gas_giant
+        is_nanite_gas_giant = yes
+        is_pd_gas_giant = yes
+    }
+}

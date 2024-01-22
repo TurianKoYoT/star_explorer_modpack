@@ -1,0 +1,15 @@
+building_mp_primitive_philosophers_palace = {
+    icon = building_mp_primitive_philosophers_palace
+    capital = yes
+    can_build = no
+    can_demolish = yes
+    can_be_ruined = no
+    ai_weight = {
+        weight = 10
+    }
+    planet_modifier = {
+        job_mp_primitive_philosopher_add = 4
+        planet_housing_add = 4
+        pop_happiness = 0.1
+    }
+}

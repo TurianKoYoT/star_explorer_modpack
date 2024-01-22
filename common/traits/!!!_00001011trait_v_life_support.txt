@@ -1,0 +1,41 @@
+trait_v_life_support = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/NECROID"
+    inline_script = "species_class/TOX"
+    custom_tooltip = TRAIT_LIFE_SUPPORT_EFFECT
+    opposites = {
+        "trait_invasive"
+        "trait_v_adv_life_support"
+        "trait_v_electrogenesis"
+        "trait_v_adv_electrogenesis"
+        "trait_noxious"
+        "trait_v_fossorial"
+        "trait_v_adv_fossorial"
+    }
+    triggered_planet_growth_habitability_modifier = {
+        potential = {
+            NOR = {
+                this = {
+                    is_pd_bad_exotic = yes
+                }
+                from = {
+                    is_pd_bad_exotic_traits = yes
+                }
+            }
+        }
+        habitability_floor_add = 0.1
+        mult = value:count_negative_traits
+    }
+    slave_cost = {
+        energy = 2000
+    }
+}

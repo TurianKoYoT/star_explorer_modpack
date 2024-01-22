@@ -1,0 +1,21 @@
+trait_v_maleable_branches = {
+    cost = 2
+    potential_crossbreeding_chance = 0.5
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    opposites = {
+        "trait_invasive"
+        "trait_delicious"
+    }
+    inline_script = "allowed_archetypes/adv_biological_traits/BIOLOGICAL"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/FUN"
+    modifier = {
+        planet_livestock_food_produces_add = -4
+        planet_livestock_consumer_goods_produces_add = 2
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

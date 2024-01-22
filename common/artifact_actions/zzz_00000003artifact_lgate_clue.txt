@@ -1,0 +1,45 @@
+artifact_lgate_clue = {
+    resources = {
+        category = artifact_actions
+        cost = {
+            minor_artifacts = 800
+        }
+    }
+    potential = {
+        has_country_flag = encountered_first_lgate
+        NOR = {
+            has_country_flag = completed_lcluster_chain
+            has_global_flag = l_cluster_opened
+        }
+        has_distar = yes
+        has_ancrel = yes
+    }
+    allow = {
+        NOT = {
+            has_modifier = artifact_lgate_insight_cooldown
+        }
+    }
+    effect = {
+        custom_tooltip = artifact_lgate_clue_effect
+        hidden_effect = {
+            generate_lcluster_clue = yes
+            add_modifier = {
+                modifier = "artifact_lgate_insight_cooldown"
+                years = 10
+            }
+        }
+    }
+    ai_weight = {
+        weight = 1
+        modifier = {
+            factor = 0
+            OR = {
+                mid_game_years_passed < 0
+                has_country_resource = {
+                    type = minor_artifacts
+                    amount < 450
+                }
+            }
+        }
+    }
+}

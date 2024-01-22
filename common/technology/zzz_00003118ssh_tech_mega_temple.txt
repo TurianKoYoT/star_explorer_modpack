@@ -1,0 +1,30 @@
+ssh_tech_mega_temple = {
+    cost = 20000
+    area = society
+    tier = 4
+    category = {
+        psionics
+    }
+    prerequisites = {
+        "ssh_tech_triangle_theory"
+    }
+    potential = {
+        has_technology = ssh_tech_nuclei_modification
+        NOR = {
+            is_machine_empire = yes
+            is_hive_empire = yes
+        }
+    }
+    is_rare = yes
+    weight = 0
+    modifier = {
+        country_sr_zro_produces_mult = 0.1
+    }
+    ai_weight = {
+        factor = 10
+        modifier = {
+            factor = 0
+            has_utopia = no
+        }
+    }
+}

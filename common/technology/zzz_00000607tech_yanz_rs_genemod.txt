@@ -1,0 +1,20 @@
+tech_yanz_rs_genemod = {
+    area = society
+    start_tech = no
+    cost = @tier5cost3
+    is_rare = yes
+    tier = 5
+    category = {
+        biology
+    }
+    weight = 0
+    modifier = {
+        description = tech_yanz_rs_genemod_info
+    }
+    prereqfor_desc = {
+        custom = {
+            title = ""
+            desc = ""
+        }
+    }
+}

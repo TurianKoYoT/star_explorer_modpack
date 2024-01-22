@@ -1,0 +1,46 @@
+tech_darkmatter_stealth_generator_dm = {
+    cost = @acot_tier6cost1
+    area = physics
+    tier = 6
+    category = {
+        field_manipulation
+    }
+    ai_update_type = all
+    prerequisites = {
+        "tech_cloaking_3"
+        tech_dark_matter_deflector_dm
+    }
+    weight = @tier5weight2
+    is_reverse_engineerable = no
+    potential = {
+        has_first_contact_dlc = yes
+        NOT = {
+            has_global_flag = acot_utilitys_forbidden
+        }
+        NOT = {
+            has_global_flag = acot_delta_forbidden
+        }
+    }
+    weight_modifier = {
+        modifier = {
+            factor = @ap_technological_ascendancy_rare_tech
+            has_ascension_perk = ap_technological_ascendancy
+        }
+        modifier = {
+            factor = @federation_perk_factor
+            has_federation = yes
+            federation = {
+                has_federation_perk = rare_tech_boost
+                any_member = {
+                    has_technology = tech_cloaking_3
+                }
+            }
+        }
+        modifier = {
+            factor = 5
+            has_tradition = tr_subterfuge_adopt
+        }
+    }
+    ai_weight = {
+    }
+}

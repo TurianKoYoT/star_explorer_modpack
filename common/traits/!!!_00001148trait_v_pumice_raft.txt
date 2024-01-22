@@ -1,0 +1,27 @@
+trait_v_pumice_raft = {
+    cost = 3
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    allowed_planet_classes = {
+        pc_ocean
+    }
+    inline_script = "traits/pd_aquatic_allowed_planet_classes"
+    inline_script = "traits/aquatic_pc_restriction"
+    inline_script = "allowed_archetypes/LITHOID"
+    opposites = {
+        "trait_invasive"
+        "trait_v_ecosystem_engineer"
+        "trait_v_adv_ecosystem_engineer"
+        "trait_v_adv_pumice_raft"
+    }
+    custom_tooltip_with_modifiers = TRAIT_PUMICE_RAFT_EFFECT
+    slave_cost = {
+        energy = 1000
+    }
+}

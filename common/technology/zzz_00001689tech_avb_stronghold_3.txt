@@ -1,0 +1,24 @@
+tech_avb_stronghold_3 = {
+    cost = @tier3cost1
+    area = society
+    tier = 3
+    category = {
+        military_theory
+    }
+    prerequisites = {
+        "tech_global_defense_grid"
+        "tech_galactic_administration"
+    }
+    weight = @tier3weight1
+    modifier = {
+        army_defense_health_mult = 0.1
+    }
+    weight_modifier = {
+        factor = 2
+        inline_script = "tech_weights/avb_military_weight"
+    }
+    ai_weight = {
+        factor = 2
+        inline_script = "tech_weights/avb_military_weight"
+    }
+}

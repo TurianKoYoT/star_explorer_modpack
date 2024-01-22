@@ -1,0 +1,27 @@
+trait_ult_multitalented = {
+    cost = 3
+    potential_crossbreeding_chance = 1
+    initial = no
+    randomized = no
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_ult_nano_drone_enhance
+        }
+    }
+    opposites = {
+        "trait_ult_resourceful"
+    }
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    modifier = {
+        planet_jobs_produces_mult = 0.2
+        leaders_upkeep_mult = -0.1
+        negative_leader_traits_species = -1
+    }
+    slave_cost = {
+        energy = 300
+    }
+}

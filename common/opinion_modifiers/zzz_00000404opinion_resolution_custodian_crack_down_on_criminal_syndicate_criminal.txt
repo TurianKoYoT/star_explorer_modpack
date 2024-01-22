@@ -1,0 +1,9 @@
+opinion_resolution_custodian_crack_down_on_criminal_syndicate_criminal = {
+    opinion = {
+        base = -80
+    }
+    unique = yes
+    decay = {
+        base = 2
+    }
+}

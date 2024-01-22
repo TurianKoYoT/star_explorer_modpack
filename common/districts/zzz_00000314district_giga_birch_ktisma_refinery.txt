@@ -1,0 +1,159 @@
+@giga_birch_sector_cost = 1500
+@giga_birch_sector_alt_cost = 500
+@giga_birch_sector_time = 360
+@giga_birch_sector_maintenance = 5
+@giga_birch_sector_alt_maintenance = 5
+@sector_workers = -7
+district_giga_birch_ktisma_refinery = {
+    base_buildtime = @giga_birch_sector_time
+    is_capped_by_modifier = yes
+    show_on_uncolonized = {
+        uses_district_set = giga_birch
+        has_district = district_giga_birch_ktisma
+    }
+    potential = {
+        uses_district_set = giga_birch
+        has_district = district_giga_birch_ktisma
+    }
+    allow = {
+        giga_birch_district_allow = {
+            category = ktisma
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = @giga_birch_sector_cost
+            alloys = @giga_birch_sector_alt_cost
+        }
+        upkeep = {
+            energy = @giga_birch_sector_maintenance
+            alloys = @giga_birch_sector_alt_maintenance
+        }
+    }
+    planet_modifier = {
+        giga_birch_district_ktisma_tag = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        job_chemist_add = 2
+        job_gas_refiner_add = 2
+        job_translucer_add = 2
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = job_chemist_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = job_gas_refiner_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = job_translucer_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        job_chemist_drone_add = 2
+        job_gas_refiner_drone_add = 2
+        job_translucer_drone_add = 2
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_chemist_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_gas_refiner_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_translucer_drone_effect_desc
+    }
+    inline_script = {
+        script = planet/unity/giga_unity_job_swap
+        jobs = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        job_giga_birch_ktisma_worker_add = @sector_workers
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        job_giga_birch_ktisma_worker_drone_add = @sector_workers
+    }
+    on_queued = {
+        giga_birch_district_queued = {
+            category = ktisma
+            type = ktisma_refinery
+        }
+    }
+    on_unqueued = {
+        giga_birch_district_unqueued = {
+            category = ktisma
+            type = ktisma_refinery
+        }
+    }
+    on_built = {
+        giga_birch_district_built = {
+            category = ktisma
+            type = ktisma_refinery
+        }
+    }
+    on_destroy = {
+        giga_birch_district_destroy = {
+            category = ktisma
+            type = ktisma_refinery
+        }
+    }
+}

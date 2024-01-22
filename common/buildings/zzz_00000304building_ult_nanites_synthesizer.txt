@@ -1,0 +1,34 @@
+building_ult_nanites_synthesizer = {
+    base_buildtime = 720
+    category = manufacturing
+    potential = {
+        NOT = {
+            has_modifier = resort_colony
+        }
+        NOT = {
+            has_modifier = slave_colony
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 1000
+        }
+        produces = {
+            nanites = 3
+        }
+        upkeep = {
+            minerals = 30
+            energy = 10
+        }
+    }
+    prerequisites = {
+        "tech_ult_nano_drone_colony"
+    }
+    ai_resource_production = {
+        nanites = 3
+        trigger = {
+            always = yes
+        }
+    }
+}

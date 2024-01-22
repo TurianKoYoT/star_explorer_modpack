@@ -1,0 +1,21 @@
+tech_eutab_open_databases = {
+    cost = @tier3cost3
+    area = society
+    tier = 3
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_basic_science_lab_1"
+    }
+    weight = @tier3weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_materialist = yes
+        has_ascension_perk = ap_shared_destiny
+    }
+    gateway = eu_destiny
+    modifier = {
+        country_subject_technology_sharing_mult = 0.3
+    }
+}

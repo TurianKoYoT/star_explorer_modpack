@@ -1,0 +1,29 @@
+GT_ship_piracy_suppression_add = {
+    cost = @tier3cost2
+    area = society
+    tier = 3
+    category = {
+        military_theory
+    }
+    prerequisites = {
+        "tech_galactic_administration"
+    }
+    weight = @tier3weight2
+    potential = {
+        is_gestalt = no
+    }
+    modifier = {
+        ship_piracy_suppression_add = 25
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            num_researched_techs_of_tier = {
+                tier = 3
+                value > 8
+            }
+        }
+    }
+    ai_weight = {
+    }
+}

@@ -1,0 +1,27 @@
+triggered_opinion_friendly_discussions_in_the_developing_conference = {
+    trigger = {
+        OR = {
+            AND = {
+                has_country_flag = galconfed_upgraded_demand_satisfied
+                from = {
+                    has_country_flag = galconfed_upgraded_demand_satisfied
+                }
+            }
+            AND = {
+                has_country_flag = galconfed_upgraded_demand_not_satisfied
+                from = {
+                    has_country_flag = galconfed_upgraded_demand_satisfied
+                }
+            }
+            AND = {
+                has_country_flag = galconfed_upgraded_demand_satisfied
+                from = {
+                    has_country_flag = galconfed_upgraded_demand_not_satisfied
+                }
+            }
+        }
+    }
+    opinion = {
+        base = 40
+    }
+}

@@ -1,0 +1,23 @@
+trait_v_cyborg_mobile_platform = {
+    cost = 1
+    initial = no
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        can_add_cybernetic_traits = yes
+        has_immobile_trait = yes
+    }
+    species_possible_remove = {
+        can_remove_cybernetic_traits = yes
+    }
+    randomized = no
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    custom_tooltip_with_modifiers = TRAIT_MOBILE_PLATFORM_EFFECT
+    modifier = {
+        pop_growth_from_immigration = 0.15
+        pop_resettlement_cost_mult = -0.25
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

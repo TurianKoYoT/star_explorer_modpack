@@ -1,0 +1,45 @@
+building_delta_gospel_crim = {
+    icon = building_aot_fe_empyrean_shrine
+    base_buildtime = 360
+    base_cap_amount = 1
+    owner_type = corporate
+    category = unity
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            has_valid_civic = civic_gospel_of_the_masses
+            is_criminal_syndicate = yes
+        }
+    }
+    planet_modifier = {
+        job_preacher_add = 2
+        pop_ethic_spiritualist_attraction_mult = 0.75
+        planet_crime_add = 100
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            minerals = 750
+            sr_dark_matter = 200
+            acot_sr_dark_energy = 200
+        }
+        upkeep = {
+            energy = 10
+            sr_dark_matter = 1
+            acot_sr_dark_energy = 1
+        }
+    }
+    prerequisites = {
+        tech_aot_fe_empyrean_shrine
+    }
+    show_tech_unlock_if = {
+        is_megacorp = yes
+        is_criminal_syndicate = yes
+    }
+    upgrades = {
+        building_alpha_gospel_crim
+    }
+    ai_weight = {
+        weight = 250
+    }
+}

@@ -1,0 +1,49 @@
+trait_v_adv_social_parasite = {
+    cost = -2
+    species_potential_add = {
+        exists = from
+        from = {
+            is_ai = no
+        }
+    }
+    icon = "gfx/interface/icons/traits/trait_v_social_parasite.dds"
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_v_zoological_transgenesis
+        }
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_agrarian"
+        "trait_ingenious"
+        "trait_industrious"
+        "trait_thrifty"
+        "trait_syncretic_proles"
+        "trait_v_repletes"
+        "trait_v_adv_repletes"
+        "trait_decadent"
+        "trait_v_pack_behaviour"
+        "trait_v_social_parasite"
+    }
+    inline_script = "allowed_archetypes/adv_biological_traits/BIOLOGICAL"
+    inline_script = "allowed_archetypes/adv_biological_traits/LITHOID"
+    inline_script = "species_class/REP"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/NECROID"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/AQUATIC"
+    inline_script = "species_class/LITHOID"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/FUN"
+    custom_tooltip = TRAIT_SOCIAL_PARASITE_EFFECT
+    slave_cost = {
+        energy = -5000
+    }
+}

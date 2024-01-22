@@ -1,0 +1,94 @@
+district_giga_alderson_consumer = {
+    base_buildtime = @giga_alderson_district_buildtime
+    is_capped_by_modifier = no
+    icon = district_arcology_civilian_industry
+    show_on_uncolonized = {
+        uses_district_set = giga_alderson_ecu
+    }
+    potential = {
+        uses_district_set = giga_alderson_ecu
+    }
+    conversion_ratio = 0.5
+    convert_to = {
+        district_giga_alderson_industrial
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = @giga_alderson_cost
+            rare_crystals = @giga_alderson_cost_sr
+        }
+        upkeep = {
+            energy = @giga_alderson_maintenance
+            rare_crystals = @giga_alderson_maintenance_sr
+        }
+    }
+    triggered_planet_modifier = {
+        modifier = {
+            planet_housing_add = @alderson_auto_housing_ecu
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_crafter_empire = no
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            job_artisan_add = @alderson_auto_jobs_ecu
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_crafter_empire = yes
+            }
+        }
+        modifier = {
+            job_artificer_add = @alderson_auto_jobs_ecu
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_artisan_drone_add = @alderson_auto_jobs_ecu
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = no
+            }
+        }
+        text = job_artisan_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = yes
+            }
+        }
+        text = job_artificer_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_artisan_drone_effect_desc
+    }
+}

@@ -1,0 +1,90 @@
+building_museum = {
+    base_buildtime = @b1_time
+    category = government
+    base_cap_amount = 1
+    potential = {
+        exists = owner
+        owner = {
+            has_tradition = tr_archeology_museums
+        }
+        NOT = {
+            has_modifier = slave_colony
+        }
+        owner = {
+            OR = {
+                NOT = {
+                    has_ethic = ethic_gestalt_consciousness
+                }
+                has_civic = civic_machine_servitor
+            }
+        }
+        OR = {
+            owner = {
+                is_ai = no
+            }
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            has_modifier = slave_colony
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_tradition = tr_archeology_museums
+            }
+            owner = {
+                NOT = {
+                    has_ethic = ethic_gestalt_consciousness
+                }
+            }
+        }
+        modifier = {
+            job_custodian_add = @b1_jobs
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_tradition = tr_archeology_museums
+            }
+            owner = {
+                has_civic = civic_machine_servitor
+            }
+        }
+        modifier = {
+            job_AAA_custodian_servitor_drone_add = @b1_jobs
+        }
+    }
+    resources = {
+        category = AAA_planet_buildings_museums
+        cost = {
+            minerals = 500
+        }
+        upkeep = {
+            energy = 2
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+        }
+        text = job_custodian_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                has_civic = civic_machine_servitor
+            }
+        }
+        text = job_AAA_custodian_servitor_drone_effect_desc
+    }
+}

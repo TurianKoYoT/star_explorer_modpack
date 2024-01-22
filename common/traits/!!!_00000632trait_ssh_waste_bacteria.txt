@@ -1,0 +1,33 @@
+trait_ssh_waste_bacteria = {
+    cost = 4
+    initial = no
+    randomized = no
+    prerequisites = {
+        "ssh_tech_neural_tampering"
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_wasteful"
+        "trait_hive_mind"
+        "trait_ssh_forced_recycling"
+        "trait_ssh_waste_bacteria_lithoid"
+        "trait_invasive"
+    }
+    allowed_archetypes = {
+        BIOLOGICAL
+    }
+    modifier = {
+        planet_pops_consumer_goods_upkeep_mult = -0.5
+        planet_pops_food_upkeep_mult = 0.05
+    }
+    icon = "gfx/interface/icons/traits/trait_ssh_waste_bacteria.dds"
+    slave_cost = {
+        energy = 1250
+    }
+}

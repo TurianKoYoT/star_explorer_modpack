@@ -1,0 +1,27 @@
+ssh_tech_shroud_supernova = {
+    cost = 25000
+    area = society
+    tier = 5
+    category = {
+        psionics
+    }
+    prerequisites = {
+        "ssh_tech_mega_temple"
+    }
+    potential = {
+        has_technology = ssh_tech_mega_temple
+        NOR = {
+            is_machine_empire = yes
+            is_hive_empire = yes
+        }
+    }
+    is_dangerous = yes
+    weight = 0
+    ai_weight = {
+        factor = 10
+        modifier = {
+            factor = 0
+            has_utopia = no
+        }
+    }
+}

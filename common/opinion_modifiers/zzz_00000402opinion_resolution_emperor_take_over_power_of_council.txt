@@ -1,0 +1,17 @@
+opinion_resolution_emperor_take_over_power_of_council = {
+    opinion = {
+        base = -48
+        modifier = {
+            factor = 0.5
+            is_subject = yes
+            overlord = {
+                is_same_value = galactic_emperor
+            }
+        }
+    }
+    unique = yes
+    monthly = yes
+    decay = {
+        base = 1
+    }
+}

@@ -1,0 +1,84 @@
+district_ult_automatic_mining_zone = {
+    base_buildtime = 240
+    icon = district_ult_automatic_mining_zone
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        OR = {
+            has_modifier = ult_utopia_infrastructure_economic
+            has_modifier = ult_utopia_infrastructure_research
+        }
+    }
+    potential = {
+        exists = owner
+        owner = {
+            is_regular_empire = yes
+        }
+        OR = {
+            has_modifier = ult_utopia_infrastructure_economic
+            has_modifier = ult_utopia_infrastructure_research
+        }
+        NOT = {
+            is_planet_class = pc_city
+        }
+        NOT = {
+            is_planet_class = pc_habitat
+        }
+        NOT = {
+            is_planet_class = pc_ringworld_habitable
+        }
+    }
+    allow = {
+        OR = {
+            has_modifier = ult_utopia_infrastructure_economic
+            has_modifier = ult_utopia_infrastructure_research
+        }
+        NOT = {
+            has_modifier = resort_colony
+        }
+        NOT = {
+            has_modifier = slave_colony
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = 500
+        }
+        upkeep = {
+            energy = 5
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 2
+        job_ult_mining_drone_operator_add = 2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_valid_civic = civic_agrarian_idyll
+            }
+        }
+        modifier = {
+            planet_housing_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+            has_active_building = building_ult_mining_network
+        }
+        modifier = {
+            job_ult_mining_drone_operator_add = 1
+        }
+    }
+    ai_resource_production = {
+        minerals = 1
+        trigger = {
+            always = yes
+        }
+    }
+}

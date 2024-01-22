@@ -1,0 +1,29 @@
+building_corporate_peacekeeping_outpost = {
+    base_buildtime = @b1_time
+    owner_type = corporate
+    base_cap_amount = 1
+    category = research
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            has_valid_civic = civic_corporate_mediators
+        }
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            minerals = @b1_minerals
+        }
+        upkeep = {
+            energy = @b1_upkeep
+        }
+    }
+    planet_modifier = {
+        job_soldier_add = 2
+        branch_office_value_mult = 0.05
+    }
+    country_modifier = {
+        country_naval_cap_mult = 0.1
+        federation_naval_cap_contribution_mult = 0.1
+    }
+}

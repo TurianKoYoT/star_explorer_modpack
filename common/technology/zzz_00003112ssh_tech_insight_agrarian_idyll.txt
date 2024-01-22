@@ -1,0 +1,23 @@
+ssh_tech_insight_agrarian_idyll = {
+    cost = 15000
+    area = society
+    tier = 4
+    category = {
+        new_worlds
+    }
+    weight = 0
+    is_rare = yes
+    modifier = {
+        terraform_speed_mult = 0.2
+    }
+    weight_modifier = {
+        factor = 0
+    }
+    ai_weight = {
+        factor = 10
+        modifier = {
+            factor = 0
+            has_utopia = no
+        }
+    }
+}

@@ -1,0 +1,117 @@
+leader_trait_founder_of_imperium = {
+    custom_subtitle = exclusive_councilor_trait
+    force_councilor_trait = yes
+    icon = {
+        layer = {
+            icon = "GFX_trait_bg"
+            color = "trait_bg_default"
+        }
+        layer = {
+            icon = "GFX_trait_glow_founder_of_imperium"
+            color = "trait_rarity_destiny"
+        }
+        layer = {
+            icon = "GFX_trait_frame_founder_of_imperium"
+            color = "trait_rarity_destiny"
+        }
+        layer = {
+            icon = "GFX_leader_trait_founder_of_imperium"
+            color = "trait_icon_default"
+        }
+        layer = {
+            icon = "GFX_trait_councilor"
+        }
+        layer = {
+            icon = "GFX_trait_disabled"
+            visible = {
+                OR = {
+                    is_ruler = no
+                    owner = {
+                        is_galactic_emperor = no
+                    }
+                }
+            }
+        }
+    }
+    leader_trait_rarity = paragon
+    sorting_priority = 999
+    custom_tooltip_with_modifiers = leader_trait_founder_of_imperium_tooltip
+    self_modifier = {
+        leader_trait_selection_options_add = 1
+    }
+    triggered_self_modifier = {
+        potential = {
+            is_ruler = yes
+            is_immortal = no
+        }
+        leader_lifespan_add = 50
+    }
+    councilor_modifier = {
+        imperial_governance_produces_delegate_mult = 0.02
+        leader_trait_selection_options_add = 5
+    }
+    triggered_councilor_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_galactic_emperor = yes
+            }
+            leader_class = official
+        }
+        imperial_governance_situation_monthly_improve = 0.1
+        imperial_authority_monthly_get = 0.1
+    }
+    triggered_councilor_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_galactic_emperor = yes
+            }
+            leader_class = commander
+        }
+        country_community_gdf_naval_capacity = 400
+        starbase_shipyard_build_cost_mult = -0.05
+    }
+    triggered_councilor_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_galactic_emperor = yes
+            }
+            leader_class = scientist
+        }
+        leader_initial_skill = 1
+    }
+    triggered_background_planet_modifier = {
+        potential = {
+            is_ruler = yes
+            exists = owner
+            exists = FROM
+            FROM.owner = {
+                is_same_value = root.owner
+            }
+            owner = {
+                has_valid_civic = civic_imperial_cult
+            }
+        }
+        job_priest_add = 1
+        mult = trigger:has_skill
+    }
+    leader_class = {
+        official
+        commander
+        scientist
+    }
+    leader_potential_add = {
+        always = no
+    }
+    possible = {
+        always = no
+    }
+    selectable_weight = {
+        weight = 0
+    }
+    initial = no
+    randomized = no
+    background_icon = "GFX_leader_background_destiny_1"
+}

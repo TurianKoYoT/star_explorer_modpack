@@ -1,0 +1,48 @@
+action_ask_for_federation_association_status = {
+    icon = "GFX_diplomacy_status_associate"
+    requires_actor_peace = no
+    requires_recipient_peace = no
+    requires_recipient_alliance_vote = yes
+    diplo_view_acceptance_icon = yes
+    AI_acceptance_base_value = -50
+    action_type = positive
+    possible = {
+        homicidal_diplomacy_restrictions = {
+            mirror = yes
+        }
+        custom_tooltip = {
+            fail_text = requires_20_trust_or_good
+            OR = {
+                opinion_level = {
+                    who = from
+                    level >= good
+                }
+                from = {
+                    trust = {
+                        who = root
+                        value >= 20
+                    }
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = requires_embassy_or_diplomatic_networking
+            OR = {
+                has_embassy = from
+                has_active_tradition = tr_diplomacy_diplomatic_networking
+            }
+        }
+        custom_tooltip = {
+            fail_text = "requires_actor_recipient_not_in_galactic_empire_2"
+            NAND = {
+                has_galactic_emperor = yes
+                OR = {
+                    is_galactic_community_member = yes
+                    from = {
+                        is_galactic_community_member = yes
+                    }
+                }
+            }
+        }
+    }
+}

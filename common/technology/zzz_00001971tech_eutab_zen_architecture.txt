@@ -1,0 +1,25 @@
+tech_eutab_zen_architecture = {
+    cost = @tier4cost2
+    area = society
+    tier = 4
+    category = {
+        new_worlds
+    }
+    prerequisites = {
+        "tech_ship_armor_4"
+        "tech_climate_restoration"
+    }
+    weight = @tier4weight2
+    is_custom_tech_1 = yes
+    potential = {
+        is_pacifist = yes
+        has_ascension_perk = ap_master_builders
+    }
+    gateway = eu_masterbuild
+    modifier = {
+        eutab_gaia_district_housing_add = 5
+        planet_buildings_cost_mult = -0.1
+        planet_buildings_upkeep_mult = -0.2
+        planet_jobs_produces_mult = 0.05
+    }
+}

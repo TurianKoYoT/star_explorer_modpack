@@ -1,0 +1,16 @@
+building_mp_primitive_big_farms = {
+    icon = building_mp_primitive_big_farms
+    capital = no
+    can_build = no
+    can_demolish = yes
+    can_be_ruined = no
+    ai_weight = {
+        weight = 10
+    }
+    resources = {
+        category = planet_buildings
+    }
+    planet_modifier = {
+        job_mp_primitive_farmer_add = 6
+    }
+}

@@ -1,0 +1,28 @@
+leader_trait_v_polygynous = {
+    cost = 0
+    initial = no
+    randomized = no
+    inline_script = {
+        script = trait/icon
+        ICON = "GFX_leader_trait_v_polygynous"
+        RARITY = common
+        COUNCIL = no
+        TIER = none
+    }
+    triggered_background_planet_modifier = {
+        potential = {
+            exists = FROM
+            FROM = {
+                exists = owner
+            }
+            trait_is_gestalt_check = no
+        }
+        job_v_harem_add = 1
+    }
+    leader_class = {
+        official
+        scientist
+        commander
+    }
+    notify_on_gained = no
+}

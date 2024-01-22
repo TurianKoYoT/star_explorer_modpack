@@ -1,0 +1,16 @@
+pouchkinn_trait_lifespan = {
+    inline_script = {
+        script = trait/giga_icon_classic
+        CLASS = scientist
+        ICON = "GFX_pouchkinn_trait_lifespan"
+        RARITY = common
+        COUNCIL = yes
+        TIER = none
+    }
+    immortal_leaders = yes
+    leader_class = {
+        scientist
+    }
+    initial = no
+    randomized = no
+}

@@ -1,0 +1,33 @@
+trait_v_plague = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_v_parasitised"
+        "trait_v_parasite_immunity"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/ART"
+    inline_script = "species_class/NECROID"
+    inline_script = "species_class/TOX"
+    custom_tooltip_with_modifiers = TRAIT_PLAGUE_EFFECT
+    modifier = {
+        army_defense_damage_mult = 0.5
+        army_damage_mult = 0.5
+        planet_jobs_society_research_produces_mult = 0.1
+    }
+    triggered_planet_growth_habitability_modifier = {
+        pop_environment_tolerance = 0.01
+        mult = planet.value:count_v_plagued
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

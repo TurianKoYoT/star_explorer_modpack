@@ -1,0 +1,5 @@
+opinion_empire_origine = {
+    opinion = {
+        base = 5000
+    }
+}

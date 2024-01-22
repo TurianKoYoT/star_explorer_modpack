@@ -1,0 +1,30 @@
+tech_avb_power_hub_3 = {
+    cost = @tier3cost3
+    area = physics
+    tier = 3
+    category = {
+        field_manipulation
+    }
+    prerequisites = {
+        "tech_power_hub_2"
+        "tech_galactic_administration"
+    }
+    weight = @tier3weight3
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            NOR = {
+                has_technology = tech_mine_exotic_gases
+                has_technology = tech_exotic_gases
+                has_country_flag = has_market_access
+            }
+        }
+        modifier = {
+            factor = 2
+            has_tradition = tr_prosperity_adopt
+        }
+    }
+    ai_weight = {
+        factor = 4
+    }
+}

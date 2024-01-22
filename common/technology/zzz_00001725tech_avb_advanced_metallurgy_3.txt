@@ -1,0 +1,22 @@
+tech_avb_advanced_metallurgy_3 = {
+    cost = @tier5cost1
+    area = engineering
+    tier = 5
+    category = {
+        materials
+    }
+    prerequisites = {
+        "tech_advanced_metallurgy_2"
+        "tech_avb_alloys_4"
+    }
+    weight = @tier5weight1
+    modifier = {
+        planet_metallurgists_produces_mult = 0.1
+    }
+    weight_modifier = {
+        factor = 2
+    }
+    ai_weight = {
+        factor = 4
+    }
+}

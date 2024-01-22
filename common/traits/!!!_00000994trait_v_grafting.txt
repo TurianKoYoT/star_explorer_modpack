@@ -1,0 +1,27 @@
+trait_v_grafting = {
+    cost = 4
+    species_potential_add = {
+        exists = from
+        from = {
+            is_ai = no
+        }
+    }
+    randomized = no
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    potential_crossbreeding_chance = 0.5
+    opposites = {
+        "trait_v_adv_grafting"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/FUN"
+    inline_script = "species_class/LITHOID"
+    custom_tooltip = TRAIT_PLANTOID_GRAFTING_EFFECT
+    inline_script = "traits/grafting_trait_effect"
+    slave_cost = {
+        energy = 4000
+    }
+}

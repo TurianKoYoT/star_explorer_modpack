@@ -1,0 +1,146 @@
+pw_building_factory_city = {
+    base_buildtime = @pw_building_branch_office_buildtime
+    category = manufacturing
+    base_cap_amount = 1
+    empire_limit = 1
+    owner_type = corporate
+    prerequisites = {
+        pw_tech_exploitation_of_hierarchy
+    }
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            any_owned_planet = {
+                has_active_building = pw_building_department_of_xenoeconomics
+            }
+        }
+    }
+    allow = {
+        exists = owner
+        owner = {
+            is_egalitarian = yes
+        }
+        conditional_tooltip = {
+            trigger = {
+                owner = {
+                    is_egalitarian = yes
+                }
+            }
+            pw_has_any_unique_branch_office_building = no
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            is_egalitarian = no
+        }
+        branch_office_owner = {
+            NOT = {
+                has_country_flag = pw_department_of_xenoeconomics_built
+            }
+        }
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            minerals = @pw_building_branch_office_cost
+            influence = 25
+        }
+        produces = {
+            consumer_goods = 8
+            alloys = 6
+        }
+        upkeep = {
+            energy = @pw_building_branch_office_upkeep
+        }
+    }
+    planet_modifier = {
+        branch_office_value_mult = 0.15
+        pop_ethic_egalitarian_attraction_mult = 0.2
+        job_clerk_add = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                NOT = {
+                    has_valid_civic = civic_crafters
+                }
+            }
+        }
+        modifier = {
+            job_artisan_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                has_valid_civic = civic_crafters
+            }
+        }
+        modifier = {
+            job_artificer_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                NOT = {
+                    has_civic = civic_catalytic_processing
+                }
+                has_ethic = ethic_fanatic_egalitarian
+            }
+        }
+        modifier = {
+            job_foundry_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_civic = civic_catalytic_processing
+                has_ethic = ethic_fanatic_egalitarian
+            }
+        }
+        modifier = {
+            job_catalytic_technician_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = branch_office_owner
+            branch_office_owner = {
+                is_criminal_syndicate = yes
+            }
+        }
+        modifier = {
+            planet_crime_add = 10
+        }
+    }
+    triggered_desc = {
+        text = pw_branch_office_unique_lb
+    }
+    on_built = {
+        planet_event = {
+            id = pw_branch_office.180
+        }
+    }
+    ai_weight = {
+        weight = 100
+        modifier = {
+            factor = 1.5
+            exists = owner
+            owner = {
+                has_ethic = ethic_fanatic_egalitarian
+            }
+        }
+        modifier = {
+            factor = value:pw_pop_factor
+        }
+    }
+}

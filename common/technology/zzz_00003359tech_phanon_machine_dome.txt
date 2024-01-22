@@ -1,0 +1,40 @@
+tech_phanon_machine_dome = {
+    cost = @acot_tier8cost2
+    area = engineering
+    tier = 8
+    category = {
+        industry
+    }
+    prerequisites = {
+        tech_ae_machine_dome
+        tech_civil_phanon_application
+    }
+    weight = @tier5weight1
+    potential = {
+        has_ascension_perk = ap_synthetic_age
+        NOR = {
+            has_global_flag = aot_phanon_content_OFF
+            is_fallen_empire = yes
+        }
+        has_technology = tech_civil_phanon_application
+        has_technology = tech_ae_machine_dome
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_industry
+                LEVEL > 2
+            }
+        }
+    }
+    ai_weight = {
+        weight = 2
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_industry
+            }
+        }
+    }
+}

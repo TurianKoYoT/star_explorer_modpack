@@ -1,0 +1,82 @@
+@insula_manager_weight = 2
+giga_birch_physma_manager = {
+    category = ruler
+    condition_string = RULER_JOB_TRIGGER
+    building_icon = building_institute
+    clothes_texture_index = 2
+    possible_pre_triggers = {
+        has_owner = yes
+        is_enslaved = no
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible = {
+        owner = {
+            is_fallen_empire = no
+        }
+    }
+    possible_precalc = can_fill_ruler_job
+    triggered_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        planet_farmers_food_produces_add = 1.5
+        planet_researchers_physics_research_produces_add = 1
+        planet_researchers_society_research_produces_add = 1
+        planet_researchers_engineering_research_produces_add = 1
+        planet_researchers_consumer_goods_upkeep_add = 0.5
+        multiplier = planet.value:giga_job_scaling_plus_base
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_megacorp = no
+                is_spiritualist = no
+            }
+        }
+        planet_administrators_unity_produces_add = 1
+        planet_administrators_consumer_goods_upkeep_add = 0.5
+        multiplier = planet.value:giga_job_scaling_plus_base
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_spiritualist = no
+            }
+        }
+        planet_managers_unity_produces_add = 1
+        planet_managers_consumer_goods_upkeep_add = 0.5
+        multiplier = planet.value:giga_job_scaling_plus_base
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_spiritualist = yes
+            }
+        }
+        planet_priests_unity_produces_add = 1
+        planet_priests_consumer_goods_upkeep_add = 0.5
+        multiplier = planet.value:giga_job_scaling_plus_base
+    }
+    resources = {
+        category = planet_giga_birch_insula_managers
+        produces = {
+            unity = 5
+            society_research = 5
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+        upkeep = {
+            consumer_goods = 3
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+    }
+    weight = {
+        weight = value:giga_ruler_weight|JOB|giga_birch_physma_manager|RESOURCE|unity|WEIGHT|0.5|RESOURCE2|society_research|WEIGHT2|0.5|
+        mult = @insula_manager_weight
+    }
+}

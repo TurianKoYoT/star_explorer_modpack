@@ -1,0 +1,21 @@
+building_ancient_cryo_chamber = {
+    base_buildtime = 480
+    can_build = no
+    can_demolish = yes
+    potential = {
+        exists = owner
+        owner = {
+            is_fallen_machine_empire = yes
+        }
+    }
+    planet_modifier = {
+    }
+    resources = {
+        category = planet_buildings
+        upkeep = {
+        }
+    }
+    upgrades = {
+        building_ae_ancient_cryo_chamber
+    }
+}

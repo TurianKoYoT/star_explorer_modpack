@@ -1,0 +1,11 @@
+faith_defenders_1c = {
+    trigger = {
+        has_ethic = "ethic_materialist"
+        FROM = {
+            has_valid_civic = "civic_defender_of_the_faith"
+        }
+    }
+    opinion = {
+        base = -10
+    }
+}

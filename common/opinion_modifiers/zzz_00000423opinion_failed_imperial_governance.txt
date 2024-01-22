@@ -1,0 +1,11 @@
+opinion_failed_imperial_governance = {
+    opinion = {
+        base = -80
+    }
+    accumulative = yes
+    max = -200
+    monthly = yes
+    decay = {
+        base = 1
+    }
+}

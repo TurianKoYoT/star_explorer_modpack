@@ -1,0 +1,20 @@
+tech_avb_league_offices_2 = {
+    cost = @tier5cost1
+    area = society
+    category = {
+        archaeostudies
+    }
+    prerequisites = {
+        tech_secrets_league
+    }
+    tier = 5
+    is_rare = yes
+    ai_update_type = all
+    weight = 5
+    potential = {
+        has_ancrel = yes
+    }
+    weight_modifier = {
+        factor = 2
+    }
+}

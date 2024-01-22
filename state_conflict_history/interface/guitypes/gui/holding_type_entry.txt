@@ -1,0 +1,83 @@
+guiTypes = {
+    containerWindowType = {
+        name = "holding_type_entry"
+        size = {
+            width = 560
+            height = 90
+        }
+        position = {
+            x = 0
+            y = 0
+        }
+        margin = {
+            bottom = 20
+        }
+        iconType = {
+            name = "title_hex"
+            quadTextureSprite = "GFX_small_hex_bg"
+            position = {
+                x = -11
+                y = -14
+            }
+            alwaysTransparent = yes
+        }
+        instantTextBoxType = {
+            name = "holding_type_title"
+            font = "font_text_20"
+            position = {
+                x = 20
+                y = 4
+            }
+            maxWidth = 400
+            maxHeight = 24
+            fixedSize = yes
+            format = left
+        }
+        containerWindowType = {
+            name = "holdings_per_country_container"
+            size = {
+                width = 560
+                height = 70
+            }
+            position = {
+                x = 10
+                y = 38
+            }
+            gridBoxType = {
+                name = "holdings_per_country_box"
+                format = "UPPER_LEFT"
+                slotSize = {
+                    width = 540
+                    height = 70
+                }
+                add_horizontal = no
+                max_slots_horizontal = 1
+            }
+        }
+        containerWindowType = {
+            name = "empty_text_container"
+            size = {
+                width = 200
+                height = 20
+            }
+            position = {
+                x = 140
+                y = 45
+            }
+            instantTextBoxType = {
+                name = "empty_text"
+                font = "font_text_16"
+                text = "Some text"
+                position = {
+                    x = 0
+                    y = 0
+                }
+                maxWidth = 270
+                maxHeight = 20
+                fixedSize = yes
+                format = center
+                vertical_alignment = center
+            }
+        }
+    }
+}

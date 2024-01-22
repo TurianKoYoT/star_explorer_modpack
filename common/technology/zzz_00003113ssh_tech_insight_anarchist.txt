@@ -1,0 +1,25 @@
+ssh_tech_insight_anarchist = {
+    cost = 12500
+    area = society
+    tier = 4
+    category = {
+        statecraft
+    }
+    weight = 0
+    is_rare = yes
+    modifier = {
+        pop_ethic_xenophile_attraction_mult = 0.15
+        planet_pops_unemployed_consumer_goods_upkeep_mult = -0.25
+        planet_crime_mult = -0.25
+    }
+    weight_modifier = {
+        factor = 0
+    }
+    ai_weight = {
+        factor = 10
+        modifier = {
+            factor = 0
+            has_utopia = no
+        }
+    }
+}

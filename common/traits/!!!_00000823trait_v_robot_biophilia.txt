@@ -1,0 +1,51 @@
+trait_v_robot_biophilia = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_synthetic_workers
+            NOT = {
+                has_policy_flag = ai_outlawed
+            }
+        }
+    }
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+            has_technology = tech_v_robot_neural_mimicry
+        }
+    }
+    species_possible_merge_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    allowed_archetypes = {
+        ROBOT
+    }
+    opposites = {
+        "trait_machine_unit"
+        "trait_v_robot_ecological_cynicism"
+        "trait_v_robot_arrogance"
+        "trait_v_robot_biophobia"
+        "trait_v_wildlife_susceptible"
+    }
+    allowed_ethics = {
+        ethic_xenophile
+        ethic_fanatic_xenophile
+    }
+    valid_for_all_ethics = no
+    custom_tooltip_with_modifiers = TRAIT_BIOPHILIA_EFFECT
+    triggered_pop_modifier = {
+        pop_ethic_xenophile_attraction_mult = 0.05
+        pop_happiness = 0.025
+        planet_jobs_society_research_produces_mult = 0.025
+        mult = planet.value:natural_blocker_count
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

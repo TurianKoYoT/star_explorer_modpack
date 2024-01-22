@@ -1,0 +1,131 @@
+@giga_birch_sector_cost = 1500
+@giga_birch_sector_sr_cost = 200
+@giga_birch_sector_time = 360
+@giga_birch_sector_maintenance = 5
+@giga_birch_sector_sr_maintenance = 2
+@sector_jobs = 7
+@sector_workers = -7
+district_giga_birch_ktisma_factory = {
+    base_buildtime = @giga_birch_sector_time
+    is_capped_by_modifier = yes
+    show_on_uncolonized = {
+        uses_district_set = giga_birch
+        has_district = district_giga_birch_ktisma
+        exists = from
+        from = {
+            country_uses_consumer_goods = yes
+        }
+    }
+    potential = {
+        uses_district_set = giga_birch
+        has_district = district_giga_birch_ktisma
+        exists = owner
+        owner = {
+            country_uses_consumer_goods = yes
+        }
+    }
+    allow = {
+        giga_birch_district_allow = {
+            category = ktisma
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = @giga_birch_sector_cost
+            rare_crystals = @giga_birch_sector_sr_cost
+        }
+        upkeep = {
+            energy = @giga_birch_sector_maintenance
+            rare_crystals = @giga_birch_sector_sr_maintenance
+        }
+    }
+    planet_modifier = {
+        giga_birch_district_ktisma_tag = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = no
+            }
+        }
+        job_artisan_add = @sector_jobs
+        job_giga_birch_ktisma_worker_add = @sector_workers
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = no
+            }
+        }
+        text = job_artisan_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = yes
+            }
+        }
+        job_artificer_add = @sector_jobs
+        job_giga_birch_ktisma_worker_add = @sector_workers
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = yes
+            }
+        }
+        text = job_artificer_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        job_artisan_drone_add = @sector_jobs
+        job_giga_birch_ktisma_worker_drone_add = @sector_workers
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_artisan_drone_effect_desc
+    }
+    on_queued = {
+        giga_birch_district_queued = {
+            category = ktisma
+            type = ktisma_factory
+        }
+    }
+    on_unqueued = {
+        giga_birch_district_unqueued = {
+            category = ktisma
+            type = ktisma_factory
+        }
+    }
+    on_built = {
+        giga_birch_district_built = {
+            category = ktisma
+            type = ktisma_factory
+        }
+    }
+    on_destroy = {
+        giga_birch_district_destroy = {
+            category = ktisma
+            type = ktisma_factory
+        }
+    }
+}

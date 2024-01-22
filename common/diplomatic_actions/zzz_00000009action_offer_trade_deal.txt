@@ -1,0 +1,19 @@
+action_offer_trade_deal = {
+    icon = "GFX_diplomacy_status_trade"
+    requires_recipient_independence = no
+    requires_actor_independence = no
+    action_type = neutral
+    potential = {
+        hidden_trigger = {
+            is_berserk_fallen_machine_empire = no
+            from = {
+                is_berserk_fallen_machine_empire = no
+            }
+        }
+    }
+    possible = {
+        homicidal_diplomacy_restrictions = {
+            mirror = yes
+        }
+    }
+}

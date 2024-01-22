@@ -1,0 +1,15 @@
+triggered_opinion_imperial_members = {
+    trigger = {
+        has_galactic_emperor = yes
+        has_global_flag = imperial_unification_start
+        NAND = {
+            is_country_type = imperial_senator
+            FROM = {
+                is_country_type = imperial_senator
+            }
+        }
+    }
+    opinion = {
+        base = 100
+    }
+}

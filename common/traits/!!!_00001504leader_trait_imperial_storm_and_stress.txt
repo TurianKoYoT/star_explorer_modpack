@@ -1,0 +1,32 @@
+leader_trait_imperial_storm_and_stress = {
+    cost = 0
+    icon = "gfx/interface/icons/traits/leader_traits/leader_trait_imperial_storm_and_stress.dds"
+    fleet_modifier = {
+        ship_speed_mult = 0.4
+        ship_fire_rate_mult = 0.2
+        ship_shield_mult = -0.1
+        ship_evasion_mult = -0.1
+    }
+    leader_class = {
+        commander
+    }
+    initial = no
+    randomized = no
+    opposites = {
+        "leader_trait_imperial_firmly_and_steadily"
+        "leader_trait_imperial_ship_meister"
+        "leader_trait_imperial_shadow_walker"
+    }
+    leader_potential_add = {
+        from = {
+            is_galactic_community_member = yes
+            has_federation = yes
+            federation = {
+                OR = {
+                    has_federation_law = imperial_ministry_of_defence_strategy_institute
+                    has_federation_law = imperial_ministry_of_defence_joint_headquarter
+                }
+            }
+        }
+    }
+}

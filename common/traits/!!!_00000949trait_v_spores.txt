@@ -1,0 +1,24 @@
+trait_v_spores = {
+    cost = 1
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 0
+    opposites = {
+        "trait_v_adv_spores"
+        "trait_clone_soldier_infertile"
+        "trait_clone_soldier_fertile"
+        "trait_clone_soldier_infertile_full_potential"
+        "trait_vat_grown"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/FUN"
+    custom_tooltip = TRAIT_SPORES_EFFECT
+    slave_cost = {
+        energy = 1000
+    }
+}

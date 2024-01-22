@@ -1,0 +1,18 @@
+leader_trait_ruler_youth = {
+    cost = 0
+    icon = "gfx/interface/icons/traits/trait_youth.dds"
+    requires_traits = {
+        trait_youth
+    }
+    modifier = {
+        pop_citizen_happiness = 0.1
+    }
+    leader_trait = {
+        ruler
+    }
+    leader_class = {
+        ruler
+    }
+    initial = no
+    randomized = no
+}

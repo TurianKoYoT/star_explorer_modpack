@@ -1,0 +1,30 @@
+mp_primitive_testsite_overseer = {
+    category = specialist
+    is_capped_by_modifier = yes
+    building_icon = building_mp_primitive_test_site
+    clothes_texture_index = 1
+    possible_pre_triggers = {
+        has_owner = yes
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_specialist_job
+    possible = {
+        owner = {
+            is_primitive = yes
+            OR = {
+                has_country_flag = purifying_age
+                has_country_flag = late_purifying_age
+                has_country_flag = early_space_age
+            }
+        }
+    }
+    resources = {
+        category = planet_researchers
+        produces = {
+            physics_research = 7
+        }
+    }
+    weight = {
+        weight = 5
+    }
+}

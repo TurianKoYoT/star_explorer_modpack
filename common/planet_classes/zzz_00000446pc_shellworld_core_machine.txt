@@ -1,0 +1,40 @@
+pc_shellworld_core_machine = {
+    entity = "ssh_shellworld_planet"
+    entity_scale = @planet_standard_scale
+    icon = GFX_planet_type_machine
+    picture = pc_shellworld_core_machine
+    enable_tilt = no
+    starting_planet = no
+    atmosphere_color = hsv {
+        0.09
+        0.8
+        0.7
+    }
+    atmosphere_intensity = 0.4
+    atmosphere_width = 1
+    city_color_lut = "gfx/portraits/misc/colorcorrection_neutral.dds"
+    can_be_moon = no
+    chance_of_ring = 0
+    is_artificial_planet = yes
+    colonizable = yes
+    planet_size = {
+        min = @habitable_planet_min_size
+        max = @habitable_planet_max_size
+    }
+    spawn_odds = 0
+    uses_alternative_skies_for_moons = no
+    district_set = machine_world
+    carry_cap_per_free_district = @carry_cap_low
+    modifier = {
+        planet_jobs_produces_mult = 0.1
+        pop_housing_usage_mult = -0.1
+        pop_environment_tolerance = 0
+        planet_max_buildings_add = 12
+        job_replicator_add = 1
+        planet_resettlement_unemployed_destination_mult = 0.5
+        planet_jobs_energy_upkeep_mult = 0.1
+        planet_districts_upkeep_mult = 0.1
+        planet_max_buildings_add = 8
+    }
+    show_city = no
+}

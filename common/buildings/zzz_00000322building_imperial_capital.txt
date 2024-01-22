@@ -1,0 +1,54 @@
+@capital_t6_min_pops = 150
+building_imperial_capital = {
+    base_buildtime = @avb_b6_time
+    capital = yes
+    can_build = no
+    can_demolish = no
+    can_be_ruined = no
+    can_be_disabled = no
+    position_priority = 0
+    category = government
+    potential = {
+        exists = owner
+        owner = {
+            is_gestalt = no
+            is_galactic_emperor = yes
+        }
+        planet = {
+            is_capital = yes
+        }
+    }
+    convert_to = {
+        building_avb_capital_6
+        building_avb_hab_capital_3
+        building_avb_hive_capital_4
+        building_avb_machine_capital_6
+        building_ancient_control_center
+        building_ancient_palace
+    }
+    allow = {
+        num_pops >= @capital_t6_min_pops
+    }
+    inline_script = {
+        script = capitals/regular/avb_capitals_together
+        tier = c7
+    }
+    prerequisites = {
+    }
+    planet_modifier = {
+        job_enforcer_add = 8
+        planet_housing_add = 30
+        planet_amenities_add = 30
+        planet_max_buildings_add = 11
+        planet_max_branch_office_buildings_add = 4
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_c7_minerals
+        }
+        upkeep = {
+            energy = @avb_c7_upkeep
+        }
+    }
+}

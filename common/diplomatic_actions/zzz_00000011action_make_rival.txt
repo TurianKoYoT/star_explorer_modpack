@@ -1,0 +1,96 @@
+action_make_rival = {
+    icon = "GFX_diplomacy_status_rivalry"
+    auto_accepted = yes
+    requires_actor_independence = no
+    requires_recipient_independence = no
+    should_show_auto_accept_message_recipient = yes
+    should_notify_all_communications = yes
+    action_type = aggressive
+    potential = {
+        hidden_trigger = {
+            is_fallen_machine_empire = no
+            from = {
+                is_fallen_machine_empire = no
+            }
+        }
+        hidden_trigger = {
+            NAND = {
+                is_subject = yes
+                FROM = {
+                    OR = {
+                        is_fallen_empire = yes
+                        is_overlord_to = ROOT
+                        has_overlord = ROOT.overlord
+                    }
+                }
+            }
+        }
+        hidden_trigger = {
+            NOT = {
+                FROM = {
+                    is_subject = yes
+                    has_overlord = ROOT
+                }
+            }
+        }
+        custom_tooltip = grants_humiliation_cb_originator
+    }
+    possible = {
+        homicidal_diplomacy_restrictions = {
+            mirror = no
+        }
+        machine_assimilator_diplomacy_restrictions = {
+            mirror = no
+        }
+        inwards_perfection_diplomacy_restrictions = {
+            mirror = no
+        }
+        custom_tooltip = {
+            fail_text = "requires_terrible_opinion_or_supremacist"
+            OR = {
+                opinion_level = {
+                    who = from
+                    level <= terrible
+                }
+                AND = {
+                    opinion_level = {
+                        who = from
+                        level <= poor
+                    }
+                    from_has_antagonistic_ethics = yes
+                }
+                from = {
+                    is_at_war_with = prev
+                }
+                OR = {
+                    has_policy_flag = "diplo_stance_supremacist"
+                    from = {
+                        has_policy_flag = "diplo_stance_supremacist"
+                    }
+                    is_fallen_empire = yes
+                    from = {
+                        is_fallen_empire = yes
+                    }
+                    has_policy_flag = "diplo_stance_animosity"
+                    from = {
+                        has_policy_flag = "diplo_stance_animosity"
+                    }
+                }
+                from = {
+                    is_rival = prev
+                }
+                from = {
+                    is_country_type = mirrored_country
+                }
+            }
+        }
+    }
+    on_accept = {
+        hidden_effect = {
+            check_casus_belli_valid = {
+                target = from
+                type = cb_humiliation
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+trait_v_biophobia = {
+    cost = -1
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    species_possible_merge_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    opposites = {
+        "trait_void_dweller_1"
+        "trait_hive_mind"
+        "trait_v_ecological_naivete"
+        "trait_v_homely"
+        "trait_v_biophilia"
+        "trait_v_druidic"
+        "trait_v_hive_bivouac"
+        "trait_v_adv_hive_bivouac"
+        "trait_v_nectaries"
+        "trait_v_adv_nectaries"
+        "trait_v_kairomones"
+        "trait_v_adv_kairomones"
+        "trait_v_mycorrhizal"
+        "trait_v_adv_mycorrhizal"
+        "trait_v_lithoid_mycorrhizal"
+        "trait_v_webbing"
+        "trait_v_adv_webbing"
+        "trait_v_bioluminesce"
+        "trait_v_adv_bioluminesce"
+        "trait_v_overgrown"
+        "trait_v_self_decoration"
+        "trait_v_adv_self_decoration"
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    allowed_ethics = {
+        ethic_xenophobe
+        ethic_fanatic_xenophobe
+    }
+    valid_for_all_ethics = no
+    custom_tooltip_with_modifiers = TRAIT_BIOPHOBIA_EFFECT
+    modifier = {
+        planet_jobs_society_research_produces_mult = -0.1
+    }
+    triggered_pop_modifier = {
+        pop_ethic_xenophobe_attraction_mult = 0.05
+        pop_happiness = -0.025
+        mult = planet.value:natural_blocker_count
+    }
+    slave_cost = {
+        energy = -1000
+    }
+}

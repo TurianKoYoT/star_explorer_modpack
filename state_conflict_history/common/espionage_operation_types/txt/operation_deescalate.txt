@@ -1,0 +1,133 @@
+@diff_t1 = 5
+@diff_t3 = 7
+@diff_t4 = 8
+@operationTargetedByTimer = 10800
+operation_deescalate = {
+    target = none
+    categories = {
+        op_cat_infiltration
+        op_cat_diplomacy
+    }
+    picture = GFX_evt_alien_propaganda
+    desc = operation_disarm_nukes_desc
+    stages = 4
+    resources = {
+        category = operations
+        cost = {
+            trigger = {
+                owner = {
+                    has_appearance_modding_technology = no
+                    is_pacifist = no
+                }
+            }
+            influence = 55
+        }
+        cost = {
+            trigger = {
+                owner = {
+                    has_appearance_modding_technology = yes
+                    is_pacifist = no
+                }
+            }
+            influence = 35
+        }
+        cost = {
+            trigger = {
+                owner = {
+                    has_appearance_modding_technology = no
+                    is_pacifist = yes
+                }
+            }
+            influence = 45
+        }
+        cost = {
+            trigger = {
+                owner = {
+                    has_appearance_modding_technology = yes
+                    is_pacifist = yes
+                }
+            }
+            influence = 25
+        }
+        upkeep = {
+            energy = 7
+        }
+    }
+    spy_power_cost = 30
+    potential = {
+        target = {
+            is_primitive = yes
+            has_country_flag = observation_1400_fired
+            NOT = {
+                has_country_flag = observation_1400_ended_peacefully
+            }
+            NOR = {
+                has_country_flag = fotd_seperatist_country@root.owner
+                has_country_flag = solarpunk_country
+            }
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            is_running_espionage_operation = no
+            fail_text = operation_one_at_a_time
+        }
+        custom_tooltip = {
+            target = {
+                capital_scope = {
+                    has_observation_outpost = yes
+                    observation_outpost_owner = {
+                        is_same_value = root.owner
+                    }
+                }
+            }
+            fail_text = operation_requires_observation_outpost
+        }
+    }
+    abort = {
+        OR = {
+            target = {
+                OR = {
+                    is_primitive = no
+                    has_country_flag = observation_1400_ended_peacefully
+                    capital_scope = {
+                        has_observation_outpost = no
+                    }
+                }
+            }
+        }
+    }
+    stage = {
+        difficulty = @diff_t1
+        icon = GFX_espionage_chapter_icon_surveillance
+        event = preftl_operation.100
+    }
+    stage = {
+        difficulty = @diff_t3
+        icon = GFX_espionage_chapter_icon_document
+        event = preftl_operation.100
+    }
+    stage = {
+        difficulty = @diff_t3
+        icon = GFX_espionage_chapter_icon_motion
+        event = preftl_operation.100
+    }
+    stage = {
+        difficulty = @diff_t4
+        icon = GFX_espionage_chapter_icon_target
+        event = primitivesexpanded.106
+    }
+    on_roll_failed = {
+        pre_ftl_espionage_operation_on_roll_failed = {
+            RANDOM_EVENTS = operation_random_events_pre_ftl
+        }
+    }
+    on_create = {
+        target = {
+            set_timed_country_flag = {
+                flag = preftl_espionage_operation_targeted_by@root.owner
+                days = @operationTargetedByTimer
+            }
+        }
+    }
+}

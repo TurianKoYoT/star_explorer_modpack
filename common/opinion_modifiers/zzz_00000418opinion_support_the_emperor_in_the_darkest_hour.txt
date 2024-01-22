@@ -1,0 +1,8 @@
+opinion_support_the_emperor_in_the_darkest_hour = {
+    opinion = {
+        base = 200
+    }
+    decay = {
+        base = 1
+    }
+}

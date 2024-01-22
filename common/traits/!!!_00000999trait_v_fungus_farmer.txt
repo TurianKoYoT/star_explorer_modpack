@@ -1,0 +1,30 @@
+trait_v_fungus_farmer = {
+    cost = 2
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_v_adv_fungus_farmer"
+        "trait_v_rancher"
+        "trait_v_adv_rancher"
+        "trait_v_weaver"
+        "trait_v_adv_weaver"
+        "trait_v_reed_cutter"
+        "trait_v_adv_reed_cutter"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/ART"
+    custom_tooltip_with_modifiers = TRAIT_FUNGUS_FARMER_EFFECT
+    modifier = {
+        planet_miners_food_produces_add = 1
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

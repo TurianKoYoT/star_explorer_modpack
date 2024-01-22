@@ -1,0 +1,38 @@
+trait_v_fossorial = {
+    cost = 3
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_v_adv_fossorial"
+        "trait_v_double_respiration"
+        "trait_v_adv_double_respiration"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/ART"
+    custom_tooltip = TRAIT_FOSSORIAL_EFFECT
+    triggered_planet_growth_habitability_modifier = {
+        potential = {
+            NOR = {
+                this = {
+                    is_pd_bad_exotic = yes
+                }
+                from = {
+                    is_pd_bad_exotic_traits = yes
+                }
+            }
+        }
+        habitability_floor_add = 0.04
+        mult = planet.value:count_v_mining_districts
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

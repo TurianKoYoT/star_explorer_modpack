@@ -1,0 +1,122 @@
+@resolution_weight_normal = 6
+@resolution_cost_t3 = 200
+resolution_custodian_galactic_standard = {
+    icon = "GFX_resolution_galactic_standard"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t3
+        }
+    }
+    target = no
+    modifier = {
+        resolution_custodian_galactic_standard = 1
+    }
+    effect = {
+        set_timed_country_flag = {
+            flag = galcom_resolution_passed_anti_isolationist
+            days = 7200
+        }
+        set_timed_country_flag = {
+            flag = galcom_resolution_passed_anti_supremacist
+            days = 7200
+        }
+    }
+    fail_effects = {
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = "resolution_already_active"
+            NOT = {
+                is_active_resolution = resolution_custodian_galactic_standard
+            }
+        }
+    }
+    potential = {
+        has_nemesis = yes
+        is_galactic_custodian = yes
+        has_galactic_republic = no
+    }
+    active = {
+        has_galactic_custodian = yes
+        has_galactic_republic = no
+    }
+    ai_weight = {
+        base = @resolution_weight_normal
+        modifier = {
+            factor = 5
+            is_civic_diplomatic_corps = yes
+            desc = gal_com_diplo_civic
+        }
+        modifier = {
+            factor = 2
+            is_xenophile = yes
+            desc = ethic_xenophile
+        }
+        modifier = {
+            factor = 1.25
+            is_civic_efficient_bureaucracy = yes
+            desc = gal_com_efficient_civic
+        }
+        modifier = {
+            factor = 1.25
+            has_ai_personality = peaceful_traders
+            desc = gal_com_trader_ai_personality
+        }
+        modifier = {
+            factor = 1.25
+            is_capitalist = yes
+            desc = auth_corporate
+        }
+        modifier = {
+            factor = 1.1
+            is_civic_has_meritocracy = yes
+            desc = gal_com_meritocracy_civic
+        }
+        modifier = {
+            factor = 1.1
+            is_materialist = yes
+            desc = ethic_materialist
+        }
+        modifier = {
+            factor = 0.9
+            has_valid_civic = civic_byzantine_bureaucracy
+            desc = civic_byzantine_bureaucracy
+        }
+        modifier = {
+            factor = 0.9
+            is_authoritarian = yes
+            desc = ethic_authoritarian
+        }
+        modifier = {
+            factor = 0.8
+            is_civic_has_elite = yes
+            desc = gal_com_elite_civic
+        }
+        modifier = {
+            factor = 0.8
+            is_civic_authoritarian = yes
+            desc = ethic_authoritarian
+        }
+        modifier = {
+            factor = 0.5
+            is_xenophobe = yes
+            desc = ethic_xenophobe
+        }
+        modifier = {
+            factor = 0.5
+            is_xenophobic_isolationists = yes
+            desc = gal_com_isolationist_civic
+        }
+        modifier = {
+            factor = 0
+            has_ethic = ethic_fanatic_xenophobe
+            desc = ethic_xenophobe
+        }
+        modifier = {
+            factor = 4
+            is_galactic_custodian = yes
+            desc = gal_com_is_the_custodian
+        }
+    }
+}

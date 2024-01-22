@@ -1,0 +1,78 @@
+warlord = {
+    category = ruler
+    condition_string = RULER_JOB_TRIGGER
+    building_icon = building_fortress
+    clothes_texture_index = 1
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+        is_enslaved = no
+    }
+    possible_precalc = can_fill_ruler_job
+    planet_modifier = {
+        planet_stability_add = 3
+        planet_amenities_mult = -0.05
+        planet_crime_mult = 0.05
+    }
+    resources = {
+        category = planet_warlords
+        produces = {
+            energy = 5
+        }
+        produces = {
+            trigger = {
+                is_organic_species = yes
+                is_lithoid = no
+            }
+            food = 3
+        }
+        produces = {
+            trigger = {
+                is_lithoid = yes
+            }
+            minerals = 2
+        }
+        upkeep = {
+            alloys = 2
+        }
+    }
+    weight = {
+        weight = @ruler_job_weight
+        modifier = {
+            factor = 5
+            OR = {
+                has_ethic = ethic_militarist
+                has_ethic = ethic_fanatic_militarist
+            }
+        }
+        modifier = {
+            factor = 3
+            OR = {
+                has_ethic = ethic_authoritarian
+                has_ethic = ethic_fanatic_authoritarian
+            }
+        }
+        modifier = {
+            factor = 0.2
+            has_citizenship_rights = no
+        }
+        modifier = {
+            factor = 2
+            has_trait = trait_natural_sociologists
+        }
+        modifier = {
+            factor = 0.1
+            can_take_servant_job = yes
+        }
+        modifier = {
+            factor = 1.5
+            has_job = warlord
+        }
+        modifier = {
+            factor = 2.5
+            has_job = loyal_criminal
+        }
+    }
+}

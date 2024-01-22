@@ -1,0 +1,22 @@
+tech_new_systems_localization = {
+    cost = @tier4cost2
+    area = physics
+    tier = 4
+    category = {
+        particles
+    }
+    weight = @tier4weight2
+    is_rare = yes
+    modifier = {
+        country_base_sr_dark_matter_produces_add = 2
+    }
+    potential = {
+        OR = {
+            has_ascension_perk = ap_lost_heritage
+            has_global_flag = ap_lost_heritage
+        }
+    }
+    ai_weight = {
+        factor = 20
+    }
+}

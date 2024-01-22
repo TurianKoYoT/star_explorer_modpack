@@ -1,0 +1,24 @@
+leader_trait_custodianship_galactic_empire_focus_2 = {
+    veteran_class_locked_trait = yes
+    replace_traits = {
+        "leader_trait_custodianship_galactic_empire_focus"
+    }
+    inline_script = {
+        script = trait/icon
+        CLASS = official
+        ICON = "GFX_leader_trait_resolution_category_galacticreforms_focus"
+        RARITY = free_or_veteran
+        COUNCIL = no
+        TIER = 2
+    }
+    leader_potential_add = {
+    }
+    custom_tooltip = leader_trait_custodianship_galactic_empire_focus_2_tt
+    galcom_modifier = {
+        diplo_weight_mult = 0.035
+        mult = event_target:global_event_country.passed_resolutions_custodianship_galactic_empire
+    }
+    leader_class = {
+        official
+    }
+}

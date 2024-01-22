@@ -1,0 +1,63 @@
+ult_product_designer = {
+    category = specialist
+    condition_string = SPECIALIST_JOB_TRIGGER
+    building_icon = building_ult_commercial_center
+    clothes_texture_index = 1
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_specialist_job
+    planet_modifier = {
+        trade_value_add = 10
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|
+    }
+    resources = {
+        category = planet_merchants
+        produces = {
+            unity = 4
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_tradition = tr_mercantile_trickle_up_economics
+            }
+        }
+        modifier = {
+            trade_value_add = 4
+        }
+    }
+    weight = {
+        weight = @specialist_job_weight
+        mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_trade_mult|
+        modifier = {
+            factor = 5
+            has_job = ult_product_designer
+        }
+        modifier = {
+            factor = 1.25
+            owner = {
+                has_civic = civic_merchant_guilds
+            }
+            has_trait = trait_brainslug
+        }
+        modifier = {
+            factor = 1.125
+            owner = {
+                has_civic = civic_merchant_guilds
+            }
+            has_trait = trait_presapient_natural_intellectuals
+        }
+        modifier = {
+            factor = 1.125
+            owner = {
+                has_civic = civic_merchant_guilds
+            }
+            has_trait = trait_robust
+        }
+    }
+}

@@ -1,0 +1,80 @@
+district_giga_voidframe_trade_dm = {
+    base_buildtime = 480
+    icon = district_giga_voidframe_trade_dm
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        exists = from
+        uses_district_set = giga_frameworld
+        is_voidframe_exclusive_dm = yes
+    }
+    potential = {
+        exists = owner
+        uses_district_set = giga_frameworld
+        if = {
+            limit = {
+                is_voidframe_outdated_dm = yes
+            }
+            has_building = building_dm_commercial_megaplex
+            NOR = {
+                has_building = building_ae_commercial_megaplex
+                has_building = building_phanon_commercial_megaplex
+                has_building = building_stellarite_commercial_megaplex
+            }
+        }
+        else = {
+            is_voidframe_dm = yes
+            OR = {
+                has_building = building_dm_commercial_megaplex
+                has_building = building_ae_commercial_megaplex
+                has_building = building_phanon_commercial_megaplex
+                has_building = building_stellarite_commercial_megaplex
+            }
+        }
+    }
+    prerequisites = {
+        tech_dm_commercial_megaplex
+    }
+    show_tech_unlock_if = {
+        giga_has_frameworld_origin = yes
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_giga_frameworld_trade
+        district_giga_voidframe_trade_dm
+        district_giga_voidframe_trade_de
+        district_giga_voidframe_trade_pe
+        district_giga_voidframe_trade_se
+    }
+    resources = {
+        category = planet_districts_hab_research
+        cost = {
+            minerals = 1000
+            sr_dark_matter = 200
+        }
+        upkeep = {
+            energy = 4
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = $house$
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+            has_voidframe_mods_aot = yes
+        }
+        modifier = {
+            job_dm_clerk_add = 4
+            job_anz_voidframe_trader_dm_add = 2
+        }
+    }
+    ai_resource_production = {
+        ai_unobtainium = 1000
+        trigger = {
+            frameworld_want_science = yes
+        }
+    }
+}

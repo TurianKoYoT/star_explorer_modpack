@@ -1,0 +1,38 @@
+@apsr24cost1 = 10000
+@apsr24weight1 = 50
+tech_apsr24_building_part1 = {
+    cost = @apsr24cost1
+    area = physics
+    tier = 2
+    category = {
+        industry
+    }
+    prerequisites = {
+        "tech_fission_power"
+    }
+    weight = @apsr24weight1
+    is_rare = yes
+    prereqfor_desc = {
+        custom = {
+            title = "TECH_APSR24_PART1_TITLE"
+            desc = "TECH_APSR24_PART1_DESC"
+        }
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            NOT = {
+                any_owned_planet = {
+                    has_deposit = apsr24_deposit
+                }
+            }
+        }
+        modifier = {
+            factor = 5
+            has_origin = apsr_origin_unique_capital
+        }
+    }
+    ai_weight = {
+        factor = 150
+    }
+}

@@ -1,0 +1,23 @@
+tech_eutab_establish_bene_gesserit = {
+    cost = @tier4cost2
+    area = society
+    tier = 4
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_gene_expressions"
+    }
+    weight = @tier4weight2
+    is_custom_tech_1 = yes
+    potential = {
+        is_egalitarian = yes
+        has_ascension_perk = ap_consecrated_worlds
+    }
+    gateway = eu_consecrated
+    modifier = {
+        modify_species_cost_mult = -0.05
+        leader_lifespan_add = 10
+        espionage_hostile_operation_difficulty_add = 2
+    }
+}

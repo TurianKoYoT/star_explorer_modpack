@@ -1,0 +1,61 @@
+set_pre_ftl_origin = {
+    switch = {
+        trigger = has_planet_flag
+        pre_ftl_default = {
+            owner = {
+                set_origin = origin_default_pre_ftl
+            }
+        }
+        pre_ftl_mechanists = {
+            owner = {
+                shift_ethic = "ethic_fanatic_materialist"
+                set_origin = origin_mechanists
+            }
+        }
+        pre_ftl_life_seeded = {
+            owner = {
+                set_origin = origin_life_seeded
+            }
+        }
+        pre_ftl_post_apocalyptic = {
+            owner = {
+                set_origin = origin_post_apocalyptic
+            }
+        }
+        pre_ftl_ocean_paradise = {
+            owner = {
+                set_origin = origin_ocean_paradise
+            }
+        }
+        pre_ftl_subterranean = {
+            owner = {
+                set_origin = origin_subterranean
+            }
+        }
+        pre_ftl_lithoid = {
+            owner = {
+                set_origin = origin_lithoid
+            }
+        }
+        pre_ftl_progenitor_hive = {
+            owner = {
+                set_origin = origin_progenitor_hive
+            }
+        }
+        pre_ftl_tree_of_life = {
+            owner = {
+                set_origin = origin_tree_of_life
+            }
+        }
+        pre_ftl_void_dwellers = {
+            owner = {
+                set_origin = origin_void_dwellers
+            }
+        }
+        pre_ftl_shattered_ring = {
+            owner = {
+                set_origin = origin_shattered_ring
+            }
+        }
+    }
+}

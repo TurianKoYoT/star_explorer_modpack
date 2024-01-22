@@ -1,0 +1,20 @@
+building_nanite_facility_3 = {
+    base_buildtime = 180
+    category = pop_assembly
+    can_build = no
+    allow = {
+        has_major_upgraded_capital = yes
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            automatic_drone = 400
+        }
+        produces = {
+            nanites = 6
+        }
+        upkeep = {
+            automatic_drone = 21
+        }
+    }
+}

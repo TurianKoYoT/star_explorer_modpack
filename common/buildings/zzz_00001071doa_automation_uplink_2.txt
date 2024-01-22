@@ -1,0 +1,45 @@
+doa_automation_uplink_2 = {
+    base_buildtime = @b2_time
+    can_build = no
+    can_demolish = yes
+    can_be_disabled = no
+    category = resource
+    prerequisites = {
+        "tech_automation_uplink_2"
+    }
+    potential = {
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+        }
+    }
+    allow = {
+        has_major_upgraded_capital = yes
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = owner
+        }
+        doa_automated_industries_count = 6
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+        }
+        upkeep = {
+            energy = 150
+            sr_dark_matter = 2
+        }
+    }
+    upgrades = {
+        doa_automation_uplink_3
+    }
+    destroy_trigger = {
+        OR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+        }
+    }
+}

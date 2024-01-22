@@ -1,0 +1,35 @@
+trait_ssh_enhanced_power = {
+    cost = 3
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    modifier = {
+        army_damage_mult = 0.4
+        army_defense_damage_mult = 1
+        army_attack_health_mult = 0.25
+        army_defense_health_mult = 0.25
+        planet_jobs_worker_produces_mult = 0.025
+    }
+    icon = "gfx/interface/icons/traits/trait_ssh_enhanced_power.dds"
+    initial = no
+    randomized = no
+    prerequisites = {
+        "ssh_tech_advanced_dna_resequencing"
+    }
+    opposites = {
+        "trait_invasive"
+        "trait_strong"
+        "trait_juiced_power"
+    }
+    slave_cost = {
+        energy = 850
+    }
+}

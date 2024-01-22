@@ -1,0 +1,7 @@
+ship_section_template = {
+    key = "DEFAULT_DM_HABITAT_CENTRAL_COMPLEX_SECTION"
+    ship_size = dm_habitat_central_complex
+    fits_on_slot = "part1"
+    entity = "aot_habitat_empty_entity"
+    icon = "GFX_ship_part_core_mid"
+}

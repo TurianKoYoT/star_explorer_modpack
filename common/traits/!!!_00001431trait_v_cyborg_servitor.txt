@@ -1,0 +1,50 @@
+trait_v_cyborg_servitor = {
+    cost = 1
+    initial = no
+    species_potential_add = {
+        can_add_cybernetic_traits = yes
+    }
+    species_possible_remove = {
+        can_remove_cybernetic_traits = yes
+    }
+    randomized = no
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    opposites = {
+        "trait_nerve_stapled"
+        "trait_cyborg_logic_engines"
+        "trait_v_cyborg_motoric"
+        "trait_intelligent"
+        "trait_erudite"
+        "trait_natural_engineers"
+        "trait_natural_physicists"
+        "trait_natural_sociologists"
+        "trait_communal"
+        "trait_solitary"
+        "trait_talented"
+        "trait_zombie"
+        "trait_v_cyborg_blue_beam"
+    }
+    custom_tooltip_with_modifiers = CYBORG_SERVITOR_EFFECT
+    modifier = {
+        planet_jobs_produces_mult = 0.05
+    }
+    forced_happiness = yes
+    infertile = yes
+    slave_cost = {
+        energy = 750
+    }
+    assembly_score = {
+        modifier = {
+            add = 1
+            from = {
+                OR = {
+                    has_farming_designation = yes
+                    has_generator_designation = yes
+                    has_mining_designation = yes
+                    has_rural_designation = yes
+                }
+            }
+        }
+    }
+}

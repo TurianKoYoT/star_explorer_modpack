@@ -1,0 +1,117 @@
+building_avb_commercial_4 = {
+    base_buildtime = @avb_t5_time
+    can_build = no
+    category = trade
+    allow = {
+        has_upgraded_capital_4 = yes
+    }
+    potential = {
+        exists = owner
+        owner = {
+            is_gestalt = no
+        }
+        NOT = {
+            has_modifier = slave_colony
+        }
+        OR = {
+            has_z_expanded_mod = no
+            AND = {
+                has_z_expanded_mod = yes
+                owner = {
+                    NOT = {
+                        is_agrarian_empire = {
+                            allow_invalid = yes
+                        }
+                    }
+                }
+            }
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            owner = {
+                is_gestalt = yes
+            }
+            has_modifier = slave_colony
+            and = {
+                owner = {
+                    is_ai = yes
+                }
+                years_passed > 5
+            }
+            AND = {
+                has_z_expanded_mod = yes
+                owner = {
+                    NOT = {
+                        is_agrarian_empire = {
+                            allow_invalid = yes
+                        }
+                    }
+                }
+            }
+        }
+    }
+    inline_script = {
+        script = trade_buildings/avb_commercials
+        tier = 4
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_t5_minerals
+            rare_crystals = @avb_t5_rare_cost
+        }
+        upkeep = {
+            energy = @avb_t5_upkeep
+            rare_crystals = @avb_t5_rare_upkeep
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_global_flag = ethic_civic_classic_active
+                    has_valid_civic = civic_consumerism
+                }
+            }
+            unity = 5
+        }
+    }
+    upgrades = {
+        building_avb_commercial_5
+    }
+    prerequisites = {
+        "tech_avb_interstellar_economics_3"
+    }
+    show_tech_unlock_if = {
+        is_gestalt = no
+        OR = {
+            has_z_expanded_mod = no
+            AND = {
+                has_z_expanded_mod = yes
+                NOT = {
+                    is_agrarian_empire = {
+                        allow_invalid = yes
+                    }
+                }
+            }
+        }
+    }
+    ai_resource_production = {
+        energy = 4
+        trigger = {
+            always = yes
+        }
+    }
+    ai_resource_production = {
+        energy = 6
+        trigger = {
+            OR = {
+                num_unemployed >= 10
+                num_assigned_jobs = {
+                    job = servant
+                    value >= 10
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,68 @@
+ssh_tech_advanced_dna_resequencing = {
+    cost = 30000
+    area = society
+    tier = 4
+    category = {
+        biology
+    }
+    prerequisites = {
+        "ssh_tech_microscale_engineering"
+    }
+    weight = @tier4weight1
+    is_rare = yes
+    prereqfor_desc = {
+        ship = {
+            title = "ssh_dna_resequencing_tooltip"
+        }
+    }
+    modifier = {
+        country_society_tech_research_speed = 0.1
+        BIOLOGICAL_species_trait_points_add = 1
+        BIOLOGICAL_species_trait_picks_add = 1
+        LITHOID_species_trait_points_add = 1
+        LITHOID_species_trait_picks_add = 1
+    }
+    weight_modifier = {
+        modifier = {
+            factor = @ap_technological_ascendancy_rare_tech
+            has_ascension_perk = ap_technological_ascendancy
+        }
+        modifier = {
+            factor = value:tech_weight_likelihood
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_biology
+            }
+        }
+        modifier = {
+            factor = @federation_perk_factor
+            has_federation = yes
+            federation = {
+                has_federation_perk = rare_tech_boost
+                any_member = {
+                    has_technology = ssh_tech_advanced_dna_resequencing
+                }
+            }
+        }
+        modifier = {
+            factor = 0
+            has_utopia = no
+        }
+    }
+    ai_weight = {
+        factor = 9
+        modifier = {
+            factor = 15
+            has_ascension_perk = ap_engineered_evolution
+        }
+        modifier = {
+            factor = value:tech_weight_likelihood
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_biology
+            }
+        }
+        modifier = {
+            factor = 0
+            has_utopia = no
+        }
+    }
+}

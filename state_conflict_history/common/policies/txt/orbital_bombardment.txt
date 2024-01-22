@@ -1,0 +1,198 @@
+orbital_bombardment = {
+    potential = {
+        OR = {
+            merg_is_default_empire = yes
+            is_country_type = vol
+        }
+    }
+    option = {
+        name = "orbital_bombardment_selective"
+        policy_flags = {
+            orbital_bombardment_selective
+        }
+        AI_weight = {
+            modifier = {
+                factor = 0
+                NOR = {
+                    is_pacifist = yes
+                    is_green = yes
+                    is_ecocentric = yes
+                }
+                NOT = {
+                    is_galactic_community_member = yes
+                    OR = {
+                        is_active_resolution = "resolution_rulesofwar_independent_tribunals"
+                        is_active_resolution = "resolution_rulesofwar_last_resort_doctrine"
+                        is_active_resolution = "resolution_rulesofwar_demobilization_initiative"
+                    }
+                }
+            }
+        }
+    }
+    option = {
+        name = "orbital_bombardment_indiscriminate"
+        in_breach_of = {
+             {
+                key = resolution_rulesofwar_independent_tribunals
+            }
+             {
+                key = resolution_rulesofwar_last_resort_doctrine
+            }
+             {
+                key = resolution_rulesofwar_demobilization_initiative
+            }
+             {
+                key = resolution_rulesofwar_6
+            }
+        }
+        policy_flags = {
+            orbital_bombardment_indiscriminate
+        }
+        modifier = {
+        }
+        valid = {
+            NOR = {
+                is_pacifist = yes
+                has_valid_civic = civic_xeno_militarist
+                is_bugged_interventionalist = yes
+                has_valid_civic = civic_mutualistic_behavior
+            }
+        }
+        AI_weight = {
+            modifier = {
+                factor = 0.1
+                is_galactic_community_member = yes
+                OR = {
+                    is_active_resolution = "resolution_rulesofwar_independent_tribunals"
+                    is_active_resolution = "resolution_rulesofwar_last_resort_doctrine"
+                    is_active_resolution = "resolution_rulesofwar_demobilization_initiative"
+                    is_active_resolution = "resolution_rulesofwar_6"
+                }
+            }
+            modifier = {
+                factor = 5
+                is_militarist = yes
+                NOR = {
+                    is_active_resolution = "resolution_rulesofwar_independent_tribunals"
+                    is_active_resolution = "resolution_rulesofwar_last_resort_doctrine"
+                    is_active_resolution = "resolution_rulesofwar_demobilization_initiative"
+                    is_active_resolution = "resolution_rulesofwar_6"
+                }
+            }
+        }
+    }
+    option = {
+        name = "orbital_bombardment_armageddon"
+        in_breach_of = {
+             {
+                key = resolution_rulesofwar_independent_tribunals
+            }
+             {
+                key = resolution_rulesofwar_last_resort_doctrine
+            }
+             {
+                key = resolution_rulesofwar_demobilization_initiative
+            }
+             {
+                key = resolution_rulesofwar_6
+            }
+        }
+        potential = {
+            OR = {
+                has_valid_civic = civic_fanatic_purifiers
+                has_valid_civic = civic_machine_terminator
+                has_valid_civic = civic_bringers_of_death
+                has_valid_civic = civic_machine_destructive_programming
+                AND = {
+                    merg_has_omega_add = yes
+                    has_valid_civic = civic_hive_devouring_swarm
+                }
+                has_valid_civic = civic_organic_zealots
+                is_country_type = ascended_empire
+            }
+        }
+        policy_flags = {
+            orbital_bombardment_armageddon
+        }
+        modifier = {
+        }
+        AI_weight = {
+            modifier = {
+                factor = 10
+                OR = {
+                    has_valid_civic = civic_fanatic_purifiers
+                    has_valid_civic = civic_machine_terminator
+                    has_valid_civic = civic_bringers_of_death
+                    has_valid_civic = civic_organic_zealots
+                    has_valid_civic = civic_galactic_superpower
+                }
+            }
+            modifier = {
+                factor = 10
+                has_ascension_perk = ap_become_the_crisis
+            }
+        }
+    }
+    option = {
+        name = "orbital_bombardment_redtoxin"
+        in_breach_of = {
+             {
+                key = resolution_rulesofwar_independent_tribunals
+            }
+             {
+                key = resolution_rulesofwar_last_resort_doctrine
+            }
+             {
+                key = resolution_rulesofwar_demobilization_initiative
+            }
+        }
+        potential = {
+            merg_has_gigastructures = yes
+            OR = {
+                merg_is_default_empire = yes
+                is_country_type = vol
+            }
+        }
+        prerequisites = {
+            tech_scourge_deployment
+        }
+        policy_flags = {
+            orbital_bombardment_redtoxin
+        }
+        valid = {
+            merg_has_gigastructures = yes
+            NOR = {
+                is_pacifist = yes
+                is_green = yes
+                is_ecocentric = yes
+            }
+        }
+        AI_weight = {
+            modifier = {
+                factor = 10
+                OR = {
+                    has_valid_civic = civic_fanatic_purifiers
+                    has_valid_civic = civic_machine_terminator
+                }
+            }
+            modifier = {
+                factor = 9
+                has_ascension_perk = ap_become_the_crisis
+            }
+        }
+    }
+    option = {
+        name = "orbital_bombardment_infernal"
+        policy_flags = {
+            orbital_bombardment_infernal
+        }
+        modifier = {
+        }
+        potential = {
+            has_relic = r_darhmod_infernal
+        }
+        AI_weight = {
+            factor = 1
+        }
+    }
+}

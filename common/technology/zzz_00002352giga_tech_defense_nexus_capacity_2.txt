@@ -1,0 +1,40 @@
+giga_tech_defense_nexus_capacity_2 = {
+    cost = 150000
+    area = engineering
+    tier = 5
+    category = {
+        voidcraft
+    }
+    prerequisites = {
+        "giga_tech_defense_nexus_damage_1"
+    }
+    weight = 30
+    prereqfor_desc = {
+        custom = {
+            title = "allow_defense_nexus_capacity_2"
+            desc = "allow_defense_nexus_capacity_2"
+        }
+    }
+    potential = {
+        has_utopia = yes
+    }
+    modifier = {
+        weapon_type_strike_craft_speed_mult = 0.1
+    }
+    weight_modifier = {
+        inline_script = {
+            script = technologies/rare_technologies_weight_modifiers
+            TECHNOLOGY = giga_tech_defense_nexus_capacity_2
+        }
+        modifier = {
+            factor = 0
+            not = {
+                any_owned_megastructure = {
+                    is_megastructure_type = planetary_drive_yard_1_fortress
+                }
+            }
+        }
+    }
+    ai_weight = {
+    }
+}

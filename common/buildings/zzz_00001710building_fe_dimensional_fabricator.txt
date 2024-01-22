@@ -1,0 +1,49 @@
+building_fe_dimensional_fabricator = {
+    base_buildtime = 360
+    can_build = yes
+    can_demolish = yes
+    icon = building_dimensional_fabricator
+    category = resource
+    potential = {
+        exists = owner
+        owner = {
+            has_technology = tech_fe_dimensional_fabricator
+        }
+    }
+    allow = {
+        has_enigmatic_capital = yes
+    }
+    planet_modifier = {
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 1000
+            alloys = 250
+            rare_crystals = 100
+            volatile_motes = 100
+            exotic_gases = 100
+        }
+        produces = {
+            minerals = @auto_minerals_dm
+            rare_crystals = @auto_sr_dm
+            exotic_gases = @auto_sr_dm
+            volatile_motes = @auto_sr_dm
+            sr_zro = @auto_sr_dm
+            sr_living_metal = @auto_sr_dm
+        }
+        upkeep = {
+            energy = 20
+            acot_sr_dark_energy = 3
+        }
+    }
+    upgrades = {
+        building_ae_dimensional_fabricator
+    }
+    prerequisites = {
+        tech_fe_dimensional_fabricator
+    }
+    ai_weight = {
+        weight = 10000
+    }
+}

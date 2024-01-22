@@ -1,0 +1,8 @@
+opinion_influenced_awaken_fallen_empire = {
+    opinion = {
+        base = 200
+    }
+    decay = {
+        base = 1
+    }
+}

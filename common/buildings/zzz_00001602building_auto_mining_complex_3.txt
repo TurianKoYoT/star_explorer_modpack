@@ -1,0 +1,22 @@
+building_auto_mining_complex_3 = {
+    base_buildtime = 180
+    can_build = no
+    resources = {
+        category = planet_miners
+        cost = {
+            automatic_drone = 200
+        }
+        produces = {
+            minerals = 15
+        }
+        upkeep = {
+            automatic_drone = 3
+        }
+    }
+    upgrades = {
+        building_auto_mining_complex_4
+    }
+    prerequisites = {
+        tech_mining_2
+    }
+}

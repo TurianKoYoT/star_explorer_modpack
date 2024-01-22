@@ -1,0 +1,47 @@
+building_delta_imperial_concession_port = {
+    icon = building_dm_ancient_palace
+    base_buildtime = 600
+    base_cap_amount = 1
+    owner_type = corporate
+    category = government
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            OR = {
+                has_modifier = imperial_charter
+                has_civic = civic_galactic_sovereign_megacorp
+            }
+        }
+    }
+    country_modifier = {
+        diplo_weight_economy_mult = 0.25
+    }
+    planet_modifier = {
+        branch_office_value_mult = 1
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            minerals = 1000
+            sr_dark_matter = 200
+            acot_sr_dark_energy = 200
+        }
+        produces = {
+            energy = 40
+            sr_dark_matter = 4
+            acot_sr_dark_energy = 4
+        }
+    }
+    prerequisites = {
+        tech_dm_stronghold
+    }
+    show_tech_unlock_if = {
+        is_megacorp = yes
+    }
+    upgrades = {
+        building_alpha_imperial_concession_port
+    }
+    ai_weight = {
+        weight = 100
+    }
+}

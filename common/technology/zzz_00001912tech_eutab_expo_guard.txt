@@ -1,0 +1,24 @@
+tech_eutab_expo_guard = {
+    cost = @tier3cost3
+    area = society
+    tier = 2
+    category = {
+        biology
+    }
+    prerequisites = {
+        "tech_eutab_dev_district"
+        "tech_colonial_bureaucracy"
+    }
+    weight = @tier2weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_xenophobe_and_pac = yes
+    }
+    gateway = eu_xenophobe
+    prereqfor_desc = {
+        custom = {
+            title = EUTAB_FRONTIER_UPGRADE_TITLE
+            desc = EUTAB_FRONTIER_UPGRADE_DESC
+        }
+    }
+}

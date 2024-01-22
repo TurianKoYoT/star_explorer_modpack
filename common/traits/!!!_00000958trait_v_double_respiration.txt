@@ -1,0 +1,89 @@
+trait_v_double_respiration = {
+    cost = -3
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    opposites = {
+        "trait_v_adv_double_respiration"
+        "trait_noxious"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/REP"
+    inline_script = "species_class/AVI"
+    custom_tooltip_with_modifiers = TRAIT_DOUBLE_RESPIRATION_EFFECT
+    modifier = {
+        planet_jobs_produces_mult = 0.05
+    }
+    triggered_planet_growth_habitability_modifier = {
+        potential = {
+            from = {
+                OR = {
+                    has_trait = trait_v_urban_adaptation
+                    has_trait = trait_v_adv_urban_adaptation
+                }
+            }
+        }
+        habitability_ceil_add = -0.02
+        mult = planet.value:count_v_polluting_districts_a
+    }
+    triggered_planet_growth_habitability_modifier = {
+        potential = {
+            from = {
+                NOR = {
+                    has_trait = trait_v_urban_adaptation
+                    has_trait = trait_v_adv_urban_adaptation
+                }
+            }
+        }
+        habitability_ceil_add = -0.02
+        mult = planet.value:count_v_polluting_districts_b
+    }
+    triggered_planet_growth_habitability_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                OR = {
+                    is_planet_class = pc_city
+                    is_pd_arcology = yes
+                }
+                NOR = {
+                    is_planet_class = pc_ecocity
+                    is_planet_class = pc_shroudecocity
+                }
+            }
+            from = {
+                OR = {
+                    has_trait = trait_v_urban_adaptation
+                    has_trait = trait_v_adv_urban_adaptation
+                }
+            }
+        }
+        habitability_ceil_add = -0.25
+    }
+    triggered_planet_growth_habitability_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                OR = {
+                    is_planet_class = pc_city
+                    is_pd_arcology = yes
+                }
+                NOR = {
+                    is_planet_class = pc_ecocity
+                    is_planet_class = pc_shroudecocity
+                }
+            }
+            from = {
+                NOR = {
+                    has_trait = trait_v_urban_adaptation
+                    has_trait = trait_v_adv_urban_adaptation
+                }
+            }
+        }
+        habitability_ceil_add = -0.5
+    }
+    slave_cost = {
+        energy = -2000
+    }
+}

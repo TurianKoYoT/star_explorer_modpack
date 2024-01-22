@@ -1,0 +1,96 @@
+@resolution_weight_unpopular = 5
+@resolution_cost_t4 = 250
+resolution_constitutional_immunity = {
+    icon = "GFX_resolution_constitutional_immunity"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t4
+        }
+    }
+    target = yes
+    valid_target = {
+        is_same_value = from
+        NOT = {
+            has_country_flag = constitutional_immunity
+        }
+    }
+    effect = {
+        custom_tooltip = resolution_constitutional_immunity_tooltip
+        hidden_effect = {
+            set_country_flag = constitutional_immunity
+        }
+    }
+    potential = {
+        has_tradition = tr_politics_finish
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = "immunity_already_active"
+            NOT = {
+                any_country = {
+                    has_country_flag = constitutional_immunity
+                }
+            }
+        }
+    }
+    ai_weight = {
+        base = @resolution_weight_unpopular
+        modifier = {
+            factor = 1.1
+            from = {
+                is_galactic_community_member = yes
+            }
+            opinion_level = {
+                who = from
+                level > neutral
+            }
+            NOT = {
+                opinion_level = {
+                    who = from
+                    level > good
+                }
+            }
+            desc = good_opinion
+        }
+        modifier = {
+            factor = 1.25
+            from = {
+                is_galactic_community_member = yes
+            }
+            opinion_level = {
+                who = from
+                level > good
+            }
+            desc = excellent_opinion
+        }
+        modifier = {
+            factor = 0.8
+            from = {
+                is_galactic_community_member = yes
+            }
+            opinion_level = {
+                who = from
+                level < neutral
+            }
+            NOT = {
+                opinion_level = {
+                    who = from
+                    level < poor
+                }
+            }
+            desc = bad_opinion
+        }
+        modifier = {
+            factor = 0.5
+            from = {
+                is_galactic_community_member = yes
+            }
+            opinion_level = {
+                who = from
+                level < poor
+            }
+            desc = terrible_opinion
+        }
+    }
+}

@@ -1,0 +1,9 @@
+merg_is_fallen_empire = {
+    OR = {
+        is_country_type = fallen_empire
+        hfe_trigger_is_human_fallen = yes
+        is_country_type = LsE_fallen_empire
+        is_country_type = kuat_fallen_empire
+        is_country_type = fallen_empire_ev
+    }
+}

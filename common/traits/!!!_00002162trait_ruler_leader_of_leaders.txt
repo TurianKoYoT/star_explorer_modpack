@@ -1,0 +1,28 @@
+trait_ruler_leader_of_leaders = {
+    councilor_trait = yes
+    inline_script = {
+        script = trait/icon_psionic
+        CLASS = leader
+        ICON = "GFX_leader_trait_leader_of_leaders"
+        RARITY = common
+        COUNCIL = yes
+        TIER = none
+    }
+    leader_potential_add = {
+        OR = {
+            from = {
+                has_technology = tech_expandable_brain_1
+            }
+            has_global_flag = ap_expandable_brain_1
+        }
+    }
+    modifier = {
+        country_leader_pool_size = 3
+    }
+    leader_class = {
+        commander
+        official
+        scientist
+        commander
+    }
+}

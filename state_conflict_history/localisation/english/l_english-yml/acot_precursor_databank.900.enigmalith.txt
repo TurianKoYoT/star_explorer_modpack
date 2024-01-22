@@ -1,0 +1,2 @@
+l_english:
+ acot_precursor_databank.900.enigmalith:1000 "How about some resource production?"

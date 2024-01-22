@@ -1,0 +1,22 @@
+tech_eutab_street_judge = {
+    cost = @tier3cost3
+    area = society
+    tier = 3
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_colonial_centralization"
+    }
+    weight = @tier3weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_gestalt = no
+        has_ascension_perk = ap_arcology_project
+        OR = {
+            is_militarist = yes
+            is_authoritarian = yes
+            is_gestalt = no
+        }
+    }
+}

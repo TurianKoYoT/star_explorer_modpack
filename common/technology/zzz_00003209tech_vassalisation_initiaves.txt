@@ -1,0 +1,18 @@
+tech_vassalisation_initiaves = {
+    cost = @tier4cost3
+    area = society
+    tier = 4
+    category = {
+        statecraft
+    }
+    weight = @tier4weight3
+    is_rare = yes
+    potential = {
+    }
+    modifier = {
+        country_society_research_produces_mult = 0.05
+    }
+    ai_weight = {
+        factor = 20
+    }
+}

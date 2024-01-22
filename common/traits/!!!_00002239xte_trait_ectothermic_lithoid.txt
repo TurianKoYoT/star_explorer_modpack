@@ -1,0 +1,28 @@
+xte_trait_ectothermic_lithoid = {
+    icon = "gfx/interface/icons/traits/xte_trait_ectothermic.dds"
+    cost = 3
+    initial = yes
+    randomized = yes
+    allowed_archetypes = {
+        LITHOID
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    opposites = {
+        "trait_nerve_stapled"
+        "trait_invasive"
+    }
+    potential_crossbreeding_chance = 1
+    modifier = {
+        planet_pops_minerals_upkeep_mult = -0.4
+        pop_environment_tolerance = -0.075
+    }
+    custom_tooltip_with_modifiers = xte_added_by_notification
+    slave_cost = {
+        energy = 600
+    }
+}

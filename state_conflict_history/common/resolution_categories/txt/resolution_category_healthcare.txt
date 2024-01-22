@@ -1,0 +1,18 @@
+resolution_category_healthcare = {
+    group = environment_technology
+    icon = "GFX_resolution_healthcare"
+    resolution_types = {
+        "resolution_healthcare_repeal_1"
+        "resolution_healthcare_repeal_2"
+        "resolution_healthcare_repeal_3"
+        "resolution_healthcare_repeal_4"
+        "resolution_healthcare_repeal_5"
+        "resolution_healthcare_repeal_6"
+        "resolution_healthcare_1"
+        "resolution_healthcare_2"
+        "resolution_healthcare_3"
+        "resolution_healthcare_4"
+        "resolution_healthcare_5"
+        "resolution_healthcare_6"
+    }
+}

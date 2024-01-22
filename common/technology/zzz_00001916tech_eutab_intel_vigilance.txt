@@ -1,0 +1,24 @@
+tech_eutab_intel_vigilance = {
+    cost = @tier2cost3
+    area = society
+    tier = 2
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_sensors_2"
+    }
+    weight = @tier2weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_xenophobe = yes
+        has_ascension_perk = ap_imperial_prerogative
+    }
+    gateway = eu_imperial
+    modifier = {
+        ship_sensor_range_add = 1
+        spy_network_daily_value_mult = 0.1
+        operation_gather_information_difficulty_add = -1
+        intel_decryption_add = 1
+    }
+}

@@ -1,0 +1,45 @@
+action_form_non_aggression_pact = {
+    icon = "GFX_diplomacy_status_non_aggression_pact"
+    diplo_view_acceptance_icon = yes
+    should_notify_all_communications = yes
+    AI_acceptance_base_value = -50
+    action_type = positive
+    possible = {
+        homicidal_diplomacy_restrictions = {
+            mirror = yes
+        }
+        pompous_diplomacy_restrictions = yes
+        custom_tooltip = {
+            fail_text = requires_10_trust_or_neutral
+            OR = {
+                opinion_level = {
+                    who = from
+                    level >= neutral
+                }
+                from = {
+                    trust = {
+                        who = root
+                        value >= 10
+                    }
+                }
+                is_pacifist = yes
+                has_policy_flag = diplo_stance_isolationist
+                has_policy_flag = diplo_stance_secretive
+                FROM = {
+                    OR = {
+                        is_pacifist = yes
+                        has_policy_flag = diplo_stance_isolationist
+                        has_policy_flag = diplo_stance_secretive
+                    }
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = requires_embassy_or_improving_relations
+            OR = {
+                is_improving_relations_with = from
+                has_embassy = from
+            }
+        }
+    }
+}

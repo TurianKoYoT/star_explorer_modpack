@@ -1,0 +1,120 @@
+building_isd_headquarter = {
+    base_buildtime = @b3_time
+    category = government
+    position_priority = 99
+    empire_limit = {
+        base = 1
+    }
+    potential = {
+        exists = owner
+        NOT = {
+            has_modifier = slave_colony
+        }
+        owner = {
+            is_galactic_emperor = yes
+        }
+        is_active_resolution = resolution_emperor_isd
+    }
+    allow = {
+        has_major_upgraded_capital = yes
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            has_modifier = slave_colony
+            owner = {
+                is_galactic_emperor = no
+            }
+            NOT = {
+                is_active_resolution = resolution_emperor_isd
+            }
+        }
+    }
+    resources = {
+        category = building_imperial_government
+        cost = {
+            minerals = @b3_minerals
+            influence = 50
+        }
+        upkeep = {
+            energy = @b3_upkeep
+            influence = 0.5
+        }
+    }
+    country_modifier = {
+        spy_network_levels_add = 25
+    }
+    triggered_planet_modifier = {
+        potential = {
+            NOT = {
+                owner = {
+                    is_gestalt = yes
+                }
+            }
+        }
+        job_politician_add = 1
+        job_enforcer_add = 8
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        job_evaluator_add = 2
+        job_patrol_drone_add = 8
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        job_synapse_drone_add = 2
+        job_patrol_drone_add = 8
+    }
+    triggered_desc = {
+        trigger = {
+            NOT = {
+                owner = {
+                    is_gestalt = yes
+                }
+            }
+        }
+        text = job_politician_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            NOT = {
+                owner = {
+                    is_gestalt = yes
+                }
+            }
+        }
+        text = job_enforcer_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        text = job_evaluator_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        text = job_synapse_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_patrol_drone_effect_desc
+    }
+}

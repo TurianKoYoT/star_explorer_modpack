@@ -1,0 +1,32 @@
+@feupkeep = 4
+@feproduction_lab = 8
+bwm_building_biolab = {
+    can_build = no
+    can_demolish = yes
+    icon = "building_bwm_lex_ring_biolab"
+    category = resources
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 500
+        }
+        produces = {
+            engineering_research = 1
+            physics_research = 1
+            society_research = @feproduction_lab
+        }
+        upkeep = {
+            energy = @feupkeep
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            text = "requires_building_ancient_monolith"
+            planet = {
+                has_building = "bwm_building_ancient_monolith_1"
+            }
+        }
+    }
+    prerequisites = {
+    }
+}

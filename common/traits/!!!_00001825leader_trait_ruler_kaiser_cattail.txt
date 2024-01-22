@@ -1,0 +1,22 @@
+leader_trait_ruler_kaiser_cattail = {
+    destiny_trait = yes
+    immortal_leaders = yes
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = "GFX_leader_trait_ruler_kaiser_kattail"
+        RARITY = paragon
+        COUNCIL = yes
+        TIER = none
+    }
+    councilor_modifier = {
+        army_morale = 0.25
+        ship_weapon_damage = 0.05
+        pop_government_ethic_attraction = 0.1
+    }
+    leader_class = {
+        commander
+    }
+    initial = no
+    randomized = no
+}

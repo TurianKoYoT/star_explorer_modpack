@@ -1,0 +1,64 @@
+building_eutab_dev_district = {
+    base_buildtime = @b1_time
+    base_cap_amount = 1
+    position_priority = 199
+    category = government
+    potential = {
+        NOT = {
+            has_modifier = slave_colony
+        }
+        exists = owner
+        owner = {
+            is_regular_empire = yes
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 75
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 4
+        pop_amenities_usage_mult = -0.1
+        job_clerk_add = 2
+        planet_max_buildings_add = 1
+    }
+    inline_script = "buildings/eutab_dev_structures_modifiers"
+    upgrades = {
+        building_eutab_interior_ministry
+        building_eutab_imperial_residence
+        building_eutab_planetary_parliament
+        building_eutab_xeno_adaptation
+        building_eutab_expo_guard
+        building_eutab_xeno_district
+        building_eutab_wargame
+        building_eutab_eco_preserve
+        building_eutab_arcology
+        building_eutab_monument_unity
+    }
+    prerequisites = {
+        "tech_eutab_dev_district"
+    }
+    triggered_desc = {
+        text = job_clerk_effect_desc
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            is_regular_empire = no
+        }
+    }
+    ai_resource_production = {
+        trigger = {
+            num_buildings = {
+                type = any
+                value <= 10
+            }
+        }
+        physics_research = 15
+        society_research = 15
+        engineering_research = 15
+        mult = value:eutab_ai_resource_production_adjustment_value
+    }
+}

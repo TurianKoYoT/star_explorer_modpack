@@ -1,0 +1,34 @@
+pc_gas_giant_shellworld = {
+    entity = "ssh_gas_giant_shellworld_planet"
+    entity_scale = @planet_standard_scale
+    icon = GFX_planet_type_gas_giant_shellworld
+    picture = pc_gas_giant_shellworld
+    enable_tilt = no
+    starting_planet = no
+    atmosphere_color = hsv {
+        0.3
+        0.1
+        0.1
+    }
+    atmosphere_intensity = 0.5
+    atmosphere_width = 0.5
+    city_color_lut = "gfx/portraits/misc/colorcorrection_desert.dds"
+    climate = "cold"
+    colonizable = yes
+    planet_size = {
+        min = @habitable_planet_min_size
+        max = @habitable_planet_max_size
+    }
+    spawn_odds = 0
+    uses_alternative_skies_for_moons = no
+    district_set = gas_shell_world
+    carry_cap_per_free_district = @carry_cap_normal
+    can_be_moon = no
+    chance_of_ring = 0
+    is_artificial_planet = yes
+    modifier = {
+        habitability_floor_add = 2
+        planet_max_buildings_add = 12
+    }
+    ideal = yes
+}

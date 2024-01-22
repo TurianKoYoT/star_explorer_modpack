@@ -1,0 +1,188 @@
+apsr14_stuff_normal = {
+    category = specialist
+    condition_string = SPECIALIST_JOB_TRIGGER
+    building_icon = apsr14_building_part_b3
+    clothes_texture_index = 3
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_specialist_job
+    resources = {
+        category = apsr14_planet_stuff_normal
+        produces = {
+            unity = 14
+        }
+        upkeep = {
+            consumer_goods = 2
+        }
+        produces = {
+            trigger = {
+                planet = {
+                    has_deposit = apsr_relic_cube_deposit
+                }
+            }
+            unity = 24
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_apsr14_advanced_1
+                }
+            }
+            unity = 5
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_apsr14_advanced_2
+                }
+            }
+            unity = 5
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_apsr14_advanced_3
+                }
+            }
+            unity = 5
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_apsr14_advanced_4
+                }
+            }
+            unity = 5
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_apsr14_advanced_5
+                }
+            }
+            unity = 5
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            planet = {
+                owner = {
+                    has_technology = tech_apsr14_building_part_b2
+                }
+            }
+        }
+        modifier = {
+            planet_housing_add = 4
+        }
+    }
+    country_modifier = {
+        leader_lifespan_add = 5
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                owner = {
+                    has_technology = tech_apsr14_building_part_b3
+                }
+            }
+        }
+        modifier = {
+            leader_lifespan_add = 3
+        }
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                owner = {
+                    has_technology = tech_apsr14_advanced_1
+                }
+            }
+        }
+        modifier = {
+            leader_lifespan_add = 3
+        }
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                owner = {
+                    has_technology = tech_apsr14_advanced_2
+                }
+            }
+        }
+        modifier = {
+            leader_lifespan_add = 3
+        }
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                owner = {
+                    has_technology = tech_apsr14_advanced_3
+                }
+            }
+        }
+        modifier = {
+            leader_lifespan_add = 3
+        }
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                owner = {
+                    has_technology = tech_apsr14_advanced_4
+                }
+            }
+        }
+        modifier = {
+            leader_lifespan_add = 3
+        }
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                owner = {
+                    has_technology = tech_apsr14_advanced_5
+                }
+            }
+        }
+        modifier = {
+            leader_lifespan_add = 3
+        }
+    }
+    weight = {
+        weight = 199
+        modifier = {
+            factor = 0.2
+            has_citizenship_rights = no
+            NOT = {
+                has_trait = trait_mechanical
+            }
+        }
+        modifier = {
+            factor = 0.1
+            can_take_servant_job = yes
+        }
+        modifier = {
+            factor = 100
+            exists = owner
+            owner = {
+                is_ai = yes
+                has_monthly_income = {
+                    resource = unity
+                    value < 100
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+tech_acot_precursor_herculean_supply_line_e7 = {
+    area = engineering
+    cost = @acot_tier8cost3
+    tier = 8
+    is_rare = yes
+    category = {
+        industry
+    }
+    ai_update_type = military
+    weight = 20
+    modifier = {
+        description = tech_acot_precursor_herculean_supply_line_e7_modifier
+    }
+    prerequisites = {
+        tech_precursor_colossus
+    }
+    potential = {
+        has_country_flag = herculean_built
+        is_fallen_empire = no
+    }
+    ai_weight = {
+        factor = 5
+        modifier = {
+            factor = 1.25
+            has_ethic = ethic_militarist
+        }
+        modifier = {
+            factor = 1.5
+            has_ethic = ethic_fanatic_militarist
+        }
+    }
+}

@@ -1,0 +1,27 @@
+leader_trait_eutab_magnetic_personality = {
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = GFX_eutab_leader_trait_magnetic_personality
+        RARITY = common
+        COUNCIL = yes
+        TIER = none
+    }
+    councilor_modifier = {
+        country_trade_attractiveness = 0.05
+        envoy_improve_relations_mult = 0.1
+    }
+    custom_tooltip_with_modifiers = leader_trait_eutab_magnetic_personality_effect
+    leader_class = {
+        commander
+        scientist
+        official
+    }
+    requires_traits = {
+        "trait_eutab_captivating"
+    }
+    prerequisites = {
+        "tech_eutab_cross_species"
+    }
+    selectable_weight = @shared_trait_weight
+}

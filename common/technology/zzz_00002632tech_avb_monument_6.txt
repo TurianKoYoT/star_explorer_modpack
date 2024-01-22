@@ -1,0 +1,18 @@
+tech_avb_monument_6 = {
+    cost = @avbtier6cost1
+    area = society
+    category = {
+        statecraft
+    }
+    tier = 6
+    prerequisites = {
+        "tech_avb_monument_5"
+    }
+    weight = @avbtier6weight1
+    weight_modifier = {
+        factor = 4
+    }
+    ai_weight = {
+        factor = 4
+    }
+}

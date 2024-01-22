@@ -1,0 +1,13 @@
+@megastructure_base_tech_cost = 48000
+@megastructure_per_level_cost = 144000
+giga_tech_repeatable_terraform_gasgiant_cap = {
+    inline_script = {
+        script = technology/giga_mega_repeatable
+        name = terraform_gasgiant
+        area = society
+        category = new_worlds
+        cost = @megastructure_base_tech_cost
+        cost_per_level = @megastructure_per_level_cost
+        prerequisites = giga_tech_terraform_gas
+    }
+}

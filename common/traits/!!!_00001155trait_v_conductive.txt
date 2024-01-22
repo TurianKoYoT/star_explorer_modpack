@@ -1,0 +1,23 @@
+trait_v_conductive = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_v_adv_conductive"
+    }
+    inline_script = "allowed_archetypes/LITHOID"
+    custom_tooltip_with_modifiers = TRAIT_BATTERY_EFFECT
+    modifier = {
+        planet_jobs_energy_upkeep_mult = -0.25
+        planet_pops_cyborgs_energy_upkeep_mult = -0.25
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

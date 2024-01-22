@@ -1,0 +1,26 @@
+GT_armies_energy_upkeep_mult = {
+    cost = @tier3cost1
+    area = physics
+    tier = 3
+    category = {
+        computing
+    }
+    prerequisites = {
+        "tech_combat_training"
+    }
+    weight = @tier3weight1
+    modifier = {
+        armies_energy_upkeep_mult = -0.15
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            num_researched_techs_of_tier = {
+                tier = 3
+                value > 8
+            }
+        }
+    }
+    ai_weight = {
+    }
+}

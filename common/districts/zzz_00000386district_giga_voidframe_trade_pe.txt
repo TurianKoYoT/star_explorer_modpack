@@ -1,0 +1,78 @@
+district_giga_voidframe_trade_pe = {
+    base_buildtime = 540
+    icon = district_giga_voidframe_trade_pe
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        exists = from
+        uses_district_set = giga_frameworld
+        is_voidframe_exclusive_pe = yes
+    }
+    potential = {
+        exists = owner
+        uses_district_set = giga_frameworld
+        if = {
+            limit = {
+                is_voidframe_outdated_pe = yes
+            }
+            has_building = building_phanon_commercial_megaplex
+            NOR = {
+                has_building = building_stellarite_commercial_megaplex
+            }
+        }
+        else = {
+            is_voidframe_pe = yes
+            OR = {
+                has_building = building_phanon_commercial_megaplex
+                has_building = building_stellarite_commercial_megaplex
+            }
+        }
+    }
+    prerequisites = {
+        tech_phanon_commercial_megaplex
+    }
+    show_tech_unlock_if = {
+        giga_has_frameworld_origin = yes
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_giga_frameworld_trade
+        district_giga_voidframe_trade_dm
+        district_giga_voidframe_trade_de
+        district_giga_voidframe_trade_pe
+        district_giga_voidframe_trade_se
+    }
+    resources = {
+        category = planet_districts_hab_research
+        cost = {
+            energy = 2000
+            minerals = 2000
+            aot_sr_runic_power = 800
+        }
+        upkeep = {
+            energy = 10
+            aot_sr_runic_power = 10
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = $house$
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+            has_voidframe_mods_aot = yes
+        }
+        modifier = {
+            job_phanon_clerk_add = 4
+            job_anz_voidframe_trader_pe_add = 2
+        }
+    }
+    ai_resource_production = {
+        ai_unobtainium = 1000
+        trigger = {
+            frameworld_want_science = yes
+        }
+    }
+}

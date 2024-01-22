@@ -1,0 +1,41 @@
+building_eutab_moral_codes = {
+    base_buildtime = @b2_time
+    base_cap_amount = 1
+    category = government
+    potential = {
+        exists = owner
+        owner = {
+            is_authoritarian = yes
+        }
+    }
+    allow = {
+        has_upgraded_capital = yes
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            exotic_gases = @b2_rare_cost
+        }
+        upkeep = {
+            energy = @b3_upkeep
+        }
+    }
+    planet_modifier = {
+        job_bureaucrat_add = 3
+        pop_cat_worker_happiness = 0.1
+        planet_stability_add = 3
+    }
+    triggered_desc = {
+        text = job_bureaucrat_effect_desc
+    }
+    prerequisites = {
+        tech_eutab_moral_codes
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            is_authoritarian = no
+        }
+    }
+}

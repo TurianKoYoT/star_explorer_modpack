@@ -1,0 +1,56 @@
+undead_defense_army = {
+    defensive = yes
+    is_pop_spawned = yes
+    health = 1.5
+    damage = 0.6
+    collateral_damage = 0.25
+    has_morale = no
+    morale_damage = 1
+    war_exhaustion = 0.1
+    icon = GFX_army_type_undead
+    use_armynames_from = undead_army
+    potential = {
+        from = {
+            NOR = {
+                has_trait = "trait_mechanical"
+                has_trait = "trait_machine_unit"
+                is_sapient = no
+            }
+        }
+        planet = {
+            NOR = {
+                has_modifier = acot_modifier_defense_upgrade_1
+                has_modifier = acot_modifier_defense_upgrade_2
+            }
+            OR = {
+                AND = {
+                    OR = {
+                        has_active_building = building_dread_encampment
+                        has_deposit = d_pd_necro_arc
+                        has_deposit = d_pd_necro_planet
+                    }
+                    num_assigned_jobs = {
+                        job = necromancer
+                        value >= 1
+                    }
+                }
+                has_planet_flag = active_dread_outpost
+            }
+        }
+    }
+    resources = {
+        category = armies
+        produces = {
+            trigger = {
+                exists = owner
+                owner = {
+                    has_active_tradition = tr_unyielding_resistance_is_frugal
+                }
+            }
+            unity = 0.5
+        }
+    }
+    spawn_chance = {
+        factor = 100
+    }
+}

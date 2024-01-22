@@ -1,0 +1,140 @@
+@galwonders_weight = 5000
+@mega_engineering_perks = 5
+@structure_perks = 4
+ap_galactic_wonders_utopia_and_megacorp = {
+    on_enabled = {
+        if = {
+            limit = {
+                has_gigastructures = yes
+            }
+            custom_tooltip = "add_research_options_galactic_wonders_utopia_megacorp_2"
+            hidden_effect = {
+                if = {
+                    limit = {
+                        NOT = {
+                            has_technology = tech_ring_world
+                        }
+                    }
+                    add_research_option = tech_ring_world
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            has_technology = tech_dyson_sphere
+                        }
+                    }
+                    add_research_option = tech_dyson_sphere
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            has_technology = tech_matter_decompressor
+                        }
+                    }
+                    add_research_option = tech_matter_decompressor
+                }
+                if = {
+                    limit = {
+                        is_ai = yes
+                        NOT = {
+                            has_technology = tech_mega_engineering
+                        }
+                    }
+                    add_research_option = tech_mega_engineering
+                }
+            }
+        }
+        else = {
+            custom_tooltip = "add_research_options_galactic_wonders_utopia_megacorp"
+            hidden_effect = {
+                if = {
+                    limit = {
+                        NOT = {
+                            has_technology = tech_ring_world
+                        }
+                    }
+                    add_research_option = tech_ring_world
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            has_technology = tech_dyson_sphere
+                        }
+                    }
+                    add_research_option = tech_dyson_sphere
+                }
+                if = {
+                    limit = {
+                        NOT = {
+                            has_technology = tech_matter_decompressor
+                        }
+                    }
+                    add_research_option = tech_matter_decompressor
+                }
+            }
+        }
+    }
+    modifier = {
+        megastructure_build_speed_mult = @[ 1.0 * sartek_utopian_mod_active ]
+    }
+    possible = {
+        if = {
+            limit = {
+                has_gigastructures = yes
+            }
+            custom_tooltip = "add_research_options_galactic_wonders_utopia_megacorp_2"
+            custom_tooltip = {
+                fail_text = "requires_mega_engineering"
+                or = {
+                    has_technology = tech_mega_engineering
+                    and = {
+                        is_ai = yes
+                        or = {
+                            any_country = {
+                                is_ai = no
+                                has_galactic_wonders = yes
+                            }
+                            num_ascension_perks >= @mega_engineering_perks
+                        }
+                    }
+                }
+            }
+            custom_tooltip = {
+                fail_text = "requires_built_or_repaired_megastructure"
+                or = {
+                    has_country_flag = has_built_or_repaired_megastructure
+                    and = {
+                        is_ai = yes
+                        or = {
+                            any_country = {
+                                is_ai = no
+                                has_galactic_wonders = yes
+                            }
+                            num_ascension_perks >= @structure_perks
+                        }
+                    }
+                }
+            }
+        }
+        else = {
+            custom_tooltip = {
+                fail_text = "requires_mega_engineering"
+                has_technology = tech_mega_engineering
+            }
+            custom_tooltip = {
+                fail_text = "requires_built_or_repaired_megastructure"
+                has_country_flag = has_built_or_repaired_megastructure
+            }
+        }
+    }
+    potential = {
+        host_has_dlc = "Utopia"
+        host_has_dlc = "Megacorp"
+        NOT = {
+            has_ascension_perk = ap_galactic_wonders_utopia_and_megacorp
+        }
+    }
+    ai_weight = {
+        factor = @galwonders_weight
+    }
+}

@@ -1,0 +1,22 @@
+tech_factory_ship = {
+    cost = @tier1cost1
+    area = engineering
+    tier = 1
+    is_reverse_engineerable = no
+    category = {
+        voidcraft
+    }
+    potential = {
+        has_ascension_perk = ap_civilian_activities
+    }
+    weight = @tier1weight1
+    prereqfor_desc = {
+        ship = {
+            title = "TECH_UNLOCK_FACTORY_SHIP_CONSTRUCTION_TITLE"
+            desc = "TECH_UNLOCK_FACTORY_SHIP_CONSTRUCTION_DESC"
+        }
+    }
+    ai_weight = {
+        factor = 6
+    }
+}

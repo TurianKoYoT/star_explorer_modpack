@@ -1,0 +1,192 @@
+building_avb_death_temple_6 = {
+    base_buildtime = @avb_u6_time
+    can_build = no
+    category = unity
+    potential = {
+        exists = owner
+        owner = {
+            is_death_cult_empire = yes
+        }
+        NOT = {
+            has_modifier = slave_colony
+        }
+    }
+    allow = {
+        has_upgraded_capital_5 = yes
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            owner = {
+                is_death_cult_empire = no
+            }
+            has_modifier = slave_colony
+        }
+    }
+    convert_to = {
+        building_avb_hive_unity_6
+        building_avb_machine_unity_6
+        building_avb_bureaucratic_6
+        building_avb_temple_6
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_u6_minerals
+            exotic_gases = @avb_u6_rare_cost
+        }
+        upkeep = {
+            energy = @avb_u6_upkeep
+            exotic_gases = @avb_u6_rare_upkeep
+            volatile_motes = @avb_u6_rare_upkeep
+        }
+    }
+    planet_modifier = {
+        pop_ethic_spiritualist_attraction_mult = 0.3
+        job_death_priest_add = 4
+        job_mortal_initiate_add = 3
+    }
+    triggered_desc = {
+        text = job_death_priest_effect_desc
+    }
+    triggered_desc = {
+        text = job_mortal_initiate_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_megacorp = no
+            }
+        }
+        modifier = {
+            job_death_priest_add = 2
+            job_mortal_initiate_add = 3
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_worker_coop_empire = no
+            }
+        }
+        modifier = {
+            job_manager_add = 5
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_worker_coop_empire = no
+            }
+        }
+        text = job_manager_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_worker_coop_empire = yes
+            }
+        }
+        modifier = {
+            job_steward_add = 5
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_worker_coop_empire = yes
+            }
+        }
+        text = job_steward_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_plentiful_tradition_mod = yes
+            exists = owner
+            owner = {
+                is_megacorp = no
+            }
+            owner = {
+                has_tradition = tr_plentiful_aspiration_3
+            }
+        }
+        modifier = {
+            job_death_priest_add = 2
+            job_mortal_initiate_add = 3
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_plentiful_tradition_mod = yes
+            exists = owner
+            owner = {
+                is_megacorp = yes
+            }
+            owner = {
+                has_tradition = tr_plentiful_aspiration_3
+            }
+        }
+        modifier = {
+            job_manager_add = 5
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner.federation
+            owner.federation = {
+                has_federation_perk = all_the_priests_2
+            }
+        }
+        job_high_priest_add = 1
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner.federation
+            owner.federation = {
+                has_federation_perk = all_the_priests_2
+            }
+        }
+        text = job_high_priest_effect_desc
+    }
+    prerequisites = {
+        "tech_avb_temple_6"
+    }
+    show_tech_unlock_if = {
+        is_death_cult_empire = yes
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_global_flag = bug_branch_active
+            exists = owner
+            owner = {
+                is_bugged_governmental_spiritualist = yes
+            }
+        }
+        modifier = {
+            job_high_priest_add = 2
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_bugged_governmental_spiritualist = yes
+            }
+        }
+        text = job_high_priest_effect_desc
+    }
+    inline_script = {
+        script = "buildings/bugged_temple_effects"
+        BUGGED_TEMPLARS = 6
+        HIGH_PRIEST = 4
+    }
+}

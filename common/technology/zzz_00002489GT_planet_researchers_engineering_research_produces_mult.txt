@@ -1,0 +1,27 @@
+GT_planet_researchers_engineering_research_produces_mult = {
+    cost = @tier2cost2
+    area = engineering
+    tier = 2
+    category = {
+        industry
+    }
+    prerequisites = {
+        "tech_engineering_1"
+    }
+    weight = @tier2weight2
+    modifier = {
+        num_tech_alternatives_add = 1
+        planet_researchers_engineering_research_produces_mult = 0.05
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            num_researched_techs_of_tier = {
+                tier = 2
+                value > 10
+            }
+        }
+    }
+    ai_weight = {
+    }
+}

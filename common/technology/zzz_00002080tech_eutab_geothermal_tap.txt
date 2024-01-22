@@ -1,0 +1,17 @@
+tech_eutab_geothermal_tap = {
+    cost = @tier3cost1
+    area = physics
+    tier = 3
+    category = {
+        field_manipulation
+    }
+    is_custom_tech_1 = yes
+    prerequisites = {
+        "tech_mineral_purification_2"
+        "tech_power_plant_3"
+    }
+    weight = @tier3weight1
+    potential = {
+        is_gestalt = yes
+    }
+}

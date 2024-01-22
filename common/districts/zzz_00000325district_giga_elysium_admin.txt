@@ -1,0 +1,29 @@
+@elysium_cost = 500
+@elysium_maintenance = 5
+district_giga_elysium_admin = {
+    base_buildtime = 240
+    is_capped_by_modifier = no
+    icon = district_arcology_administrative
+    show_on_uncolonized = {
+        uses_district_set = giga_elysium
+    }
+    potential = {
+        uses_district_set = giga_elysium
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = @elysium_cost
+        }
+        upkeep = {
+            energy = @elysium_maintenance
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 2
+    }
+    inline_script = {
+        script = planet/unity/giga_unity_job_swap
+        jobs = 3
+    }
+}

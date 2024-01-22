@@ -1,0 +1,25 @@
+trait_v_reanimation = {
+    cost = 2
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_v_explosive_autothysis"
+        "trait_v_adv_explosive_autothysis"
+        "trait_v_adv_reanimation"
+        "trait_v_living_reactors"
+        "trait_v_adv_living_reactors"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/NECROID"
+    inline_script = "species_class/TOX"
+    custom_tooltip = TRAIT_REANIMATION_EFFECT
+    slave_cost = {
+        energy = 4000
+    }
+}

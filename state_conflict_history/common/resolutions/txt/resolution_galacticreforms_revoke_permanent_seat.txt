@@ -1,0 +1,118 @@
+@resolution_weight_disliked = 4
+@resolution_cost_t5 = 300
+resolution_galacticreforms_revoke_permanent_seat = {
+    icon = "GFX_resolution_council_member_permanent"
+    potential = {
+        has_federations_dlc = yes
+        is_galactic_council_established = yes
+        has_galactic_emperor = no
+    }
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t5
+        }
+    }
+    target = yes
+    harmful = yes
+    valid_target = {
+        is_playable = yes
+        is_galactic_community_member = yes
+        is_part_of_galactic_council = yes
+        is_permanent_councillor = yes
+        is_galactic_custodian = no
+    }
+    effect = {
+        hidden_effect = {
+            add_modifier = {
+                modifier = resolution_passed_diplomatic_weight
+                days = 2200
+            }
+        }
+        remove_permanent_councillor = yes
+    }
+    ai_weight = {
+        base = @resolution_weight_disliked
+        modifier = {
+            factor = 0
+            is_same_value = from
+            desc = gal_com_they_or_overlord_would_be_removed_from_council
+        }
+        modifier = {
+            factor = 5
+            is_rival = from
+            desc = gal_com_target_is_rival
+        }
+        modifier = {
+            factor = 5
+            is_at_war_with = from
+            desc = gal_com_target_is_rival
+        }
+        modifier = {
+            factor = 0.75
+            from = {
+                is_galactic_community_member = yes
+            }
+            opinion_level = {
+                who = from
+                level > neutral
+            }
+            NOT = {
+                opinion_level = {
+                    who = from
+                    level > good
+                }
+            }
+            desc = good_opinion
+        }
+        modifier = {
+            factor = 0.25
+            from = {
+                is_galactic_community_member = yes
+            }
+            opinion_level = {
+                who = from
+                level > good
+            }
+            desc = excellent_opinion
+        }
+        modifier = {
+            factor = 1.5
+            from = {
+                is_galactic_community_member = yes
+            }
+            opinion_level = {
+                who = from
+                level < neutral
+            }
+            NOT = {
+                opinion_level = {
+                    who = from
+                    level < poor
+                }
+            }
+            desc = bad_opinion
+        }
+        modifier = {
+            factor = 2
+            from = {
+                is_galactic_community_member = yes
+            }
+            opinion_level = {
+                who = from
+                level < poor
+            }
+            desc = terrible_opinion
+        }
+        modifier = {
+            factor = 0.8
+            is_authoritarian = yes
+            desc = ethic_authoritarian
+        }
+        modifier = {
+            factor = 0.8
+            has_ethic = ethic_fanatic_authoritarian
+            desc = ethic_authoritarian
+        }
+    }
+}

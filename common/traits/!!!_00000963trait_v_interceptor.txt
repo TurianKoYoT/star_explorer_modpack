@@ -1,0 +1,17 @@
+trait_v_interceptor = {
+    cost = 2
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/ART"
+    custom_tooltip = TRAIT_INTERCEPTOR_EFFECT
+    slave_cost = {
+        energy = 1000
+    }
+}

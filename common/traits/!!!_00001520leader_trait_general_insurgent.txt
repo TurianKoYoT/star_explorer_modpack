@@ -1,0 +1,19 @@
+leader_trait_general_insurgent = {
+    inline_script = {
+        script = trait/icon
+        CLASS = commander
+        ICON = "GFX_leader_trait_glory_seeker"
+        RARITY = common
+        COUNCIL = no
+        TIER = none
+    }
+    modifier = {
+        army_damage_mult = 0.2
+        army_collateral_damage_mult = 1
+    }
+    leader_class = {
+        commander
+    }
+    initial = no
+    randomized = no
+}

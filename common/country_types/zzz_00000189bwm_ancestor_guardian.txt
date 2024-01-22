@@ -1,0 +1,37 @@
+bwm_ancestor_guardian = {
+    attack_unarmed_orbital_stations = yes
+    end_game_crisis = yes
+    destroys_starbases = yes
+    counts_for_victory = yes
+    can_own_empty_planets = yes
+    needs_survey = no
+    can_planets_be_attacked = no
+    has_capital = no
+    enforces_borders = no
+    destroys_starbases = yes
+    government = no
+    has_complete_sensor = yes
+    home_system = bwm_prison_system
+    targets = {
+        fallen_empire
+        awakened_fallen_empire
+    }
+    ai = {
+        enabled = no
+    }
+    faction = {
+        hostile = yes
+        needs_border_access = no
+        generate_borders = no
+        needs_colony = no
+    }
+    modules = {
+        exclusive_diplomacy_module = {
+            contact_rule = on_action_only
+        }
+        all_technology_module = {
+        }
+        standard_event_module = {
+        }
+    }
+}

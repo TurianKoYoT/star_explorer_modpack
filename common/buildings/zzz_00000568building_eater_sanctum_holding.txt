@@ -1,0 +1,63 @@
+building_eater_sanctum_holding = {
+    base_buildtime = @b3_time
+    owner_type = subject_holding
+    icon = building_eater_sanctum
+    base_cap_amount = 1
+    category = government
+    potential = {
+        host_has_dlc = "Utopia"
+        owner.overlord = {
+            has_origin = origin_chosen_of_the_shroud
+            has_country_flag = eater_covenant_rank_1
+        }
+        owner = {
+            is_gestalt = no
+        }
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+        }
+    }
+    allow = {
+        has_major_upgraded_capital = yes
+        is_capital = yes
+    }
+    destroy_trigger = {
+        exists = owner.overlord
+        NOT = {
+            owner.overlord = {
+                has_country_flag = eater_covenant_rank_1
+            }
+        }
+    }
+    planet_modifier = {
+        job_overlord_telepath_add = 3
+    }
+    country_modifier = {
+        ship_weapon_range_mult = 0.05
+        ships_upkeep_mult = -0.05
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            exotic_gases = @b3_rare_cost
+        }
+        upkeep = {
+            energy = @b3_upkeep
+            exotic_gases = @b3_rare_upkeep
+        }
+    }
+    triggered_desc = {
+        text = job_overlord_telepath_effect_desc
+    }
+    on_built = {
+        planet = {
+            owner = {
+                country_event = {
+                    id = io_chosen.12
+                }
+            }
+        }
+    }
+}

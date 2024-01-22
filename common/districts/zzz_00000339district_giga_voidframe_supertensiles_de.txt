@@ -1,0 +1,127 @@
+district_giga_voidframe_supertensiles_de = {
+    base_buildtime = 480
+    icon = district_giga_voidframe_supertensiles_de
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        has_global_flag = @giga_amb_flag
+        exists = from
+        uses_district_set = giga_frameworld
+        is_voidframe_exclusive_de = yes
+    }
+    potential = {
+        has_global_flag = @giga_amb_flag
+        exists = owner
+        uses_district_set = giga_frameworld
+        if = {
+            limit = {
+                is_voidframe_outdated_de = yes
+            }
+            has_building = building_giga_megaworkshop_acot_alpha
+            NOR = {
+                has_building = building_giga_megaworkshop_acot_phanon
+                has_building = building_giga_megaworkshop_acot_sigma
+            }
+        }
+        else = {
+            is_voidframe_de = yes
+            OR = {
+                has_building = building_giga_megaworkshop_acot_alpha
+                has_building = building_giga_megaworkshop_acot_phanon
+                has_building = building_giga_megaworkshop_acot_sigma
+            }
+        }
+    }
+    prerequisites = {
+        giga_tech_amb_supertensiles
+    }
+    show_tech_unlock_if = {
+        giga_has_frameworld_origin = yes
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_giga_frameworld_supertensiles
+        district_giga_voidframe_supertensiles_dm
+        district_giga_voidframe_supertensiles_de
+        district_giga_voidframe_supertensiles_pe
+        district_giga_voidframe_supertensiles_se
+    }
+    resources = {
+        category = planet_districts_industrial
+        cost = {
+            minerals = 1000
+            sr_dark_matter = 400
+            acot_sr_dark_energy = 400
+        }
+        upkeep = {
+            energy = 6
+            sr_dark_matter = 2
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = $house$
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        modifier = {
+            job_giga_megaengineer_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+            OR = {
+                has_voidframe_mods_aot = no
+                always = yes
+            }
+        }
+        modifier = {
+            job_giga_megaengineer_acot_alpha_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+            OR = {
+                has_voidframe_mods_aot = no
+                always = yes
+            }
+        }
+        modifier = {
+            job_giga_megaengineer_drone_acot_alpha_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+            has_voidframe_mods_aot = yes
+        }
+        modifier = {
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+            has_voidframe_mods_aot = yes
+        }
+        modifier = {
+        }
+    }
+}

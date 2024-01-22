@@ -1,0 +1,21 @@
+trait_v_foragial_limbs = {
+    cost = 3
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 0
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/ART"
+    opposites = {
+        "trait_invasive"
+        "trait_agrarian"
+        "trait_v_lithoid_foragial_limbs"
+        "trait_v_adv_foragial_limbs"
+    }
+    modifier = {
+        planet_jobs_food_produces_mult = 0.3
+    }
+}

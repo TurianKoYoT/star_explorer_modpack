@@ -1,0 +1,28 @@
+trait_v_cyborg_engram = {
+    cost = 2
+    icon = "gfx/interface/icons/traits/trait_v_machine_engrams.dds"
+    initial = no
+    species_potential_add = {
+        can_add_cybernetic_traits = yes
+    }
+    species_possible_remove = {
+        can_remove_cybernetic_traits = yes
+    }
+    randomized = no
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    custom_tooltip_with_modifiers = TRAIT_CYBORG_ENGRAMS_EFFECT
+    opposites = {
+        "trait_v_engrams"
+        "trait_v_adv_engrams"
+        "trait_v_biological_immortality"
+        "trait_v_adv_biological_immortality"
+        "trait_v_cyborg_immortality"
+    }
+    modifier = {
+        army_experience_gain_mult = 1
+    }
+    slave_cost = {
+        energy = 2000
+    }
+}

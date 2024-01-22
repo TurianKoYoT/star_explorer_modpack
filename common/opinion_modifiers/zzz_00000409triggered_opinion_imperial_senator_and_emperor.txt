@@ -1,0 +1,18 @@
+triggered_opinion_imperial_senator_and_emperor = {
+    trigger = {
+        has_galactic_emperor = yes
+        OR = {
+            is_country_type = imperial_senator
+            is_galactic_emperor = yes
+        }
+        FROM = {
+            OR = {
+                is_country_type = imperial_senator
+                is_galactic_emperor = yes
+            }
+        }
+    }
+    opinion = {
+        base = 150
+    }
+}

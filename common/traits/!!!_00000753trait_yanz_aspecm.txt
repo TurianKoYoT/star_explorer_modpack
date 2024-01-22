@@ -1,0 +1,29 @@
+trait_yanz_aspecm = {
+    cost = 8
+    initial = no
+    randomized = no
+    species_potential_add = {
+        from = {
+            has_technology = tech_yanz_synthesis
+        }
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_yanz_especm"
+        "trait_yanz_mspecm"
+        "trait_yanz_fspecm"
+        "trait_yanz_cgspecm"
+    }
+    allowed_archetypes = {
+        ROBOT
+        MACHINE
+    }
+    sorting_priority = 4
+    icon = "gfx/interface/icons/traits/bio_path/trait_yanz_aspecm.dds"
+    modifier = {
+        planet_jobs_alloys_produces_mult = 0.5
+    }
+    slave_cost = {
+        energy = 400
+    }
+}

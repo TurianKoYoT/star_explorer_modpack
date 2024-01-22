@@ -1,0 +1,48 @@
+building_alpha_executive_retreat = {
+    icon = building_ae_mansion
+    base_buildtime = 600
+    owner_type = corporate
+    category = amenity
+    can_build = no
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            is_ai = no
+        }
+    }
+    allow = {
+        num_pops >= 25
+    }
+    country_modifier = {
+        planet_amenities_mult = 0.75
+    }
+    planet_modifier = {
+        trade_value_mult = 0.4
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            energy = 1500
+            minerals = 1500
+            sr_dark_matter = 500
+            acot_sr_dark_energy = 500
+        }
+        upkeep = {
+            energy = 40
+            sr_dark_matter = 4
+            acot_sr_dark_energy = 4
+        }
+    }
+    prerequisites = {
+        tech_ae_dark_mansion
+    }
+    show_tech_unlock_if = {
+        is_megacorp = yes
+    }
+    upgrades = {
+        building_phanon_executive_retreat
+    }
+    ai_weight = {
+        factor = 100
+    }
+}

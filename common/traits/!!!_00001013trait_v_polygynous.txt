@@ -1,0 +1,47 @@
+trait_v_polygynous = {
+    cost = 3
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/TOX"
+    custom_tooltip = TRAIT_POLYGYNOUS_EFFECT
+    opposites = {
+        "trait_hive_mind"
+        "trait_invasive"
+        "trait_v_adv_polygynous"
+        "trait_clone_soldier_infertile"
+        "trait_clone_soldier_infertile_full_potential"
+        "trait_vat_grown"
+        "trait_v_asexual_reproduction"
+    }
+    triggered_planet_growth_habitability_modifier = {
+        pop_growth_speed = 0.04
+        mult = planet.value:count_v_harem
+    }
+    triggered_pop_modifier = {
+        pop_cat_ruler_happiness = 0.02
+        mult = planet.value:count_v_harem
+    }
+    triggered_pop_modifier = {
+        potential = {
+            NOT = {
+                has_job = v_harem
+            }
+        }
+        pop_cat_worker_happiness = -0.02
+        pop_cat_slave_happiness = -0.02
+        mult = planet.value:count_v_harem
+    }
+    slave_cost = {
+        energy = 2000
+    }
+}

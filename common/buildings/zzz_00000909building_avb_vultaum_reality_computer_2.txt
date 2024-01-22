@@ -1,0 +1,109 @@
+building_avb_vultaum_reality_computer_2 = {
+    base_buildtime = @avb_f4_time
+    can_build = no
+    category = research
+    potential = {
+        exists = owner
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+        }
+    }
+    allow = {
+        has_fully_upgraded_capital = yes
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_f4_minerals
+            minor_artifacts = 60
+        }
+        upkeep = {
+            energy = @avb_f4_upkeep
+        }
+    }
+    planet_modifier = {
+        planet_researchers_physics_research_produces_add = 2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_ascension_perk = ap_archaeoengineers
+            }
+        }
+        planet_researchers_physics_research_produces_add = 2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            job_head_researcher_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        modifier = {
+            job_brain_drone_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        modifier = {
+            job_calculator_add = 2
+        }
+    }
+    prerequisites = {
+        "tech_avb_vultaum_reality_computer_2"
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = job_head_researcher_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        text = job_brain_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        text = job_calculator_effect_desc
+    }
+}

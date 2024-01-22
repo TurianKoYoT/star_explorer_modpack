@@ -1,0 +1,34 @@
+building_ult_volatile_motes_synthesizer = {
+    base_buildtime = 720
+    category = manufacturing
+    potential = {
+        NOT = {
+            has_modifier = resort_colony
+        }
+        NOT = {
+            has_modifier = slave_colony
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 1000
+        }
+        produces = {
+            volatile_motes = 7
+        }
+        upkeep = {
+            minerals = 15
+            energy = 15
+        }
+    }
+    prerequisites = {
+        "tech_ult_strategic_resources_production"
+    }
+    ai_resource_production = {
+        volatile_motes = 7
+        trigger = {
+            always = yes
+        }
+    }
+}

@@ -1,0 +1,36 @@
+trait_v_lithoid_embryonic_diapause = {
+    cost = 1
+    inline_script = "traits/no_randomized"
+    icon = "gfx/interface/icons/traits/trait_v_embryonic_diapause.dds"
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    potential_crossbreeding_chance = 0
+    opposites = {
+        "trait_v_adv_embryonic_diapause"
+    }
+    inline_script = "allowed_archetypes/LITHOID"
+    custom_tooltip = TRAIT_LITHOID_EMBRYONIC_DIAPAUSE_EFFECT
+    inline_script = "species_class/LITHOID"
+    opposites = {
+        "trait_invasive"
+        "trait_clone_soldier_infertile"
+        "trait_clone_soldier_infertile_full_potential"
+        "trait_vat_grown"
+        "trait_v_lithoid_embryonic_diapause"
+        "trait_v_embryonic_diapause"
+        "trait_v_adv_embryonic_diapause"
+    }
+    triggered_pop_modifier = {
+        potential = {
+            planet = {
+                has_modifier = v_diapause_modifier
+            }
+        }
+        planet_jobs_produces_mult = 0.1
+        planet_pops_organics_minerals_upkeep_mult = -0.1
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

@@ -1,0 +1,24 @@
+tech_ascended_battleship_hull_3 = {
+    area = engineering
+    cost = @tier4cost3
+    tier = @fallentechtier
+    category = {
+        ascended_technologies
+    }
+    weight = @tier4weight1
+    prerequisites = {
+        "tech_battleship_hull_2"
+        "tech_doa_ascended_materials"
+    }
+    potential = {
+        has_technology = tech_doa_ascended_materials
+    }
+    modifier = {
+        custom_tooltip = tech_battleship_hull_effect
+        shipsize_battleship_hull_mult = 0.1
+        shipsize_offspring_battleship_hull_mult = 0.1
+    }
+    ai_weight = {
+        factor = 2
+    }
+}

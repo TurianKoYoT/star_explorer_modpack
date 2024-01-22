@@ -1,0 +1,32 @@
+tech_acot_precursor_herculean_regain = {
+    area = society
+    cost = 1500000
+    cost_per_level = 1500000
+    tier = 8
+    is_rare = yes
+    category = {
+        military_theory
+    }
+    ai_update_type = military
+    weight = 20
+    levels = -1
+    prerequisites = {
+        tech_precursor_colossus
+    }
+    modifier = {
+    }
+    potential = {
+        has_country_flag = acot_herculean_research_required
+    }
+    ai_weight = {
+        factor = 5
+        modifier = {
+            factor = 1.25
+            has_ethic = ethic_militarist
+        }
+        modifier = {
+            factor = 1.5
+            has_ethic = ethic_fanatic_militarist
+        }
+    }
+}

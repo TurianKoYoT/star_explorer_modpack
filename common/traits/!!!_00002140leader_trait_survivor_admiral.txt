@@ -1,0 +1,27 @@
+leader_trait_survivor_admiral = {
+    cost = 1
+    inline_script = {
+        script = trait/icon
+        CLASS = admiral
+        ICON = "gfx/interface/icons/traits/leader_traits/leader_trait_survivor.dds"
+        RARITY = common
+        COUNCIL = no
+        TIER = none
+    }
+    icon = "gfx/interface/icons/traits/leader_traits/leader_trait_survivor.dds"
+    modifier = {
+        ship_emergency_ftl_min_days_mult = -0.3
+        ship_disengage_chance_mult = 0.3
+    }
+    leader_class = {
+        commander
+    }
+    leader_potential_add = {
+        OR = {
+            from = {
+                has_technology = tech_expandable_brain_1
+            }
+            has_global_flag = ap_expandable_brain_1
+        }
+    }
+}

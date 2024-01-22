@@ -1,0 +1,31 @@
+trait_v_rooted = {
+    cost = -2
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    species_possible_remove = {
+        has_v_mobility_enabler = no
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_nomadic"
+        "trait_sedentary"
+        "trait_v_flying"
+        "trait_clone_soldier_infertile"
+        "trait_clone_soldier_infertile_full_potential"
+        "trait_vat_grown"
+        "trait_v_living_mountain"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/ART"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/FUN"
+    inline_script = "species_class/NECROID"
+    inline_script = "species_class/AQUATIC"
+    inline_script = "species_class/TOX"
+    custom_tooltip = TRAIT_ROOTED_EFFECT
+    slave_cost = {
+        energy = -1000
+    }
+}

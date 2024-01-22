@@ -1,0 +1,49 @@
+building_empyrean_shrine = {
+    base_buildtime = 480
+    can_build = no
+    can_demolish = yes
+    potential = {
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_fallen_empire = yes
+            }
+        }
+        job_fe_augur_add = 3
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_fallen_empire = no
+                is_spiritualist = yes
+            }
+        }
+        job_priest_add = 10
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_fallen_empire = no
+                is_spiritualist = no
+            }
+        }
+        job_culture_worker_add = 10
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            society_research = 100
+            sr_zro = 50
+            unity = 50
+        }
+        upkeep = {
+        }
+    }
+    upgrades = {
+        building_ae_empyrean_shrine
+    }
+}

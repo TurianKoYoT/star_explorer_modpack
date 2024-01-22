@@ -1,0 +1,28 @@
+trait_v_clockpunk = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    icon = "gfx/interface/icons/traits/trait_v_clockwork_machine.dds"
+    initial = no
+    species_potential_add = {
+        can_add_cybernetic_traits = yes
+    }
+    species_possible_remove = {
+        can_remove_cybernetic_traits = yes
+    }
+    opposites = {
+        "trait_v_cyborg_servitor"
+        "trait_hive_mind"
+    }
+    randomized = no
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    custom_tooltip_with_modifiers = TRAIT_CYBORG_CLOCKWORK_EFFECT
+    modifier = {
+        planet_entertainers_engineering_research_produces_add = 1
+        pop_amenities_usage_mult = 0.25
+        army_health = -0.5
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

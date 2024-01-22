@@ -1,0 +1,50 @@
+tech_dark_matter_power_core_se = {
+    area = physics
+    tier = 8
+    cost = @acot_tier8cost2
+    category = {
+        particles
+    }
+    weight = 20
+    ai_update_type = military
+    is_reverse_engineerable = no
+    is_dangerous = yes
+    is_rare = yes
+    potential = {
+        NOT = {
+            has_global_flag = acot_sigma_forbidden
+        }
+        NOT = {
+            has_global_flag = acot_shipcom_forbidden
+        }
+        NOR = {
+            is_country_type = fallen_empire
+            is_country_type = awakened_fallen_empire
+            is_country_type = acot_phanon_base
+        }
+        has_country_flag = stellarite_tech_enable
+    }
+    prereqfor_desc = {
+        hide_prereq_for_desc = component
+        custom = {
+            title = "TECH_UNLOCK_STELLARITE_REACTOR_TITLE"
+            desc = "TECH_UNLOCK_STELLARITE_REACTOR_DESC"
+        }
+    }
+    weight_modifier = {
+        factor = 1
+        modifier = {
+            factor = 0
+            NOT = {
+                has_country_flag = stellarite_tech_enable
+            }
+        }
+        modifier = {
+            factor = 2
+            has_country_flag = stellarite_project_success
+        }
+    }
+    ai_weight = {
+        factor = 200000
+    }
+}

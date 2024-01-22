@@ -1,0 +1,22 @@
+tech_eutab_dedication_to_wisdom = {
+    cost = @tier3cost1
+    area = society
+    tier = 3
+    category = {
+        new_worlds
+    }
+    is_custom_tech_1 = yes
+    prerequisites = {
+        "tech_basic_science_lab_2"
+    }
+    weight = @tier3weight1
+    potential = {
+        is_materialist = yes
+        has_ascension_perk = ap_imperial_prerogative
+    }
+    gateway = eu_imperial
+    modifier = {
+        planet_researchers_upkeep_mult = -0.2
+        planet_researchers_unity_produces_add = 1
+    }
+}

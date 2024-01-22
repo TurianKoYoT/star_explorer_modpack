@@ -1,0 +1,19 @@
+@triumph_duration_short = 1800
+r_AAA_machine_log = {
+    activation_duration = @triumph_duration_short
+    portrait = "GFX_relic_AAA_machine_log"
+    sound = "relic_activation_generic"
+    resources = {
+        category = relics
+        produces = {
+            unity = 2
+            mult = AAA_completed_arcsites
+        }
+    }
+    possible = {
+        custom_tooltip = {
+            fail_text = "AAA_relic_has_no_activate"
+            always = no
+        }
+    }
+}

@@ -1,0 +1,26 @@
+tech_antiplague_chemicals = {
+    cost = @tier2cost2
+    area = society
+    tier = 3
+    category = {
+        biology
+    }
+    prerequisites = {
+        "tech_plague_removal"
+        "tech_frontier_health"
+    }
+    weight = @tier2weight2
+    gateway = plague2
+    potential = {
+        has_origin = origin_pandemic
+    }
+    modifier = {
+        description = ps_tech_2
+    }
+    weight_modifier = {
+        factor = 2.5
+    }
+    ai_weight = {
+        factor = 5
+    }
+}

@@ -1,0 +1,10 @@
+bwm_building_crisis_ruin = {
+    can_build = no
+    can_demolish = yes
+    icon = "building_destroyed"
+    category = resources
+    potential = {
+    }
+    prerequisites = {
+    }
+}

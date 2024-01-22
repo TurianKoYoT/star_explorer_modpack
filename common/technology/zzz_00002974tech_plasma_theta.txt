@@ -1,0 +1,48 @@
+tech_plasma_theta = {
+    area = physics
+    category = {
+        particles
+    }
+    cost = 6400000
+    tier = 8
+    weight = 1
+    ai_update_type = military
+    is_reverse_engineerable = no
+    prerequisites = {
+        tech_laser_theta
+    }
+    is_rare = yes
+    potential = {
+        NOT = {
+            has_global_flag = acot_weapons_forbidden
+        }
+        has_technology = tech_dark_matter_power_core_theta
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            NOT = {
+                has_technology = tech_dark_matter_power_core_theta
+            }
+        }
+    }
+    ai_weight = {
+        factor = 2
+        modifier = {
+            factor = 0.8
+            has_ethic = ethic_fanatic_pacifist
+        }
+        modifier = {
+            factor = 0.9
+            has_ethic = ethic_pacifist
+        }
+        modifier = {
+            factor = 1.1
+            has_ethic = ethic_militarist
+        }
+        modifier = {
+            factor = 1.2
+            has_ethic = ethic_fanatic_militarist
+        }
+    }
+}

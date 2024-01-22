@@ -1,0 +1,50 @@
+hive_councillor = {
+    category = complex_drone
+    condition_string = DRONE_JOB_TRIGGER
+    building_icon = building_world_council_2
+    clothes_texture_index = 1
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+        is_enslaved = no
+    }
+    possible_precalc = can_fill_drone_job
+    possible = {
+        owner = {
+            has_valid_civic = civic_hive_council
+        }
+    }
+    planet_modifier = {
+        planet_stability_add = 5
+        planet_amenities_no_happiness_add = 5
+    }
+    resources = {
+        category = planet_planetary_councillors
+        produces = {
+            energy = 2
+        }
+        upkeep = {
+            trigger = {
+                NOT = {
+                    owner = {
+                        has_country_flag = sc_unity_focus
+                    }
+                }
+            }
+            influence = 0.1
+        }
+        upkeep = {
+            trigger = {
+                owner = {
+                    has_country_flag = sc_unity_focus
+                }
+            }
+            unity = 5
+        }
+    }
+    weight = {
+        weight = @spawner_drone_job_weight
+    }
+}

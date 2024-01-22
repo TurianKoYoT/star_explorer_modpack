@@ -1,0 +1,71 @@
+namespace = crisis
+country_event = {
+    id = crisis.2421
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        OR = {
+            has_global_flag = ai_invasion_ongoing
+            has_global_flag = gray_goo_crisis_active
+        }
+    }
+    immediate = {
+        if = {
+            limit = {
+                NOT = {
+                    exists = event_target:contingency
+                }
+            }
+            random_country = {
+                limit = {
+                    CmtTriggerIsContingency = yes
+                }
+                save_event_target_as = contingency
+            }
+        }
+        create_leader = {
+            class = commander
+            species = owner_species
+            name = random
+            skill = 5
+            set_age = 0
+            traits = {
+                0 = leader_trait_cybrex
+            }
+        }
+        capital_scope = {
+            create_fleet = {
+                effect = {
+                    set_owner = prevprev
+                    while = {
+                        count = 10
+                        create_ship = {
+                            name = random
+                            design = "NAME_Taciturn"
+                            graphical_culture = "ai_01"
+                        }
+                    }
+                    assign_leader = last_created_leader
+                    while = {
+                        count = 20
+                        create_ship = {
+                            name = random
+                            design = "NAME_Reticent"
+                            graphical_culture = "ai_01"
+                        }
+                    }
+                    set_location = {
+                        target = prev
+                        distance = 45
+                        angle = random
+                    }
+                    save_event_target_as = cybrex_fleet
+                    set_aggro_range = 500
+                    set_fleet_stance = aggressive
+                    set_aggro_range_measure_from = self
+                    set_fleet_flag = cybrex_attack_fleet
+                }
+            }
+        }
+    }
+}

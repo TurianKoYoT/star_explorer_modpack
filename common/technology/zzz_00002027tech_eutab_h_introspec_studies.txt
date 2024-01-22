@@ -1,0 +1,21 @@
+tech_eutab_h_introspec_studies = {
+    cost = @tier4cost3
+    area = society
+    tier = 4
+    category = {
+        psionics
+    }
+    prerequisites = {
+        "tech_galactic_ambitions"
+    }
+    weight = @tier4weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_hive_empire = yes
+        has_ascension_perk = ap_one_vision
+    }
+    modifier = {
+        country_base_influence_produces_add = 2
+        country_unity_produces_mult = 0.05
+    }
+}

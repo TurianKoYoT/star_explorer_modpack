@@ -1,0 +1,56 @@
+trait_v_adv_cecotrophy = {
+    cost = 1
+    inline_script = "traits/no_randomized"
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_v_zoological_transgenesis
+        }
+    }
+    potential_crossbreeding_chance = 0
+    inline_script = "allowed_archetypes/adv_biological_traits/BIOLOGICAL"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/REP"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/FUN"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/NECROID"
+    inline_script = "species_class/AQUATIC"
+    opposites = {
+        "trait_invasive"
+        "trait_lithoid"
+        "trait_v_cecotrophy"
+        "trait_v_lithoid_cecotrophy"
+        "trait_v_kleptoplasty"
+        "trait_plantoid_phototrophic"
+        "trait_advanced_phototrophic"
+        "trait_plantoid_radiotrophic"
+        "trait_harvested_radiotrophic"
+        "trait_lithoid_radiotrophic"
+        "trait_advanced_radiotrophic"
+        "trait_v_efficient_digestion_l"
+        "trait_v_efficient_digestion"
+        "trait_v_inefficient_digestion"
+        "trait_v_inefficient_digestion_l"
+        "trait_v_locust"
+        "trait_v_rockust"
+        "trait_v_complex_digestive_system"
+        "trait_voidling"
+    }
+    custom_tooltip_with_modifiers = TRAIT_CECOTROPHY_EFFECT
+    modifier = {
+        planet_pops_organics_food_upkeep_mult = -0.2
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

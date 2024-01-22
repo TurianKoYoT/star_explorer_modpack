@@ -1,0 +1,232 @@
+@resolution_weight_normal = 6
+@resolution_cost_t1 = 100
+resolution_galactic_empire_imperial_crusade = {
+    icon = "GFX_resolution_imperial_crusade"
+    potential = {
+        has_galactic_emperor = yes
+        NOT = {
+            any_war = {
+                using_war_goal = {
+                    type = wg_imperial_crusade
+                    owner = attacker
+                }
+            }
+        }
+    }
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t1
+        }
+    }
+    target = yes
+    harmful = yes
+    valid_target = {
+        is_playable = yes
+        is_galactic_community_member = no
+        NOR = {
+            has_country_flag = imperial_crusade_target
+            has_country_flag = empire_rebel
+        }
+        is_homicidal = no
+        NOT = {
+            is_at_war_with = galactic_emperor
+        }
+    }
+    allow = {
+        imperial_authority >= 140
+    }
+    active = {
+        has_galactic_emperor = yes
+        from = {
+            is_at_war_with = galactic_emperor
+        }
+    }
+    effect = {
+        custom_tooltip = resolution_imperial_crusade_tooltip
+        hidden_effect = {
+            save_event_target_as = crusade_target
+            galactic_emperor = {
+                set_timed_country_flag = {
+                    flag = galcom_resolution_passed_anti_prosperity
+                    days = 7200
+                }
+                set_timed_country_flag = {
+                    flag = galcom_resolution_passed_anti_isolationist
+                    days = 7200
+                }
+                save_event_target_as = gal_emperor
+                declare_war = {
+                    target = event_target:crusade_target
+                    name = "NAME_Imperial_Crusade_War"
+                    attacker_war_goal = "wg_imperial_crusade"
+                }
+            }
+            random_war = {
+                limit = {
+                    using_war_goal = {
+                        type = wg_imperial_crusade
+                        owner = event_target:gal_emperor
+                    }
+                }
+                save_event_target_as = imperial_crusade_war
+            }
+            every_playable_country = {
+                limit = {
+                    is_galactic_emperor = no
+                    is_galactic_community_member = yes
+                    NOR = {
+                        is_in_federation_with = event_target:crusade_target
+                        AND = {
+                            exists = overlord
+                            overlord = {
+                                is_same_value = event_target:crusade_target
+                            }
+                        }
+                    }
+                }
+                if = {
+                    limit = {
+                        any_war = {
+                            any_war_participant = {
+                                is_same_value = event_target:crusade_target
+                            }
+                        }
+                    }
+                    every_war = {
+                        limit = {
+                            any_war_participant = {
+                                is_same_value = event_target:crusade_target
+                            }
+                        }
+                        remove_war_participant = event_target:crusade_target
+                    }
+                }
+                join_war_on_side = {
+                    war = event_target:imperial_crusade_war
+                    side = event_target:gal_emperor
+                }
+            }
+            event_target:crusade_target = {
+                country_event = {
+                    id = emperor.350
+                }
+            }
+            every_playable_country = {
+                limit = {
+                    is_ai = no
+                    has_communications = event_target:gal_emperor
+                    has_communications = event_target:crusade_target
+                    NOT = {
+                        is_same_value = event_target:crusade_target
+                    }
+                }
+                country_event = {
+                    id = emperor.351
+                }
+            }
+        }
+    }
+    ai_weight = {
+        base = @resolution_weight_normal
+        modifier = {
+            factor = 0.2
+            is_pacifist = yes
+            desc = ethic_pacifist
+        }
+        modifier = {
+            factor = 0.6
+            is_egalitarian = yes
+            desc = ethic_egalitarian
+        }
+        modifier = {
+            factor = 1.4
+            OR = {
+                is_militarist = yes
+                is_civic_militarist = yes
+            }
+            desc = ethic_militarist
+        }
+        modifier = {
+            factor = 3
+            is_galactic_emperor = yes
+            desc = galactic_emperor
+        }
+        modifier = {
+            factor = 1.4
+            is_part_of_galactic_council = yes
+            desc = gal_com_on_galatic_council
+        }
+        modifier = {
+            factor = 5
+            is_rival = from
+            desc = gal_com_target_is_rival
+        }
+        modifier = {
+            factor = 5
+            is_at_war_with = from
+            desc = gal_com_target_is_rival
+        }
+        modifier = {
+            factor = 0.8
+            is_civic_diplomatic_corps = yes
+            desc = gal_com_diplo_civic
+        }
+        modifier = {
+            factor = 0.9
+            from = {
+                is_galactic_community_member = yes
+            }
+            opinion_level = {
+                who = from
+                level > neutral
+            }
+            NOT = {
+                opinion_level = {
+                    who = from
+                    level > good
+                }
+            }
+            desc = good_opinion
+        }
+        modifier = {
+            factor = 0.75
+            from = {
+                is_galactic_community_member = yes
+            }
+            opinion_level = {
+                who = from
+                level > good
+            }
+            desc = excellent_opinion
+        }
+        modifier = {
+            factor = 1.5
+            from = {
+                is_galactic_community_member = yes
+            }
+            opinion_level = {
+                who = from
+                level < neutral
+            }
+            NOT = {
+                opinion_level = {
+                    who = from
+                    level < poor
+                }
+            }
+            desc = bad_opinion
+        }
+        modifier = {
+            factor = 2
+            from = {
+                is_galactic_community_member = yes
+            }
+            opinion_level = {
+                who = from
+                level < poor
+            }
+            desc = terrible_opinion
+        }
+    }
+}

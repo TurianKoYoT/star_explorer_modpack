@@ -1,0 +1,11 @@
+leader_trait_none_focus_2 = {
+    cost = 0
+    randomized = no
+    leader_class = {
+        scientist
+    }
+    leader_potential_add = {
+        always = no
+    }
+    selectable_weight = 0
+}

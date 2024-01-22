@@ -1,0 +1,57 @@
+building_stellarite_amenity_crim = {
+    icon = building_stellarite_sky_dome
+    base_buildtime = 480
+    owner_type = corporate
+    category = amenity
+    can_build = no
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            is_criminal_syndicate = yes
+        }
+        branch_office_owner = {
+            NOT = {
+                has_origin = origin_toxic_knights
+            }
+        }
+        has_global_flag = has_aot_mod
+    }
+    planet_modifier = {
+        planet_crime_add = 360
+        planet_amenities_add = 120
+        job_stellarite_entertainer_add = 2
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            energy = 4000
+            minerals = 4000
+            acot_sr_stellarite = 800
+        }
+        produces = {
+            energy = 400
+        }
+        upkeep = {
+            acot_sr_stellarite = 8
+        }
+    }
+    prerequisites = {
+        tech_stellarite_mansion
+    }
+    show_tech_unlock_if = {
+        is_megacorp = yes
+        is_criminal_syndicate = yes
+    }
+    ai_weight = {
+        weight = 2
+        modifier = {
+            weight = 0.5
+            branch_office_owner = {
+                has_monthly_income = {
+                    resource = energy
+                    value > 50
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+trait_v_weak_immune_system = {
+    cost = -4
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    opposites = {
+        "trait_v_cecotrophy"
+        "trait_v_adv_cecotrophy"
+        "trait_v_cosmopolitan"
+        "trait_robust"
+        "trait_noxious"
+        "trait_cave_dweller"
+        "trait_v_endemic"
+        "trait_v_plague"
+        "trait_v_vector"
+        "trait_hive_mind"
+        "trait_v_fertilising"
+        "trait_v_infertilising"
+        "trait_v_soil_maker"
+        "trait_v_parasite_immunity"
+        "trait_v_allelopathy"
+    }
+    randomized = no
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    custom_tooltip = TRAIT_WEAK_IMMUNE_SYSTEM_EFFECT
+    declining_modifier = {
+        pop_decline_speed = 2
+    }
+    slave_cost = {
+        energy = -5000
+    }
+}

@@ -1,0 +1,46 @@
+trait_v_robot_autolatry = {
+    cost = -1
+    icon = "gfx/interface/icons/traits/trait_v_autolatry.dds"
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_synthetic_workers
+            NOT = {
+                has_policy_flag = ai_outlawed
+            }
+        }
+    }
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+            has_technology = tech_v_robot_neural_mimicry
+        }
+    }
+    species_possible_merge_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    opposites = {
+        "trait_machine_unit"
+        "trait_v_robot_organizational"
+    }
+    allowed_archetypes = {
+        ROBOT
+    }
+    allowed_ethics = {
+        ethic_egalitarian
+        ethic_fanatic_egalitarian
+    }
+    valid_for_all_ethics = no
+    custom_tooltip_with_modifiers = TRAIT_AUTOLATRY_EFFECT
+    modifier = {
+        pop_ethic_egalitarian_attraction_mult = 0.1
+    }
+    slave_cost = {
+        energy = -500
+    }
+}

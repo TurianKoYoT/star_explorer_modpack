@@ -1,0 +1,55 @@
+ult_mining_drone_operator = {
+    category = specialist
+    condition_string = SPECIALIST_JOB_TRIGGER
+    building_icon = building_ult_mining_network
+    clothes_texture_index = 2
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_specialist_job
+    resources = {
+        category = planet_jobs
+        produces = {
+            minerals = 30
+            engineering_research = 3
+        }
+    }
+    weight = {
+        weight = @specialist_job_weight
+        modifier = {
+            factor = 4
+            OR = {
+                has_trait = trait_industrious
+                has_trait = trait_robot_power_drills
+            }
+        }
+        modifier = {
+            factor = 2
+            has_trait = trait_ult_crystal_perception
+        }
+        modifier = {
+            factor = 2
+            has_trait = trait_ult_robot_reconstructor
+        }
+        modifier = {
+            factor = 0.2
+            has_citizenship_rights = no
+            NOT = {
+                has_trait = trait_mechanical
+            }
+        }
+        modifier = {
+            factor = 0.1
+            can_take_servant_job = yes
+        }
+        modifier = {
+            factor = 2
+            species = {
+                has_species_flag = racket_species_flag
+            }
+        }
+    }
+}

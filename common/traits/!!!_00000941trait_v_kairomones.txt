@@ -1,0 +1,35 @@
+trait_v_kairomones = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        exists = from
+        from = {
+            is_ai = no
+        }
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_void_dweller_1"
+        "trait_v_adv_kairomones"
+        "trait_v_biophobia"
+        "trait_v_pest_sensitive"
+        "trait_v_adv_pest_sensitive"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/FUN"
+    custom_tooltip = TRAIT_KAIROMONES_EFFECT
+    triggered_planet_growth_habitability_modifier = {
+        pop_environment_tolerance = 0.05
+        mult = planet.value:natural_blocker_count
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

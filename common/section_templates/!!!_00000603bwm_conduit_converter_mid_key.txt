@@ -1,0 +1,9 @@
+ship_section_template = {
+    key = "bwm_conduit_converter_mid_key"
+    ship_size = bwm_conduit_converter
+    fits_on_slot = mid
+    entity = "bwm_conduit_converter_hull_entity"
+    icon = "GFX_ship_part_core_mid"
+    large_utility_slots = 48
+    aux_utility_slots = 12
+}

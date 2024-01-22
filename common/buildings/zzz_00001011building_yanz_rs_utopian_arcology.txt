@@ -1,0 +1,98 @@
+building_yanz_rs_utopian_arcology = {
+    base_buildtime = 720
+    category = unity
+    prerequisites = {
+        tech_yanz_rs_utopian_arcology_building
+    }
+    potential = {
+        exists = owner
+        owner = {
+            has_valid_civic = civic_machine_servitor
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        NOT = {
+            owner = {
+                has_valid_civic = civic_machine_servitor
+            }
+        }
+    }
+    convert_to = {
+        building_paradise_dome
+        building_communal_housing_large
+    }
+    planet_modifier = {
+        planet_housing_add = 10
+        job_bio_trophy_add = 50
+        job_maintenance_drone_add = 5
+        job_artisan_drone_add = 5
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 10000
+            alloys = 2500
+            food = 1000
+            exotic_gases = 500
+            volatile_motes = 500
+            rare_crystals = 500
+        }
+        upkeep = {
+            energy = 10
+            exotic_gases = 1
+            volatile_motes = 1
+            rare_crystals = 1
+        }
+    }
+    triggered_desc = {
+        text = job_bio_trophy_effect_desc
+    }
+    triggered_desc = {
+        text = job_artisan_drone_effect_desc
+    }
+    triggered_desc = {
+        text = job_maintenance_drone_effect_desc
+    }
+    show_tech_unlock_if = {
+        owner = {
+            has_valid_civic = civic_machine_servitor
+        }
+    }
+    ai_resource_production = {
+        unity = 20
+        physics_research = 20
+        trigger = {
+            has_unemployed_pop_of_category = bio_trophy
+            planet_resource_compare = {
+                resource = physics_research
+                value >= 100
+                type = produces
+            }
+        }
+    }
+    ai_resource_production = {
+        unity = 20
+        alloys = 20
+        trigger = {
+            has_unemployed_pop_of_category = bio_trophy
+            planet_resource_compare = {
+                resource = alloys
+                value >= 100
+                type = produces
+            }
+        }
+    }
+    ai_resource_production = {
+        unity = 20
+        consumer_goods = 20
+        trigger = {
+            has_unemployed_pop_of_category = bio_trophy
+            planet_resource_compare = {
+                resource = consumer_goods
+                value >= 100
+                type = produces
+            }
+        }
+    }
+}

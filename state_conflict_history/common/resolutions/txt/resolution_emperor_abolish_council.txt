@@ -1,0 +1,74 @@
+@resolution_weight_hated = 3
+@resolution_cost_t5 = 300
+@resolution_flag_timer = 360
+resolution_emperor_abolish_council = {
+    icon = "GFX_resolution_abolish_imperial_council"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t5
+        }
+    }
+    target = no
+    modifier = {
+    }
+    effect = {
+        custom_tooltip = resolution_emperor_abolish_council_tooltip
+        hidden_effect = {
+            set_council_size = 0
+            set_timed_country_flag = {
+                flag = galactic_community_resolution_passed_general
+                days = @resolution_flag_timer
+            }
+            add_modifier = {
+                modifier = resolution_passed_diplomatic_weight
+                days = 2200
+            }
+        }
+    }
+    fail_effects = {
+        hidden_effect = {
+            set_timed_country_flag = {
+                flag = galactic_community_resolution_failed_general
+                days = @resolution_flag_timer
+            }
+            add_modifier = {
+                modifier = resolution_failed_diplomatic_weight
+                days = 2200
+            }
+        }
+    }
+    potential = {
+        has_nemesis = yes
+        is_galactic_emperor = yes
+        is_galactic_council_established = yes
+        NOT = {
+            has_global_flag = imperial_unification_start
+        }
+    }
+    active = {
+        has_galactic_emperor = yes
+    }
+    ai_weight = {
+        base = @resolution_weight_hated
+        modifier = {
+            factor = 0
+            is_part_of_galactic_council = yes
+            is_galactic_emperor = no
+            desc = gal_com_on_galatic_council
+        }
+        modifier = {
+            factor = 0.5
+            is_subject = yes
+            overlord = {
+                opinion_level = {
+                    who = prev
+                    level >= neutral
+                }
+                is_part_of_galactic_council = yes
+                is_galactic_emperor = no
+            }
+            desc = gal_com_support_overlord_on_galatic_council
+        }
+    }
+}

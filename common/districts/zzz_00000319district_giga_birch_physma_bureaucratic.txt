@@ -1,0 +1,86 @@
+@giga_birch_sector_cost = 1500
+@giga_birch_sector_sr_cost = 200
+@giga_birch_sector_time = 360
+@giga_birch_sector_maintenance = 5
+@giga_birch_sector_sr_maintenance = 2
+@sector_jobs = 7
+@sector_workers = -7
+district_giga_birch_physma_bureaucratic = {
+    base_buildtime = @giga_birch_sector_time
+    is_capped_by_modifier = yes
+    icon = district_giga_birch_physma_unity
+    show_on_uncolonized = {
+        uses_district_set = giga_birch
+        has_district = district_giga_birch_physma
+        exists = from
+        from = {
+            is_gestalt = no
+            giga_country_uses_priests = no
+        }
+    }
+    potential = {
+        uses_district_set = giga_birch
+        has_district = district_giga_birch_physma
+        exists = owner
+        owner = {
+            is_gestalt = no
+            giga_country_uses_priests = no
+        }
+    }
+    allow = {
+        giga_birch_district_allow = {
+            category = physma
+        }
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_giga_birch_physma_temple
+        district_giga_birch_physma_relay
+        district_giga_birch_physma_sanctuary
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = @giga_birch_sector_cost
+            rare_crystals = @giga_birch_sector_sr_cost
+        }
+        upkeep = {
+            energy = @giga_birch_sector_maintenance
+            rare_crystals = @giga_birch_sector_sr_maintenance
+        }
+    }
+    planet_modifier = {
+        giga_birch_district_physma_tag = 1
+    }
+    inline_script = {
+        script = planet/unity/giga_bureaucrat_swap
+        jobs = @sector_jobs
+    }
+    triggered_planet_modifier = {
+        job_giga_birch_physma_worker_add = @sector_workers
+    }
+    on_queued = {
+        giga_birch_district_queued = {
+            category = physma
+            type = physma_bureaucratic
+        }
+    }
+    on_unqueued = {
+        giga_birch_district_unqueued = {
+            category = physma
+            type = physma_bureaucratic
+        }
+    }
+    on_built = {
+        giga_birch_district_built = {
+            category = physma
+            type = physma_bureaucratic
+        }
+    }
+    on_destroy = {
+        giga_birch_district_destroy = {
+            category = physma
+            type = physma_bureaucratic
+        }
+    }
+}

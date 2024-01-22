@@ -1,0 +1,34 @@
+ship_section_template = {
+    key = "bwm_conduit_escort_mid_key"
+    ship_size = bwm_conduit_escort
+    fits_on_slot = mid
+    entity = "bwm_conduit_escort_hull_entity"
+    icon = "GFX_ship_part_core_mid"
+    component_slot = {
+        name = "TORPEDO_01"
+        template = "medium_missile_turret"
+        locatorname = "center_eye"
+    }
+    component_slot = {
+        name = "MEDIUM_GUN_01"
+        template = "medium_turret"
+        locatorname = "front_left_2"
+    }
+    component_slot = {
+        name = "MEDIUM_GUN_02"
+        template = "medium_turret"
+        locatorname = "front_right_2"
+    }
+    component_slot = {
+        name = "PD_01"
+        template = "point_defence_turret"
+        locatorname = "front_left_1"
+    }
+    component_slot = {
+        name = "PD_02"
+        template = "point_defence_turret"
+        locatorname = "front_right_1"
+    }
+    large_utility_slots = 5
+    aux_utility_slots = 1
+}

@@ -1,0 +1,29 @@
+subclass_scientist_explorer = {
+    custom_subtitle = scientist_subclass
+    subclass_trait = yes
+    inline_script = {
+        script = trait/icon_subclass
+        SUBCLASS = scientist_explorer
+        COUNCIL = no
+    }
+    custom_tooltip_with_modifiers = explorer_subclass_tt
+    modifier = {
+        ship_sensor_range_add = 1
+        science_ship_survey_speed = 0.1
+        ship_anomaly_generation_chance_mult = 0.1
+    }
+    ai_weight = {
+        modifier = {
+            is_councilor = yes
+            factor = 0
+        }
+        modifier = {
+            is_councilor = no
+            factor = 2
+        }
+    }
+    leader_class = {
+        scientist
+    }
+    background_icon = "GFX_leader_subclass_scientist_explorer_background"
+}

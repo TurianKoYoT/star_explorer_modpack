@@ -1,0 +1,22 @@
+katzen_trait_survivalist = {
+    inline_script = {
+        script = trait/icon
+        CLASS = commander
+        ICON = "GFX_leader_trait_katzen_survivalist"
+        RARITY = free_or_veteran
+        COUNCIL = no
+        TIER = 1
+    }
+    modifier = {
+        ships_upkeep_mult = -0.1
+        ship_experience_gain_mult = 0.1
+    }
+    self_modifier = {
+        species_leader_exp_gain = 0.1
+    }
+    leader_class = {
+        commander
+    }
+    initial = no
+    randomized = no
+}

@@ -1,0 +1,75 @@
+trait_v_ecological_cynicism = {
+    cost = -1
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    species_possible_merge_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    allowed_ethics = {
+        ethic_xenophobe
+        ethic_fanatic_xenophobe
+    }
+    valid_for_all_ethics = no
+    custom_tooltip = TRAIT_ECOLOGICAL_CYNICISM_EFFECT
+    opposites = {
+        "trait_hive_mind"
+        "trait_v_ecological_naivete"
+        "trait_v_homely"
+        "trait_v_biophilia"
+    }
+    triggered_pop_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                any_owned_species = {
+                    is_same_species_class = root
+                    NOT = {
+                        is_same_species = root
+                    }
+                }
+                NOT = {
+                    any_owned_species = {
+                        NOR = {
+                            is_same_species = root
+                            is_same_species_class = root
+                        }
+                    }
+                }
+            }
+        }
+        pop_happiness = -0.1
+        pop_ethic_xenophobe_attraction_mult = 0.1
+    }
+    triggered_pop_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                any_owned_species = {
+                    NOR = {
+                        is_same_species = root
+                        is_same_species_class = root
+                    }
+                }
+            }
+        }
+        pop_happiness = -0.2
+        pop_ethic_xenophobe_attraction_mult = 0.2
+    }
+    slave_cost = {
+        energy = -500
+    }
+}

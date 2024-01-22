@@ -1,0 +1,42 @@
+building_delta_mineral_corp = {
+    icon = building_fe_mineral_processing_plant
+    base_buildtime = 360
+    owner_type = corporate
+    category = resource
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            is_criminal_syndicate = no
+        }
+    }
+    planet_modifier = {
+        job_acot_mineralman_add = 1
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            minerals = 500
+            sr_dark_matter = 50
+        }
+        produces = {
+            minerals = 50
+        }
+        upkeep = {
+            energy = 10
+            sr_dark_matter = 1
+        }
+    }
+    prerequisites = {
+        tech_fe_mineral_processing_plant
+    }
+    show_tech_unlock_if = {
+        is_megacorp = yes
+        is_criminal_syndicate = no
+    }
+    upgrades = {
+        building_alpha_mineral_corp
+    }
+    ai_weight = {
+        factor = 5
+    }
+}

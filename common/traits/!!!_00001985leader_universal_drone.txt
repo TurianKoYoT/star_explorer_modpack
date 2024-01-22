@@ -1,0 +1,15 @@
+leader_universal_drone = {
+    cost = 0
+    species_potential_add = {
+        always = no
+    }
+    icon = "gfx/interface/icons/traits/trait_conservational.dds"
+    modifier = {
+        planet_crime_add = -50
+    }
+    leader_class = {
+        governor
+    }
+    initial = no
+    randomized = no
+}

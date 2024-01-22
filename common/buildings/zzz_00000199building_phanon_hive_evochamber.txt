@@ -1,0 +1,55 @@
+building_phanon_hive_evochamber = {
+    base_buildtime = 900
+    can_build = no
+    category = pop_assembly
+    potential = {
+        NOT = {
+            has_global_flag = aot_phanon_content_OFF
+        }
+        exists = owner
+        owner = {
+            has_technology = tech_phanon_hive_evochamber
+        }
+    }
+    inline_script = {
+        script = buildings/clone_vats_and_evochambers
+        POP_GROWTH = 0.75
+        POP_ASSEMBLY = 12
+        POP_ASSEMBLY_GENETIC_TRADITION = 6
+    }
+    allow = {
+        has_phanon_capital = yes
+    }
+    upgrades = {
+        building_stellarite_hive_evochamber
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            society_research = 100
+            food = 200
+        }
+        cost = {
+            energy = 2000
+            minerals = 2000
+            aot_sr_runic_power = 800
+        }
+        upkeep = {
+            aot_sr_runic_power = 20
+            sr_dark_matter = 5
+            acot_sr_dark_energy = 5
+        }
+    }
+    prerequisites = {
+        tech_phanon_hive_evochamber
+    }
+    ai_weight = {
+        weight = 10000
+        modifier = {
+            factor = 0
+            OR = {
+                has_building = building_phanon_hive_evochamber
+            }
+        }
+    }
+}

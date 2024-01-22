@@ -1,0 +1,31 @@
+trait_v_cyborg_exotic_augments = {
+    cost = 1
+    initial = no
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        can_add_cybernetic_traits = yes
+    }
+    species_possible_remove = {
+        can_remove_cybernetic_traits = yes
+    }
+    randomized = no
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    opposites = {
+        "trait_v_cyborg_servitor"
+        "trait_hive_mind"
+        "trait_v_cyborg_stealth"
+        "trait_v_solar_skin_b"
+        "trait_v_solar_skin_l"
+        "trait_v_chem_skin"
+        "trait_v_active_camouflage"
+    }
+    custom_tooltip_with_modifiers = TRAIT_EXOTIC_AUGMENTS_EFFECT
+    modifier = {
+        pop_ethic_egalitarian_attraction_mult = 0.1
+        planet_pops_consumer_goods_upkeep_mult = 0.25
+    }
+    slave_cost = {
+        energy = 2000
+    }
+}

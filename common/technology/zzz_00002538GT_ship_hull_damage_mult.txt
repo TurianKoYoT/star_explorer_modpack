@@ -1,0 +1,30 @@
+GT_ship_hull_damage_mult = {
+    cost = @tier3cost1
+    area = physics
+    tier = 3
+    category = {
+        particles
+    }
+    prerequisites = {
+        "tech_engineering_2"
+    }
+    weight = @tier3weight1
+    modifier = {
+        ship_hull_damage_mult = 0.2
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            num_researched_techs_of_tier = {
+                tier = 3
+                value > 15
+            }
+        }
+        modifier = {
+            factor = 0
+            is_at_war = no
+        }
+    }
+    ai_weight = {
+    }
+}

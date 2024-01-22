@@ -1,0 +1,61 @@
+action_support_independence = {
+    icon = "GFX_diplomacy_status_support_independence"
+    auto_accepted = yes
+    should_notify_all_communications = yes
+    requires_recipient_independence = no
+    action_type = positive
+    potential = {
+        hidden_trigger = {
+            exists = from
+            NOT = {
+                from = {
+                    exists = overlord
+                    overlord = {
+                        is_same_value = root
+                    }
+                }
+            }
+        }
+        hidden_trigger = {
+            NAND = {
+                is_subject = yes
+                any_agreement = {
+                    has_term_value = {
+                        term = subject_diplomacy
+                        value = subject_can_not_do_diplomacy
+                    }
+                }
+            }
+        }
+    }
+    possible = {
+        homicidal_diplomacy_restrictions = {
+            mirror = yes
+        }
+        inwards_perfection_diplomacy_restrictions = {
+            mirror = no
+        }
+        custom_tooltip = {
+            fail_text = requires_10_trust_or_neutral
+            OR = {
+                opinion_level = {
+                    who = from
+                    level >= neutral
+                }
+                from = {
+                    trust = {
+                        who = root
+                        value >= 10
+                    }
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = requires_embassy_or_improving_relations
+            OR = {
+                is_improving_relations_with = from
+                has_embassy = from
+            }
+        }
+    }
+}

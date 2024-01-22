@@ -1,0 +1,20 @@
+bwm_building_obelisk_0_3 = {
+    can_build = no
+    can_demolish = yes
+    icon = "building_zanaam_obelisk"
+    potential = {
+    }
+    convert_to = {
+        bwm_building_obelisk_3
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            engineering_research = 8
+            society_research = 8
+            physics_research = 8
+        }
+    }
+    prerequisites = {
+    }
+}

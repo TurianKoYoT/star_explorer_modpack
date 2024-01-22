@@ -1,0 +1,22 @@
+tech_emex_biomech_world = {
+    cost = @tier2cost3
+    area = society
+    tier = 2
+    category = {
+        new_worlds
+    }
+    prerequisites = {
+        "tech_terrestrial_sculpting"
+    }
+    weight = @tier2weight1
+    potential = {
+        has_origin = origin_born_of_knowledge
+    }
+    modifier = {
+        description = bok_biomech_allow
+    }
+    weight_modifier = {
+    }
+    ai_weight = {
+    }
+}

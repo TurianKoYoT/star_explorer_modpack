@@ -1,0 +1,33 @@
+tech_doa_ascended_base_ships = {
+    area = engineering
+    cost = 0
+    tier = 0
+    category = {
+        statecraft
+    }
+    weight = 0
+    potential = {
+        has_country_flag = doa_tech_7
+        NOT = {
+            has_technology = tech_doa_ascended_ship_designs
+        }
+    }
+    modifier = {
+        shipsize_corvette_build_speed_mult = 0.25
+        shipsize_frigate_build_speed_mult = 0.25
+        shipsize_destroyer_build_speed_mult = 0.25
+        shipsize_cruiser_build_speed_mult = 0.25
+        shipsize_battleship_build_speed_mult = 0.25
+        shipsize_titan_build_speed_mult = 0.25
+        shipsize_juggernaut_build_speed_mult = 0.25
+        ship_corvette_cost_mult = -0.1
+        ship_destroyer_cost_mult = -0.1
+        ship_cruiser_cost_mult = -0.1
+        ship_battleship_cost_mult = -0.1
+        weapon_type_dark_matter_weapon_damage_mult = -0.15
+        weapon_type_dark_energy_weapon_damage_mult = -0.2
+    }
+    ai_weight = {
+        factor = 0
+    }
+}

@@ -1,0 +1,76 @@
+district_ssh_edersphere_farming = {
+    base_buildtime = 360
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        AND = {
+            uses_district_set = edersphere_world
+            this.owner = {
+                has_valid_civic = civic_agrarian_idyll
+            }
+        }
+    }
+    potential = {
+        uses_district_set = edersphere_world
+        owner = {
+            has_valid_civic = civic_agrarian_idyll
+        }
+        NOT = {
+            AND = {
+                owner = {
+                    is_ai = yes
+                }
+                owner = {
+                    country_uses_food = no
+                }
+            }
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = 1500
+            volatile_motes = 50
+        }
+        upkeep = {
+            energy = 5
+            volatile_motes = 1
+        }
+    }
+    triggered_planet_modifier = {
+        modifier = {
+            planet_housing_add = 25
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            job_farmer_add = 15
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_technology = tech_housing_agrarian_idyll
+                has_valid_civic = civic_agrarian_idyll
+            }
+        }
+        modifier = {
+            planet_housing_add = 5
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = job_farmer_effect_desc
+    }
+}

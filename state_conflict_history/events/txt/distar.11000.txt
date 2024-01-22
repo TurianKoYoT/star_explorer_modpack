@@ -1,0 +1,658 @@
+namespace = distar
+country_event = {
+    id = distar.11000
+    hide_window = yes
+    is_triggered_only = yes
+    fire_only_once = yes
+    immediate = {
+        set_spawn_system_batch = begin
+        no_scope = {
+            spawn_system = {
+                min_distance >= 550
+                max_distance <= 560
+                min_orientation_angle = 44
+                max_orientation_angle = 46
+                initializer = distantstars_init_01
+                hyperlane = no
+                effect = {
+                    save_global_event_target_as = lcluster1
+                    every_system_planet = {
+                        planet_event = {
+                            id = gpm_engine.1
+                        }
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    NOT = {
+                        exists = event_target:lcluster1
+                    }
+                }
+                random_system = {
+                    limit = {
+                        has_star_flag = lcluster1
+                    }
+                    save_global_event_target_as = lcluster1
+                }
+            }
+            event_target:lcluster1 = {
+                spawn_system = {
+                    min_distance >= 24
+                    max_distance <= 40
+                    min_orientation_angle = 16
+                    max_orientation_angle = 82
+                    initializer = distantstars_init_02
+                    hyperlane = no
+                    effect = {
+                        save_global_event_target_as = lcluster2
+                        every_system_planet = {
+                            planet_event = {
+                                id = gpm_engine.1
+                            }
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance >= 24
+                    max_distance <= 40
+                    min_orientation_angle = 100
+                    max_orientation_angle = 180
+                    initializer = distantstars_init_03
+                    hyperlane = no
+                    effect = {
+                        save_global_event_target_as = lcluster3
+                        every_system_planet = {
+                            planet_event = {
+                                id = gpm_engine.1
+                            }
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance >= 26
+                    max_distance <= 70
+                    min_orientation_angle = 310
+                    max_orientation_angle = 50
+                    initializer = distantstars_init_01b
+                    hyperlane = no
+                    effect = {
+                        save_global_event_target_as = lcluster1b
+                        every_system_planet = {
+                            planet_event = {
+                                id = gpm_engine.1
+                            }
+                        }
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    NOT = {
+                        exists = event_target:lcluster2
+                    }
+                }
+                random_system = {
+                    limit = {
+                        has_star_flag = lcluster2
+                    }
+                    save_global_event_target_as = lcluster2
+                }
+            }
+            event_target:lcluster2 = {
+                spawn_system = {
+                    min_distance >= 26
+                    max_distance <= 70
+                    min_orientation_angle = 0
+                    max_orientation_angle = 320
+                    initializer = distantstars_init_02b
+                    hyperlane = no
+                    effect = {
+                        save_global_event_target_as = lcluster2b
+                        every_system_planet = {
+                            planet_event = {
+                                id = gpm_engine.1
+                            }
+                        }
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    NOT = {
+                        exists = event_target:lcluster3
+                    }
+                }
+                random_system = {
+                    limit = {
+                        has_star_flag = lcluster3
+                    }
+                    save_global_event_target_as = lcluster3
+                }
+            }
+            event_target:lcluster3 = {
+                spawn_system = {
+                    min_distance >= 20
+                    max_distance <= 36
+                    min_orientation_angle = 22
+                    max_orientation_angle = 68
+                    initializer = distantstars_init_04
+                    hyperlane = no
+                    effect = {
+                        save_global_event_target_as = lcluster4
+                        every_system_planet = {
+                            planet_event = {
+                                id = gpm_engine.1
+                            }
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance >= 12
+                    max_distance <= 70
+                    min_orientation_angle = 220
+                    max_orientation_angle = 320
+                    initializer = distantstars_init_03b
+                    hyperlane = no
+                    effect = {
+                        save_global_event_target_as = lcluster3b
+                        every_system_planet = {
+                            planet_event = {
+                                id = gpm_engine.1
+                            }
+                        }
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    NOT = {
+                        exists = event_target:lcluster4
+                    }
+                }
+                random_system = {
+                    limit = {
+                        has_star_flag = lcluster4
+                    }
+                    save_global_event_target_as = lcluster4
+                }
+            }
+            event_target:lcluster4 = {
+                spawn_system = {
+                    min_distance >= 8
+                    max_distance <= 20
+                    min_orientation_angle = 210
+                    max_orientation_angle = 330
+                    initializer = distantstars_init_05
+                    hyperlane = no
+                    effect = {
+                        save_global_event_target_as = lcluster5
+                        save_global_event_target_as = graygoo_factory_system
+                        every_system_planet = {
+                            planet_event = {
+                                id = gpm_engine.1
+                            }
+                        }
+                    }
+                }
+                spawn_system = {
+                    min_distance >= 28
+                    max_distance <= 70
+                    min_orientation_angle = 20
+                    max_orientation_angle = 220
+                    initializer = distantstars_init_04b
+                    hyperlane = no
+                    effect = {
+                        save_global_event_target_as = lcluster4b
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    NOT = {
+                        exists = event_target:lcluster5
+                    }
+                }
+                random_system = {
+                    limit = {
+                        has_star_flag = lcluster5
+                    }
+                    save_global_event_target_as = lcluster5
+                }
+            }
+            if = {
+                limit = {
+                    NOT = {
+                        exists = event_target:lcluster1b
+                    }
+                }
+                random_system = {
+                    limit = {
+                        has_star_flag = lcluster1b
+                    }
+                    save_global_event_target_as = lcluster1b
+                }
+            }
+            if = {
+                limit = {
+                    NOT = {
+                        exists = event_target:lcluster2b
+                    }
+                }
+                random_system = {
+                    limit = {
+                        has_star_flag = lcluster2b
+                    }
+                    save_global_event_target_as = lcluster2b
+                }
+            }
+            if = {
+                limit = {
+                    NOT = {
+                        exists = event_target:lcluster3b
+                    }
+                }
+                random_system = {
+                    limit = {
+                        has_star_flag = lcluster3b
+                    }
+                    save_global_event_target_as = lcluster3b
+                }
+            }
+            if = {
+                limit = {
+                    NOT = {
+                        exists = event_target:lcluster4b
+                    }
+                }
+                random_system = {
+                    limit = {
+                        has_star_flag = lcluster4b
+                    }
+                    save_global_event_target_as = lcluster4b
+                }
+            }
+            if = {
+                limit = {
+                    OR = {
+                        has_global_flag = has_guillis_planet_modifiers_mod
+                        AND = {
+                            exists = event_target:CmtGlobalVar
+                            event_target:CmtGlobalVar = {
+                                check_variable = {
+                                    which = CmtVarLgateTerraformNanite
+                                    value = 6
+                                }
+                            }
+                            NOR = {
+                                has_global_flag = gray_goo_crisis_set
+                                has_global_flag = gray_goo_empire_set
+                            }
+                        }
+                    }
+                }
+                every_system = {
+                    limit = {
+                        has_star_flag = lcluster
+                    }
+                    if = {
+                        limit = {
+                            has_global_flag = has_guillis_planet_modifiers_mod
+                        }
+                        every_system_planet = {
+                            planet_event = {
+                                id = gpm_engine.1
+                            }
+                        }
+                    }
+                    if = {
+                        limit = {
+                            exists = event_target:CmtGlobalVar
+                            event_target:CmtGlobalVar = {
+                                check_variable = {
+                                    which = CmtVarLgateTerraformNanite
+                                    value = 6
+                                }
+                            }
+                            NOR = {
+                                has_global_flag = gray_goo_crisis_set
+                                has_global_flag = gray_goo_empire_set
+                            }
+                        }
+                        every_system_planet = {
+                            limit = {
+                                is_planet_class = pc_gray_goo
+                            }
+                            add_modifier = {
+                                modifier = terraforming_candidate
+                            }
+                        }
+                    }
+                }
+            }
+            event_target:lcluster5 = {
+                add_hyperlane = {
+                    from = this
+                    to = event_target:lcluster4
+                }
+                if = {
+                    limit = {
+                        exists = event_target:lcluster5b
+                    }
+                    add_hyperlane = {
+                        from = this
+                        to = event_target:lcluster5b
+                    }
+                }
+            }
+            random_list = {
+                25 = {
+                    event_target:lcluster4 = {
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster3
+                        }
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster2
+                        }
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster4b
+                        }
+                    }
+                    event_target:lcluster3 = {
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster1
+                        }
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster3b
+                        }
+                    }
+                    event_target:lcluster2 = {
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster1
+                        }
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster3
+                        }
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster2b
+                        }
+                    }
+                    event_target:lcluster1b = {
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster2b
+                        }
+                    }
+                }
+                15 = {
+                    event_target:lcluster4 = {
+                        export_trigger_value_to_variable = {
+                            trigger = distance
+                            parameters = {
+                                source = event_target:lcluster2
+                                max_distance <= 300
+                                type = euclidean
+                            }
+                            variable = system_distance_2
+                        }
+                        export_trigger_value_to_variable = {
+                            trigger = distance
+                            parameters = {
+                                source = event_target:lcluster3b
+                                max_distance <= 300
+                                type = euclidean
+                            }
+                            variable = system_distance_3b
+                        }
+                        export_trigger_value_to_variable = {
+                            trigger = distance
+                            parameters = {
+                                source = event_target:lcluster3
+                                max_distance <= 300
+                                type = euclidean
+                            }
+                            variable = system_distance_3
+                        }
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster4b
+                        }
+                        if = {
+                            limit = {
+                                check_variable = {
+                                    which = system_distance_2
+                                    value > system_distance_3b
+                                }
+                                check_variable = {
+                                    which = system_distance_3
+                                    value > system_distance_3b
+                                }
+                            }
+                            add_hyperlane = {
+                                from = this
+                                to = event_target:lcluster3b
+                            }
+                        }
+                        else_if = {
+                            limit = {
+                                check_variable = {
+                                    which = system_distance_2
+                                    value > system_distance_3
+                                }
+                                check_variable = {
+                                    which = system_distance_3b
+                                    value > system_distance_3
+                                }
+                            }
+                            add_hyperlane = {
+                                from = this
+                                to = event_target:lcluster3
+                            }
+                        }
+                        else_if = {
+                            limit = {
+                                check_variable = {
+                                    which = system_distance_3
+                                    value > system_distance_2
+                                }
+                                check_variable = {
+                                    which = system_distance_3b
+                                    value > system_distance_2
+                                }
+                            }
+                            add_hyperlane = {
+                                from = this
+                                to = event_target:lcluster2
+                            }
+                        }
+                    }
+                    event_target:lcluster3 = {
+                        export_trigger_value_to_variable = {
+                            trigger = distance
+                            parameters = {
+                                source = event_target:lcluster2
+                                max_distance <= 300
+                                type = euclidean
+                            }
+                            variable = system_distance_2
+                        }
+                        if = {
+                            limit = {
+                                NOT = {
+                                    has_hyperlane_to = event_target:lcluster4
+                                }
+                                check_variable = {
+                                    which = system_distance_2
+                                    value > event_target:lcluster4.system_distance_3
+                                }
+                                event_target:lcluster4 = {
+                                    check_variable = {
+                                        which = system_distance_3b
+                                        value > system_distance_3
+                                    }
+                                }
+                            }
+                            add_hyperlane = {
+                                from = this
+                                to = event_target:lcluster4
+                            }
+                        }
+                        else_if = {
+                            limit = {
+                                NOR = {
+                                    has_hyperlane_to = event_target:lcluster4
+                                    has_hyperlane_to = event_target:lcluster2
+                                    check_variable = {
+                                        which = system_distance_2
+                                        value > event_target:lcluster4.system_distance_3
+                                    }
+                                    event_target:lcluster4 = {
+                                        check_variable = {
+                                            which = system_distance_2
+                                            value > system_distance_3
+                                        }
+                                    }
+                                }
+                            }
+                            add_hyperlane = {
+                                from = this
+                                to = event_target:lcluster2
+                            }
+                        }
+                        else = {
+                            add_hyperlane = {
+                                from = event_target:lcluster3b
+                                to = event_target:lcluster4b
+                            }
+                        }
+                    }
+                    event_target:lcluster2 = {
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster4b
+                        }
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster2b
+                        }
+                    }
+                    event_target:lcluster1b = {
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster2b
+                        }
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster1
+                        }
+                    }
+                    event_target:lcluster3b = {
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster1
+                        }
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster3
+                        }
+                    }
+                    event_target:lcluster3 = {
+                        clear_variable = system_distance_2
+                    }
+                    event_target:lcluster4 = {
+                        clear_variable = system_distance_2
+                        clear_variable = system_distance_3
+                        clear_variable = system_distance_3b
+                    }
+                }
+                10 = {
+                    event_target:lcluster4 = {
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster2
+                        }
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster4b
+                        }
+                    }
+                    event_target:lcluster3 = {
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster1
+                        }
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster3b
+                        }
+                    }
+                    event_target:lcluster2 = {
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster1
+                        }
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster2b
+                        }
+                    }
+                    event_target:lcluster1b = {
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster2
+                        }
+                    }
+                    event_target:lcluster4b = {
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster2b
+                        }
+                        add_hyperlane = {
+                            from = this
+                            to = event_target:lcluster3b
+                        }
+                    }
+                }
+            }
+        }
+        event_target:lcluster1 = {
+            add_hyperlane = {
+                from = this
+                to = event_target:lcluster1b
+            }
+        }
+        set_country_flag = lgates_activated
+        set_spawn_system_batch = end
+        set_update_modifiers_batch = begin
+        event_target:lcluster1 = {
+            random_system_megastructure = {
+                limit = {
+                    is_megastructure_type = lgate_base
+                }
+                activate_gateway = this
+                set_megastructure_flag = lgate_activated
+            }
+            set_star_flag = swarm_invasion_warning
+        }
+        if = {
+            limit = {
+                has_global_flag = gray_goo_crisis_set
+            }
+            every_megastructure = {
+                limit = {
+                    CmtTriggerIsClosedLgate = yes
+                }
+                CmtEffectOpenLgate = yes
+            }
+        }
+        set_update_modifiers_batch = end
+    }
+}

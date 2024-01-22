@@ -1,0 +1,28 @@
+trait_ult_hyperlogical = {
+    cost = 3
+    potential_crossbreeding_chance = 1
+    initial = no
+    randomized = no
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_ult_nano_drone_enhance
+        }
+    }
+    opposites = {
+        "trait_ult_inquisitive"
+    }
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    modifier = {
+        planet_jobs_engineering_research_produces_mult = 0.2
+        planet_jobs_physics_research_produces_mult = 0.2
+        planet_jobs_society_research_produces_mult = 0.2
+        species_leader_exp_gain = 0.75
+    }
+    slave_cost = {
+        energy = 500
+    }
+}

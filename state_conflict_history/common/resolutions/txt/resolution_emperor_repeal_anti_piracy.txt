@@ -1,0 +1,13 @@
+resolution_emperor_repeal_anti_piracy = {
+    icon = "GFX_resolution_emergency_measure"
+    resources = {
+        category = resolutions
+    }
+    target = no
+    potential = {
+        always = no
+    }
+    ai_weight = {
+        weight = 0
+    }
+}

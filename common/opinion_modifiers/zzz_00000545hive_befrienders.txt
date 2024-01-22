@@ -1,0 +1,15 @@
+hive_befrienders = {
+    trigger = {
+        is_country_type = default
+        NOT = {
+            has_ethic = ethic_gestalt_consciousness
+        }
+        FROM = {
+            has_valid_civic = "civic_hive_concerted_befrienders"
+            has_authority = auth_hive_mind
+        }
+    }
+    opinion = {
+        base = 50
+    }
+}

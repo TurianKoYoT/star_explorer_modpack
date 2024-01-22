@@ -1,0 +1,270 @@
+building_avb_temple_6 = {
+    base_buildtime = @avb_u6_time
+    can_build = no
+    category = unity
+    potential = {
+        exists = owner
+        owner = {
+            OR = {
+                AND = {
+                    NOT = {
+                        has_global_flag = ethic_civic_classic_active
+                    }
+                    OR = {
+                        is_spiritualist = yes
+                        AND = {
+                            is_gestalt = no
+                            has_make_spiritualist_perk = yes
+                        }
+                    }
+                }
+                AND = {
+                    has_global_flag = ethic_civic_classic_active
+                    is_spiritualist = yes
+                    NOR = {
+                        has_valid_civic = civic_death_cult
+                        has_valid_civic = civic_death_cult_corporate
+                    }
+                }
+            }
+        }
+        NOT = {
+            has_modifier = slave_colony
+        }
+    }
+    allow = {
+        has_upgraded_capital_5 = yes
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            owner = {
+                OR = {
+                    AND = {
+                        is_spiritualist = no
+                        has_make_spiritualist_perk = no
+                    }
+                    is_gestalt = yes
+                }
+            }
+            has_modifier = slave_colony
+        }
+    }
+    convert_to = {
+        building_avb_bureaucratic_6
+        building_avb_hive_unity_6
+        building_avb_machine_unity_6
+        building_avb_death_temple_6
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_u6_minerals
+            rare_crystals = @avb_u6_rare_cost
+        }
+        upkeep = {
+            energy = @avb_u6_upkeep
+            rare_crystals = @avb_u6_rare_upkeep
+        }
+    }
+    planet_modifier = {
+        job_priest_add = @avb_u6_jobs_half
+        pop_ethic_spiritualist_attraction_mult = 0.3
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner.federation
+            owner.federation = {
+                has_federation_perk = all_the_priests_2
+            }
+        }
+        job_high_priest_add = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_megacorp = no
+            }
+        }
+        modifier = {
+            job_priest_add = @avb_u6_jobs_half
+        }
+    }
+    triggered_desc = {
+        text = job_priest_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_worker_coop_empire = no
+            }
+        }
+        modifier = {
+            job_manager_add = @avb_u6_jobs_half
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_worker_coop_empire = no
+            }
+        }
+        text = job_manager_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner.federation
+            owner.federation = {
+                has_federation_perk = all_the_priests_2
+            }
+        }
+        text = job_high_priest_effect_desc
+    }
+    prerequisites = {
+        "tech_avb_temple_6"
+    }
+    show_tech_unlock_if = {
+        OR = {
+            is_spiritualist = yes
+            AND = {
+                is_gestalt = no
+                has_make_spiritualist_perk = yes
+            }
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_global_flag = ethic_civic_classic_active
+                has_civic = civic_defenders_faith
+            }
+        }
+        modifier = {
+            job_priest_add = -3
+            job_templar_add = 3
+        }
+    }
+    triggered_desc = {
+        text = job_priest_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_worker_coop_empire = yes
+            }
+        }
+        modifier = {
+            job_steward_add = @avb_u6_jobs_half
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_worker_coop_empire = yes
+            }
+        }
+        text = job_steward_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_global_flag = ethic_civic_classic_active
+                OR = {
+                    has_civic = civic_imperial_cult
+                    has_civic = civic_divine_council
+                    has_civic = civic_spiritual_democracy
+                    has_civic = civic_exalted_priesthood
+                }
+            }
+        }
+        modifier = {
+            job_high_priest_add = 1
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                has_global_flag = ethic_civic_classic_active
+                has_civic = civic_defenders_faith
+            }
+        }
+        text = job_templar_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                has_global_flag = ethic_civic_classic_active
+                OR = {
+                    has_civic = civic_imperial_cult
+                    has_civic = civic_divine_council
+                    has_civic = civic_spiritual_democracy
+                    has_civic = civic_exalted_priesthood
+                }
+            }
+        }
+        text = job_high_priest_effect_desc
+    }
+    inline_script = {
+        script = "buildings/bugged_temple_effects"
+        BUGGED_TEMPLARS = 6
+        HIGH_PRIEST = 4
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_plentiful_tradition_mod = yes
+            exists = owner.federation
+            owner.federation = {
+                has_federation_perk = all_the_priests_2
+            }
+            owner = {
+                has_tradition = tr_plentiful_aspiration_3
+            }
+        }
+        modifier = {
+            job_priest_add = @avb_u6_jobs_half
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_plentiful_tradition_mod = yes
+            exists = owner
+            owner = {
+                is_megacorp = no
+            }
+            owner = {
+                has_tradition = tr_plentiful_aspiration_3
+            }
+        }
+        modifier = {
+            job_priest_add = @avb_u6_jobs_half
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_plentiful_tradition_mod = yes
+            exists = owner
+            owner = {
+                is_megacorp = yes
+            }
+            owner = {
+                has_tradition = tr_plentiful_aspiration_3
+            }
+        }
+        modifier = {
+            job_manager_add = @avb_u6_jobs_half
+        }
+    }
+}

@@ -1,0 +1,19 @@
+tech_eutab_mil_proxy = {
+    cost = @tier3cost2
+    area = society
+    tier = 3
+    category = {
+        military_theory
+    }
+    prerequisites = {
+        "tech_galactic_bureaucracy"
+        "tech_combat_training"
+    }
+    weight = @tier3weight2
+    is_custom_tech_1 = yes
+    potential = {
+        is_militarist = yes
+        has_ascension_perk = ap_interstellar_dominion
+    }
+    gateway = eu_dominion
+}

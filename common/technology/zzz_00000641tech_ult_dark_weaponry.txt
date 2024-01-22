@@ -1,0 +1,24 @@
+tech_ult_dark_weaponry = {
+    area = society
+    cost = 500000
+    tier = 4
+    category = {
+        military_theory
+    }
+    is_rare = yes
+    is_dangerous = yes
+    is_reverse_engineerable = no
+    prerequisites = {
+    }
+    weight = 0
+    modifier = {
+        army_damage_mult = 3
+    }
+    potential = {
+        has_country_flag = ult_restriction_break_engaged
+        is_ai = no
+    }
+    ai_weight = {
+        weight = 0
+    }
+}

@@ -1,0 +1,140 @@
+@subsidy_multiplier_research = 1
+@subsidy_monthly_multiplier_research = 5
+@subsidy_minimum = -0.75
+@subsidy_maximum = 0.75
+@set_factor_0 = 0.15
+@set_factor_0_neg = -0.15
+@set_factor_1 = 0.3
+@set_factor_1_neg = -0.3
+@set_factor_2 = 0.45
+@set_factor_2_neg = -0.45
+@set_factor_3_neg = -0.6
+resource_subsidies_research = {
+    term = resource_subsidies
+    resources = {
+        physics_research
+        society_research
+        engineering_research
+    }
+    potential = {
+        NOT = {
+            has_global_flag = gf_veru_activated
+        }
+    }
+    subsidy_multiplier = @subsidy_multiplier_research
+    subsidy_monthly_multiplier = @subsidy_monthly_multiplier_research
+    resource_min = {
+        base = @subsidy_minimum
+        modifier = {
+            set = @set_factor_0_neg
+            agreement_preset = preset_comvas
+        }
+        modifier = {
+            set = 0
+            OR = {
+                agreement_preset = preset_subsidiary
+                agreement_preset = preset_tributary
+                agreement_preset = preset_relic_satrapy
+            }
+        }
+        modifier = {
+            set = @set_factor_1
+            agreement_preset = preset_scholarium
+        }
+        modifier = {
+            set = @set_factor_2_neg
+            OR = {
+                agreement_preset = preset_vassal
+                agreement_preset = preset_bulwark
+            }
+        }
+        modifier = {
+            set = 0.9
+            is_imperial_province_agreement = yes
+            owner = {
+                has_federation = yes
+                federation = {
+                    has_federation_law = imperial_academy_of_sciences_technical_unification
+                }
+            }
+        }
+    }
+    resource_max = {
+        base = @subsidy_maximum
+        modifier = {
+            set = @set_factor_0
+            agreement_preset = preset_comvas
+        }
+        modifier = {
+            set = 0
+            OR = {
+                agreement_preset = preset_protectorate
+                agreement_preset = preset_relic_satrapy
+            }
+        }
+        modifier = {
+            set = @set_factor_1_neg
+            agreement_preset = preset_prospectorium
+        }
+        modifier = {
+            set = @set_factor_2_neg
+            agreement_preset = preset_prospectorium
+            has_active_specialization = specialist_prospectorium
+            specialist_tier = 2
+        }
+        modifier = {
+            set = @set_factor_3_neg
+            agreement_preset = preset_prospectorium
+            has_active_specialization = specialist_prospectorium
+            specialist_tier = 3
+        }
+        modifier = {
+            set = @set_factor_2
+            OR = {
+                agreement_preset = preset_vassal
+                agreement_preset = preset_bulwark
+            }
+        }
+        modifier = {
+            set = 0.9
+            is_imperial_province_agreement = yes
+            owner = {
+                has_federation = yes
+                federation = {
+                    has_federation_law = imperial_academy_of_sciences_technical_unification
+                }
+            }
+        }
+       modifier = {
+            set = @set_factor_0_neg
+            OR = {
+                agreement_preset = preset_katzen
+                agreement_preset = preset_katzen_gestalt
+            }
+        }
+        modifier = {
+            set = @set_factor_1_neg
+            OR = {
+                agreement_preset = preset_katzen
+                agreement_preset = preset_katzen_gestalt
+            }
+            OR = {
+                has_active_specialization = specialist_katzprotektorat
+                has_active_specialization = specialist_katzprotektorat_gestalt
+            }
+            specialist_tier = 2
+        }
+        modifier = {
+            set = @set_factor_2_neg
+            OR = {
+                agreement_preset = preset_katzen
+                agreement_preset = preset_katzen_gestalt
+            }
+            OR = {
+                has_active_specialization = specialist_katzprotektorat
+                has_active_specialization = specialist_katzprotektorat_gestalt
+            }
+            specialist_tier = 3
+        }
+    }
+}

@@ -1,0 +1,39 @@
+tech_phanon_transmutor = {
+    cost = @acot_tier8cost1
+    area = physics
+    tier = 8
+    category = {
+        particles
+    }
+    prerequisites = {
+        tech_ae_transmutor
+        tech_civil_phanon_application
+    }
+    weight = @tier5weight1
+    potential = {
+        NOR = {
+            has_global_flag = aot_phanon_content_OFF
+            is_fallen_empire = yes
+        }
+        has_technology = tech_civil_phanon_application
+        has_technology = tech_ae_transmutor
+    }
+    weight_modifier = {
+        factor = 2
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_particles
+            }
+        }
+    }
+    ai_weight = {
+        factor = 5
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_particles
+            }
+        }
+    }
+}

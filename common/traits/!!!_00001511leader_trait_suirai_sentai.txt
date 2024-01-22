@@ -1,0 +1,31 @@
+leader_trait_suirai_sentai = {
+    cost = 1
+    icon = "gfx/interface/icons/traits/leader_traits/leader_trait_suirai_sentai.dds"
+    fleet_modifier = {
+        weapon_type_explosive_speed_mult = 0.5
+        weapon_type_explosive_weapon_damage_mult = 0.2
+        shipsize_frigate_hull_mult = 0.25
+        ship_speed_mult = 0.25
+    }
+    initial = no
+    randomized = no
+    leader_class = {
+        commander
+    }
+    leader_potential_add = {
+        from = {
+            OR = {
+                has_technology = tech_energy_torpedoes_2
+                has_technology = tech_torpedoes_3
+            }
+            is_galactic_community_member = yes
+            has_federation = yes
+            federation = {
+                OR = {
+                    has_federation_law = imperial_ministry_of_defence_strategy_institute
+                    has_federation_law = imperial_ministry_of_defence_joint_headquarter
+                }
+            }
+        }
+    }
+}

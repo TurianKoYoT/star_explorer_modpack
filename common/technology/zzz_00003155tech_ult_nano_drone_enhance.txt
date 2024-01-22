@@ -1,0 +1,26 @@
+tech_ult_nano_drone_enhance = {
+    area = society
+    cost = 30000
+    tier = 4
+    category = {
+        biology
+    }
+    is_rare = yes
+    potential = {
+        NOT = {
+            has_authority = auth_machine_intelligence
+        }
+    }
+    prerequisites = {
+        "tech_ult_nano_drone_colony"
+    }
+    weight = 20
+    modifier = {
+        BIOLOGICAL_species_trait_points_add = 4
+        pop_growth_speed = 0.1
+        leader_lifespan_add = 50
+    }
+    feature_flags = {
+        modify_traits
+    }
+}

@@ -1,0 +1,46 @@
+AAA_archeological_scavenger_drone_machine = {
+    category = simple_drone
+    condition_string = DRONE_JOB_TRIGGER
+    building_icon = mt_building_scavenger_site
+    possible_pre_triggers = {
+        has_owner = yes
+        is_enslaved = no
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_drone_job
+    possible = {
+        can_think = yes
+    }
+    resources = {
+        category = planet_researchers
+        produces = {
+            engineering_research = 5
+            society_research = 2
+        }
+        produces = {
+            trigger = {
+                has_ancrel = yes
+                planet = {
+                    is_planet_class = pc_relic
+                }
+            }
+            minor_artifacts = 0.05
+        }
+        upkeep = {
+            energy = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        planet_amenities_add = 1
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+    }
+    weight = {
+        weight = @simple_drone_job_weight
+        mult = value:job_weights_research_modifier|JOB|AAA_archeological_scavenger_drone_machine|
+    }
+}

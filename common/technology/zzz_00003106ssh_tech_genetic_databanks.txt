@@ -1,0 +1,25 @@
+ssh_tech_genetic_databanks = {
+    cost = 16000
+    area = society
+    tier = 4
+    category = {
+        biology
+    }
+    weight = 0
+    is_rare = yes
+    modifier = {
+        empire_size_pops_mult = -0.25
+        BIOLOGICAL_species_trait_picks_add = 1
+        LITHOID_species_trait_picks_add = 1
+    }
+    weight_modifier = {
+        factor = 0
+    }
+    ai_weight = {
+        factor = 10
+        modifier = {
+            factor = 0
+            has_utopia = no
+        }
+    }
+}

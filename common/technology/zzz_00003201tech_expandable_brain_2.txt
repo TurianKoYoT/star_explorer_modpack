@@ -1,0 +1,23 @@
+tech_expandable_brain_2 = {
+    cost = @tier4cost2
+    area = society
+    tier = 4
+    category = {
+        statecraft
+    }
+    weight = @tier5weight2
+    is_rare = yes
+    prerequisites = {
+        "tech_expandable_brain_1"
+    }
+    potential = {
+        has_modifier = expandable_brain_2
+    }
+    modifier = {
+        species_leader_exp_gain = 1
+        leader_skill_levels = 2
+    }
+    ai_weight = {
+        factor = 20
+    }
+}

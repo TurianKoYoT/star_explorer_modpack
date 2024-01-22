@@ -1,0 +1,24 @@
+trait_v_ecomorph = {
+    cost = 3
+    inline_script = "traits/no_randomized"
+    allowed_archetypes = {
+        ROBOT
+        MACHINE
+    }
+    custom_tooltip = TRAIT_ECOMORPH_EFFECT
+    species_potential_add = {
+        exists = from
+        from = {
+            any_owned_species = {
+                OR = {
+                    has_trait = trait_v_predator
+                    has_trait = trait_v_prey
+                    has_trait = trait_v_brood_parasite
+                }
+            }
+        }
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

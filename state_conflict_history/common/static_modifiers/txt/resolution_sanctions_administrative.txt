@@ -1,0 +1,5 @@
+resolution_sanctions_administrative = {
+    country_unity_produces_mult = -0.1
+    diplomacy_upkeep_mult = 0.25
+    diplo_weight_pops_mult = -0.2
+}

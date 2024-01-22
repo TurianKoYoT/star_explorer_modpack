@@ -1,0 +1,86 @@
+building_avb_energy_3 = {
+    base_buildtime = @b3_time
+    can_build = no
+    category = resource
+    allow = {
+        has_major_upgraded_capital = yes
+    }
+    potential = {
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = crucible_colony
+        }
+        OR = {
+            NOT = {
+                is_planet_class = pc_habitat
+            }
+            AND = {
+                is_planet_class = pc_habitat
+                check_modifier_value = {
+                    modifier = district_hab_energy_max
+                    value > 0
+                }
+            }
+        }
+        OR = {
+            owner = {
+                is_ai = no
+            }
+            AND = {
+                owner = {
+                    is_ai = yes
+                    has_monthly_income = {
+                        resource = energy
+                        value < 60
+                    }
+                }
+                free_district_slots = 0
+            }
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            planet = {
+                OR = {
+                    has_modifier = resort_colony
+                    has_modifier = crucible_colony
+                }
+            }
+            planet = {
+                free_building_slots = 0
+                owner = {
+                    is_ai = yes
+                    has_monthly_income = {
+                        resource = energy
+                        value > 60
+                    }
+                }
+            }
+        }
+    }
+    inline_script = {
+        script = jobs/technicians_add
+        AMOUNT = 4
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            exotic_gases = @b3_rare_cost
+        }
+        upkeep = {
+            energy = @b3_upkeep
+            exotic_gases = @b3_rare_upkeep
+        }
+    }
+    prerequisites = {
+        tech_avb_power_plant_6
+    }
+    ai_resource_production = {
+        energy = 25
+        trigger = {
+            always = yes
+        }
+    }
+}

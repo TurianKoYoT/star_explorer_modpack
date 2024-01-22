@@ -1,0 +1,21 @@
+trait_v_stealth_bots = {
+    cost = 2
+    icon = "gfx/interface/icons/traits/trait_v_cyborg_stealth.dds"
+    inline_script = "traits/no_randomized"
+    allowed_archetypes = {
+        ROBOT
+        MACHINE
+    }
+    opposites = {
+        "trait_v_solar_panels"
+        "trait_v_automated_chemistry"
+    }
+    custom_tooltip_with_modifiers = TRAIT_ACTIVE_CAMOUFLAGE_EFFECT
+    modifier = {
+        army_damage_mult = 0.5
+        army_disengage_chance_mult = 0.5
+    }
+    slave_cost = {
+        energy = 750
+    }
+}

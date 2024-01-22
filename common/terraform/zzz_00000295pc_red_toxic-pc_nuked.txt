@@ -1,0 +1,31 @@
+terraform_link = {
+    from = pc_red_toxic
+    to = pc_nuked
+    resources = {
+        category = terraforming
+        cost = {
+            energy = 2500
+        }
+    }
+    duration = 900
+    potential = {
+        has_policy_flag = relentless_industrialists_study
+        has_country_flag = relentless_industrialists_study_completed
+        from = {
+            NOT = {
+                has_modifier = red_toxic
+            }
+        }
+    }
+    condition = {
+        has_technology = tech_climate_restoration
+    }
+    effect = {
+        from = {
+            remove_modifier = ehof_red_toxic_world
+        }
+    }
+    ai_weight = {
+        weight = 10
+    }
+}

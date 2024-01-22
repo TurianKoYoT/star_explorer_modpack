@@ -1,0 +1,37 @@
+@insula_worker_weight = 0.5
+giga_birch_orykta_worker_drone = {
+    category = simple_drone
+    condition_string = DRONE_JOB_TRIGGER
+    building_icon = building_bio_reactor
+    icon = giga_birch_orykta_worker
+    possible_pre_triggers = {
+        has_owner = yes
+        is_enslaved = no
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_drone_job
+    resources = {
+        category = planet_giga_birch_insula_workers
+        produces = {
+            energy = 2
+            minerals = 2
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+        produces = {
+            trigger = {
+                exists = owner
+                owner = {
+                    is_machine_empire = yes
+                }
+            }
+            energy = 1
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+    }
+    weight = {
+        weight = value:giga_menial_drone_weight|JOB|giga_birch_orykta_worker_drone|RESOURCE|energy|WEIGHT|0.5|RESOURCE2|minerals|WEIGHT2|0.5|
+        mult = @insula_worker_weight
+    }
+}

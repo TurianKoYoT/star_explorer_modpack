@@ -1,0 +1,2 @@
+l_english:
+ acot_dark_matter_obelisk_core_pe_MEGASTRUCTURE_DETAILS:1000 "The Conduit provides enigmatic and stellar resources. Output is increased with advancements in precursor technologies."

@@ -1,0 +1,15 @@
+tech_ult_ascending_way = {
+    area = society
+    cost = 30000
+    tier = 3
+    category = {
+        statecraft
+    }
+    is_rare = yes
+    weight = 20
+    modifier = {
+        country_unity_produces_mult = 0.2
+        country_edict_fund_add = 50
+        empire_size_pops_mult = -0.25
+    }
+}

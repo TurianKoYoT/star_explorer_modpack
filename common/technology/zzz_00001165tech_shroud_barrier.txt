@@ -1,0 +1,33 @@
+tech_shroud_barrier = {
+    area = society
+    cost = @acot_tier8cost2
+    tier = 6
+    category = {
+        psionics
+    }
+    ai_update_type = all
+    is_rare = yes
+    is_dangerous = yes
+    prerequisites = {
+        "tech_psionic_shield"
+        tech_dark_matter_power_core_dm
+    }
+    weight = 15
+    is_reverse_engineerable = no
+    modifier = {
+    }
+    potential = {
+        has_tradition = tr_psionics_finish
+        any_country = {
+            is_country_type = shroud
+            has_established_contact = root
+        }
+        is_fallen_empire = no
+        NOT = {
+            has_global_flag = acot_shipcom_forbidden
+        }
+    }
+    weight_modifier = {
+        factor = 1
+    }
+}

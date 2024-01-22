@@ -1,0 +1,42 @@
+tech_point_defense_re = {
+    area = physics
+    category = {
+        computing
+    }
+    cost = @acot_tier9cost1
+    tier = 9
+    weight = @tier5weight1
+    ai_update_type = military
+    is_reverse_engineerable = no
+    potential = {
+        is_fallen_empire = no
+        NOT = {
+            has_global_flag = acot_weapons_forbidden
+        }
+        has_technology = tech_dark_matter_power_core_re
+        NOT = {
+            has_global_flag = acot_phanon_forbidden
+        }
+    }
+    prerequisites = {
+        tech_dark_matter_power_core_re
+        tech_point_defense_pe
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            NOT = {
+                has_technology = tech_dark_matter_power_core_re
+            }
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                has_country_flag = acot_phanon_tech_stage_one_enabled
+            }
+        }
+    }
+    ai_weight = {
+        factor = 20
+    }
+}

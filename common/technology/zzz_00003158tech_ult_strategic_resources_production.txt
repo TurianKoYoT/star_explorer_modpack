@@ -1,0 +1,20 @@
+tech_ult_strategic_resources_production = {
+    area = engineering
+    cost = 20000
+    tier = 4
+    category = {
+        materials
+    }
+    is_rare = yes
+    prerequisites = {
+        "tech_ult_molecular_manipulation"
+    }
+    weight = 20
+    prereqfor_desc = {
+        hide_prereq_for_desc = building
+        custom = {
+            title = "TECH_UNLOCK_ULT_SR_SYNTHESIZER_TITLE"
+            desc = "TECH_UNLOCK_ULT_SR_SYNTHESIZER_DESC"
+        }
+    }
+}

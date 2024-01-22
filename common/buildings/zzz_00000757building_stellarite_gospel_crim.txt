@@ -1,0 +1,42 @@
+building_stellarite_gospel_crim = {
+    icon = building_stellarite_empyrean_shrine
+    base_buildtime = 360
+    owner_type = corporate
+    category = unity
+    can_build = no
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            has_valid_civic = civic_gospel_of_the_masses
+            is_criminal_syndicate = yes
+        }
+        has_global_flag = has_aot_mod
+    }
+    planet_modifier = {
+        job_preacher_add = 8
+        pop_ethic_spiritualist_attraction_mult = 1.2
+        planet_crime_add = 250
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            energy = 5000
+            minerals = 5000
+            acot_sr_stellarite = 600
+        }
+        upkeep = {
+            energy = 40
+            acot_sr_stellarite = 16
+        }
+    }
+    prerequisites = {
+        tech_stellarite_empyrean_shrine
+    }
+    show_tech_unlock_if = {
+        is_megacorp = yes
+        is_criminal_syndicate = yes
+    }
+    ai_weight = {
+        weight = 250
+    }
+}

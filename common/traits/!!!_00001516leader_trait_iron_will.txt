@@ -1,0 +1,27 @@
+leader_trait_iron_will = {
+    cost = 1
+    icon = "gfx/interface/icons/traits/leader_traits/leader_trait_iron_will.dds"
+    army_modifier = {
+        army_morale = 2
+        army_health = 0.2
+        army_disengage_chance_mult = -0.66
+    }
+    initial = no
+    randomized = no
+    leader_class = {
+        commander
+    }
+    leader_potential_add = {
+        from = {
+            has_technology = tech_combat_training
+            is_galactic_community_member = yes
+            has_federation = yes
+            federation = {
+                OR = {
+                    has_federation_law = imperial_ministry_of_defence_strategy_institute
+                    has_federation_law = imperial_ministry_of_defence_joint_headquarter
+                }
+            }
+        }
+    }
+}

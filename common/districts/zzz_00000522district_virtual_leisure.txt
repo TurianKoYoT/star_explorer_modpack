@@ -1,0 +1,174 @@
+district_virtual_leisure = {
+    base_buildtime = @giga_rw_district_buildtime
+    is_capped_by_modifier = no
+    icon = district_arcology_leisure
+    show_on_uncolonized = {
+        uses_district_set = virtual_ring
+        exists = from
+        from = {
+            or = {
+                is_gestalt = no
+                and = {
+                    is_machine_empire = yes
+                    has_valid_civic = civic_machine_servitor
+                }
+            }
+            NOT = {
+                has_valid_civic = civic_dystopian_society
+            }
+        }
+    }
+    potential = {
+        uses_district_set = virtual_ring
+        exists = owner
+        owner = {
+            or = {
+                is_gestalt = no
+                and = {
+                    is_machine_empire = yes
+                    has_valid_civic = civic_machine_servitor
+                }
+            }
+            NOT = {
+                has_valid_civic = civic_dystopian_society
+            }
+        }
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_virtual_maintenance
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = @giga_rw_cost
+            rare_crystals = @giga_rw_cost_sr
+        }
+        upkeep = {
+            energy = @giga_rw_maintenance
+        }
+        upkeep = {
+            trigger = {
+                exists = owner
+                owner = {
+                    nand = {
+                        is_fallen_empire_materialist = yes
+                        has_civic = civic_disinterested_gamers
+                    }
+                }
+            }
+            rare_crystals = @giga_rw_maintenance_sr
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 10
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_fallen_empire = yes
+            }
+        }
+        planet_housing_add = 5
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                nand = {
+                    is_fallen_empire_materialist = yes
+                    has_civic = civic_disinterested_gamers
+                }
+            }
+        }
+        job_entertainer_add = 5
+        job_giga_media_coordinator_add = 5
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                nand = {
+                    is_fallen_empire_materialist = yes
+                    has_civic = civic_disinterested_gamers
+                }
+            }
+        }
+        text = job_entertainer_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                nand = {
+                    is_fallen_empire_materialist = yes
+                    has_civic = civic_disinterested_gamers
+                }
+            }
+        }
+        text = job_giga_media_coordinator_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        job_maintenance_drone_add = 5
+        job_giga_media_coordination_drone_add = 5
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        text = job_maintenance_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        text = job_giga_media_coordination_drone_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_fallen_empire_materialist = yes
+                has_civic = civic_disinterested_gamers
+            }
+        }
+        job_giga_gamer_fe_game_master_add = 1
+        job_giga_gamer_fe_npc_add = 5
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_fallen_empire_materialist = yes
+                has_civic = civic_disinterested_gamers
+            }
+        }
+        text = job_giga_gamer_fe_game_master_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_fallen_empire_materialist = yes
+                has_civic = civic_disinterested_gamers
+            }
+        }
+        text = job_giga_gamer_fe_npc_effect_desc
+    }
+}

@@ -1,0 +1,30 @@
+building_auto_engineering_campus_1 = {
+    base_buildtime = 180
+    can_build = no
+    resources = {
+        category = planet_researchers
+        cost = {
+            automatic_drone = 200
+        }
+        produces = {
+            engineering_research = 4
+        }
+        upkeep = {
+            automatic_drone = 1
+        }
+    }
+    upgrades = {
+        building_auto_engineering_campus_2
+    }
+    prerequisites = {
+        tech_engineering_1
+    }
+    potential = {
+        owner = {
+            has_ascension_perk = ap_nano_drones
+        }
+    }
+    show_tech_unlock_if = {
+        has_ascension_perk = ap_nano_drones
+    }
+}

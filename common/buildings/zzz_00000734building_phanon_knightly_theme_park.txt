@@ -1,0 +1,56 @@
+building_phanon_knightly_theme_park = {
+    icon = building_phanon_giga_fortress_array
+    base_buildtime = 480
+    owner_type = corporate
+    category = amenity
+    can_build = no
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            has_origin = origin_toxic_knights
+            NOT = {
+                has_country_flag = quest_abandoned
+            }
+        }
+        has_global_flag = has_aot_mod
+        NOT = {
+            has_global_flag = aot_phanon_content_OFF
+        }
+    }
+    allow = {
+        num_pops >= 50
+    }
+    planet_modifier = {
+        planet_amenities_add = 100
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            energy = 2000
+            minerals = 2000
+            aot_sr_runic_power = 800
+        }
+        produces = {
+            energy = 200
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = planet.owner
+        }
+        text = knightly_theme_park_quest_effect_desc
+    }
+    prerequisites = {
+        tech_phanon_stronghold
+    }
+    show_tech_unlock_if = {
+        is_megacorp = yes
+        has_origin = origin_toxic_knights
+    }
+    upgrades = {
+        building_sigma_knightly_theme_park
+    }
+    ai_weight = {
+        weight = 5
+    }
+}

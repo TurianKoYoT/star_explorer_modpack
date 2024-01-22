@@ -1,0 +1,23 @@
+pw_leader_trait_scientist_codex_of_past_ages = {
+    cost = 1
+    initial = no
+    randomized = no
+    inline_script = {
+        script = trait/icon
+        CLASS = scientist
+        ICON = "GFX_leader_trait_intellectual"
+        RARITY = common
+        COUNCIL = no
+        TIER = none
+    }
+    modifier = {
+        ship_anomaly_generation_chance_mult = 0.25
+        ship_anomaly_research_speed_mult = 0.25
+    }
+    self_modifier = {
+        species_leader_exp_gain = 0.25
+    }
+    leader_class = {
+        scientist
+    }
+}

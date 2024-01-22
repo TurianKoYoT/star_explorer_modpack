@@ -1,0 +1,16 @@
+trait_v_fabricators = {
+    cost = 3
+    opposites = {
+        "trait_v_automated_chemistry"
+    }
+    allowed_archetypes = {
+        ROBOT
+        MACHINE
+    }
+    modifier = {
+        planet_jobs_alloys_produces_mult = 0.1
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

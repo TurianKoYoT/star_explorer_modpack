@@ -1,0 +1,20 @@
+tech_eutab_maint_t4 = {
+    cost = @tier4cost1
+    area = engineering
+    tier = 4
+    is_custom_tech_1 = yes
+    category = {
+        industry
+    }
+    prerequisites = {
+        "tech_eutab_maint_t3"
+    }
+    weight = @tier4weight1
+    potential = {
+        is_machine_empire = yes
+    }
+    modifier = {
+        planet_districts_energy_produces_add = 0.5
+        planet_amenities_no_happiness_mult = 0.05
+    }
+}

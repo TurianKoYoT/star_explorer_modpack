@@ -1,0 +1,41 @@
+planet_researchers = {
+    icon = "job_researcher"
+    parent = planet_jobs_productive
+    generate_mult_modifiers = {
+        produces
+        upkeep
+    }
+    generate_add_modifiers = {
+        produces
+        upkeep
+    }
+    modifier_category = pop
+    triggered_produces_modifier = {
+        key = planet_technician
+        modifier_types = {
+            mult
+            add
+        }
+        trigger = {
+            OR = {
+                has_trait = trait_v_algorithmic_mind
+                has_trait = trait_v_robot_algorithmic_mind
+            }
+        }
+        use_parent_icon = yes
+    }
+    triggered_upkeep_modifier = {
+        key = planet_technician
+        modifier_types = {
+            mult
+            add
+        }
+        trigger = {
+            OR = {
+                has_trait = trait_v_algorithmic_mind
+                has_trait = trait_v_robot_algorithmic_mind
+            }
+        }
+        use_parent_icon = yes
+    }
+}

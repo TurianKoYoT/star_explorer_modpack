@@ -1,0 +1,89 @@
+building_avb_slave_processing_2 = {
+    base_buildtime = @avb_g4_time
+    can_build = no
+    category = government
+    potential = {
+        owner = {
+            is_gestalt = no
+        }
+        owner = {
+            has_policy_flag = slavery_allowed
+        }
+        NOT = {
+            has_modifier = resort_colony
+        }
+    }
+    allow = {
+        has_upgraded_capital_4 = yes
+        if = {
+            limit = {
+                exists = orbital_defence
+            }
+            orbital_defence = {
+                exists = starbase
+                starbase = {
+                    NOR = {
+                        has_starbase_building = ring_slave_processing_facility
+                        is_starbase_building_building = ring_slave_processing_facility
+                    }
+                }
+            }
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            owner = {
+                is_regular_empire = no
+            }
+            NOT = {
+                owner = {
+                    has_policy_flag = slavery_allowed
+                }
+            }
+            has_modifier = resort_colony
+        }
+    }
+    planet_modifier = {
+        planet_jobs_slave_produces_mult = 0.1
+        pop_cat_slave_political_power = -0.5
+        planet_resettlement_unemployed_mult = -0.5
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_g4_minerals
+        }
+        upkeep = {
+            energy = @avb_g4_upkeep
+        }
+    }
+    prerequisites = {
+        "tech_avb_slave_processing_2"
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_plentiful_tradition_mod = yes
+            exists = owner
+            owner = {
+                has_ascension_perk = ap_plentiful_traditions_vast_slave_procreation
+            }
+            OR = {
+                has_building = building_clone_vats
+                has_building = building_avb_clone_vats_2
+            }
+        }
+        modifier = {
+            planet_pop_assembly_organic_add = 1.5
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_plentiful_tradition_mod = yes
+            exists = owner
+        }
+        modifier = {
+            job_slave_enforcer_add = 5
+        }
+    }
+}

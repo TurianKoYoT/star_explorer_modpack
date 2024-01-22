@@ -1,0 +1,77 @@
+@insula_manager_weight = 2
+giga_birch_ktisma_manager_drone = {
+    category = complex_drone
+    condition_string = DRONE_JOB_TRIGGER
+    building_icon = building_nano_forge
+    icon = giga_birch_ktisma_manager
+    possible_pre_triggers = {
+        has_owner = yes
+        is_enslaved = no
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible = {
+        can_think = yes
+        owner = {
+            is_fallen_empire = no
+        }
+    }
+    possible_precalc = can_fill_drone_job
+    planet_modifier = {
+        planet_building_build_speed_mult = 0.2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                country_uses_consumer_goods = yes
+            }
+        }
+        planet_artisans_consumer_goods_produces_add = 1
+        planet_artisans_minerals_upkeep_add = 1
+        multiplier = planet.value:giga_job_scaling_plus_base
+    }
+    triggered_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        planet_metallurgists_alloys_produces_add = 1
+        multiplier = planet.value:giga_job_scaling_plus_base
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_catalytic_empire = no
+            }
+        }
+        planet_metallurgists_minerals_upkeep_add = 2
+        multiplier = planet.value:giga_job_scaling_plus_base
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_catalytic_empire = yes
+            }
+        }
+        planet_metallurgists_food_upkeep_add = 3
+        multiplier = planet.value:giga_job_scaling_plus_base
+    }
+    resources = {
+        category = planet_giga_birch_insula_managers
+        produces = {
+            engineering_research = 5
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+        upkeep = {
+            minerals = 6
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+    }
+    weight = {
+        weight = value:giga_complex_drone_weight|JOB|giga_birch_ktisma_manager_drone|RESOURCE|physics_research|WEIGHT|0.5|RESOURCE2|engineering_research|WEIGHT2|0.5|
+        mult = @insula_manager_weight
+    }
+}

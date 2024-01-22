@@ -1,0 +1,22 @@
+xte_commander_trait_computing_expert = {
+    inline_script = {
+        script = trait/xte_icon
+        CLASS = commander
+        ICON = GFX_xte_leader_trait_computing_expert
+        RARITY = xte_positive
+        COUNCIL = no
+        TIER = none
+    }
+    cost = 0
+    randomized = no
+    fleet_modifier = {
+        ship_weapon_range_mult = 0.1
+        ship_accuracy_mult = 0.025
+    }
+    leader_potential_add = {
+        always = no
+    }
+    leader_class = {
+        commander
+    }
+}

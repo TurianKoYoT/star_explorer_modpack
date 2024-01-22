@@ -1,0 +1,39 @@
+building_super_shelter = {
+    base_buildtime = 5
+    can_be_ruined = no
+    can_be_disabled = no
+    category = research
+    resources = {
+        category = planet_buildings
+        cost = {
+            trigger = {
+                exists = owner
+                owner = {
+                    is_progenitor_empires = no
+                }
+            }
+            acot_sr_light_matter = 500
+        }
+        produces = {
+            physics_research = 100
+            engineering_research = 100
+            society_research = 100
+        }
+    }
+    planet_modifier = {
+    }
+    show_tech_unlock_if = {
+        is_progenitor_empires = yes
+    }
+    potential = {
+        owner = {
+            is_progenitor_empires = yes
+        }
+    }
+    allow = {
+        is_progenitor_worlds = yes
+    }
+    ai_weight = {
+        weight = 15000
+    }
+}

@@ -1,0 +1,26 @@
+tech_darkmatter_armor_supercharger_ae = {
+    area = engineering
+    category = {
+        materials
+    }
+    cost = @acot_tier7cost1
+    tier = 7
+    weight = @tier5weight2
+    ai_update_type = all
+    is_reverse_engineerable = no
+    potential = {
+        NOT = {
+            has_global_flag = acot_utilitys_forbidden
+        }
+        NOT = {
+            is_country_type = fallen_empire
+        }
+        has_technology = tech_dark_matter_power_core_ae
+    }
+    prerequisites = {
+        "tech_armor_dm"
+        tech_darkmatter_armor_supercharger_dm
+    }
+    weight_modifier = {
+    }
+}

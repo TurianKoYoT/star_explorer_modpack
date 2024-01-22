@@ -1,0 +1,45 @@
+trait_v_adv_flying = {
+    cost = 2
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    potential_crossbreeding_chance = 1
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_v_zoological_transgenesis
+        }
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_sedentary"
+        "trait_nomadic"
+        "trait_v_flying"
+        "trait_v_aeroplankton"
+        "trait_v_adv_aeroplankton"
+    }
+    inline_script = "allowed_archetypes/adv_biological_traits/BIOLOGICAL"
+    inline_script = "allowed_archetypes/adv_biological_traits/LITHOID"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/FUN"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/LITHOID"
+    inline_script = "species_class/AQUATIC"
+    inline_script = "species_class/TOX"
+    modifier = {
+        pop_growth_from_immigration = 0.3
+        pop_resettlement_cost_mult = -0.5
+        army_disengage_chance_mult = 0.5
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

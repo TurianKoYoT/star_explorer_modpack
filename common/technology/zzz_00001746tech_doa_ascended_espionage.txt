@@ -1,0 +1,20 @@
+tech_doa_ascended_espionage = {
+    area = physics
+    cost = 0
+    tier = 0
+    category = {
+        computing
+    }
+    weight = 0
+    potential = {
+        has_country_flag = doa_tech_2
+    }
+    modifier = {
+        intel_decryption_add = 3
+        intel_encryption_add = 3
+        ship_cloaking_strength_add = 1
+    }
+    ai_weight = {
+        factor = 0
+    }
+}

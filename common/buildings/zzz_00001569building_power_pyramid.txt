@@ -1,0 +1,38 @@
+building_power_pyramid = {
+    base_buildtime = 5
+    can_be_ruined = no
+    can_be_disabled = no
+    category = manufacturing
+    resources = {
+        category = planet_buildings
+        cost = {
+            trigger = {
+                exists = owner
+                owner = {
+                    is_progenitor_empires = no
+                }
+            }
+            acot_sr_light_matter = 3500
+        }
+        produces = {
+            acot_sr_light_matter = 100
+            acot_sr_stellarite = 250
+        }
+        upkeep = {
+        }
+    }
+    show_tech_unlock_if = {
+        is_progenitor_empires = yes
+    }
+    potential = {
+        owner = {
+            is_progenitor_empires = yes
+        }
+    }
+    allow = {
+        is_progenitor_worlds = yes
+    }
+    ai_weight = {
+        weight = 15000
+    }
+}

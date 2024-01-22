@@ -1,0 +1,60 @@
+@resolution_weight_disliked = 4
+@resolution_cost_t3 = 200
+resolution_custodian_anti_piracy = {
+    icon = "GFX_resolution_anti_piracy_initiative"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t3
+        }
+    }
+    target = no
+    modifier = {
+        description = resolution_custodian_anti_piracy_modifier_desc
+        local_trade_protection_add = 5
+        ship_piracy_suppression_mult = 0.25
+        damage_vs_country_type_pirate_mult = 0.2
+        damage_vs_country_type_dormant_marauders_mult = 0.2
+        damage_vs_country_type_awakened_marauders_mult = 0.2
+        country_energy_produces_mult = -0.03
+    }
+    effect = {
+    }
+    fail_effects = {
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = "resolution_already_active"
+            NOT = {
+                is_active_resolution = resolution_custodian_anti_piracy
+            }
+        }
+    }
+    potential = {
+        has_nemesis = yes
+        is_galactic_custodian = yes
+    }
+    ai_weight = {
+        base = @resolution_weight_disliked
+        modifier = {
+            factor = 0.5
+            is_gestalt = yes
+            NOT = {
+                any_neighbor_country = {
+                    is_country_type = dormant_marauders
+                }
+            }
+            desc = ethic_gestalt_consciousness
+        }
+        modifier = {
+            factor = 0.5
+            has_ai_personality = xenophobic_isolationists
+            desc = personality_xenophobic_isolationists
+        }
+        modifier = {
+            factor = 4
+            is_galactic_custodian = yes
+            desc = gal_com_is_the_custodian
+        }
+    }
+}

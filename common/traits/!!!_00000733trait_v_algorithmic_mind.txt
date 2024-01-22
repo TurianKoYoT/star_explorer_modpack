@@ -1,0 +1,55 @@
+trait_v_algorithmic_mind = {
+    cost = 3
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    species_possible_merge_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    species_possible_remove = {
+        OR = {
+            can_remove_beneficial_genetic_traits = yes
+            AND = {
+                exists = from
+                from = {
+                    is_gestalt = yes
+                }
+            }
+        }
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    allowed_ethics = {
+        ethic_materialist
+        ethic_fanatic_materialist
+    }
+    valid_for_all_ethics = no
+    custom_tooltip_with_modifiers = TRAIT_ALGORITHMIC_MIND_EFFECT
+    opposites = {
+        "trait_hive_mind"
+        "trait_invasive"
+        "trait_v_ascetic"
+        "trait_v_scholastic"
+        "trait_v_proselytizing"
+        "trait_v_astrology"
+        "trait_v_druidic"
+        "trait_v_machine_priests"
+        "trait_v_fleshcrafter"
+        "trait_v_tinkerer"
+    }
+    modifier = {
+        pop_ethic_materialist_attraction_mult = 0.05
+        planet_researchers_energy_produces_add = 1
+    }
+    slave_cost = {
+        energy = 5000
+    }
+}

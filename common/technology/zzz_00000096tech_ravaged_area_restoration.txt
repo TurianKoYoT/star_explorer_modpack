@@ -1,0 +1,26 @@
+tech_ravaged_area_restoration = {
+    cost = @tier2cost1
+    area = society
+    tier = 2
+    category = {
+        new_worlds
+    }
+    prerequisites = {
+        "tech_colonization_2"
+        "tech_terrestrial_sculpting"
+    }
+    weight = @tier2weight3
+    gateway = plague2
+    potential = {
+        has_origin = origin_pandemic
+    }
+    modifier = {
+        description = ps_tech_2
+    }
+    weight_modifier = {
+        factor = 2.5
+    }
+    ai_weight = {
+        factor = 5
+    }
+}

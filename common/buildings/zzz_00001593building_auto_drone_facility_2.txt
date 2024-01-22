@@ -1,0 +1,30 @@
+building_auto_drone_facility_2 = {
+    base_buildtime = 180
+    can_build = no
+    allow = {
+        has_upgraded_capital = yes
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            automatic_drone = 400
+        }
+        produces = {
+            automatic_drone = 20
+        }
+        upkeep = {
+            energy = 3
+        }
+    }
+    upgrades = {
+        building_auto_drone_facility_3
+    }
+    potential = {
+        owner = {
+            has_ascension_perk = ap_nano_drones
+        }
+    }
+    show_tech_unlock_if = {
+        has_ascension_perk = ap_nano_drones
+    }
+}

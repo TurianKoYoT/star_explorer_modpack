@@ -1,0 +1,42 @@
+trait_v_ectotherm = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 0
+    opposites = {
+        "trait_invasive"
+        "trait_lithoid"
+        "trait_v_fac_endotherm"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/REP"
+    inline_script = "species_class/ART"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/AQUATIC"
+    inline_script = "species_class/NECROID"
+    custom_tooltip_with_modifiers = TRAIT_COLD_ECTOTHERM_EFFECT
+    modifier = {
+        leader_lifespan_add = 40
+        planet_pops_organics_food_upkeep_mult = -0.25
+    }
+    triggered_planet_growth_habitability_modifier = {
+        potential = {
+            exists = planet
+            OR = {
+                planet = {
+                    is_cold = yes
+                }
+                is_v_pc_radioactive = yes
+            }
+        }
+        pop_environment_tolerance = -0.2
+    }
+    slave_cost = {
+        energy = 3000
+    }
+}

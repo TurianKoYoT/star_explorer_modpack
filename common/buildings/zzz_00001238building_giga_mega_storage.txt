@@ -1,0 +1,45 @@
+@ring_building_time = 1000
+building_giga_mega_storage = {
+    category = resource
+    base_buildtime = @ring_building_time
+    prerequisites = {
+        giga_tech_ringworld_buildings
+    }
+    potential = {
+        giga_has_ringworld_buildings = yes
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            trigger = {
+                giga_is_birch_world = no
+            }
+            minerals = 200
+            multiplier = value:giga_ring_world_building_size
+        }
+        cost = {
+            trigger = {
+                giga_is_birch_world = yes
+            }
+            minerals = 10000
+        }
+        upkeep = {
+            energy = 0.4
+            alloys = 0.4
+            multiplier = value:giga_ring_world_building_size
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            giga_is_birch_world = yes
+        }
+        text = giga_ring_world_building_scaling
+    }
+    triggered_country_modifier = {
+        potential = {
+            always = yes
+        }
+        country_resource_max_add = 1500
+        multiplier = value:giga_ring_world_building_size
+    }
+}

@@ -1,0 +1,34 @@
+ssh_tech_reality_shaping = {
+    cost = 52000
+    area = physics
+    tier = 5
+    category = {
+        particles
+    }
+    prerequisites = {
+        "ssh_tech_elementary_tampering"
+    }
+    potential = {
+        has_ascension_perk = ap_hyperdimensional_ascension
+    }
+    weight = @tier5weight3
+    is_dangerous = yes
+    prereqfor_desc = {
+        ship = {
+            title = "ssh_certain_worth_it"
+        }
+    }
+    modifier = {
+        planet_jobs_produces_mult = 0.15
+    }
+    weight_modifier = {
+        factor = 0
+    }
+    ai_weight = {
+        factor = 10
+        modifier = {
+            factor = 0
+            has_utopia = no
+        }
+    }
+}

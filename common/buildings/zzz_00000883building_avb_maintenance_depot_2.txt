@@ -1,0 +1,49 @@
+building_avb_maintenance_depot_2 = {
+    base_buildtime = @avb_b2_time
+    can_build = no
+    category = amenity
+    potential = {
+        owner = {
+            is_gestalt = yes
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            owner = {
+                is_gestalt = no
+            }
+            AND = {
+                owner = {
+                    is_ai = yes
+                }
+                free_amenities > 30
+                free_building_slots = 0
+            }
+        }
+    }
+    allow = {
+        has_fully_upgraded_capital = yes
+    }
+    planet_modifier = {
+        job_maintenance_drone_add = 10
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_b2_minerals
+        }
+        upkeep = {
+            energy = @avb_b2_upkeep
+        }
+    }
+    prerequisites = {
+        "tech_galactic_administration"
+    }
+    triggered_desc = {
+        text = job_maintenance_drone_effect_desc
+    }
+    show_tech_unlock_if = {
+        is_machine_empire = yes
+    }
+}

@@ -1,0 +1,11 @@
+commercial_pacts = {
+    parent = diplomacy
+    modifier_category = country
+    generate_mult_modifiers = {
+        upkeep
+    }
+    generate_add_modifiers = {
+        produces
+        upkeep
+    }
+}

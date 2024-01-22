@@ -1,0 +1,24 @@
+tech_private_ships = {
+    cost = @tier2cost3
+    area = engineering
+    tier = 3
+    category = {
+        propulsion
+    }
+    weight = @tier2weight3
+    is_rare = yes
+    prerequisites = {
+    }
+    potential = {
+        has_ascension_perk = ap_space_merchant
+    }
+    prereqfor_desc = {
+        feature = {
+            title = "tech_private_ships_desc"
+            desc = ""
+        }
+    }
+    ai_weight = {
+        factor = 0
+    }
+}

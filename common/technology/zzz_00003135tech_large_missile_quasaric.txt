@@ -1,0 +1,13 @@
+tech_large_missile_quasaric = {
+    area = physics
+    cost = 400000
+    tier = 5
+    category = {
+        particles
+    }
+    is_rare = yes
+    weight = 10000
+    potential = {
+        has_country_flag = quasar_weapons_complex_3
+    }
+}

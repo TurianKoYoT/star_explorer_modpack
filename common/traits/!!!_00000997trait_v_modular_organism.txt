@@ -1,0 +1,35 @@
+trait_v_modular_organism = {
+    cost = 4
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    inline_script = "species_class/AQUATIC"
+    inline_script = "species_class/LITHOID"
+    custom_tooltip = TRAIT_MODULAR_ORGANISM_EFFECT
+    opposites = {
+        "trait_invasive"
+        "trait_v_adv_modular_organism"
+    }
+    triggered_pop_modifier = {
+        planet_jobs_minerals_produces_mult = 0.01
+        mult = planet.value:count_v_modular_organism_minerals
+    }
+    triggered_pop_modifier = {
+        planet_jobs_food_produces_mult = 0.01
+        mult = planet.value:count_v_modular_organism_food
+    }
+    triggered_pop_modifier = {
+        planet_jobs_energy_produces_mult = 0.01
+        mult = planet.value:count_v_modular_organism_energy
+    }
+    slave_cost = {
+        energy = 5000
+    }
+}

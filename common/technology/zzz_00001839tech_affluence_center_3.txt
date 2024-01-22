@@ -1,0 +1,24 @@
+tech_affluence_center_3 = {
+    area = engineering
+    cost = @fallentechcost
+    tier = @fallentechtier
+    category = {
+        ascended_technologies
+    }
+    weight = @tier5weight3
+    prerequisites = {
+        "tech_affluence_center_2"
+        "tech_automation_uplink_3"
+    }
+    is_rare = yes
+    potential = {
+        has_country_flag = doa_tech_10
+        OR = {
+            is_gestalt = no
+            has_valid_civic = civic_machine_servitor
+        }
+    }
+    ai_weight = {
+        factor = 4
+    }
+}

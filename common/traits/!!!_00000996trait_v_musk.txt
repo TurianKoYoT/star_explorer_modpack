@@ -1,0 +1,38 @@
+trait_v_musk = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/MAM"
+    custom_tooltip = TRAIT_MUSK_EFFECT
+    triggered_pop_modifier = {
+        pop_cat_ruler_happiness = 0.01
+        mult = planet.value:count_v_ruler_musk
+    }
+    triggered_pop_modifier = {
+        pop_cat_specialist_happiness = 0.01
+        mult = planet.value:count_v_specialist_musk
+    }
+    triggered_pop_modifier = {
+        pop_cat_worker_happiness = 0.01
+        mult = planet.value:count_v_worker_musk
+    }
+    modifier = {
+        pop_cat_slave_happiness = -0.1
+    }
+    opposites = {
+        "trait_invasive"
+        "trait_hive_mind"
+        "trait_v_adv_musk"
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

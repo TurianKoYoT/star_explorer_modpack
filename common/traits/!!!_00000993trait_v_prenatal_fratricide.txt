@@ -1,0 +1,23 @@
+trait_v_prenatal_fratricide = {
+    cost = 2
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/AQUATIC"
+    custom_tooltip_with_modifiers = TRAIT_PRENATAL_FRATRICIDE_EFFECT
+    opposites = {
+        "trait_invasive"
+        "trait_v_adv_prenatal_fratricide"
+    }
+    modifier = {
+        army_starting_experience_add = 500
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

@@ -1,0 +1,27 @@
+tech_scourge_deployment = {
+    cost = @tier6cost2
+    area = society
+    tier = 4
+    category = {
+        military_theory
+    }
+    is_reverse_engineerable = no
+    weight = 0
+    is_rare = yes
+    modifier = {
+        terraforming_cost_mult = -0.1
+        terraform_speed_mult = 0.1
+    }
+    potential = {
+        has_country_flag = scourge_deployment_possible
+    }
+    ai_weight = {
+        factor = @ehof_t1_weight
+        modifier = {
+            factor = 1.5
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_military_theory
+            }
+        }
+    }
+}

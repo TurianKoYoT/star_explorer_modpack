@@ -1,0 +1,26 @@
+building_pki_flusion_fusion_power_plant = {
+    base_buildtime = 360
+    icon = building_giga_flusion_fusion_power_plant
+    category = resource
+    potential = {
+        owner = {
+            pki_is_katzenartig_imperium = yes
+        }
+    }
+    prerequisites = {
+        "tech_katzen_reactor"
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+        }
+        produces = {
+            energy = 10
+        }
+    }
+    inline_script = {
+        script = jobs/technicians_add
+        AMOUNT = 6
+    }
+}

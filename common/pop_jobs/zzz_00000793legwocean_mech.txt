@@ -1,0 +1,76 @@
+legwocean_mech = {
+    category = simple_drone
+    condition_string = DRONE_JOB_TRIGGER
+    building_icon = building_mineral_purification_plant
+    clothes_texture_index = 1
+    icon = pearl_diver
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+    }
+    possible_precalc = can_fill_drone_job
+    planet_modifier = {
+        planet_amenities_no_happiness_add = 3
+    }
+    resources = {
+        category = planet_researchers
+        produces = {
+            minerals = 3
+            alloys = 2
+        }
+        upkeep = {
+            trigger = {
+                is_organic_species = yes
+                is_lithoid = no
+            }
+            energy = 3
+        }
+        upkeep = {
+            trigger = {
+                is_lithoid = yes
+            }
+            minerals = 1
+            energy = 2
+        }
+    }
+    weight = {
+        weight = @simple_drone_job_weight
+        modifier = {
+            factor = 2
+            OR = {
+                has_trait = trait_industrious
+                has_trait = trait_robot_power_drills
+            }
+        }
+        modifier = {
+            factor = 1.1
+            exists = owner
+            years_passed < 1
+            owner = {
+                has_valid_civic = civic_machine_assimilator
+            }
+            has_trait = trait_cybernetic
+        }
+        modifier = {
+            factor = 1.2
+            has_job = mining_drone
+        }
+        modifier = {
+            factor = 0.9
+            NOT = {
+                has_job = mining_drone
+            }
+            owner = {
+                has_monthly_income = {
+                    resource = minerals
+                    value > 85
+                }
+            }
+        }
+        modifier = {
+            factor = 0.65
+            has_trait = trait_necrophage
+        }
+    }
+}

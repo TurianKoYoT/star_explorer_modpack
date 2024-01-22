@@ -1,0 +1,44 @@
+tech_pse_power_1 = {
+    cost = @tier2cost3
+    area = society
+    tier = 2
+    category = {
+        psionics
+    }
+    prerequisites = {
+        "tech_psionic_theory"
+    }
+    weight = @tier3weight3
+    is_reverse_engineerable = no
+    gateway = psionics
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            NOT = {
+                has_country_flag = pse_access_power
+            }
+        }
+        modifier = {
+            factor = 2
+            has_ascension_perk = ap_mind_over_matter
+        }
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_psionics
+            }
+        }
+    }
+    modifier = {
+        description = tech_pse_power_1_tooltip
+    }
+    ai_weight = {
+        factor = 5
+        modifier = {
+            factor = 2.5
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_psionics
+            }
+        }
+    }
+}

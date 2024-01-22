@@ -1,0 +1,42 @@
+GT_small_weapon_damage_mult = {
+    cost = @tier1cost2
+    area = physics
+    tier = 1
+    category = {
+        particles
+    }
+    prerequisites = {
+        "tech_fusion_power"
+    }
+    weight = @tier1weight2
+    modifier = {
+        weapon_type_energy_weapon_damage_mult = 0.15
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            num_researched_techs_of_tier = {
+                tier = 1
+                value > 8
+            }
+        }
+        modifier = {
+            factor = 1.25
+            has_ethic = ethic_militarist
+        }
+        modifier = {
+            factor = 1.5
+            has_ethic = ethic_fanatic_militarist
+        }
+    }
+    ai_weight = {
+        modifier = {
+            factor = 1.25
+            has_ethic = ethic_militarist
+        }
+        modifier = {
+            factor = 1.5
+            has_ethic = ethic_fanatic_militarist
+        }
+    }
+}

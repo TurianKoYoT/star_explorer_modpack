@@ -1,0 +1,28 @@
+trait_v_engrams = {
+    cost = 2
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/ART"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/AQUATIC"
+    opposites = {
+        "trait_invasive"
+        "trait_v_adv_engrams"
+        "trait_v_biological_immortality"
+        "trait_v_adv_biological_immortality"
+    }
+    custom_tooltip_with_modifiers = TRAIT_ENGRAMS_EFFECT
+    modifier = {
+        army_experience_gain_mult = 1
+    }
+    slave_cost = {
+        energy = 2000
+    }
+}

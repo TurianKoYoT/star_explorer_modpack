@@ -1,0 +1,45 @@
+building_eutab_dm_energy = {
+    base_buildtime = @b3_time
+    base_cap_amount = 2
+    category = resource
+    potential = {
+        is_planet_class = pc_machine
+        exists = owner
+        owner = {
+            is_machine_empire = yes
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            sr_dark_matter = 200
+        }
+        upkeep = {
+            sr_dark_matter = 4
+        }
+    }
+    planet_modifier = {
+        job_technician_drone_add = 10
+        job_technician_drone_per_pop = 0.1
+    }
+    triggered_desc = {
+        text = job_technician_drone_effect_desc
+    }
+    prerequisites = {
+        "tech_eutab_m_command_control"
+    }
+    ai_resource_production = {
+        trigger = {
+            num_pops >= 40
+        }
+        energy = 40
+        mult = value:eutab_ai_resource_production_adjustment_value
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            is_machine_empire = no
+        }
+    }
+}

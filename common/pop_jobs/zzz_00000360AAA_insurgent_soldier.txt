@@ -1,0 +1,28 @@
+AAA_insurgent_soldier = {
+    category = AAA_insurgent
+    is_capped_by_modifier = yes
+    can_set_priority = no
+    clothes_texture_index = 2
+    building_icon = building_residence
+    contributes_to_diplo_weight = no
+    ignores_favorite = yes
+    possible_pre_triggers = {
+        has_owner = yes
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_insurgent_job
+    possible = {
+        hidden_trigger = {
+            exists = owner
+        }
+        owner = {
+            is_gestalt = no
+        }
+    }
+    planet_modifier = {
+        planet_stability_add = -1
+    }
+    weight = {
+        weight = 10000
+    }
+}

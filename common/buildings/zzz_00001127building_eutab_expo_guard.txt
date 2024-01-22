@@ -1,0 +1,61 @@
+building_eutab_expo_guard = {
+    base_buildtime = @b2_time
+    can_build = no
+    category = research
+    potential = {
+        exists = owner
+        owner = {
+            is_xenophobe_and_pac = yes
+        }
+    }
+    allow = {
+        has_upgraded_capital = yes
+    }
+    planet_modifier = {
+        job_bureaucrat_add = 1
+        job_soldier_add = 1
+        job_researcher_add = 3
+        planet_max_buildings_add = 1
+    }
+    inline_script = "buildings/eutab_dev_structures_modifiers"
+    country_modifier = {
+        empire_size_pops_mult = -0.05
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            exotic_gases = 50
+            alloys = 50
+        }
+        upkeep = {
+            energy = @b2_upkeep
+            exotic_gases = @b2_rare_upkeep
+            alloys = @b2_rare_upkeep
+        }
+    }
+    prerequisites = {
+        "tech_eutab_expo_guard"
+    }
+    show_tech_unlock_if = {
+        is_regular_empire = yes
+    }
+    triggered_desc = {
+        text = job_bureaucrat_effect_desc
+    }
+    triggered_desc = {
+        text = job_soldier_effect_desc
+    }
+    triggered_desc = {
+        text = job_researcher_effect_desc
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            is_xenophobe_and_pac = no
+        }
+    }
+    convert_to = {
+        building_eutab_dev_district
+    }
+}

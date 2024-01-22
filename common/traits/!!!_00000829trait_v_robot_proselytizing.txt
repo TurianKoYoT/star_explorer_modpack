@@ -1,0 +1,46 @@
+trait_v_robot_proselytizing = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_synthetic_workers
+            NOT = {
+                has_policy_flag = ai_outlawed
+            }
+        }
+    }
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+            has_technology = tech_v_robot_neural_mimicry
+        }
+    }
+    species_possible_merge_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    allowed_archetypes = {
+        ROBOT
+    }
+    allowed_ethics = {
+        ethic_spiritualist
+        ethic_fanatic_spiritualist
+    }
+    valid_for_all_ethics = no
+    custom_tooltip = TRAIT_PROSELYTIZING_EFFECT
+    opposites = {
+        "trait_machine_unit"
+        "trait_v_robot_sybaritic"
+        "trait_v_robot_materialistic"
+        "trait_v_robot_algorithmic_mind"
+        "trait_v_robot_fleshcrafter"
+        "trait_v_robot_tinkerer"
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

@@ -1,0 +1,15 @@
+triggered_opinion_perfect_subject = {
+    trigger = {
+        is_subject = yes
+        exists = from
+        overlord = {
+            is_same_empire = from
+        }
+        FROM = {
+            has_ascension_perk = ap_powerful_vassals
+        }
+    }
+    opinion = {
+        base = 600
+    }
+}

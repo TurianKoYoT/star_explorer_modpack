@@ -1,0 +1,26 @@
+tech_avb_capital_5 = {
+    cost = @tier5cost3
+    area = society
+    tier = 5
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_avb_capital_4"
+    }
+    weight = @tier5weight3
+    gateway = capital
+    modifier = {
+        country_leader_cap_add = 1
+    }
+    potential = {
+        is_hive_empire = no
+    }
+    weight_modifier = {
+        factor = 4
+        inline_script = "tech_weights/avb_government_weight"
+    }
+    ai_weight = {
+        factor = 10
+    }
+}

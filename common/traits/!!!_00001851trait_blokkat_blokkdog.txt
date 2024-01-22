@@ -1,0 +1,19 @@
+trait_blokkat_blokkdog = {
+    cost = 0
+    leader_potential_add = {
+        always = no
+    }
+    icon = "gfx/interface/icons/traits/trait_blokkat_blokkdog.dds"
+    immortal_leaders = yes
+    fleet_modifier = {
+        ship_speed_mult = 0.4
+        ship_evasion_mult = 0.2
+        ship_weapon_damage = -0.15
+    }
+    leader_class = all
+    initial = no
+    randomized = no
+    ai_weight = {
+        weight = 0
+    }
+}

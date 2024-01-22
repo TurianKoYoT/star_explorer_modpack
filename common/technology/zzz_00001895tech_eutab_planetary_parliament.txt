@@ -1,0 +1,23 @@
+tech_eutab_planetary_parliament = {
+    cost = @tier3cost3
+    area = society
+    tier = 3
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_eutab_dev_district"
+    }
+    weight = @tier3weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_egalitarian = yes
+    }
+    gateway = eu_egalitarian
+    prereqfor_desc = {
+        custom = {
+            title = EUTAB_FRONTIER_UPGRADE_TITLE
+            desc = EUTAB_FRONTIER_UPGRADE_DESC
+        }
+    }
+}

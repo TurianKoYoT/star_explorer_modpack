@@ -1,0 +1,27 @@
+GT_planet_building_refund_mult = {
+    cost = @tier1cost1
+    area = society
+    tier = 1
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_adaptive_bureaucracy"
+    }
+    weight = @tier1weight1
+    modifier = {
+        planet_building_build_speed_mult = 0.2
+        planet_building_refund_mult = 0.2
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            num_researched_techs_of_tier = {
+                tier = 1
+                value > 10
+            }
+        }
+    }
+    ai_weight = {
+    }
+}

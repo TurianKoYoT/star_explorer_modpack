@@ -1,0 +1,22 @@
+tech_eutab_cultural_exchanges = {
+    cost = @tier2cost2
+    area = society
+    tier = 2
+    prerequisites = {
+        "tech_adaptive_bureaucracy"
+    }
+    category = {
+        statecraft
+    }
+    weight = @tier2weight2
+    is_custom_tech_1 = yes
+    potential = {
+        is_xenophile = yes
+        has_ascension_perk = ap_interstellar_dominion
+    }
+    gateway = eu_dominion
+    modifier = {
+        country_unity_produces_mult = 0.05
+        country_consumer_goods_produces_mult = 0.15
+    }
+}

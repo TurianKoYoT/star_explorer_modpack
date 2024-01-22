@@ -1,0 +1,14 @@
+building_mp_primitive_lowgravity_buildings = {
+    icon = building_mp_primitive_lowgravity_buildings
+    capital = no
+    can_build = no
+    can_demolish = yes
+    can_be_ruined = no
+    ai_weight = {
+        weight = 5
+    }
+    planet_modifier = {
+        pop_happiness = 0.1
+        planet_housing_add = 5
+    }
+}

@@ -1,0 +1,32 @@
+subclass_official_governor = {
+    custom_subtitle = governor_subclass
+    subclass_trait = yes
+    inline_script = {
+        script = trait/icon_subclass
+        SUBCLASS = official_governor
+        COUNCIL = no
+    }
+    custom_tooltip_with_modifiers = governor_subclass_tt
+    planet_modifier = {
+        planet_jobs_specialist_produces_mult = 0.05
+        pop_amenities_usage_mult = -0.1
+    }
+    sector_modifier = {
+        planet_jobs_specialist_produces_mult = 0.025
+        pop_amenities_usage_mult = -0.05
+    }
+    leader_class = {
+        official
+    }
+    ai_weight = {
+        modifier = {
+            is_councilor = yes
+            factor = 0
+        }
+        modifier = {
+            is_councilor = no
+            factor = 2
+        }
+    }
+    background_icon = "GFX_leader_subclass_official_governor_background"
+}

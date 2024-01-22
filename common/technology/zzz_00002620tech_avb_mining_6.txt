@@ -1,0 +1,22 @@
+tech_avb_mining_6 = {
+    cost = @avbtier6cost1
+    area = engineering
+    tier = 6
+    category = {
+        industry
+    }
+    prerequisites = {
+        "tech_avb_mining_5"
+    }
+    weight = @avbtier6weight1
+    modifier = {
+        planet_miners_minerals_produces_mult = 0.2
+        starbase_constructions_minerals_produces_mult = 0.1
+    }
+    weight_modifier = {
+        factor = 4
+    }
+    ai_weight = {
+        factor = 4
+    }
+}

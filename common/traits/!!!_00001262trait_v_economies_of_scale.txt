@@ -1,0 +1,129 @@
+trait_v_economies_of_scale = {
+    cost = 3
+    inline_script = "traits/no_randomized"
+    allowed_archetypes = {
+        ROBOT
+        MACHINE
+    }
+    custom_tooltip = TRAIT_ECONOMIES_OF_SCALE_EFFECT
+    triggered_pop_modifier = {
+        potential = {
+            OR = {
+                has_job = miner
+                has_job = scrap_miner
+                has_job = mining_drone
+                has_job = scrap_miner_drone
+                has_job = primitive_miner
+                has_job = primitive_hive_miner
+                has_job = cave_cleaner
+                has_job = cave_cleaner_gestalt
+                has_job = turtle_miner
+                has_job = turtle_miner_gestalt
+                has_job = manufactorium_scraper
+                has_job = manufactorium_scraper_drone
+                has_job = fe_acolyte_mine
+                has_job = low_tech_miner
+            }
+        }
+        planet_pops_energy_upkeep_mult = -0.01
+        mult = planet.value:count_v_economies_of_scale_minerals
+    }
+    triggered_pop_modifier = {
+        potential = {
+            OR = {
+                has_job = farmer
+                has_job = angler
+                has_job = agri_drone
+                has_job = hunter_gatherer
+                has_job = peasant
+                has_job = primitive_farmer
+                has_job = hive_sustenance_drone
+                has_job = hive_basic_agri_drone
+                has_job = primitive_hive_farmer
+                has_job = ratling_scavenger
+                has_job = titan_hunter
+                has_job = puddle_technician
+                has_job = puddle_technician_drone
+                has_job = fe_acolyte_farm
+                has_job = low_tech_farmer
+            }
+        }
+        planet_pops_energy_upkeep_mult = -0.01
+        mult = planet.value:count_v_economies_of_scale_food
+    }
+    triggered_pop_modifier = {
+        potential = {
+            OR = {
+                has_job = technician
+                has_job = technician_drone
+                has_job = primitive_technician
+                has_job = primitive_hive_technician
+                has_job = fe_acolyte_generator
+                has_job = low_tech_technician
+            }
+        }
+        planet_pops_energy_upkeep_mult = -0.01
+        mult = planet.value:count_v_economies_of_scale_energy
+    }
+    triggered_pop_modifier = {
+        potential = {
+            OR = {
+                has_job = artisan
+                has_job = artisan_drone
+                has_job = artificer
+                has_job = pearl_diver
+                has_job = primitive_laborer
+                has_job = primitive_hive_factory_drone
+            }
+        }
+        planet_pops_energy_upkeep_mult = -0.01
+        planet_jobs_upkeep_mult = -0.01
+        mult = planet.value:count_v_economies_of_scale_consumer_goods
+    }
+    triggered_pop_modifier = {
+        potential = {
+            OR = {
+                has_job = bluelotus_technician
+                has_job = foundry
+                has_job = catalytic_technician
+                has_job = fabricator
+                has_job = alloy_drone
+                has_job = catalytic_drone
+                has_job = bluelotus_drone
+                has_job = odd_factory_worker
+                has_job = odd_factory_drone
+                has_job = manufactorium_specialist
+                has_job = manufactorium_complex_drone
+            }
+        }
+        planet_pops_energy_upkeep_mult = -0.01
+        planet_jobs_upkeep_mult = -0.01
+        mult = planet.value:count_v_economies_of_scale_alloys
+    }
+    triggered_pop_modifier = {
+        potential = {
+            OR = {
+                has_job = chemist
+                has_job = chemist_drone
+                has_job = translucer
+                has_job = translucer_drone
+                has_job = gas_refiner
+                has_job = gas_refiner_drone
+                has_job = gas_plant_engineer
+                has_job = gas_plant_engineer_gestalt
+                has_job = crystal_miner
+                has_job = gas_extractor
+                has_job = mote_harvester
+                has_job = crystal_mining_drone
+                has_job = mote_harvesting_drone
+                has_job = gas_extraction_drone
+            }
+        }
+        planet_pops_energy_upkeep_mult = -0.01
+        planet_jobs_upkeep_mult = -0.01
+        mult = planet.value:count_v_economies_of_scale_strategic_resources
+    }
+    slave_cost = {
+        energy = 2000
+    }
+}

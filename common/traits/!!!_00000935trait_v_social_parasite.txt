@@ -1,0 +1,39 @@
+trait_v_social_parasite = {
+    cost = -2
+    species_potential_add = {
+        exists = from
+        from = {
+            is_ai = no
+        }
+    }
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    randomized = no
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_agrarian"
+        "trait_ingenious"
+        "trait_industrious"
+        "trait_thrifty"
+        "trait_syncretic_proles"
+        "trait_v_repletes"
+        "trait_decadent"
+        "trait_v_pack_behaviour"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/ART"
+    inline_script = "species_class/TOX"
+    custom_tooltip = TRAIT_SOCIAL_PARASITE_EFFECT
+    allowed_origins = {
+        origin_syncretic_evolution
+        origin_mechanists
+        origin_necrophage
+    }
+    valid_for_all_origins = no
+    slave_cost = {
+        energy = -5000
+    }
+}

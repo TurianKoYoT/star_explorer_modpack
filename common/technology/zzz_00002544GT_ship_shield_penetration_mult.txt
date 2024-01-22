@@ -1,0 +1,30 @@
+GT_ship_shield_penetration_mult = {
+    cost = @tier3cost3
+    area = physics
+    tier = 3
+    category = {
+        field_manipulation
+    }
+    prerequisites = {
+        "tech_shields_3"
+    }
+    weight = @tier3weight3
+    modifier = {
+        ship_shield_penetration_mult = 0.15
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            num_researched_techs_of_tier = {
+                tier = 3
+                value > 15
+            }
+        }
+        modifier = {
+            factor = 0
+            is_at_war = no
+        }
+    }
+    ai_weight = {
+    }
+}

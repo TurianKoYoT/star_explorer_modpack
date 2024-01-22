@@ -1,0 +1,23 @@
+trait_yanz_hive_overload = {
+    cost = 8
+    initial = no
+    randomized = no
+    species_potential_add = {
+        from = {
+            has_technology = tech_yanz_hive_evolutionary_plan
+        }
+    }
+    potential_crossbreeding_chance = 0.1
+    opposites = {
+    }
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    sorting_priority = 5
+    icon = "gfx/interface/icons/traits/bio_path/trait_yanz_hive_overload.dds"
+    modifier = {
+        planet_jobs_produces_mult = 0.2
+        planet_pops_food_upkeep_mult = 0.33
+    }
+}

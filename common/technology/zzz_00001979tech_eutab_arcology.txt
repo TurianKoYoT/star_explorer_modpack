@@ -1,0 +1,23 @@
+tech_eutab_arcology = {
+    cost = @tier3cost3
+    area = engineering
+    tier = 3
+    category = {
+        industry
+    }
+    prerequisites = {
+        "tech_eutab_dev_district"
+    }
+    weight = @tier3weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_materialist = yes
+    }
+    gateway = eu_materialist
+    prereqfor_desc = {
+        custom = {
+            title = EUTAB_FRONTIER_UPGRADE_TITLE
+            desc = EUTAB_FRONTIER_UPGRADE_DESC
+        }
+    }
+}

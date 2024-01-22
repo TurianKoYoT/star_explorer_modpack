@@ -1,0 +1,41 @@
+tech_hive_cruiser_hull_1 = {
+    cost = @tier4cost3
+    area = society
+    tier = 4
+    is_rare = yes
+    category = {
+        voidcraft
+    }
+    prerequisites = {
+        "tech_cruiser_hull_2"
+        "tech_hive_destroyer_hull_1"
+    }
+    weight = @tier4weight3
+    potential = {
+        has_ascension_perk = ap_aggressive_hivemind
+        OR = {
+            AND = {
+                country_uses_food = yes
+                has_resource = {
+                    type = food
+                    amount > 20000
+                }
+            }
+            AND = {
+                country_uses_food = no
+                has_resource = {
+                    type = minerals
+                    amount > 20000
+                }
+            }
+        }
+    }
+    modifier = {
+        custom_tooltip = tech_hive_cruiser_hull_effect
+        shipsize_cruiser_hull_mult = 0.15
+        shipsize_offspring_cruiser_hull_mult = 0.15
+    }
+    weight_modifier = {
+        factor = 1
+    }
+}

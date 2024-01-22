@@ -1,0 +1,59 @@
+xte_trait_unbound = {
+    cost = 3
+    initial = yes
+    randomized = yes
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    opposites = {
+        "trait_conformists"
+        "trait_hive_mind"
+        "trait_decadent"
+        "trait_nerve_stapled"
+        "trait_syncretic_proles"
+        "trait_invasive"
+    }
+    potential_crossbreeding_chance = 1
+    custom_tooltip_with_modifiers = xte_unbound_no_slaves_bonus
+    triggered_pop_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                count_enslaved_species = {
+                    count = 0
+                }
+            }
+        }
+        planet_jobs_produces_mult = 0.1
+        pop_happiness = 0.2
+    }
+    modifier = {
+        pop_ethic_egalitarian_attraction_mult = 0.25
+        planet_jobs_slave_produces_mult = -0.33
+        pop_cat_slave_happiness = -0.5
+    }
+    custom_tooltip_with_modifiers = xte_added_by_notification
+    slave_cost = {
+        energy = -800
+    }
+    assembly_score = {
+        modifier = {
+            add = 1
+        }
+        modifier = {
+            subtract = 2
+            from.owner = {
+                count_enslaved_species = {
+                    count > 0
+                }
+            }
+        }
+    }
+}

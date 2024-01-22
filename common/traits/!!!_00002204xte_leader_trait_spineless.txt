@@ -1,0 +1,43 @@
+xte_leader_trait_spineless = {
+    inline_script = {
+        script = trait/icon_negative_no_tiers
+        ICON = GFX_xte_leader_trait_spineless
+        COUNCIL = yes
+    }
+    cost = 1
+    negative = yes
+    opposites = {
+        "trait_ruler_expansionist"
+        "trait_ruler_expansionist_2"
+        "trait_ruler_expansionist_3"
+        "trait_ruler_deep_connections"
+        "trait_ruler_deep_connections_2"
+        "trait_ruler_deep_connections_3"
+        "xte_leader_trait_domineering"
+        "xte_leader_trait_indulgent"
+        "xte_leader_trait_hateful"
+        "xte_leader_trait_peacemonger"
+        "xte_leader_trait_warmonger"
+        "xte_leader_trait_superstitious"
+        "xte_leader_trait_cynical"
+    }
+    triggered_councilor_modifier = {
+        potential = {
+            always = yes
+        }
+        country_base_influence_produces_add = -1
+        country_starbase_influence_cost_mult = 0.1
+        country_claim_influence_cost_mult = 0.1
+        pop_ethic_xenophobe_attraction_mult = 0.5
+        multiplier = value:xte_anti_stacking_value|LEADER_TRAIT|xte_leader_trait_spineless|
+    }
+    custom_tooltip_with_modifiers = xte_councilor_trait_efficiency_notification
+    leader_potential_add = {
+        always = no
+    }
+    leader_class = {
+        commander
+        scientist
+        official
+    }
+}

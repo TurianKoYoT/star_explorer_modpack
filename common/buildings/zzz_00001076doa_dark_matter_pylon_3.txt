@@ -1,0 +1,40 @@
+doa_dark_matter_pylon_3 = {
+    base_buildtime = @b4_time
+    can_build = no
+    can_demolish = yes
+    category = resource
+    prerequisites = {
+        "tech_dark_matter_pylon_3"
+    }
+    potential = {
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+        }
+    }
+    allow = {
+        has_building = doa_automation_uplink_3
+    }
+    resources = {
+        category = planet_doa_automated_industries
+        cost = {
+            minerals = @b4_minerals
+        }
+        produces = {
+            sr_dark_matter = 20
+        }
+        upkeep = {
+            energy = 100
+            exotic_gases = 4
+            volatile_motes = 4
+            rare_crystals = 4
+        }
+    }
+    destroy_trigger = {
+        OR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+        }
+    }
+}

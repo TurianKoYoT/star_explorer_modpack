@@ -1,0 +1,15 @@
+trait_indolent = {
+    cost = -2
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    modifier = {
+        planet_jobs_worker_produces_mult = -0.05
+    }
+    slave_cost = {
+        energy = -2000
+    }
+}

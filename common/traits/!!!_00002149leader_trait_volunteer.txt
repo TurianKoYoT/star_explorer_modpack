@@ -1,0 +1,36 @@
+leader_trait_volunteer = {
+    cost = 1
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = "GFX_leader_trait_volunteer"
+        RARITY = common
+        COUNCIL = no
+        TIER = none
+    }
+    self_modifier = {
+        leaders_cost_mult = -0.8
+    }
+    leader_potential_add = {
+        is_ruler = no
+        OR = {
+            from = {
+                has_technology = tech_expandable_brain_1
+            }
+            has_global_flag = ap_expandable_brain_1
+        }
+    }
+    leader_class = {
+        scientist
+        commander
+        official
+    }
+    opposites = {
+        "leader_trait_stubborn"
+        "leader_trait_eager"
+        "leader_trait_eager"
+    }
+    ai_weight = {
+        weight = 50
+    }
+}

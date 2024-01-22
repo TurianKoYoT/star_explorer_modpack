@@ -1,0 +1,7 @@
+is_default_or_fallen = {
+    OR = {
+        merg_is_default_empire = yes
+        is_fallen_empire = yes
+        has_country_flag = is_empire
+    }
+}

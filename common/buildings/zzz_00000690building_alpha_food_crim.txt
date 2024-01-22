@@ -1,0 +1,46 @@
+building_alpha_food_crim = {
+    icon = building_ae_food_processing_complex
+    base_buildtime = 360
+    owner_type = corporate
+    category = resource
+    can_build = no
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            is_criminal_syndicate = yes
+        }
+    }
+    planet_modifier
+     {
+        planet_crime_add = 150
+        trade_value_add = 50
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            minerals = 50
+            sr_dark_matter = 250
+        }
+        produces = {
+            food = 100
+        }
+        upkeep = {
+            energy = 20
+            acot_sr_dark_energy = 1
+            sr_dark_matter = 1
+        }
+    }
+    prerequisites = {
+        tech_ae_food_processing
+    }
+    show_tech_unlock_if = {
+        is_megacorp = yes
+        is_criminal_syndicate = yes
+    }
+    upgrades = {
+        building_phanon_food_crim
+    }
+    ai_weight = {
+        factor = 1
+    }
+}

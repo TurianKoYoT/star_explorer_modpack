@@ -1,0 +1,36 @@
+machine_overseer = {
+    category = ruler
+    is_capped_by_modifier = no
+    condition_string = RULER_JOB_TRIGGER
+    building_icon = building_machine_assembly_complex
+    clothes_texture_index = 1
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+        is_enslaved = no
+    }
+    possible = {
+        is_robot_pop = yes
+        owner = {
+            has_valid_civic = civic_machinarchy
+            has_policy_flag = elevated_existence
+        }
+    }
+    planet_modifier = {
+        planet_amenities_mult = 0.01
+    }
+    resources = {
+        category = planet_decadent_overseers
+        produces = {
+            unity = 1.5
+        }
+        upkeep = {
+            consumer_goods = 2
+        }
+    }
+    weight = {
+        weight = 1001
+    }
+}

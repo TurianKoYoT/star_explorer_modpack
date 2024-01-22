@@ -1,0 +1,240 @@
+building_avb_food_processing_4 = {
+    base_buildtime = @avb_rs5_time
+    can_build = no
+    category = resource
+    allow = {
+        exists = owner
+        has_upgraded_capital_4 = yes
+    }
+    destroy_trigger = {
+        OR = {
+            AND = {
+                exists = owner
+                OR = {
+                    owner = {
+                        is_ai = yes
+                        country_uses_food = no
+                    }
+                    AND = {
+                        owner = {
+                            is_ai = yes
+                        }
+                        has_any_farming_district_or_buildings = no
+                    }
+                }
+            }
+            is_planet_class = pc_machine
+            has_modifier = resort_colony
+            has_modifier = crucible_colony
+        }
+    }
+    planet_modifier = {
+        planet_farmers_food_produces_add = 6
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_ringworld_output_boost = yes
+        }
+        modifier = {
+            planet_farmers_food_produces_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+                OR = {
+                    is_anglers_empire = no
+                    AND = {
+                        is_anglers_empire = yes
+                        NOT = {
+                            PREV = {
+                                planet = {
+                                    is_wet = yes
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        modifier = {
+            job_farmer_add = @avb_rs5_jobs
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_fallen_empire_spiritualist = yes
+            }
+        }
+        modifier = {
+            job_fe_acolyte_farm_add = @avb_rs5_jobs
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_agri_drone_add = @avb_rs5_jobs
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+                is_anglers_empire = yes
+                PREV = {
+                    planet = {
+                        is_wet = yes
+                    }
+                }
+            }
+        }
+        modifier = {
+            job_angler_add = @avb_rs5_jobs
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_global_flag = bug_branch_active
+            exists = owner
+            owner = {
+                is_bugged_functional_architecture = yes
+            }
+            NOR = {
+                is_planet_class = pc_habitat
+                is_planet_class = pc_machine
+                is_planet_class = pc_hive
+                is_planet_class = pc_city
+            }
+        }
+        modifier = {
+            district_farming_max = 2
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_rs5_minerals
+            volatile_motes = @avb_rs5_rare_cost
+        }
+        upkeep = {
+            energy = @avb_rs5_upkeep
+            volatile_motes = @avb_rs5_rare_upkeep
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_global_flag = ethic_civic_classic_active
+                    has_civic = civic_agrarian_idyll
+                }
+            }
+            unity = 5
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+        }
+        text = building_food_processing_center_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_agri_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        text = job_farmer_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_fallen_empire_spiritualist = yes
+            }
+        }
+        text = job_fe_acolyte_farm_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_fallen_empire_spiritualist = no
+                is_anglers_empire = yes
+                PREV = {
+                    planet = {
+                        is_wet = yes
+                    }
+                }
+            }
+        }
+        text = job_aqu_angler_effect_desc
+    }
+    prerequisites = {
+        "tech_avb_food_processing_4"
+    }
+    ai_weight = {
+        weight = 0
+        modifier = {
+            weight = 30
+            buildings_has_motes = yes
+        }
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                has_monthly_income = {
+                    resource = food
+                    value < 50
+                }
+            }
+        }
+    }
+    ai_resource_production = {
+        food = 6
+        trigger = {
+            always = yes
+        }
+    }
+    ai_resource_production = {
+        food = 6
+        trigger = {
+            planet_resource_compare = {
+                resource = food
+                value >= 24
+                type = produces
+            }
+        }
+    }
+    ai_resource_production = {
+        food = 6
+        trigger = {
+            planet_resource_compare = {
+                resource = food
+                value >= 48
+                type = produces
+            }
+        }
+    }
+}

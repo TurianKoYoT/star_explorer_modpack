@@ -1,0 +1,8 @@
+bwm_gate_leviathan_owner = {
+    opinion = {
+        base = -50
+    }
+    decay = {
+        base = 1
+    }
+}

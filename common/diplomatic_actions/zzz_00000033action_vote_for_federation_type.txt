@@ -1,0 +1,31 @@
+action_vote_for_federation_type = {
+    icon = "GFX_diplomacy_status_federation"
+    is_listed = no
+    auto_accepted = yes
+    requires_alliance_vote = yes
+    requires_unanimous_vote = yes
+    requires_actor_independence = no
+    requires_recipient_independence = no
+    diplo_view_acceptance_icon = yes
+    requires_actor_federation_leader = yes
+    AI_acceptance_base_value = -50
+    action_type = neutral
+    possible = {
+        custom_tooltip = {
+            fail_text = "imperium_federation_can_not_change_type"
+            NOT = {
+                federation = {
+                    has_federation_perk = imperium_federation_passive
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = "galactic_confederation_can_not_change_type"
+            NOT = {
+                federation = {
+                    has_federation_perk = galactic_confederation_passive
+                }
+            }
+        }
+    }
+}

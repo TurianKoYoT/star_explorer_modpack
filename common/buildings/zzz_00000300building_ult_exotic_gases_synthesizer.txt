@@ -1,0 +1,34 @@
+building_ult_exotic_gases_synthesizer = {
+    base_buildtime = 720
+    category = manufacturing
+    potential = {
+        NOT = {
+            has_modifier = resort_colony
+        }
+        NOT = {
+            has_modifier = slave_colony
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 1000
+        }
+        produces = {
+            exotic_gases = 7
+        }
+        upkeep = {
+            minerals = 10
+            energy = 20
+        }
+    }
+    prerequisites = {
+        "tech_ult_strategic_resources_production"
+    }
+    ai_resource_production = {
+        exotic_gases = 7
+        trigger = {
+            always = yes
+        }
+    }
+}

@@ -1,0 +1,36 @@
+leader_trait_sapient_AI_assistant = {
+    inline_script = {
+        script = trait/icon
+        CLASS = scientist
+        ICON = "GFX_leader_trait_sapient_AI_assistant"
+        RARITY = common
+        COUNCIL = no
+        TIER = none
+    }
+    modifier = {
+        science_ship_survey_speed = 0.2
+        ship_anomaly_research_speed_mult = 0.3
+    }
+    leader_potential_add = {
+        from = {
+            NOR = {
+                has_policy_flag = ai_outlawed
+                has_technology = tech_expandable_brain_1
+            }
+        }
+    }
+    leader_class = {
+        scientist
+    }
+    prerequisites = {
+        tech_sapient_ai
+    }
+    opposites = {
+        "leader_trait_custom_AI_assistant"
+    }
+    selectable_weight = @class_trait_weight
+    ai_categories = {
+        survey
+    }
+    ai_weight = 70
+}

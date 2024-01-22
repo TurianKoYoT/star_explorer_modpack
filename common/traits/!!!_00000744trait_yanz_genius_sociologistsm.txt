@@ -1,0 +1,28 @@
+trait_yanz_genius_sociologistsm = {
+    cost = 6
+    initial = no
+    randomized = no
+    species_potential_add = {
+        from = {
+            has_technology = tech_yanz_synthesis
+        }
+    }
+    potential_crossbreeding_chance = 0.1
+    opposites = {
+        "trait_yanz_genius_engineersm"
+        "trait_yanz_genius_physicistsm"
+    }
+    allowed_archetypes = {
+        ROBOT
+        MACHINE
+    }
+    sorting_priority = 5
+    icon = "gfx/interface/icons/traits/bio_path/trait_yanz_genius_sociologists.dds"
+    modifier = {
+        planet_jobs_society_research_produces_mult = 0.65
+        planet_jobs_food_produces_mult = 0.1
+    }
+    slave_cost = {
+        energy = 500
+    }
+}

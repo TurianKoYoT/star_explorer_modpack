@@ -1,0 +1,32 @@
+giga_hypersiphon_major_incursion = {
+    attack_unarmed_orbital_stations = yes
+    scaled_difficulty_bonuses = 1
+    mid_game_crisis = yes
+    destroys_starbases = yes
+    needs_survey = no
+    has_complete_sensor = yes
+    can_planets_be_attacked = no
+    has_capital = no
+    enforces_borders = no
+    custom_starbase = giga_hypersiphon_incursion_starbase
+    observable = no
+    uses_origins = no
+    orbital_bombardment = yes
+    government = no
+    ai = {
+        enabled = no
+    }
+    faction = {
+        needs_colony = no
+        hostile = yes
+        needs_border_access = no
+        auto_delete = no
+    }
+    modules = {
+        exclusive_diplomacy_module = {
+            contact_rule = on_action_only
+        }
+        basic_technology_module = {
+        }
+    }
+}

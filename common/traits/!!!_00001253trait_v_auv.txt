@@ -1,0 +1,58 @@
+trait_v_auv = {
+    cost = 1
+    inline_script = "traits/no_randomized"
+    opposites = {
+        "trait_v_flying_machine"
+        "trait_v_stationary"
+    }
+    allowed_archetypes = {
+        ROBOT
+        MACHINE
+    }
+    custom_tooltip = TRAIT_AUV_EFFECT
+    allowed_planet_classes = {
+        pc_ocean
+        pc_aquatic
+        pc_reef
+        pc_desertislands
+        pc_subarctic
+        pc_storm
+    }
+    triggered_pop_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                OR = {
+                    is_planet_class = pc_ocean
+                    has_modifier = flooded_habitat
+                    is_planet_class = pc_aquatic
+                    is_planet_class = pc_reef
+                    is_planet_class = pc_desertislands
+                    is_planet_class = pc_subarctic
+                    is_planet_class = pc_storm
+                }
+            }
+        }
+        planet_jobs_produces_mult = 0.1
+    }
+    triggered_pop_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                NOR = {
+                    is_planet_class = pc_ocean
+                    has_modifier = flooded_habitat
+                    is_planet_class = pc_aquatic
+                    is_planet_class = pc_reef
+                    is_planet_class = pc_desertislands
+                    is_planet_class = pc_subarctic
+                    is_planet_class = pc_storm
+                }
+            }
+        }
+        planet_jobs_produces_mult = 1
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

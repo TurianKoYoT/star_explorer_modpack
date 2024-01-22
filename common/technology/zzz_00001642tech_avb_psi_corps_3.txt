@@ -1,0 +1,42 @@
+tech_avb_psi_corps_3 = {
+    cost = @avbtier8cost2
+    area = society
+    tier = 8
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_avb_capital_6"
+        "tech_avb_psi_corps_2"
+    }
+    weight = @avbtier8weight2
+    is_rare = yes
+    gateway = capital
+    potential = {
+        owner = {
+            has_tradition = tr_psionics_psi_corps
+        }
+    }
+    weight_modifier = {
+        factor = 2
+        modifier = {
+            factor = 2
+            is_spiritualist = yes
+        }
+        modifier = {
+            factor = 2.5
+            is_fanatic_spiritualist = yes
+        }
+    }
+    ai_weight = {
+        factor = 6
+        modifier = {
+            factor = 2
+            is_spiritualist = yes
+        }
+        modifier = {
+            factor = 2.5
+            is_fanatic_spiritualist = yes
+        }
+    }
+}

@@ -1,0 +1,46 @@
+trait_v_adv_biological_immortality = {
+    cost = 5
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    potential_crossbreeding_chance = 1
+    species_potential_add = {
+        exists = from
+        from = {
+            OR = {
+                has_technology = tech_v_zoological_transgenesis
+                has_technology = tech_plantoid_transgenesis
+                has_technology = tech_lithoid_transgenesis
+            }
+        }
+    }
+    opposites = {
+        "trait_invasive"
+        "trait_v_mayfly"
+        "trait_v_adv_mayfly"
+        "trait_enduring"
+        "trait_fleeting"
+        "trait_fleeting_lithoid"
+        "trait_venerable"
+        "trait_v_biological_immortality"
+        "trait_clone_soldier_infertile"
+        "trait_clone_soldier_infertile_full_potential"
+        "trait_vat_grown"
+    }
+    inline_script = "allowed_archetypes/adv_biological_traits/BIOLOGICAL"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/REP"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/TOX"
+    immortal_leaders = yes
+    slave_cost = {
+        energy = 5000
+    }
+}

@@ -1,0 +1,26 @@
+agx_tech_quasarcraft_1 = {
+    cost = 1000000
+    area = physics
+    tier = 5
+    category = {
+        particles
+    }
+    is_rare = yes
+    weight = 0
+    prereqfor_desc = {
+        custom = {
+            title = "allow_quasarcraft_p0"
+            desc = "desc_quasarcraft_p0"
+        }
+    }
+    ai_weight = {
+        factor = 30
+        modifier = {
+            factor = 50.25
+            research_leader = {
+                area = physics
+                has_trait = "leader_trait_expertise_particles"
+            }
+        }
+    }
+}

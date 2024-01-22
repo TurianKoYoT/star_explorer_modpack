@@ -1,0 +1,38 @@
+building_biomatter_research = {
+    base_buildtime = @b1_time
+    category = resource
+    base_cap_amount = 5
+    destroy_trigger = {
+        OR = {
+            has_modifier = resort_colony
+            is_planet_class = pc_emex_processing_core
+        }
+    }
+    potential = {
+        NOT = {
+            has_modifier = resort_colony
+        }
+        is_planet_class = pc_emex_bio_mechanical
+    }
+    planet_modifier = {
+        planet_researchers_upkeep_mult = -0.02
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 300
+        }
+        upkeep = {
+            food = 10
+            energy = 3
+        }
+        produces = {
+            physics_research = 2
+            society_research = 2
+            engineering_research = 2
+        }
+    }
+    ai_weight = {
+        weight = 2
+    }
+}

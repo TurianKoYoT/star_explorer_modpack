@@ -1,0 +1,25 @@
+mp_primitive_bnw_epsilon = {
+    category = worker
+    is_capped_by_modifier = yes
+    building_icon = building_residence
+    clothes_texture_index = 1
+    possible_pre_triggers = {
+        has_owner = yes
+    }
+    possible_precalc = can_fill_worker_job
+    possible = {
+        owner = {
+            is_primitive = yes
+            has_country_flag = early_space_age
+        }
+    }
+    resources = {
+        category = planet_jobs
+        produces = {
+            minerals = 5
+        }
+    }
+    weight = {
+        weight = @worker_job_weight
+    }
+}

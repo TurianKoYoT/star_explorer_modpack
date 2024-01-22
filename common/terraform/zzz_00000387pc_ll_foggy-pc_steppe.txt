@@ -1,0 +1,34 @@
+@terraforming_cost_level_3 = 10000
+@terraforming_duration_level_3 = 5400
+terraform_link = {
+    from = pc_ll_foggy
+    to = pc_steppe
+    resources = {
+        category = terraforming
+        cost = {
+            energy = @terraforming_cost_level_3
+        }
+    }
+    duration = @terraforming_duration_level_3
+    potential = {
+        has_global_flag = planetarydiversity
+    }
+    condition = {
+        has_technology = "tech_climate_restoration"
+    }
+    effect = {
+        from = {
+            remove_modifier = lifeless_foggy
+        }
+    }
+    ai_weight = {
+        weight = 0
+        modifier = {
+            weight = 2
+            should_terraform_trigger = {
+                CLASS_FROM = pc_ll_foggy
+                CLASS_TO = pc_steppe
+            }
+        }
+    }
+}

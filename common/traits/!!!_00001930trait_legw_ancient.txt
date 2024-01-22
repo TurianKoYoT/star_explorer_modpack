@@ -1,0 +1,24 @@
+trait_legw_ancient = {
+    icon = "gfx/interface/icons/traits/trait_legw_ancient.dds"
+    initial = no
+    species_potential_add = {
+        exists = from
+        from = {
+            has_origin = origin_legw_ancient
+        }
+    }
+    potential_crossbreeding_chance = 0.33
+    randomized = no
+    sorting_priority = 30
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    modifier = {
+        pop_environment_tolerance = -0.3
+        planet_pops_upkeep_mult = 0.1
+    }
+    ai_weight = {
+        weight = 0
+    }
+}

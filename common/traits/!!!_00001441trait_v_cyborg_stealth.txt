@@ -1,0 +1,30 @@
+trait_v_cyborg_stealth = {
+    cost = 2
+    initial = no
+    species_potential_add = {
+        can_add_cybernetic_traits = yes
+    }
+    species_possible_remove = {
+        can_remove_cybernetic_traits = yes
+    }
+    randomized = no
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    opposites = {
+        "trait_v_solar_skin_b"
+        "trait_v_solar_skin_l"
+        "trait_v_chem_skin"
+        "trait_v_active_camouflage"
+        "trait_v_adv_active_camouflage"
+        "trait_v_overgrown"
+        "trait_v_cyborg_exotic_augments"
+    }
+    custom_tooltip_with_modifiers = CYBORG_STEALTH_EFFECT
+    modifier = {
+        army_damage_mult = 0.5
+        army_disengage_chance_mult = 0.5
+    }
+    slave_cost = {
+        energy = 750
+    }
+}

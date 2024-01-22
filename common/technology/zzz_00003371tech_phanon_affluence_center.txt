@@ -1,0 +1,41 @@
+tech_phanon_affluence_center = {
+    cost = @acot_tier8cost3
+    area = engineering
+    tier = 8
+    category = {
+        materials
+    }
+    prerequisites = {
+        tech_aot_ae_affluence_center
+        tech_civil_phanon_application
+        tech_dm_production_core
+    }
+    weight = @tier5weight1
+    is_rare = yes
+    potential = {
+        NOR = {
+            has_global_flag = aot_phanon_content_OFF
+            is_fallen_empire = yes
+        }
+        has_technology = tech_civil_phanon_application
+        has_technology = tech_aot_ae_affluence_center
+        has_technology = tech_dm_production_core
+    }
+    weight_modifier = {
+        factor = 2
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_materials
+            }
+        }
+    }
+    ai_weight = {
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_materials
+            }
+        }
+    }
+}

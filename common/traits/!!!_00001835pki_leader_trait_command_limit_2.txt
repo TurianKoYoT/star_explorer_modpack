@@ -1,0 +1,20 @@
+pki_leader_trait_command_limit_2 = {
+    veteran_class_locked_trait = yes
+    replace_traits = {
+        pki_leader_trait_command_limit
+    }
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = "GFX_leader_trait_supreme_admiral"
+        RARITY = veteran
+        COUNCIL = no
+        TIER = 2
+    }
+    fleet_modifier = {
+        command_limit_mult = 1.5
+    }
+    leader_class = {
+        commander
+    }
+}

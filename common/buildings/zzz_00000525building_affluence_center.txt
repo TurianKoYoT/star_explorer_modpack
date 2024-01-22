@@ -1,0 +1,62 @@
+building_affluence_center = {
+    base_buildtime = 480
+    can_build = yes
+    can_demolish = yes
+    potential = {
+        custom_tooltip = {
+            exists = owner
+            OR = {
+                owner = {
+                    is_fallen_empire = yes
+                }
+                owner = {
+                    has_country_flag = affluence_center_can_build
+                }
+                has_planet_flag = fallen_empire_world
+            }
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = ancrel.10004.failtext
+            owner = {
+                check_variable = {
+                    which = affluence_center_build_count
+                    value >= 1
+                }
+            }
+        }
+    }
+    planet_modifier = {
+        planet_amenities_add = 50
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            consumer_goods = 200
+            unity = 100
+            society_research = 100
+        }
+        upkeep = {
+        }
+    }
+    on_queued = {
+        owner = {
+            subtract_variable = {
+                which = affluence_center_build_count
+                value = 1
+            }
+        }
+    }
+    on_unqueued = {
+        owner = {
+            change_variable = {
+                which = affluence_center_build_count
+                value = 1
+            }
+        }
+    }
+    upgrades = {
+        building_ae_affluence_center
+    }
+}

@@ -1,0 +1,110 @@
+trait_v_adv_double_respiration = {
+    cost = -3
+    inline_script = "traits/no_randomized"
+    icon = "gfx/interface/icons/traits/trait_v_double_respiration.dds"
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    potential_crossbreeding_chance = 1
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_v_zoological_transgenesis
+        }
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_v_double_respiration"
+        "trait_noxious"
+    }
+    inline_script = "allowed_archetypes/adv_biological_traits/BIOLOGICAL"
+    inline_script = "allowed_archetypes/adv_biological_traits/LITHOID"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/ART"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/FUN"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/LITHOID"
+    inline_script = "species_class/NECROID"
+    inline_script = "species_class/AQUATIC"
+    inline_script = "species_class/TOX"
+    custom_tooltip_with_modifiers = TRAIT_DOUBLE_RESPIRATION_EFFECT
+    modifier = {
+        planet_jobs_produces_mult = 0.05
+    }
+    triggered_planet_growth_habitability_modifier = {
+        potential = {
+            from = {
+                OR = {
+                    has_trait = trait_v_urban_adaptation
+                    has_trait = trait_v_adv_urban_adaptation
+                }
+            }
+        }
+        habitability_ceil_add = -0.01
+        mult = planet.value:count_v_polluting_districts_a
+    }
+    triggered_planet_growth_habitability_modifier = {
+        potential = {
+            from = {
+                NOR = {
+                    has_trait = trait_v_urban_adaptation
+                    has_trait = trait_v_adv_urban_adaptation
+                }
+            }
+        }
+        habitability_ceil_add = -0.01
+        mult = planet.value:count_v_polluting_districts_b
+    }
+    triggered_planet_growth_habitability_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                OR = {
+                    is_planet_class = pc_city
+                    is_pd_arcology = yes
+                }
+                NOR = {
+                    is_planet_class = pc_ecocity
+                    is_planet_class = pc_shroudecocity
+                }
+            }
+            from = {
+                OR = {
+                    has_trait = trait_v_urban_adaptation
+                    has_trait = trait_v_adv_urban_adaptation
+                }
+            }
+        }
+        habitability_ceil_add = -0.25
+    }
+    triggered_planet_growth_habitability_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                OR = {
+                    is_planet_class = pc_city
+                    is_pd_arcology = yes
+                }
+                NOR = {
+                    is_planet_class = pc_ecocity
+                    is_planet_class = pc_shroudecocity
+                }
+            }
+            from = {
+                NOR = {
+                    has_trait = trait_v_urban_adaptation
+                    has_trait = trait_v_adv_urban_adaptation
+                }
+            }
+        }
+        habitability_ceil_add = -0.5
+    }
+    slave_cost = {
+        energy = -2000
+    }
+}

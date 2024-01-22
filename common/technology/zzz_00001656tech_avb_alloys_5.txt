@@ -1,0 +1,20 @@
+tech_avb_alloys_5 = {
+    cost = @avbtier6cost1
+    area = engineering
+    tier = 6
+    category = {
+        materials
+    }
+    prerequisites = {
+        "tech_avb_alloys_4"
+        "tech_avb_capital_5"
+    }
+    weight = @avbtier6weight1
+    weight_modifier = {
+        factor = 2
+        inline_script = "tech_weights/avb_economy_weight"
+    }
+    ai_weight = {
+        factor = 4
+    }
+}

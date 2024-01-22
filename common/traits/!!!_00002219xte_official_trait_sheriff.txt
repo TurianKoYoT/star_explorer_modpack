@@ -1,0 +1,26 @@
+xte_official_trait_sheriff = {
+    inline_script = {
+        script = trait/xte_icon
+        CLASS = official
+        ICON = GFX_xte_leader_trait_sheriff
+        RARITY = xte_positive
+        COUNCIL = no
+        TIER = none
+    }
+    cost = 0
+    randomized = no
+    planet_modifier = {
+        planet_crime_add = -10
+        planet_stability_add = 5
+    }
+    sector_modifier = {
+        planet_crime_add = -5
+        planet_stability_add = 3
+    }
+    leader_potential_add = {
+        always = no
+    }
+    leader_class = {
+        official
+    }
+}

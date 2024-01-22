@@ -1,0 +1,32 @@
+trait_ssh_enduring_metabolism = {
+    cost = 3
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    modifier = {
+        leader_lifespan_add = 50
+    }
+    icon = "gfx/interface/icons/traits/trait_ssh_enduring_metabolism.dds"
+    initial = no
+    randomized = no
+    prerequisites = {
+        "ssh_tech_advanced_dna_resequencing"
+    }
+    opposites = {
+        "trait_enduring"
+        "trait_fleeting"
+        "trait_fleeting_lithoid"
+        "trait_invasive"
+    }
+    slave_cost = {
+        energy = 750
+    }
+}

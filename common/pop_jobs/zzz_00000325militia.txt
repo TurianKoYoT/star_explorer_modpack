@@ -1,0 +1,58 @@
+militia = {
+    category = worker
+    is_capped_by_modifier = no
+    building_icon = building_crude_huts
+    clothes_texture_index = 4
+    icon = primitive_laborer
+    possible_pre_triggers = {
+        is_sapient = yes
+    }
+    possible = {
+        OR = {
+            has_trait = trait_clone_soldier_fertile_perfect
+            has_trait = trait_clone_soldier_infertile
+            has_trait = trait_clone_soldier_infertile_full_potential
+        }
+    }
+    triggered_pop_modifier = {
+        potential = {
+            is_organic_species = yes
+        }
+        pop_housing_usage_add = -0.5
+    }
+    pop_modifier = {
+        pop_defense_armies_add = 1
+    }
+    planet_modifier = {
+        planet_amenities_add = 1
+    }
+    resources = {
+        category = planet_soldiers
+        produces = {
+            food = 2
+            minerals = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            OR = {
+                has_trait = trait_robot_domestic_protocols
+                has_trait = trait_charismatic
+            }
+        }
+        modifier = {
+            planet_amenities_add = 0.25
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_trait = trait_repugnant
+        }
+        modifier = {
+            planet_amenities_add = -0.25
+        }
+    }
+    weight = {
+        weight = @special_job_weight
+    }
+}

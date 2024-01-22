@@ -1,0 +1,37 @@
+building_katzencaches_stellarite_megalopolis = {
+    base_buildtime = @b2_time
+    can_build = no
+    category = amenity
+    potential = {
+        owner = {
+            has_origin = origin_katzen
+        }
+    }
+    allow = {
+        has_enigmatic_capital = yes
+    }
+    prerequisites = {
+        "tech_dark_matter_power_core_se"
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 1000
+            alloys = 500
+        }
+        upkeep = {
+            energy = 10
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 240
+        planet_amenities_add = 240
+        job_stellarite_energyman_per_pop = 0.1
+        job_stellarite_transmute_man_per_pop = 0.1
+        job_stellarite_artisan_per_pop = 0.1
+        job_stellarite_alloyman_per_pop = 0.1
+        job_stellarite_researcher_per_pop = 0.1
+        job_stellarite_entertainer_per_pop = 0.1
+        job_stellarite_apothecary_per_pop = 0.1
+    }
+}

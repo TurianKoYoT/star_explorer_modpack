@@ -1,0 +1,20 @@
+trait_v_thorns = {
+    cost = -1
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/FUN"
+    inline_script = "species_class/LITHOID"
+    opposites = {
+        "trait_v_adv_thorns"
+    }
+    custom_tooltip = TRAIT_THORNS_EFFECT
+    slave_cost = {
+        energy = 1000
+    }
+}

@@ -1,0 +1,40 @@
+pc_black_hole_shellworld = {
+    entity = "ssh_black_hole_shellworld_planet"
+    entity_scale = @planet_standard_scale
+    icon = GFX_planet_type_black_hole_shellworld
+    picture = pc_black_hole_shellworld
+    enable_tilt = no
+    climate = "cold"
+    starting_planet = no
+    spawn_odds = 0
+    atmosphere_color = hsv {
+        0.1
+        0.1
+        0.1
+    }
+    atmosphere_intensity = 1
+    atmosphere_width = 0.5
+    city_color_lut = "gfx/portraits/misc/ssh_colorcorrection_dark.dds"
+    planet_size = {
+        min = 35
+        max = 40
+    }
+    moon_size = {
+        min = @habitable_moon_min_size
+        max = @habitable_moon_max_size
+    }
+    colonizable = yes
+    uses_alternative_skies_for_moons = no
+    district_set = black_hole_shell_world
+    carry_cap_per_free_district = @carry_cap_normal
+    fixed_city_level = 6
+    can_be_moon = no
+    chance_of_ring = 0
+    is_artificial_planet = yes
+    orbit_lines = no
+    ideal = yes
+    modifier = {
+        planet_max_buildings_add = 48
+        planet_housing_add = 20
+    }
+}

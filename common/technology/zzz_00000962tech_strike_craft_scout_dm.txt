@@ -1,0 +1,25 @@
+tech_strike_craft_scout_dm = {
+    area = engineering
+    category = {
+        voidcraft
+    }
+    cost = @acot_tier6cost2
+    tier = 6
+    weight = @tier5weight1
+    ai_update_type = military
+    prerequisites = {
+        "tech_strike_craft_3"
+        "tech_dark_matter_power_core_dm"
+    }
+    is_reverse_engineerable = no
+    potential = {
+        NOT = {
+            has_global_flag = acot_weapons_forbidden
+        }
+        NOT = {
+            has_global_flag = acot_delta_forbidden
+        }
+    }
+    ai_weight = {
+    }
+}

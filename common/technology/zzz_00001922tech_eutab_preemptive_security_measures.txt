@@ -1,0 +1,23 @@
+tech_eutab_preemptive_security_measures = {
+    cost = @tier3cost2
+    area = society
+    tier = 3
+    category = {
+        military_theory
+    }
+    prerequisites = {
+        "tech_encryption_1"
+    }
+    weight = @tier3weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_xenophobe_not_pac = yes
+        has_ascension_perk = ap_master_builders
+    }
+    gateway = eu_masterbuild
+    modifier = {
+        ship_jumpdrive_cooldown_mult = -0.1
+        ship_windup_mult = -0.25
+        ship_winddown_mult = -0.33
+    }
+}

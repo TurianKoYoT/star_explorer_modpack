@@ -1,0 +1,2 @@
+l_english:
+ acot_precursor_databank.904.enigmalith:1000 "Precursor Enigmalith Verified!"

@@ -1,0 +1,40 @@
+governor_assitant = {
+    category = ruler
+    condition_string = RULER_JOB_TRIGGER
+    building_icon = building_akx_worm_3
+    clothes_texture_index = 1
+    possible_pre_triggers = {
+        has_owner = yes
+        is_enslaved = no
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_ruler_job
+    resources = {
+        category = planet_politicians
+        produces = {
+            influence = 0.3
+        }
+        upkeep = {
+            consumer_goods = 4
+        }
+    }
+    planet_modifier = {
+        pop_government_ethic_attraction = 0.05
+    }
+    country_modifier = {
+        edict_length_mult = 0.03
+    }
+    weight = {
+        weight = @ruler_job_weight
+        modifier = {
+            factor = 0.2
+            has_citizenship_rights = no
+        }
+        modifier = {
+            factor = 0.5
+            is_xenophobe = yes
+        }
+    }
+}

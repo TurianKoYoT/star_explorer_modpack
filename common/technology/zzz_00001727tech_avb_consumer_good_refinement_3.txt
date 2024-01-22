@@ -1,0 +1,29 @@
+tech_avb_consumer_good_refinement_3 = {
+    cost = @tier4cost1
+    area = physics
+    tier = 5
+    category = {
+        computing
+    }
+    prerequisites = {
+        "tech_avb_luxuries_4"
+        "tech_consumer_good_refinement_2"
+        "tech_avb_sapient_ai_2"
+    }
+    weight = @tier5weight1
+    modifier = {
+        planet_artisans_produces_mult = 0.1
+    }
+    potential = {
+        OR = {
+            is_gestalt = no
+            has_valid_civic = civic_machine_servitor
+        }
+    }
+    weight_modifier = {
+        factor = 2
+    }
+    ai_weight = {
+        factor = 4
+    }
+}

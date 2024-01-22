@@ -1,0 +1,30 @@
+anz_voidframe_synapse_drone_dm = {
+    category = complex_drone
+    condition_string = DRONE_JOB_TRIGGER
+    building_icon = building_dm_ancient_hive_cluster
+    possible_pre_triggers = {
+        has_owner = yes
+        is_enslaved = no
+        is_being_purged = no
+        is_being_assimilated = no
+    }
+    possible_precalc = can_fill_drone_job
+    possible = {
+        can_think = yes
+    }
+    resources = {
+        category = planet_administrators
+        produces = {
+            unity = 30
+        }
+        upkeep = {
+            sr_dark_matter = 1
+            acot_sr_dark_energy = 2
+            energy = 10
+        }
+    }
+    weight = {
+        weight = @complex_drone_job_weight
+        mult = value:job_weights_modifier|JOB|coordinator|RESOURCE|unity|
+    }
+}

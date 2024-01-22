@@ -1,0 +1,50 @@
+frameworld_defender_drone = {
+    category = simple_drone
+    condition_string = DRONE_JOB_TRIGGER
+    building_icon = building_stronghold
+    icon = warrior_drone
+    country_modifier = {
+        country_naval_cap_add = 6
+    }
+    resources = {
+        category = planet_soldiers
+        produces = {
+            unity = 3
+        }
+    }
+    triggered_country_modifier = {
+        potential = {
+            planet = {
+                exists = owner
+                owner = {
+                    has_technology = "tech_ground_defense_planning"
+                }
+            }
+        }
+        modifier = {
+            country_naval_cap_add = 3
+        }
+    }
+    pop_modifier = {
+        pop_defense_armies_add = 5
+    }
+    triggered_planet_modifier = {
+        modifier = {
+            planet_stability_add = 1
+        }
+        mult = planet.modifier:job_soldier_stability_add
+    }
+    possible_pre_triggers = {
+        has_owner = yes
+        is_enslaved = no
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_drone_job
+    weight = {
+        weight = value:giga_menial_drone_weight|JOB|frameworld_defender_drone|RESOURCE|unity|
+        multiply = 100
+        multiply = value:giga_army_weight
+    }
+}

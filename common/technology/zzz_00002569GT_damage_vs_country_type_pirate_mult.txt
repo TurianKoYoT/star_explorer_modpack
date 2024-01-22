@@ -1,0 +1,32 @@
+GT_damage_vs_country_type_pirate_mult = {
+    cost = @tier2cost3
+    area = society
+    tier = 2
+    category = {
+        military_theory
+    }
+    prerequisites = {
+        "tech_colonial_centralization"
+    }
+    weight = @tier2weight3
+    modifier = {
+        damage_vs_country_type_pirate_mult = 0.4
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            num_researched_techs_of_tier = {
+                tier = 2
+                value > 10
+            }
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                has_country_flag = pirate_encountered
+            }
+        }
+    }
+    ai_weight = {
+    }
+}

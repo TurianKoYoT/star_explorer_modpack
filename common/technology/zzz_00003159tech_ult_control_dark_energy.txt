@@ -1,0 +1,17 @@
+tech_ult_control_dark_energy = {
+    area = physics
+    cost = 30000
+    tier = 4
+    category = {
+        field_manipulation
+    }
+    is_rare = yes
+    prerequisites = {
+        "tech_ult_ultimate_technology"
+        "tech_zero_point_power"
+    }
+    weight = 60
+    modifier = {
+        planet_jobs_energy_produces_mult = 0.25
+    }
+}

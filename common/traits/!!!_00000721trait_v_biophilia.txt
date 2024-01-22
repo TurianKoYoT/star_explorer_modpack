@@ -1,0 +1,54 @@
+trait_v_biophilia = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    species_possible_merge_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    species_possible_remove = {
+        OR = {
+            can_remove_beneficial_genetic_traits = yes
+            AND = {
+                exists = from
+                from = {
+                    is_gestalt = yes
+                }
+            }
+        }
+    }
+    opposites = {
+        "trait_void_dweller_1"
+        "trait_hive_mind"
+        "trait_v_arrogance"
+        "trait_v_ecological_cynicism"
+        "trait_v_biophobia"
+        "trait_v_pest_sensitive"
+        "trait_v_adv_pest_sensitive"
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    allowed_ethics = {
+        ethic_xenophile
+        ethic_fanatic_xenophile
+    }
+    valid_for_all_ethics = no
+    custom_tooltip_with_modifiers = TRAIT_BIOPHILIA_EFFECT
+    triggered_pop_modifier = {
+        pop_ethic_xenophile_attraction_mult = 0.05
+        pop_happiness = 0.025
+        planet_jobs_society_research_produces_mult = 0.025
+        mult = planet.value:natural_blocker_count
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

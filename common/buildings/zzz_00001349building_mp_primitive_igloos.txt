@@ -1,0 +1,33 @@
+building_mp_primitive_igloos = {
+    icon = building_mp_primitive_igloos
+    capital = no
+    can_build = no
+    can_demolish = yes
+    can_be_ruined = no
+    ai_weight = {
+        weight = 10
+    }
+    planet_modifier = {
+        planet_housing_add = 2
+        pop_happiness = 0.05
+    }
+    potential = {
+        exists = owner
+        owner = {
+            is_primitive = yes
+            OR = {
+                has_country_flag = stone_age
+                has_country_flag = bronze_age
+                has_country_flag = iron_age
+                has_country_flag = late_medieval_age
+            }
+        }
+        planet = {
+            OR = {
+                is_planet_class = pc_frozen
+                is_planet_class = pc_tundra
+                is_planet_class = pc_arctic
+            }
+        }
+    }
+}

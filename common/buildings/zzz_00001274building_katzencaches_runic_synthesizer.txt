@@ -1,0 +1,61 @@
+building_katzencaches_runic_synthesizer = {
+    base_buildtime = 360
+    can_build = no
+    category = manufacturing
+    potential = {
+        owner = {
+            has_origin = origin_katzen
+        }
+    }
+    prerequisites = {
+        "tech_katzen_rr"
+        "tech_dark_matter_power_core_re"
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 1500
+            minerals = 1500
+            aot_sr_runic_power = 450
+        }
+        produces = {
+            minerals = 500
+            rare_crystals = 60
+            exotic_gases = 60
+            volatile_motes = 60
+            sr_zro = 60
+            sr_living_metal = 60
+            sr_dark_matter = 60
+            acot_sr_dark_energy = 60
+        }
+        upkeep = {
+            energy = 100
+            aot_sr_runic_power = 30
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            job_phanon_transmute_man_add = 6
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_phanon_transmute_drone_add = 6
+        }
+    }
+    upgrades = {
+        building_katzencaches_stellarite_synthesizer
+    }
+}

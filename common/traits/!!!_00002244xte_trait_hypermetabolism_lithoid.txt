@@ -1,0 +1,30 @@
+xte_trait_hypermetabolism_lithoid = {
+    icon = "gfx/interface/icons/traits/xte_trait_hypermetabolism.dds"
+    cost = 3
+    initial = yes
+    randomized = yes
+    allowed_archetypes = {
+        LITHOID
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    opposites = {
+        "trait_nerve_stapled"
+        "xte_trait_whimsical"
+        "xte_trait_oligotrophs_lithoid"
+        "trait_invasive"
+    }
+    potential_crossbreeding_chance = 1
+    modifier = {
+        planet_jobs_energy_produces_mult = 0.25
+        planet_pops_minerals_upkeep_mult = 0.35
+    }
+    custom_tooltip_with_modifiers = xte_added_by_notification
+    slave_cost = {
+        energy = 700
+    }
+}

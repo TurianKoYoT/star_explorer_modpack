@@ -1,0 +1,60 @@
+crystalline_technician = {
+    category = complex_drone
+    condition_string = DRONE_JOB_TRIGGER
+    building_icon = building_energy_grid
+    possible_pre_triggers = {
+        has_owner = yes
+        is_enslaved = no
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_drone_job
+    planet_modifier = {
+        planet_technician_produces_mult = 0.05
+        planet_pop_assembly_mult = -0.1
+    }
+    resources = {
+        category = planet_technician
+        produces = {
+            energy = 12
+        }
+        upkeep = {
+            rare_crystals = 0.75
+        }
+        produces = {
+            trigger = {
+                planet = {
+                    has_planet_flag = has_energy_requisitorium
+                }
+            }
+            energy = @requisitorium_energy_reduction
+        }
+    }
+    overlord_resources = {
+        category = planet_requisitioned_energy
+        produces = {
+            trigger = {
+                planet = {
+                    has_planet_flag = has_energy_requisitorium
+                }
+            }
+            energy = @requisitorium_energy_overlord
+        }
+    }
+    weight = {
+        weight = @complex_drone_job_weight
+        modifier = {
+            factor = 0
+            planet = {
+                owner = {
+                    is_ai = yes
+                    has_resource = {
+                        type = energy
+                        amount < 50
+                    }
+                }
+            }
+        }
+    }
+}

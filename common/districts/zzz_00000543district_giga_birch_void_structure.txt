@@ -1,0 +1,94 @@
+@void_birch_cost = 500000
+@void_birch_maintenance = 1500
+@void_birch_build_time = 3600
+district_giga_birch_void_structure = {
+    base_buildtime = @void_birch_build_time
+    is_capped_by_modifier = yes
+    icon = district_void_birch_structure
+    show_on_uncolonized = {
+        uses_district_set = acot_giga_void_sphere
+    }
+    potential = {
+        uses_district_set = acot_giga_void_sphere
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = @void_birch_cost
+        }
+        upkeep = {
+            energy = @void_birch_maintenance
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        giga_birch_district_insula_max = 1
+        giga_birch_district_insula_per_pop = 0.01
+    }
+    triggered_desc = {
+        trigger = {
+            always = yes
+        }
+        text = giga_birch_district_insula_tooltip
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        job_giga_birch_structure_manager_add = 1
+        job_giga_birch_structure_manager_per_pop = 0.01
+        job_acot_enforcer_per_pop = 0.06
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        job_giga_birch_structure_manager_drone_add = 1
+        job_giga_birch_structure_manager_drone_per_pop = 0.01
+        job_acot_enforcer_drone_per_pop = 0.06
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            job_acot_overlord_add = 1
+            job_acot_overseer_per_pop = 0.03
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        modifier = {
+            job_acot_overlord_drone_add = 1
+            job_acot_overseer_drone_per_pop = 0.03
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        modifier = {
+            job_acot_overlord_droid_add = 1
+            job_acot_overseer_droid_per_pop = 0.03
+        }
+    }
+}

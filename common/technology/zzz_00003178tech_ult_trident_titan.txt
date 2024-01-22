@@ -1,0 +1,15 @@
+tech_ult_trident_titan = {
+    area = physics
+    cost = 70000
+    tier = 5
+    category = {
+        particles
+    }
+    is_rare = yes
+    is_reverse_engineerable = no
+    prerequisites = {
+        "tech_titans"
+        "tech_ult_star_killer"
+    }
+    weight = 20
+}

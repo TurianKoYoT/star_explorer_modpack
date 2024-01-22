@@ -1,0 +1,29 @@
+trait_blokkat_blokkloris = {
+    cost = 0
+    leader_potential_add = {
+        always = no
+    }
+    icon = "gfx/interface/icons/traits/trait_blokkat_blokkloris.dds"
+    immortal_leaders = yes
+    planet_modifier = {
+        terraform_speed_mult = 0.5
+        terraforming_cost_mult = -0.25
+        pop_environment_tolerance = 0.25
+        planet_decision_enact_speed_mult = 0.15
+        planet_crime_add = -20
+        planet_building_build_speed_mult = 0.3
+        planet_buildings_cost_mult = -0.3
+        planet_districts_cost_mult = -0.3
+        deposit_blockers_cost_mult = -0.5
+        planet_clear_blocker_speed_mult = 0.5
+        planet_army_build_speed_mult = 0.2
+        armies_cost_mult = -0.2
+        army_defense_damage_mult = 0.2
+    }
+    leader_class = all
+    initial = no
+    randomized = no
+    ai_weight = {
+        weight = 0
+    }
+}

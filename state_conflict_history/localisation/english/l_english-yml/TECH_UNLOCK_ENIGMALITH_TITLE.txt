@@ -1,0 +1,2 @@
+l_english:
+ TECH_UNLOCK_ENIGMALITH_TITLE:1000 "§HUnlocks Megastructure:§! $acot_dark_matter_obelisk_core$"

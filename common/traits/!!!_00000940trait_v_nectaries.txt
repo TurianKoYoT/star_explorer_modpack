@@ -1,0 +1,36 @@
+trait_v_nectaries = {
+    cost = 2
+    randomized = no
+    species_potential_add = {
+        exists = from
+        from = {
+            is_ai = no
+        }
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_void_dweller_1"
+        "trait_v_adv_nectaries"
+        "trait_v_biophobia"
+        "trait_v_pest_sensitive"
+        "trait_v_adv_pest_sensitive"
+    }
+    inline_script = "traits/vanilla_opposites_pop_growth"
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/FUN"
+    inline_script = "species_class/PLANT"
+    custom_tooltip = TRAIT_NECTARIES_EFFECT
+    triggered_planet_growth_habitability_modifier = {
+        pop_growth_speed = 0.05
+        mult = planet.value:natural_blocker_count
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

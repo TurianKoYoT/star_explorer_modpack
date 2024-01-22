@@ -1,0 +1,20 @@
+building_mp_primitive_particle_accelerator = {
+    icon = building_mp_primitive_particle_accelerator
+    capital = no
+    can_build = no
+    can_demolish = yes
+    can_be_ruined = no
+    ai_weight = {
+        weight = 0
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            physics_research = 150
+        }
+    }
+    planet_modifier = {
+        planet_jobs_physics_research_produces_mult = 0.01
+        planet_buildings_energy_upkeep_mult = 0.01
+    }
+}

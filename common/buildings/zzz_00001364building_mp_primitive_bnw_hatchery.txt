@@ -1,0 +1,16 @@
+building_mp_primitive_bnw_hatchery = {
+    icon = building_coordinated_fulfillment_center_1
+    capital = no
+    can_build = no
+    can_demolish = yes
+    can_be_ruined = no
+    ai_weight = {
+        weight = 10
+    }
+    planet_modifier = {
+        job_mp_primitive_bnw_beta_add = 2
+        job_mp_primitive_bnw_gamma_add = 4
+        job_mp_primitive_bnw_delta_add = 5
+        job_mp_primitive_bnw_epsilon_add = 6
+    }
+}

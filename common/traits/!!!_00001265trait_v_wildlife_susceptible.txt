@@ -1,0 +1,21 @@
+trait_v_wildlife_susceptible = {
+    cost = -2
+    inline_script = "traits/no_randomized"
+    allowed_archetypes = {
+        ROBOT
+        MACHINE
+    }
+    opposites = {
+        "trait_v_robot_biophilia"
+        "trait_v_robot_druidic"
+    }
+    custom_tooltip = TRAIT_WILDLIFE_SUCEPTIBLE_EFFECT
+    triggered_pop_modifier = {
+        pop_amenities_usage_mult = 0.1
+        planet_jobs_produces_mult = -0.05
+        mult = planet.value:natural_blocker_count
+    }
+    slave_cost = {
+        energy = -2000
+    }
+}

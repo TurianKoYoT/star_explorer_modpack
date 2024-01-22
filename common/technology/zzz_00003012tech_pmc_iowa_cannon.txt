@@ -1,0 +1,22 @@
+tech_pmc_iowa_cannon = {
+    area = physics
+    category = {
+        particles
+    }
+    tier = 8
+    cost = 10240000
+    weight = 1
+    ai_update_type = all
+    is_rare = yes
+    is_reverse_engineerable = no
+    potential = {
+        has_technology = tech_precursor_theia_design
+        NOT = {
+            has_global_flag = acot_weapons_forbidden
+        }
+    }
+    prerequisites = {
+        tech_perdition_beam_theta
+        tech_titan_accelerator_theta
+    }
+}

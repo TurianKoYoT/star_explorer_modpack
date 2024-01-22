@@ -1,0 +1,19 @@
+building_mp_primitive_test_site = {
+    icon = building_mp_primitive_test_site
+    capital = no
+    can_build = no
+    can_demolish = yes
+    can_be_ruined = no
+    ai_weight = {
+        weight = 10
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            physics_research = 20
+        }
+    }
+    planet_modifier = {
+        job_mp_primitive_testsite_overseer_add = 1
+    }
+}

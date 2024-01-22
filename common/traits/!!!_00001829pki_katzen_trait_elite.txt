@@ -1,0 +1,18 @@
+pki_katzen_trait_elite = {
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = "GFX_leader_trait_from_the_ranks"
+        RARITY = veteran
+        COUNCIL = no
+        TIER = none
+    }
+    immortal_leaders = yes
+    self_modifier = {
+        species_leader_exp_gain = -0.15
+    }
+    leader_class = all
+    initial = no
+    randomized = no
+    custom_tooltip_with_modifiers = pki_katzen_trait_elite_effect
+}

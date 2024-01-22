@@ -1,0 +1,22 @@
+trait_yanz_procreation = {
+    cost = 12
+    initial = no
+    randomized = no
+    species_potential_add = {
+        from = {
+            has_technology = tech_yanz_synthesis
+        }
+    }
+    potential_crossbreeding_chance = 0.1
+    opposites = {
+    }
+    allowed_archetypes = {
+        ROBOT
+        MACHINE
+    }
+    sorting_priority = 6
+    icon = "gfx/interface/icons/traits/bio_path/trait_yanz_procreation.dds"
+    modifier = {
+        planet_pop_assembly_mult = 2
+    }
+}

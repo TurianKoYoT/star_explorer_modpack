@@ -1,0 +1,24 @@
+tech_avb_resource_processing_algorithms_3 = {
+    cost = @tier5cost1
+    area = society
+    tier = 5
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_avb_resource_processing_algorithms_2"
+    }
+    weight = @tier5weight1
+    modifier = {
+        planet_jobs_produces_mult = 0.05
+    }
+    potential = {
+        has_authority = auth_machine_intelligence
+    }
+    weight_modifier = {
+        factor = 4
+    }
+    ai_weight = {
+        weight = 2
+    }
+}

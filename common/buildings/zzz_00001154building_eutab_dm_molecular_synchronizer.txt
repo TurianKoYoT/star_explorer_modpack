@@ -1,0 +1,42 @@
+building_eutab_dm_molecular_synchronizer = {
+    base_buildtime = @b3_time
+    base_cap_amount = 1
+    icon = building_eutab_process_monitor
+    category = resource
+    potential = {
+        is_planet_class = pc_machine
+        exists = owner
+        owner = {
+            is_machine_empire = yes
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 1000
+            alloys = 200
+            volatile_motes = 100
+        }
+        upkeep = {
+            energy = 25
+            alloys = 10
+            volatile_motes = 5
+        }
+    }
+    planet_modifier = {
+        job_mining_drone_add = 10
+        job_mining_drone_per_pop = 0.1
+    }
+    triggered_desc = {
+        text = job_mining_drone_effect_desc
+    }
+    prerequisites = {
+        "tech_eutab_m_command_control"
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            is_machine_empire = no
+        }
+    }
+}

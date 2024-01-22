@@ -1,0 +1,42 @@
+building_stellarite_mineral_corp = {
+    icon = building_stellarite_mineral_processing_plant
+    base_buildtime = 360
+    owner_type = corporate
+    category = resource
+    can_build = no
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            is_criminal_syndicate = no
+        }
+        has_global_flag = has_aot_mod
+    }
+    planet_modifier = {
+        job_stellarite_mineralman_add = 2
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            energy = 4000
+            minerals = 4000
+            acot_sr_stellarite = 800
+        }
+        produces = {
+            minerals = 400
+        }
+        upkeep = {
+            energy = 40
+            acot_sr_stellarite = 5
+        }
+    }
+    prerequisites = {
+        tech_stellarite_mineral_processing_plant
+    }
+    show_tech_unlock_if = {
+        is_megacorp = yes
+        is_criminal_syndicate = no
+    }
+    ai_weight = {
+        factor = 1
+    }
+}

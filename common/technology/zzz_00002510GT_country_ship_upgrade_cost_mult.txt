@@ -1,0 +1,26 @@
+GT_country_ship_upgrade_cost_mult = {
+    cost = @tier5cost1
+    area = engineering
+    tier = 5
+    category = {
+        voidcraft
+    }
+    prerequisites = {
+        "tech_starbase_5"
+    }
+    weight = @tier5weight1
+    modifier = {
+        country_ship_upgrade_cost_mult = -0.2
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            num_researched_techs_of_tier = {
+                tier = 5
+                value > 15
+            }
+        }
+    }
+    ai_weight = {
+    }
+}

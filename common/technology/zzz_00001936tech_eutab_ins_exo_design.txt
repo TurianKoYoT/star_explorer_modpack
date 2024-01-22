@@ -1,0 +1,24 @@
+tech_eutab_ins_exo_design = {
+    cost = @tier3cost3
+    area = physics
+    tier = 3
+    category = {
+        computing
+    }
+    prerequisites = {
+        "tech_global_research_initiative"
+        "tech_rare_crystals"
+        "tech_volatile_motes"
+        "tech_exotic_gases"
+    }
+    weight = @tier3weight3
+    is_custom_tech_1 = yes
+    gateway = eu_nihilistic
+    potential = {
+        is_xenophile = yes
+        has_ascension_perk = ap_nihilistic_acquisition
+    }
+    modifier = {
+        diplo_weight_technology_mult = 0.05
+    }
+}

@@ -1,0 +1,35 @@
+tech_avb_space_defense_station_improvement_5 = {
+    cost = @avbtier6cost3
+    area = engineering
+    tier = 6
+    category = {
+        voidcraft
+    }
+    prerequisites = {
+        "tech_avb_space_defense_station_improvement_4"
+    }
+    is_rare = yes
+    weight = @avbtier6weight3
+    icon = tech_space_defense_station_improvement
+    modifier = {
+        starbase_upgrade_cost_mult = -0.15
+        starbase_upgrade_speed_mult = 0.25
+    }
+    weight_modifier = {
+        factor = 0.5
+        modifier = {
+            factor = @ap_technological_ascendancy_rare_tech
+            has_ascension_perk = ap_technological_ascendancy
+        }
+        modifier = {
+            factor = 1.25
+            OR = {
+                has_ethic = ethic_militarist
+                has_ethic = ethic_fanatic_militarist
+            }
+        }
+    }
+    ai_weight = {
+        factor = 4
+    }
+}

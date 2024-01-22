@@ -1,0 +1,29 @@
+tech_eutab_sanctified_lands = {
+    cost = @tier3cost2
+    area = society
+    tier = 3
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_galactic_administration"
+    }
+    weight = @tier3weight2
+    is_custom_tech_1 = yes
+    potential = {
+        is_xenophile = yes
+        is_spiritualist = yes
+        has_ascension_perk = ap_consecrated_worlds
+    }
+    gateway = eu_consecrated
+    prereqfor_desc = {
+        custom = {
+            title = "TECH_UNLOCK_EUTAB_SANCT1_TITLE"
+            desc = "TECH_UNLOCK_EUTAB_SANCT1_DESC"
+        }
+        custom = {
+            title = "TECH_UNLOCK_EUTAB_SANCT2_TITLE"
+            desc = "TECH_UNLOCK_EUTAB_SANCT2_DESC"
+        }
+    }
+}

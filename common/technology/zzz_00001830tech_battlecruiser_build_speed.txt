@@ -1,0 +1,19 @@
+tech_battlecruiser_build_speed = {
+    area = engineering
+    cost = @tier4cost3
+    tier = @fallentechtier
+    category = {
+        ascended_technologies
+    }
+    prerequisites = {
+        "tech_doa_battlecruiser"
+    }
+    weight = @tier4weight1
+    modifier = {
+        custom_tooltip = tech_battlecruiser_build_speed_effect
+        shipsize_doa_battlecruiser_build_speed_mult = 0.25
+    }
+    ai_weight = {
+        factor = 2
+    }
+}

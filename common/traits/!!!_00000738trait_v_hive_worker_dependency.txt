@@ -1,0 +1,35 @@
+trait_v_hive_worker_dependency = {
+    cost = 4
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = yes
+        }
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    allowed_ethics = {
+        ethic_gestalt_consciousness
+    }
+    valid_for_all_ethics = no
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    opposites = {
+        "trait_invasive"
+        "trait_v_adv_hive_worker_dependency"
+    }
+    custom_tooltip = TRAIT_HIVE_WORKER_DEPENDENCY_EFFECT
+    triggered_pop_modifier = {
+        planet_jobs_specialist_produces_mult = 0.005
+        mult = planet.value:count_v_hive_worker_dependency
+    }
+    slave_cost = {
+        energy = 4000
+    }
+}

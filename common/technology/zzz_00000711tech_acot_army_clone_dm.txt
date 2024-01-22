@@ -1,0 +1,24 @@
+tech_acot_army_clone_dm = {
+    cost = @acot_tier6cost2
+    area = society
+    tier = 6
+    category = {
+        biology
+    }
+    is_rare = yes
+    prerequisites = {
+        tech_gene_banks
+        "tech_acot_army_dm"
+    }
+    weight = 20
+    potential = {
+        NOT = {
+            has_global_flag = acot_army_forbidden
+        }
+        is_regular_empire = yes
+        has_ascension_perk = ap_engineered_evolution
+    }
+    ai_weight = {
+        factor = 3
+    }
+}

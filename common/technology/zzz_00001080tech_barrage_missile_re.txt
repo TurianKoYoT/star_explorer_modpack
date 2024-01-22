@@ -1,0 +1,43 @@
+tech_barrage_missile_re = {
+    area = engineering
+    category = {
+        propulsion
+    }
+    cost = @acot_tier9cost2
+    tier = 9
+    weight = @tier5weight1
+    ai_update_type = military
+    is_reverse_engineerable = no
+    potential = {
+        is_fallen_empire = no
+        NOT = {
+            has_global_flag = acot_weapons_forbidden
+        }
+        has_technology = tech_dark_matter_power_core_re
+        NOT = {
+            has_global_flag = acot_phanon_forbidden
+        }
+    }
+    prerequisites = {
+        tech_dark_matter_power_core_re
+        tech_barrage_missile_pe
+        tech_missile_re
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            NOT = {
+                has_technology = tech_dark_matter_power_core_re
+            }
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                has_country_flag = acot_phanon_tech_stage_two_enabled
+            }
+        }
+    }
+    ai_weight = {
+        factor = 20
+    }
+}

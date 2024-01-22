@@ -1,0 +1,25 @@
+tech_acot_army_mat_hero = {
+    area = society
+    cost = @acot_tier6cost1
+    tier = 7
+    category = {
+        military_theory
+    }
+    is_rare = yes
+    prerequisites = {
+        "tech_acot_army_mat"
+    }
+    weight = 20
+    potential = {
+        has_ethic = ethic_fanatic_materialist
+        NOT = {
+            has_global_flag = acot_army_forbidden
+        }
+    }
+    weight_modifier = {
+        factor = 1.25
+    }
+    ai_weight = {
+        factor = 1.25
+    }
+}

@@ -1,0 +1,2 @@
+l_english:
+ acot_dark_matter_obelisk_core_pe:1000 "Enigmalith Kali"

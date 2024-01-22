@@ -1,0 +1,29 @@
+xte_leader_trait_regal = {
+    inline_script = {
+        script = trait/xte_icon
+        CLASS = leader
+        ICON = GFX_xte_leader_trait_regal
+        RARITY = xte_positive
+        COUNCIL = yes
+        TIER = none
+    }
+    cost = 0
+    randomized = no
+    triggered_councilor_modifier = {
+        potential = {
+            always = yes
+        }
+        councilor_exp_gain = 0.25
+        council_agenda_progress_speed = 0.15
+        multiplier = value:xte_anti_stacking_value|LEADER_TRAIT|xte_leader_trait_regal|
+    }
+    custom_tooltip_with_modifiers = xte_councilor_trait_efficiency_notification
+    leader_potential_add = {
+        always = no
+    }
+    leader_class = {
+        commander
+        scientist
+        official
+    }
+}

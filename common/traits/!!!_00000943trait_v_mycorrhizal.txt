@@ -1,0 +1,30 @@
+trait_v_mycorrhizal = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    randomized = no
+    potential_crossbreeding_chance = 0
+    opposites = {
+        "trait_void_dweller_1"
+        "trait_v_adv_mycorrhizal"
+        "trait_v_biophobia"
+        "trait_v_pest_sensitive"
+        "trait_v_adv_pest_sensitive"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/FUN"
+    custom_tooltip = TRAIT_MYCORRHIZA_EFFECT
+    triggered_pop_modifier = {
+        planet_pops_organics_food_upkeep_mult = -0.05
+        mult = planet.value:natural_blocker_count
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

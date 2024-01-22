@@ -1,0 +1,20 @@
+tech_eutab_m_sentient_bunkers = {
+    cost = @tier3cost3
+    area = society
+    tier = 3
+    is_custom_tech_1 = yes
+    category = {
+        military_theory
+    }
+    prerequisites = {
+        "tech_biomechanics"
+    }
+    weight = @tier3weight3
+    potential = {
+        is_machine_empire = yes
+    }
+    modifier = {
+        army_defense_damage_mult = 0.2
+        army_defense_health_mult = 0.35
+    }
+}

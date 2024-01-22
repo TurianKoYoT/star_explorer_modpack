@@ -1,0 +1,63 @@
+building_avb_psi_corps_3 = {
+    base_buildtime = @avb_g5_time
+    can_build = no
+    category = government
+    potential = {
+        host_has_dlc = "Utopia"
+        owner = {
+            has_tradition = tr_psionics_psi_corps
+        }
+        NOT = {
+            has_modifier = resort_colony
+        }
+        NOT = {
+            has_modifier = slave_colony
+        }
+    }
+    allow = {
+        has_upgraded_capital_6 = yes
+        if = {
+            limit = {
+                exists = orbital_defence
+            }
+            orbital_defence = {
+                exists = starbase
+                starbase = {
+                    NOR = {
+                        has_starbase_building = ring_psi_corps
+                        is_starbase_building_building = ring_psi_corps
+                    }
+                }
+            }
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        NOT = {
+            owner = {
+                has_tradition = tr_psionics_psi_corps
+            }
+        }
+    }
+    planet_modifier = {
+        job_telepath_add = 8
+        planet_stability_add = 20
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_g5_minerals
+            sr_zro = @avb_g5_rare_cost
+        }
+        upkeep = {
+            energy = @avb_g5_upkeep
+            sr_zro = @avb_g5_rare_upkeep
+        }
+    }
+    triggered_desc = {
+        text = job_telepath_effect_desc
+    }
+    prerequisites = {
+        "tech_avb_psi_corps_3"
+    }
+}

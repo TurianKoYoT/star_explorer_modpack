@@ -1,0 +1,5 @@
+doa_opinion_refused_demands = {
+    opinion = {
+        base = -50
+    }
+}

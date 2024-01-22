@@ -1,0 +1,19 @@
+building_auto_drone_facility_3 = {
+    base_buildtime = 180
+    can_build = no
+    allow = {
+        has_major_upgraded_capital = yes
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            automatic_drone = 600
+        }
+        produces = {
+            automatic_drone = 40
+        }
+        upkeep = {
+            energy = 5
+        }
+    }
+}

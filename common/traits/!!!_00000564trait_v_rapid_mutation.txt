@@ -1,0 +1,25 @@
+trait_v_rapid_mutation = {
+    cost = 1
+    species_potential_add = {
+        always = no
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    allowed_origins = {
+        origin_post_apocalyptic
+    }
+    valid_for_all_origins = no
+    randomized = no
+    icon = "gfx/interface/icons/traits/trait_mutagenic.dds"
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    modifier = {
+        leader_age = -20
+        pop_environment_tolerance = 0.2
+    }
+}

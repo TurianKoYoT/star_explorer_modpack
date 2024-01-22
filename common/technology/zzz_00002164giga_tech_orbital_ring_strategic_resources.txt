@@ -1,0 +1,27 @@
+giga_tech_orbital_ring_strategic_resources = {
+    cost = 15000
+    area = engineering
+    tier = 3
+    category = {
+        industry
+    }
+    prerequisites = {
+        "tech_orbital_ring_tier_1"
+    }
+    weight = @tier3weight3
+    potential = {
+        has_overlord_dlc = yes
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            nor = {
+                has_technology = tech_mine_volatile_motes
+                has_technology = tech_mine_rare_crystals
+                has_technology = tech_mine_exotic_gases
+            }
+        }
+    }
+    ai_weight = {
+    }
+}

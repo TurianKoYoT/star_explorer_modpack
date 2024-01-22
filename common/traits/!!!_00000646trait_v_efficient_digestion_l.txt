@@ -1,0 +1,26 @@
+trait_v_efficient_digestion_l = {
+    cost = 1
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 0
+    icon = "gfx/interface/icons/traits/trait_v_efficient_digestion.dds"
+    opposites = {
+        "trait_v_efficient_digestion"
+        "trait_v_inefficient_digestion"
+        "trait_v_inefficient_digestion_l"
+        "trait_v_complex_digestive_system"
+        "trait_v_old_instincts"
+        "trait_invasive"
+    }
+    inline_script = "allowed_archetypes/LITHOID"
+    modifier = {
+        planet_pops_organics_minerals_upkeep_mult = -0.1
+    }
+    slave_cost = {
+        energy = 500
+    }
+}

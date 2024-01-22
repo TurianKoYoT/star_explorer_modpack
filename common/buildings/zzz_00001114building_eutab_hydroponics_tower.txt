@@ -1,0 +1,60 @@
+building_eutab_hydroponics_tower = {
+    base_buildtime = @b1_time
+    can_build = no
+    category = resource
+    potential = {
+        has_upgraded_capital = yes
+        exists = owner
+        owner = {
+            OR = {
+                country_uses_food = yes
+                is_ai = no
+            }
+        }
+    }
+    planet_modifier = {
+        planet_amenities_add = 5
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+        }
+        upkeep = {
+            energy = @b2_upkeep
+        }
+    }
+    inline_script = {
+        script = jobs/farmers_add
+        FARMER_AMOUNT = 5
+        ANGLER_AMOUNT = 3
+    }
+    prerequisites = {
+        "tech_eutab_sustainable_architecture"
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            owner = {
+                is_ai = yes
+                country_uses_food = no
+            }
+            AND = {
+                NOT = {
+                    is_planet_class = pc_habitat
+                }
+                free_building_slots = 0
+                owner = {
+                    is_ai = yes
+                    has_monthly_income = {
+                        resource = food
+                        value > 150
+                    }
+                }
+            }
+        }
+    }
+    convert_to = {
+        building_hydroponics_farm
+    }
+}

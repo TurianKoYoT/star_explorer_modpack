@@ -1,0 +1,90 @@
+building_avb_dread_encampment_2 = {
+    base_buildtime = @avb_b3_time
+    can_build = no
+    icon = building_dread_encampment
+    can_be_ruined = no
+    category = army
+    potential = {
+        exists = owner
+        owner = {
+            OR = {
+                has_valid_civic = civic_reanimated_armies
+                is_bugged_reanimator = yes
+            }
+        }
+        OR = {
+            has_z_expanded_mod = no
+            AND = {
+                has_z_expanded_mod = yes
+                NOT = {
+                    has_planet_flag = planetary_station
+                }
+            }
+        }
+    }
+    allow = {
+        has_major_upgraded_capital = yes
+    }
+    planet_modifier = {
+        job_necromancer_add = 4
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+        }
+        modifier = {
+            planet_army_build_speed_mult = 0.75
+        }
+    }
+    triggered_country_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+            exists = army_leader
+        }
+        modifier = {
+            empire_size_colonies_mult = 0.1
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_b3_minerals
+        }
+        upkeep = {
+            energy = @avb_b3_upkeep
+        }
+        upkeep = {
+            trigger = {
+                has_z_expanded_mod = yes
+                exists = army_leader
+            }
+            energy = @b2_upkeep
+            unity = @b2_upkeep
+        }
+    }
+    prerequisites = {
+        "tech_avb_military_academy_2"
+    }
+    show_tech_unlock_if = {
+        has_valid_civic = civic_reanimated_armies
+    }
+    triggered_desc = {
+        trigger = {
+            always = yes
+        }
+        text = job_necromancer_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            has_z_expanded_mod = yes
+        }
+        text = building_military_academy_tooltip
+    }
+    ai_resource_production = {
+        trigger = {
+            always = yes
+        }
+        alloys = 8
+        minerals = 8
+    }
+}

@@ -1,0 +1,24 @@
+bwm_building_class_4_singularity = {
+    base_buildtime = 480
+    can_build = no
+    can_demolish = yes
+    icon = building_class_4_singularity
+    position_priority = 2
+    category = resources
+    potential = {
+        has_building = "bwm_building_ancient_monolith_2"
+    }
+    planet_modifier = {
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 1000
+        }
+        produces = {
+            energy = 250
+        }
+    }
+    upgrades = {
+    }
+}

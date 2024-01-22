@@ -1,0 +1,38 @@
+tech_auto_drone = {
+    cost = @tier1cost1
+    area = engineering
+    tier = 1
+    category = {
+        industry
+    }
+    prerequisites = {
+    }
+    potential = {
+        has_ascension_perk = ap_nano_drones
+    }
+    weight = @tier1weight1
+    weight_modifier = {
+        factor = 1.5
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_industry
+            }
+        }
+    }
+    ai_weight = {
+        factor = 2
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_industry
+            }
+        }
+    }
+    prereqfor_desc = {
+        custom = {
+            title = "ALLOW_NANO_FACILITIES"
+            desc = "building_auto_drone_facility_1_desc"
+        }
+    }
+}

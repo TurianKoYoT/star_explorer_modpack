@@ -1,0 +1,30 @@
+district_giga_alderson_farming = {
+    base_buildtime = @giga_alderson_district_buildtime
+    is_capped_by_modifier = no
+    icon = district_farming
+    show_on_uncolonized = {
+        uses_district_set = giga_alderson_gaia
+    }
+    potential = {
+        uses_district_set = giga_alderson_gaia
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = @giga_alderson_cost
+            volatile_motes = @giga_alderson_cost_sr
+        }
+        upkeep = {
+            energy = @giga_alderson_maintenance
+            volatile_motes = @giga_alderson_maintenance_sr
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = @alderson_auto_housing
+    }
+    inline_script = {
+        script = planet/food/giga_farmer_rural_district_job_swap
+        jobs = @alderson_auto_jobs
+        machine_housing = @[ alderson_auto_housing_mach - alderson_auto_housing ]
+    }
+}

@@ -1,0 +1,25 @@
+tech_doa_acot_ship_designs = {
+    area = engineering
+    cost = 0
+    tier = 0
+    category = {
+        statecraft
+    }
+    weight = 0
+    potential = {
+        has_country_flag = doa_tech_7
+        NOR = {
+            has_technology = tech_doa_ascended_base_ships
+            has_global_flag = doa_acot_ascension
+        }
+    }
+    modifier = {
+        ship_weapon_damage = 0.2
+        ship_hull_mult = 0.3
+        starbase_shipyard_build_speed_mult = -0.1
+        ships_upkeep_mult = 0.1
+    }
+    ai_weight = {
+        factor = 0
+    }
+}

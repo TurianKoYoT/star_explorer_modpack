@@ -1,0 +1,150 @@
+building_avb_factory_4 = {
+    base_buildtime = @avb_b3_time
+    can_build = no
+    category = manufacturing
+    allow = {
+        has_fully_upgraded_capital = yes
+    }
+    potential = {
+        exists = owner
+        owner = {
+            country_uses_consumer_goods = yes
+        }
+        NOT = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+        }
+    }
+    destroy_trigger = {
+        OR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+            AND = {
+                exists = owner
+                OR = {
+                    owner = {
+                        country_uses_consumer_goods = no
+                    }
+                    AND = {
+                        owner = {
+                            is_ai = yes
+                        }
+                        has_any_industry_district = no
+                    }
+                }
+            }
+        }
+    }
+    inline_script = {
+        script = "manufactury/avb_factory_modifiers"
+        tier = 4
+    }
+    inline_script = {
+        script = "manufactury/avb_factory_jobs"
+        tier = 4
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            trigger = {
+                has_ringworld_output_boost = no
+            }
+            minerals = @avb_b3_minerals
+            rare_crystals = 150
+        }
+        cost = {
+            trigger = {
+                has_ringworld_output_boost = yes
+            }
+            minerals = 1800
+            rare_crystals = 800
+        }
+        upkeep = {
+            trigger = {
+                has_ringworld_output_boost = no
+            }
+            energy = @avb_b3_upkeep
+            rare_crystals = 4
+        }
+        upkeep = {
+            trigger = {
+                has_ringworld_output_boost = yes
+            }
+            energy = 18
+            rare_crystals = 10
+        }
+    }
+    upgrades = {
+        building_avb_factory_5
+    }
+    prerequisites = {
+        "tech_avb_luxuries_3"
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = no
+            }
+        }
+        text = job_artisan_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = yes
+            }
+        }
+        text = job_artificer_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        text = job_artisan_drone_effect_desc
+    }
+    ai_resource_production = {
+        consumer_goods = 24
+        trigger = {
+            always = yes
+        }
+    }
+    ai_resource_production = {
+        consumer_goods = 24
+        trigger = {
+            planet_resource_compare = {
+                resource = consumer_goods
+                value >= 24
+                type = produces
+            }
+        }
+    }
+    ai_resource_production = {
+        consumer_goods = 20
+        trigger = {
+            planet_resource_compare = {
+                resource = consumer_goods
+                value >= 44
+                type = produces
+            }
+        }
+    }
+    ai_resource_production = {
+        consumer_goods = 20
+        trigger = {
+            planet_resource_compare = {
+                resource = consumer_goods
+                value >= 64
+                type = produces
+            }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+building_stellarite_ancient_cryo_chamber = {
+    base_buildtime = 900
+    can_demolish = yes
+    can_build = no
+    category = amenity
+    potential = {
+        owner = {
+            is_machine_empire = yes
+            has_technology = tech_stellarite_ancient_cryo_chamber
+        }
+    }
+    convert_to = {
+        building_stellarite_mansion
+        building_stellarite_hive_depot
+    }
+    allow = {
+        has_stellarite_capital = yes
+    }
+    planet_modifier = {
+        planet_housing_add = 140
+        planet_amenities_add = 140
+        job_maintenance_drone_add = 5
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 4000
+            minerals = 4000
+            acot_sr_stellarite = 800
+        }
+        upkeep = {
+            acot_sr_stellarite = 10
+        }
+    }
+    prerequisites = {
+        "tech_stellarite_ancient_cryo_chamber"
+    }
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 20000
+            free_housing < 0
+        }
+        modifier = {
+            factor = 30000
+            free_amenities < 2
+        }
+        modifier = {
+            factor = 0
+            free_housing > 1
+        }
+    }
+}

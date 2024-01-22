@@ -1,0 +1,185 @@
+@avb_d4_time = 960
+building_avb_xeno_zoo_2 = {
+    base_buildtime = @avb_d4_time
+    can_build = no
+    category = amenity
+    potential = {
+        exists = owner
+        owner = {
+            is_gestalt = no
+        }
+        planet = {
+            OR = {
+                has_deposit = d_alien_pets_deposit
+                AND = {
+                    exists = owner
+                    owner = {
+                        has_policy_flag = pre_sapients_protect
+                    }
+                    any_owned_pop = {
+                        is_sapient = no
+                    }
+                }
+                any_owned_pop = {
+                    is_livestock = yes
+                }
+            }
+        }
+    }
+    allow = {
+        has_fully_upgraded_capital = yes
+    }
+    destroy_trigger = {
+        OR = {
+            AND = {
+                exists = owner
+                owner = {
+                    is_regular_empire = no
+                }
+            }
+            planet = {
+                NOR = {
+                    has_deposit = d_alien_pets_deposit
+                    AND = {
+                        exists = owner
+                        owner = {
+                            has_policy_flag = pre_sapients_protect
+                        }
+                        any_owned_pop = {
+                            is_sapient = no
+                        }
+                    }
+                    any_owned_pop = {
+                        is_livestock = yes
+                    }
+                }
+            }
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_d4_minerals
+        }
+        upkeep = {
+            energy = @avb_d4_upkeep
+        }
+        produces = {
+            trigger = {
+                has_z_expanded_mod = yes
+                has_global_flag = better_diplo_installed
+                is_active_resolution = resolution_galacticcooperation_sanctity_of_life
+            }
+            consumer_goods = 5
+            society_research = 5
+        }
+    }
+    planet_modifier = {
+        job_xeno_zoo_keeper_add = @avb_d4_jobs
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+        }
+        modifier = {
+            planet_immigration_pull_mult = 0.5
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    has_valid_civic = civic_warrior_culture
+                    has_warrior_culture = yes
+                }
+            }
+        }
+        modifier = {
+            job_duelist_add = @avb_d4_jobs
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                NOR = {
+                    has_valid_civic = civic_warrior_culture
+                    has_warrior_culture = yes
+                }
+            }
+        }
+        modifier = {
+            job_entertainer_add = @avb_d4_jobs
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            planet = {
+                any_owned_pop = {
+                    is_livestock = yes
+                }
+            }
+            exists = owner
+            owner = {
+                NOR = {
+                    has_valid_civic = civic_warrior_culture
+                    has_warrior_culture = yes
+                }
+            }
+        }
+        modifier = {
+            job_livestock_zoo_animal_add = @avb_d4_jobs3
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            planet = {
+                any_owned_pop = {
+                    is_livestock = no
+                }
+            }
+            exists = owner
+            owner = {
+                OR = {
+                    has_valid_civic = civic_warrior_culture
+                    has_warrior_culture = yes
+                }
+            }
+        }
+        modifier = {
+            job_livestock_zoo_beast_add = @avb_d4_jobs3
+        }
+    }
+    prerequisites = {
+        "tech_avb_xeno_zoo_2"
+    }
+    triggered_desc = {
+        text = job_xeno_zoo_keeper_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                NOR = {
+                    has_valid_civic = civic_warrior_culture
+                    has_warrior_culture = yes
+                }
+            }
+        }
+        text = job_entertainer_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                OR = {
+                    has_valid_civic = civic_warrior_culture
+                    has_warrior_culture = yes
+                }
+            }
+        }
+        text = job_duelist_effect_desc
+    }
+    inline_script = misc/zoo_animals
+}

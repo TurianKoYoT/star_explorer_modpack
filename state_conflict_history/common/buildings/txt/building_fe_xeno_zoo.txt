@@ -1,0 +1,32 @@
+building_fe_xeno_zoo = {
+    base_buildtime = 480
+    capital = yes
+    can_build = no
+    can_demolish = yes
+    position_priority = 0
+    potential = {
+        exists = owner
+        owner = {
+            is_fallen_empire = yes
+            is_xenophile = yes
+        }
+    }
+    convert_to = {
+        building_ae_ancient_palace
+        building_ae_ancient_hive_cluster
+        building_ae_ancient_control_center
+    }
+    planet_modifier = {
+        planet_amenities_add = 15
+        job_fe_xeno_keeper_add = 2
+        planet_housing_add = 30
+        planet_max_buildings_add = 15
+    }
+    resources = {
+        category = planet_buildings
+        upkeep = {
+        }
+    }
+    upgrades = {
+    }
+}

@@ -1,0 +1,47 @@
+tech_society_2 = {
+    cost = @tier2cost3
+    area = society
+    tier = 2
+    category = {
+        biology
+    }
+    prerequisites = {
+        "tech_society_1"
+    }
+    weight = @tier2weight3
+    gateway = plague
+    modifier = {
+        planet_researchers_society_research_produces_mult = 0.2
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 2
+            years_passed > 5
+        }
+        modifier = {
+            factor = 2
+            years_passed > 10
+        }
+        modifier = {
+            factor = 2
+            years_passed > 15
+        }
+        modifier = {
+            factor = 2
+            years_passed > 20
+        }
+        modifier = {
+            factor = 1.5
+            is_specialist_subject_type = {
+                TYPE = scholarium
+            }
+        }
+        modifier = {
+            factor = 2
+            has_relic = r_pox_sample
+        }
+    }
+    ai_weight = {
+        factor = 10
+    }
+}

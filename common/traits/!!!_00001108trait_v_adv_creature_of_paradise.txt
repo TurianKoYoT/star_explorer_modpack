@@ -1,0 +1,47 @@
+trait_v_adv_creature_of_paradise = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_potential_add = {
+        exists = from
+        from = {
+            OR = {
+                has_technology = tech_plantoid_transgenesis
+                has_technology = tech_lithoid_transgenesis
+                has_technology = tech_v_zoological_transgenesis
+            }
+        }
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_v_adv_creature_of_paradise"
+        "trait_hive_mind"
+    }
+    inline_script = "allowed_archetypes/adv_biological_traits/BIOLOGICAL"
+    inline_script = "allowed_archetypes/adv_biological_traits/LITHOID"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/REP"
+    inline_script = "species_class/NECROID"
+    inline_script = "species_class/TOX"
+    inline_script = "species_class/LITHOID"
+    custom_tooltip_with_modifiers = TRAIT_CREATURE_OF_PARADISE_EFFECT
+    modifier = {
+        planet_entertainers_society_research_produces_add = 1
+        planet_entertainers_unity_produces_add = 1
+        pop_job_amenities_mult = 0.1
+        planet_pops_consumer_goods_upkeep_mult = 0.1
+    }
+    slave_cost = {
+        energy = 2000
+    }
+}

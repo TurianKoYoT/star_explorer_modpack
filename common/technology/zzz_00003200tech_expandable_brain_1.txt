@@ -1,0 +1,25 @@
+tech_expandable_brain_1 = {
+    cost = @tier3cost1
+    area = society
+    tier = 3
+    category = {
+        statecraft
+    }
+    weight = @tier4weight1
+    is_rare = yes
+    potential = {
+        has_ascension_perk = ap_expandable_brain_1
+    }
+    modifier = {
+        country_unity_produces_mult = 0.1
+    }
+    prereqfor_desc = {
+        custom = {
+            title = "ALLOW_NEW_LEADER_TRAITS"
+            desc = ""
+        }
+    }
+    ai_weight = {
+        factor = 20
+    }
+}

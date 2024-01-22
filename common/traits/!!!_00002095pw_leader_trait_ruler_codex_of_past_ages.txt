@@ -1,0 +1,24 @@
+pw_leader_trait_ruler_codex_of_past_ages = {
+    cost = 0
+    initial = no
+    randomized = no
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = "GFX_leader_trait_intellectual"
+        RARITY = common
+        COUNCIL = yes
+        TIER = none
+    }
+    force_councilor_trait = yes
+    councilor_modifier = {
+        country_base_influence_produces_add = 0.5
+        edicts_cost_mult = -0.1
+        edicts_upkeep_mult = -0.1
+    }
+    self_modifier = {
+        species_leader_exp_gain = 0.25
+    }
+    selectable_weight = 0
+    leader_class = all
+}

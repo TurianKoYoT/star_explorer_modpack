@@ -1,0 +1,32 @@
+trait_v_pseudocopulative = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    opposites = {
+        "trait_necrophage"
+        "trait_clone_soldier_infertile"
+        "trait_clone_soldier_infertile_full_potential"
+        "trait_vat_grown"
+        "trait_v_asexual_reproduction"
+        "trait_clone_soldier_fertile"
+        "trait_incubator"
+        "trait_v_brood_parasite"
+    }
+    inline_script = "traits/vanilla_opposites_pop_growth"
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/FUN"
+    custom_tooltip = TRAIT_PSEUDOCOPULATIVE_EFFECT
+    triggered_planet_growth_habitability_modifier = {
+        pop_growth_speed = 0.01
+        mult = planet.value:count_v_pseudocopulative
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

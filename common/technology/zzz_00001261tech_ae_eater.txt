@@ -1,0 +1,29 @@
+tech_ae_eater = {
+    area = engineering
+    tier = 5
+    cost = 160000
+    is_rare = yes
+    is_reverse_engineerable = no
+    category = {
+        voidcraft
+    }
+    prerequisites = {
+        "tech_dm_world_cracker"
+    }
+    ai_update_type = military
+    weight = 99999
+    prereqfor_desc = {
+        hide_prereq_for_desc = component
+        custom = {
+            title = tech_ae_eater_desc
+            desc = ""
+        }
+    }
+    potential = {
+        has_menace_perk = menp_star_eater
+        has_country_flag = colossus_project
+    }
+    ai_weight = {
+        factor = 0
+    }
+}

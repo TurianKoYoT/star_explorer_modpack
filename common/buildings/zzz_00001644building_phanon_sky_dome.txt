@@ -1,0 +1,44 @@
+building_phanon_sky_dome = {
+    base_buildtime = 900
+    can_build = no
+    category = amenity
+    prerequisites = {
+        tech_phanon_sky_dome
+    }
+    potential = {
+        NOT = {
+            has_global_flag = aot_phanon_content_OFF
+        }
+        exists = owner
+        owner = {
+            has_technology = tech_phanon_sky_dome
+        }
+    }
+    allow = {
+        has_phanon_capital = yes
+    }
+    planet_modifier = {
+        planet_housing_add = @auto_housing_pe
+        planet_amenities_add = @auto_amenities_pe
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 2500
+            minerals = 2500
+            aot_sr_runic_power = 750
+        }
+        upkeep = {
+            energy = 100
+            aot_sr_runic_power = 40
+            sr_dark_matter = 20
+            acot_sr_dark_energy = 20
+        }
+    }
+    upgrades = {
+        building_stellarite_sky_dome
+    }
+    ai_weight = {
+        weight = 5
+    }
+}

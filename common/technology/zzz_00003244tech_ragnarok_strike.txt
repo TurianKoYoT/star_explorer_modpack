@@ -1,0 +1,35 @@
+tech_ragnarok_strike = {
+    cost = @tier5cost3
+    area = engineering
+    tier = 5
+    is_reverse_engineerable = no
+    is_rare = yes
+    is_dangerous = yes
+    category = {
+        voidcraft
+    }
+    weight = @tier5weight3
+    weight_modifier = {
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_voidcraft
+            }
+        }
+    }
+    potential = {
+        has_ascension_perk = ap_orbital_surgical_strike
+    }
+    prerequisites = {
+        "tech_titans"
+    }
+    ai_weight = {
+        factor = 5
+    }
+    prereqfor_desc = {
+        feature = {
+            title = "tech_ragnarok_strike_desc"
+            desc = ""
+        }
+    }
+}

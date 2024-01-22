@@ -1,0 +1,72 @@
+district_navy_center = {
+    base_buildtime = 700
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        from = {
+            OR = {
+                has_ascension_perk = ap_pyramidal_society
+                has_country_flag = ap_pyramidal_society
+            }
+        }
+        merg_is_hab_ringworld = yes
+    }
+    potential = {
+        exists = owner
+        owner = {
+            OR = {
+                has_ascension_perk = ap_pyramidal_society
+                has_country_flag = ap_pyramidal_society
+            }
+        }
+        sartek_ringworld_mod_or_vanilla = yes
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = 2400
+        }
+        upkeep = {
+            energy = 6
+            alloys = 6
+            minerals = 4
+        }
+        produces = {
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 6
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+        }
+        modifier = {
+            job_navy_pilot_add = 5
+            job_military_expert_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_navy_pilot_drone_add = 6
+            job_protector_add = 2
+        }
+    }
+    ai_weight = {
+        weight = 2
+    }
+    ai_resource_production = {
+        energy = 4
+        trigger = {
+            always = yes
+        }
+    }
+}

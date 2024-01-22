@@ -1,0 +1,62 @@
+tiria = {
+    name = "EMPIRE_DESIGN_TIRIA"
+    adjective = "PRESCRIPTED_adjective_tiria"
+    spawn_enabled = no
+    ignore_portrait_duplication = yes
+    ship_prefix = "PRESCRIPTED_ship_prefix_tiria"
+    species = {
+        class = "FUN"
+        portrait = "fun7"
+        name = "PRESCRIPTED_species_name_tiria"
+        plural = "PRESCRIPTED_species_plural_tiria"
+        adjective = "PRESCRIPTED_species_adjective_tiria"
+        name_list = "MOL2"
+        gender = not_set
+        trait = "trait_traditional"
+        trait = "trait_adaptive"
+        trait = "trait_sedentary"
+    }
+    room = "personality_migrating_flock_room"
+    authority = "auth_dictatorial"
+    civics = {
+        "civic_exalted_priesthood"
+        "civic_fanatic_purifiers"
+    }
+    government = gov_theocratic_dictatorship
+    ethic = "ethic_spiritualist"
+    ethic = "ethic_fanatic_xenophobe"
+    origin = "origin_banished_threat"
+    playable = has_utopia
+    planet_name = "NAME_planet_tiria"
+    planet_class = "pc_arid"
+    initializer = "banished_threat_start"
+    system_name = "NAME_star_tiria"
+    graphical_culture = "molluscoid_01"
+    city_graphical_culture = "arthropoid_01"
+    empire_flag = {
+        icon = {
+            category = "necroid"
+            file = "necroid_08.dds"
+        }
+        background = {
+            category = "backgrounds"
+            file = "flag_BG_29.dds"
+        }
+        colors = {
+            "black"
+            "yellow"
+            "black"
+            "null"
+        }
+    }
+    ruler = {
+        name = "PRESCRIPTED_ruler_name_tiria"
+        gender = female
+        portrait = "fun7"
+        texture = 4
+        attachment = 0
+        clothes = 1
+        trait = "trait_ruler_eye_for_talent"
+        leader_class = commander
+    }
+}

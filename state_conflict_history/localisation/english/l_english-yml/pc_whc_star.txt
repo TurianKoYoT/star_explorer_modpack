@@ -1,0 +1,2 @@
+l_english:
+ pc_whc_star:1000 "Preservation Sphere"

@@ -1,0 +1,56 @@
+giga_tech_maginot_firepower_1 = {
+    cost = 75000
+    area = society
+    tier = 5
+    category = {
+        military_theory
+    }
+    prerequisites = {
+        "giga_tech_maginot_world"
+        "tech_mass_accelerator_2"
+    }
+    weight = @tier5weight1
+    prereqfor_desc = {
+        custom = {
+            title = "allow_giga_maginot_firepower_1"
+            desc = "allow_giga_maginot_firepower_1"
+        }
+    }
+    weight_modifier = {
+        modifier = {
+            factor = value:tech_weight_likelihood
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_military_theory
+            }
+        }
+        modifier = {
+            factor = 0
+            has_utopia = no
+        }
+        modifier = {
+            factor = @giga_tech_weight_boost_massive
+            has_ascension_perk = ap_eternal_vigilance
+        }
+        modifier = {
+            factor = @ap_technological_ascendancy_rare_tech
+            has_ascension_perk = ap_technological_ascendancy
+        }
+        modifier = {
+            factor = @federation_perk_factor
+            has_federation = yes
+            federation = {
+                has_federation_perk = rare_tech_boost
+                any_member = {
+                    has_technology = giga_tech_maginot_world
+                }
+            }
+        }
+        modifier = {
+            factor = 0
+            has_global_flag = maginot_disabled
+        }
+    }
+    ai_weight = {
+        factor = @giga_aiweight_multiplier_medium
+    }
+}

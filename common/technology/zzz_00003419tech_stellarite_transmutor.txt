@@ -1,0 +1,39 @@
+tech_stellarite_transmutor = {
+    cost = @acot_tier9cost1
+    area = physics
+    tier = 9
+    category = {
+        particles
+    }
+    prerequisites = {
+        tech_dark_matter_power_core_se
+        tech_phanon_transmutor
+    }
+    weight = @tier5weight1
+    potential = {
+        NOR = {
+            has_global_flag = acot_building_forbidden
+            is_fallen_empire = yes
+        }
+        has_technology = tech_dark_matter_power_core_se
+        has_technology = tech_phanon_transmutor
+    }
+    weight_modifier = {
+        factor = 2
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_particles
+            }
+        }
+    }
+    ai_weight = {
+        factor = 5
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_particles
+            }
+        }
+    }
+}

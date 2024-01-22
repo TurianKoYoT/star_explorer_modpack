@@ -1,0 +1,68 @@
+trait_juiced_power = {
+    host_has_dlc = "Toxoids Species Pack"
+    cost = 1
+    potential_crossbreeding_chance = 1
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    allowed_origins = {
+        origin_overtuned
+    }
+    valid_for_all_origins = no
+    randomized = no
+    species_potential_add = {
+        exists = from
+        OR = {
+            from = {
+                has_origin = origin_overtuned
+            }
+            AND = {
+                from = {
+                    has_ascension_perk = ap_master_of_own_life
+                }
+                OR = {
+                    has_trait = trait_clone_soldier_fertile
+                    has_trait = trait_clone_soldier_infertile_full_potential
+                    has_trait = trait_clone_soldier_fertile_perfect
+                }
+            }
+        }
+    }
+    species_possible_remove = {
+        can_remove_overtuned_traits = yes
+    }
+    custom_tooltip_with_modifiers = juiced_power_tooltip
+    triggered_pop_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                NOT = {
+                    has_edict = damn_the_consequences
+                }
+            }
+        }
+        planet_jobs_worker_produces_mult = 0.05
+    }
+    triggered_pop_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_edict = damn_the_consequences
+            }
+        }
+        planet_jobs_worker_produces_mult = 0.1
+    }
+    modifier = {
+        army_damage_mult = 0.4
+        leader_lifespan_add = -10
+    }
+    assembly_score = {
+        modifier = {
+            add = 0.5
+        }
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

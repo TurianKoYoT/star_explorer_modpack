@@ -1,0 +1,64 @@
+building_phanon_affluence_center = {
+    base_buildtime = 900
+    can_demolish = yes
+    can_build = no
+    category = manufacturing
+    potential = {
+        NOT = {
+            has_global_flag = aot_phanon_content_OFF
+        }
+        exists = owner
+        owner = {
+            has_technology = tech_phanon_affluence_center
+        }
+    }
+    prerequisites = {
+        tech_phanon_affluence_center
+    }
+    allow = {
+        has_phanon_capital = yes
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 2500
+            minerals = 2500
+            aot_sr_runic_power = 750
+        }
+        produces = {
+            consumer_goods = @auto_cg_pe
+            unity = @auto_unity_pe
+        }
+        upkeep = {
+            energy = 40
+            aot_sr_runic_power = 10
+            sr_dark_matter = 5
+            acot_sr_dark_energy = 5
+        }
+    }
+    upgrades = {
+        building_stellarite_affluence_center
+    }
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 5
+            owner = {
+                has_monthly_income = {
+                    resource = consumer_goods
+                    value < 10
+                }
+                has_monthly_income = {
+                    resource = minerals
+                    value > 12
+                }
+            }
+        }
+    }
+    ai_resource_production = {
+        consumer_goods = 6
+        trigger = {
+            always = yes
+        }
+    }
+}

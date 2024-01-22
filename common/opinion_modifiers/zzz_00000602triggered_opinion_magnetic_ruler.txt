@@ -1,0 +1,14 @@
+triggered_opinion_magnetic_ruler = {
+    trigger = {
+        is_homicidal = no
+        FROM = {
+            exists = ruler
+            ruler = {
+                has_trait = leader_trait_eutab_magnetic_personality
+            }
+        }
+    }
+    opinion = {
+        base = 15
+    }
+}

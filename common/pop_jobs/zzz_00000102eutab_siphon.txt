@@ -1,0 +1,29 @@
+eutab_siphon = {
+    category = complex_drone
+    condition_string = DRONE_JOB_TRIGGER
+    building_icon = building_eutab_dm_siphon
+    possible_pre_triggers = {
+        has_owner = yes
+        is_enslaved = no
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_drone_job
+    resources = {
+        category = planet_eutab_siphon
+        produces = {
+            sr_dark_matter = 2
+        }
+        upkeep = {
+            alloys = 6
+            volatile_motes = 3
+            rare_crystals = 3
+            exotic_gases = 3
+        }
+    }
+    weight = {
+        weight = @complex_drone_job_weight
+        mult = value:job_weights_modifier|JOB|eutab_siphon|RESOURCE|sr_dark_matter|
+    }
+}

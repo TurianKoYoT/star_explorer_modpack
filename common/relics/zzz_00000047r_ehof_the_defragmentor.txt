@@ -1,0 +1,68 @@
+@activation_cost = 3000
+@activation_cost_qnm = 1500
+@triumph_duration = 3600
+r_ehof_the_defragmentor = {
+    activation_duration = @triumph_duration
+    portrait = "GFX_relic_mechano_calibrator"
+    resources = {
+        category = relics
+        cost = {
+            unity = @activation_cost
+            ehof_sr_negative_mass = @activation_cost_qnm
+        }
+    }
+    ai_weight = {
+        weight = 100
+        modifier = {
+            factor = 1.15
+            is_machine_empire = yes
+        }
+    }
+    triggered_country_modifier = {
+        potential = {
+            is_machine_empire = no
+        }
+        modifier = {
+            planet_pops_robotics_upkeep_mult = -0.1
+            planet_buildings_energy_upkeep_mult = -0.1
+            planet_districts_energy_upkeep_mult = -0.1
+            planet_jobs_energy_upkeep_mult = -0.1
+        }
+    }
+    triggered_country_modifier = {
+        potential = {
+            is_machine_empire = yes
+        }
+        modifier = {
+            planet_pops_robotics_upkeep_mult = -0.1
+            pop_housing_usage_mult = -0.1
+            planet_buildings_energy_upkeep_mult = -0.1
+            planet_districts_energy_upkeep_mult = -0.1
+            planet_jobs_energy_upkeep_mult = -0.1
+        }
+    }
+    score = 0
+    active_effect = {
+        add_modifier = {
+            modifier = "relic_defragmentor"
+            days = @triumph_duration
+        }
+        custom_tooltip = relic_triumph_cooldown
+        hidden_effect = {
+            add_modifier = {
+                modifier = "relic_activation_cooldown"
+                days = @triumph_duration
+            }
+            remove_country_flag = ehof_has_the_defragmentor
+            remove_relic = r_ehof_the_defragmentor
+        }
+    }
+    possible = {
+        custom_tooltip = {
+            fail_text = "requires_relic_no_cooldown"
+            NOT = {
+                has_modifier = relic_activation_cooldown
+            }
+        }
+    }
+}

@@ -1,0 +1,96 @@
+@ssh_sh_alloys_cost = 200
+@ssh_sh_maintenance = 5
+@ssh_sh_district_buildtime = 360
+district_ssh_stellar_hoop_starlifting = {
+    base_buildtime = @ssh_sh_district_buildtime
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        uses_district_set = stellar_hoop_world
+        exists = from
+    }
+    potential = {
+        exists = owner
+        uses_district_set = stellar_hoop_world
+    }
+    convert_to = {
+        district_ssh_stellar_hoop_generator
+    }
+    resources = {
+        category = planet_districts_mining
+        cost = {
+            alloys = @ssh_sh_alloys_cost
+        }
+        upkeep = {
+            energy = @ssh_sh_maintenance
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 2
+    }
+    triggered_planet_modifier = {
+        planet_housing_add = 15
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_valid_civic = civic_agrarian_idyll
+            }
+        }
+        modifier = {
+            planet_housing_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+        }
+        modifier = {
+            job_ssh_stellar_lifter_add = 10
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_ssh_stellar_lifter_drone_add = 10
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        text = job_ssh_stellar_lifter_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        text = job_ssh_stellar_lifter_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+        }
+        text = job_ssh_stellar_lifter_effect_desc
+    }
+    prerequisites = {
+        tech_mechanized_mining
+    }
+}

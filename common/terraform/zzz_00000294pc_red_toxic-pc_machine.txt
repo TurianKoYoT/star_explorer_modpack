@@ -1,0 +1,44 @@
+@terraforming_cost_level_2 = 5000
+@terraforming_duration_level_2 = 3600
+terraform_link = {
+    from = pc_red_toxic
+    to = pc_machine
+    resources = {
+        category = terraforming
+        cost = {
+            energy = @terraforming_cost_level_2
+        }
+    }
+    duration = @terraforming_duration_level_2
+    potential = {
+        from = {
+            NOT = {
+                has_modifier = red_toxic
+            }
+        }
+        has_authority = auth_machine_intelligence
+    }
+    condition = {
+        has_ascension_perk = ap_machine_worlds
+    }
+    effect = {
+        from = {
+            remove_modifier = ehof_red_toxic_world
+        }
+    }
+    ai_weight = {
+        weight = 20
+        modifier = {
+            factor = 0
+            from = {
+                any_owned_species = {
+                    NOR = {
+                        has_trait = trait_machine_unit
+                        has_trait = trait_mechanical
+                    }
+                    is_sapient = yes
+                }
+            }
+        }
+    }
+}

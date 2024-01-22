@@ -1,0 +1,38 @@
+@apsr12cost1 = 5000
+@apsr12weight1 = 50
+tech_apsr12_building_part1 = {
+    cost = @apsr12cost1
+    area = society
+    tier = 2
+    category = {
+        new_worlds
+    }
+    prerequisites = {
+        "tech_fission_power"
+    }
+    weight = @apsr12weight1
+    is_rare = yes
+    prereqfor_desc = {
+        custom = {
+            title = "TECH_APSR12_PART1_TITLE"
+            desc = "TECH_APSR12_PART1_DESC"
+        }
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            NOT = {
+                any_owned_planet = {
+                    has_deposit = apsr12_deposit
+                }
+            }
+        }
+        modifier = {
+            factor = 5
+            has_origin = apsr_origin_unique_capital
+        }
+    }
+    ai_weight = {
+        factor = 150
+    }
+}

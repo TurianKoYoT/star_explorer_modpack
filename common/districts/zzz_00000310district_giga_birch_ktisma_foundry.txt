@@ -1,0 +1,167 @@
+@giga_birch_sector_cost = 1500
+@giga_birch_sector_sr_cost = 200
+@giga_birch_sector_time = 360
+@giga_birch_sector_maintenance = 5
+@giga_birch_sector_sr_maintenance = 2
+@sector_jobs = 7
+@sector_workers = -7
+district_giga_birch_ktisma_foundry = {
+    base_buildtime = @giga_birch_sector_time
+    is_capped_by_modifier = yes
+    show_on_uncolonized = {
+        uses_district_set = giga_birch
+        has_district = district_giga_birch_ktisma
+    }
+    potential = {
+        uses_district_set = giga_birch
+        has_district = district_giga_birch_ktisma
+    }
+    allow = {
+        giga_birch_district_allow = {
+            category = ktisma
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = @giga_birch_sector_cost
+            volatile_motes = @giga_birch_sector_sr_cost
+        }
+        upkeep = {
+            energy = @giga_birch_sector_maintenance
+            volatile_motes = @giga_birch_sector_sr_maintenance
+        }
+    }
+    planet_modifier = {
+        giga_birch_district_ktisma_tag = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = no
+            }
+        }
+        job_foundry_add = @sector_jobs
+        job_giga_birch_ktisma_worker_add = @sector_workers
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = no
+            }
+        }
+        text = job_foundry_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = yes
+            }
+        }
+        job_catalytic_technician_add = @sector_jobs
+        job_giga_birch_ktisma_worker_add = @sector_workers
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = yes
+            }
+        }
+        text = job_foundry_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+                is_catalytic_empire = no
+            }
+        }
+        job_alloy_drone_add = @sector_jobs
+        job_giga_birch_ktisma_worker_drone_add = @sector_workers
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+                is_catalytic_empire = no
+            }
+        }
+        text = job_alloy_drone_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                is_catalytic_empire = no
+            }
+        }
+        job_fabricator_add = @sector_jobs
+        job_giga_birch_ktisma_worker_drone_add = @sector_workers
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                is_catalytic_empire = no
+            }
+        }
+        text = job_fabricator_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                is_catalytic_empire = yes
+            }
+        }
+        job_catalytic_drone_add = @sector_jobs
+        job_giga_birch_ktisma_worker_drone_add = @sector_workers
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                is_catalytic_empire = yes
+            }
+        }
+        text = job_catalytic_drone_effect_desc
+    }
+    on_queued = {
+        giga_birch_district_queued = {
+            category = ktisma
+            type = ktisma_foundry
+        }
+    }
+    on_unqueued = {
+        giga_birch_district_unqueued = {
+            category = ktisma
+            type = ktisma_foundry
+        }
+    }
+    on_built = {
+        giga_birch_district_built = {
+            category = ktisma
+            type = ktisma_foundry
+        }
+    }
+    on_destroy = {
+        giga_birch_district_destroy = {
+            category = ktisma
+            type = ktisma_foundry
+        }
+    }
+}

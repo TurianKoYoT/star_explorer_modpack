@@ -1,0 +1,88 @@
+building_avb_machine_unity_4 = {
+    base_buildtime = @avb_u4_time
+    can_build = no
+    icon = building_avb_monument_4
+    category = unity
+    potential = {
+        exists = owner
+        owner = {
+            is_machine_empire = yes
+            NOR = {
+                has_valid_civic = civic_machine_servitor
+                is_servitor_empire = yes
+            }
+        }
+        OR = {
+            has_z_expanded_mod = no
+            AND = {
+                has_z_expanded_mod = yes
+                NOT = {
+                    has_planet_flag = planetary_station
+                }
+            }
+        }
+    }
+    allow = {
+        has_major_upgraded_capital = yes
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_machine_empire = no
+                has_valid_civic = civic_machine_servitor
+                is_servitor_empire = yes
+            }
+        }
+    }
+    convert_to = {
+        building_avb_temple_4
+        building_avb_hive_unity_4
+        building_avb_bureaucratic_4
+        building_avb_death_temple_4
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_u4_minerals
+            rare_crystals = @avb_u4_rare_cost
+        }
+        upkeep = {
+            energy = @avb_u4_upkeep
+            rare_crystals = @avb_u4_rare_upkeep
+        }
+    }
+    planet_modifier = {
+        job_coordinator_add = @avb_u4_jobs
+    }
+    triggered_desc = {
+        text = job_coordinator_effect_desc
+    }
+    prerequisites = {
+        "tech_avb_bureaucratic_4"
+    }
+    show_tech_unlock_if = {
+        is_machine_empire = yes
+        NOT = {
+            has_valid_civic = civic_machine_servitor
+        }
+    }
+    upgrades = {
+        building_avb_machine_unity_5
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_plentiful_tradition_mod = yes
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+            owner = {
+                has_tradition = tr_plentiful_aspiration_3
+            }
+        }
+        modifier = {
+            job_coordinator_add = 6
+        }
+    }
+}

@@ -1,0 +1,31 @@
+tech_acot_precursor_herculean_wmd_rift = {
+    area = physics
+    cost = @acot_tier9cost3
+    tier = 9
+    is_rare = yes
+    category = {
+        field_manipulation
+    }
+    ai_update_type = military
+    weight = 20
+    modifier = {
+    }
+    prerequisites = {
+        tech_acot_precursor_herculean_advanced_weapon
+    }
+    potential = {
+        has_country_flag = herculean_built
+        is_fallen_empire = no
+    }
+    ai_weight = {
+        factor = 5
+        modifier = {
+            factor = 1.25
+            has_ethic = ethic_militarist
+        }
+        modifier = {
+            factor = 1.5
+            has_ethic = ethic_fanatic_militarist
+        }
+    }
+}

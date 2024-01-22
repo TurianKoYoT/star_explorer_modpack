@@ -1,0 +1,106 @@
+building_eutab_xeno_district = {
+    base_buildtime = @b2_time
+    can_build = no
+    category = amenity
+    potential = {
+        NOT = {
+            has_modifier = slave_colony
+        }
+        exists = owner
+        owner = {
+            is_xenophile = yes
+        }
+    }
+    allow = {
+        has_upgraded_capital = yes
+    }
+    planet_modifier = {
+        planet_housing_add = 8
+        pop_environment_tolerance = 0.05
+        planet_immigration_pull_mult = 0.25
+        job_eutab_anthro_add = 3
+        planet_max_buildings_add = 1
+    }
+    inline_script = "buildings/eutab_dev_structures_modifiers"
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_active_tradition = tr_domination_imperious_architecture
+            }
+        }
+        modifier = {
+            planet_housing_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_technology = tech_eutab_virtual_experiences
+            }
+        }
+        modifier = {
+            job_entertainer_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_technology = tech_eutab_universal_guardians
+            }
+        }
+        job_culture_worker_add = 2
+        multiplier = trigger:num_species
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            exotic_gases = @b2_rare_cost
+        }
+        upkeep = {
+            energy = @b2_upkeep
+            exotic_gases = @b2_rare_upkeep
+        }
+    }
+    triggered_desc = {
+        text = job_eutab_anthro_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                has_technology = tech_eutab_virtual_experiences
+            }
+        }
+        text = job_entertainer_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                has_technology = tech_eutab_universal_guardians
+            }
+        }
+        text = job_culture_worker_effect_desc
+    }
+    prerequisites = {
+        "tech_eutab_xeno_district"
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_xenophile = no
+                prev = {
+                    has_modifier = slave_colony
+                }
+            }
+        }
+    }
+    convert_to = {
+        building_eutab_dev_district
+    }
+}

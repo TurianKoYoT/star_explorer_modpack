@@ -1,0 +1,90 @@
+building_avb_foundry_5 = {
+    base_buildtime = @avb_b4_time
+    can_build = no
+    category = manufacturing
+    allow = {
+        has_upgraded_capital_4 = yes
+    }
+    destroy_trigger = {
+        OR = {
+            has_modifier = resort_colony
+            has_modifier = crucible_colony
+            AND = {
+                exists = owner
+                owner = {
+                    is_ai = yes
+                }
+                has_any_industry_district = no
+            }
+            OR = {
+                AND = {
+                    has_z_expanded_mod = no
+                    has_modifier = slave_colony
+                }
+                AND = {
+                    has_z_expanded_mod = yes
+                    owner = {
+                        NOR = {
+                            has_valid_civic = civic_indentured_assets
+                            has_valid_civic = civic_slaver_guilds
+                        }
+                    }
+                }
+            }
+        }
+    }
+    resources = {
+        category = planet_buildings
+        inline_script = {
+            script = "manufactury/avb_foundry_resources"
+            tier = 5
+        }
+    }
+    prerequisites = {
+        "tech_avb_alloys_4"
+    }
+    upgrades = {
+        building_avb_foundry_6
+    }
+    inline_script = {
+        script = manufactury/avb_foundry_jobs
+        tier = 5
+    }
+    inline_script = "manufactury/avb_foundry_job_desc"
+    ai_resource_production = {
+        alloys = 16
+        trigger = {
+            always = yes
+        }
+    }
+    ai_resource_production = {
+        alloys = 16
+        trigger = {
+            planet_resource_compare = {
+                resource = alloys
+                value >= 16
+                type = produces
+            }
+        }
+    }
+    ai_resource_production = {
+        alloys = 16
+        trigger = {
+            planet_resource_compare = {
+                resource = alloys
+                value >= 32
+                type = produces
+            }
+        }
+    }
+    ai_resource_production = {
+        alloys = 16
+        trigger = {
+            planet_resource_compare = {
+                resource = alloys
+                value >= 48
+                type = produces
+            }
+        }
+    }
+}

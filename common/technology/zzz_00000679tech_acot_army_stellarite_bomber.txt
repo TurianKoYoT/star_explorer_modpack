@@ -1,0 +1,24 @@
+tech_acot_army_stellarite_bomber = {
+    area = society
+    cost = @acot_tier9cost1
+    tier = 9
+    category = {
+        military_theory
+    }
+    prerequisites = {
+        "tech_dark_matter_power_core_se"
+    }
+    weight = 10
+    is_rare = yes
+    potential = {
+        NOT = {
+            has_global_flag = acot_army_forbidden
+        }
+        has_technology = tech_dark_matter_power_core_se
+    }
+    weight_modifier = {
+        factor = 1
+    }
+    ai_weight = {
+    }
+}

@@ -1,0 +1,117 @@
+@buildings_t1 = 1
+building_penal_colony_barracks = {
+    capital = yes
+    can_build = no
+    can_demolish = no
+    can_be_ruined = no
+    can_be_disabled = no
+    position_priority = 0
+    icon = building_colony_shelter
+    category = government
+    potential = {
+        has_designation = col_penal
+        has_modifier = penal_colony
+    }
+    convert_to = {
+        building_colony_shelter
+        building_hive_capital
+        building_deployment_post
+        building_resort_capital
+        building_slave_capital
+        building_ancient_control_center
+        building_ancient_palace
+    }
+    destroy_trigger = {
+        NAND = {
+            has_designation = col_penal
+            has_modifier = penal_colony
+        }
+    }
+    planet_modifier = {
+        job_enforcer_add = 1
+        planet_housing_add = 3
+        planet_amenities_add = 7
+        planet_max_buildings_add = @buildings_t1
+    }
+    inline_script = {
+        script = buildings/on_all_capital_buildings
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                NOT = {
+                    has_active_tradition = tr_synthetics_finish
+                }
+            }
+        }
+        job_colonist_add = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_active_tradition = tr_synthetics_finish
+            }
+        }
+        job_roboticist_add = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_active_tradition = tr_cybernetics_organ_harvesting
+            }
+            has_current_purge = yes
+            growing_species = {
+                has_trait = trait_cybernetic
+            }
+        }
+        pop_growth_speed = 0.1
+    }
+    triggered_country_modifier = {
+        potential = {
+            is_capital = yes
+            exists = owner
+            owner = {
+                has_councilor = {
+                    COUNCILOR = "councilor_feudal_realm"
+                }
+            }
+        }
+        country_naval_cap_add = 1
+        mult = value:naval_cap_vassals_councilor_feudal_realm
+    }
+    resources = {
+        category = planet_buildings
+        upkeep = {
+            energy = 1
+        }
+    }
+    upgrades = {
+        building_penal_colony_administration
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                NOT = {
+                    has_active_tradition = tr_synthetics_finish
+                }
+            }
+        }
+        text = job_colonist_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                has_active_tradition = tr_synthetics_finish
+            }
+        }
+        text = job_roboticist_effect_desc
+    }
+    triggered_desc = {
+        text = job_enforcer_effect_desc
+    }
+}

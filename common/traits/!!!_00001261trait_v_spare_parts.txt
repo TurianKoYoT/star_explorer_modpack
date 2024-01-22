@@ -1,0 +1,12 @@
+trait_v_spare_parts = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    allowed_archetypes = {
+        ROBOT
+        MACHINE
+    }
+    custom_tooltip = TRAIT_SPARE_PARTS_EFFECT
+    slave_cost = {
+        energy = 1000
+    }
+}

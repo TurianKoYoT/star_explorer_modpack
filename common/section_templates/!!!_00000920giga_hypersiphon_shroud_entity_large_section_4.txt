@@ -1,0 +1,7 @@
+ship_section_template = {
+    key = giga_hypersiphon_shroud_entity_large_section_4
+    inline_script = {
+        script = ships/tiered_templates/hypersiphon/section_giga_hypersiphon_shroud_entity_large
+        tier = 4
+    }
+}

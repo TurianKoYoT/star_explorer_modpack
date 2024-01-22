@@ -1,0 +1,28 @@
+leader_trait_imperial_battlefield_rotation = {
+    cost = 1
+    icon = "gfx/interface/icons/traits/leader_traits/leader_trait_imperial_battlefield_rotation.dds"
+    army_modifier = {
+        army_health = 0.15
+        army_morale = 0.15
+        army_disengage_chance_mult = 0.5
+        army_collateral_damage_mult = -0.33
+    }
+    leader_class = {
+        commander
+    }
+    initial = no
+    randomized = no
+    leader_potential_add = {
+        from = {
+            has_technology = tech_combat_training
+            is_galactic_community_member = yes
+            has_federation = yes
+            federation = {
+                OR = {
+                    has_federation_law = imperial_ministry_of_defence_strategy_institute
+                    has_federation_law = imperial_ministry_of_defence_joint_headquarter
+                }
+            }
+        }
+    }
+}

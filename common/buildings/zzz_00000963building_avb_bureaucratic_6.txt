@@ -1,0 +1,65 @@
+building_avb_bureaucratic_6 = {
+    base_buildtime = @avb_u6_time
+    can_build = no
+    category = unity
+    potential = {
+        exists = owner
+        owner = {
+            is_regular_empire = yes
+            is_spiritualist = no
+            has_make_spiritualist_perk = no
+        }
+        NOT = {
+            has_modifier = slave_colony
+        }
+        OR = {
+            has_z_expanded_mod = yes
+            AND = {
+                has_planet_flag = planetary_station
+                has_z_expanded_mod = yes
+            }
+        }
+    }
+    allow = {
+        has_upgraded_capital_4 = yes
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_gestalt = yes
+                is_spiritualist = yes
+                has_make_spiritualist_perk = yes
+            }
+        }
+    }
+    convert_to = {
+        building_avb_temple_6
+        building_avb_hive_unity_6
+        building_avb_machine_unity_6
+        building_avb_death_temple_6
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_u6_minerals
+            rare_crystals = @avb_u6_rare_cost
+        }
+        upkeep = {
+            energy = @avb_u6_upkeep
+            rare_crystals = @avb_u6_rare_upkeep
+        }
+    }
+    inline_script = {
+        script = unity_buildings/avb_bureaucratic
+        tier = 6
+    }
+    prerequisites = {
+        "tech_avb_bureaucratic_6"
+    }
+    show_tech_unlock_if = {
+        is_regular_empire = yes
+        is_spiritualist = no
+        has_make_spiritualist_perk = no
+    }
+}

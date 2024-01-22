@@ -1,0 +1,30 @@
+trait_v_polyembryony = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/ART"
+    inline_script = "species_class/AQUATIC"
+    opposites = {
+        "trait_invasive"
+        "trait_v_adv_polyembryony"
+        "trait_v_silken_birth"
+        "trait_v_adv_silken_birth"
+        "trait_v_prenatal_fratricide"
+        "trait_v_adv_prenatal_fratricide"
+        "trait_clone_soldier_infertile"
+        "trait_clone_soldier_infertile_full_potential"
+        "trait_vat_grown"
+    }
+    custom_tooltip_with_modifiers = TRAIT_POLYEMBRYONY_EFFECT
+    slave_cost = {
+        energy = 1000
+    }
+}

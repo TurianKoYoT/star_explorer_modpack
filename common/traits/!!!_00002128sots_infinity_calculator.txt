@@ -1,0 +1,28 @@
+sots_infinity_calculator = {
+    cost = 0
+    icon = "gfx/interface/icons/traits/trait_sots_infinity_calculator.dds"
+    immortal_leaders = yes
+    self_modifier = {
+        leader_skill_levels = 5
+    }
+    modifier = {
+        all_technology_research_speed = 1
+        ship_archaeological_site_excavation_speed_mult = 0.5
+    }
+    leader_trait = {
+        scientist
+    }
+    leader_class = {
+        scientist
+    }
+    initial = no
+    randomized = no
+    ai_categories = {
+        physics
+        society
+        engineering
+    }
+    ai_weight = {
+        weight = 100
+    }
+}

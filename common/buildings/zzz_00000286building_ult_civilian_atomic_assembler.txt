@@ -1,0 +1,137 @@
+building_ult_civilian_atomic_assembler = {
+    base_buildtime = 360
+    base_cap_amount = 1
+    category = manufacturing
+    potential = {
+        exists = owner
+        owner = {
+            is_regular_empire = yes
+        }
+        NOT = {
+            has_modifier = resort_colony
+        }
+        NOT = {
+            has_modifier = slave_colony
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            text = industrial_focus_limit
+            fail_text = ONLY_ONE_INDUSTRIAL_BUILDING
+            OR = {
+                uses_district_set = city_world
+                NOR = {
+                    has_building = building_ult_industrial_atomic_assembler
+                    has_building_construction = building_ult_civilian_atomic_assembler
+                }
+            }
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            owner = {
+                is_regular_empire = no
+            }
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+                is_crafter_empire = no
+            }
+        }
+        modifier = {
+            job_artisan_add = 2
+            planet_artisans_consumer_goods_produces_add = 5
+            planet_artisans_minerals_upkeep_add = 5
+            planet_jobs_consumer_goods_produces_mult = 0.2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+                is_crafter_empire = yes
+            }
+        }
+        modifier = {
+            job_artificer_add = 2
+            planet_artisans_consumer_goods_produces_add = 5
+            planet_artisans_minerals_upkeep_add = 5
+            planet_jobs_consumer_goods_produces_mult = 0.2
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 1000
+            rare_crystals = 200
+        }
+        upkeep = {
+            energy = 10
+        }
+    }
+    prerequisites = {
+        "tech_ult_molecular_manipulation"
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+        }
+        text = building_ult_civilian_atomic_assembler_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+        }
+        text = job_artisan_effect_desc
+    }
+    ai_resource_production = {
+        consumer_goods = 30
+        trigger = {
+            always = yes
+        }
+    }
+    ai_resource_production = {
+        consumer_goods = 10
+        trigger = {
+            planet_resource_compare = {
+                resource = consumer_goods
+                value >= 24
+                type = produces
+            }
+        }
+    }
+    ai_resource_production = {
+        consumer_goods = 20
+        trigger = {
+            planet_resource_compare = {
+                resource = consumer_goods
+                value >= 44
+                type = produces
+            }
+        }
+    }
+    ai_resource_production = {
+        consumer_goods = 30
+        trigger = {
+            planet_resource_compare = {
+                resource = consumer_goods
+                value >= 64
+                type = produces
+            }
+        }
+    }
+}

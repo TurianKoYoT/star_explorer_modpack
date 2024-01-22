@@ -1,0 +1,68 @@
+action_kick_from_federation = {
+    icon = "GFX_diplomacy_status_federation"
+    auto_accepted = yes
+    should_show_auto_accept_message_recipient = yes
+    requires_actor_peace = yes
+    requires_recipient_peace = yes
+    requires_alliance_vote = yes
+    requires_unanimous_vote = no
+    diplo_view_acceptance_icon = yes
+    should_notify_all_communications = yes
+    AI_acceptance_base_value = -50
+    action_type = aggressive
+    potential = {
+        hidden_trigger = {
+            NAND = {
+                is_subject = yes
+                has_overlord = FROM
+            }
+        }
+        hidden_trigger = {
+            NAND = {
+                exists = federation
+                federation = {
+                    has_federation_perk = galactic_confederation_passive
+                    has_federation_law = kick_members_senate_confederation
+                }
+            }
+        }
+    }
+    possible = {
+        custom_tooltip = {
+            fail_text = "imperium_federation_can_not_kick"
+            NOT = {
+                federation = {
+                    has_federation_perk = imperium_federation_passive
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = "galactic_confederation_can_not_kick_the_custodian"
+            NAND = {
+                federation = {
+                    has_federation_perk = galactic_confederation_passive
+                }
+                from = {
+                    is_galactic_custodian = yes
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = "galactic_confederation_can_not_kick_council_member"
+            NAND = {
+                federation = {
+                    has_federation_perk = galactic_confederation_passive
+                }
+                from = {
+                    is_part_of_galactic_council = yes
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = requires_federation_leader_exists
+            federation = {
+                federation_election_underway = no
+            }
+        }
+    }
+}

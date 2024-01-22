@@ -1,0 +1,112 @@
+ship_section_template = {
+    key = "NANITE_TORPEDO_COLOSSUS"
+    ship_size = colossus
+    fits_on_slot = ship
+    entity = "colossus_ship_entity"
+    icon = "GFX_ship_part_core_mid"
+    prerequisites = {
+        tech_nanite_ship_section
+    }
+    ai_weight = {
+        modifier = {
+            factor = 20
+            is_preferred_weapons = weapon_type_explosive
+        }
+    }
+    component_slot = {
+        name = "PLANET_KILLER_GUN_01"
+        template = "invisible_planet_killer_fixed"
+        locatorname = "planet_killer_gun_01"
+    }
+    component_slot = {
+        name = "TORPEDO_01"
+        template = "medium_missile_turret"
+        locatorname = "planet_killer_gun_01"
+    }
+    component_slot = {
+        name = "TORPEDO_02"
+        template = "medium_missile_turret"
+        locatorname = "planet_killer_gun_01"
+    }
+    component_slot = {
+        name = "TORPEDO_03"
+        template = "medium_missile_turret"
+        locatorname = "planet_killer_gun_01"
+    }
+    component_slot = {
+        name = "TORPEDO_04"
+        template = "medium_missile_turret"
+        locatorname = "planet_killer_gun_01"
+    }
+    component_slot = {
+        name = "TORPEDO_05"
+        template = "medium_missile_turret"
+        locatorname = "planet_killer_gun_01"
+    }
+    component_slot = {
+        name = "TORPEDO_06"
+        template = "medium_missile_turret"
+        locatorname = "planet_killer_gun_01"
+    }
+    component_slot = {
+        name = "TORPEDO_07"
+        template = "medium_missile_turret"
+        locatorname = "planet_killer_gun_01"
+    }
+    component_slot = {
+        name = "TORPEDO_08"
+        template = "medium_missile_turret"
+        locatorname = "planet_killer_gun_01"
+    }
+    component_slot = {
+        name = "TORPEDO_09"
+        template = "medium_missile_turret"
+        locatorname = "planet_killer_gun_01"
+    }
+    component_slot = {
+        name = "TORPEDO_10"
+        template = "medium_missile_turret"
+        locatorname = "planet_killer_gun_01"
+    }
+    component_slot = {
+        name = "TORPEDO_11"
+        template = "medium_missile_turret"
+        locatorname = "planet_killer_gun_01"
+    }
+    component_slot = {
+        name = "TORPEDO_12"
+        template = "medium_missile_turret"
+        locatorname = "planet_killer_gun_01"
+    }
+    component_slot = {
+        name = "TORPEDO_13"
+        template = "medium_missile_turret"
+        locatorname = "planet_killer_gun_01"
+    }
+    component_slot = {
+        name = "TORPEDO_14"
+        template = "medium_missile_turret"
+        locatorname = "planet_killer_gun_01"
+    }
+    component_slot = {
+        name = "TORPEDO_15"
+        template = "medium_missile_turret"
+        locatorname = "planet_killer_gun_01"
+    }
+    component_slot = {
+        name = "TORPEDO_16"
+        template = "medium_missile_turret"
+        locatorname = "planet_killer_gun_01"
+    }
+    small_utility_slots = 0
+    medium_utility_slots = 0
+    large_utility_slots = 14
+    aux_utility_slots = 6
+    resources = {
+        category = ship_sections
+        cost = {
+            alloys = 3000
+            nanites = 3000
+        }
+    }
+}

@@ -1,0 +1,5 @@
+ssh_opinion_base_dim_tearer_negative = {
+    opinion = {
+        base = -50
+    }
+}

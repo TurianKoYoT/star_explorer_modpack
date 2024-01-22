@@ -1,0 +1,545 @@
+pw_building_demetrius_fields = {
+    base_buildtime = @pw_building_buildtime
+    position_priority = 120
+    base_cap_amount = 1
+    can_be_ruined = no
+    category = resource
+    prerequisites = {
+        pw_tech_demetrius_fields
+    }
+    potential = {
+        exists = owner
+        NOT = {
+            has_modifier = resort_colony
+        }
+        NOT = {
+            merg_is_machine_world = yes
+        }
+        OR = {
+            NOT = {
+                merg_is_habitat = yes
+            }
+            is_planet_class = pc_giga_frameworld
+        }
+    }
+    destroy_trigger = {
+        OR = {
+            has_modifier = resort_colony
+            merg_is_arcology = yes
+            merg_is_machine_world = yes
+        }
+    }
+    convert_to = {
+        building_food_processing_facility
+    }
+    allow = {
+        has_major_upgraded_capital = yes
+        OR = {
+            free_district_slots > 0
+            hidden_trigger = {
+                has_modifier = pw_mod_integrated_monuments
+            }
+        }
+        pw_can_build_planetary_wonder = yes
+        NOR = {
+            has_modifier = pw_mod_gaia_unstable_weather
+            has_modifier = resort_colony
+            merg_is_arcology = yes
+        }
+    }
+    upgrades = {
+        pw_building_demetrius_chemical_garden
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @pw_building_cost
+            alloys = @pw_building_cost_advanced
+        }
+        cost = {
+            trigger = {
+                planet = {
+                    pw_has_any_planetary_wonder = yes
+                    NOT = {
+                        has_building_construction = pw_building_demetrius_fields
+                    }
+                }
+            }
+            minerals = @pw_building_cost_extra
+        }
+        cost = {
+            trigger = {
+                planet = {
+                    OR = {
+                        has_designation = col_farming
+                        has_designation = col_ring_farming
+                    }
+                }
+            }
+            minerals = @pw_building_cost_discount
+        }
+        upkeep = {
+            energy = @pw_building_upkeep
+        }
+        upkeep = {
+            trigger = {
+                planet = {
+                    pw_has_any_additional_planetary_wonder = yes
+                }
+            }
+            energy = @pw_building_upkeep_extra
+        }
+        upkeep = {
+            trigger = {
+                exists = owner
+                owner = {
+                    has_edict = pw_wonders_beyond_ambition
+                }
+            }
+            energy = @pw_building_upkeep_ambition
+        }
+        upkeep = {
+            trigger = {
+                planet = {
+                    OR = {
+                        has_designation = col_farming
+                        has_designation = col_ring_farming
+                    }
+                }
+            }
+            energy = @pw_building_upkeep_discount
+        }
+        produces = {
+            trigger = {
+                exists = owner
+                owner = {
+                    has_tradition = tr_pw_monumentality_architecture_parlante
+                }
+            }
+            unity = @pw_unity_production
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            NOT = {
+                has_modifier = pw_mod_integrated_monuments
+            }
+        }
+        modifier = {
+            planet_max_districts_add = -1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+        }
+        modifier = {
+            job_pw_agriculture_director_add = @pw_building_ruler_jobs
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_pw_food_coordinator_add = @pw_building_ruler_jobs
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+            OR = {
+                owner = {
+                    is_anglers_empire = no
+                }
+                AND = {
+                    owner = {
+                        is_anglers_empire = yes
+                    }
+                    NOT = {
+                        is_wet = yes
+                    }
+                }
+            }
+            NAND = {
+                uses_district_set = giga_frameworld
+                is_voidframe_upgraded = yes
+                OR = {
+                    has_building = building_fe_food_processing_complex
+                    has_building = building_ae_food_processing_complex
+                    has_building = building_phanon_food_processing_complex
+                    has_building = building_stellarite_food_processing_complex
+                }
+            }
+        }
+        modifier = {
+            job_farmer_add = 1
+        }
+        mult = value:pw_farming_value
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+                is_anglers_empire = yes
+            }
+            is_wet = yes
+        }
+        modifier = {
+            job_angler_add = 0.5
+            job_pearl_diver_add = 0.5
+        }
+        mult = value:pw_farming_value
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+            NAND = {
+                uses_district_set = giga_frameworld
+                is_voidframe_upgraded = yes
+                OR = {
+                    has_building = building_fe_food_processing_complex
+                    has_building = building_ae_food_processing_complex
+                    has_building = building_phanon_food_processing_complex
+                    has_building = building_stellarite_food_processing_complex
+                }
+            }
+        }
+        modifier = {
+            job_agri_drone_add = 1
+        }
+        mult = value:pw_farming_value
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+            has_district = district_giga_voidframe_farming_dm
+        }
+        modifier = {
+            job_acot_foodman_add = 1
+        }
+        mult = value:pw_farming_value
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+            has_district = district_giga_voidframe_farming_dm
+        }
+        modifier = {
+            job_acot_fooddrone_add = 1
+        }
+        mult = value:pw_farming_value
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+            has_district = district_giga_voidframe_farming_de
+        }
+        modifier = {
+            job_acot_foodman_add = 1
+        }
+        mult = value:pw_farming_value
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+            has_district = district_giga_voidframe_farming_de
+        }
+        modifier = {
+            job_acot_fooddrone_add = 1
+        }
+        mult = value:pw_farming_value
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+            has_district = district_giga_voidframe_farming_pe
+        }
+        modifier = {
+            job_phanon_foodman_add = 1
+        }
+        mult = value:pw_farming_value
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+            has_district = district_giga_voidframe_farming_pe
+        }
+        modifier = {
+            job_phanon_fooddrone_add = 1
+        }
+        mult = value:pw_farming_value
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+            has_district = district_giga_voidframe_farming_se
+        }
+        modifier = {
+            job_stellarite_foodman_add = 1
+        }
+        mult = value:pw_farming_value
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+            has_district = district_giga_voidframe_farming_se
+        }
+        modifier = {
+            job_stellarite_fooddrone_add = 1
+        }
+        mult = value:pw_farming_value
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_tradition = tr_pw_monumentality_brutalism
+            }
+        }
+        modifier = {
+            planet_stability_add = @pw_stability_production
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_edict = pw_wonders_beyond_ambition
+            }
+        }
+        modifier = {
+            planet_pops_organics_food_upkeep_mult = -0.15
+        }
+    }
+    country_modifier = {
+        country_resource_max_food_add = 5000
+    }
+    triggered_desc = {
+        text = pw_planet_wonder_lb
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+            OR = {
+                owner = {
+                    is_anglers_empire = no
+                }
+                AND = {
+                    owner = {
+                        is_anglers_empire = yes
+                    }
+                    NOT = {
+                        is_wet = yes
+                    }
+                }
+            }
+        }
+        text = pw_demetrius_fields_jobs_add_regular
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+                is_anglers_empire = yes
+            }
+            is_wet = yes
+        }
+        text = pw_demetrius_fields_jobs_add_angler
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = pw_demetrius_fields_jobs_add_gestalt
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = job_pw_agriculture_director_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_pw_food_coordinator_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+            OR = {
+                owner = {
+                    is_anglers_empire = no
+                }
+                AND = {
+                    owner = {
+                        is_anglers_empire = yes
+                    }
+                    NOT = {
+                        is_wet = yes
+                    }
+                }
+            }
+        }
+        text = job_farmer_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+                is_anglers_empire = yes
+            }
+            is_wet = yes
+        }
+        text = job_aqu_angler_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+                is_anglers_empire = yes
+            }
+            is_wet = yes
+        }
+        text = job_pearl_diver_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_agri_drone_effect_desc
+    }
+    on_built = {
+        planet_event = {
+            id = pw_wonder.700
+        }
+    }
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 0.25
+            free_building_slots < 1
+            free_district_slots < 1
+        }
+        modifier = {
+            factor = 0.25
+            pw_has_any_planetary_wonder = yes
+            exists = owner
+            NOT = {
+                owner = {
+                    has_ascension_perk = pw_ap_planetary_wonders
+                }
+            }
+            NOT = {
+                has_active_building = pw_building_demetrius_fields
+            }
+            NOT = {
+                has_building_construction = pw_building_demetrius_fields
+            }
+        }
+        modifier = {
+            factor = 0.1
+            exists = owner
+            OR = {
+                owner = {
+                    is_machine_empire = yes
+                }
+            }
+        }
+        modifier = {
+            factor = 5
+            has_designation = col_farming
+        }
+        modifier = {
+            factor = 3
+            OR = {
+                has_designation = col_rural
+                has_designation = col_rural_gestalt
+            }
+        }
+        modifier = {
+            factor = 2
+            districts_good_food = yes
+        }
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                has_monthly_income = {
+                    resource = food
+                    value < 100
+                }
+            }
+        }
+        modifier = {
+            factor = value:pw_farming_value
+        }
+        modifier = {
+            factor = 1.5
+            planet.owner = {
+                is_specialist_subject_type = {
+                    TYPE = prospectorium
+                }
+            }
+        }
+    }
+}

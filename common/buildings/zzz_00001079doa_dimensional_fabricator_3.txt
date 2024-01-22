@@ -1,0 +1,41 @@
+doa_dimensional_fabricator_3 = {
+    base_buildtime = @b4_time
+    can_build = no
+    can_demolish = yes
+    category = resource
+    prerequisites = {
+        "tech_dimensional_fabricator_3"
+    }
+    potential = {
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+        }
+    }
+    allow = {
+        has_building = doa_automation_uplink_3
+    }
+    resources = {
+        category = planet_doa_automated_industries
+        cost = {
+            minerals = @b4_minerals
+        }
+        produces = {
+            minerals = 150
+            rare_crystals = 6
+            exotic_gases = 6
+            volatile_motes = 6
+        }
+        upkeep = {
+            energy = 50
+            sr_dark_matter = 3
+        }
+    }
+    destroy_trigger = {
+        OR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+        }
+    }
+}

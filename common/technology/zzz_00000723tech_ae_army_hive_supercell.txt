@@ -1,0 +1,30 @@
+tech_ae_army_hive_supercell = {
+    area = society
+    cost = @acot_tier7cost1
+    tier = 7
+    category = {
+        military_theory
+    }
+    prerequisites = {
+        "tech_dark_matter_power_core_ae"
+    }
+    weight = 20
+    potential = {
+        is_hive_empire = yes
+        NOT = {
+            has_global_flag = acot_army_forbidden
+        }
+        OR = {
+            has_technology = tech_acot_army_hive_ae
+        }
+    }
+    modifier = {
+        description = tech_ae_army_hive_supercell_tooltip
+        army_health = 1
+    }
+    weight_modifier = {
+        factor = 1
+    }
+    ai_weight = {
+    }
+}

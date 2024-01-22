@@ -1,0 +1,35 @@
+trait_v_crucible = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_v_adv_crucible"
+    }
+    inline_script = "allowed_archetypes/LITHOID"
+    custom_tooltip_with_modifiers = TRAIT_CRUCIBLE_EFFECT
+    modifier = {
+        planet_miners_alloys_produces_add = 1
+        planet_miners_minerals_produces_add = -1
+        planet_miners_energy_upkeep_add = 0.25
+    }
+    triggered_planet_growth_habitability_modifier = {
+        potential = {
+            planet = {
+                is_dry = yes
+                is_artificial = no
+                is_ideal = no
+            }
+        }
+        pop_environment_tolerance = 0.5
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

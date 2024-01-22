@@ -1,0 +1,22 @@
+tech_avb_posthumous_employment_center_2 = {
+    icon = tech_avb_posthumous_employment_center_2
+    cost = @tier4cost1
+    area = society
+    tier = 4
+    category = {
+        biology
+    }
+    prerequisites = {
+        "tech_avb_capital_4"
+    }
+    weight = @tier4weight1
+    potential = {
+        has_valid_civic = civic_permanent_employment
+    }
+    weight_modifier = {
+        factor = 2
+    }
+    ai_weight = {
+        factor = 5
+    }
+}

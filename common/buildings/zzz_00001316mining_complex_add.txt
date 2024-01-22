@@ -1,0 +1,27 @@
+mining_complex_add = {
+    base_buildtime = 360
+    icon = "mining_complex"
+    category = resource
+    can_build = no
+    allow = {
+        always = no
+    }
+    planet_modifier = {
+        district_mining_max = 1
+        planet_jobs_minerals_produces_mult = 0.25
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+        }
+        produces = {
+            minerals = 9
+            alloys = 6
+        }
+        upkeep = {
+            energy = 4
+        }
+    }
+    upgrades = {
+    }
+}

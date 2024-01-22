@@ -1,0 +1,36 @@
+trait_v_adv_regular_structure = {
+    cost = 1
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    host_has_dlc = "Lithoids Species Pack"
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_lithoid_transgenesis
+        }
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_v_irregular_structure"
+        "trait_v_regular_structure"
+        "trait_v_adv_irregular_structure"
+    }
+    inline_script = "allowed_archetypes/adv_lithoid_traits/BIOLOGICAL"
+    modifier = {
+        army_damage_mult = 0.5
+        army_defense_damage_mult = 0.5
+        army_attack_health_mult = -0.5
+        army_defense_health_mult = -0.5
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

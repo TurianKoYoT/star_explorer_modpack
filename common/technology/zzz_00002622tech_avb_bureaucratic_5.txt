@@ -1,0 +1,24 @@
+tech_avb_bureaucratic_5 = {
+    cost = @avbtier6cost2
+    area = society
+    tier = 6
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_avb_bureaucratic_4"
+    }
+    weight = @avbtier6weight2
+    modifier = {
+        country_edict_fund_add = 20
+    }
+    potential = {
+        is_hive_empire = no
+    }
+    weight_modifier = {
+        inline_script = "tech_weights/avb_government_weight"
+    }
+    ai_weight = {
+        factor = 4
+    }
+}

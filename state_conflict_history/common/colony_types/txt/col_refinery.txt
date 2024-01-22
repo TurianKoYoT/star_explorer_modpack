@@ -1,0 +1,69 @@
+@stickiness = 10
+col_refinery = {
+    icon = GFX_colony_type_refinery
+    potential = {
+        exists = owner
+        NOR = {
+            uses_district_set = city_world
+            uses_district_set = ring_world
+            uses_district_set = habitat
+            uses_district_set = pdarchive
+            uses_district_set = pdwarform
+            uses_district_set = pdecocity
+            uses_district_set = pdpalacearc
+            uses_district_set = pdplanethab
+            uses_district_set = pdbioforge
+            uses_district_set = pdbiocapital
+            uses_district_set = pdmachinecapital
+            uses_district_set = pdfloraforge
+            uses_district_set = pdmilarc
+            uses_district_set = pdbiofort
+            uses_district_set = pdmachinefort
+            uses_district_set = pdcorpoarc
+            uses_district_set = pdcrucible
+        }
+        is_special_colony_type = no
+        is_capital = no
+    }
+    planet_modifier = {
+        planet_refiners_produces_mult = 0.15
+        planet_translucers_produces_mult = 0.15
+        planet_chemists_produces_mult = 0.15
+        planet_sr_miners_produces_mult = 0.15
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_galactic_community_member = yes
+            }
+            OR = {
+                is_active_resolution = "resolution_industry_environmental_ordinance_waivers"
+                is_active_resolution = "resolution_industry_project_cornucopia"
+                is_active_resolution = "resolution_industry_6"
+            }
+        }
+        modifier = {
+            planet_refiners_produces_mult = 0.1
+            planet_translucers_produces_mult = 0.1
+            planet_chemists_produces_mult = 0.1
+            planet_sr_miners_produces_mult = 0.1
+        }
+    }
+    weight_modifier = {
+        modifier = {
+            add = @stickiness
+            has_designation = col_refinery
+        }
+        complex_trigger_modifier = {
+            trigger = count_owned_pop
+            parameters = {
+                limit = {
+                    has_sr_producing_job = yes
+                }
+            }
+            mode = add
+            mult = 3
+        }
+    }
+}

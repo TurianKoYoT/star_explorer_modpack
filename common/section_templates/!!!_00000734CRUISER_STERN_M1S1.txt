@@ -1,0 +1,36 @@
+ship_section_template = {
+    key = "CRUISER_STERN_M1S1"
+    ship_size = cruiser
+    fits_on_slot = stern
+    should_draw_components = yes
+    entity = "cruiser_stern_M1_entity"
+    icon = "GFX_ship_part_core_stern"
+    ai_tags = {
+        artillery
+        artillery_stealth
+        carrier
+    }
+    prerequisites = {
+        tech_doa_ascended_cruiser
+    }
+    component_slot = {
+        name = "MEDIUM_GUN_01"
+        template = "medium_turret"
+        locatorname = "medium_gun_01"
+    }
+    component_slot = {
+        name = "SMALL_GUN_01"
+        template = "small_turret"
+        locatorname = "medium_gun_01"
+    }
+    aux_utility_slots = 3
+    modifier = {
+        ship_hull_add = 300
+    }
+    resources = {
+        category = ship_sections
+        cost = {
+            alloys = 60
+        }
+    }
+}

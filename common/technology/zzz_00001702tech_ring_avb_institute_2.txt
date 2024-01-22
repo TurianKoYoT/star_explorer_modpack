@@ -1,0 +1,52 @@
+tech_ring_avb_institute_2 = {
+    icon = tech_ring_avb_institute
+    cost = @orb_tier4cost2
+    area = physics
+    tier = 4
+    category = {
+        computing
+    }
+    prerequisites = {
+        "tech_ring_avb_institute_1"
+    }
+    weight = @tier4weight2
+    potential = {
+        exists = owner
+    }
+    weight_modifier = {
+        factor = 2
+        modifier = {
+            count_owned_planet = {
+                limit = {
+                    OR = {
+                        has_building = building_avb_supercomputer_2
+                        has_building = building_avb_institute_2
+                        has_building = building_supercomputer
+                        has_building = building_institute
+                    }
+                }
+                count > 2
+            }
+            factor = 5
+        }
+        inline_script = "tech_weights/avb_orbital_weight"
+    }
+    ai_weight = {
+        factor = 2
+        modifier = {
+            count_owned_planet = {
+                limit = {
+                    OR = {
+                        has_building = building_avb_supercomputer_2
+                        has_building = building_avb_institute_2
+                        has_building = building_supercomputer
+                        has_building = building_institute
+                    }
+                }
+                count > 2
+            }
+            factor = 5
+        }
+        inline_script = "tech_weights/avb_orbital_weight"
+    }
+}

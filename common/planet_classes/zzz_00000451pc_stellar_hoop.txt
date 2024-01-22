@@ -1,0 +1,36 @@
+pc_stellar_hoop = {
+    entity = "ssh_stellar_hoop_normal_planet"
+    entity_scale = @planet_standard_scale
+    icon = GFX_planet_type_stellar_hoop
+    picture = pc_stellar_hoop
+    enable_tilt = no
+    starting_planet = no
+    atmosphere_color = hsv {
+        2
+        1.6
+        0
+    }
+    atmosphere_intensity = 1
+    atmosphere_width = 1
+    city_color_lut = "gfx/portraits/misc/ssh_colorcorrection_stellar.dds"
+    climate = "dry"
+    colonizable = yes
+    planet_size = {
+        min = 10
+        max = 10
+    }
+    spawn_odds = 0
+    uses_alternative_skies_for_moons = no
+    district_set = stellar_hoop_world
+    carry_cap_per_free_district = @carry_cap_normal
+    can_be_moon = no
+    chance_of_ring = 0
+    is_artificial_planet = yes
+    orbit_lines = no
+    modifier = {
+        habitability_floor_add = 0.5
+        planet_pop_assembly_mult = 0.25
+        BIOLOGICAL_pop_growth_speed = -0.15
+    }
+    fixed_city_level = 5
+}

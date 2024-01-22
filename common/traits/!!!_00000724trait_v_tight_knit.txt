@@ -1,0 +1,51 @@
+trait_v_tight_knit = {
+    cost = 3
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    species_possible_merge_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    allowed_ethics = {
+        ethic_pacifist
+        ethic_fanatic_pacifist
+    }
+    valid_for_all_ethics = no
+    custom_tooltip_with_modifiers = TRAIT_TIGHT_KNIT_EFFECT
+    opposites = {
+        "trait_hive_mind"
+        "trait_invasive"
+        "trait_v_belligerent"
+    }
+    modifier = {
+        pop_ethic_pacifist_attraction_mult = 0.1
+    }
+    triggered_pop_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                NOR = {
+                    is_at_war = yes
+                    has_crisis = yes
+                }
+            }
+        }
+        species_empire_size_mult = -0.25
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

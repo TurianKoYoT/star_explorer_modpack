@@ -1,0 +1,25 @@
+tech_sm_summon_gateway = {
+    area = society
+    category = {
+        psionics
+    }
+    tier = 5
+    cost = 1000000
+    weight = 5
+    is_dangerous = yes
+    is_rare = yes
+    potential = {
+        has_event_chain = shroud_master_summoning
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            NOT = {
+                has_country_flag = can_research_summon_tech
+            }
+        }
+    }
+    ai_weight = {
+        factor = 0
+    }
+}

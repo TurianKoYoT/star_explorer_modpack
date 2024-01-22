@@ -1,0 +1,8 @@
+ssh_opinion_shroud_espionage_negative_2 = {
+    opinion = {
+        base = -2500
+    }
+    unique = yes
+    monthly = yes
+    decay = 5
+}

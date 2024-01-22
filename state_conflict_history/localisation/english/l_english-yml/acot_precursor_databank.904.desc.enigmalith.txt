@@ -1,0 +1,2 @@
+l_english:
+ acot_precursor_databank.904.desc.enigmalith:1000 "The Design Team is proud to announce that they have completed a functioning prototype of a Enigmalith. We can now pump.. eh extract resources from space!"

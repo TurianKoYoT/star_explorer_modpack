@@ -1,0 +1,39 @@
+tech_ring_avb_clone_vats_3 = {
+    icon = tech_ring_avb_clone_vats
+    cost = @orb_tier4cost3
+    area = society
+    tier = 4
+    category = {
+        biology
+    }
+    prerequisites = {
+        "tech_ring_avb_clone_vats_2"
+    }
+    weight = @tier4weight3
+    potential = {
+        exists = owner
+        owner = {
+            has_tradition = tr_genetics_adopt
+        }
+    }
+    weight_modifier = {
+        factor = 4
+        modifier = {
+            factor = 2
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_biology
+            }
+        }
+        inline_script = "tech_weights/avb_orbital_weight"
+    }
+    ai_weight = {
+        factor = 10
+        modifier = {
+            factor = 2
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_biology
+            }
+        }
+        inline_script = "tech_weights/avb_orbital_weight"
+    }
+}

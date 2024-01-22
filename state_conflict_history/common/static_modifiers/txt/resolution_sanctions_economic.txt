@@ -1,0 +1,5 @@
+resolution_sanctions_economic = {
+    country_trade_fee = 0.1
+    trade_value_mult = -0.1
+    diplo_weight_economy_mult = -0.2
+}

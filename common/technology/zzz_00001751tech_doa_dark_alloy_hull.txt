@@ -1,0 +1,18 @@
+tech_doa_dark_alloy_hull = {
+    area = engineering
+    cost = 0
+    tier = 0
+    category = {
+        materials
+    }
+    weight = 0
+    potential = {
+        has_country_flag = doa_tech_7
+    }
+    modifier = {
+        ship_hull_mult = 0.1
+    }
+    ai_weight = {
+        factor = 0
+    }
+}

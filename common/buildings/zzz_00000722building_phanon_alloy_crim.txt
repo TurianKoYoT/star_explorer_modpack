@@ -1,0 +1,50 @@
+building_phanon_alloy_crim = {
+    icon = building_phanon_alloy_forge
+    base_buildtime = 360
+    owner_type = corporate
+    category = manufacturing
+    can_build = no
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            is_criminal_syndicate = yes
+        }
+        has_global_flag = has_aot_mod
+        NOT = {
+            has_global_flag = aot_phanon_content_OFF
+        }
+    }
+    planet_modifier = {
+        planet_crime_add = 200
+        trade_value_add = 75
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            energy = 2000
+            minerals = 2000
+            aot_sr_runic_power = 800
+        }
+        produces = {
+            alloys = 60
+        }
+        upkeep = {
+            energy = 40
+            sr_dark_matter = 2
+            aot_sr_runic_power = 2
+        }
+    }
+    prerequisites = {
+        tech_phanon_alloy_foundry
+    }
+    show_tech_unlock_if = {
+        is_megacorp = yes
+        is_criminal_syndicate = yes
+    }
+    upgrades = {
+        building_stellarite_alloy_crim
+    }
+    ai_weight = {
+        weight = 1
+    }
+}

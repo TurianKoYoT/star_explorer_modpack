@@ -1,0 +1,39 @@
+xte_commander_trait_thermic_symbiote = {
+    inline_script = {
+        script = trait/xte_icon
+        CLASS = commander
+        ICON = GFX_xte_leader_trait_thermic_symbiote
+        RARITY = xte_positive
+        COUNCIL = no
+        TIER = none
+    }
+    cost = 0
+    randomized = no
+    triggered_army_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                is_dry = yes
+            }
+        }
+        army_damage_mult = 0.3
+        army_morale = 0.3
+    }
+    triggered_army_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                is_cold = yes
+            }
+        }
+        army_damage_mult = -0.3
+        army_morale = -0.3
+    }
+    custom_tooltip = xte_commander_trait_thermic_symbiote_effects
+    leader_potential_add = {
+        always = no
+    }
+    leader_class = {
+        commander
+    }
+}

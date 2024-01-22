@@ -1,0 +1,55 @@
+trait_v_reed_cutter = {
+    cost = 3
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_v_adv_fungus_farmer"
+        "trait_v_rancher"
+        "trait_v_adv_rancher"
+        "trait_v_weaver"
+        "trait_v_adv_weaver"
+        "trait_v_fungus_farmer"
+        "trait_v_adv_fungus_farmer"
+        "trait_v_adv_reed_cutter"
+    }
+    allowed_planet_classes = {
+        pc_ocean
+    }
+    inline_script = "traits/pd_aquatic_allowed_planet_classes"
+    inline_script = "traits/aquatic_pc_restriction"
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/AQUATIC"
+    custom_tooltip = TRAIT_REED_CUTTER_EFFECT
+    triggered_pop_modifier = {
+        potential = {
+            planet = {
+                is_wet = yes
+                is_artificial = no
+                is_ideal = no
+            }
+        }
+        planet_farmers_food_produces_add = 1
+        planet_farmers_society_research_produces_add = 0.1
+    }
+    triggered_pop_modifier = {
+        potential = {
+            planet = {
+                is_wet = no
+                is_artificial = no
+                is_ideal = no
+            }
+        }
+        planet_farmers_food_produces_add = -2
+    }
+    slave_cost = {
+        energy = 2000
+    }
+}

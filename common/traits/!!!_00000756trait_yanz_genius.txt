@@ -1,0 +1,35 @@
+trait_yanz_genius = {
+    cost = 10
+    initial = no
+    randomized = no
+    species_potential_add = {
+        from = {
+            has_technology = tech_yanz_quantum_biology
+        }
+    }
+    potential_crossbreeding_chance = 0.1
+    opposites = {
+        "trait_intelligent"
+        "trait_erudite"
+        "trait_nerve_stapled"
+        "trait_hive_mind"
+    }
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    sorting_priority = 10
+    icon = "gfx/interface/icons/traits/bio_path/trait_yanz_genius.dds"
+    modifier = {
+        leader_skill_levels = 5
+        species_leader_exp_gain = 1
+        planet_jobs_engineering_research_produces_mult = 0.5
+        planet_jobs_physics_research_produces_mult = 0.5
+        planet_jobs_society_research_produces_mult = 0.5
+        planet_jobs_unity_produces_mult = 0.1
+        planet_jobs_energy_produces_mult = 0.1
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

@@ -1,0 +1,39 @@
+tech_avb_residence_3 = {
+    cost = @tier4cost1
+    area = society
+    category = {
+        statecraft
+    }
+    tier = 4
+    prerequisites = {
+        "tech_housing_2"
+        "tech_paradise_dome"
+    }
+    weight = @tier4weight1
+    potential = {
+        OR = {
+            is_gestalt = no
+            has_valid_civic = civic_machine_servitor
+        }
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            NOR = {
+                has_technology = tech_mine_rare_crystals
+                has_technology = tech_rare_crystals
+                has_country_flag = has_market_access
+            }
+        }
+        modifier = {
+            factor = 10
+            any_owned_planet = {
+                free_housing <= 0
+                count > 1
+            }
+        }
+    }
+    ai_weight = {
+        factor = 4
+    }
+}

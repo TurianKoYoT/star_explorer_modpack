@@ -1,0 +1,53 @@
+building_phanon_army_corp = {
+    icon = building_phanon_stronghold
+    base_buildtime = 360
+    owner_type = corporate
+    category = army
+    can_build = no
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            is_criminal_syndicate = no
+        }
+        has_global_flag = has_aot_mod
+        NOT = {
+            has_global_flag = aot_phanon_content_OFF
+        }
+    }
+    country_modifier = {
+        country_naval_cap_add = 400
+    }
+    army_modifier = {
+        army_starting_experience_add = 1000
+    }
+    planet_modifier = {
+        job_phanon_enforcer_add = 2
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            minerals = 2500
+            energy = 2500
+            aot_sr_runic_power = 600
+        }
+        upkeep = {
+            energy = 40
+            sr_dark_matter = 2
+            acot_sr_dark_energy = 2
+            aot_sr_runic_power = 4
+        }
+    }
+    prerequisites = {
+        "tech_phanon_stronghold"
+    }
+    show_tech_unlock_if = {
+        is_megacorp = yes
+        is_criminal_syndicate = no
+    }
+    upgrades = {
+        building_stellarite_army_corp
+    }
+    ai_weight = {
+        factor = 10
+    }
+}

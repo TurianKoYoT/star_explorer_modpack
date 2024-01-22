@@ -1,0 +1,92 @@
+building_eutab_beta_node = {
+    base_buildtime = @b2_time
+    base_cap_amount = 1
+    category = unity
+    potential = {
+        exists = owner
+        owner = {
+            is_hive_empire = yes
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 250
+            energy = 100
+        }
+        cost = {
+            trigger = {
+                exists = owner
+                owner = {
+                    is_lithoid_empire = yes
+                }
+            }
+            energy = 100
+            minerals = 100
+        }
+        cost = {
+            trigger = {
+                exists = owner
+                owner = {
+                    is_lithoid_empire = no
+                }
+            }
+            food = 200
+        }
+        upkeep = {
+            energy = @b2_upkeep
+        }
+        upkeep = {
+            trigger = {
+                exists = owner
+                owner = {
+                    is_lithoid_empire = yes
+                }
+            }
+            minerals = @b2_upkeep
+        }
+        upkeep = {
+            trigger = {
+                exists = owner
+                owner = {
+                    is_lithoid_empire = no
+                }
+            }
+            food = @b2_upkeep
+        }
+        produces = {
+            unity = 15
+        }
+    }
+    planet_modifier = {
+        job_eutab_caretaker_add = 4
+        planet_jobs_productive_produces_mult = 0.1
+        planet_jobs_productive_upkeep_mult = 0.05
+    }
+    upgrades = {
+        building_eutab_hive_alpha_node
+    }
+    triggered_desc = {
+        text = job_eutab_caretaker_effect_desc
+    }
+    prerequisites = {
+        "tech_eutab_h_beta_node"
+    }
+    ai_resource_production = {
+        trigger = {
+            num_pops >= 20
+        }
+        physics_research = 15
+        society_research = 15
+        engineering_research = 15
+        unity = 17
+        alloys = 17
+        mult = value:eutab_ai_resource_production_adjustment_value
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            is_hive_empire = no
+        }
+    }
+}

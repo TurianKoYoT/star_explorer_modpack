@@ -1,0 +1,13 @@
+tech_hyperquasaric_teraforge = {
+    cost = 100000
+    area = engineering
+    tier = 5
+    category = {
+        industry
+    }
+    is_rare = yes
+    weight = 0
+    potential = {
+        has_ascension_perk = ap_blackhole_manipulation
+    }
+}

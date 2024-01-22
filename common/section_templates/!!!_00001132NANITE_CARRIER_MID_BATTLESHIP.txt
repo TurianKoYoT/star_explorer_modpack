@@ -1,0 +1,57 @@
+ship_section_template = {
+    key = "NANITE_CARRIER_MID_BATTLESHIP"
+    ship_size = battleship
+    fits_on_slot = mid
+    should_draw_components = yes
+    entity = "battleship_mid_L2M2_entity"
+    icon = "GFX_ship_part_core_mid"
+    prerequisites = {
+        tech_nanite_ship_section
+    }
+    ai_weight = {
+        factor = 5
+    }
+    component_slot = {
+        name = "STRIKE_CRAFT_01"
+        template = "large_strike_craft"
+        locatorname = "large_gun_01"
+    }
+    component_slot = {
+        name = "STRIKE_CRAFT_02"
+        template = "large_strike_craft"
+        locatorname = "large_gun_02"
+    }
+    component_slot = {
+        name = "STRIKE_CRAFT_03"
+        template = "large_strike_craft"
+        locatorname = "medium_gun_01"
+    }
+    component_slot = {
+        name = "STRIKE_CRAFT_04"
+        template = "large_strike_craft"
+        locatorname = "medium_gun_02"
+    }
+    component_slot = {
+        name = "PD_01"
+        template = "point_defence_turret"
+        locatorname = "medium_gun_01"
+    }
+    component_slot = {
+        name = "PD_02"
+        template = "point_defence_turret"
+        locatorname = "medium_gun_02"
+    }
+    component_slot = {
+        name = "PD_03"
+        template = "point_defence_turret"
+        locatorname = "large_gun_01"
+    }
+    large_utility_slots = 5
+    resources = {
+        category = ship_sections
+        cost = {
+            alloys = 90
+            nanites = 220
+        }
+    }
+}

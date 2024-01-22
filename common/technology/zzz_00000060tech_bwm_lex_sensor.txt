@@ -1,0 +1,20 @@
+tech_bwm_lex_sensor = {
+    area = physics
+    cost = 8000
+    tier = 4
+    is_rare = yes
+    category = {
+        voidcraft
+    }
+    ai_update_type = all
+    weight = 0
+    weight_modifier = {
+        factor = 0
+    }
+    prereqfor_desc = {
+        component = {
+            title = "TECH_UNLOCK_bwm_LEX_SENSOR_TITLE"
+            desc = "TECH_UNLOCK_bwm_LEX_SENSOR_DESC"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+leader_prime_machine = {
+    cost = 0
+    species_potential_add = {
+        always = no
+    }
+    icon = "gfx/interface/icons/traits/trait_robot_learning_algorithms.dds"
+    modifier = {
+        planet_jobs_robotic_produces_mult = 0.1
+    }
+    leader_class = {
+        governor
+    }
+    initial = no
+    randomized = no
+}

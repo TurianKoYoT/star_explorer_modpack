@@ -1,0 +1,30 @@
+trait_v_active_camouflage = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_v_adv_active_camouflage"
+        "trait_v_nacre_shell"
+        "trait_v_adv_nacre_shell"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/REP"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/NECROID"
+    inline_script = "species_class/AQUATIC"
+    custom_tooltip_with_modifiers = TRAIT_ACTIVE_CAMOUFLAGE_EFFECT
+    modifier = {
+        army_damage_mult = 0.5
+        army_disengage_chance_mult = 0.5
+    }
+    slave_cost = {
+        energy = 2000
+    }
+}

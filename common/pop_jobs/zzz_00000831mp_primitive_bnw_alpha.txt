@@ -1,0 +1,26 @@
+mp_primitive_bnw_alpha = {
+    category = ruler
+    is_capped_by_modifier = yes
+    building_icon = building_residence
+    clothes_texture_index = 1
+    possible_pre_triggers = {
+        has_owner = yes
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_ruler_job
+    possible = {
+        owner = {
+            is_primitive = yes
+            has_country_flag = early_space_age
+        }
+    }
+    resources = {
+        category = planet_jobs
+        produces = {
+            unity = 10
+        }
+    }
+    weight = {
+        weight = @ruler_job_weight
+    }
+}

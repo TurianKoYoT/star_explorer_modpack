@@ -1,0 +1,34 @@
+building_infinity_laboratory = {
+    base_buildtime = 640
+    can_demolish = yes
+    base_cap_amount = 1
+    empire_limit = {
+        base = 2
+    }
+    category = research
+    potential = {
+        owner = {
+            has_ascension_perk = ap_expansion_infinity
+        }
+    }
+    show_tech_unlock_if = {
+        has_ascension_perk = ap_expansion_infinity
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 2500
+        }
+        upkeep = {
+            energy = 24
+        }
+        produces = {
+            physics_research = 40
+            society_research = 40
+            engineering_research = 30
+        }
+    }
+    ai_weight = {
+        weight = 3
+    }
+}

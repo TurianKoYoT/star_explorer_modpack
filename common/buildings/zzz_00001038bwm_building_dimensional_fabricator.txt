@@ -1,0 +1,30 @@
+bwm_building_dimensional_fabricator = {
+    base_buildtime = 480
+    can_build = no
+    can_demolish = yes
+    icon = building_nanite_transmuter
+    position_priority = 2
+    category = resources
+    potential = {
+        has_building = "bwm_building_ancient_monolith_3"
+    }
+    planet_modifier = {
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 1000
+        }
+        produces = {
+            minerals = 100
+            rare_crystals = 2
+            exotic_gases = 2
+            volatile_motes = 2
+        }
+        upkeep = {
+            energy = 20
+        }
+    }
+    upgrades = {
+    }
+}

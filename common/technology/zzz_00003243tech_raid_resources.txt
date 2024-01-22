@@ -1,0 +1,30 @@
+tech_raid_resources = {
+    cost = @tier3cost3
+    area = engineering
+    tier = 3
+    is_rare = yes
+    category = {
+        materials
+    }
+    weight = @tier3weight3
+    weight_modifier = {
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_materials
+            }
+        }
+    }
+    potential = {
+        has_ascension_perk = ap_orbital_surgical_strike
+    }
+    ai_weight = {
+        factor = 5
+    }
+    prereqfor_desc = {
+        feature = {
+            title = "tech_raid_resources_desc"
+            desc = ""
+        }
+    }
+}

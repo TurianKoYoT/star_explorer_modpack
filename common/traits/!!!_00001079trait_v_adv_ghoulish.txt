@@ -1,0 +1,43 @@
+trait_v_adv_ghoulish = {
+    cost = -3
+    icon = "gfx/interface/icons/traits/trait_v_ghoulish.dds"
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    potential_crossbreeding_chance = 1
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_v_zoological_transgenesis
+        }
+    }
+    opposites = {
+        "trait_charismatic"
+        "trait_repugnant"
+        "trait_v_ghoulish"
+        "trait_v_prismatic"
+        "trait_v_adv_prismatic"
+        "trait_v_creature_of_paradise"
+        "trait_v_adv_creature_of_paradise"
+    }
+    inline_script = "allowed_archetypes/adv_biological_traits/BIOLOGICAL"
+    inline_script = "allowed_archetypes/adv_biological_traits/LITHOID"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/REP"
+    inline_script = "species_class/ART"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/FUN"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/LITHOID"
+    inline_script = "species_class/AQUATIC"
+    custom_tooltip_with_modifiers = TRAIT_GHOULISH_EFFECT
+    modifier = {
+        pop_job_amenities_mult = -0.3
+    }
+    slave_cost = {
+        energy = -1000
+    }
+}

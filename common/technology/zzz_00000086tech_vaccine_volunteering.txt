@@ -1,0 +1,25 @@
+tech_vaccine_volunteering = {
+    cost = @tier2cost1
+    area = society
+    tier = 2
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_vaccine_tests"
+    }
+    weight = @tier2weight1
+    gateway = plague
+    potential = {
+        has_origin = origin_pandemic
+    }
+    modifier = {
+        description = ps_tech_1
+    }
+    weight_modifier = {
+        factor = 2.5
+    }
+    ai_weight = {
+        factor = 5
+    }
+}

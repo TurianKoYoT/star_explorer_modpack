@@ -1,0 +1,59 @@
+ship_section_template = {
+    key = "bwm_conduit_cruiser_mid_key"
+    ship_size = bwm_conduit_cruiser
+    fits_on_slot = mid
+    entity = "bwm_conduit_cruiser_hull_entity"
+    icon = "GFX_ship_part_core_mid"
+    component_slot = {
+        name = "LARGE_GUN_01"
+        template = "large_turret"
+        locatorname = "top_center"
+    }
+    component_slot = {
+        name = "MEDIUM_GUN_01"
+        template = "medium_turret"
+        locatorname = "top_center"
+    }
+    component_slot = {
+        name = "MEDIUM_GUN_02"
+        template = "medium_turret"
+        locatorname = "top_center"
+    }
+    component_slot = {
+        name = "SMALL_GUN_01"
+        template = "small_turret"
+        locatorname = "top_center"
+    }
+    component_slot = {
+        name = "SMALL_GUN_02"
+        template = "small_turret"
+        locatorname = "top_center"
+    }
+    component_slot = {
+        name = "SMALL_GUN_03"
+        template = "small_turret"
+        locatorname = "top_center"
+    }
+    component_slot = {
+        name = "SMALL_GUN_04"
+        template = "small_turret"
+        locatorname = "top_center"
+    }
+    component_slot = {
+        name = "PD_01"
+        template = "point_defence_turret"
+        locatorname = "top_center"
+    }
+    component_slot = {
+        name = "PD_02"
+        template = "point_defence_turret"
+        locatorname = "top_center"
+    }
+    component_slot = {
+        name = "PD_03"
+        template = "point_defence_turret"
+        locatorname = "top_center"
+    }
+    large_utility_slots = 10
+    aux_utility_slots = 2
+}

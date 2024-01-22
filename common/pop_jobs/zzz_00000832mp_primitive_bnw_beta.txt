@@ -1,0 +1,27 @@
+mp_primitive_bnw_beta = {
+    category = specialist
+    is_capped_by_modifier = yes
+    building_icon = building_residence
+    clothes_texture_index = 1
+    possible_pre_triggers = {
+        has_owner = yes
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_specialist_job
+    possible = {
+        owner = {
+            is_primitive = yes
+            has_country_flag = early_space_age
+        }
+    }
+    resources = {
+        category = planet_jobs
+        produces = {
+            society_research = 5
+            physics_research = 5
+        }
+    }
+    weight = {
+        weight = @specialist_job_weight
+    }
+}

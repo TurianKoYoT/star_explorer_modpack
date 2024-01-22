@@ -1,0 +1,104 @@
+building_stellarite_organic_sanctuary = {
+    icon = building_stellarite_sky_dome
+    base_buildtime = 900
+    can_build = no
+    category = unity
+    potential = {
+        exists = owner
+        owner = {
+            has_valid_civic = civic_machine_servitor
+        }
+    }
+    allow = {
+        has_stellarite_capital = yes
+    }
+    destroy_trigger = {
+        exists = owner
+        NOT = {
+            owner = {
+                has_valid_civic = civic_machine_servitor
+            }
+        }
+    }
+    convert_to = {
+        building_stellarite_mansion
+        building_stellarite_hive_depot
+        building_stellarite_ancient_cryo_chamber
+    }
+    prerequisites = {
+        tech_stellarite_mansion
+    }
+    show_tech_unlock_if = {
+        owner = {
+            has_valid_civic = civic_machine_servitor
+        }
+    }
+    planet_modifier = {
+        job_bio_trophy_add = 320
+        job_stellarite_artisan_add = 4
+        job_maintenance_drone_add = 16
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            trigger = {
+                has_modifier = acot_modifier_ascended_city
+            }
+            unity = 120
+        }
+        cost = {
+            energy = 4000
+            minerals = 4000
+            acot_sr_stellarite = 800
+        }
+        upkeep = {
+            energy = 20
+            acot_sr_stellarite = 10
+        }
+    }
+    triggered_desc = {
+        text = job_bio_trophy_effect_desc
+    }
+    triggered_desc = {
+        text = job_artisan_drone_effect_desc
+    }
+    triggered_desc = {
+        text = job_maintenance_drone_effect_desc
+    }
+    ai_resource_production = {
+        unity = 320
+        physics_research = 320
+        trigger = {
+            has_unemployed_pop_of_category = bio_trophy
+            planet_resource_compare = {
+                resource = physics_research
+                value >= 1600
+                type = produces
+            }
+        }
+    }
+    ai_resource_production = {
+        unity = 320
+        alloys = 320
+        trigger = {
+            has_unemployed_pop_of_category = bio_trophy
+            planet_resource_compare = {
+                resource = alloys
+                value >= 1600
+                type = produces
+            }
+        }
+    }
+    ai_resource_production = {
+        unity = 320
+        consumer_goods = 320
+        trigger = {
+            has_unemployed_pop_of_category = bio_trophy
+            planet_resource_compare = {
+                resource = consumer_goods
+                value >= 1600
+                type = produces
+            }
+        }
+    }
+}

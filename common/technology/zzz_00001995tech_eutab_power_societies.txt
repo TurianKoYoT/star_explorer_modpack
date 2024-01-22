@@ -1,0 +1,22 @@
+tech_eutab_power_societies = {
+    cost = @tier2cost3
+    area = society
+    tier = 2
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_planetary_unification"
+    }
+    weight = @tier2weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_spiritualist = yes
+        has_ascension_perk = ap_interstellar_dominion
+    }
+    gateway = eu_dominion
+    modifier = {
+        trade_value_mult = 0.1
+        country_unity_produces_mult = 0.05
+    }
+}

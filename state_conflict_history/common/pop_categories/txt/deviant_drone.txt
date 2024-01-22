@@ -1,0 +1,26 @@
+deviant_drone = {
+    rank = 2
+    clothes_texture_index = 2
+    change_job_threshold = 2
+    demotion_time = 0
+    should_apply_unemployment_penalties = {
+        NOR = {
+            has_very_high_living_standard_type = yes
+            has_high_living_standard_type = yes
+        }
+    }
+    pop_modifier = {
+        pop_housing_usage_base = 1
+        pop_amenities_usage_base = 1
+    }
+    allow_resettlement = {
+        always = no
+    }
+    resources = {
+        category = pop_category_workers
+        inline_script = "pop_categories/regular_upkeep"
+        inline_script = "pop_categories/cyborg_upkeep"
+        inline_script = "pop_categories/v_traits_upkeep"
+        inline_script = "pop_categories/v_traits_cyborg_upkeep"
+    }
+}

@@ -1,0 +1,24 @@
+ssh_tech_pk_zombie = {
+    cost = 48000
+    area = society
+    tier = 5
+    category = {
+        biology
+    }
+    potential = {
+        host_has_dlc = Apocalypse
+        has_country_flag = colossus_project
+    }
+    weight = 0
+    is_rare = yes
+    weight_modifier = {
+        factor = 0
+    }
+    ai_weight = {
+        factor = 10
+        modifier = {
+            factor = 0
+            has_utopia = no
+        }
+    }
+}

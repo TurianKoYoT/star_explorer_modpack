@@ -1,0 +1,90 @@
+district_ssh_edersphere_leisure = {
+    base_buildtime = 360
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        uses_district_set = edersphere_world
+        from = {
+            is_regular_empire = yes
+            NOT = {
+                has_civic = civic_dystopian_society
+            }
+        }
+    }
+    potential = {
+        uses_district_set = edersphere_world
+        owner = {
+            exists = owner
+            is_regular_empire = yes
+            NOT = {
+                has_civic = civic_dystopian_society
+            }
+        }
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_ssh_edersphere_organic_housing
+        district_ssh_edersphere_city
+        district_ssh_edersphere_nexus
+        district_ssh_edersphere_hive
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = 1500
+            exotic_gases = 50
+        }
+        upkeep = {
+            energy = 5
+            exotic_gases = 1
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 15
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+                NOT = {
+                    has_valid_civic = civic_warrior_culture
+                }
+            }
+        }
+        modifier = {
+            job_entertainer_add = 6
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+                has_valid_civic = civic_warrior_culture
+            }
+        }
+        modifier = {
+            job_duelist_add = 6
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                has_valid_civic = civic_warrior_culture
+            }
+        }
+        text = job_duelist_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                NOT = {
+                    has_valid_civic = civic_warrior_culture
+                }
+            }
+        }
+        text = job_entertainer_effect_desc
+    }
+}

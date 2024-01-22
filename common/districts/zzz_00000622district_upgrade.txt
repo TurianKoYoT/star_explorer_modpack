@@ -1,0 +1,66 @@
+district_upgrade = {
+    base_buildtime = 300
+    min_for_deposits_on_planet = 1
+    max_for_deposits_on_planet = 6
+    conversion_ratio = 1
+    convert_to = {
+        district_upgrade_uncapped
+    }
+    show_on_uncolonized = {
+        OR = {
+            sartek_standard_pd_enhanced = yes
+            sartek_hive_mod_or_hive_vanilla = yes
+        }
+        from = {
+            OR = {
+                has_ascension_perk = ap_pyramidal_society
+                has_country_flag = ap_pyramidal_society
+            }
+            is_machine_empire = yes
+        }
+    }
+    potential = {
+        OR = {
+            sartek_standard_pd_enhanced = yes
+            sartek_hive_mod_or_hive_vanilla = yes
+        }
+        exists = owner
+        owner = {
+            OR = {
+                has_ascension_perk = ap_pyramidal_society
+                has_country_flag = ap_pyramidal_society
+            }
+            is_machine_empire = yes
+        }
+    }
+    allow = {
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = 500
+        }
+        upkeep = {
+            energy = 2
+        }
+        produces = {
+        }
+    }
+    planet_modifier = {
+        planet_amenities_no_happiness_add = 4
+        job_improver_add = 2
+    }
+    ai_weight = {
+        weight = 2
+    }
+    ai_resource_production = {
+        energy = 4
+        trigger = {
+            always = yes
+        }
+    }
+}

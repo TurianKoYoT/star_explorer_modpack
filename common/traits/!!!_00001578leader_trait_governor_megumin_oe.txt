@@ -1,0 +1,13 @@
+leader_trait_governor_megumin_oe = {
+    cost = 0
+    icon = "gfx/interface/icons/traits/trait_megumin_oe.dds"
+    initial = no
+    randomized = no
+    leader_class = {
+        governor
+    }
+    immortal_leaders = yes
+    modifier = {
+        planet_stability_add = -300
+    }
+}

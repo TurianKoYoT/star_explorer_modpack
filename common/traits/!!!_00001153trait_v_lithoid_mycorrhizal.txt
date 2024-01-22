@@ -1,0 +1,30 @@
+trait_v_lithoid_mycorrhizal = {
+    cost = 2
+    icon = "gfx/interface/icons/traits/trait_v_mycorrhizal.dds"
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    randomized = no
+    potential_crossbreeding_chance = 0
+    opposites = {
+        "trait_v_mycorrhizal"
+        "trait_v_adv_mycorrhizal"
+        "trait_void_dweller_1"
+        "trait_v_biophobia"
+        "trait_v_pest_sensitive"
+        "trait_v_adv_pest_sensitive"
+    }
+    inline_script = "allowed_archetypes/LITHOID"
+    custom_tooltip = TRAIT_LITHOID_MYCORRHIZA_EFFECT
+    triggered_pop_modifier = {
+        planet_pops_organics_minerals_upkeep_mult = -0.05
+        mult = planet.value:natural_blocker_count
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

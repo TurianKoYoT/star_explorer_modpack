@@ -1,0 +1,11 @@
+eng_cult_2b = {
+    trigger = {
+        is_machine_cult_emex = yes
+        FROM = {
+            has_ethic = "ethic_fanatic_materialist"
+        }
+    }
+    opinion = {
+        base = 25
+    }
+}

@@ -1,0 +1,23 @@
+ssh_tech_insight_ingsoc = {
+    cost = 15000
+    area = society
+    tier = 4
+    category = {
+        statecraft
+    }
+    weight = 0
+    is_rare = yes
+    modifier = {
+        country_influence_produces_mult = 0.15
+    }
+    weight_modifier = {
+        factor = 0
+    }
+    ai_weight = {
+        factor = 10
+        modifier = {
+            factor = 0
+            has_utopia = no
+        }
+    }
+}

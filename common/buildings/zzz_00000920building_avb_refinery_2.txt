@@ -1,0 +1,110 @@
+building_avb_refinery_2 = {
+    base_buildtime = @avb_b3_time
+    can_build = no
+    exempt_from_ai_planet_specialization = no
+    category = manufacturing
+    potential = {
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+            AND = {
+                has_z_expanded_mod = yes
+                has_planet_flag = planetary_station
+            }
+        }
+    }
+    allow = {
+        has_major_upgraded_capital = yes
+    }
+    destroy_trigger = {
+        free_building_slots = 0
+        exists = owner
+        owner = {
+            is_ai = yes
+            has_monthly_income = {
+                resource = exotic_gases
+                value > 12
+            }
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            job_gas_refiner_add = 3
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_gas_refiner_drone_add = 3
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_b3_minerals
+            exotic_gases = 100
+        }
+        upkeep = {
+            energy = @avb_b3_upkeep
+        }
+    }
+    prerequisites = {
+        "tech_avb_exotic_gases_2"
+    }
+    upgrades = {
+        building_avb_refinery_3
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = job_gas_refiner_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_gas_refiner_drone_effect_desc
+    }
+    ai_resource_production = {
+        exotic_gases = 1
+        trigger = {
+            always = yes
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+            exists = owner
+            owner = {
+                is_ai = yes
+                str_force_gases = yes
+            }
+            NOT = {
+                has_building = building_refinery
+            }
+        }
+        modifier = {
+            job_starnet_spice_melange_farmer_add = 2
+            job_starnet_spice_melange_antifarmer_add = -2
+        }
+    }
+}

@@ -1,0 +1,41 @@
+tech_hive_battleship_hull_1 = {
+    cost = @tier5cost3
+    area = society
+    tier = 5
+    is_rare = yes
+    category = {
+        voidcraft
+    }
+    prerequisites = {
+        "tech_battleship_hull_2"
+        "tech_hive_cruiser_hull_1"
+    }
+    weight = @tier5weight3
+    potential = {
+        has_ascension_perk = ap_aggressive_hivemind
+        OR = {
+            AND = {
+                country_uses_food = yes
+                has_resource = {
+                    type = food
+                    amount > 20000
+                }
+            }
+            AND = {
+                country_uses_food = no
+                has_resource = {
+                    type = minerals
+                    amount > 20000
+                }
+            }
+        }
+    }
+    modifier = {
+        custom_tooltip = tech_hive_battleship_hull_effect
+        shipsize_battleship_hull_mult = 0.15
+        shipsize_offspring_battleship_hull_mult = 0.15
+    }
+    weight_modifier = {
+        factor = 1
+    }
+}

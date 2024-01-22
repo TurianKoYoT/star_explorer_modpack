@@ -1,0 +1,60 @@
+tech_pki_panzer = {
+    cost = @tier2cost1
+    area = engineering
+    tier = 2
+    category = {
+        voidcraft
+    }
+    prerequisites = {
+        "tech_destroyers"
+    }
+    weight = @tier2weight1
+    potential = {
+        OR = {
+            pki_is_katzprotektorat_tier_2 = yes
+            pki_is_katzenartig_imperium = yes
+        }
+    }
+    is_rare = yes
+    gateway = ship
+    prereqfor_desc = {
+        ship = {
+            title = "PKI_TECH_UNLOCK_PANZER_CONSTRUCTION_TITLE"
+            desc = "PKI_TECH_UNLOCK_PANZER_CONSTRUCTION_DESC"
+        }
+    }
+    modifier = {
+        ship_experience_gain_mult = 0.05
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0.1
+            NOT = {
+                years_passed > 10
+            }
+        }
+        modifier = {
+            factor = 15
+            has_technology = tech_destroyers
+        }
+        modifier = {
+            factor = 2
+            years_passed > 15
+        }
+        modifier = {
+            factor = 3
+            years_passed > 20
+        }
+        modifier = {
+            factor = 4
+            years_passed > 30
+        }
+        modifier = {
+            factor = 1.25
+            has_tradition = tr_supremacy_adopt
+        }
+    }
+    ai_weight = {
+        factor = @ai_ship_types_factor
+    }
+}

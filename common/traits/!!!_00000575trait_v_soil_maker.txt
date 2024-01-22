@@ -1,0 +1,28 @@
+trait_v_soil_maker = {
+    cost = 1
+    initial = no
+    sapient = no
+    species_possible_remove = {
+        can_remove_presapient_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    species_possible_merge_add = {
+        always = no
+    }
+    opposites = {
+        "trait_v_fertilising"
+        "trait_v_infertilising"
+    }
+    potential_crossbreeding_chance = 1
+    custom_tooltip = TRAIT_SOIL_MAKER_EFFECT
+    allowed_archetypes = {
+        BIOLOGICAL
+        PRESAPIENT
+    }
+    inline_script = "species_class/FUN"
+    inline_script = "species_class/PLANT"
+    modifier = {
+    }
+}

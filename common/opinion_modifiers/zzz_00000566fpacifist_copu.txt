@@ -1,0 +1,14 @@
+fpacifist_copu = {
+    trigger = {
+        has_ethic = ethic_fanatic_pacifist
+        from = {
+            OR = {
+                has_valid_civic = civic_bringers_of_death
+                has_valid_civic = civic_machine_destructive_programming
+            }
+        }
+    }
+    opinion = {
+        base = -75
+    }
+}

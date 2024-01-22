@@ -1,0 +1,61 @@
+building_ult_gestalt_terminal = {
+    base_buildtime = 180
+    base_cap_amount = 1
+    category = manufacturing
+    potential = {
+        exists = owner
+        owner = {
+            is_gestalt = yes
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            is_gestalt = no
+        }
+    }
+    convert_to = {
+        building_ult_planetary_terminal
+    }
+    planet_modifier = {
+        planet_jobs_upkeep_mult = -0.2
+        planet_jobs_produces_mult = 0.1
+    }
+    country_modifier = {
+        country_resource_max_add = 20000
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        modifier = {
+            job_synapse_drone_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        modifier = {
+            job_coordinator_add = 1
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 1000
+        }
+        upkeep = {
+            energy = 5
+        }
+    }
+    prerequisites = {
+        "tech_ult_paradise_homeplanet"
+    }
+}

@@ -1,0 +1,41 @@
+pm_weak_magnetic_field = {
+    spawn_chance = {
+        modifier = {
+            add = 10
+            is_dry = yes
+        }
+        modifier = {
+            add = 10
+            is_wet = yes
+        }
+        modifier = {
+            add = 10
+            is_cold = yes
+        }
+        modifier = {
+            add = 0
+            is_pd_gaia = yes
+        }
+        modifier = {
+            add = 10
+            is_planet_class = pc_relic
+        }
+        modifier = {
+            factor = 2
+            has_planet_modifier = "pm_low_gravity"
+        }
+        modifier = {
+            factor = 0
+            has_planet_modifier = "pm_weak_magnetic_field"
+        }
+        modifier = {
+            factor = 0
+            has_planet_modifier = "pm_strong_magnetic_field"
+        }
+        modifier = {
+            factor = 0
+            num_modifiers > 1
+        }
+    }
+    modifier = "weak_magnetic_field"
+}

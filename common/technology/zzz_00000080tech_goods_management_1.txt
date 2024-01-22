@@ -1,0 +1,16 @@
+tech_goods_management_1 = {
+    cost = @tier2cost3
+    area = engineering
+    tier = 2
+    category = {
+        materials
+    }
+    prerequisites = {
+        "tech_consumer_good_refinement_1"
+    }
+    weight = 0
+    weight_modifier = {
+    }
+    ai_weight = {
+    }
+}

@@ -1,0 +1,26 @@
+leader_trait_admiral_esap_egalitarian_2_spaceborn = {
+    cost = 0
+    icon = "gfx/interface/icons/traits/leader_traits/leader_trait_esap_egalitarian_2_spaceborn.dds"
+    fleet_modifier = {
+        ship_speed_mult = 0.04
+        ship_emergency_ftl_mult = -0.11
+    }
+    councilor_modifier = {
+        ship_speed_mult = 0.04
+        ship_emergency_ftl_mult = -0.11
+    }
+    leader_potential_add = {
+        from = {
+            has_ascension_perk = ap_esap_egalitarian_2
+        }
+    }
+    leader_class = {
+        commander
+    }
+    initial = no
+    randomized = yes
+    selectable_weight = {
+        weight = @class_trait_weight
+        inline_script = paragon/council_weight_mult
+    }
+}

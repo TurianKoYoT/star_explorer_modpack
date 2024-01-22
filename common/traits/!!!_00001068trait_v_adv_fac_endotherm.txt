@@ -1,0 +1,50 @@
+trait_v_adv_fac_endotherm = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    potential_crossbreeding_chance = 0
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_v_zoological_transgenesis
+        }
+    }
+    opposites = {
+        "trait_invasive"
+        "trait_lithoid"
+        "trait_v_ectotherm"
+        "trait_v_adv_ectotherm"
+        "trait_v_fac_endotherm"
+    }
+    inline_script = "allowed_archetypes/adv_biological_traits/BIOLOGICAL"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/FUN"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/TOX"
+    custom_tooltip = TRAIT_COLD_FAC_ENDOTHERM_EFFECT
+    triggered_pop_modifier = {
+        potential = {
+            exists = planet
+            OR = {
+                planet = {
+                    is_cold = no
+                }
+                is_v_pc_gaia = yes
+            }
+        }
+        planet_pops_organics_food_upkeep_mult = -0.25
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

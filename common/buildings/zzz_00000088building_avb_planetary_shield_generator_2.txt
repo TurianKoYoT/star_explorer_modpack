@@ -1,0 +1,87 @@
+building_avb_planetary_shield_generator_2 = {
+    base_buildtime = @avb_b4_time
+    can_build = no
+    position_priority = 100
+    category = army
+    allow = {
+        has_fully_upgraded_capital = yes
+        hidden_trigger = {
+            owner = {
+                is_ai = no
+            }
+        }
+        if = {
+            limit = {
+                exists = orbital_defence
+            }
+            orbital_defence = {
+                exists = starbase
+                starbase = {
+                    NOR = {
+                        has_starbase_building = ring_orbital_shield_generator
+                        is_starbase_building_building = ring_orbital_shield_generator
+                    }
+                }
+            }
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            is_ai = yes
+        }
+        is_capital = no
+        solar_system = {
+            is_bottleneck_system = no
+        }
+        num_buildings = {
+            type = building_stronghold
+            value < 1
+        }
+        num_buildings = {
+            type = building_fortress
+            value < 1
+        }
+    }
+    upgrades = {
+        building_avb_planetary_shield_generator_3
+    }
+    planet_modifier = {
+        planet_orbital_bombardment_damage = -0.65
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_b4_minerals
+            exotic_gases = 50
+        }
+        upkeep = {
+            energy = @avb_b4_upkeep
+            exotic_gases = 4
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_global_flag = ethic_civic_classic_active
+                    has_civic = civic_inwards_perfection
+                }
+            }
+            unity = 10
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_global_flag = bug_branch_active
+            exists = owner
+            owner = {
+                has_civic = civic_inwards_perfection
+            }
+        }
+        modifier = {
+            planet_jobs_unity_produces_mult = 0.2
+        }
+    }
+    prerequisites = {
+        "tech_avb_planetary_shield_generator_2"
+    }
+}

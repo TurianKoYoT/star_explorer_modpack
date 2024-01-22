@@ -1,0 +1,105 @@
+apsr15_power_engineer_normal = {
+    category = specialist
+    condition_string = SPECIALIST_JOB_TRIGGER
+    building_icon = apsr15_building_part41
+    clothes_texture_index = 3
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_specialist_job
+    resources = {
+        category = apsr15_planet_power_engineer_normal
+        produces = {
+            energy = 18
+        }
+        upkeep = {
+            consumer_goods = 2
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_apsr15_building_part41
+                }
+            }
+            energy = 5.5
+        }
+        produces = {
+            trigger = {
+                planet = {
+                    has_deposit = apsr_relic_cube_deposit
+                }
+            }
+            energy = 15
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_apsr15_advanced_1
+                }
+            }
+            energy = 10
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_apsr15_advanced_2
+                }
+            }
+            energy = 10
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_apsr15_advanced_3
+                }
+            }
+            energy = 10
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_apsr15_advanced_4
+                }
+            }
+            energy = 10
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_apsr15_advanced_5
+                }
+            }
+            energy = 10
+        }
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                owner = {
+                    has_technology = tech_apsr15_building_part41
+                }
+            }
+        }
+        modifier = {
+            planet_jobs_energy_produces_mult = 0.01
+        }
+    }
+    weight = {
+        weight = 199
+        modifier = {
+            factor = 100
+            exists = owner
+            owner = {
+                is_ai = yes
+                has_monthly_income = {
+                    resource = energy
+                    value < 100
+                }
+            }
+        }
+    }
+}

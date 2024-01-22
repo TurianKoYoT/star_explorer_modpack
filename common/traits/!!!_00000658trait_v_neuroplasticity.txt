@@ -1,0 +1,23 @@
+trait_v_neuroplasticity = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    opposites = {
+        "trait_invasive"
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    custom_tooltip_with_modifiers = TRAIT_NEUROPLASTICITY_EFFECT
+    modifier = {
+        leader_trait_selection_options_add = 1
+    }
+    slave_cost = {
+        energy = -5000
+    }
+}

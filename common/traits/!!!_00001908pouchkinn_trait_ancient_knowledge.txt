@@ -1,0 +1,18 @@
+pouchkinn_trait_ancient_knowledge = {
+    inline_script = {
+        script = trait/giga_icon_classic
+        CLASS = scientist
+        ICON = "GFX_pouchkinn_trait_ancient_knowledge"
+        RARITY = common
+        COUNCIL = yes
+        TIER = none
+    }
+    modifier = {
+        ship_anomaly_generation_chance_mult = 0.1
+    }
+    leader_class = {
+        scientist
+    }
+    initial = no
+    randomized = no
+}

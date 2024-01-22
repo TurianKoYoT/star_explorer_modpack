@@ -1,0 +1,21 @@
+tech_eutab_m_dynamic_exp = {
+    cost = @tier4cost1
+    area = society
+    tier = 4
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_autonomous_agents"
+    }
+    weight = @tier4weight1
+    is_custom_tech_1 = yes
+    potential = {
+        is_machine_empire = yes
+        has_ascension_perk = ap_imperial_prerogative
+    }
+    modifier = {
+        planet_max_districts_mult = 0.1
+        planet_max_buildings_add = 1
+    }
+}

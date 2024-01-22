@@ -1,0 +1,142 @@
+@resolution_weight_loved = 7
+@resolution_cost_t1 = 100
+@resolution_flag_timer = 360
+resolution_emperor_restore_council = {
+    icon = "GFX_resolution_imperial_council"
+    potential = {
+        has_nemesis = yes
+        is_galactic_emperor = yes
+        is_galactic_council_established = no
+    }
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t1
+        }
+    }
+    target = no
+    modifier = {
+    }
+    allow = {
+    }
+    active = {
+        has_galactic_emperor = yes
+    }
+    effect = {
+        custom_tooltip = resolution_emperor_restore_council_tooltip
+        hidden_effect = {
+            set_council_size = 3
+            set_council_veto = no
+            set_global_flag = galactic_community_resolution_passed
+            set_global_flag = resolution_with_breach_effect_passed
+            set_timed_country_flag = {
+                flag = galactic_community_resolution_passed_general
+                days = @resolution_flag_timer
+            }
+            add_modifier = {
+                modifier = resolution_passed_diplomatic_weight
+                days = 2200
+            }
+        }
+    }
+    fail_effects = {
+        hidden_effect = {
+            set_timed_country_flag = {
+                flag = galactic_community_resolution_failed_general
+                days = @resolution_flag_timer
+            }
+            add_modifier = {
+                modifier = resolution_failed_diplomatic_weight
+                days = 2200
+            }
+        }
+    }
+    ai_weight = {
+        base = @resolution_weight_loved
+        modifier = {
+            factor = 3
+            OR = {
+                is_civic_diplomatic_corps = yes
+                is_civic_machine_servitor = yes
+            }
+            desc = gal_com_supporting_civics
+        }
+        modifier = {
+            factor = 1.5
+            OR = {
+                galactic_community_rank <= 3
+                AND = {
+                    is_subject = yes
+                    overlord = {
+                        opinion_level = {
+                            who = prev
+                            level >= neutral
+                        }
+                        galactic_community_rank <= 3
+                    }
+                }
+            }
+            desc = gal_com_they_or_overlord_high_ranked
+        }
+        modifier = {
+            factor = 0.8
+            galactic_community_rank > 5
+            NAND = {
+                is_subject = yes
+                overlord = {
+                    opinion_level = {
+                        who = prev
+                        level >= neutral
+                    }
+                    galactic_community_rank <= 3
+                }
+            }
+            desc = gal_com_neither_they_or_overlord_high_ranked
+        }
+        modifier = {
+            factor = 1.2
+            is_xenophile = yes
+            desc = ethic_xenophile
+        }
+        modifier = {
+            factor = 0.5
+            is_galactic_emperor = yes
+            desc = galactic_emperor
+        }
+        modifier = {
+            factor = 1.2
+            has_ethic = ethic_fanatic_xenophile
+            desc = ethic_xenophile
+        }
+        modifier = {
+            factor = 3
+            is_egalitarian = yes
+            desc = ethic_egalitarian
+        }
+        modifier = {
+            factor = 3
+            has_ethic = ethic_fanatic_egalitarian
+            desc = ethic_egalitarian
+        }
+        modifier = {
+            factor = 3
+            is_democratic_crusaders = yes
+            desc = personality_democratic_crusaders
+        }
+        modifier = {
+            factor = 0.75
+            is_authoritarian = yes
+            desc = ethic_authoritarian
+        }
+        modifier = {
+            factor = 0.75
+            is_civic_authoritarian = yes
+            desc = ethic_authoritarian
+        }
+        modifier = {
+            factor = 1.2
+            is_open_gestalt = yes
+            desc = gal_com_open_gestalt
+        }
+    }
+}

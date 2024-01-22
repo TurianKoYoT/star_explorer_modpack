@@ -1,0 +1,80 @@
+action_guarantee_independence = {
+    icon = "GFX_diplomacy_status_guarantee"
+    auto_accepted = no
+    diplo_view_acceptance_icon = yes
+    should_show_auto_accept_message_recipient = no
+    should_notify_all_communications = yes
+    requires_recipient_independence = yes
+    action_type = positive
+    potential = {
+        hidden_trigger = {
+            NOT = {
+                exists = alliance
+            }
+        }
+        hidden_trigger = {
+            exists = from
+            from = {
+                NOT = {
+                    exists = alliance
+                }
+            }
+        }
+        hidden_trigger = {
+            exists = from
+            NOT = {
+                is_guaranteeing = from
+            }
+        }
+        hidden_trigger = {
+            exists = from
+            NOT = {
+                has_defensive_pact = from
+            }
+        }
+        hidden_trigger = {
+            FROM = {
+                is_subject = no
+            }
+        }
+        hidden_trigger = {
+            is_subject = no
+        }
+        hidden_trigger = {
+            NOT = {
+                has_overlord = FROM
+            }
+        }
+    }
+    possible = {
+        homicidal_diplomacy_restrictions = {
+            mirror = yes
+        }
+        inwards_perfection_diplomacy_restrictions = {
+            mirror = no
+        }
+        pompous_diplomacy_restrictions = yes
+        custom_tooltip = {
+            fail_text = requires_10_trust_or_neutral
+            OR = {
+                opinion_level = {
+                    who = from
+                    level >= neutral
+                }
+                from = {
+                    trust = {
+                        who = root
+                        value >= 10
+                    }
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = requires_embassy_or_improving_relations
+            OR = {
+                is_improving_relations_with = from
+                has_embassy = from
+            }
+        }
+    }
+}

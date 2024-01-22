@@ -1,0 +1,30 @@
+xte_leader_trait_arcanist = {
+    inline_script = {
+        script = trait/xte_icon
+        CLASS = leader
+        ICON = GFX_xte_leader_trait_arcanist
+        RARITY = xte_positive
+        COUNCIL = yes
+        TIER = none
+    }
+    cost = 0
+    randomized = no
+    triggered_councilor_modifier = {
+        potential = {
+            always = yes
+        }
+        country_sr_dark_matter_produces_mult = 0.33
+        country_sr_living_metal_produces_mult = 0.33
+        country_sr_zro_produces_mult = 0.33
+        multiplier = value:xte_anti_stacking_value|LEADER_TRAIT|xte_leader_trait_arcanist|
+    }
+    custom_tooltip_with_modifiers = xte_councilor_trait_efficiency_notification
+    leader_potential_add = {
+        always = no
+    }
+    leader_class = {
+        commander
+        scientist
+        official
+    }
+}

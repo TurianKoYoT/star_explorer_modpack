@@ -1,0 +1,20 @@
+pw_leader_trait_ruler_millenary_throne = {
+    cost = 1
+    initial = no
+    randomized = no
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = "GFX_leader_trait_armchair_commander"
+        RARITY = common
+        COUNCIL = yes
+        TIER = none
+    }
+    force_councilor_trait = yes
+    councilor_modifier = {
+        country_base_influence_produces_add = 0.5
+        country_edict_fund_add = 50
+    }
+    selectable_weight = 0
+    leader_class = all
+}

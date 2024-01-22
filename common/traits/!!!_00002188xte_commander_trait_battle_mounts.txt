@@ -1,0 +1,23 @@
+xte_commander_trait_battle_mounts = {
+    inline_script = {
+        script = trait/xte_icon
+        CLASS = commander
+        ICON = GFX_xte_leader_trait_battle_mounts
+        RARITY = xte_positive
+        COUNCIL = no
+        TIER = none
+    }
+    cost = 0
+    randomized = no
+    army_modifier = {
+        army_morale_damage_mult = 0.1
+        army_health = 0.1
+        army_collateral_damage_mult = 0.1
+    }
+    leader_potential_add = {
+        always = no
+    }
+    leader_class = {
+        commander
+    }
+}

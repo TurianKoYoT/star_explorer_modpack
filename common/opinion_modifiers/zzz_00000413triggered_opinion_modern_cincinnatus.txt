@@ -1,0 +1,11 @@
+triggered_opinion_modern_cincinnatus = {
+    trigger = {
+        is_galactic_community_member = yes
+        FROM = {
+            has_modifier = modern_cincinnatus
+        }
+    }
+    opinion = {
+        base = 100
+    }
+}

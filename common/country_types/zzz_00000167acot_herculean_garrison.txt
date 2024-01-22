@@ -1,0 +1,46 @@
+acot_herculean_garrison = {
+    attack_unarmed_orbital_stations = no
+    has_difficulty_bonuses = no
+    scaled_difficulty_bonuses = 0.8
+    has_capital = no
+    destroys_starbases = no
+    pop_growth = no
+    show_in_contacts_list = no
+    enforces_borders = no
+    share_survey_data = no
+    share_communications = no
+    counts_for_victory = no
+    has_complete_sensor = no
+    can_have_their_comms_shared = yes
+    orbital_bombardment = no
+    default_ships = no
+    government = no
+    observable = no
+    uses_origins = no
+    needs_survey = no
+    faction = {
+        hostile = no
+        needs_border_access = no
+        generate_borders = no
+        needs_colony = no
+        auto_delete = yes
+    }
+    ai = {
+        enabled = no
+        modules = {
+        }
+    }
+    modules = {
+        standard_leader_module = {
+        }
+        tiered_technology_module = {
+            tier = 7
+            rare = yes
+        }
+        exclusive_diplomacy_module = {
+            contact_rule = on_action_only
+        }
+        standard_event_module = {
+        }
+    }
+}

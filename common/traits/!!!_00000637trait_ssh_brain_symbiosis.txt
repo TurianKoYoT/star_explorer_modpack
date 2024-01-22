@@ -1,0 +1,28 @@
+trait_ssh_brain_symbiosis = {
+    cost = 0
+    initial = no
+    randomized = no
+    species_potential_add = {
+        always = no
+    }
+    species_possible_remove = {
+        always = no
+    }
+    potential_crossbreeding_chance = 1
+    improves_leaders = yes
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    modifier = {
+        planet_jobs_physics_research_produces_mult = 0.25
+        planet_jobs_society_research_produces_mult = 0.25
+        planet_jobs_engineering_research_produces_mult = 0.25
+        negative_leader_traits_species = -2
+        leaders_upkeep_mult = -0.15
+    }
+    icon = "gfx/interface/icons/traits/trait_ssh_brain_symbiosis.dds"
+    slave_cost = {
+        energy = 3000
+    }
+}

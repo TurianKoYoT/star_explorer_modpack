@@ -1,0 +1,25 @@
+trait_stoic = {
+    cost = 2
+    species_possible_remove = {
+        can_remove_beneficial_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_hive_mind"
+        "trait_timid"
+        "trait_invasive"
+        "trait_humanoid_jinxed"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    modifier = {
+        army_morale = 0.5
+        negative_leader_traits_species = -1
+    }
+    slave_cost = {
+        energy = -1000
+    }
+}

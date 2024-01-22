@@ -1,0 +1,4033 @@
+cruel_pain_ship_labor_module = {
+    icon = "GFX_starbase_shipyard"
+    section = "HANGAR_STARBASE_SECTION"
+    construction_days = 0
+    potential = {
+        always = no
+    }
+    resources = {
+        category = starbase_modules
+    }
+    ai_weight = {
+        weight = 0
+    }
+}
+cruel_suffering_ship_labor_module = {
+    icon = "GFX_starbase_shipyard"
+    section = "HANGAR_STARBASE_SECTION"
+    construction_days = 0
+    potential = {
+        always = no
+    }
+    resources = {
+        category = starbase_modules
+    }
+    ai_weight = {
+        weight = 0
+    }
+}
+cruel_agony_ship_labor_module = {
+    icon = "GFX_starbase_shipyard"
+    section = "HANGAR_STARBASE_SECTION"
+    construction_days = 0
+    potential = {
+        always = no
+    }
+    resources = {
+        category = starbase_modules
+    }
+    ai_weight = {
+        weight = 0
+    }
+}
+acot_starbase_shipyard = {
+    icon = "GFX_spaceport_module_acot_starbase_shipyard"
+    section = "ACOT_SHIPYARD_STARBASE_SECTION"
+    construction_days = 5
+    initial = yes
+    potential = {
+        exists = owner
+        OR = {
+            has_starbase_size >= acot_precusor_starbase
+            has_starbase_size >= acot_fallen_outpost
+        }
+        owner = {
+            OR = {
+                is_fallen_empire = yes
+                has_technology = tech_precursor_citadel
+            }
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        upkeep = {
+            trigger = {
+                solar_system = {
+                    NOT = {
+                        is_star_class = sc_black_hole
+                    }
+                }
+            }
+            acot_sr_dark_energy = 5
+            sr_dark_matter = 5
+        }
+    }
+    station_modifier = {
+        starbase_shipyard_capacity_add = 5
+    }
+    triggered_station_modifier = {
+    }
+    ai_build_at_chokepoint = no
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 50
+        modifier = {
+            factor = 100
+            NOT = {
+                has_starbase_module = acot_starbase_shipyard
+            }
+        }
+    }
+}
+acot_sigma_starbase_shipyard = {
+    icon = "GFX_spaceport_module_acot_sigma_starbase_shipyard"
+    section = "ACOT_SIGMA_SHIPYARD_STARBASE_SECTION"
+    construction_days = 5
+    initial = yes
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_sigma_starbase
+        owner = {
+            has_technology = tech_precursor_sigma_citadel
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+    }
+    station_modifier = {
+        starbase_shipyard_capacity_add = 10
+    }
+    ai_build_at_chokepoint = no
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 50
+    }
+}
+acot_phanon_starbase_shipyard = {
+    icon = "GFX_spaceport_module_acot_phanon_starbase_shipyard"
+    section = "ACOT_PHANON_SHIPYARD_STARBASE_SECTION"
+    construction_days = 5
+    initial = yes
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_phanon_starcitadel
+        owner = {
+            has_technology = tech_dark_matter_power_core_re
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+    }
+    station_modifier = {
+        starbase_shipyard_capacity_add = 20
+    }
+    ai_build_at_chokepoint = no
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 50
+    }
+}
+acot_theta_starbase_shipyard = {
+    icon = "GFX_spaceport_module_acot_theta_starbase_shipyard"
+    section = "ACOT_THETA_SHIPYARD_STARBASE_SECTION"
+    construction_days = 5
+    initial = yes
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_theta_starcitadel
+        owner = {
+            has_technology = tech_precursor_theia_design
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+    }
+    station_modifier = {
+        starbase_shipyard_capacity_add = 25
+    }
+    ai_build_at_chokepoint = no
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 50
+    }
+}
+virtual_shipyard_uplink = {
+    icon = "GFX_spaceport_module_virtual_shipyard"
+    construction_days = 360
+    ai_build_at_chokepoint = no
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 150
+    }
+    potential = {
+        exists = owner
+        solar_system = {
+            any_system_planet = {
+                has_planet_flag = giga_virtual_shipyard
+            }
+        }
+    }
+    possible = {
+        custom_tooltip = {
+            fail_text = "requires_starport"
+            OR = {
+                has_starbase_size >= starbase_starport
+                has_starbase_size >= acot_precusor_starbase
+                has_starbase_size >= acot_precusor_sigma_starbase
+                has_starbase_size >= acot_precusor_phanon_starcitadel
+                has_starbase_size >= acot_precusor_theta_starcitadel
+            }
+        }
+        custom_tooltip = {
+            fail_text = "requires_virtual_shipyard"
+            solar_system = {
+                any_system_planet = {
+                    has_planet_flag = giga_virtual_shipyard
+                }
+            }
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 100
+        }
+        upkeep = {
+            volatile_motes = 5
+            exotic_gases = 5
+            rare_crystals = 5
+            alloys = 20
+            energy = 50
+        }
+    }
+    station_modifier = {
+        starbase_shipyard_capacity_add = 6
+        starbase_shipyard_build_speed_mult = 0.15
+    }
+}
+orbital_ring_habitation = {
+    icon = "GFX_orbitalring_module_habitation"
+    section = "HABITAT_ORBITAL_RING_SECTION"
+    construction_days = 360
+    starbase_type = orbital_ring
+    potential = {
+        exists = owner
+        owner = {
+            has_technology = tech_housing_2
+        }
+        is_orbital_ring = yes
+    }
+    show_in_tech = "tech_housing_2"
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 200
+            influence = 25
+        }
+        upkeep = {
+            energy = 2
+        }
+    }
+    planet_modifier = {
+        planet_max_districts_add = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                exists = owner.overlord
+                has_holding = {
+                    holding = holding_orbital_assembly_complex
+                    owner = owner.overlord
+                }
+            }
+        }
+        planet_max_buildings_add = 0.5
+    }
+    replaceable = {
+        custom_tooltip = {
+            fail_text = orbital_ring_habitation_districts_maxed_out
+            OR = {
+                NOT = {
+                    has_starbase_module = orbital_ring_habitation
+                }
+                AND = {
+                    has_starbase_module = orbital_ring_habitation
+                    planet = {
+                        num_free_districts = {
+                            type = any
+                            value >= 1
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ai_weight = {
+        weight = 100
+    }
+}
+orbital_ring_shipyard = {
+    icon = "GFX_starbase_shipyard"
+    section = "SHIPYARD_ORBITAL_RING_SECTION"
+    construction_days = 180
+    starbase_type = orbital_ring
+    initial = yes
+    potential = {
+        is_orbital_ring = yes
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 50
+        }
+        upkeep = {
+            energy = 1
+        }
+    }
+    station_modifier = {
+        starbase_shipyard_capacity_add = 1
+    }
+    triggered_station_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                exists = owner.overlord
+                has_holding = {
+                    holding = holding_orbital_assembly_complex
+                    owner = owner.overlord
+                }
+            }
+        }
+        starbase_shipyard_capacity_add = 1
+    }
+    ai_weight = {
+        weight = 100
+    }
+}
+orbital_ring_anchorage = {
+    icon = "GFX_starbase_anchorage"
+    section = "ANCHORAGE_ORBITAL_RING_SECTION"
+    construction_days = 180
+    starbase_type = orbital_ring
+    potential = {
+        is_orbital_ring = yes
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 50
+        }
+        upkeep = {
+            energy = 1
+        }
+    }
+    country_modifier = {
+        country_naval_cap_add = 4
+    }
+    triggered_country_modifier = {
+        potential = {
+            is_scope_valid = yes
+            has_starbase_building = naval_logistics_office
+        }
+        country_naval_cap_add = 2
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                exists = owner.overlord
+                has_holding = {
+                    holding = holding_orbital_assembly_complex
+                    owner = owner.overlord
+                }
+            }
+        }
+        country_naval_cap_add = 2
+    }
+    ai_weight = {
+        weight = 100
+    }
+}
+orbital_ring_gun_battery = {
+    section = "GUN_BATTERY_ORBITAL_RING_SECTION"
+    icon = GFX_spaceport_modules
+    construction_days = 180
+    starbase_type = orbital_ring
+    potential = {
+        is_orbital_ring = yes
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 50
+        }
+        upkeep = {
+            energy = 1
+        }
+    }
+    station_modifier = {
+        ship_hull_mult = 0.2
+        ship_armor_mult = 0.2
+        starbase_defense_platform_capacity_add = 1
+    }
+    triggered_station_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                exists = owner.overlord
+                has_holding = {
+                    holding = holding_orbital_assembly_complex
+                    owner = owner.overlord
+                }
+            }
+        }
+        starbase_defense_platform_capacity_add = 1
+    }
+    ai_weight = {
+        weight = 100
+    }
+    show_in_tech = "tech_mass_drivers_1"
+}
+orbital_ring_missile_battery = {
+    section = "MISSILE_BATTERY_ORBITAL_RING_SECTION"
+    icon = "GFX_starbase_missile_battery"
+    construction_days = 180
+    starbase_type = orbital_ring
+    potential = {
+        exists = owner
+        owner = {
+            has_technology = tech_torpedoes_1
+        }
+        is_orbital_ring = yes
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 50
+        }
+        upkeep = {
+            energy = 1
+        }
+    }
+    station_modifier = {
+        ship_hull_mult = 0.2
+        ship_armor_mult = 0.2
+        starbase_defense_platform_capacity_add = 1
+    }
+    triggered_station_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                exists = owner.overlord
+                has_holding = {
+                    holding = holding_orbital_assembly_complex
+                    owner = owner.overlord
+                }
+            }
+        }
+        starbase_defense_platform_capacity_add = 1
+    }
+    ai_weight = {
+        weight = 100
+    }
+    show_in_tech = "tech_torpedoes_1"
+}
+orbital_ring_hangar_bay = {
+    icon = "GFX_starbase_hangar_bay"
+    section = "HANGAR_ORBITAL_RING_SECTION"
+    construction_days = 180
+    starbase_type = orbital_ring
+    potential = {
+        exists = owner
+        is_orbital_ring = yes
+        owner = {
+            has_technology = tech_strike_craft_1
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 50
+        }
+        upkeep = {
+            energy = 1
+        }
+    }
+    station_modifier = {
+        ship_hull_mult = 0.2
+        ship_armor_mult = 0.2
+        starbase_defense_platform_capacity_add = 1
+    }
+    triggered_station_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                exists = owner.overlord
+                has_holding = {
+                    holding = holding_orbital_assembly_complex
+                    owner = owner.overlord
+                }
+            }
+        }
+        starbase_defense_platform_capacity_add = 1
+    }
+    ai_weight = {
+        weight = 100
+    }
+    show_in_tech = "tech_strike_craft_1"
+}
+shipyard = {
+    icon = "GFX_starbase_shipyard"
+    section = "ASSEMBLYYARD_STARBASE_SECTION"
+    construction_days = 180
+    initial = yes
+    potential = {
+        is_normal_starbase = yes
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 50
+        }
+        upkeep = {
+            energy = 1
+        }
+    }
+    station_modifier = {
+        starbase_shipyard_capacity_add = 1
+    }
+    triggered_station_modifier = {
+        potential = {
+            has_starbase_building = irassian_naval_yards
+        }
+        starbase_shipyard_capacity_add = 1
+    }
+    ai_weight = {
+        weight = 100
+        modifier = {
+            factor = 100
+            owner = {
+                OR = {
+                    count_owned_starbase = {
+                        count = 0
+                        limit = {
+                            has_starbase_module = shipyard
+                        }
+                    }
+                    AND = {
+                        controlled_systems > 30
+                        count_owned_starbase = {
+                            count < 2
+                            limit = {
+                                has_starbase_module = shipyard
+                            }
+                        }
+                    }
+                    AND = {
+                        controlled_systems > 60
+                        count_owned_starbase = {
+                            count < 3
+                            limit = {
+                                has_starbase_module = shipyard
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        modifier = {
+            factor = 3
+            has_starbase_module = shipyard
+            count_starbase_modules = {
+                count < 2
+                type = shipyard
+            }
+        }
+        modifier = {
+            factor = 3
+            has_starbase_module = shipyard
+            count_starbase_modules = {
+                count < 4
+                type = shipyard
+            }
+        }
+    }
+}
+anchorage = {
+    icon = "GFX_starbase_anchorage"
+    section = "ANCHORAGE_STARBASE_SECTION"
+    construction_days = 180
+    potential = {
+        is_normal_starbase = yes
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 50
+        }
+        upkeep = {
+            energy = 1
+        }
+    }
+    country_modifier = {
+        country_naval_cap_add = 4
+    }
+    triggered_country_modifier = {
+        potential = {
+            is_scope_valid = yes
+            has_starbase_building = naval_logistics_office
+        }
+        country_naval_cap_add = 2
+    }
+    ai_weight = {
+        weight = 100
+        modifier = {
+            factor = 2
+            count_starbase_modules = {
+                type = anchorage
+                count < 2
+            }
+        }
+    }
+}
+gun_battery = {
+    section = "BATTERY_STARBASE_SECTION"
+    icon = GFX_spaceport_modules
+    construction_days = 180
+    potential = {
+        is_normal_starbase = yes
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 50
+        }
+        upkeep = {
+            energy = 1
+        }
+    }
+    station_modifier = {
+        ship_hull_mult = 0.1
+        ship_armor_mult = 0.1
+        starbase_trade_protection_range_add = 1
+        starbase_trade_protection_add = 5
+        starbase_defense_platform_capacity_add = 1
+    }
+    ai_weight = {
+        weight = 100
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                OR = {
+                    is_preferred_weapons = weapon_type_energy
+                    is_preferred_weapons = weapon_type_kinetic
+                }
+            }
+        }
+    }
+    show_in_tech = "tech_mass_drivers_1"
+}
+missile_battery = {
+    section = "MISSILE_STARBASE_SECTION"
+    icon = "GFX_starbase_missile_battery"
+    construction_days = 180
+    potential = {
+        exists = owner
+        owner = {
+            has_technology = tech_torpedoes_1
+        }
+        is_normal_starbase = yes
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 50
+        }
+        upkeep = {
+            energy = 1
+        }
+    }
+    station_modifier = {
+        ship_hull_mult = 0.1
+        ship_armor_mult = 0.1
+        starbase_trade_protection_range_add = 1
+        starbase_trade_protection_add = 5
+        starbase_defense_platform_capacity_add = 1
+    }
+    ai_weight = {
+        weight = 100
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                is_preferred_weapons = weapon_type_explosive
+            }
+        }
+    }
+    show_in_tech = "tech_torpedoes_1"
+}
+hangar_bay = {
+    icon = "GFX_starbase_hangar_bay"
+    section = "HANGAR_STARBASE_SECTION"
+    construction_days = 180
+    potential = {
+        exists = owner
+        owner = {
+            has_technology = tech_strike_craft_1
+        }
+        is_normal_starbase = yes
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 50
+        }
+        upkeep = {
+            energy = 1
+        }
+    }
+    station_modifier = {
+        ship_hull_mult = 0.1
+        ship_armor_mult = 0.1
+        starbase_trade_protection_range_add = 1
+        starbase_trade_protection_add = 10
+        starbase_defense_platform_capacity_add = 1
+    }
+    ai_weight = {
+        weight = 100
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                is_preferred_weapons = weapon_type_strike_craft
+            }
+        }
+    }
+    show_in_tech = "tech_strike_craft_1"
+}
+solar_panel_network = {
+    icon = "GFX_solar_panel_network"
+    section = "SCIENCE_STARBASE_SECTION"
+    construction_days = 180
+    initial = yes
+    potential = {
+        exists = owner
+        is_normal_starbase = yes
+        owner = {
+            is_gestalt = yes
+            has_technology = "tech_solar_panel_network"
+        }
+    }
+    possible = {
+        solar_system = {
+            custom_tooltip = {
+                fail_text = "requires_no_black_hole_or_dyson_sphere"
+                NOR = {
+                    is_star_class = sc_black_hole
+                    has_megastructure = dyson_sphere_3
+                    has_megastructure = dyson_sphere_4
+                    has_megastructure = dyson_sphere_5
+                }
+            }
+        }
+    }
+    show_in_tech = "tech_solar_panel_network"
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 50
+        }
+        produces = {
+            energy = 6
+        }
+        produces = {
+            trigger = {
+                exists = owner
+                owner = {
+                    is_galactic_community_member = yes
+                }
+                OR = {
+                    is_active_resolution = "resolution_galacticstudies_astral_studies_network"
+                    is_active_resolution = "resolution_galacticstudies_advanced_xenostudies"
+                    is_active_resolution = "resolution_galacticstudies_ethical_guideline_refactoring"
+                    is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
+                }
+            }
+            energy = 6
+        }
+    }
+    ai_weight = {
+        weight = 100
+    }
+}
+trading_hub = {
+    icon = "GFX_starbase_trading_hub"
+    section = "REFINERY_STARBASE_SECTION"
+    construction_days = 180
+    initial = yes
+    potential = {
+        exists = owner
+        owner = {
+            is_gestalt = no
+        }
+        is_normal_starbase = yes
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 50
+        }
+        upkeep = {
+            energy = 1
+        }
+    }
+    station_modifier = {
+        starbase_trade_collection_range_add = 1
+    }
+    triggered_station_modifier = {
+        potential = {
+            hidden_trigger = {
+                exists = this
+            }
+            owner = {
+                has_councilor = {
+                    COUNCILOR = "councilor_trading_posts"
+                }
+            }
+        }
+        trade_value_add = 0.5
+        mult = value:councilor_level|TYPE|councilor_trading_posts|
+    }
+    ai_weight = {
+        weight = 100
+        modifier = {
+            factor = 5
+            NOT = {
+                has_starbase_module = trading_hub
+            }
+            solar_system = {
+                any_neighbor_system = {
+                    has_system_trade_value > 50
+                }
+            }
+        }
+    }
+}
+detection_array = {
+    icon = "GFX_spaceport_module_detecton_array"
+    section = "SCIENCE_STARBASE_SECTION"
+    construction_days = 180
+    potential = {
+        exists = owner
+        owner = {
+            has_technology = tech_detection_array
+        }
+        is_normal_starbase = yes
+    }
+    possible = {
+        NOT = {
+            has_starbase_building = dark_matter_listening_post
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 100
+        }
+        upkeep = {
+            energy = 1
+        }
+    }
+    station_modifier = {
+        ship_cloaking_detection_add = 1
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 100
+        modifier = {
+            add = 1000
+            owner = {
+                NOT = {
+                    any_owned_starbase = {
+                        has_starbase_module = detection_array
+                    }
+                }
+            }
+        }
+    }
+    show_in_tech = "tech_detection_array"
+}
+archaeo_rampart = {
+    section = "ANCHORAGE_STARBASE_SECTION"
+    icon = GFX_starbase_archaeo_rampart
+    construction_days = 180
+    potential = {
+        is_normal_starbase = yes
+        owner = {
+            has_technology = tech_archaeo_rampart
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 50
+            minor_artifacts = @minor_artifacts_cost_xl
+        }
+        upkeep = {
+            energy = 1
+        }
+    }
+    triggered_station_modifier = {
+        potential = {
+            owner = {
+                NOT = {
+                    has_ascension_perk = ap_archaeoengineers
+                }
+            }
+        }
+        shipclass_starbase_hull_mult = 0.15
+        shipclass_starbase_armor_mult = 0.15
+        starbase_defense_platform_capacity_add = 2
+    }
+    triggered_station_modifier = {
+        potential = {
+            owner = {
+                has_ascension_perk = ap_archaeoengineers
+            }
+        }
+        shipclass_starbase_hull_mult = 0.15
+        shipclass_starbase_armor_mult = 0.2
+        shipclass_starbase_armor_hardening_add = 0.1
+        starbase_defense_platform_capacity_add = 2
+    }
+    custom_tooltip = sm_archaeo_rampart_desc_modifier
+    defense_platform_modifier = {
+        shipclass_military_station_damage_mult = 0.05
+        shipclass_military_station_hull_mult = 0.05
+    }
+    ai_weight = {
+        weight = 100
+    }
+    show_in_tech = "tech_archaeo_rampart"
+}
+orbital_ring_yanz_space_home_section = {
+    icon = "GFX_spaceport_module_space_home"
+    section = "HABITAT_ORBITAL_RING_SECTION"
+    construction_days = 360
+    potential = {
+        exists = owner
+        owner = {
+            has_active_tradition = tr_living_space
+        }
+        is_orbital_ring = yes
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            food = 1000
+            alloys = 500
+            exotic_gases = 50
+        }
+        upkeep = {
+            food = 10
+            energy = 5
+            exotic_gases = 1
+        }
+    }
+    planet_modifier = {
+        planet_max_districts_add = 2
+        planet_housing_add = 10
+    }
+}
+orbital_ring_yanz_bioasc_shipyard = {
+    icon = "GFX_sb_yanz_bioasc_shipyard"
+    section = "SHIPYARD_ORBITAL_RING_SECTION"
+    construction_days = 360
+    initial = yes
+    potential = {
+        is_orbital_ring = yes
+        owner = {
+            has_technology = tech_yanz_living_alloys
+        }
+        is_orbital_ring = yes
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 500
+            food = 3000
+        }
+        upkeep = {
+            energy = 10
+            food = 10
+        }
+    }
+    station_modifier = {
+        starbase_shipyard_capacity_add = 3
+    }
+}
+yanz_bioasc_shipyard = {
+    icon = "GFX_sb_yanz_bioasc_shipyard"
+    section = "ASSEMBLYYARD_STARBASE_SECTION"
+    construction_days = 360
+    initial = yes
+    potential = {
+        exists = owner
+        owner = {
+            has_technology = tech_yanz_living_alloys
+        }
+        is_orbital_ring = no
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 500
+            food = 3000
+        }
+        upkeep = {
+            energy = 10
+            food = 10
+        }
+    }
+    station_modifier = {
+        starbase_shipyard_capacity_add = 3
+    }
+    ai_build_at_chokepoint = no
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 100
+        modifier = {
+            factor = 100
+            owner = {
+                OR = {
+                    count_owned_starbase = {
+                        count = 0
+                        limit = {
+                            has_starbase_module = shipyard
+                        }
+                    }
+                    AND = {
+                        controlled_systems > 30
+                        count_owned_starbase = {
+                            count < 2
+                            limit = {
+                                has_starbase_module = shipyard
+                            }
+                        }
+                    }
+                    AND = {
+                        controlled_systems > 60
+                        count_owned_starbase = {
+                            count < 3
+                            limit = {
+                                has_starbase_module = shipyard
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        modifier = {
+            factor = 3
+            has_starbase_module = shipyard
+            count_starbase_modules = {
+                count < 2
+                type = shipyard
+            }
+        }
+        modifier = {
+            factor = 3
+            has_starbase_module = shipyard
+            count_starbase_modules = {
+                count < 4
+                type = shipyard
+            }
+        }
+    }
+}
+acot_orbital_ring_shipyard = {
+    icon = "GFX_spaceport_module_acot_starbase_shipyard"
+    section = "ACOT_ORBITAL_RING_DEFAULT_MODULE_SECTION"
+    construction_days = 5
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_orbital_ring_t1
+        owner = {
+            has_technology = tech_precursor_orbital_ring
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        upkeep = {
+            trigger = {
+                solar_system = {
+                    NOT = {
+                        is_star_class = sc_black_hole
+                    }
+                }
+            }
+            sr_dark_matter = 5
+        }
+    }
+    station_modifier = {
+        starbase_shipyard_capacity_add = 5
+    }
+    triggered_station_modifier = {
+    }
+    ai_build_at_chokepoint = no
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 50
+    }
+}
+acot_orbital_ring_anchorage = {
+    icon = "GFX_spaceport_module_acot_starbase_anchoragel"
+    section = "ACOT_ORBITAL_RING_DEFAULT_MODULE_SECTION"
+    construction_days = 5
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_orbital_ring_t1
+        owner = {
+            has_technology = tech_precursor_orbital_ring
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        upkeep = {
+            trigger = {
+                solar_system = {
+                    NOT = {
+                        is_star_class = sc_black_hole
+                    }
+                }
+            }
+            sr_dark_matter = 5
+        }
+    }
+    country_modifier = {
+        country_naval_cap_add = 50
+        country_resource_max_add = 50000
+    }
+    triggered_country_modifier = {
+        potential = {
+            has_starbase_building = naval_logistics_office
+        }
+        country_naval_cap_add = 50
+    }
+    triggered_country_modifier = {
+        potential = {
+            has_starbase_building = acot_starbase_super_computer
+        }
+        country_naval_cap_add = 50
+        country_resource_max_add = 50000
+    }
+    ai_build_at_chokepoint = no
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 20
+        modifier = {
+            factor = 2
+            count_starbase_modules = {
+                type = acot_orbital_ring_anchorage
+                count < 2
+            }
+        }
+    }
+}
+acot_orbital_ring_habitat = {
+    icon = "GFX_spaceport_module_acot_starbase_lab"
+    section = "ACOT_ORBITAL_RING_DEFAULT_MODULE_SECTION"
+    construction_days = 5
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_orbital_ring_t1
+        owner = {
+            has_technology = tech_precursor_orbital_ring
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        upkeep = {
+            trigger = {
+                solar_system = {
+                    NOT = {
+                        is_star_class = sc_black_hole
+                    }
+                }
+            }
+            sr_dark_matter = 5
+        }
+    }
+    planet_modifier = {
+        planet_max_districts_add = 2
+        planet_max_buildings_add = 1
+    }
+    ai_build_at_chokepoint = no
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 20
+        modifier = {
+            factor = 2
+            count_starbase_modules = {
+                type = acot_orbital_ring_anchorage
+                count < 2
+            }
+        }
+    }
+}
+acot_orbital_ring_pd = {
+    section = "ACOT_ORBITAL_RING_PD_MODULE_SECTION"
+    construction_days = 5
+    icon = "GFX_spaceport_module_acot_starbase_laser_battery"
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_orbital_ring_t1
+        owner = {
+            has_technology = tech_precursor_orbital_ring
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        upkeep = {
+            trigger = {
+                solar_system = {
+                    NOT = {
+                        is_star_class = sc_black_hole
+                    }
+                }
+            }
+            sr_dark_matter = 5
+        }
+    }
+    station_modifier = {
+        ship_cloaking_detection_add = 1
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = no
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                OR = {
+                    is_preferred_weapons = weapon_type_energy
+                    is_preferred_weapons = weapon_type_kinetic
+                }
+            }
+        }
+    }
+}
+acot_orbital_ring_battery = {
+    section = "ACOT_ORBITAL_RING_BATTERY_MODULE_SECTION"
+    construction_days = 5
+    icon = "GFX_spaceport_module_acot_starbase_gun_battery"
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_orbital_ring_t1
+        owner = {
+            has_technology = tech_precursor_orbital_ring
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        upkeep = {
+            trigger = {
+                solar_system = {
+                    NOT = {
+                        is_star_class = sc_black_hole
+                    }
+                }
+            }
+            sr_dark_matter = 5
+        }
+    }
+    station_modifier = {
+        ship_cloaking_detection_add = 1
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = no
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                OR = {
+                    is_preferred_weapons = weapon_type_energy
+                    is_preferred_weapons = weapon_type_kinetic
+                }
+            }
+        }
+    }
+}
+acot_orbital_ring_missile = {
+    section = "ACOT_ORBITAL_RING_MISSILE_MODULE_SECTION"
+    construction_days = 5
+    icon = "GFX_spaceport_module_acot_starbase_missile_battery"
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_orbital_ring_t1
+        owner = {
+            has_technology = tech_precursor_orbital_ring
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        upkeep = {
+            trigger = {
+                solar_system = {
+                    NOT = {
+                        is_star_class = sc_black_hole
+                    }
+                }
+            }
+            sr_dark_matter = 5
+        }
+    }
+    station_modifier = {
+        ship_cloaking_detection_add = 1
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = no
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                is_preferred_weapons = weapon_type_explosive
+            }
+        }
+    }
+}
+acot_orbital_ring_hangar = {
+    section = "ACOT_ORBITAL_RING_HANGAR_MODULE_SECTION"
+    construction_days = 5
+    icon = "GFX_spaceport_module_acot_starbase_hangar_bay"
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_orbital_ring_t1
+        owner = {
+            has_technology = tech_precursor_orbital_ring
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        upkeep = {
+            trigger = {
+                solar_system = {
+                    NOT = {
+                        is_star_class = sc_black_hole
+                    }
+                }
+            }
+            sr_dark_matter = 5
+        }
+    }
+    station_modifier = {
+        ship_cloaking_detection_add = 1
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = no
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                is_preferred_weapons = weapon_type_strike_craft
+            }
+        }
+    }
+}
+acot_spaceport_module_advanced_batteries = {
+    section = "ACOT_ADVANCED_BATTERY_STARBASE_SECTION"
+    icon = GFX_acot_spaceport_module_advanced_batteries
+    construction_days = 360
+    potential = {
+        exists = owner
+        is_orbital_ring = no
+        owner = {
+            has_technology = tech_reinforced_starbase
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 250
+            sr_dark_matter = 25
+            acot_sr_dark_energy = 25
+        }
+        upkeep = {
+            energy = 2
+        }
+    }
+    station_modifier = {
+        starbase_trade_protection_range_add = 1
+        starbase_trade_protection_add = 10
+        starbase_defense_platform_capacity_add = 2
+        ship_hull_mult = 0.25
+        ship_armor_mult = 0.15
+        ship_shield_mult = 0.1
+    }
+    triggered_station_modifier = {
+        potential = {
+            has_starbase_building = acot_starbase_detection_amplifier
+        }
+        ship_cloaking_detection_add = 1
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = no
+    ai_weight = {
+        weight = 10
+    }
+    show_in_tech = "tech_reinforced_starbase"
+}
+acot_spaceport_module_advanced_artilleries = {
+    section = "ACOT_ADVANCED_LARGE_BATTERY_STARBASE_SECTION"
+    icon = GFX_acot_spaceport_module_advanced_artilleries
+    construction_days = 360
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 250
+            sr_dark_matter = 25
+            acot_sr_dark_energy = 25
+        }
+        upkeep = {
+            energy = 2
+        }
+    }
+    station_modifier = {
+        starbase_trade_protection_range_add = 1
+        starbase_trade_protection_add = 10
+        starbase_defense_platform_capacity_add = 2
+        ship_hull_mult = 0.25
+        ship_armor_mult = 0.15
+        ship_shield_mult = 0.1
+    }
+    triggered_station_modifier = {
+        potential = {
+            has_starbase_building = acot_starbase_detection_amplifier
+        }
+        ship_cloaking_detection_add = 1
+    }
+    potential = {
+        exists = owner
+        is_orbital_ring = no
+        owner = {
+            has_technology = tech_reinforced_starbase
+        }
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = no
+    ai_weight = {
+        weight = 10
+    }
+    show_in_tech = "tech_reinforced_starbase"
+}
+acot_spaceport_module_advanced_detector = {
+    icon = "GFX_acot_spaceport_module_advanced_detector"
+    section = "ACOT_ADVANCED_SCIENCE_STARBASE_SECTION"
+    construction_days = 360
+    potential = {
+        exists = owner
+        owner = {
+            has_technology = tech_reinforced_starbase
+            has_technology = tech_detection_array
+        }
+        is_orbital_ring = no
+    }
+    possible = {
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 300
+            sr_dark_matter = 50
+            acot_sr_dark_energy = 50
+        }
+        upkeep = {
+            energy = 1
+        }
+    }
+    station_modifier = {
+        ship_cloaking_detection_add = 2
+        ship_hull_mult = 0.1
+    }
+    triggered_station_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_technology = tech_reinforced_starbase_ae
+            }
+        }
+        ship_cloaking_detection_add = 1
+    }
+    triggered_station_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_technology = tech_reinforced_starbase_se
+            }
+        }
+        ship_cloaking_detection_add = 1
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 100
+        modifier = {
+            add = 1000
+            owner = {
+                NOT = {
+                    any_owned_starbase = {
+                        has_starbase_module = acot_spaceport_module_advanced_detector
+                    }
+                }
+            }
+        }
+    }
+    show_in_tech = "tech_reinforced_starbase"
+}
+acot_starbase_dm_refine = {
+    icon = "GFX_spaceport_module_acot_starbase_dm_refine"
+    section = "REFINERY_STARBASE_SECTION"
+    construction_days = 360
+    potential = {
+        exists = owner
+        has_starbase_size >= starbase_starport
+        owner = {
+            has_technology = tech_dark_matter_generator
+        }
+    }
+    possible = {
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 350
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    NOT = {
+                        has_technology = tech_ae_dark_matter_generator
+                    }
+                }
+            }
+            sr_dark_matter = 5
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_acot_stacking_network
+                    NOT = {
+                        has_technology = tech_ae_dark_matter_generator
+                    }
+                }
+                count_starbase_modules = {
+                    count = 2
+                    type = acot_starbase_dm_refine
+                }
+            }
+            sr_dark_matter = 5
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_acot_stacking_network
+                    NOT = {
+                        has_technology = tech_ae_dark_matter_generator
+                    }
+                }
+                count_starbase_modules = {
+                    count = 3
+                    type = acot_starbase_dm_refine
+                }
+            }
+            sr_dark_matter = 10
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_acot_stacking_network
+                    NOT = {
+                        has_technology = tech_ae_dark_matter_generator
+                    }
+                }
+                count_starbase_modules = {
+                    count >= 4
+                    type = acot_starbase_dm_refine
+                }
+            }
+            sr_dark_matter = 15
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    NOT = {
+                        has_technology = tech_ae_dark_matter_generator
+                    }
+                }
+                solar_system = {
+                    is_star_class = sc_black_hole
+                }
+            }
+            sr_dark_matter = 5
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_ae_dark_matter_generator
+                    NOT = {
+                        has_technology = tech_acot_stacking_network
+                    }
+                }
+            }
+            sr_dark_matter = 10
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_acot_stacking_network
+                    has_technology = tech_ae_dark_matter_generator
+                }
+                count_starbase_modules = {
+                    count = 2
+                    type = acot_starbase_dm_refine
+                }
+            }
+            sr_dark_matter = 15
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_acot_stacking_network
+                    has_technology = tech_ae_dark_matter_generator
+                }
+                count_starbase_modules = {
+                    count = 3
+                    type = acot_starbase_dm_refine
+                }
+            }
+            sr_dark_matter = 20
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_acot_stacking_network
+                    has_technology = tech_ae_dark_matter_generator
+                }
+                count_starbase_modules = {
+                    count >= 4
+                    type = acot_starbase_dm_refine
+                }
+            }
+            sr_dark_matter = 25
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_ae_dark_matter_generator
+                }
+                solar_system = {
+                    is_star_class = sc_black_hole
+                }
+            }
+            sr_dark_matter = 10
+        }
+        upkeep = {
+            trigger = {
+                owner = {
+                    NOT = {
+                        has_technology = tech_acot_stacking_network
+                    }
+                }
+            }
+            minerals = 15
+        }
+    }
+    ai_build_at_chokepoint = no
+    ai_weight = {
+        weight = 15
+    }
+}
+acot_starbase_de_pylon = {
+    icon = "GFX_spaceport_module_acot_starbase_de_pylon"
+    section = "REFINERY_STARBASE_SECTION"
+    construction_days = 360
+    potential = {
+        exists = owner
+        has_starbase_size >= starbase_starport
+        owner = {
+            has_technology = tech_dark_energy_pylon
+        }
+    }
+    possible = {
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 350
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    NOT = {
+                        has_technology = tech_ae_dark_energy_pylon
+                    }
+                }
+            }
+            acot_sr_dark_energy = 5
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_acot_stacking_network
+                    NOT = {
+                        has_technology = tech_ae_dark_energy_pylon
+                    }
+                }
+                count_starbase_modules = {
+                    count = 2
+                    type = acot_starbase_de_pylon
+                }
+            }
+            acot_sr_dark_energy = 5
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_acot_stacking_network
+                    NOT = {
+                        has_technology = tech_ae_dark_energy_pylon
+                    }
+                }
+                count_starbase_modules = {
+                    count = 3
+                    type = acot_starbase_de_pylon
+                }
+            }
+            acot_sr_dark_energy = 10
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_acot_stacking_network
+                    NOT = {
+                        has_technology = tech_ae_dark_energy_pylon
+                    }
+                }
+                count_starbase_modules = {
+                    count >= 4
+                    type = acot_starbase_de_pylon
+                }
+            }
+            acot_sr_dark_energy = 15
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    NOT = {
+                        has_technology = tech_ae_dark_energy_pylon
+                    }
+                }
+                solar_system = {
+                    is_star_class = sc_black_hole
+                }
+            }
+            acot_sr_dark_energy = 5
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_ae_dark_energy_pylon
+                }
+            }
+            acot_sr_dark_energy = 10
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_acot_stacking_network
+                    has_technology = tech_ae_dark_energy_pylon
+                }
+                count_starbase_modules = {
+                    count = 2
+                    type = acot_starbase_de_pylon
+                }
+            }
+            acot_sr_dark_energy = 15
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_acot_stacking_network
+                    has_technology = tech_ae_dark_energy_pylon
+                }
+                count_starbase_modules = {
+                    count = 3
+                    type = acot_starbase_de_pylon
+                }
+            }
+            acot_sr_dark_energy = 20
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_acot_stacking_network
+                    has_technology = tech_ae_dark_energy_pylon
+                }
+                count_starbase_modules = {
+                    count >= 4
+                    type = acot_starbase_de_pylon
+                }
+            }
+            acot_sr_dark_energy = 25
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_ae_dark_energy_pylon
+                }
+                solar_system = {
+                    is_star_class = sc_black_hole
+                }
+            }
+            acot_sr_dark_energy = 10
+        }
+        upkeep = {
+            trigger = {
+                owner = {
+                    NOT = {
+                        has_technology = tech_acot_stacking_network
+                    }
+                }
+            }
+            energy = 15
+        }
+    }
+    ai_build_at_chokepoint = no
+    ai_weight = {
+        weight = 15
+    }
+}
+acot_starbase_anchorage = {
+    icon = "GFX_spaceport_module_acot_starbase_anchoragel"
+    section = "ACOT_SHIPYARD_STARBASE_SECTION"
+    construction_days = 5
+    potential = {
+        exists = owner
+        OR = {
+            has_starbase_size >= acot_precusor_starbase
+            has_starbase_size >= acot_fallen_outpost
+        }
+        owner = {
+            OR = {
+                is_fallen_empire = yes
+                has_technology = tech_precursor_citadel
+            }
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        upkeep = {
+            trigger = {
+                solar_system = {
+                    NOT = {
+                        is_star_class = sc_black_hole
+                    }
+                }
+            }
+            acot_sr_dark_energy = 5
+            sr_dark_matter = 5
+        }
+    }
+    country_modifier = {
+        country_naval_cap_add = 50
+        country_resource_max_add = 50000
+    }
+    triggered_country_modifier = {
+        potential = {
+            has_starbase_building = naval_logistics_office
+        }
+        country_naval_cap_add = 50
+    }
+    triggered_country_modifier = {
+        potential = {
+            has_starbase_building = acot_starbase_super_computer
+        }
+        country_naval_cap_add = 50
+        country_resource_max_add = 50000
+    }
+    ai_build_at_chokepoint = no
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 20
+        modifier = {
+            factor = 2
+            count_starbase_modules = {
+                type = acot_starbase_anchorage
+                count < 2
+            }
+        }
+    }
+}
+acot_starbase_gun_battery = {
+    section = "ACOT_BATTERY_STARBASE_SECTION"
+    construction_days = 5
+    icon = "GFX_spaceport_module_acot_starbase_gun_battery"
+    potential = {
+        exists = owner
+        OR = {
+            has_starbase_size >= acot_precusor_starbase
+            has_starbase_size >= acot_fallen_outpost
+        }
+        owner = {
+            OR = {
+                is_fallen_empire = yes
+                has_technology = tech_precursor_citadel
+            }
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        upkeep = {
+            trigger = {
+                solar_system = {
+                    NOT = {
+                        is_star_class = sc_black_hole
+                    }
+                }
+            }
+            acot_sr_dark_energy = 5
+            sr_dark_matter = 5
+        }
+    }
+    station_modifier = {
+        starbase_trade_protection_range_add = 1
+        starbase_trade_protection_add = 5
+        ship_cloaking_detection_add = 1
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = no
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                OR = {
+                    is_preferred_weapons = weapon_type_energy
+                    is_preferred_weapons = weapon_type_kinetic
+                }
+            }
+        }
+    }
+    show_in_tech = "tech_mass_drivers_1"
+}
+acot_starbase_laser_battery = {
+    section = "ACOT_PD_STARBASE_SECTION"
+    construction_days = 5
+    icon = "GFX_spaceport_module_acot_starbase_laser_battery"
+    potential = {
+        exists = owner
+        OR = {
+            has_starbase_size >= acot_precusor_starbase
+            has_starbase_size >= acot_fallen_outpost
+        }
+        owner = {
+            OR = {
+                is_fallen_empire = yes
+                has_technology = tech_precursor_citadel
+            }
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        upkeep = {
+            trigger = {
+                solar_system = {
+                    NOT = {
+                        is_star_class = sc_black_hole
+                    }
+                }
+            }
+            acot_sr_dark_energy = 5
+            sr_dark_matter = 5
+        }
+    }
+    station_modifier = {
+        starbase_trade_protection_range_add = 1
+        starbase_trade_protection_add = 5
+        ship_cloaking_detection_add = 1
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = no
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                OR = {
+                    is_preferred_weapons = weapon_type_energy
+                    is_preferred_weapons = weapon_type_kinetic
+                }
+            }
+        }
+    }
+}
+acot_starbase_missile_battery = {
+    section = "ACOT_MISSILE_STARBASE_SECTION"
+    icon = "GFX_spaceport_module_acot_starbase_missile_battery"
+    construction_days = 5
+    potential = {
+        exists = owner
+        OR = {
+            has_starbase_size >= acot_precusor_starbase
+            has_starbase_size >= acot_fallen_outpost
+        }
+        owner = {
+            OR = {
+                is_fallen_empire = yes
+                has_technology = tech_precursor_citadel
+            }
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        upkeep = {
+            trigger = {
+                solar_system = {
+                    NOT = {
+                        is_star_class = sc_black_hole
+                    }
+                }
+            }
+            acot_sr_dark_energy = 5
+            sr_dark_matter = 5
+        }
+    }
+    station_modifier = {
+        starbase_trade_protection_range_add = 1
+        starbase_trade_protection_add = 5
+        ship_cloaking_detection_add = 1
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = no
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                is_preferred_weapons = weapon_type_explosive
+            }
+        }
+    }
+}
+acot_starbase_hangar_bay = {
+    icon = "GFX_spaceport_module_acot_starbase_hangar_bay"
+    section = "ACOT_HANGAR_STARBASE_SECTION"
+    construction_days = 5
+    potential = {
+        exists = owner
+        OR = {
+            has_starbase_size >= acot_precusor_starbase
+            has_starbase_size >= acot_fallen_outpost
+        }
+        owner = {
+            OR = {
+                is_fallen_empire = yes
+                has_technology = tech_precursor_citadel
+            }
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        upkeep = {
+            trigger = {
+                solar_system = {
+                    NOT = {
+                        is_star_class = sc_black_hole
+                    }
+                }
+            }
+            acot_sr_dark_energy = 5
+            sr_dark_matter = 5
+        }
+    }
+    station_modifier = {
+        starbase_trade_protection_range_add = 1
+        starbase_trade_protection_add = 5
+        ship_cloaking_detection_add = 1
+    }
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                is_preferred_weapons = weapon_type_strike_craft
+            }
+        }
+    }
+}
+acot_starbase_dark_generator = {
+    icon = "GFX_spaceport_module_acot_starbase_dark_generator"
+    section = "ACOT_SHIPYARD_STARBASE_SECTION"
+    construction_days = 5
+    initial = yes
+    potential = {
+        exists = owner
+        OR = {
+            has_starbase_size >= acot_precusor_starbase
+            has_starbase_size >= acot_fallen_outpost
+        }
+        owner = {
+            OR = {
+                is_fallen_empire = yes
+                has_technology = tech_precursor_citadel
+            }
+        }
+    }
+    possible = {
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        produces = {
+            acot_sr_dark_energy = 25
+            sr_dark_matter = 25
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_acot_stacking_network
+                }
+                count_starbase_modules = {
+                    count = 2
+                    type = acot_starbase_dark_generator
+                }
+            }
+            acot_sr_dark_energy = 25
+            sr_dark_matter = 25
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_acot_stacking_network
+                }
+                count_starbase_modules = {
+                    count = 3
+                    type = acot_starbase_dark_generator
+                }
+            }
+            acot_sr_dark_energy = 50
+            sr_dark_matter = 50
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_technology = tech_acot_stacking_network
+                }
+                count_starbase_modules = {
+                    count >= 4
+                    type = acot_starbase_dark_generator
+                }
+            }
+            acot_sr_dark_energy = 75
+            sr_dark_matter = 75
+        }
+        produces = {
+            trigger = {
+                solar_system = {
+                    is_star_class = sc_black_hole
+                }
+            }
+            acot_sr_dark_energy = 25
+            sr_dark_matter = 25
+        }
+    }
+    ai_build_at_chokepoint = no
+    ai_weight = {
+        weight = 15
+    }
+}
+acot_starbase_lab = {
+    icon = "GFX_spaceport_module_acot_starbase_lab"
+    section = "ACOT_SHIPYARD_STARBASE_SECTION"
+    construction_days = 5
+    initial = yes
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_starbase
+        owner = {
+            OR = {
+                is_fallen_empire = yes
+                has_technology = tech_precursor_citadel
+            }
+        }
+    }
+    resources = {
+        category = starbase_modules
+        produces = {
+            society_research = 50
+            engineering_research = 50
+            physics_research = 50
+        }
+        produces = {
+            trigger = {
+                solar_system = {
+                    is_star_class = sc_black_hole
+                }
+            }
+            society_research = 50
+            engineering_research = 50
+            physics_research = 50
+        }
+        upkeep = {
+            trigger = {
+                solar_system = {
+                    NOT = {
+                        is_star_class = sc_black_hole
+                    }
+                }
+            }
+            acot_sr_dark_energy = 5
+            sr_dark_matter = 5
+        }
+    }
+    station_modifier = {
+    }
+    ai_build_at_chokepoint = no
+    ai_weight = {
+        weight = 15
+    }
+}
+acot_sigma_starbase_anchorage = {
+    icon = "GFX_spaceport_module_acot_sigma_starbase_anchoragel"
+    section = "ACOT_SIGMA_SHIPYARD_STARBASE_SECTION"
+    construction_days = 5
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_sigma_starbase
+        owner = {
+            has_technology = tech_precursor_sigma_citadel
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+    }
+    country_modifier = {
+        country_naval_cap_add = 100
+        country_resource_max_add = 100000
+    }
+    triggered_country_modifier = {
+        potential = {
+            has_starbase_building = naval_logistics_office
+        }
+        country_naval_cap_add = 100
+    }
+    triggered_country_modifier = {
+        potential = {
+            has_starbase_building = acot_sigma_starbase_super_computer
+        }
+        country_naval_cap_add = 100
+        country_resource_max_add = 100000
+    }
+    ai_build_at_chokepoint = no
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 20
+        modifier = {
+            factor = 2
+            count_starbase_modules = {
+                type = acot_sigma_starbase_anchorage
+                count < 2
+            }
+        }
+    }
+}
+acot_sigma_starbase_gun_battery = {
+    section = "ACOT_SIGMA_BATTERY_STARBASE_SECTION"
+    construction_days = 5
+    icon = "GFX_spaceport_module_acot_sigma_starbase_gun_battery"
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_sigma_starbase
+        owner = {
+            has_technology = tech_precursor_sigma_citadel
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+    }
+    station_modifier = {
+        starbase_trade_protection_range_add = 2
+        starbase_trade_protection_add = 20
+        ship_cloaking_detection_add = 1
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = no
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                OR = {
+                    is_preferred_weapons = weapon_type_energy
+                    is_preferred_weapons = weapon_type_kinetic
+                }
+            }
+        }
+    }
+    show_in_tech = "tech_mass_drivers_1"
+}
+acot_sigma_starbase_laser_battery = {
+    section = "ACOT_SIGMA_PD_STARBASE_SECTION"
+    construction_days = 5
+    icon = "GFX_spaceport_module_acot_sigma_starbase_laser_battery"
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_sigma_starbase
+        owner = {
+            has_technology = tech_precursor_sigma_citadel
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+    }
+    station_modifier = {
+        starbase_trade_protection_range_add = 2
+        starbase_trade_protection_add = 20
+        ship_cloaking_detection_add = 1
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = no
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                OR = {
+                    is_preferred_weapons = weapon_type_energy
+                    is_preferred_weapons = weapon_type_kinetic
+                }
+            }
+        }
+    }
+}
+acot_sigma_starbase_missile_battery = {
+    section = "ACOT_SIGMA_MISSILE_STARBASE_SECTION"
+    icon = "GFX_spaceport_module_acot_sigma_starbase_missile_battery"
+    construction_days = 5
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_sigma_starbase
+        owner = {
+            has_technology = tech_precursor_sigma_citadel
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+    }
+    station_modifier = {
+        starbase_trade_protection_range_add = 2
+        starbase_trade_protection_add = 20
+        ship_cloaking_detection_add = 1
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = no
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                is_preferred_weapons = weapon_type_explosive
+            }
+        }
+    }
+}
+acot_sigma_starbase_hangar_bay = {
+    icon = "GFX_spaceport_module_acot_sigma_starbase_hangar_bay"
+    section = "ACOT_SIGMA_HANGAR_STARBASE_SECTION"
+    construction_days = 5
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_sigma_starbase
+        owner = {
+            has_technology = tech_precursor_sigma_citadel
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+    }
+    station_modifier = {
+        starbase_trade_protection_range_add = 2
+        starbase_trade_protection_add = 20
+        ship_cloaking_detection_add = 1
+    }
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                is_preferred_weapons = weapon_type_strike_craft
+            }
+        }
+    }
+}
+acot_sigma_starbase_dark_generator = {
+    icon = "GFX_spaceport_module_acot_sigma_starbase_dark_generator"
+    section = "ACOT_SIGMA_SHIPYARD_STARBASE_SECTION"
+    construction_days = 5
+    initial = yes
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_sigma_starbase
+        owner = {
+            has_technology = tech_precursor_sigma_citadel
+        }
+    }
+    possible = {
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        produces = {
+            acot_sr_stellarite = 25
+        }
+    }
+    ai_build_at_chokepoint = no
+    ai_weight = {
+        weight = 15
+    }
+}
+acot_sigma_starbase_lab = {
+    icon = "GFX_spaceport_module_acot_sigma_starbase_lab"
+    section = "ACOT_SIGMA_SHIPYARD_STARBASE_SECTION"
+    construction_days = 5
+    initial = yes
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_sigma_starbase
+        owner = {
+            has_technology = tech_precursor_sigma_citadel
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        produces = {
+            society_research = 100
+            engineering_research = 100
+            physics_research = 100
+        }
+    }
+    station_modifier = {
+    }
+    ai_build_at_chokepoint = no
+    ai_weight = {
+        weight = 15
+    }
+}
+acot_phanon_starbase_anchorage = {
+    icon = "GFX_spaceport_module_acot_phanon_starbase_anchoragel"
+    section = "ACOT_PHANON_SHIPYARD_STARBASE_SECTION"
+    construction_days = 5
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_phanon_starcitadel
+        owner = {
+            has_technology = tech_dark_matter_power_core_re
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+    }
+    country_modifier = {
+        country_naval_cap_add = 100
+        country_resource_max_add = 100000
+    }
+    triggered_country_modifier = {
+        potential = {
+            has_starbase_building = naval_logistics_office
+        }
+        country_naval_cap_add = 100
+    }
+    triggered_country_modifier = {
+        potential = {
+            has_starbase_building = acot_phanon_starbase_super_computer
+        }
+        country_naval_cap_add = 100
+        country_resource_max_add = 100000
+    }
+    ai_build_at_chokepoint = no
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 20
+        modifier = {
+            factor = 2
+            count_starbase_modules = {
+                type = acot_phanon_starbase_anchorage
+                count < 2
+            }
+        }
+    }
+}
+acot_phanon_starbase_gun_battery = {
+    section = "ACOT_PHANON_BATTERY_STARBASE_SECTION"
+    construction_days = 5
+    icon = "GFX_spaceport_module_acot_phanon_starbase_gun_battery"
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_phanon_starcitadel
+        owner = {
+            has_technology = tech_dark_matter_power_core_re
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+    }
+    station_modifier = {
+        starbase_trade_protection_range_add = 2
+        starbase_trade_protection_add = 20
+        ship_cloaking_detection_add = 1
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = no
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                OR = {
+                    is_preferred_weapons = weapon_type_energy
+                    is_preferred_weapons = weapon_type_kinetic
+                }
+            }
+        }
+    }
+    show_in_tech = "tech_mass_drivers_1"
+}
+acot_phanon_starbase_laser_battery = {
+    section = "ACOT_PHANON_PD_STARBASE_SECTION"
+    construction_days = 5
+    icon = "GFX_spaceport_module_acot_phanon_starbase_laser_battery"
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_phanon_starcitadel
+        owner = {
+            has_technology = tech_dark_matter_power_core_re
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+    }
+    station_modifier = {
+        starbase_trade_protection_range_add = 2
+        starbase_trade_protection_add = 20
+        ship_cloaking_detection_add = 1
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = no
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                OR = {
+                    is_preferred_weapons = weapon_type_energy
+                    is_preferred_weapons = weapon_type_kinetic
+                }
+            }
+        }
+    }
+}
+acot_phanon_starbase_missile_battery = {
+    section = "ACOT_PHANON_MISSILE_STARBASE_SECTION"
+    icon = "GFX_spaceport_module_acot_phanon_starbase_missile_battery"
+    construction_days = 5
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_phanon_starcitadel
+        owner = {
+            has_technology = tech_dark_matter_power_core_re
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+    }
+    station_modifier = {
+        starbase_trade_protection_range_add = 2
+        starbase_trade_protection_add = 20
+        ship_cloaking_detection_add = 1
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = no
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                is_preferred_weapons = weapon_type_explosive
+            }
+        }
+    }
+}
+acot_phanon_starbase_hangar_bay = {
+    icon = "GFX_spaceport_module_acot_phanon_starbase_hangar_bay"
+    section = "ACOT_PHANON_HANGAR_STARBASE_SECTION"
+    construction_days = 5
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_phanon_starcitadel
+        owner = {
+            has_technology = tech_dark_matter_power_core_re
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+    }
+    station_modifier = {
+        starbase_trade_protection_range_add = 2
+        starbase_trade_protection_add = 20
+        ship_cloaking_detection_add = 1
+    }
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                is_preferred_weapons = weapon_type_strike_craft
+            }
+        }
+    }
+}
+acot_phanon_starbase_dark_generator = {
+    icon = "GFX_spaceport_module_acot_phanon_starbase_dark_generator"
+    section = "ACOT_PHANON_SHIPYARD_STARBASE_SECTION"
+    construction_days = 5
+    initial = yes
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_phanon_starcitadel
+        owner = {
+            has_technology = tech_dark_matter_power_core_re
+        }
+    }
+    possible = {
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        produces = {
+            energy = 1000
+            minerals = 1000
+        }
+        produces = {
+            trigger = {
+                solar_system = {
+                    is_star_class = sc_black_hole
+                }
+            }
+            energy = 1000
+            minerals = 1000
+            acot_sr_dark_energy = 500
+            sr_dark_matter = 500
+        }
+    }
+    ai_build_at_chokepoint = no
+    ai_weight = {
+        weight = 15
+    }
+}
+acot_phanon_starbase_lab = {
+    icon = "GFX_spaceport_module_acot_phanon_starbase_lab"
+    section = "ACOT_PHANON_SHIPYARD_STARBASE_SECTION"
+    construction_days = 5
+    initial = yes
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_phanon_starcitadel
+        owner = {
+            has_technology = tech_precursor_sigma_citadel
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        produces = {
+            society_research = 200
+            engineering_research = 200
+            physics_research = 200
+        }
+        produces = {
+            trigger = {
+                solar_system = {
+                    is_star_class = sc_black_hole
+                }
+            }
+            society_research = 200
+            engineering_research = 200
+            physics_research = 200
+        }
+    }
+    station_modifier = {
+    }
+    ai_build_at_chokepoint = no
+    ai_weight = {
+        weight = 15
+    }
+}
+aso_ee_hail_mary_astrophage_breeder = {
+    icon = "GFX_aso_ee_hail_mary_spaceport_module_astrophage_breeder"
+    section = "SCIENCE_STARBASE_SECTION"
+    construction_days = 180
+    initial = yes
+    potential = {
+        exists = owner
+        owner = {
+            has_country_flag = cf_aso_ee_hail_mary_astrophage_breeder
+        }
+    }
+    possible = {
+        solar_system = {
+            custom_tooltip = {
+                fail_text = "requires_no_black_hole_or_dyson_sphere"
+                NOR = {
+                    is_star_class = sc_black_hole
+                    has_megastructure = dyson_sphere_3
+                    has_megastructure = dyson_sphere_4
+                    has_megastructure = dyson_sphere_5
+                }
+            }
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 50
+            energy = 100
+        }
+        produces = {
+            energy = 20
+        }
+    }
+    ai_build_at_chokepoint = no
+    ai_weight = {
+        weight = 150
+    }
+}
+orbital_ring_giga_mining_district = {
+    icon = "GFX_orbitalring_module_giga_mining_district"
+    section = "HANGAR_ORBITAL_RING_SECTION"
+    construction_days = 360
+    starbase_type = orbital_ring
+    potential = {
+        exists = owner
+        owner = {
+            has_technology = tech_mining_3
+        }
+        is_orbital_ring = yes
+    }
+    show_in_tech = "tech_mining_3"
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 300
+            influence = 25
+        }
+        upkeep = {
+            energy = 3
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            orbit = {
+                NOR = {
+                    is_planet_class = pc_ll_temperate
+                    is_planet_class = pc_ll_foggy
+                    is_planet_class = pc_ll_torrid
+                }
+            }
+        }
+        district_mining_max = 2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            orbit = {
+                or = {
+                    is_planet_class = pc_ll_temperate
+                    is_planet_class = pc_ll_foggy
+                    is_planet_class = pc_ll_torrid
+                }
+            }
+        }
+        district_mining_max = 3
+    }
+    replaceable = {
+        custom_tooltip = {
+            fail_text = giga_cant_remove_orbital_ring_part
+            planet = {
+                NOT = {
+                    uses_district_set = standard
+                }
+            }
+        }
+    }
+    ai_build_at_chokepoint = no
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 0
+        modifier = {
+            add = 20
+            planet = {
+                has_designation = col_mining
+            }
+        }
+    }
+}
+orbital_ring_giga_generator_district = {
+    icon = "GFX_orbitalring_module_giga_generator_district"
+    section = "SOLAR_PANEL_ORBITAL_RING_SECTION"
+    construction_days = 360
+    starbase_type = orbital_ring
+    potential = {
+        exists = owner
+        owner = {
+            has_technology = tech_power_plant_4
+        }
+        is_orbital_ring = yes
+    }
+    show_in_tech = "tech_power_plant_4"
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 300
+            influence = 25
+        }
+        upkeep = {
+            energy = 3
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            solar_system = {
+                any_system_planet = {
+                    is_planet_class = pc_m_star
+                }
+                NOT = {
+                    any_system_planet = {
+                        OR = {
+                            is_planet_class = pc_k_star
+                            is_planet_class = pc_g_star
+                            is_planet_class = pc_f_star
+                            is_planet_class = pc_a_star
+                            is_planet_class = pc_m_giant_star
+                            is_planet_class = pc_b_star
+                            is_planet_class = pc_giga_o_star
+                        }
+                    }
+                }
+            }
+        }
+        district_generator_max = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            solar_system = {
+                any_system_planet = {
+                    is_planet_class = pc_k_star
+                }
+                NOT = {
+                    any_system_planet = {
+                        OR = {
+                            is_planet_class = pc_a_star
+                            is_planet_class = pc_f_star
+                            is_planet_class = pc_g_star
+                            is_planet_class = pc_m_giant_star
+                            is_planet_class = pc_b_star
+                            is_planet_class = pc_giga_o_star
+                        }
+                    }
+                }
+            }
+        }
+        district_generator_max = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            solar_system = {
+                any_system_planet = {
+                    is_planet_class = pc_g_star
+                }
+                NOT = {
+                    any_system_planet = {
+                        OR = {
+                            is_planet_class = pc_f_star
+                            is_planet_class = pc_a_star
+                            is_planet_class = pc_m_giant_star
+                            is_planet_class = pc_b_star
+                            is_planet_class = pc_giga_o_star
+                        }
+                    }
+                }
+            }
+        }
+        district_generator_max = 2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            solar_system = {
+                any_system_planet = {
+                    is_planet_class = pc_f_star
+                }
+                NOT = {
+                    any_system_planet = {
+                        OR = {
+                            is_planet_class = pc_a_star
+                            is_planet_class = pc_m_giant_star
+                            is_planet_class = pc_b_star
+                            is_planet_class = pc_giga_o_star
+                        }
+                    }
+                }
+            }
+        }
+        district_generator_max = 2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            solar_system = {
+                any_system_planet = {
+                    is_planet_class = pc_a_star
+                }
+                NOT = {
+                    any_system_planet = {
+                        OR = {
+                            is_planet_class = pc_m_giant_star
+                            is_planet_class = pc_b_star
+                            is_planet_class = pc_giga_o_star
+                        }
+                    }
+                }
+            }
+        }
+        district_generator_max = 2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            solar_system = {
+                any_system_planet = {
+                    is_planet_class = pc_m_giant_star
+                }
+                NOT = {
+                    any_system_planet = {
+                        OR = {
+                            is_planet_class = pc_b_star
+                            is_planet_class = pc_giga_o_star
+                        }
+                    }
+                }
+            }
+        }
+        district_generator_max = 3
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            solar_system = {
+                any_system_planet = {
+                    is_planet_class = pc_b_star
+                }
+                NOT = {
+                    any_system_planet = {
+                        is_planet_class = pc_giga_o_star
+                    }
+                }
+            }
+        }
+        district_generator_max = 3
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            solar_system = {
+                any_system_planet = {
+                    is_planet_class = pc_giga_o_star
+                }
+            }
+        }
+        district_generator_max = 4
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            solar_system = {
+                any_system_planet = {
+                    is_star = yes
+                    NOR = {
+                        is_planet_class = pc_t_star
+                        is_planet_class = pc_black_hole
+                        is_planet_class = pc_neutron_star
+                        is_planet_class = pc_pulsar
+                    }
+                }
+                NOT = {
+                    any_system_planet = {
+                        OR = {
+                            is_planet_class = pc_m_star
+                            is_planet_class = pc_k_star
+                            is_planet_class = pc_g_star
+                            is_planet_class = pc_f_star
+                            is_planet_class = pc_a_star
+                            is_planet_class = pc_m_giant_star
+                            is_planet_class = pc_b_star
+                            is_planet_class = pc_giga_o_star
+                        }
+                    }
+                }
+            }
+        }
+        district_generator_max = 2
+    }
+    replaceable = {
+        custom_tooltip = {
+            fail_text = giga_cant_remove_orbital_ring_part
+            planet = {
+                NOT = {
+                    uses_district_set = standard
+                }
+            }
+        }
+    }
+    ai_build_at_chokepoint = no
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 0
+        modifier = {
+            add = 20
+            planet = {
+                has_designation = col_generator
+            }
+        }
+    }
+}
+orbital_ring_giga_farming_district = {
+    icon = "GFX_orbitalring_module_giga_farming_district"
+    section = "HABITAT_ORBITAL_RING_SECTION"
+    construction_days = 360
+    starbase_type = orbital_ring
+    potential = {
+        exists = owner
+        owner = {
+            has_technology = tech_nutrient_replication
+        }
+        is_orbital_ring = yes
+    }
+    show_in_tech = "tech_nutrient_replication"
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 300
+            influence = 25
+        }
+        upkeep = {
+            energy = 3
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            orbit = {
+                NOR = {
+                    is_planet_class = pc_gaia
+                    is_planet_class = pc_nuked
+                    is_planet_class = pc_katzenland
+                }
+            }
+        }
+        district_farming_max = 2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            orbit = {
+                is_planet_class = pc_nuked
+            }
+        }
+        district_farming_max = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            orbit = {
+                is_planet_class = pc_gaia
+            }
+        }
+        district_farming_max = 3
+    }
+    replaceable = {
+        custom_tooltip = {
+            fail_text = giga_cant_remove_orbital_ring_part
+            planet = {
+                NOT = {
+                    uses_district_set = standard
+                }
+            }
+        }
+    }
+    ai_build_at_chokepoint = no
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 0
+        modifier = {
+            add = 20
+            planet = {
+                has_designation = col_farming
+            }
+        }
+    }
+}
+pw_orbital_ring_guardian_harbor = {
+    icon = "GFX_pw_orbital_ring_guardian_harbor"
+    section = "HANGAR_ORBITAL_RING_SECTION"
+    construction_days = 480
+    show_in_tech = pw_tech_guardian_angel
+    potential = {
+        exists = owner
+        owner = {
+            has_technology = pw_tech_guardian_angel
+        }
+        is_orbital_ring = yes
+    }
+    possible = {
+        planet = {
+            OR = {
+                has_active_building = pw_building_guardian_angel
+                has_active_building = pw_building_stellar_sentinel
+            }
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            alloys = 360
+        }
+        upkeep = {
+            energy = 3
+        }
+    }
+    planet_modifier = {
+        pop_defense_armies_add = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+            owner = {
+                NOT = {
+                    has_active_tradition = tr_psionics_psi_corps
+                }
+            }
+        }
+        modifier = {
+            job_enforcer_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+            owner = {
+                has_active_tradition = tr_psionics_psi_corps
+            }
+        }
+        modifier = {
+            job_telepath_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_warrior_drone_add = 1
+        }
+    }
+    station_modifier = {
+        ship_hull_mult = 0.2
+        ship_armor_mult = 0.2
+        starbase_defense_platform_capacity_add = 2
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 75
+    }
+}
+sofe_omega_shipyard = {
+    icon = GFX_starbase_sofe_flowing_shipyard
+    section = "SOFE_OMEGA_SHIPYARD_STARBASE_SECTION"
+    construction_days = 12
+    initial = no
+    potential = {
+        OR = {
+            has_starbase_size = origin_super_citadel_playable
+            owner = {
+                is_progenitor_empires = yes
+            }
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            trigger = {
+                owner = {
+                    NOT = {
+                        is_progenitor_empires = yes
+                    }
+                }
+            }
+            acot_sr_light_matter = 500
+        }
+        produces = {
+            energy = 250
+        }
+        upkeep = {
+        }
+    }
+    country_modifier = {
+        country_naval_cap_add = 40
+    }
+    station_modifier = {
+        starbase_shipyard_capacity_add = 20
+        starbase_trade_collection_range_add = 10
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 50
+        modifier = {
+            factor = 100
+            NOT = {
+                has_starbase_module = sofe_omega_shipyard
+            }
+        }
+        modifier = {
+            factor = 0
+            count_starbase_modules = {
+                type = sofe_omega_shipyard
+                count >= 2
+            }
+        }
+    }
+}
+sofe_gun_battery = {
+    section = "SOFE_OMEGA_BATTERY_STARBASE_SECTION"
+    construction_days = 12
+    icon = GFX_starbase_sofe_gun_battery
+    potential = {
+        OR = {
+            has_starbase_size = origin_super_citadel_playable
+            owner = {
+                is_progenitor_empires = yes
+            }
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            trigger = {
+                owner = {
+                    NOT = {
+                        is_progenitor_empires = yes
+                    }
+                }
+            }
+            acot_sr_light_matter = 500
+        }
+        upkeep = {
+        }
+    }
+    station_modifier = {
+        ship_hull_add = 1000000
+        ship_armor_add = 1000000
+        ship_shield_add = 1000000
+        starbase_trade_protection_range_add = 10
+        starbase_trade_protection_add = 50
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 50
+        modifier = {
+            factor = 100
+            NOT = {
+                has_starbase_module = sofe_gun_battery
+            }
+        }
+    }
+}
+sofe_pd_battery = {
+    section = "SOFE_OMEGA_PD_STARBASE_SECTION"
+    construction_days = 6
+    icon = GFX_starbase_sofe_pd_battery
+    potential = {
+        OR = {
+            has_starbase_size = origin_super_citadel_playable
+            owner = {
+                is_progenitor_empires = yes
+            }
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+            trigger = {
+                owner = {
+                    NOT = {
+                        is_progenitor_empires = yes
+                    }
+                }
+            }
+            acot_sr_light_matter = 500
+        }
+        upkeep = {
+        }
+    }
+    station_modifier = {
+        ship_hull_add = 2500000
+        ship_armor_add = 2500000
+        ship_shield_add = 2500000
+        starbase_trade_protection_range_add = 10
+        starbase_trade_protection_add = 50
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 50
+        modifier = {
+            factor = 100
+            NOT = {
+                has_starbase_module = sofe_pd_battery
+            }
+        }
+    }
+}
+acot_theta_starbase_anchorage = {
+    icon = "GFX_spaceport_module_acot_theta_starbase_anchoragel"
+    section = "ACOT_THETA_SHIPYARD_STARBASE_SECTION"
+    construction_days = 5
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_theta_starcitadel
+        owner = {
+            has_technology = tech_precursor_theia_design
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+    }
+    country_modifier = {
+        country_naval_cap_add = 10000
+        country_resource_max_add = 500000
+    }
+    triggered_country_modifier = {
+        potential = {
+            has_starbase_building = naval_logistics_office
+        }
+        country_naval_cap_add = 10000
+    }
+    triggered_country_modifier = {
+        potential = {
+            has_starbase_building = acot_theta_starbase_super_computer
+        }
+        country_naval_cap_add = 10000
+        country_resource_max_add = 500000
+    }
+    ai_build_at_chokepoint = no
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 20
+        modifier = {
+            factor = 2
+            count_starbase_modules = {
+                type = acot_theta_starbase_anchorage
+                count < 2
+            }
+        }
+    }
+}
+acot_theta_starbase_gun_battery = {
+    section = "ACOT_THETA_BATTERY_STARBASE_SECTION"
+    construction_days = 5
+    icon = "GFX_spaceport_module_acot_theta_starbase_gun_battery"
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_theta_starcitadel
+        owner = {
+            has_technology = tech_precursor_theia_design
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+    }
+    station_modifier = {
+        starbase_trade_protection_range_add = 2
+        starbase_trade_protection_add = 20
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = no
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                OR = {
+                    is_preferred_weapons = weapon_type_energy
+                    is_preferred_weapons = weapon_type_kinetic
+                }
+            }
+        }
+    }
+    show_in_tech = "tech_mass_drivers_1"
+}
+acot_theta_starbase_laser_battery = {
+    section = "ACOT_THETA_PD_STARBASE_SECTION"
+    construction_days = 5
+    icon = "GFX_spaceport_module_acot_theta_starbase_laser_battery"
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_theta_starcitadel
+        owner = {
+            has_technology = tech_precursor_theia_design
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+    }
+    station_modifier = {
+        starbase_trade_protection_range_add = 2
+        starbase_trade_protection_add = 20
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = no
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                OR = {
+                    is_preferred_weapons = weapon_type_energy
+                    is_preferred_weapons = weapon_type_kinetic
+                }
+            }
+        }
+    }
+}
+acot_theta_starbase_missile_battery = {
+    section = "ACOT_THETA_MISSILE_STARBASE_SECTION"
+    icon = "GFX_spaceport_module_acot_theta_starbase_missile_battery"
+    construction_days = 5
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_theta_starcitadel
+        owner = {
+            has_technology = tech_precursor_theia_design
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+    }
+    station_modifier = {
+        starbase_trade_protection_range_add = 2
+        starbase_trade_protection_add = 20
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = no
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                is_preferred_weapons = weapon_type_explosive
+            }
+        }
+    }
+}
+acot_theta_starbase_hangar_bay = {
+    icon = "GFX_spaceport_module_acot_theta_starbase_hangar_bay"
+    section = "ACOT_THETA_HANGAR_STARBASE_SECTION"
+    construction_days = 5
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_theta_starcitadel
+        owner = {
+            has_technology = tech_precursor_theia_design
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+    }
+    station_modifier = {
+        starbase_trade_protection_range_add = 2
+        starbase_trade_protection_add = 20
+    }
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                is_preferred_weapons = weapon_type_strike_craft
+            }
+        }
+    }
+}
+acot_theta_starbase_dark_generator_ee = {
+    icon = "GFX_spaceport_module_acot_theta_starbase_dark_generator_EE"
+    section = "ACOT_THETA_SHIPYARD_STARBASE_SECTION"
+    construction_days = 5
+    initial = yes
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_theta_starcitadel
+        owner = {
+            has_technology = tech_precursor_theia_design
+        }
+    }
+    possible = {
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        upkeep = {
+            sm_sr_perfect_runic_energy = 1
+        }
+        produces = {
+            sr_dark_matter = 25000
+            acot_sr_dark_energy = 25000
+        }
+    }
+    ai_build_at_chokepoint = no
+    ai_weight = {
+        weight = 15
+    }
+}
+acot_theta_starbase_dark_generator_s = {
+    icon = "GFX_spaceport_module_acot_theta_starbase_dark_generator_S"
+    section = "ACOT_THETA_SHIPYARD_STARBASE_SECTION"
+    construction_days = 5
+    initial = yes
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_theta_starcitadel
+        owner = {
+            has_technology = tech_precursor_theia_design
+        }
+    }
+    possible = {
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        upkeep = {
+            sm_sr_perfect_runic_energy = 1
+        }
+        produces = {
+            acot_sr_stellarite = 5000
+        }
+    }
+    ai_build_at_chokepoint = no
+    ai_weight = {
+        weight = 15
+    }
+}
+acot_theta_starbase_dark_generator_re = {
+    icon = "GFX_spaceport_module_acot_theta_starbase_dark_generator_RE"
+    section = "ACOT_THETA_SHIPYARD_STARBASE_SECTION"
+    construction_days = 5
+    initial = yes
+    potential = {
+        has_global_flag = has_aot_mod
+        exists = owner
+        has_starbase_size >= acot_precusor_theta_starcitadel
+        owner = {
+            has_technology = tech_precursor_theia_design
+        }
+    }
+    possible = {
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        upkeep = {
+            sm_sr_perfect_runic_energy = 1
+        }
+        produces = {
+            aot_sr_runic_power = 500
+        }
+    }
+    ai_build_at_chokepoint = no
+    ai_weight = {
+        weight = 15
+    }
+}
+acot_theta_starbase_lab = {
+    icon = "GFX_spaceport_module_acot_theta_starbase_lab"
+    section = "ACOT_THETA_SHIPYARD_STARBASE_SECTION"
+    construction_days = 5
+    initial = yes
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_theta_starcitadel
+        owner = {
+            has_technology = tech_precursor_theia_design
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        produces = {
+            society_research = 1000
+            engineering_research = 1000
+            physics_research = 1000
+        }
+        produces = {
+            trigger = {
+                solar_system = {
+                    is_star_class = sc_black_hole
+                }
+            }
+            society_research = 1000
+            engineering_research = 1000
+            physics_research = 1000
+        }
+    }
+    station_modifier = {
+    }
+    ai_build_at_chokepoint = no
+    ai_weight = {
+        weight = 15
+    }
+}
+acot_theta_ring_shipyard = {
+    icon = "GFX_spaceport_module_acot_theta_starbase_shipyard"
+    section = "ACOT_THETA_ORBITAL_RING_DEFAULT_MODULE_SECTION"
+    construction_days = 5
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_orbital_ring_t4
+        owner = {
+            has_technology = tech_precursor_orbital_ring
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        upkeep = {
+            trigger = {
+                solar_system = {
+                    NOT = {
+                        is_star_class = sc_black_hole
+                    }
+                }
+            }
+            sr_dark_matter = 5
+        }
+    }
+    station_modifier = {
+        starbase_shipyard_capacity_add = 25
+    }
+    triggered_station_modifier = {
+    }
+    ai_build_at_chokepoint = no
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 50
+    }
+}
+acot_theta_ring_anchorage = {
+    icon = "GFX_spaceport_module_acot_theta_starbase_anchoragel"
+    section = "ACOT_THETA_ORBITAL_RING_DEFAULT_MODULE_SECTION"
+    construction_days = 5
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_orbital_ring_t4
+        owner = {
+            has_technology = tech_precursor_orbital_ring
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        upkeep = {
+            trigger = {
+                solar_system = {
+                    NOT = {
+                        is_star_class = sc_black_hole
+                    }
+                }
+            }
+            sr_dark_matter = 5
+        }
+    }
+    country_modifier = {
+        country_naval_cap_add = 10000
+        country_resource_max_add = 500000
+    }
+    triggered_country_modifier = {
+        potential = {
+            has_starbase_building = naval_logistics_office
+        }
+        country_naval_cap_add = 10000
+    }
+    triggered_country_modifier = {
+        potential = {
+            has_starbase_building = acot_theta_starbase_super_computer
+        }
+        country_naval_cap_add = 10000
+        country_resource_max_add = 500000
+    }
+    ai_build_at_chokepoint = no
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 20
+        modifier = {
+            factor = 2
+            count_starbase_modules = {
+                type = acot_orbital_ring_anchorage
+                count < 2
+            }
+        }
+    }
+}
+acot_theta_ring_habitat = {
+    icon = "GFX_spaceport_module_acot_theta_starbase_lab"
+    section = "ACOT_THETA_ORBITAL_RING_DEFAULT_MODULE_SECTION"
+    construction_days = 5
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_orbital_ring_t4
+        owner = {
+            has_technology = tech_precursor_theia_design
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+    }
+    planet_modifier = {
+        planet_max_districts_add = 10
+        planet_max_buildings_add = 5
+    }
+    ai_build_at_chokepoint = no
+    ai_build_outside_chokepoint = yes
+    ai_weight = {
+        weight = 20
+        modifier = {
+            factor = 2
+            count_starbase_modules = {
+                type = acot_orbital_ring_anchorage
+                count < 2
+            }
+        }
+    }
+}
+acot_theta_ring_pd = {
+    section = "ACOT_THETA_ORBITAL_RING_PD_MODULE_SECTION"
+    construction_days = 5
+    icon = "GFX_spaceport_module_acot_theta_starbase_laser_battery"
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_orbital_ring_t4
+        owner = {
+            has_technology = tech_precursor_orbital_ring
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        upkeep = {
+            trigger = {
+                solar_system = {
+                    NOT = {
+                        is_star_class = sc_black_hole
+                    }
+                }
+            }
+            sr_dark_matter = 5
+        }
+    }
+    station_modifier = {
+        ship_cloaking_detection_add = 1
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = no
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                OR = {
+                    is_preferred_weapons = weapon_type_energy
+                    is_preferred_weapons = weapon_type_kinetic
+                }
+            }
+        }
+    }
+}
+acot_theta_ring_battery = {
+    section = "ACOT_THETA_ORBITAL_RING_BATTERY_MODULE_SECTION"
+    construction_days = 5
+    icon = "GFX_spaceport_module_acot_theta_starbase_gun_battery"
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_orbital_ring_t4
+        owner = {
+            has_technology = tech_precursor_orbital_ring
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        upkeep = {
+            trigger = {
+                solar_system = {
+                    NOT = {
+                        is_star_class = sc_black_hole
+                    }
+                }
+            }
+            sr_dark_matter = 5
+        }
+    }
+    station_modifier = {
+        ship_cloaking_detection_add = 1
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = no
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                OR = {
+                    is_preferred_weapons = weapon_type_energy
+                    is_preferred_weapons = weapon_type_kinetic
+                }
+            }
+        }
+    }
+}
+acot_theta_ring_missile = {
+    section = "ACOT_THETA_ORBITAL_RING_MISSILE_MODULE_SECTION"
+    construction_days = 5
+    icon = "GFX_spaceport_module_acot_theta_starbase_missile_battery"
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_orbital_ring_t4
+        owner = {
+            has_technology = tech_precursor_orbital_ring
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        upkeep = {
+            trigger = {
+                solar_system = {
+                    NOT = {
+                        is_star_class = sc_black_hole
+                    }
+                }
+            }
+            sr_dark_matter = 5
+        }
+    }
+    station_modifier = {
+        ship_cloaking_detection_add = 1
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = no
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                is_preferred_weapons = weapon_type_explosive
+            }
+        }
+    }
+}
+acot_theta_ring_hangar = {
+    section = "ACOT_THETA_ORBITAL_RING_HANGAR_MODULE_SECTION"
+    construction_days = 5
+    icon = "GFX_spaceport_module_acot_theta_starbase_hangar_bay"
+    potential = {
+        exists = owner
+        has_starbase_size >= acot_precusor_orbital_ring_t4
+        owner = {
+            has_technology = tech_precursor_orbital_ring
+        }
+    }
+    resources = {
+        category = starbase_modules
+        cost = {
+        }
+        upkeep = {
+            trigger = {
+                solar_system = {
+                    NOT = {
+                        is_star_class = sc_black_hole
+                    }
+                }
+            }
+            sr_dark_matter = 5
+        }
+    }
+    station_modifier = {
+        ship_cloaking_detection_add = 1
+    }
+    ai_build_at_chokepoint = yes
+    ai_build_outside_chokepoint = no
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 2
+            exists = owner
+            owner = {
+                is_preferred_weapons = weapon_type_strike_craft
+            }
+        }
+    }
+}

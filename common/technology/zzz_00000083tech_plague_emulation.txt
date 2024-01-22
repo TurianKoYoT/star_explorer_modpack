@@ -1,0 +1,26 @@
+tech_plague_emulation = {
+    cost = @tier3cost1
+    area = society
+    tier = 3
+    category = {
+        biology
+    }
+    prerequisites = {
+        "tech_viral_structure_examination"
+        "tech_society_2"
+    }
+    weight = @tier3weight2
+    gateway = plague
+    potential = {
+        has_origin = origin_pandemic
+    }
+    modifier = {
+        description = ps_tech_1
+    }
+    weight_modifier = {
+        factor = 2
+    }
+    ai_weight = {
+        factor = 5
+    }
+}

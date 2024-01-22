@@ -1,0 +1,24 @@
+tech_avb_stronghold_4 = {
+    cost = @tier4cost1
+    area = society
+    tier = 4
+    category = {
+        military_theory
+    }
+    prerequisites = {
+        "tech_avb_stronghold_3"
+        "tech_avb_capital_4"
+    }
+    weight = @tier4weight1
+    modifier = {
+        army_defense_health_mult = 0.1
+    }
+    weight_modifier = {
+        factor = 2
+        inline_script = "tech_weights/avb_military_weight"
+    }
+    ai_weight = {
+        factor = 2
+        inline_script = "tech_weights/avb_military_weight"
+    }
+}

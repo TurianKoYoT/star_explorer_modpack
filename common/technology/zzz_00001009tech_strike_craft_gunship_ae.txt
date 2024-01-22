@@ -1,0 +1,34 @@
+tech_strike_craft_gunship_ae = {
+    area = engineering
+    category = {
+        voidcraft
+    }
+    cost = @acot_tier7cost3
+    tier = 7
+    weight = @tier5weight1
+    ai_update_type = military
+    is_reverse_engineerable = no
+    prerequisites = {
+        "tech_strike_craft_gunship_dm"
+        "tech_dark_matter_power_core_ae"
+    }
+    potential = {
+        NOT = {
+            has_global_flag = acot_weapons_forbidden
+        }
+        NOT = {
+            is_country_type = fallen_empire
+        }
+        has_technology = tech_dark_matter_power_core_ae
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            NOT = {
+                has_technology = tech_dark_matter_power_core_ae
+            }
+        }
+    }
+    ai_weight = {
+    }
+}

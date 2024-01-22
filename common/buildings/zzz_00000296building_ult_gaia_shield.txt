@@ -1,0 +1,32 @@
+building_ult_gaia_shield = {
+    base_buildtime = 360
+    base_cap_amount = 1
+    category = army
+    planet_modifier = {
+        pop_environment_tolerance = 0.2
+        planet_stability_add = 5
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 1000
+        }
+        produces = {
+            engineering_research = 50
+            physics_research = 50
+            unity = 20
+        }
+        upkeep = {
+            energy = 5
+        }
+    }
+    prerequisites = {
+        "tech_ult_edenization"
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+        }
+        text = ult_gaia_shield_effect_desc
+    }
+}

@@ -1,0 +1,22 @@
+tech_eutab_self_sus_fleets = {
+    cost = @tier4cost1
+    area = engineering
+    tier = 4
+    category = {
+        materials
+    }
+    prerequisites = {
+        "tech_ship_armor_4"
+    }
+    weight = @tier4weight1
+    is_custom_tech_1 = yes
+    potential = {
+        is_materialist = yes
+        has_ascension_perk = ap_interstellar_dominion
+    }
+    gateway = eu_dominion
+    modifier = {
+        ship_armor_regen_add_perc = 0.0033
+        ship_hull_regen_add_perc = 0.0033
+    }
+}

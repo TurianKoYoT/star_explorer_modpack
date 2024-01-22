@@ -1,0 +1,45 @@
+doa_class_4_singularity_1 = {
+    base_buildtime = @b2_time
+    can_build = yes
+    can_demolish = yes
+    category = resource
+    base_cap_amount = 1
+    prerequisites = {
+        "tech_class_4_singularity_1"
+    }
+    potential = {
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+        }
+    }
+    allow = {
+        OR = {
+            has_building = doa_automation_uplink_1
+            has_building = doa_automation_uplink_2
+            has_building = doa_automation_uplink_3
+        }
+    }
+    resources = {
+        category = planet_doa_automated_industries
+        cost = {
+            minerals = @b2_minerals
+        }
+        produces = {
+            energy = 250
+        }
+        upkeep = {
+            sr_dark_matter = 4
+        }
+    }
+    upgrades = {
+        doa_class_4_singularity_2
+    }
+    destroy_trigger = {
+        OR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+        }
+    }
+}

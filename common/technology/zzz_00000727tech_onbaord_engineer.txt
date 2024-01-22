@@ -1,0 +1,24 @@
+tech_onbaord_engineer = {
+    cost = @acot_tier6cost2
+    area = engineering
+    tier = 6
+    category = {
+        voidcraft
+    }
+    prerequisites = {
+        "tech_space_defense_station_improvement"
+        "tech_doctrine_fleet_size_4"
+    }
+    weight = 25
+    potential = {
+        is_regular_empire = yes
+        NOT = {
+            has_global_flag = acot_ethictech_forbidden
+        }
+    }
+    modifier = {
+        ships_upkeep_mult = -0.1
+    }
+    ai_weight = {
+    }
+}

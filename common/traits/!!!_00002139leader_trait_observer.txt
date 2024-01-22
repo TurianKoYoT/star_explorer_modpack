@@ -1,0 +1,26 @@
+leader_trait_observer = {
+    cost = 1
+    inline_script = {
+        script = trait/icon
+        CLASS = admiral
+        ICON = "gfx/interface/icons/traits/leader_traits/leader_trait_observer.dds"
+        RARITY = common
+        COUNCIL = no
+        TIER = none
+    }
+    icon = "gfx/interface/icons/traits/leader_traits/leader_trait_observer.dds"
+    modifier = {
+        ship_tracking_mult = 0.4
+    }
+    leader_class = {
+        commander
+    }
+    leader_potential_add = {
+        OR = {
+            from = {
+                has_technology = tech_expandable_brain_1
+            }
+            has_global_flag = ap_expandable_brain_1
+        }
+    }
+}

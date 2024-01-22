@@ -1,0 +1,28 @@
+tech_gigas_stellar_manip_1 = {
+    cost = @tier5cost1
+    area = physics
+    tier = 5
+    category = {
+        particles
+    }
+    is_rare = yes
+    weight = 0
+    prereqfor_desc = {
+        custom = {
+            title = "basic_stellar_manip1"
+            desc = "basic_stellar_manip1_desc"
+        }
+    }
+    prereqfor_desc = {
+        custom = {
+            title = "basic_stellar_manip2"
+            desc = "basic_stellar_manip2_desc"
+        }
+    }
+    prereqfor_desc = {
+        custom = {
+            title = "basic_stellar_manip3"
+            desc = "basic_stellar_manip3_desc"
+        }
+    }
+}

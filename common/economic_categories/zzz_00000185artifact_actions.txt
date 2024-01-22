@@ -1,0 +1,13 @@
+artifact_actions = {
+    use_for_ai_budget = no
+    generate_mult_modifiers = {
+        cost
+        upkeep
+        produces
+    }
+    generate_add_modifiers = {
+        cost
+        upkeep
+        produces
+    }
+}

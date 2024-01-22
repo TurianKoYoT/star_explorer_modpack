@@ -1,0 +1,18 @@
+trait_frail = {
+    cost = -1
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_tough"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    modifier = {
+        army_health = -0.25
+    }
+    slave_cost = {
+        energy = -1000
+    }
+}

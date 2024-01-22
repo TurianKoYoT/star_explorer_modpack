@@ -1,0 +1,44 @@
+giga_tech_orbital_ring_iodizium_hub = {
+    cost = @tier4cost2
+    area = physics
+    tier = 4
+    is_rare = yes
+    category = {
+        field_manipulation
+    }
+    prerequisites = {
+        tech_orbital_ring_tier_1
+        giga_tech_fusion_suppressor
+    }
+    weight = @tier4weight3
+    potential = {
+        has_overlord_dlc = yes
+    }
+    weight_modifier = {
+        factor = 0.5
+        modifier = {
+            factor = 0
+            not = {
+                any_owned_planet = {
+                    has_building = building_giga_iodizium_mines
+                }
+            }
+        }
+        modifier = {
+            factor = @ap_technological_ascendancy_rare_tech
+            has_ascension_perk = ap_technological_ascendancy
+        }
+        modifier = {
+            factor = @federation_perk_factor
+            has_federation = yes
+            federation = {
+                has_federation_perk = rare_tech_boost
+                any_member = {
+                    has_technology = giga_tech_orbital_ring_iodizium_hub
+                }
+            }
+        }
+    }
+    ai_weight = {
+    }
+}

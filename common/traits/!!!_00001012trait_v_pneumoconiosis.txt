@@ -1,0 +1,24 @@
+trait_v_pneumoconiosis = {
+    cost = -2
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/TOX"
+    opposites = {
+        "trait_v_adv_pneumoconiosis"
+        "trait_v_double_respiration"
+        "trait_v_adv_double_respiration"
+        "trait_noxious"
+        "trait_v_urbanobiont"
+        "trait_v_adv_urbanobiont"
+    }
+    modifier = {
+        habitability_ceil_add = -0.3
+    }
+    slave_cost = {
+        energy = -2000
+    }
+}

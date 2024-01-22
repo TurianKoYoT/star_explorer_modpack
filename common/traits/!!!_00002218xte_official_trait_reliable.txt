@@ -1,0 +1,58 @@
+xte_official_trait_reliable = {
+    inline_script = {
+        script = trait/xte_icon
+        CLASS = official
+        ICON = GFX_xte_leader_trait_reliable
+        RARITY = xte_positive
+        COUNCIL = no
+        TIER = none
+    }
+    cost = 0
+    randomized = no
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_lithoid_empire = no
+            }
+        }
+        pop_growth_speed = 0.05
+        planet_jobs_food_produces_mult = 0.05
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_lithoid_empire = yes
+            }
+        }
+        pop_growth_speed = 0.05
+        planet_jobs_minerals_produces_mult = 0.033
+    }
+    triggered_sector_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_lithoid_empire = no
+            }
+        }
+        pop_growth_speed = 0.025
+        planet_jobs_food_produces_mult = 0.025
+    }
+    triggered_sector_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_lithoid_empire = yes
+            }
+        }
+        pop_growth_speed = 0.025
+        planet_jobs_food_produces_mult = 0.015
+    }
+    leader_potential_add = {
+        always = no
+    }
+    leader_class = {
+        official
+    }
+}

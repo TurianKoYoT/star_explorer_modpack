@@ -1,0 +1,32 @@
+xte_trait_lawful = {
+    cost = 3
+    initial = yes
+    randomized = yes
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    opposites = {
+        "trait_nerve_stapled"
+        "trait_syncretic_proles"
+        "trait_unruly"
+        "trait_deviants"
+        "trait_hive_mind"
+        "trait_invasive"
+    }
+    potential_crossbreeding_chance = 1
+    modifier = {
+        species_empire_size_mult = -0.05
+        pop_government_ethic_attraction = 0.15
+    }
+    custom_tooltip_with_modifiers = xte_added_by_notification
+    slave_cost = {
+        energy = 500
+    }
+}

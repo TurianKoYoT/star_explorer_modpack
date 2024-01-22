@@ -1,0 +1,29 @@
+trait_v_webbing = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 0
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/ART"
+    opposites = {
+        "trait_invasive"
+        "trait_v_adv_webbing"
+        "trait_void_dweller_1"
+        "trait_v_biophobia"
+        "trait_v_pest_sensitive"
+        "trait_v_adv_pest_sensitive"
+    }
+    triggered_pop_modifier = {
+        planet_farmers_food_produces_add = 0.5
+        mult = planet.value:natural_blocker_count
+    }
+    custom_tooltip = TRAIT_WEBBING_EFFECT
+    slave_cost = {
+        energy = 4000
+    }
+}

@@ -1,0 +1,60 @@
+building_bio_reactor = {
+    base_buildtime = 240
+    icon = building_bio_reactor
+    category = resource
+    potential = {
+        OR = {
+            has_z_expanded_mod = no
+            AND = {
+                has_z_expanded_mod = yes
+                NOT = {
+                    has_planet_flag = planetary_station
+                }
+            }
+        }
+        exists = owner
+        owner = {
+            OR = {
+                is_catalytic_empire = yes
+                is_machine_empire = yes
+                is_mechanical_empire = yes
+                is_lithoid_empire = yes
+            }
+            OR = {
+                owner = {
+                    is_ai = no
+                }
+                owner = {
+                    country_uses_food = no
+                }
+            }
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 200
+        }
+        produces = {
+            trigger = {
+                exists = owner
+                owner = {
+                    NOT = {
+                        has_deficit = food
+                    }
+                }
+            }
+            energy = 20
+        }
+        upkeep = {
+            food = 25
+        }
+        inline_script = "resources/avb_bioreactor_production"
+    }
+    prerequisites = {
+        "tech_bio_reactor"
+    }
+    upgrades = {
+        "building_avb_bio_reactor_2"
+    }
+}

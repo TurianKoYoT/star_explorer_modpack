@@ -1,0 +1,94 @@
+district_queen = {
+    base_buildtime = 300
+    min_for_deposits_on_planet = 1
+    max_for_deposits_on_planet = 4
+    conversion_ratio = 1
+    convert_to = {
+        district_queen_uncapped
+    }
+    show_on_uncolonized = {
+        OR = {
+            sartek_standard_pd_enhanced = yes
+            sartek_machine_mod_or_machine_vanilla = yes
+        }
+        from = {
+            OR = {
+                has_ascension_perk = ap_pyramidal_society
+                has_country_flag = ap_pyramidal_society
+            }
+            is_hive_empire = yes
+        }
+    }
+    potential = {
+        OR = {
+            sartek_standard_pd_enhanced = yes
+            sartek_machine_mod_or_machine_vanilla = yes
+        }
+        exists = owner
+        owner = {
+            OR = {
+                has_ascension_perk = ap_pyramidal_society
+                has_country_flag = ap_pyramidal_society
+            }
+            is_hive_empire = yes
+        }
+    }
+    allow = {
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            trigger = {
+                owner = {
+                    is_lithoid_empire = no
+                }
+            }
+            food = 500
+        }
+        cost = {
+            trigger = {
+                owner = {
+                    is_lithoid_empire = yes
+                }
+            }
+            minerals = 500
+        }
+        upkeep = {
+            trigger = {
+                owner = {
+                    is_lithoid_empire = no
+                }
+            }
+            food = 4
+        }
+        upkeep = {
+            trigger = {
+                owner = {
+                    is_lithoid_empire = yes
+                }
+            }
+            minerals = 4
+        }
+        produces = {
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 1
+        planet_amenities_no_happiness_add = 3
+        job_hive_queen_add = 1
+        job_royal_guard_add = 1
+    }
+    ai_weight = {
+        weight = 2
+    }
+    ai_resource_production = {
+        food = 4
+        trigger = {
+            always = yes
+        }
+    }
+}

@@ -1,0 +1,80 @@
+building_stellarite_giga_fortress_obelisk = {
+    base_buildtime = 1200
+    add_to_first_building_slot = yes
+    can_be_ruined = no
+    can_be_disabled = no
+    can_demolish = no
+    can_build = no
+    planetary_ftl_inhibitor = yes
+    category = army
+    position_priority = 100
+    potential = {
+        exists = owner
+        owner = {
+            has_technology = tech_stellarite_giga_fortress
+        }
+    }
+    allow = {
+        has_stellarite_capital = yes
+    }
+    planet_modifier = {
+        planet_amenities_add = 30
+        planet_housing_add = 30
+        planet_stability_add = 15
+    }
+    army_modifier = {
+        army_defense_morale_mult = 60
+        army_defense_health_mult = 30
+        army_defense_damage_mult = 30
+        army_starting_experience_add = 30000
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        job_stellarite_giga_fortress_operator_add = 3
+        job_stellarite_enforcer_add = 10
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        job_stellarite_giga_fortress_operator_drone_add = 3
+        job_stellarite_enforcer_drone_add = 10
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            unity = 200
+            influence = 4
+            acot_sr_stellarite = 20
+            food = 1000
+        }
+        cost = {
+            energy = 100000
+            minerals = 60000
+            acot_sr_stellarite = 7500
+        }
+        upkeep = {
+            energy = 10
+            volatile_motes = 2
+            exotic_gases = 2
+            rare_crystals = 2
+            sr_dark_matter = 5
+            acot_sr_dark_energy = 5
+            acot_sr_stellarite = 5
+        }
+    }
+    prerequisites = {
+        "tech_stellarite_giga_fortress"
+    }
+    ai_weight = {
+        weight = 150000
+    }
+}

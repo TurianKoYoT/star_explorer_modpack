@@ -1,0 +1,11 @@
+faith_defenders_2d = {
+    trigger = {
+        has_valid_civic = "civic_defender_of_the_faith"
+        FROM = {
+            has_ethic = "ethic_fanatic_materialist"
+        }
+    }
+    opinion = {
+        base = -50
+    }
+}

@@ -1,0 +1,54 @@
+building_pki_theater = {
+    base_buildtime = @b2_time
+    icon = building_katzen_theater
+    category = amenity
+    potential = {
+        owner = {
+            pki_is_katzenartig_imperium = yes
+        }
+    }
+    prerequisites = {
+        "tech_katzen_theater"
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+        }
+        upkeep = {
+            energy = @b3_upkeep
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            owner = {
+                is_gestalt = yes
+            }
+        }
+    }
+    planet_modifier = {
+        planet_amenities_add = 12
+        pop_happiness = 0.1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            NOT = {
+                owner = {
+                    has_origin = origin_katzen
+                }
+            }
+        }
+        pop_ethic_militarist_attraction_mult = 0.5
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                has_origin = origin_katzen
+            }
+        }
+        pop_government_ethic_attraction = 0.5
+    }
+}

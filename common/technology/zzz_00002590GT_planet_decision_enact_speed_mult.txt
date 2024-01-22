@@ -1,0 +1,26 @@
+GT_planet_decision_enact_speed_mult = {
+    cost = @tier3cost3
+    area = society
+    tier = 3
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_hypercomms_forum"
+    }
+    weight = @tier3weight3
+    modifier = {
+        planet_decision_enact_speed_mult = 0.25
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            num_researched_techs_of_tier = {
+                tier = 3
+                value > 10
+            }
+        }
+    }
+    ai_weight = {
+    }
+}

@@ -1,0 +1,59 @@
+building_katzencaches_stellarite_theater = {
+    base_buildtime = @b2_time
+    can_build = no
+    category = amenity
+    potential = {
+        owner = {
+            has_origin = origin_katzen
+        }
+    }
+    prerequisites = {
+        "tech_katzen_theater"
+        "tech_dark_matter_power_core_se"
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 5000
+            minerals = 5000
+            acot_sr_stellarite = 750
+        }
+        upkeep = {
+            energy = 200
+            acot_sr_stellarite = 40
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            owner = {
+                is_gestalt = yes
+            }
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            NOT = {
+                owner = {
+                    has_origin = origin_katzen
+                }
+            }
+        }
+        pop_ethic_militarist_attraction_mult = 2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                has_origin = origin_katzen
+            }
+        }
+        pop_government_ethic_attraction = 2
+    }
+    planet_modifier = {
+        planet_housing_add = 520
+        planet_amenities_add = 520
+        job_stellarite_entertainer_add = 4
+    }
+}

@@ -1,0 +1,40 @@
+building_katzencaches_runic_megalopolis = {
+    base_buildtime = @b2_time
+    can_build = no
+    category = amenity
+    potential = {
+        owner = {
+            has_origin = origin_katzen
+        }
+    }
+    allow = {
+        has_enigmatic_capital = yes
+    }
+    prerequisites = {
+        "tech_dark_matter_power_core_re"
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 1000
+            alloys = 500
+        }
+        upkeep = {
+            energy = 10
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 120
+        planet_amenities_add = 120
+        job_phanon_energyman_per_pop = 0.07
+        job_phanon_transmute_man_per_pop = 0.07
+        job_phanon_artisan_per_pop = 0.07
+        job_phanon_alloyman_per_pop = 0.07
+        job_phanon_researcher_per_pop = 0.07
+        job_phanon_entertainer_per_pop = 0.07
+        job_phanon_apothecary_per_pop = 0.07
+    }
+    upgrades = {
+        building_katzencaches_stellarite_megalopolis
+    }
+}

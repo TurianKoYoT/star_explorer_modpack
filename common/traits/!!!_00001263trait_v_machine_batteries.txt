@@ -1,0 +1,15 @@
+trait_v_machine_batteries = {
+    cost = 1
+    inline_script = "traits/no_randomized"
+    allowed_archetypes = {
+        ROBOT
+        MACHINE
+    }
+    custom_tooltip_with_modifiers = TRAIT_MACHINE_BATTERIES_EFFECT
+    modifier = {
+        planet_jobs_energy_upkeep_mult = -0.25
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

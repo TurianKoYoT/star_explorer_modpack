@@ -1,0 +1,26 @@
+tech_eutab_refiner_1 = {
+    cost = @tier3cost3
+    area = engineering
+    tier = 3
+    category = {
+        materials
+    }
+    prerequisites = {
+        "tech_volatile_motes"
+        "tech_rare_crystals"
+        "tech_exotic_gases"
+    }
+    weight = @tier3weight3
+    is_custom_tech_1 = yes
+    potential = {
+        OR = {
+            has_ascension_perk = ap_technological_ascendancy
+            has_ascension_perk = ap_enigmatic_engineering
+        }
+    }
+    modifier = {
+        planet_translucers_produces_mult = 0.25
+        planet_chemists_produces_mult = 0.25
+        planet_refiners_produces_mult = 0.25
+    }
+}

@@ -1,0 +1,35 @@
+building_avb_overseer_homes_2 = {
+    base_buildtime = @b2_time
+    can_build = no
+    category = amenity
+    potential = {
+        has_modifier = slave_colony
+    }
+    allow = {
+        has_upgraded_capital_4 = yes
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            owner = {
+                is_gestalt = yes
+            }
+            NOT = {
+                has_modifier = slave_colony
+            }
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 4
+        job_slave_overseer_add = 4
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_b2_minerals
+        }
+        upkeep = {
+            energy = @avb_b2_upkeep
+        }
+    }
+}

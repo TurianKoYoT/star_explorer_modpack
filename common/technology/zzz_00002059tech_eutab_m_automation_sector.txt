@@ -1,0 +1,27 @@
+tech_eutab_m_automation_sector = {
+    cost = @tier4cost3
+    area = engineering
+    tier = 4
+    category = {
+        industry
+    }
+    prerequisites = {
+        "tech_mega_assembly"
+        "tech_embodied_dynamism"
+    }
+    weight = @tier4weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_machine_empire = yes
+        has_ascension_perk = ap_synthetic_age
+    }
+    modifier = {
+        planet_pops_robotics_upkeep_mult = -0.05
+    }
+    prereqfor_desc = {
+        custom = {
+            title = EUTAB_ASSEMBLY_UPGRADE_TITLE
+            desc = eutab_not_independant_building
+        }
+    }
+}

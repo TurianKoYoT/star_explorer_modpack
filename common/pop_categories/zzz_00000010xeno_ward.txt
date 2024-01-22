@@ -1,0 +1,43 @@
+xeno_ward = {
+    rank = 0
+    clothes_texture_index = 3
+    change_job_threshold = 2
+    pop_modifier = {
+        pop_political_power = -1
+        pop_housing_usage_base = 1
+        pop_amenities_usage_base = 1
+    }
+    triggered_pop_modifier = {
+        potential = {
+            NOT = {
+                has_trait = trait_noxious
+            }
+        }
+        key = trait_noxious
+        pop_happiness = 1
+        mult = modifier:pop_non_noxious_happiness
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_trait = trait_noxious
+        }
+        key = trait_noxious
+        pop_non_noxious_happiness = @noxious_happiness_penalty
+    }
+    allow_resettlement = {
+        always = no
+    }
+    resources = {
+        category = pop_category_xeno_ward
+        upkeep = {
+            trigger = {
+                is_robotic_species = no
+            }
+            consumer_goods = @living_standard_luxuries_very_high
+        }
+        inline_script = "pop_categories/regular_upkeep"
+        inline_script = "pop_categories/cyborg_upkeep"
+        inline_script = "pop_categories/v_traits_upkeep"
+        inline_script = "pop_categories/v_traits_cyborg_upkeep"
+    }
+}

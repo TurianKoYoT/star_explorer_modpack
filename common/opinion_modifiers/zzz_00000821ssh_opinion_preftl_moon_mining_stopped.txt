@@ -1,0 +1,8 @@
+ssh_opinion_preftl_moon_mining_stopped = {
+    opinion = {
+        base = 200
+    }
+    unique = yes
+    monthly = yes
+    decay = 1
+}

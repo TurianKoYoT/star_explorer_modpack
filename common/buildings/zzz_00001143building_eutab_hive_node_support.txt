@@ -1,0 +1,68 @@
+building_eutab_hive_node_support = {
+    base_buildtime = @b2_time
+    base_cap_amount = 2
+    category = unity
+    potential = {
+        has_building = building_eutab_hive_alpha_node
+        exists = owner
+        owner = {
+            is_hive_empire = yes
+        }
+    }
+    planet_modifier = {
+        job_eutab_caretaker_add = 4
+        planet_building_build_speed_mult = 0.15
+        planet_decision_enact_speed_mult = 0.2
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b1_minerals
+            energy = 150
+        }
+        upkeep = {
+            energy = @b2_upkeep
+        }
+        produces = {
+            unity = 10
+        }
+    }
+    triggered_desc = {
+        text = job_eutab_caretaker_effect_desc
+    }
+    prerequisites = {
+        "tech_eutab_hive_alpha_node"
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_hive_empire = no
+                NOT = {
+                    has_ascension_perk = ap_eutab_mind_matter
+                }
+            }
+        }
+    }
+    ai_resource_production = {
+        trigger = {
+            NOT = {
+                has_building = building_eutab_hive_node_support
+            }
+        }
+        volatile_motes = 15
+        exotic_gases = 15
+        rare_crystals = 15
+        alloys = 30
+        physics_research = 30
+        society_research = 30
+        engineering_research = 30
+        mult = value:eutab_ai_resource_production_adjustment_value
+    }
+    upgrades = {
+        building_eutab_hive_node_research_phy
+        building_eutab_hive_node_stars
+        building_eutab_hive_node_manage
+        building_eutab_hive_node_mega
+    }
+}

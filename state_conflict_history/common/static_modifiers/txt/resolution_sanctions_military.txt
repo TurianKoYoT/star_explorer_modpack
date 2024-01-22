@@ -1,0 +1,5 @@
+resolution_sanctions_military = {
+    country_naval_cap_mult = -0.1
+    ships_upkeep_mult = 0.2
+    diplo_weight_naval_mult = -0.2
+}

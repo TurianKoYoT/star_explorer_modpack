@@ -1,0 +1,138 @@
+building_avb_monument_memorial_6 = {
+    base_buildtime = @avb_u6_time
+    can_build = no
+    category = unity
+    potential = {
+        exists = owner
+        NOT = {
+            has_modifier = slave_colony
+        }
+        owner = {
+            is_memorialist_empire = yes
+        }
+    }
+    allow = {
+        has_upgraded_capital_4 = yes
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            has_modifier = slave_colony
+            owner = {
+                is_memorialist_empire = no
+            }
+        }
+    }
+    convert_to = {
+        building_avb_monument_corp_6
+        building_avb_monument_hive_6
+        building_avb_monument_machine_6
+        building_avb_monument_6
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            trigger = {
+                exists = owner
+            }
+            unity = 6
+            multiplier = owner.trigger:num_ascension_perks
+        }
+        cost = {
+            minerals = @avb_u6_minerals
+            exotic_gases = @avb_u6_rare_cost
+        }
+        upkeep = {
+            minerals = @avb_u6_upkeep
+            exotic_gases = @avb_u6_rare_upkeep
+        }
+    }
+    planet_modifier = {
+        planet_jobs_unity_produces_mult = 0.3
+    }
+    triggered_desc = {
+        text = building_avb_monument_effect_6
+    }
+    prerequisites = {
+        "tech_avb_monument_6"
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        job_death_chronicler_add = @avb_u6_jobs
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = "job_death_chronicler_effect_desc"
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        job_chronicle_drone_add = @avb_u6_jobs
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = "job_chronicle_drone_effect_desc"
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+            OR = {
+                is_planet_class = pc_nuked
+                is_planet_class = pc_relic
+            }
+        }
+        pop_government_ethic_attraction = 0.2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+            OR = {
+                is_planet_class = pc_nuked
+                is_planet_class = pc_relic
+            }
+        }
+        planet_jobs_unity_produces_mult = 0.2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+            OR = {
+                is_planet_class = pc_nuked
+                is_planet_class = pc_relic
+            }
+        }
+        planet_crime_no_happiness_add = -20
+    }
+    show_tech_unlock_if = {
+        is_memorialist_empire = yes
+    }
+}

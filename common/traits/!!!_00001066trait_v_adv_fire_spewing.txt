@@ -1,0 +1,57 @@
+trait_v_adv_fire_spewing = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    potential_crossbreeding_chance = 1
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_v_zoological_transgenesis
+        }
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_aquatic"
+        "trait_v_fire_spewing"
+    }
+    inline_script = "allowed_archetypes/adv_biological_traits/BIOLOGICAL"
+    inline_script = "allowed_archetypes/adv_biological_traits/LITHOID"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/FUN"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/LITHOID"
+    inline_script = "species_class/NECROID"
+    inline_script = "species_class/AQUATIC"
+    inline_script = "species_class/TOX"
+    modifier = {
+        army_morale_damage_mult = 1
+        army_collateral_damage_mult = 1
+    }
+    triggered_planet_growth_habitability_modifier = {
+        potential = {
+            exists = planet
+            OR = {
+                planet = {
+                    is_cold = yes
+                }
+                is_v_pc_radioactive = yes
+            }
+        }
+        pop_environment_tolerance = 0.25
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

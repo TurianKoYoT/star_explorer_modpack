@@ -1,0 +1,49 @@
+building_giga_asteroid_factory_alloys = {
+    inline_script = {
+        script = buildings/asteroid_industry/building_giga_asteroid_factory
+        cap_modifier = building_giga_asteroid_factory_alloys_country_max
+        unlock = "always = yes"
+        modifiers = "
+triggered_planet_modifier = {
+potential = {
+exists = owner
+owner = {
+is_catalytic_empire = no
+}
+solar_system = {
+any_system_megastructure = {
+is_megastructure_type = asteroid_manufactory_alloys
+}
+}
+}
+planet_metallurgists_minerals_upkeep_add = -1
+planet_metallurgists_energy_upkeep_add = 0.5
+}
+triggered_planet_modifier = {
+potential = {
+exists = owner
+owner = {
+is_catalytic_empire = yes
+}
+solar_system = {
+any_system_megastructure = {
+is_megastructure_type = asteroid_manufactory_alloys
+}
+}
+}
+planet_metallurgists_food_upkeep_add = -1.5
+planet_metallurgists_energy_upkeep_add = 0.5
+}
+inline_script = {
+script = planet/alloys/giga_foundry_job_swap
+jobs = @asteroid_industry_job_count
+}
+"
+    }
+    ai_resource_production = {
+        trigger = {
+            has_foundry_designation = yes
+        }
+        ai_unobtainium = 1000
+    }
+}

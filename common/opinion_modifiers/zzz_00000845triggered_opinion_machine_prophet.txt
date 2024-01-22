@@ -1,0 +1,11 @@
+triggered_opinion_machine_prophet = {
+    trigger = {
+        is_machine_empire = yes
+        FROM = {
+            has_ascension_perk = ap_mechanical_prophet
+        }
+    }
+    opinion = {
+        base = 500
+    }
+}

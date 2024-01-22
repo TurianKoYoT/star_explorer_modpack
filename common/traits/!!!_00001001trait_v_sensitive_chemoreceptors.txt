@@ -1,0 +1,30 @@
+trait_v_sensitive_chemoreceptors = {
+    cost = 3
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_v_adv_sensitive_chemoreceptors"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/REP"
+    inline_script = "species_class/ART"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/AQUATIC"
+    modifier = {
+        planet_miners_minerals_produces_add = -1
+        planet_miners_volatile_motes_produces_add = 0.05
+        planet_miners_exotic_gases_produces_add = 0.05
+        planet_miners_rare_crystals_produces_add = 0.05
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

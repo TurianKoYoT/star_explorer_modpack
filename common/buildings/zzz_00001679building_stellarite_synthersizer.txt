@@ -1,0 +1,129 @@
+building_stellarite_synthersizer = {
+    base_buildtime = 900
+    can_build = no
+    category = manufacturing
+    potential = {
+        exists = owner
+        owner = {
+            has_technology = tech_stellarite_synthersizer
+        }
+    }
+    country_modifier = {
+        country_resource_max_acot_sr_dark_energy_add = 15000
+        country_resource_max_sr_dark_matter_add = 15000
+        country_resource_max_aot_sr_runic_power_add = 15000
+        country_resource_max_acot_sr_stellarite_add = 15000
+    }
+    allow = {
+        has_stellarite_capital = yes
+    }
+    prerequisites = {
+        "tech_stellarite_synthersizer"
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 500
+            energy = 500
+            sr_dark_matter = 1500
+            acot_sr_dark_energy = 1500
+        }
+        produces = {
+            sr_dark_matter = 250
+            acot_sr_dark_energy = 250
+            aot_sr_runic_power = 2000
+            acot_sr_stellarite = 500
+        }
+        produces = {
+            trigger = {
+                num_buildings = {
+                    type = building_stellarite_generator
+                    value = 2
+                }
+            }
+            acot_sr_stellarite = 30
+        }
+        produces = {
+            trigger = {
+                num_buildings = {
+                    type = building_stellarite_generator
+                    value = 3
+                }
+            }
+            acot_sr_stellarite = 60
+        }
+        produces = {
+            trigger = {
+                num_buildings = {
+                    type = building_stellarite_generator
+                    value >= 4
+                }
+            }
+            acot_sr_stellarite = 90
+        }
+        produces = {
+            trigger = {
+                num_buildings = {
+                    type = building_stellarite_generator_ae
+                    value = 2
+                }
+            }
+            acot_sr_stellarite = 60
+        }
+        produces = {
+            trigger = {
+                num_buildings = {
+                    type = building_stellarite_generator_ae
+                    value = 3
+                }
+            }
+            acot_sr_stellarite = 120
+        }
+        produces = {
+            trigger = {
+                num_buildings = {
+                    type = building_stellarite_generator_ae
+                    value >= 4
+                }
+            }
+            acot_sr_stellarite = 180
+        }
+        produces = {
+            trigger = {
+                num_buildings = {
+                    type = building_stellarite_generator_lvl3
+                    value = 2
+                }
+            }
+            acot_sr_stellarite = 100
+        }
+        produces = {
+            trigger = {
+                num_buildings = {
+                    type = building_stellarite_generator_lvl3
+                    value = 3
+                }
+            }
+            acot_sr_stellarite = 200
+        }
+        produces = {
+            trigger = {
+                num_buildings = {
+                    type = building_stellarite_generator_lvl3
+                    value >= 4
+                }
+            }
+            acot_sr_stellarite = 300
+        }
+    }
+    ai_weight = {
+        weight = 25000
+    }
+    ai_resource_production = {
+        sr_dark_matter = 100
+        acot_sr_dark_energy = 100
+        trigger = {
+            always = yes
+        }
+    }
+}

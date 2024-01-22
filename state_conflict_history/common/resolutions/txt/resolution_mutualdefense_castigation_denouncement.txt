@@ -1,0 +1,413 @@
+@resolution_weight_normal = 6
+@resolution_cost_denounce = 25
+resolution_mutualdefense_castigation_denouncement = {
+    icon = "GFX_resolution_mutual_defense"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_denounce
+        }
+    }
+    target = yes
+    harmful = yes
+    valid_target = {
+        is_playable = yes
+        NOR = {
+            is_same_value = from
+            has_modifier = resolution_denounced
+        }
+        OR = {
+            is_galactic_community_member = no
+            is_in_breach_of_any = yes
+        }
+        OR = {
+            opinion_level = {
+                who = from
+                level < poor
+            }
+            from = {
+                is_rival = prev
+            }
+            is_in_breach_of_any = yes
+        }
+        OR = {
+            is_galactic_emperor = no
+            imperial_authority <= 100
+        }
+    }
+    effect = {
+        add_modifier = {
+            modifier = resolution_denounced
+            days = 3600
+        }
+        if = {
+            limit = {
+                is_galactic_community_member = no
+            }
+            custom_tooltip = add_sanctions_tooltip
+            hidden_effect = {
+            set_timed_country_flag = {
+                flag = denouncement_cooldown_1
+                years = 20
+            }
+            set_timed_global_flag = {
+                flag = denouncement_cooldown
+                years = 10
+            }
+                switch = {
+                    trigger = is_active_resolution
+                    resolution_sanctions_tech_3 = {
+                        add_modifier = {
+                            modifier = rogue_sanctions_tech
+                            multiplier = 3
+                            days = 3600
+                        }
+                    }
+                    resolution_sanctions_tech_2 = {
+                        add_modifier = {
+                            modifier = rogue_sanctions_tech
+                            multiplier = 2
+                            days = 3600
+                        }
+                    }
+                    resolution_sanctions_tech_1 = {
+                        add_modifier = {
+                            modifier = rogue_sanctions_tech
+                            days = 3600
+                        }
+                    }
+                }
+                switch = {
+                    trigger = is_active_resolution
+                    resolution_sanctions_economic_3 = {
+                        add_modifier = {
+                            modifier = rogue_sanctions_economic
+                            multiplier = 3
+                            days = 3600
+                        }
+                    }
+                    resolution_sanctions_economic_2 = {
+                        add_modifier = {
+                            modifier = rogue_sanctions_economic
+                            multiplier = 2
+                            days = 3600
+                        }
+                    }
+                    resolution_sanctions_economic_1 = {
+                        add_modifier = {
+                            modifier = rogue_sanctions_economic
+                            days = 3600
+                        }
+                    }
+                }
+                switch = {
+                    trigger = is_active_resolution
+                    resolution_sanctions_military_3 = {
+                        add_modifier = {
+                            modifier = rogue_sanctions_military
+                            multiplier = 3
+                            days = 3600
+                        }
+                    }
+                    resolution_sanctions_military_2 = {
+                        add_modifier = {
+                            modifier = rogue_sanctions_military
+                            multiplier = 2
+                            days = 3600
+                        }
+                    }
+                    resolution_sanctions_military_1 = {
+                        add_modifier = {
+                            modifier = rogue_sanctions_military
+                            days = 3600
+                        }
+                    }
+                }
+                switch = {
+                    trigger = is_active_resolution
+                    resolution_sanctions_administrative_3 = {
+                        add_modifier = {
+                            modifier = rogue_sanctions_administrative
+                            multiplier = 3
+                            days = 3600
+                        }
+                    }
+                    resolution_sanctions_administrative_2 = {
+                        add_modifier = {
+                            modifier = rogue_sanctions_administrative
+                            multiplier = 2
+                            days = 3600
+                        }
+                    }
+                    resolution_sanctions_administrative_1 = {
+                        add_modifier = {
+                            modifier = rogue_sanctions_administrative
+                            days = 3600
+                        }
+                    }
+                }
+            }
+        }
+    }
+    potential = {
+        has_federations_dlc = yes
+        OR = {
+            is_active_resolution = "resolution_mutualdefense_castigation_proclamation"
+            is_active_resolution = "resolution_mutualdefense_renegade_containment"
+            is_active_resolution = "resolution_mutualdefense_6"
+        }
+    }
+    allow = {
+        OR = {
+            is_part_of_galactic_council = no
+            AND = {
+                is_part_of_galactic_council = yes
+                has_global_flag = resolution_council_denouncement_abolished
+            }
+        }
+    }
+    ai_weight = {
+        base = @resolution_weight_normal
+        modifier = {
+            factor = 0.25
+            has_global_flag = denouncement_cooldown
+            NOT = {
+                from = {
+                    has_country_flag = denouncement_cooldown_1
+                }
+            }
+            desc = denounced_cooldown_eu
+        }
+        modifier = {
+            factor = 0.5
+            from = {
+                has_country_flag = denouncement_cooldown_1
+            }
+            desc = denounced_cooldown1_eu
+        }
+        modifier = {
+            factor = 0.75
+            FROM = {
+                is_galactic_emperor = yes
+            }
+            imperial_authority >= 75
+            desc = gal_com_target_emperor
+        }
+        modifier = {
+            factor = 0.75
+            FROM = {
+                is_galactic_emperor = yes
+            }
+            imperial_authority >= 50
+            desc = gal_com_target_emperor
+        }
+        modifier = {
+            factor = 0
+            is_same_value = from
+            desc = gal_com_target_is_me
+        }
+        modifier = {
+            factor = 5
+            is_rival = from
+            desc = gal_com_target_is_rival
+        }
+        modifier = {
+            factor = 5
+            is_at_war_with = from
+            desc = gal_com_target_is_rival
+        }
+        modifier = {
+            factor = 5
+            from = {
+                is_homicidal = yes
+            }
+            desc = civic_fanatic_purifiers
+        }
+        modifier = {
+            factor = 3
+            from = {
+                is_civic_machine_assimilator = yes
+            }
+            desc = civic_machine_assimilator
+        }
+        modifier = {
+            factor = 3
+            from = {
+                is_despoiler_empire = yes
+            }
+            desc = civic_barbaric_despoilers
+        }
+        modifier = {
+            factor = 2
+            from = {
+                is_criminal_syndicate = yes
+            }
+            desc = gov_criminal_syndicate
+        }
+        modifier = {
+            factor = 0.2
+            from = {
+                NOR = {
+                    has_country_flag = crisis_sphere_revealed
+                    has_country_flag = cracked_first_star
+                    is_homicidal = yes
+                    is_civic_machine_assimilator = yes
+                    is_despoiler_empire = yes
+                    is_criminal_syndicate = yes
+                    is_in_breach_of_any = yes
+                }
+            }
+            desc = gal_com_target_is_a_normal_empire
+        }
+        modifier = {
+            factor = 0.75
+            from = {
+                is_galactic_community_member = yes
+            }
+            opinion_level = {
+                who = from
+                level > neutral
+            }
+            NOT = {
+                opinion_level = {
+                    who = from
+                    level > good
+                }
+            }
+            desc = good_opinion
+        }
+        modifier = {
+            factor = 0.5
+            from = {
+                is_galactic_community_member = yes
+            }
+            opinion_level = {
+                who = from
+                level > good
+            }
+            desc = excellent_opinion
+        }
+        modifier = {
+            factor = 1.2
+            from = {
+                is_galactic_community_member = yes
+            }
+            from = {
+                NOT = {
+                    is_rival = prev
+                }
+            }
+            opinion_level = {
+                who = from
+                level < neutral
+            }
+            NOT = {
+                opinion_level = {
+                    who = from
+                    level < poor
+                }
+            }
+            desc = bad_opinion
+        }
+        modifier = {
+            factor = 1.5
+            from = {
+                is_galactic_community_member = yes
+            }
+            from = {
+                NOT = {
+                    is_rival = prev
+                }
+            }
+            opinion_level = {
+                who = from
+                level < poor
+            }
+            desc = terrible_opinion
+        }
+        modifier = {
+            factor = 1.5
+            from = {
+                is_galactic_community_member = no
+            }
+            opinion_level = {
+                who = from
+                level < neutral
+            }
+            NOT = {
+                opinion_level = {
+                    who = from
+                    level < poor
+                }
+            }
+            desc = bad_opinion
+        }
+        modifier = {
+            factor = 2
+            from = {
+                is_galactic_community_member = no
+            }
+            opinion_level = {
+                who = from
+                level < poor
+            }
+            desc = terrible_opinion
+        }
+        modifier = {
+            factor = 0.25
+            NOR = {
+                is_galactic_custodian = yes
+                is_galactic_emperor = yes
+            }
+            OR = {
+                any_country = {
+                    is_country_type = awakened_fallen_empire
+                }
+                has_global_flag = war_in_heaven_ongoing
+                any_playable_country = {
+                    has_been_declared_crisis = yes
+                }
+                has_global_flag = marauder_crisis_ongoing
+                has_global_flag = gray_goo_crisis_active
+                any_playable_country = {
+                    has_country_flag = crisis_sphere_revealed
+                }
+                any_neighbor_country = {
+                    is_crisis_faction = yes
+                }
+                any_country = {
+                    is_crisis_faction = yes
+                }
+            }
+            desc = eu_crisis_ongoing_unify
+        }
+        modifier = {
+            factor = 0
+            OR = {
+                is_galactic_custodian = yes
+                is_galactic_emperor = yes
+            }
+            OR = {
+                any_country = {
+                    is_country_type = awakened_fallen_empire
+                }
+                has_global_flag = war_in_heaven_ongoing
+                any_playable_country = {
+                    has_been_declared_crisis = yes
+                }
+                has_global_flag = marauder_crisis_ongoing
+                has_global_flag = gray_goo_crisis_active
+                any_playable_country = {
+                    has_country_flag = crisis_sphere_revealed
+                }
+                any_neighbor_country = {
+                    is_crisis_faction = yes
+                }
+                any_country = {
+                    is_crisis_faction = yes
+                }
+            }
+            desc = eu_crisis_ongoing_unify
+        }
+    }
+}

@@ -1,0 +1,22 @@
+tech_eutab_innate_command = {
+    cost = @tier4cost3
+    area = society
+    tier = 4
+    category = {
+        military_theory
+    }
+    prerequisites = {
+        "tech_eutab_wargame"
+    }
+    weight = @tier4weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_militarist = yes
+        has_ascension_perk = ap_one_vision
+    }
+    gateway = eu_vision
+    modifier = {
+        country_edict_fund_add = 25
+        leader_commanders_cost_mult = -0.33
+    }
+}

@@ -1,0 +1,140 @@
+building_alpha_necrophage_elevation_chamber = {
+    icon = building_chamber_of_elevation_2
+    base_buildtime = 480
+    can_build = no
+    position_priority = 100
+    category = pop_assembly
+    potential = {
+        exists = owner
+        owner = {
+            has_origin = origin_necrophage
+            has_trait = trait_necrophage
+            NOR = {
+                has_valid_civic = civic_fanatic_purifiers
+                has_valid_civic = civic_hive_devouring_swarm
+            }
+        }
+    }
+    allow = {
+        has_ascended_capital = yes
+        hidden_trigger = {
+            if = {
+                limit = {
+                    owner = {
+                        is_ai = yes
+                    }
+                }
+                any_owned_species = {
+                    species_can_be_necrophaged = yes
+                }
+            }
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            owner = {
+                OR = {
+                    NOT = {
+                        has_origin = origin_necrophage
+                    }
+                    NOT = {
+                        has_trait = trait_necrophage
+                    }
+                }
+            }
+            AND = {
+                owner = {
+                    is_ai = yes
+                }
+                NOT = {
+                    any_owned_species = {
+                        species_can_be_necrophaged = yes
+                    }
+                }
+            }
+        }
+    }
+    planet_modifier = {
+        job_necro_apprentice_add = 12
+    }
+    triggered_planet_modifier = {
+        potential = {
+            is_planet_class = pc_hive
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        job_necro_apprentice_add = 8
+    }
+    upgrades = {
+        building_phanon_necrophage_elevation_chamber
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 2000
+            minerals = 2000
+            aot_sr_runic_power = 800
+        }
+        upkeep = {
+            energy = 10
+            sr_dark_matter = 1
+            acot_sr_dark_energy = 1
+        }
+    }
+    prerequisites = {
+        tech_ae_dark_mansion
+    }
+    show_tech_unlock_if = {
+        has_origin = origin_necrophage
+        has_trait = trait_necrophage
+    }
+    triggered_desc = {
+        text = job_necro_apprentice_effect_desc
+        trigger = {
+            exists = owner
+            owner = {
+                is_lithoid_empire = no
+                is_hive_empire = no
+            }
+        }
+    }
+    triggered_desc = {
+        text = job_necro_apprentice_effect_lithoid_desc
+        trigger = {
+            exists = owner
+            owner = {
+                is_lithoid_empire = yes
+                is_hive_empire = no
+            }
+        }
+    }
+    triggered_desc = {
+        text = job_necro_apprentice_effect_hive_desc
+        trigger = {
+            exists = owner
+            owner = {
+                is_lithoid_empire = no
+                is_hive_empire = yes
+            }
+        }
+    }
+    triggered_desc = {
+        text = job_necro_apprentice_effect_hive_lithoid_desc
+        trigger = {
+            exists = owner
+            owner = {
+                is_lithoid_empire = yes
+                is_hive_empire = yes
+            }
+        }
+    }
+    triggered_desc = {
+        text = necrophage_elevation_timer_tooltip
+        trigger = {
+            has_planet_flag = necrophage_elevation_timer
+        }
+    }
+}

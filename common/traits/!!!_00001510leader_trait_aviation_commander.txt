@@ -1,0 +1,29 @@
+leader_trait_aviation_commander = {
+    cost = 1
+    icon = "gfx/interface/icons/traits/leader_traits/leader_trait_aviation_commander.dds"
+    fleet_modifier = {
+        weapon_type_strike_craft_speed_mult = 0.5
+        weapon_type_strike_craft_weapon_fire_rate_mult = 0.2
+        shipsize_battleship_hull_mult = 0.25
+        ship_engagement_range_mult = 0.5
+    }
+    initial = no
+    randomized = no
+    leader_class = {
+        commander
+    }
+    leader_potential_add = {
+        from = {
+            has_technology = tech_strike_craft_3
+            has_technology = tech_battleships
+            is_galactic_community_member = yes
+            has_federation = yes
+            federation = {
+                OR = {
+                    has_federation_law = imperial_ministry_of_defence_strategy_institute
+                    has_federation_law = imperial_ministry_of_defence_joint_headquarter
+                }
+            }
+        }
+    }
+}

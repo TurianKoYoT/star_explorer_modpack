@@ -1,0 +1,63 @@
+district_university_uncapped = {
+    icon = district_university
+    base_buildtime = 700
+    is_capped_by_modifier = no
+    conversion_ratio = 1
+    convert_to = {
+        district_university
+    }
+    show_on_uncolonized = {
+        sartek_arcology_or_relic_world = yes
+        from = {
+            OR = {
+                has_ascension_perk = ap_pyramidal_society
+                has_country_flag = ap_pyramidal_society
+            }
+            is_common_empire = yes
+        }
+    }
+    potential = {
+        sartek_arcology_or_relic_world = yes
+        exists = owner
+        owner = {
+            OR = {
+                has_ascension_perk = ap_pyramidal_society
+                has_country_flag = ap_pyramidal_society
+            }
+            is_common_empire = yes
+        }
+    }
+    allow = {
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = 1000
+        }
+        upkeep = {
+            energy = 4
+        }
+        produces = {
+            society_research = 8
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 10
+        job_director_add = 3
+        job_builder_add = 1
+        job_u_biologist_add = 1
+    }
+    ai_weight = {
+        weight = 2
+    }
+    ai_resource_production = {
+        consumer_goods = 3
+        trigger = {
+            always = yes
+        }
+    }
+}

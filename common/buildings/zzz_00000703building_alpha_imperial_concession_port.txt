@@ -1,0 +1,47 @@
+building_alpha_imperial_concession_port = {
+    icon = building_ae_ancient_palace
+    base_buildtime = 600
+    owner_type = corporate
+    category = government
+    can_build = no
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            OR = {
+                has_modifier = imperial_charter
+                has_civic = civic_galactic_sovereign_megacorp
+            }
+        }
+    }
+    country_modifier = {
+        diplo_weight_economy_mult = 0.25
+    }
+    planet_modifier = {
+        branch_office_value_mult = 1
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            minerals = 200
+            sr_dark_matter = 600
+            acot_sr_dark_energy = 600
+        }
+        produces = {
+            energy = 80
+            sr_dark_matter = 8
+            acot_sr_dark_energy = 8
+        }
+    }
+    prerequisites = {
+        tech_ae_stronghold
+    }
+    show_tech_unlock_if = {
+        is_megacorp = yes
+    }
+    upgrades = {
+        building_phanon_imperial_concession_port
+    }
+    ai_weight = {
+        weight = 100
+    }
+}

@@ -1,0 +1,20 @@
+tech_avb_vultaum_reality_computer_2 = {
+    cost = @tier5cost1
+    area = society
+    category = {
+        archaeostudies
+    }
+    prerequisites = {
+        tech_secrets_vultaum
+    }
+    tier = 5
+    is_rare = yes
+    ai_update_type = all
+    weight = 5
+    potential = {
+        has_ancrel = yes
+    }
+    weight_modifier = {
+        factor = 2
+    }
+}

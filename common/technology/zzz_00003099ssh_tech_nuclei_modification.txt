@@ -1,0 +1,61 @@
+ssh_tech_nuclei_modification = {
+    cost = 40000
+    area = physics
+    tier = 5
+    category = {
+        particles
+    }
+    prerequisites = {
+        "ssh_tech_atomic_manipulation"
+        "tech_zero_point_power"
+    }
+    weight = @tier5weight2
+    is_dangerous = yes
+    prereqfor_desc = {
+        ship = {
+            title = "ssh_tech_nuclei_modification_tooltip"
+        }
+    }
+    modifier = {
+        country_physics_tech_research_speed = 0.05
+    }
+    weight_modifier = {
+        modifier = {
+            factor = @ap_technological_ascendancy_rare_tech
+            has_ascension_perk = ap_technological_ascendancy
+        }
+        modifier = {
+            factor = value:tech_weight_likelihood
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_particles
+            }
+        }
+        modifier = {
+            factor = @federation_perk_factor
+            has_federation = yes
+            federation = {
+                has_federation_perk = rare_tech_boost
+                any_member = {
+                    has_technology = ssh_tech_nuclei_modification
+                }
+            }
+        }
+        modifier = {
+            factor = 0
+            has_utopia = no
+        }
+    }
+    ai_weight = {
+        factor = 5
+        modifier = {
+            factor = value:tech_weight_likelihood
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_particles
+            }
+        }
+        modifier = {
+            factor = 0
+            has_utopia = no
+        }
+    }
+}

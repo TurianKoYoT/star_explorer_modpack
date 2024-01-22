@@ -1,0 +1,28 @@
+xte_official_trait_machinist = {
+    inline_script = {
+        script = trait/xte_icon
+        CLASS = official
+        ICON = GFX_xte_leader_trait_machinist
+        RARITY = xte_positive
+        COUNCIL = no
+        TIER = none
+    }
+    cost = 0
+    randomized = no
+    planet_modifier = {
+        planet_pop_assembly_mult = 0.1
+        planet_pops_robotics_upkeep_mult = -0.05
+        planet_jobs_robotic_produces_mult = 0.05
+    }
+    sector_modifier = {
+        planet_pop_assembly_mult = 0.05
+        planet_pops_robotics_upkeep_mult = -0.025
+        planet_jobs_robotic_produces_mult = 0.025
+    }
+    leader_potential_add = {
+        always = no
+    }
+    leader_class = {
+        official
+    }
+}

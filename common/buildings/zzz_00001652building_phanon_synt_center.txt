@@ -1,0 +1,79 @@
+building_phanon_synt_center = {
+    base_buildtime = 900
+    can_build = no
+    category = government
+    potential = {
+        NOT = {
+            has_global_flag = aot_phanon_content_OFF
+        }
+        exists = owner
+        owner = {
+            has_technology = tech_phanon_synt_center
+        }
+    }
+    planet_modifier = {
+        planet_jobs_specialist_produces_mult = 0.4
+    }
+    upgrades = {
+        building_stellarite_synt_center
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            num_pops >= 50
+        }
+        planet_jobs_specialist_produces_mult = 0.4
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            num_pops >= 100
+        }
+        planet_jobs_specialist_produces_mult = 0.4
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            num_pops >= 150
+        }
+        planet_jobs_specialist_produces_mult = 0.4
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            num_pops >= 200
+        }
+        planet_jobs_specialist_produces_mult = 0.4
+    }
+    allow = {
+        has_phanon_capital = yes
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            engineering_research = 30
+        }
+        cost = {
+            energy = 2000
+            minerals = 2000
+            aot_sr_runic_power = 700
+        }
+        upkeep = {
+            aot_sr_runic_power = 10
+            sr_dark_matter = 3
+            acot_sr_dark_energy = 3
+        }
+    }
+    prerequisites = {
+        tech_phanon_synt_center
+    }
+    ai_weight = {
+        weight = 10000
+        modifier = {
+            factor = 0
+            OR = {
+                has_building = building_phanon_synt_center
+            }
+        }
+    }
+}

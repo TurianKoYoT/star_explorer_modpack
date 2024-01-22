@@ -1,0 +1,29 @@
+trait_v_cyborg_mobility = {
+    cost = 1
+    initial = no
+    species_potential_add = {
+        can_add_cybernetic_traits = yes
+        has_v_immobile_trait = no
+    }
+    species_possible_remove = {
+        can_remove_cybernetic_traits = yes
+    }
+    randomized = no
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    opposites = {
+        "trait_v_flying"
+        "trait_v_elytra"
+        "trait_v_aeroplankton"
+        "trait_v_adv_aeroplankton"
+    }
+    custom_tooltip_with_modifiers = CYBORG_ENERGY_UPKEEP_EFFECT
+    modifier = {
+        pop_growth_from_immigration = 0.3
+        pop_resettlement_cost_mult = -0.5
+        army_disengage_chance_mult = 0.5
+    }
+    slave_cost = {
+        energy = 750
+    }
+}

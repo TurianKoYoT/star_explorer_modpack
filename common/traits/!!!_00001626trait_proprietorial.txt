@@ -1,0 +1,21 @@
+trait_proprietorial = {
+    cost = 3
+    potential_crossbreeding_chance = 0.25
+    opposites = {
+        "trait_territorial"
+        "trait_craven"
+        "trait_cowardly"
+    }
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    modifier = {
+        army_defense_damage_mult = 0.6
+        army_morale = 0.5
+        country_war_exhaustion_mult = -0.1
+    }
+    slave_cost = {
+        energy = 125
+    }
+}

@@ -1,0 +1,40 @@
+ssh_scrap_collector = {
+    category = worker
+    condition_string = WORKER_JOB_TRIGGER
+    building_icon = building_archaeo_refinery
+    clothes_texture_index = 3
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_worker_job
+    resources = {
+        category = planet_jobs
+        produces = {
+            alloys = 5
+            minerals = 7
+            engineering_research = 1
+        }
+    }
+    weight = {
+        weight = @worker_job_weight
+        mult = value:job_weights_modifier|JOB|ssh_scrap_collector|RESOURCE|alloys|
+        modifier = {
+            factor = 0.2
+            has_citizenship_rights = no
+            NOT = {
+                has_trait = trait_mechanical
+            }
+        }
+        modifier = {
+            factor = 0.1
+            can_take_servant_job = yes
+        }
+        modifier = {
+            factor = 7
+            has_job = ssh_scrap_collector
+        }
+    }
+}

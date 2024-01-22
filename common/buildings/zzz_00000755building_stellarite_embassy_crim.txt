@@ -1,0 +1,46 @@
+building_stellarite_embassy_crim = {
+    icon = building_stellarite_embassy
+    base_buildtime = 480
+    owner_type = corporate
+    category = government
+    can_build = no
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            is_criminal_syndicate = yes
+        }
+        has_global_flag = has_aot_mod
+    }
+    allow = {
+        has_upgraded_capital = yes
+    }
+    country_modifier = {
+        spy_network_levels_add = 20
+    }
+    planet_modifier = {
+        job_stellarite_clerk_add = 2
+        pop_government_ethic_attraction = -0.95
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            energy = 6000
+            minerals = 6000
+            acot_sr_stellarite = 1500
+        }
+        upkeep = {
+            energy = 60
+            acot_sr_stellarite = 24
+        }
+    }
+    prerequisites = {
+        tech_stellarite_embassy
+    }
+    show_tech_unlock_if = {
+        is_megacorp = yes
+        is_criminal_syndicate = yes
+    }
+    ai_weight = {
+        weight = 50
+    }
+}

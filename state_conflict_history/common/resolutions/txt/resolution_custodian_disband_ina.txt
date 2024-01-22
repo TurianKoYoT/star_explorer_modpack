@@ -1,0 +1,77 @@
+@resolution_weight_disliked = 4
+@resolution_cost_t3 = 200
+resolution_custodian_disband_ina = {
+    icon = "GFX_resolution_disband_ina"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t3
+        }
+    }
+    target = no
+    modifier = {
+    }
+    effect = {
+        cancel_resolution = "resolution_custodian_ina"
+    }
+    fail_effects = {
+    }
+    potential = {
+        has_nemesis = yes
+        is_active_resolution = "resolution_custodian_ina"
+    }
+    ai_weight = {
+        base = @resolution_weight_disliked
+        modifier = {
+            factor = 1.2
+            is_xenophobe = yes
+            desc = ethic_xenophobe
+        }
+        modifier = {
+            factor = 2
+            is_xenophobic_isolationists = yes
+            desc = gal_com_isolationist_civic
+        }
+        modifier = {
+            factor = 0.8
+            is_xenophile = yes
+            desc = ethic_xenophile
+        }
+        modifier = {
+            factor = 0.4
+            is_erudite_explorers = yes
+            desc = personality_erudite_explorers
+        }
+        modifier = {
+            factor = 0
+            is_galactic_custodian = yes
+            desc = gal_com_is_the_custodian
+        }
+        modifier = {
+            factor = 0.5
+            is_civic_diplomatic_corps = yes
+            desc = gal_com_diplo_civic
+        }
+        modifier = {
+            factor = 0.75
+            OR = {
+                is_militarist = yes
+                is_civic_militarist = yes
+            }
+            desc = ethic_militarist
+        }
+        modifier = {
+            factor = 1.25
+            has_monthly_income = {
+                resource = energy
+                value < 20
+            }
+            desc = gal_com_energy_income
+        }
+        modifier = {
+            factor = 1.5
+            has_deficit = energy
+            desc = gal_com_energy_income
+        }
+    }
+}

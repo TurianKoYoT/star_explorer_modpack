@@ -1,0 +1,22 @@
+tech_point_defense_enig = {
+    area = physics
+    category = {
+        computing
+    }
+    tier = 5
+    cost = @tier5cost1
+    weight = @tier5weight1
+    ai_update_type = military
+    prerequisites = {
+        "tech_pd_tracking_3"
+        "tech_enigmatic_power_core"
+    }
+    potential = {
+        always = no
+        NOT = {
+            has_global_flag = acot_weapons_forbidden
+        }
+    }
+    ai_weight = {
+    }
+}

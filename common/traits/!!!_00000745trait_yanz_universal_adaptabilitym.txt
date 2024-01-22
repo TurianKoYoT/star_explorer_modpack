@@ -1,0 +1,25 @@
+trait_yanz_universal_adaptabilitym = {
+    cost = 6
+    initial = no
+    randomized = no
+    species_potential_add = {
+        from = {
+            has_technology = tech_yanz_synthesis
+        }
+    }
+    potential_crossbreeding_chance = 0.1
+    opposites = {
+    }
+    allowed_archetypes = {
+        ROBOT
+        MACHINE
+    }
+    sorting_priority = 6
+    icon = "gfx/interface/icons/traits/bio_path/trait_yanz_universal_adaptabilitym.dds"
+    modifier = {
+        pop_environment_tolerance = 1
+    }
+    slave_cost = {
+        energy = 600
+    }
+}

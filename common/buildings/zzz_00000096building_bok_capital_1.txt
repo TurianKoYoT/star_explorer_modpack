@@ -1,0 +1,97 @@
+building_bok_capital_1 = {
+    base_buildtime = @b2_time
+    capital = yes
+    can_build = no
+    can_demolish = no
+    can_be_ruined = no
+    can_be_disabled = no
+    position_priority = 0
+    category = government
+    potential = {
+        exists = owner
+        owner = {
+            AND = {
+                has_origin = origin_born_of_knowledge
+                is_machine_empire = yes
+            }
+        }
+        is_capital = yes
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            NOT = {
+                has_origin = origin_born_of_knowledge
+            }
+        }
+    }
+    convert_to = {
+        building_hive_capital
+        building_colony_shelter
+        building_ancient_control_center
+        building_ancient_palace
+    }
+    allow = {
+        num_pops >= 1
+    }
+    prerequisites = {
+        "tech_planetary_government"
+    }
+    planet_modifier = {
+        planet_housing_add = 3
+        planet_amenities_add = 5
+        job_replicator_add = 1
+        job_patrol_drone_add = 1
+        job_maintenance_drone_add = 2
+        planet_max_buildings_add = 1
+        job_core_custodian_add = 2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_civic = civic_machine_assimilator
+            }
+        }
+        modifier = {
+            job_replicator_add = -1
+            job_maintenance_drone_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_technology = tech_capital_productivity_1
+            }
+        }
+        modifier = {
+            planet_jobs_productive_upkeep_mult = 0.1
+            planet_jobs_productive_produces_mult = 0.1
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+        }
+        upkeep = {
+            energy = @b2_upkeep
+        }
+    }
+    upgrades = {
+        building_bok_capital_2
+    }
+    triggered_desc = {
+        text = job_core_custodian_effect_desc
+    }
+    triggered_desc = {
+        text = job_replicator_effect_desc
+    }
+    triggered_desc = {
+        text = job_patrol_drone_effect_desc
+    }
+    triggered_desc = {
+        text = job_maintenance_drone_effect_desc
+    }
+}

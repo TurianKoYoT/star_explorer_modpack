@@ -1,0 +1,25 @@
+leader_trait_defense_war_focus_3 = {
+    veteran_class_locked_trait = yes
+    replace_traits = {
+        "leader_trait_defense_war_focus_2"
+    }
+    inline_script = {
+        script = trait/icon
+        CLASS = official
+        ICON = "GFX_leader_trait_resolution_category_mutualdefense_focus"
+        RARITY = veteran
+        COUNCIL = no
+        TIER = 3
+    }
+    leader_potential_add = {
+        has_paragon_dlc = yes
+    }
+    custom_tooltip = leader_trait_defense_war_focus_3_tt
+    galcom_modifier = {
+        starbase_shipyard_build_speed_mult = 0.1
+        mult = event_target:global_event_country.passed_resolutions_defense_war
+    }
+    leader_class = {
+        official
+    }
+}

@@ -1,0 +1,62 @@
+building_pki_katzen_outpost = {
+    base_buildtime = @b1_time
+    owner_type = subject_holding
+    icon = building_dread_encampment
+    base_cap_amount = 1
+    category = army
+    potential = {
+        owner.overlord = {
+            has_origin = origin_katzen
+        }
+    }
+    resources = {
+        category = planet_holdings
+        cost = {
+            minerals = @b2_minerals
+        }
+        upkeep = {
+            energy = @b2_upkeep
+        }
+    }
+    country_modifier = {
+        defense_armies_add = 2
+        country_naval_cap_mult = 0.05
+    }
+    triggered_planet_modifier = {
+        potential = {
+            planet.owner = {
+                is_gestalt = no
+            }
+        }
+        job_overlord_propagandist_add = 1
+        job_pki_recruiter_per_pop = 0.033
+    }
+    triggered_planet_modifier = {
+        potential = {
+            planet.owner = {
+                is_gestalt = yes
+            }
+        }
+        job_overlord_propagandist_drone_add = 1
+        job_pki_recruiter_drone_per_pop = 0.033
+    }
+    planet_modifier = {
+        monthly_loyalty = -0.5
+    }
+    triggered_desc = {
+        text = job_pki_recruiter_effect_desc
+        trigger = {
+            planet.owner = {
+                is_gestalt = no
+            }
+        }
+    }
+    triggered_desc = {
+        text = job_pki_recruiter_drone_effect_desc
+        trigger = {
+            planet.owner = {
+                is_gestalt = yes
+            }
+        }
+    }
+}

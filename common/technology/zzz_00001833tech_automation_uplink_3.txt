@@ -1,0 +1,19 @@
+tech_automation_uplink_3 = {
+    area = physics
+    cost = @fallentechcost
+    tier = @fallentechtier
+    category = {
+        ascended_technologies
+    }
+    weight = @tier5weight3
+    prerequisites = {
+        "tech_automation_uplink_2"
+    }
+    is_rare = yes
+    potential = {
+        has_country_flag = doa_tech_10
+    }
+    ai_weight = {
+        factor = 4
+    }
+}

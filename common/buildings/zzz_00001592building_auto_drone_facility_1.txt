@@ -1,0 +1,34 @@
+building_auto_drone_facility_1 = {
+    base_buildtime = 180
+    category = pop_assembly
+    resources = {
+        category = planet_buildings
+        cost = {
+            automatic_drone = 200
+        }
+        produces = {
+            automatic_drone = 10
+        }
+        upkeep = {
+            energy = 1
+        }
+    }
+    upgrades = {
+        building_auto_drone_facility_2
+        building_nanite_facility_1
+        building_auto_power_plant_1
+        building_auto_mining_complex_1
+        building_auto_farming_complex_1
+        building_auto_physics_campus_1
+        building_auto_sociological_campus_1
+        building_auto_engineering_campus_1
+    }
+    potential = {
+        owner = {
+            has_ascension_perk = ap_nano_drones
+        }
+    }
+    show_tech_unlock_if = {
+        has_ascension_perk = ap_nano_drones
+    }
+}

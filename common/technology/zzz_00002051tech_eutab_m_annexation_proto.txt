@@ -1,0 +1,21 @@
+tech_eutab_m_annexation_proto = {
+    cost = @tier4cost1
+    area = society
+    tier = 4
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_galactic_campaigns"
+    }
+    weight = @tier4weight1
+    is_custom_tech_1 = yes
+    potential = {
+        is_machine_empire = yes
+        has_ascension_perk = ap_interstellar_dominion
+    }
+    modifier = {
+        planet_colony_development_speed_mult = 0.33
+        country_edict_fund_add = 15
+    }
+}

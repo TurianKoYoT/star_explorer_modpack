@@ -1,0 +1,58 @@
+@buildings_t2 = 2
+@tier_2_capital_defense_armies = 4
+building_hab_major_capital = {
+    base_buildtime = @b2_time
+    capital = yes
+    can_build = no
+    can_demolish = no
+    can_be_ruined = no
+    can_be_disabled = no
+    position_priority = 0
+    icon = building_major_capital
+    category = government
+    potential = {
+        uses_habitat_capitals = yes
+        exists = owner
+        owner = {
+            is_fallen_empire = no
+        }
+    }
+    convert_to = {
+        building_hab_fe_capital
+    }
+    allow = {
+        num_pops >= 10
+    }
+    upgrades = {
+        building_avb_hab_capital_3
+    }
+    resources = {
+        category = planet_buildings_hab_capital
+        cost = {
+            minerals = @b2_minerals
+        }
+        upkeep = {
+            energy = 3
+            alloys = 5
+        }
+        upkeep = {
+            trigger = {
+                owner = {
+                    has_active_tradition = tr_domination_adopt_void
+                }
+            }
+            alloys = -1
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 5
+        planet_amenities_add = 5
+        planet_max_buildings_add = @buildings_t2
+        planet_max_branch_office_buildings_add = 1
+        defense_armies_add = @tier_2_capital_defense_armies
+    }
+    inline_script = {
+        script = capitals/habitat/avb_habitat_capitals
+        tier = hab_t2
+    }
+}

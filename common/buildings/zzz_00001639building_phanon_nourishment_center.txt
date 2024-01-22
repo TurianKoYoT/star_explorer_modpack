@@ -1,0 +1,59 @@
+building_phanon_nourishment_center = {
+    base_buildtime = 900
+    can_demolish = yes
+    can_build = no
+    category = resource
+    potential = {
+        NOT = {
+            has_global_flag = aot_phanon_content_OFF
+        }
+        exists = owner
+        owner = {
+            has_technology = tech_phanon_nourishment_center
+        }
+    }
+    prerequisites = {
+        tech_phanon_nourishment_center
+    }
+    allow = {
+        has_phanon_capital = yes
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 2500
+            minerals = 2500
+            aot_sr_runic_power = 750
+        }
+        produces = {
+            food = @auto_food_pe
+        }
+        upkeep = {
+            energy = 20
+            aot_sr_runic_power = 20
+            sr_dark_matter = 5
+            acot_sr_dark_energy = 5
+        }
+    }
+    upgrades = {
+        building_stellarite_nourishment_center
+    }
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 5
+            owner = {
+                has_monthly_income = {
+                    resource = food
+                    value < 10
+                }
+            }
+        }
+    }
+    ai_resource_production = {
+        food = 10
+        trigger = {
+            always = yes
+        }
+    }
+}

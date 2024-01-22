@@ -1,0 +1,36 @@
+trait_v_biological_immortality = {
+    cost = 5
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 0.5
+    opposites = {
+        "trait_v_mayfly"
+        "trait_enduring"
+        "trait_fleeting"
+        "trait_fleeting_lithoid"
+        "trait_venerable"
+        "trait_v_adv_biological_immortality"
+        "trait_clone_soldier_infertile"
+        "trait_clone_soldier_infertile_full_potential"
+        "trait_vat_grown"
+        "trait_v_reanimation"
+        "trait_v_adv_reanimation"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/ART"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/FUN"
+    inline_script = "species_class/NECROID"
+    inline_script = "species_class/AQUATIC"
+    inline_script = "species_class/LITHOID"
+    immortal_leaders = yes
+    slave_cost = {
+        energy = 5000
+    }
+}

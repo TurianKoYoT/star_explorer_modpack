@@ -1,0 +1,30 @@
+building_curator_archive = {
+    base_buildtime = @b2_time
+    can_build = no
+    can_demolish = yes
+    icon = building_master_archive
+    potential = {
+    }
+    country_modifier = {
+        all_technology_research_speed = 0.1
+        num_tech_alternatives_add = 1
+        add_base_country_intel = 10
+    }
+    planet_modifier = {
+        planet_researchers_minor_artifacts_produces_add = 1
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            physics_research = 100
+            society_research = 100
+            engineering_research = 100
+            minor_artifacts = 6
+        }
+        cost = {
+            minerals = @b2_minerals
+        }
+    }
+    upgrades = {
+    }
+}

@@ -1,0 +1,31 @@
+tech_yanz_life_theory_universal = {
+    area = society
+    start_tech = no
+    cost = @tier5cost3
+    is_rare = yes
+    is_dangerous = yes
+    tier = 3
+    category = {
+        biology
+    }
+    prerequisites = {
+        "tech_yanz_life_theory_civilization"
+    }
+    weight = @tier3weight3
+    potential = {
+        has_civic = "civic_yanz_machine_servitor"
+    }
+    modifier = {
+        planet_bio_trophies_unity_produces_add = 1
+        planet_bio_trophies_society_research_produces_add = 1
+        planet_bio_trophies_physics_research_produces_add = 1
+        planet_bio_trophies_engineering_research_produces_add = 1
+        country_society_research_produces_mult = 0.25
+    }
+    prereqfor_desc = {
+        custom = {
+            title = ""
+            desc = ""
+        }
+    }
+}

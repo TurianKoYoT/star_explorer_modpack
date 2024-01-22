@@ -1,0 +1,187 @@
+@resolution_weight_popular = 6.5
+@resolution_cost_t2 = 150
+@resolution_flag_timer = 360
+resolution_mutualdefense_military_readiness_act = {
+    icon = "GFX_resolution_mutual_defense"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t2
+        }
+    }
+    target = no
+    level = 2
+    modifier = {
+        resolution_mutualdefense_the_readied_shield = 1
+        resolution_mutualdefense_naval_weight = 1
+    }
+    triggered_modifier = {
+        potential = {
+            is_militarist = no
+        }
+        modifier = {
+            militarist_attraction_NGS = 1
+        }
+    }
+    effect = {
+        custom_tooltip = resolution_mutualdefense_military_readiness_act_tooltip
+        hidden_effect = {
+            set_global_flag = resolution_with_breach_effect_passed
+            set_timed_country_flag = {
+                flag = galactic_community_resolution_passed_mutualdefense
+                days = @resolution_flag_timer
+            }
+            set_timed_country_flag = {
+                flag = galcom_resolution_passed_anti_prosperity
+                days = 7200
+            }
+            set_timed_country_flag = {
+                flag = galcom_resolution_passed_anti_isolationist
+                days = 7200
+            }
+            add_modifier = {
+                modifier = resolution_passed_diplomatic_weight
+                days = 2200
+            }
+        }
+    }
+    fail_effects = {
+        hidden_effect = {
+            set_timed_country_flag = {
+                flag = galactic_community_resolution_failed_mutualdefense
+                days = @resolution_flag_timer
+            }
+            add_modifier = {
+                modifier = resolution_failed_diplomatic_weight
+                days = 2200
+            }
+        }
+    }
+    allow = {
+        is_active_resolution = "resolution_mutualdefense_the_readied_shield"
+    }
+    breach = {
+        used_naval_capacity_percent < 0.5
+        is_subject = no
+        NOT = {
+            has_country_flag = constitutional_immunity
+        }
+    }
+    ai_weight = {
+        base = @resolution_weight_popular
+        modifier = {
+            factor = 0.25
+            is_active_resolution = resolution_emperor_pax_galactica
+            NOR = {
+                has_global_flag = war_in_heaven_ongoing
+                any_country = {
+                    OR = {
+                        is_country_type = awakened_fallen_empire
+                        is_country_type = fallen_empire
+                    }
+                }
+                has_global_flag = marauder_crisis_ongoing
+                has_global_flag = gray_goo_crisis_active
+                any_playable_country = {
+                    has_been_declared_crisis = yes
+                }
+                any_playable_country = {
+                    has_country_flag = crisis_sphere_revealed
+                }
+                has_crisis_stage_4 = yes
+                has_crisis_stage_3 = yes
+                has_crisis_stage_2 = yes
+                has_crisis_stage_1 = yes
+                any_neighbor_country = {
+                    is_crisis_faction = yes
+                }
+            }
+            desc = eu_galactic_peace
+        }
+        modifier = {
+            factor = 2
+            has_ethic = ethic_fanatic_militarist
+            desc = ethic_militarist
+        }
+        modifier = {
+            factor = 0
+            desc = gal_com_in_breach_of_proposed_resolution
+            in_breach_of = resolution_mutualdefense_military_readiness_act
+        }
+        modifier = {
+            factor = 1.25
+            OR = {
+                has_valid_civic = civic_citizen_service
+                has_valid_civic = civic_distinguished_admiralty
+                has_valid_civic = civic_warrior_culture
+                has_valid_civic = civic_private_military_companies
+                has_valid_civic = civic_naval_contractors
+                has_valid_civic = civic_hive_subspace_ephapse
+                has_valid_civic = civic_hive_strength_of_legions
+                has_valid_civic = civic_machine_warbots
+            }
+            desc = gal_com_supporting_civics
+        }
+        modifier = {
+            factor = 1.2
+            is_gestalt = yes
+            desc = ethic_gestalt_consciousness
+        }
+        modifier = {
+            factor = 0.75
+            desc = gal_com_ally_in_breach_of_proposed_resolution
+            any_federation_ally = {
+                NOT = {
+                    federation = {
+                        has_federation_type = hegemony_federation
+                    }
+                }
+                in_breach_of = resolution_mutualdefense_military_readiness_act
+            }
+        }
+        modifier = {
+            factor = 0.5
+            is_civic_diplomatic_corps = yes
+            desc = gal_com_diplo_civic
+        }
+        modifier = {
+            factor = 0.5
+            is_civic_free_traders = yes
+            desc = gal_com_trade_civic
+        }
+        modifier = {
+            factor = 0.1
+            used_naval_capacity_percent < 0.5
+            desc = gal_com_low_naval_capacity_percent
+        }
+        modifier = {
+            factor = 1.2
+            OR = {
+                is_at_war = yes
+                has_crisis = yes
+            }
+            desc = gal_com_war
+        }
+        modifier = {
+            factor = 0
+            is_pacifist = yes
+            desc = ethic_pacifist
+        }
+        modifier = {
+            factor = 0.9
+            OR = {
+                has_policy_flag = diplo_stance_cooperative
+                has_policy_flag = diplo_stance_mercantile
+            }
+            desc = gal_com_opposing_policy
+        }
+        modifier = {
+            factor = 1.15
+            OR = {
+                has_policy_flag = diplo_stance_belligerent
+                has_policy_flag = diplo_stance_supremacist
+            }
+            desc = gal_com_supporting_policy
+        }
+    }
+}

@@ -1,0 +1,21 @@
+tech_eutab_one_true_faith = {
+    cost = @tier3cost1
+    area = society
+    tier = 3
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_artificial_moral_codes"
+    }
+    weight = @tier3weight2
+    is_custom_tech_1 = yes
+    potential = {
+        is_spiritualist = yes
+        has_ascension_perk = ap_shared_destiny
+    }
+    modifier = {
+        pop_factions_produces_mult = 0.5
+        planet_priests_consumer_goods_upkeep_mult = -0.1
+    }
+}

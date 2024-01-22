@@ -1,0 +1,28 @@
+tech_avb_temple_4 = {
+    cost = @tier5cost2
+    area = society
+    category = {
+        statecraft
+    }
+    tier = 5
+    prerequisites = {
+        "tech_consecration_fields"
+    }
+    weight = @tier5weight2
+    potential = {
+        OR = {
+            has_ethic = ethic_spiritualist
+            has_ethic = ethic_fanatic_spiritualist
+            AND = {
+                is_gestalt = no
+                has_make_spiritualist_perk = yes
+            }
+        }
+    }
+    weight_modifier = {
+        factor = 4
+    }
+    ai_weight = {
+        factor = 4
+    }
+}

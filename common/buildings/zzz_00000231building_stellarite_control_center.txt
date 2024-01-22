@@ -1,0 +1,117 @@
+building_stellarite_control_center = {
+    base_buildtime = 900
+    capital = yes
+    can_demolish = no
+    can_be_ruined = no
+    can_be_disabled = no
+    position_priority = 0
+    country_modifier = {
+        country_resource_max_add = 30000
+    }
+    category = government
+    upgrades = {
+    }
+    potential = {
+        exists = owner
+        owner = {
+            is_machine_empire = yes
+            has_technology = tech_stellarite_control_center
+        }
+    }
+    convert_to = {
+        building_stellarite_palace
+        building_stellarite_hive_cluster
+    }
+    allow = {
+        num_pops >= 60
+    }
+    prerequisites = {
+        "tech_stellarite_control_center"
+    }
+    show_tech_unlock_if = {
+        is_machine_empire = yes
+    }
+    planet_modifier = {
+        planet_housing_add = 40
+        planet_amenities_add = 40
+        planet_max_districts_add = 4
+        planet_max_buildings_add = 16
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_technology = tech_capital_productivity_1
+            }
+        }
+        modifier = {
+            planet_jobs_upkeep_mult = 0.1
+            planet_jobs_produces_mult = 0.1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_technology = tech_capital_productivity_2
+            }
+        }
+        modifier = {
+            planet_jobs_upkeep_mult = 0.1
+            planet_jobs_produces_mult = 0.1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_technology = tech_capital_productivity_3
+            }
+        }
+        modifier = {
+            planet_jobs_upkeep_mult = 0.1
+            planet_jobs_produces_mult = 0.1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_fallen_machine_empire = no
+            }
+        }
+        modifier = {
+            job_stellarite_overlord_droid_add = 1
+            job_stellarite_overseer_droid_add = 2
+            job_stellarite_enforcer_drone_add = 2
+            job_stellarite_robodrone_add = 1
+        }
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            energy = 80
+            acot_sr_stellarite = 10
+        }
+        cost = {
+            unity = 100
+            energy = 5000
+            minerals = 10000
+            acot_sr_stellarite = 1000
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_fallen_machine_empire = yes
+            }
+        }
+        modifier = {
+            job_fe_guardian_bot_add = 10
+        }
+    }
+    ai_weight = {
+        weight = 100
+    }
+}

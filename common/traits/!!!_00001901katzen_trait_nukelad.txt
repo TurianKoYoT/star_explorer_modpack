@@ -1,0 +1,30 @@
+katzen_trait_nukelad = {
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = "GFX_leader_trait_expertise_propulsion"
+        RARITY = common
+        COUNCIL = no
+        TIER = 1
+    }
+    army_modifier = {
+        army_collateral_damage_mult = 0.5
+        army_damage_mult = 0.5
+    }
+    fleet_modifier = {
+        weapon_type_explosive_weapon_damage_mult = 0.1
+        weapon_type_explosive_weapon_fire_rate_mult = 0.1
+    }
+    fleet_specialization_tag = explosive
+    leader_class = {
+        commander
+    }
+    leader_potential_add = {
+        exists = owner
+        exists = event_target:flusion_primitives_country
+        owner = {
+            is_same_empire = event_target:flusion_primitives_country
+        }
+    }
+    selectable_weight = 1000
+}

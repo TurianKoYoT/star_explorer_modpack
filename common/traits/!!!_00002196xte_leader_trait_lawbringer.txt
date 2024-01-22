@@ -1,0 +1,29 @@
+xte_leader_trait_lawbringer = {
+    inline_script = {
+        script = trait/xte_icon
+        CLASS = leader
+        ICON = GFX_xte_leader_trait_lawbringer
+        RARITY = xte_positive
+        COUNCIL = yes
+        TIER = none
+    }
+    cost = 0
+    randomized = no
+    triggered_councilor_modifier = {
+        potential = {
+            always = yes
+        }
+        piracy_growth_mult = -0.15
+        local_trade_protection_add = 10
+        multiplier = value:xte_anti_stacking_value|LEADER_TRAIT|xte_leader_trait_lawbringer|
+    }
+    custom_tooltip_with_modifiers = xte_councilor_trait_efficiency_notification
+    leader_potential_add = {
+        always = no
+    }
+    leader_class = {
+        commander
+        scientist
+        official
+    }
+}

@@ -1,0 +1,41 @@
+lgate_base = {
+    entity = "gatebuilder_01_gateway_entity"
+    construction_entity = "gateway_portal_entity"
+    construction_blocks_and_blocked_by = self_type
+    portrait = "GFX_megastructure_construction_background"
+    place_entity_on_planet_plane = no
+    show_galactic_map_icon = no
+    show_in_outliner = no
+    bypass_type = lgate
+    build_time = 500
+    entity_offset = {
+        x = 8
+        y = 8
+    }
+    upgrade_from = {
+        lgate_disabled
+    }
+    prerequisites = {
+        "tech_lgate_construction"
+    }
+    potential = {
+        always = no
+    }
+    possible = {
+        custom_tooltip = {
+            fail_text = "requires_tech_lgate_construction"
+            from = {
+                has_technology = tech_lgate_construction
+            }
+        }
+        custom_tooltip = {
+            fail_text = "requires_inside_border"
+            is_inside_border = from
+        }
+    }
+    placement_rules = {
+    }
+    resources = {
+        category = giga_kilostructures
+    }
+}

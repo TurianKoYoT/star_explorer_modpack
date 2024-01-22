@@ -1,0 +1,37 @@
+tech_industrial_ship_3 = {
+    cost = 25000
+    area = engineering
+    tier = 5
+    is_rare = yes
+    is_reverse_engineerable = no
+    category = {
+        voidcraft
+    }
+    prerequisites = {
+        "tech_industrial_ship_2"
+    }
+    potential = {
+        has_ascension_perk = ap_civilian_activities
+    }
+    modifier = {
+        shipsize_civilian_industrial_ship_hull_add = 5000
+    }
+    weight = @tier5weight3
+    weight_modifier = {
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_voidcraft
+            }
+        }
+    }
+    prereqfor_desc = {
+        ship = {
+            title = "TECH_UNLOCK_INDUSTRIAL_SHIP_3"
+            desc = ""
+        }
+    }
+    ai_weight = {
+        factor = 6
+    }
+}

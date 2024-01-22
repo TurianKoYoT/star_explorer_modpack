@@ -1,0 +1,14 @@
+bwm_building_shipwreck_0 = {
+    can_build = no
+    can_demolish = yes
+    icon = "building_bwm_lex_shipwreck"
+    position_priority = 2
+    category = resources
+    potential = {
+    }
+    upgrades = {
+        bwm_building_shipwreck_1
+    }
+    prerequisites = {
+    }
+}

@@ -1,0 +1,26 @@
+trait_v_cyborg_batteries = {
+    cost = 1
+    inline_script = "traits/no_randomized"
+    icon = "gfx/interface/icons/traits/trait_v_machine_batteries.dds"
+    initial = no
+    species_potential_add = {
+        can_add_cybernetic_traits = yes
+    }
+    species_possible_remove = {
+        can_remove_cybernetic_traits = yes
+    }
+    randomized = no
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    opposites = {
+        "trait_v_conductive"
+        "trait_v_adv_conductive"
+    }
+    custom_tooltip_with_modifiers = TRAIT_MACHINE_BATTERIES_EFFECT
+    modifier = {
+        planet_jobs_energy_upkeep_mult = -0.25
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

@@ -1,0 +1,57 @@
+building_katzencaches_stellarite_synthesizer = {
+    base_buildtime = 360
+    can_build = no
+    category = manufacturing
+    potential = {
+        owner = {
+            has_origin = origin_katzen
+        }
+    }
+    prerequisites = {
+        "tech_katzen_rr"
+        "tech_dark_matter_power_core_se"
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 3000
+            minerals = 3000
+            acot_sr_stellarite = 450
+        }
+        produces = {
+            minerals = 1000
+            rare_crystals = 300
+            exotic_gases = 300
+            volatile_motes = 300
+            sr_zro = 300
+            sr_living_metal = 300
+            sr_dark_matter = 300
+            acot_sr_dark_energy = 300
+        }
+        upkeep = {
+            acot_sr_stellarite = 20
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            job_stellarite_transmute_man_add = 6
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_stellarite_transmute_drone_add = 6
+        }
+    }
+}

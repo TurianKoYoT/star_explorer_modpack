@@ -1,0 +1,28 @@
+tech_eutab_sustainable_architecture = {
+    cost = @tier3cost1
+    area = society
+    tier = 3
+    category = {
+        biology
+    }
+    prerequisites = {
+        "tech_food_processing_1"
+        "tech_assembly_pattern"
+    }
+    weight = @tier3weight1
+    is_custom_tech_1 = yes
+    potential = {
+        is_regular_empire = yes
+        has_ascension_perk = ap_arcology_project
+        OR = {
+            has_ascension_perk = ap_mastery_of_nature
+            has_ascension_perk = ap_master_builders
+        }
+    }
+    prereqfor_desc = {
+        custom = {
+            title = EUTAB_HYDROPONICS_UPGRADE_TITLE
+            desc = eutab_not_independant_building
+        }
+    }
+}

@@ -1,0 +1,52 @@
+building_phanon_executive_retreat = {
+    icon = building_phanon_mansion
+    base_buildtime = 600
+    owner_type = corporate
+    category = amenity
+    can_build = no
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            is_ai = no
+        }
+        has_global_flag = has_aot_mod
+        NOT = {
+            has_global_flag = aot_phanon_content_OFF
+        }
+    }
+    allow = {
+        num_pops >= 25
+    }
+    country_modifier = {
+        planet_amenities_mult = 1
+    }
+    planet_modifier = {
+        trade_value_mult = 0.65
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            energy = 2500
+            minerals = 2500
+            aot_sr_runic_power = 600
+        }
+        upkeep = {
+            energy = 80
+            sr_dark_matter = 4
+            acot_sr_dark_energy = 4
+            aot_sr_runic_power = 8
+        }
+    }
+    prerequisites = {
+        tech_phanon_mansion
+    }
+    show_tech_unlock_if = {
+        is_megacorp = yes
+    }
+    upgrades = {
+        building_stellarite_executive_retreat
+    }
+    ai_weight = {
+        factor = 100
+    }
+}

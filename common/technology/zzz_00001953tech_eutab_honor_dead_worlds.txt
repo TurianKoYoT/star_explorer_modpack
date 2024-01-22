@@ -1,0 +1,29 @@
+tech_eutab_honor_dead_worlds = {
+    cost = @tier3cost1
+    area = society
+    tier = 4
+    category = {
+        military_theory
+    }
+    prerequisites = {
+        "tech_artificial_moral_codes"
+    }
+    weight = @tier3weight1
+    is_custom_tech_1 = yes
+    potential = {
+        is_militarist = yes
+        has_ascension_perk = ap_consecrated_worlds
+    }
+    gateway = eu_nihilistic
+    modifier = {
+        army_morale = 1
+        armies_upkeep_mult = -0.33
+        planet_crime_add = -10
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 3
+            has_ethic = ethic_fanatic_militarist
+        }
+    }
+}

@@ -1,0 +1,24 @@
+trait_ult_robot_reconstructor = {
+    cost = 3
+    opposites = {
+        "trait_robot_power_drills"
+    }
+    initial = no
+    species_potential_add = {
+        exists = from
+        from = {
+            OR = {
+                has_technology = tech_ult_super_machine_enhance
+                has_technology = tech_ult_super_robot_enhance
+            }
+        }
+    }
+    allowed_archetypes = {
+        ROBOT
+        MACHINE
+    }
+    modifier = {
+        planet_jobs_minerals_produces_mult = 0.25
+        planet_jobs_alloys_produces_mult = 0.15
+    }
+}

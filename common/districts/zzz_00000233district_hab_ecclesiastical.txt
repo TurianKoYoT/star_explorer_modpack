@@ -1,0 +1,118 @@
+@hab_cost = 500
+@hab_maintenance = 2
+district_hab_ecclesiastical = {
+    base_buildtime = 240
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        sartek_additional_merg_habitats = yes
+        has_planet_flag = culture_habitat
+        from = {
+            is_spiritualist = yes
+        }
+    }
+    potential = {
+        sartek_additional_merg_habitats = yes
+        has_planet_flag = culture_habitat
+        owner = {
+            exists = owner
+            is_spiritualist = yes
+        }
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_hab_administrative
+        district_hab_server
+        district_hab_synapse
+    }
+    resources = {
+        category = planet_districts_hab_culture
+        cost = {
+            minerals = @hab_cost
+        }
+        upkeep = {
+            energy = @hab_maintenance
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 3
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_megacorp = no
+                is_death_cult_empire = no
+            }
+        }
+        modifier = {
+            job_priest_add = 3
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_death_cult_empire = no
+            }
+        }
+        modifier = {
+            job_priest_add = 2
+            job_manager_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_megacorp = no
+                is_death_cult_empire = yes
+            }
+        }
+        modifier = {
+            job_death_priest_add = 1
+            job_mortal_initiate_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_death_cult_empire = yes
+            }
+        }
+        modifier = {
+            job_death_priest_add = 1
+            job_mortal_initiate_add = 1
+            job_manager_add = 1
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_death_cult_empire = no
+            }
+        }
+        text = job_priest_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_death_cult_empire = yes
+            }
+        }
+        text = jobs_death_priest_and_mortal_initiate_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+            }
+        }
+        text = job_manager_effect_desc
+    }
+}

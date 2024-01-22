@@ -1,0 +1,32 @@
+district_acot_phanon_command = {
+    base_buildtime = 20
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        uses_district_set = phanon_vault
+    }
+    allow = {
+        exists = owner
+    }
+    potential = {
+        uses_district_set = phanon_vault
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+        }
+        produces = {
+            energy = 200
+            minerals = 250
+            alloys = 250
+        }
+        upkeep = {
+        }
+    }
+    planet_modifier = {
+        planet_max_buildings_add = 1
+        pop_environment_tolerance = -0.1
+    }
+    ai_weight = {
+        weight = 0
+    }
+}

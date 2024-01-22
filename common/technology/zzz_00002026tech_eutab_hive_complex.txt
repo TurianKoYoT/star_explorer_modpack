@@ -1,0 +1,24 @@
+tech_eutab_hive_complex = {
+    cost = @tier4cost3
+    area = society
+    tier = 4
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_eutab_hivee_research"
+        "tech_unity_of_purpose"
+    }
+    weight = @tier4weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_hive_empire = yes
+    }
+    modifier = {
+        country_government_civic_points_add = 1
+    }
+    weight_modifier = {
+    }
+    ai_weight = {
+    }
+}

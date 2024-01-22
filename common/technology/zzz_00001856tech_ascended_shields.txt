@@ -1,0 +1,19 @@
+tech_ascended_shields = {
+    area = physics
+    cost = 0
+    tier = 0
+    category = {
+        particles
+    }
+    weight = 0
+    potential = {
+        has_country_flag = doa_tech_1
+        has_global_flag = doa_acot_ascension
+    }
+    modifier = {
+        ship_shield_mult = 0.25
+    }
+    ai_weight = {
+        factor = 0
+    }
+}

@@ -1,0 +1,72 @@
+head_of_operations_machine = {
+    category = specialist
+    is_capped_by_modifier = no
+    condition_string = SPECIALIST_JOB_TRIGGER
+    building_icon = building_machine_assembly_complex
+    clothes_texture_index = 1
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+        is_enslaved = no
+    }
+    possible = {
+        is_robot_pop = yes
+        owner = {
+            has_valid_civic = civic_machinarchy
+            has_policy_flag = artificial_aristocracy
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            planet = {
+                has_planet_flag = machinarchy_aa_food
+            }
+        }
+        planet_farmers_food_produces_mult = 0.005
+    }
+    triggered_planet_modifier = {
+        potential = {
+            planet = {
+                has_planet_flag = machinarchy_aa_energy
+            }
+        }
+        planet_technician_energy_produces_mult = 0.005
+    }
+    triggered_planet_modifier = {
+        potential = {
+            planet = {
+                has_planet_flag = machinarchy_aa_minerals
+            }
+        }
+        planet_miners_minerals_produces_mult = 0.005
+    }
+    triggered_planet_modifier = {
+        potential = {
+            planet = {
+                has_planet_flag = machinarchy_aa_alloys
+            }
+        }
+        planet_metallurgists_alloys_produces_mult = 0.0025
+    }
+    triggered_planet_modifier = {
+        potential = {
+            planet = {
+                has_planet_flag = machinarchy_aa_cgs
+            }
+        }
+        planet_artisans_consumer_goods_produces_mult = 0.0025
+    }
+    resources = {
+        category = planet_heads_of_operations
+        produces = {
+        }
+        upkeep = {
+            consumer_goods = 2
+        }
+    }
+    weight = {
+        weight = 6
+    }
+}

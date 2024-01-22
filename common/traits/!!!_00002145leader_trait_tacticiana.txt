@@ -1,0 +1,26 @@
+leader_trait_tacticiana = {
+    cost = 1
+    inline_script = {
+        script = trait/icon
+        CLASS = general
+        ICON = "gfx/interface/icons/traits/leader_traits/leader_trait_tacticiana.dds"
+        RARITY = common
+        COUNCIL = no
+        TIER = none
+    }
+    icon = "gfx/interface/icons/traits/leader_traits/leader_trait_tacticiana.dds"
+    modifier = {
+        army_experience_gain_mult = 0.8
+    }
+    leader_class = {
+        commander
+    }
+    leader_potential_add = {
+        OR = {
+            from = {
+                has_technology = tech_expandable_brain_1
+            }
+            has_global_flag = ap_expandable_brain_1
+        }
+    }
+}

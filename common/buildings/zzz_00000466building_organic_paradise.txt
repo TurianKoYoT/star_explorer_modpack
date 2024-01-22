@@ -1,0 +1,143 @@
+building_organic_paradise = {
+    base_buildtime = @b2_time
+    can_build = no
+    icon = building_paradise_dome
+    category = unity
+    potential = {
+        exists = owner
+        owner = {
+            OR = {
+                has_valid_civic = civic_machine_servitor
+                AND = {
+                    has_z_expanded_mod = yes
+                    OR = {
+                        is_servitor_empire = yes
+                        has_valid_civic = civic_machine_consciousness
+                    }
+                }
+            }
+        }
+        OR = {
+            has_z_expanded_mod = no
+            AND = {
+                has_z_expanded_mod = yes
+                NOT = {
+                    has_planet_flag = planetary_station
+                }
+            }
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            NOR = {
+                has_valid_civic = civic_machine_servitor
+                is_servitor_empire = yes
+                has_valid_civic = civic_machine_consciousness
+            }
+        }
+    }
+    convert_to = {
+        building_paradise_dome
+        building_communal_housing_large
+    }
+    planet_modifier = {
+        job_bio_trophy_add = 20
+        job_artisan_drone_add = 2
+        job_maintenance_drone_add = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+            exists = owner
+            owner = {
+                is_servitor_empire = yes
+            }
+        }
+        modifier = {
+            job_servitor_caretaker_drone_add = 1
+            job_maintenance_drone_add = -1
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            has_z_expanded_mod = yes
+            exists = owner
+            owner = {
+                is_servitor_empire = yes
+            }
+        }
+        text = job_servitor_caretaker_drone_effect_desc
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            exotic_gases = @b2_rare_cost
+        }
+        upkeep = {
+            energy = @b2_upkeep
+            exotic_gases = @b2_rare_upkeep
+        }
+    }
+    triggered_desc = {
+        text = job_bio_trophy_effect_desc
+    }
+    triggered_desc = {
+        text = job_artisan_drone_effect_desc
+    }
+    triggered_desc = {
+        text = job_maintenance_drone_effect_desc
+    }
+    prerequisites = {
+        "tech_paradise_dome"
+    }
+    show_tech_unlock_if = {
+        owner = {
+            OR = {
+                has_valid_civic = civic_machine_servitor
+                is_servitor_empire = yes
+                has_valid_civic = civic_machine_consciousness
+            }
+        }
+    }
+    ai_resource_production = {
+        unity = 20
+        physics_research = 20
+        trigger = {
+            has_unemployed_pop_of_category = bio_trophy
+            planet_resource_compare = {
+                resource = physics_research
+                value >= 100
+                type = produces
+            }
+        }
+    }
+    ai_resource_production = {
+        unity = 20
+        alloys = 20
+        trigger = {
+            has_unemployed_pop_of_category = bio_trophy
+            planet_resource_compare = {
+                resource = alloys
+                value >= 100
+                type = produces
+            }
+        }
+    }
+    ai_resource_production = {
+        unity = 20
+        consumer_goods = 20
+        trigger = {
+            has_unemployed_pop_of_category = bio_trophy
+            planet_resource_compare = {
+                resource = consumer_goods
+                value >= 100
+                type = produces
+            }
+        }
+    }
+    upgrades = {
+        "building_avb_organic_sanctuary_3"
+    }
+}

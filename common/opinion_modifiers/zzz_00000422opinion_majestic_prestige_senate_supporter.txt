@@ -1,0 +1,8 @@
+opinion_majestic_prestige_senate_supporter = {
+    opinion = {
+        base = 15
+    }
+    decay = {
+        base = 1
+    }
+}

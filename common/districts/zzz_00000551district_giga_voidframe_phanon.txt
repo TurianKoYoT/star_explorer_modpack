@@ -1,0 +1,58 @@
+district_giga_voidframe_phanon = {
+    base_buildtime = 630
+    icon = district_macripp_runic_power_generator
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        always = no
+    }
+    potential = {
+        uses_district_set = giga_frameworld
+        is_voidframe_exclusive_de = yes
+        has_phanon_capital = yes
+        exists = owner
+        owner = {
+            has_technology = tech_phanon_stellar_converter
+        }
+    }
+    prerequisites = {
+        tech_phanon_stellar_converter
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_giga_voidframe_phanon_ae
+    }
+    show_tech_unlock_if = {
+        giga_has_frameworld_origin = yes
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            alloys = 1000
+        }
+        upkeep = {
+            energy = 10
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            job_phanon_dimension_folder_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_phanon_dimension_folderdrone_add = 2
+        }
+    }
+}

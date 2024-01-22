@@ -1,0 +1,30 @@
+trait_ult_immortal = {
+    cost = 4
+    opposites = {
+        "trait_venerable"
+        "trait_enduring"
+        "trait_fleeting"
+        "trait_fleeting_lithoid"
+        "trait_robust"
+    }
+    potential_crossbreeding_chance = 1
+    initial = no
+    randomized = no
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_ult_nano_drone_enhance
+        }
+    }
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    modifier = {
+        pop_growth_speed = 0.2
+        planet_jobs_produces_mult = 0.1
+        species_empire_size_mult = -0.1
+        negative_leader_traits_species = -1
+    }
+    immortal_leaders = yes
+}

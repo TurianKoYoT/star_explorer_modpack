@@ -1,0 +1,66 @@
+ssh_cultrobium_foundry = {
+    category = specialist
+    condition_string = SPECIALIST_JOB_TRIGGER
+    building_icon = building_foundry_1
+    clothes_texture_index = 3
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+    }
+    possible_precalc = can_fill_specialist_job
+    possible = {
+        hidden_trigger = {
+            exists = owner
+        }
+    }
+    resources = {
+        category = planet_jobs
+        produces = {
+            sr_cultrobium = 5
+        }
+        upkeep = {
+            minerals = 6
+        }
+        produces = {
+            trigger = {
+                planet = {
+                    has_planet_flag = has_material_requisitorium
+                }
+            }
+            sr_cultrobium = @requisitorium_alloys_reduction
+        }
+        upkeep = {
+            trigger = {
+                planet = {
+                    has_planet_flag = has_material_requisitorium
+                }
+            }
+            minerals = 2
+        }
+    }
+    overlord_resources = {
+        category = planet_jobs
+        produces = {
+            trigger = {
+                planet = {
+                    has_planet_flag = has_material_requisitorium
+                }
+            }
+            sr_cultrobium = @requisitorium_alloys_overlord
+        }
+    }
+    weight = {
+        weight = @specialist_job_weight
+        mult = value:job_weights_modifier|JOB|ssh_cultrobium_foundry|RESOURCE|sr_cultrobium|
+        modifier = {
+            factor = 2
+            is_enslaved = yes
+            can_take_servant_job = no
+        }
+        modifier = {
+            factor = 5
+            has_job = ssh_cultrobium_foundry
+        }
+    }
+}

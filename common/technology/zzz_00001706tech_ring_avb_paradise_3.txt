@@ -1,0 +1,45 @@
+tech_ring_avb_paradise_3 = {
+    icon = tech_ring_avb_organic_paradise
+    cost = @orb_tier4cost3
+    area = society
+    tier = 4
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_ring_avb_paradise_2"
+    }
+    weight = @tier4weight3
+    potential = {
+        exists = owner
+        owner = {
+            has_valid_civic = civic_machine_servitor
+        }
+    }
+    weight_modifier = {
+        factor = 2
+        modifier = {
+            count_owned_planet = {
+                limit = {
+                    orb_paradise_active = yes
+                }
+                count > 2
+            }
+            factor = 5
+        }
+        inline_script = tech_weights/avb_orbital_weight
+    }
+    ai_weight = {
+        factor = 2
+        modifier = {
+            count_owned_planet = {
+                limit = {
+                    orb_paradise_active = yes
+                }
+                count > 2
+            }
+            factor = 5
+        }
+        inline_script = tech_weights/avb_orbital_weight
+    }
+}

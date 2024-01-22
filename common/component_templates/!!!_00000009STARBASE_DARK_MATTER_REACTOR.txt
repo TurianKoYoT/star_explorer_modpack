@@ -1,0 +1,26 @@
+@starbase_power_6 = 4200
+utility_component_template = {
+    key = "STARBASE_DARK_MATTER_REACTOR"
+    size = large
+    icon = "GFX_ship_part_dark_matter_power_core"
+    icon_frame = 1
+    power = @starbase_power_6
+    hidden = yes
+    component_set = "power_core"
+    class_restriction = {
+        shipclass_starbase
+    }
+    size_restriction = {
+        starbase_outpost
+        starbase_starport
+        starbase_starhold
+        starbase_starfortress
+        starbase_citadel
+        orbital_ring_tier_1
+        orbital_ring_tier_2
+        orbital_ring_tier_3
+    }
+    ai_weight = {
+        weight = 0
+    }
+}

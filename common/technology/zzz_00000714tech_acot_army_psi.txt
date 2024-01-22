@@ -1,0 +1,37 @@
+tech_acot_army_psi = {
+    cost = @acot_tier6cost3
+    area = society
+    tier = 6
+    category = {
+        psionics
+    }
+    is_rare = yes
+    prerequisites = {
+        "tech_telepathy"
+        "tech_acot_army_dm"
+    }
+    weight = 20
+    is_reverse_engineerable = no
+    potential = {
+        NOT = {
+            has_ethic = ethic_gestalt_consciousness
+        }
+        NOT = {
+            has_global_flag = acot_army_forbidden
+        }
+        has_ascension_perk = ap_mind_over_matter
+    }
+    weight_modifier = {
+        factor = 1
+    }
+    ai_weight = {
+        factor = 5
+        modifier = {
+            factor = 1.5
+            OR = {
+                has_ethic = ethic_spiritualist
+                has_ethic = ethic_fanatic_spiritualist
+            }
+        }
+    }
+}

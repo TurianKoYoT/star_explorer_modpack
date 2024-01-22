@@ -1,0 +1,8 @@
+bwm_artifact_bomb_1_victim = {
+    opinion = {
+        base = -500
+    }
+    decay = {
+        base = 1
+    }
+}

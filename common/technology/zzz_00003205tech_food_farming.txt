@@ -1,0 +1,17 @@
+tech_food_farming = {
+    cost = @tier5cost1
+    area = society
+    tier = 5
+    category = {
+        statecraft
+    }
+    weight = 0
+    is_rare = yes
+    modifier = {
+        country_base_food_produces_add = 100
+        country_food_produces_mult = 0.25
+    }
+    ai_weight = {
+        factor = 20
+    }
+}

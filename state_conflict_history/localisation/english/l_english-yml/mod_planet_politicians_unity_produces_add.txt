@@ -1,0 +1,2 @@
+l_english:
+ mod_planet_politicians_unity_produces_add:1000 "£unity£ $unity$ from £job_politician£ $job_politician_plural$"

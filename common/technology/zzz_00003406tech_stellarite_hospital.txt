@@ -1,0 +1,42 @@
+tech_stellarite_hospital = {
+    cost = @acot_tier9cost1
+    area = society
+    tier = 9
+    category = {
+        biology
+    }
+    prerequisites = {
+        tech_dark_matter_power_core_se
+        tech_phanon_hospital
+    }
+    weight = @tier5weight1
+    potential = {
+        NOR = {
+            has_global_flag = acot_building_forbidden
+            is_fallen_empire = yes
+        }
+        is_gestalt = no
+        has_technology = tech_dark_matter_power_core_se
+        has_technology = tech_phanon_hospital
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            NOR = {
+                has_technology = tech_mine_exotic_gases
+                has_technology = tech_exotic_gases
+                has_country_flag = has_market_access
+            }
+        }
+        modifier = {
+            factor = 1.25
+            has_tradition = tr_harmony_adopt
+        }
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_biology
+            }
+        }
+    }
+}

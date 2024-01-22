@@ -1,0 +1,14 @@
+leader_trait_general_megumin_oe = {
+    cost = 0
+    icon = "gfx/interface/icons/traits/trait_megumin_oe.dds"
+    initial = no
+    randomized = no
+    leader_class = {
+        general
+    }
+    immortal_leaders = yes
+    modifier = {
+        army_disengage_chance_mult = -2
+        army_collateral_damage_mult = 20
+    }
+}

@@ -1,0 +1,29 @@
+tech_precursor_phanon_design_pe_2 = {
+    area = physics
+    category = {
+        computing
+    }
+    tier = 8
+    cost = @acot_tier9cost3
+    weight = 0
+    ai_update_type = all
+    is_rare = yes
+    is_reverse_engineerable = no
+    potential = {
+        is_fallen_empire = no
+    }
+    modifier = {
+        damage_vs_country_type_acot_phanon_base_mult = 0.3
+        damage_vs_country_type_acot_phanon_retaliator_mult = 0.3
+    }
+    prerequisites = {
+        tech_precursor_phanon_design_pe_1
+    }
+    prereqfor_desc = {
+        hide_prereq_for_desc = component
+        custom = {
+            title = "TECH_UNLOCK_PHANON_PRECURSOR_TITLE"
+            desc = "TECH_UNLOCK_PHANON_PRECURSOR_DESC"
+        }
+    }
+}

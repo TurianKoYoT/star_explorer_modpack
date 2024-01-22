@@ -1,0 +1,60 @@
+namespace = graygoo
+country_event = {
+    id = graygoo.6
+    hide_window = yes
+    fire_only_once = yes
+    is_triggered_only = yes
+    trigger = {
+        is_country_type = guardian_dreadnought
+        has_country_flag = automated_dreadnought_country
+        fromfrom = {
+            is_ship_size = npc_warship_01
+        }
+        from = {
+            is_ai = yes
+            is_nanite_country = yes
+        }
+    }
+    immediate = {
+        destroy_country = yes
+        every_country = {
+            limit = {
+                is_country_type_with_subjects = yes
+                has_modifier = automated_dreadnought_weak_points
+            }
+            remove_modifier = "automated_dreadnought_weak_points"
+        }
+        every_country = {
+            limit = {
+                is_country_type_with_subjects = yes
+                has_event_chain = curator_poi_chain
+                event_target:guardians_dreadnought_system = {
+                    is_point_of_interest = {
+                        id = curator_poi_dreadnought
+                        event_chain = curator_poi_chain
+                        owner = prev
+                    }
+                }
+            }
+            remove_point_of_interest = curator_poi_dreadnought
+            end_curator_chain = yes
+        }
+        from = {
+            add_global_ship_design = "NAME_Type_69"
+            create_ship_design = {
+                design = "NAME_Type_69"
+            }
+            add_ship_design = last_created_design
+        }
+        fromfromfrom = {
+            fleet = {
+                create_ship = {
+                    name = random
+                    design = "NAME_Type_69"
+                    graphical_culture = "npf_01"
+                    upgradable = yes
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,54 @@
+trait_v_adv_filter_feeder = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_v_zoological_transgenesis
+        }
+    }
+    potential_crossbreeding_chance = 0
+    allowed_planet_classes = {
+        pc_ocean
+    }
+    inline_script = "traits/pd_aquatic_allowed_planet_classes"
+    inline_script = "traits/aquatic_pc_restriction"
+    inline_script = "allowed_archetypes/adv_biological_traits/BIOLOGICAL"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/FUN"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/NECROID"
+    inline_script = "species_class/TOX"
+    custom_tooltip = TRAIT_FILTER_FEEDER_EFFECT
+    opposites = {
+        "trait_invasive"
+        "trait_v_filter_feeder"
+    }
+    triggered_pop_modifier = {
+        potential = {
+            exists = planet
+            OR = {
+                planet = {
+                    is_wet = yes
+                }
+                is_v_pc_gaia = yes
+                is_v_pc_hive = yes
+                is_v_pc_radioactive = yes
+            }
+        }
+        planet_pops_organics_food_upkeep_mult = -0.01
+        mult = planet.value:count_v_planet_size
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

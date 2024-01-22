@@ -1,0 +1,119 @@
+@resolution_weight_popular = 6.5
+@resolution_cost_t2 = 150
+@resolution_flag_timer = 360
+resolution_galacticstudies_astral_studies_network = {
+    icon = "GFX_resolution_galactic_studies"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t2
+        }
+    }
+    target = no
+    level = 2
+    modifier = {
+        resolution_galacticstudies_cooperative_research_channels = 1
+        resolution_galacticstudies_astral_studies_network = 1
+    }
+    triggered_modifier = {
+        potential = {
+            is_materialist = no
+        }
+        modifier = {
+            materialist_attraction_NGS = 1
+        }
+    }
+    effect = {
+        custom_tooltip = resolution_galacticstudies_astral_studies_network_tooltip
+        hidden_effect = {
+            set_timed_country_flag = {
+                flag = galactic_community_resolution_passed_galacticstudies
+                days = @resolution_flag_timer
+            }
+            add_modifier = {
+                modifier = resolution_passed_diplomatic_weight
+                days = 2200
+            }
+        }
+    }
+    fail_effects = {
+        hidden_effect = {
+            set_timed_country_flag = {
+                flag = galactic_community_resolution_failed_galacticstudies
+                days = @resolution_flag_timer
+            }
+            add_modifier = {
+                modifier = resolution_failed_diplomatic_weight
+                days = 2200
+            }
+        }
+    }
+    allow = {
+        is_active_resolution = "resolution_galacticstudies_cooperative_research_channels"
+    }
+    ai_weight = {
+        base = @resolution_weight_popular
+        modifier = {
+            factor = 2
+            is_materialist = yes
+            desc = ethic_materialist
+        }
+        modifier = {
+            factor = 2
+            has_origin = origin_shroud_pact
+            desc = origin_shroud_pact
+        }
+        modifier = {
+            factor = 2
+            is_civic_materialist = yes
+            desc = ethic_materialist
+        }
+        modifier = {
+            factor = 1.5
+            OR = {
+                has_valid_civic = civic_merchant_guilds
+                has_valid_civic = civic_philosopher_king
+            }
+            desc = gal_com_supporting_civics
+        }
+        modifier = {
+            factor = 1.5
+            is_gestalt = yes
+            desc = ethic_gestalt_consciousness
+        }
+        modifier = {
+            factor = 0.5
+            is_spiritualist = yes
+            desc = ethic_spiritualist
+            NOT = {
+                has_valid_civic = civic_machine_cult
+            }
+        }
+        modifier = {
+            factor = 0.5
+            has_ethic = ethic_fanatic_spiritualist
+            desc = ethic_spiritualist
+            NOT = {
+                has_valid_civic = civic_machine_cult
+            }
+        }
+        modifier = {
+            factor = 10
+            has_valid_civic = civic_machine_cult
+            desc = civic_machine_cult
+        }
+        modifier = {
+            factor = 0.75
+            has_monthly_income = {
+                resource = consumer_goods
+                value < 20
+            }
+            desc = gal_com_good_income
+        }
+        modifier = {
+            factor = 0
+            has_deficit = consumer_goods
+            desc = gal_com_good_income
+        }
+    }
+}

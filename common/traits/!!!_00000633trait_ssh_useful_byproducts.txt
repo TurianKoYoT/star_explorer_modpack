@@ -1,0 +1,38 @@
+trait_ssh_useful_byproducts = {
+    cost = 4
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    prerequisites = {
+        "ssh_tech_neural_tampering"
+    }
+    potential_crossbreeding_chance = 0.5
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    opposites = {
+        "trait_ssh_useful_byproducts_lithoid"
+        "trait_invasive"
+    }
+    allowed_archetypes = {
+        BIOLOGICAL
+    }
+    modifier = {
+        pop_job_trade_mult = 0.15
+        planet_livestock_food_produces_add = 1.5
+        planet_livestock_minerals_produces_add = 1
+        planet_livestock_rare_crystals_produces_add = 0.2
+        planet_livestock_exotic_gases_produces_add = 0.2
+        planet_livestock_volatile_motes_produces_add = 0.2
+    }
+    icon = "gfx/interface/icons/traits/trait_ssh_useful_byproducts.dds"
+    slave_cost = {
+        energy = 1250
+    }
+}

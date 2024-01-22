@@ -1,0 +1,25 @@
+opinion_illegal_organization = {
+    trigger = {
+        is_galactic_community_member = yes
+    }
+    opinion = {
+        base = 0
+        modifier = {
+            add = -100
+            is_galactic_emperor = yes
+            FROM = {
+                has_federation = yes
+                is_galactic_community_member = no
+            }
+        }
+        modifier = {
+            add = -100
+            is_part_of_galactic_council = yes
+            has_galactic_emperor = yes
+            FROM = {
+                has_federation = yes
+                is_galactic_community_member = no
+            }
+        }
+    }
+}

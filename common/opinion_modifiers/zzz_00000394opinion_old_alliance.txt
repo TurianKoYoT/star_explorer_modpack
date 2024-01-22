@@ -1,0 +1,15 @@
+opinion_old_alliance = {
+    trigger = {
+        OR = {
+            is_galactic_emperor = yes
+        }
+    }
+    opinion = {
+        modifier = {
+            add = 100
+            FROM = {
+                has_origin = origin_old_alliance
+            }
+        }
+    }
+}

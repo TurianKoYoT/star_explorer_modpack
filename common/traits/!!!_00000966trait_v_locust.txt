@@ -1,0 +1,152 @@
+trait_v_locust = {
+    cost = 3
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 0
+    opposites = {
+        "trait_invasive"
+        "trait_lithoid"
+        "trait_v_rockust"
+        "trait_necrophage"
+        "trait_clone_soldier_infertile"
+        "trait_clone_soldier_infertile_full_potential"
+        "trait_vat_grown"
+        "trait_v_asexual_reproduction"
+        "trait_cave_dweller"
+        "trait_lithoid"
+        "trait_v_fossorial"
+        "trait_incubator"
+        "trait_v_life_support"
+        "trait_v_adv_life_support"
+        "trait_noxious"
+    }
+    inline_script = "traits/vanilla_opposites_pop_growth"
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/ART"
+    custom_tooltip = TRAIT_LOCUST_EFFECT
+    triggered_planet_growth_habitability_modifier = {
+        potential = {
+            exists = planet
+            is_v_locust_planet = yes
+            planet = {
+                count_owned_pop = {
+                    limit = {
+                        is_same_species = root
+                    }
+                    count >= planet.value:count_v_locust_trigger
+                }
+            }
+        }
+        pop_growth_speed = 1
+    }
+    triggered_pop_modifier = {
+        potential = {
+            exists = planet
+            is_v_locust_planet = yes
+            planet = {
+                NOT = {
+                    habitability = {
+                        who = root
+                        value = 0
+                    }
+                }
+                count_owned_pop = {
+                    limit = {
+                        is_same_species = root
+                    }
+                    count >= planet.value:count_v_locust_trigger
+                }
+            }
+            owner = {
+                any_situation = {
+                    is_situation_type = situation_food_deficit
+                    current_stage = deficit_first
+                }
+            }
+        }
+        pop_happiness = 0.1
+    }
+    triggered_pop_modifier = {
+        potential = {
+            planet = {
+                NOT = {
+                    habitability = {
+                        who = root
+                        value = 0
+                    }
+                }
+                count_owned_pop = {
+                    limit = {
+                        is_same_species = root
+                    }
+                    count >= planet.value:count_v_locust_trigger
+                }
+            }
+            owner = {
+                any_situation = {
+                    is_situation_type = situation_food_deficit
+                    current_stage = deficit_second
+                }
+            }
+        }
+        pop_happiness = 0.15
+    }
+    triggered_pop_modifier = {
+        potential = {
+            planet = {
+                NOT = {
+                    habitability = {
+                        who = root
+                        value = 0
+                    }
+                }
+                count_owned_pop = {
+                    limit = {
+                        is_same_species = root
+                    }
+                    count >= planet.value:count_v_locust_trigger
+                }
+            }
+            owner = {
+                any_situation = {
+                    is_situation_type = situation_food_deficit
+                    current_stage = deficit_third
+                }
+            }
+        }
+        pop_happiness = 0.2
+    }
+    triggered_pop_modifier = {
+        potential = {
+            planet = {
+                NOT = {
+                    habitability = {
+                        who = root
+                        value = 0
+                    }
+                }
+                count_owned_pop = {
+                    limit = {
+                        is_same_species = root
+                    }
+                    count >= planet.value:count_v_locust_trigger
+                }
+            }
+            owner = {
+                any_situation = {
+                    is_situation_type = situation_food_deficit
+                    current_stage = deficit_fourth
+                }
+            }
+        }
+        pop_happiness = 0.25
+    }
+    slave_cost = {
+        energy = -4000
+    }
+}

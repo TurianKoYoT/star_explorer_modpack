@@ -1,0 +1,31 @@
+trait_ruler_influencer = {
+    councilor_trait = yes
+    inline_script = {
+        script = trait/icon_psionic
+        CLASS = leader
+        ICON = "GFX_leader_trait_influencer"
+        RARITY = common
+        COUNCIL = yes
+        TIER = none
+    }
+    leader_potential_add = {
+        from = {
+            is_gestalt = no
+        }
+        OR = {
+            from = {
+                has_technology = tech_expandable_brain_1
+            }
+            has_global_flag = ap_expandable_brain_1
+        }
+    }
+    modifier = {
+        pop_government_ethic_attraction = 0.44
+    }
+    leader_class = {
+        commander
+        official
+        scientist
+        commander
+    }
+}

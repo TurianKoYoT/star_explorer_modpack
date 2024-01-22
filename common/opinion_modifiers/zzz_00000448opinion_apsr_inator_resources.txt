@@ -1,0 +1,11 @@
+opinion_apsr_inator_resources = {
+    opinion = {
+        base = 1
+    }
+    accumulative = yes
+    max = 100
+    decay = {
+        base = 1
+    }
+    unique = yes
+}

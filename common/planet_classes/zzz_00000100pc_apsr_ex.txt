@@ -1,0 +1,12 @@
+pc_apsr_ex = {
+    entity = "asteroid"
+    asteroid = yes
+    entity_scale = 1.5
+    icon = GFX_planet_type_asteroid
+    spawn_odds = 0
+    extra_orbit_size = 0
+    extra_planet_count = 0
+    chance_of_ring = 0
+    planet_size = 3
+    colonizable = no
+}

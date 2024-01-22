@@ -1,0 +1,23 @@
+tech_point_defense_se = {
+    area = physics
+    category = {
+        computing
+    }
+    tier = 8
+    cost = @acot_tier8cost1
+    weight = 5
+    ai_update_type = military
+    is_reverse_engineerable = no
+    prerequisites = {
+        "tech_dark_matter_power_core_se"
+        "tech_laser_se"
+    }
+    potential = {
+        NOT = {
+            has_global_flag = acot_shipcom_forbidden
+        }
+        has_technology = tech_dark_matter_power_core_se
+    }
+    ai_weight = {
+    }
+}

@@ -1,0 +1,44 @@
+@triumph_duration = 3600
+r_shivkonian_implant = {
+    activation_duration = @triumph_duration
+    portrait = "GFX_shivkonian_implant"
+    sound = "relic_activation_the_omnicodex"
+    resources = {
+        category = relics
+        cost = {
+            unity = 1000
+        }
+    }
+    ai_weight = {
+        weight = 100
+    }
+    triggered_country_modifier = {
+        potential = {
+            always = yes
+        }
+        country_unity_produces_mult = 0.1
+        planet_jobs_energy_produces_mult = 0.05
+    }
+    score = 500
+    active_effect = {
+        custom_tooltip = relic_shivkonian_insight
+        custom_tooltip = relic_triumph_cooldown
+        hidden_effect = {
+            add_modifier = {
+                modifier = "relic_activation_cooldown"
+                days = @triumph_duration
+            }
+            country_event = {
+                id = qfts.46
+            }
+        }
+    }
+    possible = {
+        custom_tooltip = {
+            fail_text = "requires_relic_no_cooldown"
+            NOT = {
+                has_modifier = relic_activation_cooldown
+            }
+        }
+    }
+}

@@ -1,0 +1,54 @@
+ship_section_template = {
+    key = "DOA_BATTLESHIP_MID_L2M4"
+    ship_size = battleship
+    fits_on_slot = mid
+    should_draw_components = yes
+    entity = "battleship_mid_L2M2_entity"
+    icon = "GFX_ship_part_core_mid"
+    ai_tags = {
+        gunship
+    }
+    prerequisites = {
+        tech_doa_ascended_battleship
+    }
+    component_slot = {
+        name = "LARGE_GUN_01"
+        template = "large_turret"
+        locatorname = "large_gun_01"
+    }
+    component_slot = {
+        name = "LARGE_GUN_02"
+        template = "large_turret"
+        locatorname = "large_gun_02"
+    }
+    component_slot = {
+        name = "MEDIUM_GUN_01"
+        template = "medium_turret"
+        locatorname = "medium_gun_01"
+    }
+    component_slot = {
+        name = "MEDIUM_GUN_02"
+        template = "medium_turret"
+        locatorname = "medium_gun_02"
+    }
+    component_slot = {
+        name = "MEDIUM_GUN_03"
+        template = "medium_turret"
+        locatorname = "medium_gun_01"
+    }
+    component_slot = {
+        name = "MEDIUM_GUN_04"
+        template = "medium_turret"
+        locatorname = "medium_gun_02"
+    }
+    large_utility_slots = 4
+    modifier = {
+        ship_hull_add = 500
+    }
+    resources = {
+        category = ship_sections
+        cost = {
+            alloys = 120
+        }
+    }
+}

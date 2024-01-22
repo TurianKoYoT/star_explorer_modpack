@@ -1,0 +1,28 @@
+@lowestCost = 7500
+@lowestTime = 3600
+terraform_link = {
+    from = pc_ll_torrid
+    to = pc_nuked
+    resources = {
+        category = terraforming
+        cost = {
+            energy = @lowestCost
+        }
+    }
+    duration = @lowestTime
+    potential = {
+        has_policy_flag = relentless_industrialists_study
+        has_country_flag = relentless_industrialists_study_completed
+    }
+    condition = {
+        has_technology = tech_climate_restoration
+    }
+    effect = {
+        from = {
+            remove_modifier = lifeless_torrid
+        }
+    }
+    ai_weight = {
+        weight = 10
+    }
+}

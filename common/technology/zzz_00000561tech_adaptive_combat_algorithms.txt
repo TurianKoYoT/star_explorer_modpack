@@ -1,0 +1,23 @@
+tech_adaptive_combat_algorithms = {
+    cost = @tier3cost2
+    area = society
+    tier = 3
+    category = {
+        military_theory
+    }
+    prerequisites = {
+        "tech_assault_armies"
+    }
+    weight = @tier3weight2
+    potential = {
+        has_authority = auth_machine_intelligence
+    }
+    modifier = {
+        army_damage_mult = 0.05
+    }
+    weight_modifier = {
+        factor = 1.5
+    }
+    ai_weight = {
+    }
+}

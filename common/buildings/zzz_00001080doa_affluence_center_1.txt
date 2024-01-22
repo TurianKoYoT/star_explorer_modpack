@@ -1,0 +1,48 @@
+doa_affluence_center_1 = {
+    base_buildtime = @b2_time
+    can_build = no
+    can_demolish = yes
+    category = manufacturing
+    prerequisites = {
+        "tech_affluence_center_1"
+    }
+    potential = {
+        owner = {
+            country_uses_consumer_goods = yes
+        }
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+        }
+    }
+    allow = {
+        OR = {
+            has_building = doa_automation_uplink_1
+            has_building = doa_automation_uplink_2
+            has_building = doa_automation_uplink_3
+        }
+    }
+    resources = {
+        category = planet_doa_automated_industries
+        cost = {
+            minerals = @b2_minerals
+        }
+        produces = {
+            consumer_goods = 50
+        }
+        upkeep = {
+            minerals = 25
+            sr_dark_matter = 1
+        }
+    }
+    upgrades = {
+        doa_affluence_center_2
+    }
+    destroy_trigger = {
+        OR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+        }
+    }
+}

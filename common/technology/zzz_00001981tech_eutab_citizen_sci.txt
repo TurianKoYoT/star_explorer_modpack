@@ -1,0 +1,23 @@
+tech_eutab_citizen_sci = {
+    cost = @tier2cost1
+    area = society
+    tier = 2
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_basic_science_lab_2"
+    }
+    weight = @tier2weight1
+    is_custom_tech_1 = yes
+    potential = {
+        is_materialist = yes
+        has_ascension_perk = ap_one_vision
+    }
+    gateway = eu_vision
+    modifier = {
+        planet_farmers_society_research_produces_add = 1
+        planet_miners_engineering_research_produces_add = 1
+        planet_technician_physics_research_produces_add = 1
+    }
+}

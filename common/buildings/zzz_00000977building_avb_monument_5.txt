@@ -1,0 +1,95 @@
+building_avb_monument_5 = {
+    base_buildtime = @avb_u5_time
+    can_build = no
+    category = unity
+    potential = {
+        exists = owner
+        NOT = {
+            has_modifier = slave_colony
+        }
+        owner = {
+            NOR = {
+                is_gestalt = yes
+                is_megacorp = yes
+                is_memorialist_empire = yes
+            }
+        }
+        OR = {
+            has_z_expanded_mod = no
+            AND = {
+                has_z_expanded_mod = yes
+                NOT = {
+                    has_planet_flag = planetary_station
+                }
+            }
+        }
+    }
+    allow = {
+        has_fully_upgraded_capital = yes
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            has_modifier = slave_colony
+            owner = {
+                OR = {
+                    is_gestalt = yes
+                    is_megacorp = yes
+                    is_memorialist_empire = yes
+                }
+            }
+        }
+    }
+    convert_to = {
+        building_avb_monument_corp_5
+        building_avb_monument_hive_5
+        building_avb_monument_machine_5
+        building_avb_monument_memorial_5
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            trigger = {
+                exists = owner
+            }
+            unity = 5
+            multiplier = owner.trigger:num_ascension_perks
+        }
+        cost = {
+            minerals = @avb_u5_minerals
+        }
+    }
+    planet_modifier = {
+        planet_jobs_unity_produces_mult = 0.25
+        job_culture_worker_add = @avb_u5_jobs
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+            exists = owner
+            owner = {
+                has_valid_civic = civic_ethical_hedonism
+            }
+        }
+        modifier = {
+            job_culture_worker_add = 3
+        }
+    }
+    triggered_desc = {
+        text = building_avb_monument_effect_5
+    }
+    triggered_desc = {
+        text = job_culture_worker_effect_desc
+    }
+    prerequisites = {
+        "tech_avb_monument_5"
+    }
+    show_tech_unlock_if = {
+        is_gestalt = no
+        is_megacorp = no
+        is_memorialist_empire = no
+    }
+    upgrades = {
+        building_avb_monument_6
+    }
+}

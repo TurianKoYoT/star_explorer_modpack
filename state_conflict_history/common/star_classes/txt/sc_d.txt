@@ -1,0 +1,4 @@
+sc_d = {
+    class = sc_empty_space
+    spawn_odds = 0
+}

@@ -1,0 +1,109 @@
+@resolution_weight_unpopular = 5
+@resolution_cost_t3 = 200
+resolution_emperor_repeal_pax_galactica = {
+    icon = "GFX_resolution_repeal_pax_galactica"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t3
+        }
+    }
+    target = no
+    modifier = {
+    }
+    effect = {
+        custom_tooltip = resolution_emperor_repeal_pax_galactica_tooltip
+        hidden_effect = {
+            set_timed_country_flag = {
+                flag = galcom_resolution_passed_anti_prosperity
+                days = 7200
+            }
+            set_timed_country_flag = {
+                flag = galcom_resolution_passed_anti_isolationist
+                days = 7200
+            }
+            cancel_resolution = "resolution_emperor_pax_galactica"
+        }
+    }
+    fail_effects = {
+    }
+    potential = {
+        has_nemesis = yes
+        OR = {
+            is_galactic_emperor = yes
+            has_galactic_republic = yes
+        }
+        is_active_resolution = "resolution_emperor_pax_galactica"
+    }
+    active = {
+        OR = {
+            has_galactic_emperor = yes
+            has_galactic_republic = yes
+        }
+    }
+    ai_weight = {
+        base = @resolution_weight_unpopular
+        modifier = {
+            factor = 0
+            OR = {
+                is_pacifist = yes
+                is_xenophile = yes
+            }
+            desc = ethic_pacifist
+        }
+        modifier = {
+            factor = 0
+            is_civic_diplomatic_corps = yes
+            desc = gal_com_diplo_civic
+        }
+        modifier = {
+            factor = 5
+            is_honorbound_warriors = yes
+            desc = personality_honorbound_warriors
+        }
+        modifier = {
+            factor = 0.5
+            is_galactic_emperor = yes
+            desc = galactic_emperor
+        }
+        modifier = {
+            factor = 2
+            is_militarist = yes
+            is_galactic_emperor = no
+            desc = ethic_militarist
+        }
+        modifier = {
+            factor = 0.8
+            is_erudite_explorers = yes
+            desc = personality_erudite_explorers
+        }
+        modifier = {
+            factor = 0.8
+            is_civic_efficient_bureaucracy = yes
+            desc = gal_com_efficient_civic
+        }
+        modifier = {
+            factor = 0.8
+            is_civic_free_traders = yes
+            desc = gal_com_trade_civic
+        }
+        modifier = {
+            factor = 4
+            OR = {
+                is_militarist = yes
+                is_civic_militarist = yes
+            }
+            desc = ethic_militarist
+        }
+        modifier = {
+            factor = 2
+            is_civic_cutthroat_politics = yes
+            desc = gal_com_cutthroat_civic
+        }
+        modifier = {
+            factor = 0.8
+            has_ai_personality = peaceful_traders
+            desc = gal_com_trader_ai_personality
+        }
+    }
+}

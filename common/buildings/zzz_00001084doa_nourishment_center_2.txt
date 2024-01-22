@@ -1,0 +1,47 @@
+doa_nourishment_center_2 = {
+    base_buildtime = @b3_time
+    can_build = no
+    can_demolish = yes
+    category = resource
+    prerequisites = {
+        "tech_nourishment_center_2"
+    }
+    potential = {
+        owner = {
+            country_uses_food = yes
+        }
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+        }
+    }
+    allow = {
+        OR = {
+            has_building = doa_automation_uplink_2
+            has_building = doa_automation_uplink_3
+        }
+    }
+    resources = {
+        category = planet_doa_automated_industries
+        cost = {
+            minerals = @b3_minerals
+        }
+        produces = {
+            food = 200
+        }
+        upkeep = {
+            energy = 37.5
+            sr_dark_matter = 2
+        }
+    }
+    upgrades = {
+        doa_nourishment_center_3
+    }
+    destroy_trigger = {
+        OR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+        }
+    }
+}

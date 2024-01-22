@@ -1,0 +1,92 @@
+breach_fix_resolution_galacticstudies_ethical_guideline_refactoring = {
+    if = {
+        limit = {
+            OR = {
+                is_active_resolution = "resolution_galacticstudies_ethical_guideline_refactoring"
+                is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
+                is_active_resolution = "resolution_galacticstudies_6"
+            }
+            in_breach_of = resolution_galacticstudies_ethical_guideline_refactoring
+            has_technology = tech_capacity_boosters
+            can_set_policy = {
+                policy = leader_enhancement
+                option = leader_enhancement_capacity_boosters
+            }
+        }
+        set_policy = {
+            policy = leader_enhancement
+            option = leader_enhancement_capacity_boosters
+            cooldown = yes
+        }
+        custom_tooltip = "federations.10110.capacity_boosters"
+    }
+    else_if = {
+        limit = {
+            OR = {
+                is_active_resolution = "resolution_galacticstudies_ethical_guideline_refactoring"
+                is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
+                is_active_resolution = "resolution_galacticstudies_6"
+            }
+            in_breach_of = resolution_galacticstudies_ethical_guideline_refactoring
+            has_technology = tech_selected_lineages
+            NOT = {
+                has_technology = tech_capacity_boosters
+            }
+            can_set_policy = {
+                policy = leader_enhancement
+                option = leader_enhancement_selected_lineages
+            }
+        }
+        set_policy = {
+            policy = leader_enhancement
+            option = leader_enhancement_selected_lineages
+            cooldown = yes
+        }
+        custom_tooltip = "federations.10110.selected_lineages"
+    }
+    else_if = {
+        limit = {
+            has_global_flag = expanded_megastructures_installed
+            OR = {
+                is_active_resolution = "resolution_galacticstudies_ethical_guideline_refactoring"
+                is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
+            }
+            in_breach_of = resolution_galacticstudies_ethical_guideline_refactoring
+            has_technology = tech_capacity_boosters_machine
+            can_set_policy = {
+                policy = leader_enhancement_machine
+                option = leader_enhancement_capacity_boosters_machine
+            }
+        }
+        set_policy = {
+            policy = leader_enhancement_machine
+            option = leader_enhancement_capacity_boosters_machine
+            cooldown = yes
+        }
+        custom_tooltip = "federations.10110.capacity_boosters"
+    }
+    else_if = {
+        limit = {
+            has_global_flag = expanded_megastructures_installed
+            OR = {
+                is_active_resolution = "resolution_galacticstudies_ethical_guideline_refactoring"
+                is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
+            }
+            in_breach_of = resolution_galacticstudies_ethical_guideline_refactoring
+            has_technology = tech_selected_lineages_machine
+            NOT = {
+                has_technology = tech_capacity_boosters_machine
+            }
+            can_set_policy = {
+                policy = leader_enhancement_machine
+                option = leader_enhancement_selected_lineages_machine
+            }
+        }
+        set_policy = {
+            policy = leader_enhancement_machine
+            option = leader_enhancement_selected_lineages_machine
+            cooldown = yes
+        }
+        custom_tooltip = "federations.10110.selected_lineages"
+    }
+}

@@ -1,0 +1,29 @@
+mp_primitive_purifier = {
+    category = worker
+    is_capped_by_modifier = yes
+    building_icon = building_mp_primitive_hunting_grounds
+    clothes_texture_index = 1
+    possible_pre_triggers = {
+        has_owner = yes
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_worker_job
+    possible = {
+        owner = {
+            is_primitive = yes
+            OR = {
+                has_country_flag = purifying_age
+                has_country_flag = late_purifying_age
+            }
+        }
+    }
+    resources = {
+        category = planet_farmers
+        produces = {
+            food = 3
+        }
+    }
+    weight = {
+        weight = 3
+    }
+}

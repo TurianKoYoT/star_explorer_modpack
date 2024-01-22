@@ -1,0 +1,29 @@
+tech_ult_paradise_homeplanet = {
+    area = society
+    cost = 50000
+    tier = 4
+    category = {
+        new_worlds
+    }
+    is_rare = yes
+    prerequisites = {
+        "tech_ult_molecular_manipulation"
+        "tech_ult_control_dark_energy"
+        "tech_ult_nano_drone_colony"
+    }
+    weight = 60
+    modifier = {
+        planet_max_buildings_add = 3
+        planet_building_build_speed_mult = 0.25
+        planet_jobs_upkeep_mult = -0.2
+        empire_size_districts_mult = -0.25
+    }
+    prereqfor_desc = {
+        hide_prereq_for_desc = decision
+        hide_prereq_for_desc = building
+        custom = {
+            title = "TECH_UNLOCK_ULT_UTOPIAN_INFRASTRUCTURE_TITLE"
+            desc = "TECH_UNLOCK_ULT_UTOPIAN_INFRASTRUCTURE_DESC"
+        }
+    }
+}

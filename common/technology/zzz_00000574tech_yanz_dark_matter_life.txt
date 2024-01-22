@@ -1,0 +1,24 @@
+tech_yanz_dark_matter_life = {
+    area = society
+    start_tech = no
+    cost = @tier5cost3
+    is_rare = yes
+    is_dangerous = yes
+    tier = 5
+    category = {
+        biology
+    }
+    prerequisites = {
+        "tech_yanz_quantum_biology"
+    }
+    weight = @tier5weight1
+    potential = {
+        is_gestalt = no
+    }
+    prereqfor_desc = {
+        custom = {
+            title = ""
+            desc = ""
+        }
+    }
+}

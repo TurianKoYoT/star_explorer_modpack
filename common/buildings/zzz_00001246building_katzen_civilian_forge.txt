@@ -1,0 +1,28 @@
+building_katzen_civilian_forge = {
+    base_buildtime = 360
+    category = manufacturing
+    potential = {
+        owner = {
+            pki_is_katzenartig_imperium = yes
+        }
+    }
+    prerequisites = {
+        "tech_katzen_luxuries"
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+        }
+        upkeep = {
+            energy = @b3_upkeep
+        }
+    }
+    inline_script = {
+        script = jobs/factory_add
+        AMOUNT = 6
+    }
+    destroy_trigger = {
+        is_gestalt = yes
+    }
+}

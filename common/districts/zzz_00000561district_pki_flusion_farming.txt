@@ -1,0 +1,107 @@
+district_pki_flusion_farming = {
+    base_buildtime = 480
+    is_capped_by_modifier = no
+    icon = district_flusion_farming
+    show_on_uncolonized = {
+        is_planet_class = pc_pki_flusion_ecu
+        uses_district_set = pki_flusion_ecu
+    }
+    potential = {
+        exists = owner
+        is_planet_class = pc_pki_flusion_ecu
+        uses_district_set = pki_flusion_ecu
+    }
+    allow = {
+        NOT = {
+            has_modifier = resort_colony
+        }
+        NOT = {
+            has_modifier = slave_colony
+        }
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_farming
+    }
+    resources = {
+        category = planet_districts_industrial
+        cost = {
+            minerals = 720
+        }
+        upkeep = {
+            energy = 5
+        }
+    }
+    planet_modifier = {
+        pop_environment_tolerance = 0.2
+    }
+    inline_script = {
+        script = jobs/farmers_add
+        FARMER_AMOUNT = 6
+        ANGLER_AMOUNT = 6
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            job_culture_worker_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                is_hive_empire = yes
+            }
+        }
+        modifier = {
+            job_synapse_drone_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                is_machine_empire = yes
+            }
+        }
+        modifier = {
+            job_evaluator_add = 2
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = job_culture_worker_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                is_hive_empire = yes
+            }
+        }
+        text = job_synapse_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                is_machine_empire = yes
+            }
+        }
+        text = job_evaluator_effect_desc
+    }
+}

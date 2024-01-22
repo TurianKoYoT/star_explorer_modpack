@@ -1,0 +1,21 @@
+tech_avb_engineering_6 = {
+    cost = @avbtier7cost2
+    area = engineering
+    tier = 7
+    category = {
+        industry
+    }
+    prerequisites = {
+        "tech_avb_engineering_5"
+    }
+    weight = @avbtier7weight2
+    modifier = {
+        planet_researchers_engineering_research_produces_mult = 0.2
+    }
+    weight_modifier = {
+        factor = 4
+    }
+    ai_weight = {
+        weight = 10
+    }
+}

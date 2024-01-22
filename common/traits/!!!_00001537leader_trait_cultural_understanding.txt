@@ -1,0 +1,44 @@
+leader_trait_cultural_understanding = {
+    veteran_class_locked_trait = yes
+    inline_script = {
+        script = trait/icon
+        CLASS = official
+        ICON = "GFX_leader_trait_courtroom_training"
+        RARITY = veteran
+        COUNCIL = no
+        TIER = 1
+    }
+    leader_potential_add = {
+        from = {
+            is_galactic_emperor = yes
+        }
+        OR = {
+            has_paragon_dlc = no
+            has_trait = subclass_official_delegate
+        }
+        is_assigned_to_federation = no
+    }
+    custom_tooltip_with_modifiers = "leader_trait_cultural_understanding_1_tooltip"
+    triggered_galcom_modifier = {
+        potential = {
+            owner = {
+                is_galactic_emperor = yes
+            }
+        }
+        country_trust_cap_add = 20
+        envoys_add = 1
+    }
+    leader_class = {
+        official
+    }
+    opposites = {
+        "leader_trait_military_awe"
+        "leader_trait_military_awe_2"
+        "leader_trait_military_awe_3"
+    }
+    selectable_weight = {
+        inline_script = paragon/subclass_free_trait_weight
+        inline_script = paragon/galcom_weight_mult_MECR
+        mult = 2
+    }
+}

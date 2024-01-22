@@ -1,0 +1,30 @@
+tech_acot_army_3 = {
+    cost = @tier3cost2
+    area = society
+    category = {
+        military_theory
+    }
+    tier = 3
+    prerequisites = {
+        "tech_assault_armies"
+    }
+    weight = @tier3weight2
+    potential = {
+        is_regular_empire = yes
+        NOT = {
+            has_global_flag = acot_army_forbidden
+        }
+    }
+    modifier = {
+        army_health = 0.1
+    }
+    weight_modifier = {
+        modifier = {
+            factor = @ap_technological_ascendancy_rare_tech
+            has_ascension_perk = ap_technological_ascendancy
+        }
+    }
+    ai_weight = {
+        factor = 3
+    }
+}

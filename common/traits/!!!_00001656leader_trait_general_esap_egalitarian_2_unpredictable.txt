@@ -1,0 +1,37 @@
+leader_trait_general_esap_egalitarian_2_unpredictable = {
+    cost = 0
+    icon = "gfx/interface/icons/traits/leader_traits/leader_trait_esap_egalitarian_2_unpredictable.dds"
+    sector_modifier = {
+        army_attack_morale_mult = 0.05
+        army_attack_damage_mult = 0.05
+        army_collateral_damage_mult = 0.2
+    }
+    army_modifier = {
+        army_attack_morale_mult = 0.05
+        army_attack_damage_mult = 0.05
+        army_collateral_damage_mult = 0.2
+    }
+    councilor_modifier = {
+        army_attack_morale_mult = 0.15
+        army_attack_damage_mult = 0.15
+        army_collateral_damage_mult = 0.4
+    }
+    leader_potential_add = {
+        from = {
+            has_ascension_perk = ap_esap_egalitarian_2
+        }
+    }
+    leader_class = {
+        commander
+    }
+    initial = no
+    randomized = yes
+    selectable_weight = {
+        weight = @class_trait_weight
+        inline_script = paragon/army_weight_mult
+        inline_script = {
+            script = paragon/subclass_weight_mult
+            SUBCLASS = commander_general
+        }
+    }
+}

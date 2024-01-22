@@ -1,0 +1,25 @@
+tech_eutab_shroud_ministry = {
+    cost = @tier4cost2
+    area = society
+    tier = 4
+    category = {
+        psionics
+    }
+    prerequisites = {
+        "tech_telepathy"
+        "tech_eutab_governors_district"
+    }
+    weight = @tier4weight2
+    is_custom_tech_1 = yes
+    potential = {
+        has_ethic = ethic_fanatic_authoritarian
+        has_ascension_perk = ap_mind_over_matter
+    }
+    gateway = eu_fanatic
+    prereqfor_desc = {
+        custom = {
+            title = EUTAB_INTERIOR_UPGRADE_TITLE
+            desc = eutab_not_independant_building
+        }
+    }
+}

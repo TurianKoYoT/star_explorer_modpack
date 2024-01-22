@@ -1,0 +1,27 @@
+tech_doa_escort = {
+    area = engineering
+    cost = @tier5cost1
+    tier = @fallentechtier
+    category = {
+        ascended_technologies
+    }
+    weight = @tier5weight1
+    potential = {
+        has_technology = tech_doa_ascended_ship_designs
+        NOT = {
+            has_global_flag = doa_acot_ascension
+        }
+    }
+    prereqfor_desc = {
+        custom = {
+            title = "TECH_UNLOCK_ASCENDED_ESCORT_CONSTRUCTION_TITLE"
+            desc = "TECH_UNLOCK_ASCENDED_ESCORT_CONSTRUCTION_DESC"
+        }
+    }
+    prerequisites = {
+        "tech_doa_ascended_ship_designs"
+    }
+    ai_weight = {
+        factor = 100
+    }
+}

@@ -1,0 +1,43 @@
+building_delta_alloy_crim = {
+    icon = building_fe_alloy_forge
+    base_buildtime = 360
+    owner_type = corporate
+    category = manufacturing
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            is_criminal_syndicate = yes
+        }
+    }
+    planet_modifier = {
+        planet_crime_add = 100
+        trade_value_add = 50
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            minerals = 650
+            sr_dark_matter = 50
+        }
+        produces = {
+            alloys = 15
+        }
+        upkeep = {
+            energy = 10
+            sr_dark_matter = 1
+        }
+    }
+    prerequisites = {
+        tech_fe_alloy_foundry
+    }
+    show_tech_unlock_if = {
+        is_megacorp = yes
+        is_criminal_syndicate = yes
+    }
+    upgrades = {
+        building_alpha_alloy_crim
+    }
+    ai_weight = {
+        weight = 5
+    }
+}

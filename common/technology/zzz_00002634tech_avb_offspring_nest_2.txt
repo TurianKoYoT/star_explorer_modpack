@@ -1,0 +1,22 @@
+tech_avb_offspring_nest_2 = {
+    icon = tech_avb_offspring_nest_2
+    cost = @tier4cost1
+    area = society
+    tier = 4
+    category = {
+        biology
+    }
+    prerequisites = {
+        "tech_avb_capital_4"
+    }
+    weight = @tier4weight1
+    potential = {
+        has_origin = origin_progenitor_hive
+    }
+    weight_modifier = {
+        factor = 2
+    }
+    ai_weight = {
+        factor = 5
+    }
+}

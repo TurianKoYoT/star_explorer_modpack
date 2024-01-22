@@ -1,0 +1,21 @@
+tech_avb_space_science_8 = {
+    cost = @avbtier6cost1
+    area = physics
+    tier = 6
+    category = {
+        computing
+    }
+    prerequisites = {
+        "tech_avb_space_science_7"
+    }
+    weight = @avbtier6weight1
+    modifier = {
+        station_researchers_produces_mult = 0.1
+    }
+    weight_modifier = {
+        factor = 4
+    }
+    ai_weight = {
+        factor = 4
+    }
+}

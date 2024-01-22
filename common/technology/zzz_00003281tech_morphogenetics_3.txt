@@ -1,0 +1,89 @@
+tech_morphogenetics_3 = {
+    area = society
+    cost = @tier4cost1
+    tier = 4
+    category = {
+        biology
+    }
+    prerequisites = {
+        "tech_morphogenetics_2"
+    }
+    weight = @tier4weight1
+    gateway = morphogenetics
+    potential = {
+        NOR = {
+            has_authority = auth_machine_intelligence
+            has_civic = civic_fanatic_purifiers
+            has_civic = civic_hive_devouring_swarm
+            has_ethic = ethic_fanatic_xenophobe
+        }
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            OR = {
+                has_authority = auth_machine_intelligence
+                has_civic = civic_fanatic_purifiers
+                has_civic = civic_hive_devouring_swarm
+                has_ethic = ethic_fanatic_xenophobe
+            }
+        }
+        modifier = {
+            factor = 1.25
+            has_technology = tech_neural_implants
+        }
+        modifier = {
+            factor = 1.25
+            has_technology = tech_telepathy
+        }
+        modifier = {
+            factor = 1.25
+            has_technology = tech_neuro_quantum_links
+        }
+        modifier = {
+            factor = 1.5
+            OR = {
+                has_ethic = ethic_xenophile
+                has_ethic = ethic_militarist
+            }
+        }
+        modifier = {
+            factor = 3
+            OR = {
+                has_ethic = ethic_fanatic_xenophile
+                has_ethic = ethic_fanatic_militarist
+            }
+        }
+        modifier = {
+            factor = 0
+            NOR = {
+                any_owned_planet = {
+                    wp_dw_has_remnant_wildlife = yes
+                }
+            }
+        }
+    }
+    ai_weight = {
+        modifier = {
+            factor = 0
+            OR = {
+                has_authority = auth_machine_intelligence
+                has_civic = civic_fanatic_purifiers
+                has_civic = civic_hive_devouring_swarm
+                has_ethic = ethic_fanatic_xenophobe
+            }
+        }
+        modifier = {
+            factor = 0
+            NOR = {
+                any_owned_planet = {
+                    wp_dw_has_remnant_wildlife = yes
+                }
+            }
+        }
+        modifier = {
+            factor = 0
+            num_owned_planets < 2
+        }
+    }
+}

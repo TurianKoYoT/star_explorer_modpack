@@ -1,0 +1,27 @@
+acot_techno_pirate = {
+    share_communications = no
+    is_space_critter = no
+    default_ships = no
+    government = no
+    observable = no
+    uses_origins = no
+    needs_survey = no
+    orbital_bombardment = yes
+    ai = {
+        enabled = no
+    }
+    faction = {
+        hostile = no
+        needs_border_access = no
+        generate_borders = no
+        needs_colony = no
+        space_creatures = no
+    }
+    modules = {
+        exclusive_diplomacy_module = {
+            contact_rule = on_action_only
+        }
+        basic_technology_module = {
+        }
+    }
+}

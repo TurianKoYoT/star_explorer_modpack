@@ -1,0 +1,22 @@
+building_auto_power_plant_3 = {
+    base_buildtime = 180
+    can_build = no
+    resources = {
+        category = planet_technician
+        cost = {
+            automatic_drone = 200
+        }
+        produces = {
+            energy = 15
+        }
+        upkeep = {
+            automatic_drone = 3
+        }
+    }
+    upgrades = {
+        building_auto_power_plant_4
+    }
+    prerequisites = {
+        tech_power_plant_3
+    }
+}

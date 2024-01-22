@@ -1,0 +1,15 @@
+tech_ult_phase_railgun = {
+    area = engineering
+    cost = 20000
+    tier = 4
+    category = {
+        propulsion
+    }
+    is_rare = yes
+    is_reverse_engineerable = no
+    prerequisites = {
+        "tech_ult_beyond_dimension"
+        "tech_mass_drivers_5"
+    }
+    weight = 20
+}

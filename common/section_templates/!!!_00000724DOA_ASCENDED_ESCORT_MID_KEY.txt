@@ -1,0 +1,52 @@
+ship_section_template = {
+    key = "DOA_ASCENDED_ESCORT_MID_KEY"
+    ship_size = doa_escort
+    fits_on_slot = mid
+    should_draw_components = yes
+    entity = "doa_escort_stern_entity"
+    icon = "GFX_ship_part_core_mid"
+    ai_tags = {
+        explosive
+        explosive_stealth
+        screen
+        gunship
+    }
+    prerequisites = {
+        tech_doa_ascended_escort
+    }
+    component_slot = {
+        name = "SMALL_GUN_01"
+        template = "invisible_small_turret"
+        locatorname = "medium_gun_01"
+    }
+    component_slot = {
+        name = "SMALL_GUN_02"
+        template = "invisible_small_turret"
+        locatorname = "medium_gun_02"
+    }
+    component_slot = {
+        name = "SMALL_GUN_03"
+        template = "invisible_small_turret"
+        locatorname = "medium_gun_01"
+    }
+    component_slot = {
+        name = "SMALL_GUN_04"
+        template = "invisible_small_turret"
+        locatorname = "medium_gun_02"
+    }
+    component_slot = {
+        name = "SMALL_GUN_05"
+        template = "invisible_small_turret"
+        locatorname = "medium_gun_02"
+    }
+    medium_utility_slots = 4
+    modifier = {
+        ship_hull_add = 150
+    }
+    resources = {
+        category = ship_sections
+        cost = {
+            alloys = 40
+        }
+    }
+}

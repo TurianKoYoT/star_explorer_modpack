@@ -1,0 +1,47 @@
+tech_phanon_sky_dome = {
+    cost = @acot_tier8cost3
+    area = society
+    tier = 8
+    is_rare = yes
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        tech_aot_ae_sky_dome
+        tech_civil_phanon_application
+        tech_dm_production_core
+    }
+    weight = @tier5weight1
+    potential = {
+        NOR = {
+            has_global_flag = aot_phanon_content_OFF
+            is_fallen_empire = yes
+        }
+        has_technology = tech_civil_phanon_application
+        has_technology = tech_aot_ae_sky_dome
+        has_technology = tech_dm_production_core
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 10
+            OR = {
+                has_technology = tech_mine_rare_crystals
+                has_technology = tech_rare_crystals
+            }
+        }
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_statecraft
+            }
+        }
+    }
+    ai_weight = {
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_statecraft
+            }
+        }
+    }
+}

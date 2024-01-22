@@ -1,0 +1,35 @@
+joins_overlord_wars_none = {
+    term = joins_overlord_wars
+    activate_effect = {
+        set_rule_join_overlord_wars = none
+    }
+    deactivate_effect = {
+        set_rule_join_overlord_wars = none
+    }
+    possible = {
+        custom_tooltip = {
+            fail_text = not_allowed_for_bulwark
+            NOT = {
+                agreement_preset = preset_bulwark
+            }
+        }
+        custom_tooltip = {
+            fail_text = not_allowed_for_subsidiary
+            NOT = {
+                agreement_preset = preset_subsidiary
+            }
+        }
+        custom_tooltip = {
+            fail_text = not_allowed_for_katzen_protektorat
+            NOT = {
+                OR = {
+                    agreement_preset = preset_katzen
+                    agreement_preset = preset_katzen_gestalt
+                }
+            }
+        }
+    }
+    potential = {
+        is_imperial_province_agreement = no
+    }
+}

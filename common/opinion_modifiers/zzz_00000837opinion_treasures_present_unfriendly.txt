@@ -1,0 +1,9 @@
+opinion_treasures_present_unfriendly = {
+    opinion = {
+        base = 50
+    }
+    accumulative = yes
+    decay = {
+        base = 2
+    }
+}

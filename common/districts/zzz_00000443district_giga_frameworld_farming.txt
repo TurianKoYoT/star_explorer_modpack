@@ -1,0 +1,156 @@
+@base_cost = 300
+@base_upkeep = 1
+@base_time = 240
+district_giga_frameworld_farming = {
+    base_buildtime = @base_time
+    icon = district_farming
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        uses_district_set = giga_frameworld
+        is_voidframe_upgraded = no
+    }
+    potential = {
+        uses_district_set = giga_frameworld
+        OR = {
+            is_voidframe_upgraded = no
+            AND = {
+                NOR = {
+                    has_building = building_fe_food_processing_complex
+                    has_building = building_ae_food_processing_complex
+                    has_building = building_phanon_food_processing_complex
+                    has_building = building_stellarite_food_processing_complex
+                }
+                is_voidframe_upgraded = yes
+            }
+        }
+    }
+    prerequisites = {
+        tech_industrial_farming
+    }
+    show_tech_unlock_if = {
+        giga_has_frameworld_origin = yes
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_giga_frameworld_farming
+        district_giga_voidframe_farming_dm
+        district_giga_voidframe_farming_de
+        district_giga_voidframe_farming_pe
+        district_giga_voidframe_farming_se
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = @base_cost
+        }
+        upkeep = {
+            energy = @base_upkeep
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_valid_civic = civic_agrarian_idyll
+            }
+        }
+        modifier = {
+            planet_housing_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_technology = tech_housing_agrarian_idyll
+                has_valid_civic = civic_agrarian_idyll
+            }
+        }
+        modifier = {
+            planet_housing_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        modifier = {
+            job_agri_drone_add = 3
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        modifier = {
+            job_agri_drone_add = 2
+            planet_housing_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        modifier = {
+            job_farmer_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_fallen_empire_spiritualist = yes
+            }
+        }
+        modifier = {
+            job_fe_acolyte_farm_add = 2
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_agri_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        text = job_farmer_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_fallen_empire_spiritualist = yes
+            }
+        }
+        text = job_fe_acolyte_farm_effect_desc
+    }
+    ai_resource_production = {
+        food = 1
+        trigger = {
+            always = yes
+        }
+    }
+}

@@ -1,0 +1,58 @@
+trait_v_adv_silken_birth = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_v_zoological_transgenesis
+        }
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/adv_biological_traits/BIOLOGICAL"
+    inline_script = "allowed_archetypes/adv_biological_traits/LITHOID"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/REP"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/FUN"
+    inline_script = "species_class/LITHOID"
+    inline_script = "species_class/NECROID"
+    inline_script = "species_class/AQUATIC"
+    inline_script = "species_class/TOX"
+    opposites = {
+        "trait_hive_mind"
+        "trait_invasive"
+        "trait_v_iron_shell"
+        "trait_v_adv_iron_shell"
+        "trait_v_silken_birth"
+        "trait_v_explosive_birth"
+        "trait_v_adv_explosive_birth"
+        "trait_clone_soldier_infertile"
+        "trait_clone_soldier_infertile_full_potential"
+        "trait_vat_grown"
+    }
+    custom_tooltip = TRAIT_SILK_EFFECT
+    modifier = {
+        planet_livestock_consumer_goods_produces_add = 1
+    }
+    growing_modifier = {
+        planet_artisans_consumer_goods_produces_add = 0.5
+    }
+    assembling_modifier = {
+        planet_artisans_consumer_goods_produces_add = 0.5
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

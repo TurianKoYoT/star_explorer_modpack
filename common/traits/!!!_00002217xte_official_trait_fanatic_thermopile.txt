@@ -1,0 +1,30 @@
+xte_official_trait_fanatic_thermopile = {
+    inline_script = {
+        script = trait/xte_icon
+        CLASS = official
+        ICON = GFX_xte_leader_trait_fanatic_thermopile
+        RARITY = xte_positive
+        COUNCIL = no
+        TIER = none
+    }
+    cost = 0
+    randomized = no
+    planet_modifier = {
+        planet_buildings_cost_mult = 0.2
+        planet_districts_cost_mult = 0.2
+        planet_buildings_energy_upkeep_mult = -0.33
+        planet_districts_energy_upkeep_mult = -0.33
+    }
+    sector_modifier = {
+        planet_buildings_cost_mult = 0.1
+        planet_districts_cost_mult = 0.1
+        planet_buildings_energy_upkeep_mult = -0.15
+        planet_districts_energy_upkeep_mult = -0.15
+    }
+    leader_potential_add = {
+        always = no
+    }
+    leader_class = {
+        official
+    }
+}

@@ -1,0 +1,22 @@
+leader_trait_AAA_inspiring_presence = {
+    cost = 0
+    inline_script = {
+        script = trait/icon
+        CLASS = scientist
+        ICON = "GFX_leader_trait_champion_of_the_people"
+        RARITY = paragon
+        COUNCIL = no
+        TIER = none
+    }
+    planet_modifier = {
+        planet_researchers_unity_produces_add = 3
+    }
+    sector_modifier = {
+        planet_researchers_unity_produces_add = 1.5
+    }
+    leader_class = {
+        scientist
+    }
+    initial = no
+    randomized = no
+}

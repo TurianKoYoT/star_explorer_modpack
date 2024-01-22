@@ -1,0 +1,36 @@
+trait_v_hive_epigenetic_castes = {
+    cost = 3
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = yes
+        }
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    allowed_ethics = {
+        ethic_gestalt_consciousness
+    }
+    valid_for_all_ethics = no
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    custom_tooltip = TRAIT_EPIGENETIC_CASTES_EFFECT
+    opposites = {
+        "trait_invasive"
+        "trait_v_adv_hive_epigenetic_castes"
+        "trait_v_reanimation"
+        "trait_v_adv_reanimation"
+        "trait_v_explosive_autothysis"
+        "trait_v_adv_explosive_autothysis"
+        "trait_v_living_reactors"
+        "trait_v_adv_living_reactors"
+    }
+    slave_cost = {
+        energy = 3000
+    }
+}

@@ -1,0 +1,41 @@
+tech_avb_basic_science_lab_6 = {
+    area = physics
+    category = {
+        computing
+    }
+    tier = 6
+    cost = @avbtier6cost1
+    prerequisites = {
+        "tech_avb_basic_science_lab_5"
+        "tech_avb_capital_5"
+    }
+    weight = @avbtier6weight1
+    weight_modifier = {
+        factor = 2
+        modifier = {
+            factor = 2
+            is_materialist = yes
+        }
+        modifier = {
+            factor = 2.5
+            is_fanatic_materialist = yes
+        }
+        modifier = {
+            factor = 1.5
+            OR = {
+                has_civic = civic_technocracy
+                AND = {
+                    has_global_flag = ethic_civic_classic_active
+                    OR = {
+                        has_civic = civic_cyber_dictatorship
+                        has_civic = civic_science_directorate
+                        has_civic = civic_cyber_demos_cratos
+                    }
+                }
+            }
+        }
+    }
+    ai_weight = {
+        factor = 4
+    }
+}

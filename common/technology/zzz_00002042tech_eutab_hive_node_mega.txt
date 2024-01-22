@@ -1,0 +1,25 @@
+tech_eutab_hive_node_mega = {
+    cost = @tier3cost2
+    area = engineering
+    tier = 3
+    category = {
+        materials
+    }
+    prerequisites = {
+        "tech_eutab_hive_alpha_node"
+    }
+    weight = @tier3weight2
+    is_custom_tech_1 = yes
+    potential = {
+        is_hive_empire = yes
+        has_ascension_perk = ap_eutab_mind_matter
+        OR = {
+            has_ascension_perk = ap_voidborn
+            has_ascension_perk = ap_master_builders
+            has_galactic_wonders = yes
+        }
+    }
+    ai_weight = {
+        factor = 25
+    }
+}

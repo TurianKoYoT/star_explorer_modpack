@@ -1,0 +1,51 @@
+building_stellarite_clone_vats = {
+    base_buildtime = 900
+    can_build = no
+    category = pop_assembly
+    potential = {
+        exists = owner
+        owner = {
+            has_technology = tech_stellarite_clone_vats
+        }
+    }
+    prerequisites = {
+        tech_stellarite_clone_vats
+    }
+    allow = {
+        has_stellarite_capital = yes
+    }
+    show_tech_unlock_if = {
+        owner = {
+            has_tradition = tr_genetics_efficient_cloning
+        }
+    }
+    inline_script = {
+        script = buildings/clone_vats_and_evochambers
+        POP_GROWTH = 1.25
+        POP_ASSEMBLY = 15
+        POP_ASSEMBLY_GENETIC_TRADITION = 7.5
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            food = 200
+        }
+        cost = {
+            energy = 4000
+            minerals = 4000
+            acot_sr_stellarite = 1000
+        }
+        upkeep = {
+            acot_sr_stellarite = 20
+        }
+    }
+    ai_weight = {
+        weight = 100
+        modifier = {
+            factor = 0
+            OR = {
+                has_building = building_stellarite_clone_vats
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+bwm_building_nano_forge = {
+    base_buildtime = 480
+    can_build = no
+    can_demolish = yes
+    icon = building_nano_forge
+    position_priority = 2
+    category = resources
+    potential = {
+        has_building = "bwm_building_ancient_monolith_3"
+    }
+    planet_modifier = {
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 1000
+        }
+        produces = {
+            alloys = 25
+        }
+        upkeep = {
+            minerals = 50
+            energy = 10
+        }
+    }
+    upgrades = {
+    }
+}

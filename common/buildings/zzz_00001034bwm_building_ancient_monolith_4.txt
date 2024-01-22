@@ -1,0 +1,21 @@
+bwm_building_ancient_monolith_4 = {
+    can_build = no
+    can_demolish = yes
+    icon = "building_bwm_lex_ring_monolith"
+    position_priority = 1
+    category = government
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 10000
+        }
+    }
+    potential = {
+        has_planet_flag = "bwm_nuked"
+    }
+    country_modifier = {
+        country_naval_cap_mult = 0.5
+    }
+    prerequisites = {
+    }
+}

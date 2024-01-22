@@ -1,0 +1,29 @@
+xte_trait_flexible = {
+    cost = 1
+    initial = yes
+    randomized = yes
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    opposites = {
+        "trait_nerve_stapled"
+        "trait_syncretic_proles"
+        "xte_trait_simple"
+        "trait_invasive"
+    }
+    potential_crossbreeding_chance = 1
+    modifier = {
+        planet_jobs_specialist_produces_mult = 0.025
+    }
+    custom_tooltip_with_modifiers = xte_added_by_notification
+    slave_cost = {
+        energy = 600
+    }
+}

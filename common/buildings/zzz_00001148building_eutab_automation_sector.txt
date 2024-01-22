@@ -1,0 +1,54 @@
+building_eutab_automation_sector = {
+    base_buildtime = @b3_time
+    can_build = no
+    category = pop_assembly
+    potential = {
+        exists = owner
+        owner = {
+            is_machine_empire = yes
+        }
+    }
+    planet_modifier = {
+        job_replicator_add = 5
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            rare_crystals = @b4_rare_cost
+        }
+        upkeep = {
+            energy = @b3_upkeep
+            rare_crystals = @b4_rare_upkeep
+        }
+    }
+    triggered_desc = {
+        text = job_replicator_effect_desc
+    }
+    prerequisites = {
+        "tech_eutab_m_automation_sector"
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            owner = {
+                is_robot_empire = no
+            }
+            AND = {
+                owner = {
+                    is_ai = yes
+                }
+                free_district_slots = 0
+                free_building_slots = 0
+                free_housing <= 0
+                free_jobs <= 0
+            }
+        }
+    }
+    convert_to = {
+        building_robot_assembly_plant
+        building_robot_assembly_complex
+        building_machine_assembly_plant
+        building_machine_assembly_complex
+    }
+}

@@ -1,0 +1,1240 @@
+building_imperial_government = {
+    base_buildtime = @b3_time
+    category = government
+    base_cap_amount = 1
+    position_priority = 50
+    empire_limit = {
+        base = 1
+        modifier = {
+            add = galactic_emperor.modifier:building_imperial_government_cap
+        }
+    }
+    category = government
+    potential = {
+        exists = owner
+        owner = {
+            is_galactic_emperor = yes
+        }
+        NOT = {
+            has_modifier = slave_colony
+        }
+    }
+    destroy_trigger = {
+        OR = {
+            owner = {
+                is_galactic_emperor = no
+            }
+            has_modifier = slave_colony
+        }
+    }
+    allow = {
+    }
+    resources = {
+        category = building_imperial_government
+        cost = {
+            trigger = {
+                owner = {
+                    is_ai = no
+                }
+            }
+            minerals = @b3_minerals
+            influence = 100
+        }
+        upkeep = {
+            trigger = {
+                owner = {
+                    is_ai = no
+                }
+            }
+            influence = 1
+            energy = @b3_upkeep
+        }
+    }
+    triggered_desc = {
+        text = building_imperial_government_effect
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                is_regular_empire = yes
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_megacorp = no
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_anarchism
+                        has_valid_civic = civic_democracy_and_clean_government
+                        has_valid_civic = civic_OGAS
+                        has_valid_civic = civic_cybercap
+                        AND = {
+                            has_valid_civic = civic_shared_burden
+                            has_ascension_perk = ap_future_society
+                        }
+                    }
+                }
+            }
+        }
+        planet_administrators_unity_produces_add = -4
+        job_bureaucrat_per_pop = 0.1
+    }
+    triggered_country_modifier = {
+        potential = {
+            owner = {
+                is_regular_empire = yes
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_megacorp = no
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_anarchism
+                        has_valid_civic = civic_democracy_and_clean_government
+                        has_valid_civic = civic_OGAS
+                        has_valid_civic = civic_cybercap
+                        AND = {
+                            has_valid_civic = civic_shared_burden
+                            has_ascension_perk = ap_future_society
+                        }
+                    }
+                }
+            }
+        }
+        imperial_governance_capacity = 40
+        mult = value:building_imperial_government_sv|job|bureaucrat|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    AND = {
+                        is_gestalt = no
+                        has_make_spiritualist_perk = yes
+                    }
+                }
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_anarchism
+                        has_valid_civic = civic_democracy_and_clean_government
+                        has_valid_civic = civic_OGAS
+                        has_valid_civic = civic_cybercap
+                        AND = {
+                            has_valid_civic = civic_shared_burden
+                            has_ascension_perk = ap_future_society
+                        }
+                    }
+                }
+            }
+        }
+        planet_priests_unity_produces_add = -4
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    AND = {
+                        is_gestalt = no
+                        has_make_spiritualist_perk = yes
+                    }
+                }
+                is_megacorp = no
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_anarchism
+                        has_valid_civic = civic_democracy_and_clean_government
+                        has_valid_civic = civic_OGAS
+                        has_valid_civic = civic_cybercap
+                        AND = {
+                            has_valid_civic = civic_shared_burden
+                            has_ascension_perk = ap_future_society
+                        }
+                    }
+                }
+            }
+        }
+        job_priest_per_pop = 0.1
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    AND = {
+                        is_gestalt = no
+                        has_make_spiritualist_perk = yes
+                    }
+                }
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_anarchism
+                        has_valid_civic = civic_democracy_and_clean_government
+                        has_valid_civic = civic_OGAS
+                        has_valid_civic = civic_cybercap
+                        AND = {
+                            has_valid_civic = civic_shared_burden
+                            has_ascension_perk = ap_future_society
+                        }
+                    }
+                }
+            }
+        }
+        imperial_governance_capacity = 40
+        mult = planet.value:building_imperial_government_sv_2|job1|priest|job2|death_priest|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_worker_coop_empire = no
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_business_reporting_administration
+                        has_valid_civic = civic_corporate_cybercap
+                    }
+                }
+            }
+        }
+        planet_managers_unity_produces_add = -4
+        job_manager_per_pop = 0.1
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_worker_coop_empire = no
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_business_reporting_administration
+                        has_valid_civic = civic_corporate_cybercap
+                    }
+                }
+            }
+        }
+        imperial_governance_capacity = 40
+        mult = planet.value:building_imperial_government_sv|job|manager|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_worker_coop_empire = yes
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_business_reporting_administration
+                        has_valid_civic = civic_corporate_cybercap
+                    }
+                }
+            }
+        }
+        planet_administrators_unity_produces_add = -4
+        job_steward_per_pop = 0.1
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_worker_coop_empire = yes
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_business_reporting_administration
+                        has_valid_civic = civic_corporate_cybercap
+                    }
+                }
+            }
+        }
+        imperial_governance_capacity = 40
+        mult = planet.value:building_imperial_government_sv|job|steward|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        planet_administrators_unity_produces_add = -4
+        job_coordinator_per_pop = 0.1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_valid_civic = civic_machine_servitor
+            }
+        }
+        job_coordinator_per_pop = 0.067
+        planet_administrators_upkeep_mult = 0.25
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        imperial_governance_capacity = 40
+        mult = planet.value:building_imperial_government_sv|job|coordinator|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        planet_administrators_unity_produces_add = -4
+        job_synapse_drone_per_pop = 0.1
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        imperial_governance_capacity = 40
+        mult = planet.value:building_imperial_government_sv|job|synapse_drone|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = orbital_defence
+            orbital_defence = {
+                exists = starbase
+                starbase = {
+                    has_starbase_building = ring_bureaucracy_hub
+                }
+            }
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_megacorp = no
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_anarchism
+                        has_valid_civic = civic_democracy_and_clean_government
+                        has_valid_civic = civic_OGAS
+                        has_valid_civic = civic_cybercap
+                        AND = {
+                            has_valid_civic = civic_shared_burden
+                            has_ascension_perk = ap_future_society
+                        }
+                    }
+                }
+            }
+        }
+        planet_administrators_unity_produces_add = -1
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = orbital_defence
+            orbital_defence = {
+                exists = starbase
+                starbase = {
+                    has_starbase_building = ring_bureaucracy_hub
+                }
+            }
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_megacorp = no
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_anarchism
+                        has_valid_civic = civic_democracy_and_clean_government
+                        has_valid_civic = civic_OGAS
+                        has_valid_civic = civic_cybercap
+                        AND = {
+                            has_valid_civic = civic_shared_burden
+                            has_ascension_perk = ap_future_society
+                        }
+                    }
+                }
+            }
+        }
+        imperial_governance_capacity = 10
+        mult = value:building_imperial_government_sv|job|bureaucrat|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = orbital_defence
+            orbital_defence = {
+                exists = starbase
+                starbase = {
+                    has_starbase_building = ring_bureaucracy_hub
+                }
+            }
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    AND = {
+                        is_gestalt = no
+                        has_make_spiritualist_perk = yes
+                    }
+                }
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_anarchism
+                        has_valid_civic = civic_democracy_and_clean_government
+                        has_valid_civic = civic_OGAS
+                        has_valid_civic = civic_cybercap
+                        AND = {
+                            has_valid_civic = civic_shared_burden
+                            has_ascension_perk = ap_future_society
+                        }
+                    }
+                }
+            }
+        }
+        planet_priests_unity_produces_add = -1
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = orbital_defence
+            orbital_defence = {
+                exists = starbase
+                starbase = {
+                    has_starbase_building = ring_bureaucracy_hub
+                }
+            }
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    AND = {
+                        is_gestalt = no
+                        has_make_spiritualist_perk = yes
+                    }
+                }
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_anarchism
+                        has_valid_civic = civic_democracy_and_clean_government
+                        has_valid_civic = civic_OGAS
+                        has_valid_civic = civic_cybercap
+                        AND = {
+                            has_valid_civic = civic_shared_burden
+                            has_ascension_perk = ap_future_society
+                        }
+                    }
+                }
+            }
+        }
+        imperial_governance_capacity = 10
+        mult = planet.value:building_imperial_government_sv_2|job1|priest|job2|death_priest|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = orbital_defence
+            orbital_defence = {
+                exists = starbase
+                starbase = {
+                    has_starbase_building = ring_bureaucracy_hub
+                }
+            }
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_worker_coop_empire = no
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_business_reporting_administration
+                        has_valid_civic = civic_corporate_cybercap
+                    }
+                }
+            }
+        }
+        planet_managers_unity_produces_add = -1
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = orbital_defence
+            orbital_defence = {
+                exists = starbase
+                starbase = {
+                    has_starbase_building = ring_bureaucracy_hub
+                }
+            }
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_worker_coop_empire = no
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_business_reporting_administration
+                        has_valid_civic = civic_corporate_cybercap
+                    }
+                }
+            }
+        }
+        imperial_governance_capacity = 10
+        mult = planet.value:building_imperial_government_sv|job|manager|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = orbital_defence
+            orbital_defence = {
+                exists = starbase
+                starbase = {
+                    has_starbase_building = ring_bureaucracy_hub
+                }
+            }
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_worker_coop_empire = yes
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_business_reporting_administration
+                        has_valid_civic = civic_corporate_cybercap
+                    }
+                }
+            }
+        }
+        planet_administrators_unity_produces_add = -1
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = orbital_defence
+            orbital_defence = {
+                exists = starbase
+                starbase = {
+                    has_starbase_building = ring_bureaucracy_hub
+                }
+            }
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_worker_coop_empire = yes
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_business_reporting_administration
+                        has_valid_civic = civic_corporate_cybercap
+                    }
+                }
+            }
+        }
+        imperial_governance_capacity = 10
+        mult = planet.value:building_imperial_government_sv|job|steward|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = orbital_defence
+            orbital_defence = {
+                exists = starbase
+                starbase = {
+                    has_starbase_building = ring_coordination_hub
+                }
+            }
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        planet_administrators_unity_produces_add = -1
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = orbital_defence
+            orbital_defence = {
+                exists = starbase
+                starbase = {
+                    has_starbase_building = ring_coordination_hub
+                }
+            }
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        imperial_governance_capacity = 10
+        mult = planet.value:building_imperial_government_sv|job|coordinator|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = orbital_defence
+            orbital_defence = {
+                exists = starbase
+                starbase = {
+                    has_starbase_building = ring_synapse_hub
+                }
+            }
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        planet_administrators_unity_produces_add = -1
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = orbital_defence
+            orbital_defence = {
+                exists = starbase
+                starbase = {
+                    has_starbase_building = ring_synapse_hub
+                }
+            }
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        imperial_governance_capacity = 10
+        mult = planet.value:building_imperial_government_sv|job|synapse_drone|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_building = building_autocurating_vault
+            has_ringworld_output_boost = yes
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_megacorp = no
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_anarchism
+                        has_valid_civic = civic_democracy_and_clean_government
+                        has_valid_civic = civic_OGAS
+                        has_valid_civic = civic_cybercap
+                        AND = {
+                            has_valid_civic = civic_shared_burden
+                            has_ascension_perk = ap_future_society
+                        }
+                    }
+                }
+            }
+        }
+        planet_administrators_unity_produces_add = -1
+    }
+    triggered_country_modifier = {
+        potential = {
+            has_building = building_autocurating_vault
+            has_ringworld_output_boost = yes
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_megacorp = no
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_anarchism
+                        has_valid_civic = civic_democracy_and_clean_government
+                        has_valid_civic = civic_OGAS
+                        has_valid_civic = civic_cybercap
+                        AND = {
+                            has_valid_civic = civic_shared_burden
+                            has_ascension_perk = ap_future_society
+                        }
+                    }
+                }
+            }
+        }
+        imperial_governance_capacity = 10
+        mult = value:building_imperial_government_sv|job|bureaucrat|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_building = building_citadel_of_faith
+            has_ringworld_output_boost = yes
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    AND = {
+                        is_gestalt = no
+                        has_make_spiritualist_perk = yes
+                    }
+                }
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_anarchism
+                        has_valid_civic = civic_democracy_and_clean_government
+                        has_valid_civic = civic_OGAS
+                        has_valid_civic = civic_cybercap
+                        AND = {
+                            has_valid_civic = civic_shared_burden
+                            has_ascension_perk = ap_future_society
+                        }
+                    }
+                }
+            }
+        }
+        planet_priests_unity_produces_add = -1
+    }
+    triggered_country_modifier = {
+        potential = {
+            has_building = building_citadel_of_faith
+            has_ringworld_output_boost = yes
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    AND = {
+                        is_gestalt = no
+                        has_make_spiritualist_perk = yes
+                    }
+                }
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_anarchism
+                        has_valid_civic = civic_democracy_and_clean_government
+                        has_valid_civic = civic_OGAS
+                        has_valid_civic = civic_cybercap
+                        AND = {
+                            has_valid_civic = civic_shared_burden
+                            has_ascension_perk = ap_future_society
+                        }
+                    }
+                }
+            }
+        }
+        imperial_governance_capacity = 10
+        mult = planet.value:building_imperial_government_sv_2|job1|priest|job2|death_priest|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_building = building_corporate_vault
+            has_ringworld_output_boost = yes
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_worker_coop_empire = no
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_business_reporting_administration
+                        has_valid_civic = civic_corporate_cybercap
+                    }
+                }
+            }
+        }
+        planet_managers_unity_produces_add = -1
+    }
+    triggered_country_modifier = {
+        potential = {
+            has_building = building_corporate_vault
+            has_ringworld_output_boost = yes
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_worker_coop_empire = no
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_business_reporting_administration
+                        has_valid_civic = civic_corporate_cybercap
+                    }
+                }
+            }
+        }
+        imperial_governance_capacity = 10
+        mult = planet.value:building_imperial_government_sv|job|manager|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_building = building_corporate_vault
+            has_ringworld_output_boost = yes
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_worker_coop_empire = yes
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_business_reporting_administration
+                        has_valid_civic = civic_corporate_cybercap
+                    }
+                }
+            }
+        }
+        planet_administrators_unity_produces_add = -1
+    }
+    triggered_country_modifier = {
+        potential = {
+            has_building = building_corporate_vault
+            has_ringworld_output_boost = yes
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_worker_coop_empire = yes
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_business_reporting_administration
+                        has_valid_civic = civic_corporate_cybercap
+                    }
+                }
+            }
+        }
+        imperial_governance_capacity = 10
+        mult = planet.value:building_imperial_government_sv|job|steward|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_building = building_alpha_hub
+            has_ringworld_output_boost = yes
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        planet_administrators_unity_produces_add = -1
+    }
+    triggered_country_modifier = {
+        potential = {
+            has_building = building_alpha_hub
+            has_ringworld_output_boost = yes
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        imperial_governance_capacity = 10
+        mult = planet.value:building_imperial_government_sv|job|coordinator|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_building = building_autocurating_vault
+            has_ringworld_output_boost = yes
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        planet_administrators_unity_produces_add = -1
+    }
+    triggered_country_modifier = {
+        potential = {
+            has_building = building_autocurating_vault
+            has_ringworld_output_boost = yes
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        imperial_governance_capacity = 10
+        mult = planet.value:building_imperial_government_sv|job|synapse_drone|
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                any_owned_leader = {
+                    is_assigned_to_galcom_any_job = yes
+                    has_trait = leader_trait_government_reformer_2
+                }
+                is_regular_empire = yes
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_megacorp = no
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_anarchism
+                        has_valid_civic = civic_democracy_and_clean_government
+                        has_valid_civic = civic_OGAS
+                        has_valid_civic = civic_cybercap
+                        AND = {
+                            has_valid_civic = civic_shared_burden
+                            has_ascension_perk = ap_future_society
+                        }
+                    }
+                }
+            }
+        }
+        imperial_governance_capacity = 2.5
+        mult = value:building_imperial_government_sv|job|bureaucrat|
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                any_owned_leader = {
+                    is_assigned_to_galcom_any_job = yes
+                    has_trait = leader_trait_government_reformer_2
+                }
+                OR = {
+                    is_spiritualist = yes
+                    AND = {
+                        is_gestalt = no
+                        has_make_spiritualist_perk = yes
+                    }
+                }
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_anarchism
+                        has_valid_civic = civic_democracy_and_clean_government
+                        has_valid_civic = civic_OGAS
+                        has_valid_civic = civic_cybercap
+                        AND = {
+                            has_valid_civic = civic_shared_burden
+                            has_ascension_perk = ap_future_society
+                        }
+                    }
+                }
+            }
+        }
+        imperial_governance_capacity = 2.5
+        mult = planet.value:building_imperial_government_sv_2|job1|priest|job2|death_priest|
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                any_owned_leader = {
+                    is_assigned_to_galcom_any_job = yes
+                    has_trait = leader_trait_government_reformer_2
+                }
+                is_megacorp = yes
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_business_reporting_administration
+                        has_valid_civic = civic_corporate_cybercap
+                    }
+                }
+            }
+        }
+        imperial_governance_capacity = 2.5
+        mult = planet.value:building_imperial_government_sv|job|manager|
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                any_owned_leader = {
+                    is_assigned_to_galcom_any_job = yes
+                    has_trait = leader_trait_government_reformer_2
+                }
+                is_megacorp = yes
+                is_worker_coop_empire = yes
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_business_reporting_administration
+                        has_valid_civic = civic_corporate_cybercap
+                    }
+                }
+            }
+        }
+        imperial_governance_capacity = 2.5
+        mult = planet.value:building_imperial_government_sv|job|steward|
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                any_owned_leader = {
+                    is_assigned_to_galcom_any_job = yes
+                    has_trait = leader_trait_government_reformer_2
+                }
+                is_machine_empire = yes
+            }
+        }
+        imperial_governance_capacity = 2.5
+        mult = planet.value:building_imperial_government_sv|job|coordinator|
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                any_owned_leader = {
+                    is_assigned_to_galcom_any_job = yes
+                    has_trait = leader_trait_government_reformer_2
+                }
+                is_hive_empire = yes
+            }
+        }
+        imperial_governance_capacity = 2.5
+        mult = planet.value:building_imperial_government_sv|job|synapse_drone|
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                any_owned_leader = {
+                    is_assigned_to_galcom_any_job = yes
+                    has_trait = leader_trait_government_reformer_3
+                }
+                is_regular_empire = yes
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                is_megacorp = no
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_anarchism
+                        has_valid_civic = civic_democracy_and_clean_government
+                        has_valid_civic = civic_OGAS
+                        has_valid_civic = civic_cybercap
+                        AND = {
+                            has_valid_civic = civic_shared_burden
+                            has_ascension_perk = ap_future_society
+                        }
+                    }
+                }
+            }
+        }
+        imperial_governance_capacity = 5
+        mult = value:building_imperial_government_sv|job|bureaucrat|
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                any_owned_leader = {
+                    is_assigned_to_galcom_any_job = yes
+                    has_trait = leader_trait_government_reformer_3
+                }
+                OR = {
+                    is_spiritualist = yes
+                    AND = {
+                        is_gestalt = no
+                        has_make_spiritualist_perk = yes
+                    }
+                }
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_anarchism
+                        has_valid_civic = civic_democracy_and_clean_government
+                        has_valid_civic = civic_OGAS
+                        has_valid_civic = civic_cybercap
+                        AND = {
+                            has_valid_civic = civic_shared_burden
+                            has_ascension_perk = ap_future_society
+                        }
+                    }
+                }
+            }
+        }
+        imperial_governance_capacity = 5
+        mult = planet.value:building_imperial_government_sv_2|job1|priest|job2|death_priest|
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                any_owned_leader = {
+                    is_assigned_to_galcom_any_job = yes
+                    has_trait = leader_trait_government_reformer_3
+                }
+                is_megacorp = yes
+                is_worker_coop_empire = no
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_business_reporting_administration
+                        has_valid_civic = civic_corporate_cybercap
+                    }
+                }
+            }
+        }
+        imperial_governance_capacity = 5
+        mult = planet.value:building_imperial_government_sv|job|manager|
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                any_owned_leader = {
+                    is_assigned_to_galcom_any_job = yes
+                    has_trait = leader_trait_government_reformer_3
+                }
+                is_megacorp = yes
+                is_worker_coop_empire = yes
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                NAND = {
+                    is_ECI_activated = yes
+                    OR = {
+                        has_valid_civic = civic_business_reporting_administration
+                        has_valid_civic = civic_corporate_cybercap
+                    }
+                }
+            }
+        }
+        imperial_governance_capacity = 5
+        mult = planet.value:building_imperial_government_sv|job|steward|
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                any_owned_leader = {
+                    is_assigned_to_galcom_any_job = yes
+                    has_trait = leader_trait_government_reformer_3
+                }
+                is_machine_empire = yes
+            }
+        }
+        imperial_governance_capacity = 5
+        mult = planet.value:building_imperial_government_sv|job|coordinator|
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                any_owned_leader = {
+                    is_assigned_to_galcom_any_job = yes
+                    has_trait = leader_trait_government_reformer_3
+                }
+                is_hive_empire = yes
+            }
+        }
+        imperial_governance_capacity = 5
+        mult = planet.value:building_imperial_government_sv|job|synapse_drone|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                has_valid_civic = civic_byzantine_bureaucracy
+            }
+        }
+        planet_administrators_unity_produces_add = -1
+    }
+    triggered_country_modifier = {
+        potential = {
+            owner = {
+                has_valid_civic = civic_byzantine_bureaucracy
+            }
+        }
+        imperial_governance_capacity = 10
+        mult = value:building_imperial_government_sv|job|bureaucrat|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                has_valid_civic = civic_exalted_priesthood
+            }
+        }
+        planet_priests_unity_produces_add = -1
+    }
+    triggered_country_modifier = {
+        potential = {
+            owner = {
+                has_valid_civic = civic_exalted_priesthood
+            }
+        }
+        imperial_governance_capacity = 10
+        mult = planet.value:building_imperial_government_sv_2|job1|priest|job2|death_priest|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                is_spiritualist = yes
+                federation = {
+                    has_federation_perk = make_spiritualist_1
+                }
+            }
+        }
+        planet_priests_unity_produces_add = -1
+    }
+    triggered_country_modifier = {
+        potential = {
+            owner = {
+                is_spiritualist = yes
+                federation = {
+                    has_federation_perk = make_spiritualist_1
+                }
+            }
+        }
+        imperial_governance_capacity = 10
+        mult = planet.value:building_imperial_government_sv_2|job1|priest|job2|death_priest|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            is_ECI_activated = yes
+            exists = owner
+            owner = {
+                OR = {
+                    has_valid_civic = civic_anarchism
+                    has_valid_civic = civic_democracy_and_clean_government
+                    has_valid_civic = civic_business_reporting_administration
+                    AND = {
+                        has_valid_civic = civic_shared_burden
+                        has_ascension_perk = ap_future_society
+                    }
+                    has_valid_civic = civic_cybercap
+                    has_valid_civic = civic_corporate_cybercap
+                    has_valid_civic = civic_OGAS
+                }
+            }
+        }
+        planet_clerks_consumer_goods_upkeep_add = 0.5
+        job_clerk_per_pop = 0.2
+    }
+    triggered_country_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_ECI_activated = yes
+                has_valid_civic = civic_anarchism
+            }
+        }
+        imperial_governance_capacity = 4
+        mult = planet.value:building_imperial_government_sv|job|clerk|
+    }
+    on_destroy = {
+        if = {
+            limit = {
+                owner = {
+                    is_galactic_emperor = yes
+                    is_ai = yes
+                    check_variable = {
+                        which = province_gov_situation_monthly_progress
+                        value < -1
+                    }
+                }
+            }
+            add_building = building_imperial_government
+        }
+    }
+}

@@ -1,0 +1,90 @@
+@capital_t4_min_pops = 80
+building_imperial_hive_capital = {
+    base_buildtime = @avb_c_h5_time
+    capital = yes
+    can_build = no
+    can_demolish = no
+    can_be_ruined = no
+    can_be_disabled = no
+    position_priority = 0
+    category = government
+    potential = {
+        exists = owner
+        owner = {
+            OR = {
+                is_hive_empire = yes
+                is_country_type = swarm
+            }
+            is_galactic_emperor = yes
+        }
+        planet = {
+            is_capital = yes
+        }
+    }
+    convert_to = {
+        building_avb_capital_6
+        building_avb_hab_capital_3
+        building_avb_hive_capital_4
+        building_avb_machine_capital_6
+        building_ancient_control_center
+        building_ancient_palace
+    }
+    allow = {
+        num_pops >= @capital_t4_min_pops
+    }
+    prerequisites = {
+    }
+    planet_modifier = {
+        planet_housing_add = 26
+        planet_amenities_add = 26
+        job_synapse_drone_add = 8
+        job_maintenance_drone_add = 16
+        job_patrol_drone_add = 6
+        planet_max_buildings_add = 11
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                has_origin = origin_progenitor_hive
+            }
+            is_planet_class = pc_hive
+        }
+        job_spawning_drone_add = -1
+        job_offspring_drone_add = 1
+    }
+    inline_script = {
+        script = capitals/avb_capitals_productivity
+    }
+    inline_script = {
+        script = buildings/on_all_capital_buildings
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_active_tradition = tr_cybernetics_organ_harvesting
+            }
+            has_current_purge = yes
+            growing_species = {
+                has_trait = trait_cybernetic
+            }
+        }
+        pop_growth_speed = 0.1
+    }
+    resources = {
+        category = planet_buildings
+        inline_script = {
+            script = "capitals/hive/avb_capitals_hive_resources"
+            tier = 5
+        }
+    }
+    triggered_desc = {
+        text = job_synapse_drone_effect_desc
+    }
+    triggered_desc = {
+        text = job_maintenance_drone_effect_desc
+    }
+    triggered_desc = {
+        text = job_patrol_drone_effect_desc
+    }
+}

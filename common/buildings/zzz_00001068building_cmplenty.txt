@@ -1,0 +1,53 @@
+building_cmplenty = {
+    base_buildtime = @b3_time
+    can_be_ruined = no
+    can_be_disabled = no
+    empire_limit = {
+        base = 1
+    }
+    category = resource
+    potential = {
+        exists = owner
+        owner = {
+            is_galactic_custodian = yes
+        }
+        OR = {
+            is_active_resolution = "resolution_c1984_ministries"
+            is_active_resolution = "resolution_c1984_warispeace"
+            is_active_resolution = "resolution_c1984_thoughtcrime"
+            is_active_resolution = "resolution_c1984_newspeak"
+            is_active_resolution = "resolution_c1984_nofreedom"
+        }
+    }
+    allow = {
+        OR = {
+            is_active_resolution = "resolution_c1984_ministries"
+            is_active_resolution = "resolution_c1984_warispeace"
+            is_active_resolution = "resolution_c1984_thoughtcrime"
+            is_active_resolution = "resolution_c1984_newspeak"
+            is_active_resolution = "resolution_c1984_nofreedom"
+        }
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            trigger = {
+                exists = owner
+            }
+            food = 120
+            minerals = 50
+            alloys = 40
+        }
+        cost = {
+            minerals = 500
+            alloys = 100
+        }
+        upkeep = {
+            energy = 2
+        }
+    }
+    planet_modifier = {
+        planet_jobs_energy_produces_mult = 0.01
+        job_bureaucrat_add = 5
+    }
+}

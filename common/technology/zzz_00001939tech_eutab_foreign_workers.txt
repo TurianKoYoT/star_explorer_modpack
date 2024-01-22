@@ -1,0 +1,22 @@
+tech_eutab_foreign_workers = {
+    cost = @tier3cost1
+    area = society
+    tier = 3
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_mega_engineering"
+    }
+    is_custom_tech_1 = yes
+    weight = @tier3weight1
+    potential = {
+        is_xenophile = yes
+        has_ascension_perk = ap_master_builders
+    }
+    gateway = eu_masterbuild
+    modifier = {
+        megastructure_build_speed_mult = 0.15
+        starbases_upkeep_mult = -0.15
+    }
+}

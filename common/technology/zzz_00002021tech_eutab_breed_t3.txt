@@ -1,0 +1,21 @@
+tech_eutab_breed_t3 = {
+    cost = @tier3cost3
+    area = society
+    tier = 3
+    is_custom_tech_1 = yes
+    category = {
+        biology
+    }
+    prerequisites = {
+        "tech_eutab_breed_t2"
+    }
+    weight = @tier3weight3
+    potential = {
+        is_hive_empire = yes
+    }
+    modifier = {
+        pop_category_drones_unity_produces_mult = 0.025
+        planet_pops_organics_food_upkeep_mult = -0.05
+        planet_pops_organics_minerals_upkeep_mult = -0.05
+    }
+}

@@ -1,0 +1,52 @@
+@activation_cost = 3000
+@activation_cost_qnm = 1500
+@triumph_duration = 3600
+r_ehof_severed_head = {
+    activation_duration = @triumph_duration
+    portrait = "GFX_relic_severed_head"
+    sound = "relic_activation_head_of_zarqlan"
+    resources = {
+        category = relics
+        cost = {
+            unity = @activation_cost
+            ehof_sr_negative_mass = @activation_cost_qnm
+        }
+    }
+    ai_weight = {
+        weight = 100
+    }
+    triggered_country_modifier = {
+        potential = {
+            always = yes
+        }
+        custom_tooltip = r_severed_head_passive
+    }
+    score = 0
+    active_effect = {
+        custom_tooltip = relic_summon_pilgrims
+        add_modifier = {
+            modifier = severed_head_modifier
+            days = @triumph_duration
+        }
+        custom_tooltip = relic_triumph_cooldown
+        hidden_effect = {
+            add_modifier = {
+                modifier = "relic_activation_cooldown"
+                days = @triumph_duration
+            }
+            country_event = {
+                id = ancrel.6131
+            }
+            remove_country_flag = ehof_has_severed_head
+            remove_relic = r_ehof_severed_head
+        }
+    }
+    possible = {
+        custom_tooltip = {
+            fail_text = "requires_relic_no_cooldown"
+            NOT = {
+                has_modifier = relic_activation_cooldown
+            }
+        }
+    }
+}

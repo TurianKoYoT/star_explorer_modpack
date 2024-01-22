@@ -1,0 +1,27 @@
+tech_technocracy_society = {
+    cost = @tier3cost3
+    area = society
+    tier = 3
+    is_rare = yes
+    category = {
+        statecraft
+    }
+    weight = @tier3weight3
+    weight_modifier = {
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_statecraft
+            }
+        }
+    }
+    potential = {
+        has_ascension_perk = ap_flourishing_technocracy
+    }
+    ai_weight = {
+        factor = 5
+    }
+    modifier = {
+        country_base_society_research_produces_add = 100
+    }
+}

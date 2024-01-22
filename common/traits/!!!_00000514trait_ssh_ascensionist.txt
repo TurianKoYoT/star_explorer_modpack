@@ -1,0 +1,28 @@
+trait_ssh_ascensionist = {
+    cost = 0
+    icon = "gfx/interface/icons/traits/trait_ssh_ascensionist.dds"
+    initial = no
+    randomized = no
+    ideal_planet_class = pc_ascension_portal
+    species_potential_add = {
+        always = no
+    }
+    species_potential_remove = {
+        always = no
+    }
+    species_possible_remove = {
+        always = no
+    }
+    species_possible_merge_remove = {
+        always = no
+    }
+    forced_happiness = yes
+    immortal_leaders = yes
+    modifier = {
+        army_damage_mult = 10
+        planet_jobs_produces_mult = 5
+        pop_environment_tolerance = 2
+        leader_skill_levels = 10
+        species_leader_exp_gain = 10
+    }
+}

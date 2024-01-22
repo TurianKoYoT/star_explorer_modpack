@@ -1,0 +1,77 @@
+@hab_cost = 500
+@hab_maintenance = 2
+district_hab_salvage = {
+    base_buildtime = 240
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        sartek_additional_merg_habitats = yes
+        has_planet_flag = salvage_habitat
+    }
+    potential = {
+        sartek_additional_merg_habitats = yes
+        has_planet_flag = salvage_habitat
+    }
+    planet_modifier = {
+        planet_housing_add = 3
+    }
+    resources = {
+        category = planet_districts_hab_mining
+        cost = {
+            minerals = @hab_cost
+        }
+        upkeep = {
+            energy = @hab_maintenance
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        modifier = {
+            job_scrap_miner_drone_add = 4
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        modifier = {
+            job_scrap_miner_drone_add = 3
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            job_scrap_miner_add = 3
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_scrap_miner_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = job_scrap_miner_effect_desc
+    }
+}

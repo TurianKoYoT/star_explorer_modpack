@@ -1,0 +1,26 @@
+leader_trait_orbital_cooperative_warfare = {
+    cost = 1
+    icon = "gfx/interface/icons/traits/leader_traits/leader_trait_orbital_cooperative_warfare.dds"
+    custom_tooltip = leader_trait_orbital_cooperative_warfare_tooltip
+    army_modifier = {
+    }
+    initial = no
+    randomized = no
+    leader_class = {
+        commander
+    }
+    leader_potential_add = {
+        from = {
+            always = no
+            has_technology = tech_command_matrix
+            is_galactic_community_member = yes
+            has_federation = yes
+            federation = {
+                OR = {
+                    has_federation_law = imperial_ministry_of_defence_strategy_institute
+                    has_federation_law = imperial_ministry_of_defence_joint_headquarter
+                }
+            }
+        }
+    }
+}

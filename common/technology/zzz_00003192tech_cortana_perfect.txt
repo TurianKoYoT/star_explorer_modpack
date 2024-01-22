@@ -1,0 +1,33 @@
+tech_cortana_perfect = {
+    cost = @tier5cost3
+    area = physics
+    tier = 5
+    is_rare = yes
+    category = {
+        computing
+    }
+    weight = @tier5weight3
+    weight_modifier = {
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_computing
+            }
+        }
+    }
+    prerequisites = {
+        "tech_cortana_advanced"
+    }
+    potential = {
+        has_ascension_perk = ap_ai_cortana
+    }
+    prereqfor_desc = {
+        custom = {
+            title = "tech_cortana_perfect_desc"
+            desc = ""
+        }
+    }
+    ai_weight = {
+        factor = 10
+    }
+}

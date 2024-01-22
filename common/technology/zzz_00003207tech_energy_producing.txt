@@ -1,0 +1,17 @@
+tech_energy_producing = {
+    cost = @tier5cost1
+    area = physics
+    tier = 5
+    category = {
+        field_manipulation
+    }
+    weight = 0
+    is_rare = yes
+    modifier = {
+        country_base_energy_produces_add = 100
+        country_energy_produces_mult = 0.25
+    }
+    ai_weight = {
+        factor = 20
+    }
+}

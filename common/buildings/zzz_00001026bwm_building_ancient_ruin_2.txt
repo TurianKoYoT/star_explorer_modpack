@@ -1,0 +1,11 @@
+bwm_building_ancient_ruin_2 = {
+    can_build = no
+    can_demolish = yes
+    icon = "building_destroyed"
+    position_priority = 500
+    category = resources
+    potential = {
+    }
+    prerequisites = {
+    }
+}

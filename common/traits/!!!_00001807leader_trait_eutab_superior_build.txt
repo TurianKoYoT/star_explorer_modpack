@@ -1,0 +1,31 @@
+leader_trait_eutab_superior_build = {
+    inline_script = {
+        script = trait/eutab_icon
+        CLASS = official
+        ICON = GFX_eutab_leader_trait_superior_build
+        RARITY = common
+        COUNCIL = no
+        TIER = none
+    }
+    self_modifier = {
+        official_exp_gain = 0.33
+    }
+    planet_modifier = {
+        pop_category_slave_produces_mult = 0.1
+        planet_crime_add = -7.5
+    }
+    sector_modifier = {
+        pop_category_slave_produces_mult = 0.05
+        planet_crime_add = -5
+    }
+    leader_potential_add = {
+        is_robotic_species = yes
+    }
+    leader_class = {
+        official
+    }
+    prerequisites = {
+        "tech_eutab_machine_hierachy"
+    }
+    selectable_weight = @class_trait_weight
+}

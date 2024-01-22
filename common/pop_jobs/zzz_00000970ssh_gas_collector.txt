@@ -1,0 +1,74 @@
+ssh_gas_collector = {
+    category = specialist
+    is_capped_by_modifier = yes
+    building_icon = building_gas_extractors
+    clothes_texture_index = 1
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_worker_job
+    possible = {
+        hidden_trigger = {
+            exists = owner
+        }
+    }
+    resources = {
+        category = planet_jobs
+        produces = {
+            sr_hydrogen = 5
+            exotic_gases = 2
+        }
+    }
+    weight = {
+        weight = @worker_job_weight
+        mult = value:job_weights_modifier|JOB|ssh_gas_collector|RESOURCE|exotic_gases|
+        modifier = {
+            factor = 100
+            OR = {
+                is_non_sapient_robot = yes
+                is_shackled_robot = yes
+            }
+            can_take_servant_job = no
+        }
+        modifier = {
+            factor = 8
+            is_enslaved = yes
+            can_take_servant_job = no
+            OR = {
+                has_trait = trait_syncretic_proles
+                has_trait = trait_robot_superconductive
+                has_trait = trait_ingenious
+            }
+        }
+        modifier = {
+            factor = 2
+            OR = {
+                is_non_sapient_robot = yes
+                is_shackled_robot = yes
+            }
+            can_take_servant_job = no
+        }
+        modifier = {
+            factor = 0.25
+            can_take_servant_job = yes
+        }
+        modifier = {
+            factor = 250
+            exists = planet
+            planet = {
+                has_available_jobs = "ssh_gas_collector"
+            }
+            exists = owner
+            owner = {
+                is_ai = yes
+                has_monthly_income = {
+                    resource = exotic_gases
+                    value < 5
+                }
+            }
+        }
+    }
+}

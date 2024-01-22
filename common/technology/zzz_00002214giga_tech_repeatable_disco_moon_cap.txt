@@ -1,0 +1,13 @@
+@lesser_megastructure_base_tech_cost = 36000
+@lesser_megastructure_per_level_cost = 108000
+giga_tech_repeatable_disco_moon_cap = {
+    inline_script = {
+        script = technology/giga_mega_repeatable
+        name = disco_moon
+        area = physics
+        category = particles
+        cost = @lesser_megastructure_base_tech_cost
+        cost_per_level = @lesser_megastructure_per_level_cost
+        prerequisites = giga_tech_disco_moon
+    }
+}

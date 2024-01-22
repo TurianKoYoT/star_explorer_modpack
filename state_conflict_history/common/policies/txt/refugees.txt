@@ -1,0 +1,177 @@
+refugees = {
+    potential = {
+        has_encountered_other_species = yes
+        is_country_type = default
+        OR = {
+            NOT = {
+                has_ethic = "ethic_gestalt_consciousness"
+            }
+            is_civic_machine_servitor = yes
+            has_origin = origin_extant_creators
+        }
+    }
+    option = {
+        name = "refugees_not_allowed"
+        valid = {
+            NOR = {
+                has_ethic = "ethic_xenophile"
+                has_ethic = "ethic_fanatic_xenophile"
+            }
+        }
+        in_breach_of = {
+            {
+                key = resolution_prime_directive
+            }
+            {
+                key = resolution_galactic_cooperation_initiative
+            }
+            {
+                key = resolution_galacticcooperation_pan_galactic_migration
+            }
+        }
+        policy_flags = {
+            refugees_not_allowed
+        }
+        AI_weight = {
+            factor = 2
+            modifier = {
+                factor = 10
+                is_xenophobe = yes
+            }
+            modifier = {
+                factor = 0.1
+                is_galactic_community_member = yes
+                OR = {
+                    is_active_resolution = resolution_prime_directive
+                    is_active_resolution = resolution_galactic_cooperation_initiative
+                }
+            }
+        }
+    }
+    option = {
+        in_breach_of = {
+             {
+                key = resolution_closed_society
+            }
+             {
+                key = resolution_galactic_cooperation_initiative
+            }
+        }
+        name = "refugees_only_citizens"
+        potential = {
+            NOT = {
+                has_ethic = "ethic_gestalt_consciousness"
+            }
+        }
+        policy_flags = {
+            refugees_only_citizens
+        }
+        valid = {
+            NOT = {
+                is_hive_empire = yes
+            }
+        }
+        AI_weight = {
+            factor = 5
+            modifier = {
+                factor = 0.1
+                is_galactic_community_member = yes
+                OR = {
+                    is_active_resolution = resolution_closed_society
+                    is_active_resolution = resolution_galactic_cooperation_initiative
+                }
+            }
+            modifier = {
+                factor = 10
+                has_valid_ai_personality = yes
+                is_ai = yes
+                is_galactic_community_member = yes
+                OR = {
+                    is_active_resolution = "resolution_galacticcooperation_pan_galactic_migration"
+                    is_active_resolution = "resolution_galacticcooperation_indigenous_protection_protocols"
+                    is_active_resolution = "resolution_galacticcooperation_interstellar_mediation"
+                    is_active_resolution = "resolution_galacticcooperation_sanctity_of_life"
+                }
+            }
+            modifier = {
+                factor = 0.5
+                is_xenophile = yes
+            }
+            modifier = {
+                factor = 3
+                is_authoritarian = yes
+                is_xenophobe = no
+                is_xenophile = no
+            }
+        }
+    }
+    option = {
+        name = "refugees_allowed"
+        in_breach_of = {
+             {
+                key = resolution_homogenous_state
+            }
+             {
+                key = resolution_justified_suspicion
+            }
+             {
+                key = resolution_national_purity
+            }
+             {
+                key = resolution_cooperation_discouraged
+            }
+             {
+                key = resolution_closed_society
+            }
+        }
+        policy_flags = {
+            refugees_allowed
+        }
+        valid = {
+            NOR = {
+                has_ethic = "ethic_xenophobe"
+                has_ethic = "ethic_fanatic_xenophobe"
+            }
+        }
+        AI_weight = {
+            factor = 10
+            modifier = {
+                factor = 0
+                NOR = {
+                    has_ethic = ethic_xenophile
+                    has_ethic = ethic_fanatic_xenophile
+                    is_servitor_empire = yes
+                    AND = {
+                        has_valid_ai_personality = yes
+                        NOT = {
+                            has_ai_personality_behaviour = multispecies
+                        }
+                    }
+                }
+            }
+            modifier = {
+                factor = 10
+                has_valid_ai_personality = yes
+                is_ai = yes
+                is_galactic_community_member = yes
+                OR = {
+                    is_active_resolution = "resolution_galacticcooperation_pan_galactic_migration"
+                    is_active_resolution = "resolution_galacticcooperation_indigenous_protection_protocols"
+                    is_active_resolution = "resolution_galacticcooperation_interstellar_mediation"
+                    is_active_resolution = "resolution_galacticcooperation_sanctity_of_life"
+                }
+            }
+            modifier = {
+                factor = 0.1
+                is_galactic_community_member = yes
+                OR = {
+                    is_active_resolution = "resolution_homogenous_state"
+                    is_active_resolution = "resolution_justified_suspicion"
+                    is_active_resolution = "resolution_national_purity"
+                    is_active_resolution = "resolution_cooperation_discouraged"
+                    is_active_resolution = "resolution_closed_society"
+                }
+            }
+        }
+    }
+}

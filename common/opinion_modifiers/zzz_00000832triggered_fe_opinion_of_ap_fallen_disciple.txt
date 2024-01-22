@@ -1,0 +1,13 @@
+triggered_fe_opinion_of_ap_fallen_disciple = {
+    trigger = {
+        is_fallen_empire = yes
+        is_mechanical_empire = no
+        is_cyborg_empire = no
+        FROM = {
+            has_ascension_perk = ap_fallen_disciple
+        }
+    }
+    opinion = {
+        base = 50
+    }
+}

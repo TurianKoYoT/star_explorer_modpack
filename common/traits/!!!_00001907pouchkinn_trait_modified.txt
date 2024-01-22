@@ -1,0 +1,19 @@
+pouchkinn_trait_modified = {
+    inline_script = {
+        script = trait/giga_icon_classic
+        CLASS = scientist
+        ICON = "GFX_pouchkinn_trait_modified"
+        RARITY = common
+        COUNCIL = no
+        TIER = none
+    }
+    modifier = {
+        all_technology_research_speed = 0.15
+        science_ship_survey_speed = 0.25
+    }
+    leader_class = {
+        scientist
+    }
+    initial = no
+    randomized = no
+}

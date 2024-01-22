@@ -1,0 +1,9 @@
+opinion_civil_war_punishment = {
+    opinion = {
+        base = -100
+    }
+    unique = yes
+    decay = {
+        base = 1
+    }
+}

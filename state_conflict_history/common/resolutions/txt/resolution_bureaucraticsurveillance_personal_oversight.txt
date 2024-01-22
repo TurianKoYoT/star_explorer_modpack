@@ -1,0 +1,132 @@
+@resolution_weight_disliked = 4
+@resolution_cost_t3 = 200
+resolution_bureaucraticsurveillance_personal_oversight = {
+    icon = "GFX_resolution_bureaucratic_surveillance"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t3
+        }
+    }
+    target = no
+    level = 3
+    potential = {
+        has_overlord_dlc = yes
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = "resolution_already_in_lower_house_session"
+            NOT = {
+                has_global_flag = lh_recent_resolution_bureaucraticsurveillance_personal_oversight
+            }
+        }
+        is_active_resolution = "resolution_bureaucraticsurveillance_borderless_authority"
+        is_overlord = yes
+        custom_tooltip = {
+            fail_text = "resolution_already_active"
+            NOT = {
+                is_active_resolution = "resolution_bureaucraticsurveillance_personal_oversight"
+            }
+        }
+    }
+    effect = {
+        custom_tooltip = galcom_tooltip_ethics_tier_3
+        hidden_effect = {
+            set_timed_country_flag = {
+                flag = galcom_resolution_passed_anti_progressive
+                days = 7200
+            }
+            set_timed_country_flag = {
+                flag = galcom_resolution_passed_anti_xenoist
+                days = 7200
+            }
+            every_galcom_member = {
+                limit = {
+                    is_subject = yes
+                }
+                galcom_upgrade_ethic_modifier_effect = yes
+            }
+        }
+        galcom_success_effect = {
+            FLAG = galactic_community_resolution_passed_bureaucraticsurveillance
+        }
+        custom_tooltip = galcom_tooltip_no_independent_diplomacy
+        hidden_effect = {
+            galcom_change_agreement_term_resolution_effect = {
+                TERM = subject_diplomacy
+                CURRENT_VALUE = subject_can_do_diplomacy
+                NEW_VALUE = subject_can_do_diplomacy_but_not_vote
+            }
+        }
+        custom_tooltip = galcom_tooltip_no_holdings_3
+        hidden_effect = {
+            every_galcom_member = {
+                limit = {
+                    is_overlord = yes
+                }
+                every_agreement = {
+                    limit = {
+                        has_term_value = {
+                            term = subject_holdings_limit
+                            value = subject_holdings_limit_3
+                        }
+                    }
+                    set_agreement_terms = {
+                        subject_holdings_limit = subject_holdings_limit_2
+                    }
+                }
+            }
+        }
+    }
+    fail_effects = {
+        galcom_fail_effects = {
+            FLAG = galactic_community_resolution_failed_bureaucraticsurveillance
+        }
+    }
+    modifier = {
+        resolution_bureaucraticsurveillance_administrative_insight = 1
+        resolution_bureaucraticsurveillance_borderless_authority = 1
+        resolution_bureaucraticsurveillance_personal_oversight = 1
+    }
+    ai_weight = {
+        base = @resolution_weight_disliked
+        modifier = {
+            factor = 0.25
+            is_subject = yes
+            desc = galcom_is_subject
+        }
+        modifier = {
+            factor = 3
+            is_overlord = yes
+            is_xenophile = no
+            is_egalitarian = no
+            desc = galcom_is_overlord
+        }
+        modifier = {
+            factor = 0.5
+            is_egalitarian = yes
+            desc = ethic_egalitarian
+        }
+        modifier = {
+            factor = 2
+            is_authoritarian = yes
+            desc = ethic_authoritarian
+        }
+        modifier = {
+            factor = 2
+            is_xenophobe = yes
+            is_subject = no
+            desc = ethic_xenophobe
+        }
+        modifier = {
+            factor = 0.5
+            has_civic = civic_feudal_realm
+            desc = civic_feudal_realm
+        }
+        modifier = {
+            factor = 0.5
+            has_civic = civic_franchising
+            desc = civic_franchising
+        }
+    }
+}

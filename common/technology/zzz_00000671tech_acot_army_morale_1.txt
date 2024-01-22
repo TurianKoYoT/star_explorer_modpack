@@ -1,0 +1,33 @@
+tech_acot_army_morale_1 = {
+    cost = @tier1cost2
+    area = society
+    tier = 1
+    category = {
+        military_theory
+    }
+    weight = @tier1weight2
+    prerequisites = {
+        tech_assault_armies
+    }
+    potential = {
+        is_regular_empire = yes
+        NOT = {
+            has_global_flag = acot_army_forbidden
+        }
+    }
+    modifier = {
+        army_morale = 0.5
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 2
+            is_militarist = yes
+        }
+    }
+    ai_weight = {
+        modifier = {
+            factor = 2
+            is_militarist = yes
+        }
+    }
+}

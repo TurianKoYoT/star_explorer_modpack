@@ -1,0 +1,19 @@
+katzen_trait_martial_free = {
+    cost = 0
+    species_potential_add = {
+        always = no
+    }
+    initial = no
+    randomized = no
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    modifier = {
+        pop_cat_slave_happiness = -0.5
+        species_empire_size_mult = -0.1
+        army_damage_mult = 0.15
+        army_health = 0.15
+        army_morale = 0.4
+    }
+}

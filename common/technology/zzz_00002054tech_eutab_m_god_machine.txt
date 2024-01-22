@@ -1,0 +1,21 @@
+tech_eutab_m_god_machine = {
+    cost = @tier4cost1
+    area = physics
+    tier = 4
+    category = {
+        computing
+    }
+    prerequisites = {
+        "tech_global_research_initiative"
+    }
+    weight = @tier4weight1
+    is_custom_tech_1 = yes
+    potential = {
+        is_machine_empire = yes
+        has_ascension_perk = ap_technological_ascendancy
+    }
+    modifier = {
+        planet_pop_assemblers_engineering_research_produces_add = 3
+        MACHINE_species_trait_points_add = 1
+    }
+}

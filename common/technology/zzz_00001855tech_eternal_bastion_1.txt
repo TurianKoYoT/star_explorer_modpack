@@ -1,0 +1,20 @@
+tech_eternal_bastion_1 = {
+    area = society
+    cost = @fallentechcost
+    tier = @fallentechtier
+    category = {
+        ascended_technologies
+    }
+    weight = @tier5weight3
+    prerequisites = {
+        "tech_doa_ascended_industries"
+        "tech_global_defense_grid"
+    }
+    is_rare = yes
+    potential = {
+        has_technology = tech_doa_ascended_industries
+    }
+    ai_weight = {
+        factor = 4
+    }
+}

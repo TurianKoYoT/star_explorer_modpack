@@ -1,0 +1,45 @@
+ssh_conmat_biologist_drone = {
+    category = complex_drone
+    condition_string = DRONE_JOB_TRIGGER
+    building_icon = building_ssh_conmat_lab
+    clothes_texture_index = 3
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_drone_job
+    possible = {
+        can_think = yes
+    }
+    resources = {
+        category = planet_jobs
+        produces = {
+            sr_conscious_matter = 5
+        }
+        upkeep = {
+            food = 15
+            volatile_motes = 0.5
+        }
+    }
+    weight = {
+        weight = @complex_drone_job_weight
+        mult = value:job_weights_modifier|JOB|ssh_conmat_biologist_drone|RESOURCE|sr_conscious_matter|
+        modifier = {
+            factor = 0.2
+            has_citizenship_rights = no
+            NOT = {
+                has_trait = trait_mechanical
+            }
+        }
+        modifier = {
+            factor = 0.1
+            can_take_servant_job = yes
+        }
+        modifier = {
+            factor = 7
+            has_job = ssh_conmat_biologist_drone
+        }
+    }
+}

@@ -1,0 +1,19 @@
+tech_eutab_new_monastism = {
+    cost = @tier3cost3
+    area = society
+    tier = 3
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_consecration_fields"
+        "tech_starbase_3"
+    }
+    weight = @tier3weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_spiritualist = yes
+        has_ascension_perk = ap_grasp_the_void
+    }
+    gateway = eu_grasp
+}

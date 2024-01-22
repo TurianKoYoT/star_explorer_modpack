@@ -1,0 +1,34 @@
+trait_v_electrogenesis = {
+    cost = 1
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_plantoid_phototrophic"
+        "trait_plantoid_phototrophic"
+        "trait_plantoid_radiotrophic"
+        "trait_harvested_radiotrophic"
+        "trait_cave_dweller"
+        "trait_v_kleptoplasty"
+        "trait_v_adv_electrogenesis"
+        "trait_v_living_reactors"
+        "trait_v_adv_living_reactors"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/AQUATIC"
+    sorting_priority = 30
+    custom_tooltip_with_modifiers = TRAIT_ELECTROGENESIS_EFFECT
+    modifier = {
+        army_defense_damage_mult = 0.25
+        army_damage_mult = 0.25
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

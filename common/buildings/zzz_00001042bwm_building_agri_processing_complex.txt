@@ -1,0 +1,34 @@
+@feupkeep = 4
+@feproduction = 12
+bwm_building_agri_processing_complex = {
+    can_build = no
+    can_demolish = yes
+    icon = "building_agri_processing_complex"
+    category = resources
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 500
+        }
+        produces = {
+            food = @feproduction
+        }
+        upkeep = {
+            energy = @feupkeep
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            text = "requires_building_ancient_monolith"
+            planet = {
+                OR = {
+                    has_building = "bwm_building_ancient_monolith_1"
+                    has_building = "bwm_building_ancient_monolith_2"
+                    has_building = "bwm_building_ancient_monolith_3"
+                }
+            }
+        }
+    }
+    prerequisites = {
+    }
+}

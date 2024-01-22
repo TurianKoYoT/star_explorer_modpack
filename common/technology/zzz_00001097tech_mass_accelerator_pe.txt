@@ -1,0 +1,37 @@
+tech_mass_accelerator_pe = {
+    area = engineering
+    category = {
+        propulsion
+    }
+    cost = @acot_tier8cost2
+    tier = 8
+    weight = @tier5weight1
+    ai_update_type = military
+    is_reverse_engineerable = no
+    potential = {
+        is_fallen_empire = no
+        NOT = {
+            has_global_flag = acot_weapons_forbidden
+        }
+        has_technology = tech_dark_matter_power_core_pe
+        NOT = {
+            has_global_flag = acot_phanon_forbidden
+        }
+    }
+    prerequisites = {
+        tech_precursor_phanon_design_pe_3
+        tech_dark_matter_power_core_pe
+        tech_mass_accelerator_ae
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            NOT = {
+                has_technology = tech_dark_matter_power_core_pe
+            }
+        }
+    }
+    ai_weight = {
+        factor = 20
+    }
+}

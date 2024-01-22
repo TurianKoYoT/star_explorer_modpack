@@ -1,0 +1,54 @@
+trait_v_adv_modular_organism = {
+    cost = 4
+    inline_script = "traits/no_randomized"
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_potential_add = {
+        exists = from
+        from = {
+            OR = {
+                has_technology = tech_v_zoological_transgenesis
+                has_technology = tech_lithoid_transgenesis
+            }
+        }
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/adv_biological_traits/BIOLOGICAL"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/REP"
+    inline_script = "species_class/ART"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/FUN"
+    inline_script = "species_class/NECROID"
+    inline_script = "species_class/TOX"
+    custom_tooltip = TRAIT_MODULAR_ORGANISM_EFFECT
+    opposites = {
+        "trait_invasive"
+        "trait_v_modular_organism"
+    }
+    triggered_pop_modifier = {
+        planet_jobs_minerals_produces_mult = 0.01
+        mult = planet.value:count_v_modular_organism_minerals
+    }
+    triggered_pop_modifier = {
+        planet_jobs_food_produces_mult = 0.01
+        mult = planet.value:count_v_modular_organism_food
+    }
+    triggered_pop_modifier = {
+        planet_jobs_energy_produces_mult = 0.01
+        mult = planet.value:count_v_modular_organism_energy
+    }
+    slave_cost = {
+        energy = 5000
+    }
+}

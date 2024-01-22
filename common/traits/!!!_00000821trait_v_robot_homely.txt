@@ -1,0 +1,57 @@
+trait_v_robot_homely = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    species_possible_merge_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+            has_technology = tech_v_robot_neural_mimicry
+        }
+    }
+    species_possible_remove = {
+        OR = {
+            can_remove_beneficial_genetic_traits = yes
+            AND = {
+                exists = from
+                from = {
+                    is_gestalt = yes
+                }
+            }
+        }
+    }
+    potential_crossbreeding_chance = 1
+    allowed_archetypes = {
+        ROBOT
+    }
+    allowed_ethics = {
+        ethic_xenophile
+        ethic_fanatic_xenophile
+    }
+    valid_for_all_ethics = no
+    custom_tooltip = TRAIT_HOMELY_EFFECT
+    opposites = {
+        "trait_machine_unit"
+        "trait_robot_emotion_emulators"
+        "trait_robot_uncanny"
+        "trait_v_robot_biophobia"
+    }
+    triggered_pop_modifier = {
+        pop_job_amenities_mult = 0.075
+        mult = root.value:count_negative_traits
+    }
+    slave_cost = {
+        energy = 750
+    }
+}

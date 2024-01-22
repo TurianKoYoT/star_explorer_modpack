@@ -1,0 +1,100 @@
+building_avb_energy_2 = {
+    base_buildtime = @b2_time
+    can_build = no
+    category = resource
+    allow = {
+        has_upgraded_capital = yes
+    }
+    potential = {
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = crucible_colony
+        }
+        OR = {
+            NOT = {
+                is_planet_class = pc_habitat
+            }
+            AND = {
+                is_planet_class = pc_habitat
+                check_modifier_value = {
+                    modifier = district_hab_energy_max
+                    value > 0
+                }
+            }
+        }
+        OR = {
+            owner = {
+                is_ai = no
+            }
+            AND = {
+                owner = {
+                    is_ai = yes
+                    has_monthly_income = {
+                        resource = energy
+                        value < 40
+                    }
+                }
+                free_district_slots = 0
+            }
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            planet = {
+                OR = {
+                    has_modifier = resort_colony
+                    has_modifier = crucible_colony
+                }
+            }
+            planet = {
+                free_building_slots = 0
+                owner = {
+                    is_ai = yes
+                    has_monthly_income = {
+                        resource = energy
+                        value > 40
+                    }
+                }
+            }
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+        }
+        modifier = {
+            job_technician_add = @b2_jobs
+        }
+    }
+    inline_script = {
+        script = jobs/technicians_add
+        AMOUNT = 3
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            exotic_gases = @b2_rare_cost
+        }
+        upkeep = {
+            energy = @b2_upkeep
+            exotic_gases = @b2_rare_upkeep
+        }
+    }
+    prerequisites = {
+        tech_power_plant_4
+    }
+    upgrades = {
+        building_avb_energy_3
+    }
+    ai_resource_production = {
+        energy = 15
+        trigger = {
+            always = yes
+        }
+    }
+}

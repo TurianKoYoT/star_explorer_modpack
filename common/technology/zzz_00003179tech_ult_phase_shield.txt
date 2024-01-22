@@ -1,0 +1,15 @@
+tech_ult_phase_shield = {
+    area = physics
+    cost = 30000
+    tier = 4
+    category = {
+        field_manipulation
+    }
+    is_rare = yes
+    is_reverse_engineerable = no
+    prerequisites = {
+        "tech_ult_beyond_dimension"
+        "tech_shields_5"
+    }
+    weight = 20
+}

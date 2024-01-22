@@ -1,0 +1,318 @@
+building_hydroponics_farm = {
+    base_buildtime = @b1_time
+    icon = building_hydroponics_farm
+    category = resource
+    inline_script = "resources/avb_hydroponics_desc"
+    potential = {
+        exists = owner
+        owner = {
+            OR = {
+                country_uses_food = yes
+                is_ai = no
+            }
+        }
+        NOT = {
+            is_planet_class = pc_machine
+        }
+        NOT = {
+            has_modifier = resort_colony
+        }
+        OR = {
+            has_z_expanded_mod = no
+            AND = {
+                has_z_expanded_mod = yes
+                NOT = {
+                    has_planet_flag = planetary_station
+                }
+            }
+        }
+    }
+    allow = {
+        OR = {
+            owner = {
+                is_ai = no
+            }
+            AND = {
+                owner = {
+                    is_ai = yes
+                    has_monthly_income = {
+                        resource = food
+                        value < 30
+                    }
+                }
+                free_district_slots = 0
+            }
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            owner = {
+                is_ai = yes
+                country_uses_food = no
+            }
+            planet = {
+                NOT = {
+                    is_habitat = yes
+                }
+                free_building_slots = 0
+                owner = {
+                    is_ai = yes
+                    has_monthly_income = {
+                        resource = food
+                        value > 100
+                    }
+                }
+            }
+            planet = {
+                free_building_slots = 0
+                owner = {
+                    is_ai = yes
+                    has_monthly_income = {
+                        resource = food
+                        value > 250
+                    }
+                }
+            }
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+                OR = {
+                    is_anglers_empire = no
+                    AND = {
+                        is_anglers_empire = yes
+                        NOT = {
+                            PREV = {
+                                planet = {
+                                    is_wet = yes
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        modifier = {
+            job_farmer_add = @b1_jobs
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_fallen_empire_spiritualist = yes
+            }
+        }
+        modifier = {
+            job_fe_acolyte_farm_add = @b1_jobs
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_origin = origin_void_dwellers
+            }
+        }
+        modifier = {
+            job_farmer_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_agri_drone_add = @b1_jobs
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+                is_anglers_empire = yes
+                PREV = {
+                    planet = {
+                        is_wet = yes
+                    }
+                }
+            }
+        }
+        modifier = {
+            job_angler_add = 1
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            trigger = {
+                has_z_expanded_mod = no
+            }
+            minerals = @b1_minerals
+        }
+        upkeep = {
+            trigger = {
+                has_z_expanded_mod = no
+            }
+            energy = 2
+        }
+        cost = {
+            trigger = {
+                has_z_expanded_mod = yes
+                exists = owner
+                owner = {
+                    OR = {
+                        is_lithoid_empire = yes
+                        AND = {
+                            is_hive_empire = no
+                            is_civic_plant_organic = no
+                        }
+                    }
+                }
+            }
+            minerals = @b1_minerals
+        }
+        cost = {
+            trigger = {
+                has_z_expanded_mod = yes
+                exists = owner
+                owner = {
+                    NOT = {
+                        has_valid_civic = civic_integrated_bioarchitecture
+                    }
+                    OR = {
+                        is_hive_empire = yes
+                        is_civic_plant_organic = yes
+                    }
+                    is_lithoid_empire = no
+                }
+            }
+            minerals = @b1_hive_minerals
+            food = @b1_hive_food
+        }
+        cost = {
+            trigger = {
+                has_z_expanded_mod = yes
+                exists = owner
+                owner = {
+                    has_valid_civic = civic_integrated_bioarchitecture
+                    is_lithoid_empire = no
+                }
+            }
+            food = @b1_minerals
+        }
+        upkeep = {
+            trigger = {
+                has_z_expanded_mod = yes
+                exists = owner
+                owner = {
+                    is_lithoid_empire = no
+                    OR = {
+                        is_hive_empire = yes
+                        is_civic_plant_organic = yes
+                    }
+                }
+            }
+            energy = @b1_upkeep_hive
+            food = @b1_upkeep_food
+        }
+        upkeep = {
+            trigger = {
+                has_z_expanded_mod = yes
+                exists = owner
+                owner = {
+                    OR = {
+                        is_lithoid_empire = yes
+                        AND = {
+                            is_hive_empire = no
+                            is_civic_plant_organic = no
+                        }
+                    }
+                    NOT = {
+                        has_valid_civic = civic_integrated_bioarchitecture
+                    }
+                }
+            }
+            energy = @b1_upkeep
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_agri_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+                OR = {
+                    is_anglers_empire = no
+                    AND = {
+                        is_anglers_empire = yes
+                        NOT = {
+                            PREV = {
+                                planet = {
+                                    is_wet = yes
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        text = job_farmer_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_fallen_empire_spiritualist = yes
+            }
+        }
+        text = job_fe_acolyte_farm_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_fallen_empire_spiritualist = no
+                is_anglers_empire = yes
+                PREV = {
+                    planet = {
+                        is_wet = yes
+                    }
+                }
+            }
+        }
+        text = job_aqu_angler_effect_desc
+    }
+    prerequisites = {
+        "tech_hydroponics"
+    }
+    upgrades = {
+        "building_avb_hydroponics_farm_2"
+        "building_eutab_hydroponics_tower"
+    }
+    ai_resource_production = {
+        food = 1
+        trigger = {
+            always = yes
+        }
+    }
+}

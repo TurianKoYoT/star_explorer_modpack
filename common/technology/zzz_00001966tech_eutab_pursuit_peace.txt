@@ -1,0 +1,23 @@
+tech_eutab_pursuit_peace = {
+    cost = @tier3cost3
+    area = society
+    tier = 3
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_colonial_centralization"
+        "tech_manifest_destiny"
+    }
+    weight = @tier3weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_pacifist = yes
+        has_ascension_perk = ap_shared_destiny
+    }
+    gateway = eu_destiny
+    modifier = {
+        country_subject_acceptance_add = 15
+        country_subject_power_penalty_mult = -0.25
+    }
+}

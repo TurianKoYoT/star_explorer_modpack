@@ -1,0 +1,21 @@
+tech_nanites_medecine = {
+    cost = @tier4cost2
+    area = society
+    tier = 4
+    category = {
+        biology
+    }
+    weight = @tier4weight2
+    is_rare = yes
+    potential = {
+        has_ascension_perk = ap_nano_to_nanite
+    }
+    modifier = {
+        leader_lifespan_add = 25
+        pop_growth_speed = 0.2
+        planet_pop_assembly_mult = 0.15
+    }
+    ai_weight = {
+        factor = 19
+    }
+}

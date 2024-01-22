@@ -1,0 +1,42 @@
+military_expert = {
+    category = specialist
+    condition_string = BATTLE_THRALL_JOB_TRIGGER
+    building_icon = building_fortress
+    clothes_texture_index = 3
+    possible_pre_triggers = {
+        has_owner = yes
+        is_enslaved = no
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_specialist_job
+    possible = {
+        battle_thrall_job_check_trigger = yes
+    }
+    resources = {
+        category = planet_enforcers
+        produces = {
+            unity = 2
+        }
+        upkeep = {
+            consumer_goods = 3
+            food = 5
+            alloys = 10
+        }
+    }
+    country_modifier = {
+        army_defense_morale_mult = 0.12
+        army_defense_damage_mult = 0.12
+    }
+    pop_modifier = {
+        pop_defense_armies_add = 3
+    }
+    weight = {
+        weight = @colonist_job_weight
+        modifier = {
+            factor = 0.1
+            can_take_servant_job = no
+        }
+    }
+}

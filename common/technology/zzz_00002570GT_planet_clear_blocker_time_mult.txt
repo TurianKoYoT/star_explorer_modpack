@@ -1,0 +1,26 @@
+GT_planet_clear_blocker_time_mult = {
+    cost = @tier2cost1
+    area = society
+    tier = 2
+    category = {
+        new_worlds
+    }
+    prerequisites = {
+        "tech_colonization_2"
+    }
+    weight = @tier2weight1
+    modifier = {
+        planet_clear_blocker_time_mult = -0.2
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            num_researched_techs_of_tier = {
+                tier = 2
+                value > 10
+            }
+        }
+    }
+    ai_weight = {
+    }
+}

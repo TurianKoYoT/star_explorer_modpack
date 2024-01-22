@@ -1,0 +1,360 @@
+district_giga_alderson_industrial = {
+    base_buildtime = @giga_alderson_district_buildtime
+    is_capped_by_modifier = no
+    icon = district_industrial
+    show_on_uncolonized = {
+        uses_district_set = giga_alderson_gaia
+    }
+    potential = {
+        uses_district_set = giga_alderson_gaia
+    }
+    conversion_ratio = 0.5
+    convert_to = {
+        district_giga_alderson_alloys
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = @giga_alderson_cost
+            volatile_motes = @giga_alderson_cost_sr
+        }
+        upkeep = {
+            energy = @giga_alderson_maintenance
+            volatile_motes = @giga_alderson_maintenance_sr
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = @alderson_auto_housing
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = no
+            }
+        }
+        modifier = {
+            job_artisan_add = @alderson_auto_jobs_split
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_crafter_empire = yes
+            }
+        }
+        modifier = {
+            job_artificer_add = @alderson_auto_jobs_split
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = no
+            }
+        }
+        modifier = {
+            job_foundry_add = @alderson_auto_jobs_split
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = yes
+            }
+        }
+        modifier = {
+            job_catalytic_technician_add = @alderson_auto_jobs_split
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+                is_catalytic_empire = no
+            }
+        }
+        modifier = {
+            job_alloy_drone_add = @alderson_auto_jobs
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                is_catalytic_empire = no
+            }
+        }
+        modifier = {
+            job_fabricator_add = @alderson_auto_jobs
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                is_catalytic_empire = yes
+            }
+        }
+        modifier = {
+            job_catalytic_drone_add = @alderson_auto_jobs
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_foundry_designation = yes
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = no
+            }
+        }
+        modifier = {
+            job_artisan_add = @alderson_auto_jobs_split_neg
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_foundry_designation = yes
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = yes
+            }
+        }
+        modifier = {
+            job_artificer_add = @alderson_auto_jobs_split_neg
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_foundry_designation = yes
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = no
+            }
+        }
+        modifier = {
+            job_foundry_add = @alderson_auto_jobs_split
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_foundry_designation = yes
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = yes
+            }
+        }
+        modifier = {
+            job_catalytic_technician_add = @alderson_auto_jobs_split
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_factory_designation = yes
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = no
+            }
+        }
+        modifier = {
+            job_artisan_add = @alderson_auto_jobs_split
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_factory_designation = yes
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = yes
+            }
+        }
+        modifier = {
+            job_artificer_add = @alderson_auto_jobs_split
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_factory_designation = yes
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = no
+            }
+        }
+        modifier = {
+            job_foundry_add = @alderson_auto_jobs_split_neg
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_factory_designation = yes
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = yes
+            }
+        }
+        modifier = {
+            job_catalytic_technician_add = @alderson_auto_jobs_split_neg
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_factory_designation = yes
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                country_uses_consumer_goods = yes
+                is_catalytic_empire = no
+            }
+        }
+        modifier = {
+            job_artisan_drone_add = @alderson_auto_jobs_split
+            job_fabricator_add = @alderson_auto_jobs_split_neg
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_factory_designation = yes
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                country_uses_consumer_goods = yes
+                is_catalytic_empire = yes
+            }
+        }
+        modifier = {
+            job_artisan_drone_add = @alderson_auto_jobs_split
+            job_catalytic_drone_add = @alderson_auto_jobs_split_neg
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = no
+            }
+            NOT = {
+                has_designation = col_foundry
+            }
+        }
+        text = job_artisan_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_crafter_empire = yes
+            }
+            NOT = {
+                has_designation = col_foundry
+            }
+        }
+        text = job_artificer_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                country_uses_consumer_goods = yes
+            }
+        }
+        text = job_artisan_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = no
+            }
+            NOT = {
+                has_designation = col_factory
+            }
+        }
+        text = job_foundry_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_catalytic_empire = yes
+            }
+            NOT = {
+                has_designation = col_factory
+            }
+        }
+        text = job_catalytic_technician_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                is_catalytic_empire = no
+            }
+        }
+        text = job_fabricator_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+                is_catalytic_empire = no
+            }
+        }
+        text = job_alloy_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                is_catalytic_empire = yes
+            }
+        }
+        text = job_catalytic_drone_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                has_edict = industrial_maintenance
+            }
+        }
+        modifier = {
+            job_maintenance_drone_add = @alderson_auto_jobs_split
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                has_edict = industrial_maintenance
+            }
+        }
+        text = job_maintenance_drone_effect_desc
+    }
+}

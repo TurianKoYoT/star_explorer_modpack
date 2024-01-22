@@ -1,0 +1,48 @@
+building_phanon_trade_crim = {
+    icon = building_phanon_commercial_megaplex
+    base_buildtime = 480
+    owner_type = corporate
+    category = government
+    can_build = no
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            is_criminal_syndicate = yes
+        }
+        has_global_flag = has_aot_mod
+        NOT = {
+            has_global_flag = aot_phanon_content_OFF
+        }
+    }
+    planet_modifier = {
+        planet_crime_add = 350
+        branch_office_value_mult = 2
+        job_merchant_add = 4
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            energy = 2000
+            minerals = 2000
+            aot_sr_runic_power = 800
+        }
+        upkeep = {
+            energy = 60
+            sr_dark_matter = 4
+            aot_sr_runic_power = 4
+        }
+    }
+    prerequisites = {
+        tech_phanon_commercial_megaplex
+    }
+    show_tech_unlock_if = {
+        is_megacorp = yes
+        is_criminal_syndicate = yes
+    }
+    upgrades = {
+        building_stellarite_trade_crim
+    }
+    ai_weight = {
+        weight = 50
+    }
+}

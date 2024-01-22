@@ -1,0 +1,52 @@
+district_giga_voidframe_stellarite_ae = {
+    base_buildtime = 720
+    icon = district_hab_stellarite_generator
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        always = no
+    }
+    potential = {
+        uses_district_set = giga_frameworld
+        is_voidframe_se = yes
+    }
+    prerequisites = {
+        tech_stellarite_generator_lvl3
+    }
+    show_tech_unlock_if = {
+        giga_has_frameworld_origin = yes
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            alloys = 2000
+        }
+        upkeep = {
+            energy = 10
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 4
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            job_sun_master_add = 4
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_sun_masterdrone_add = 4
+        }
+    }
+}

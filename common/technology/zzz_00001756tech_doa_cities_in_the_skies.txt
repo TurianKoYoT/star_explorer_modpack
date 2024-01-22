@@ -1,0 +1,15 @@
+tech_doa_cities_in_the_skies = {
+    area = society
+    cost = 0
+    tier = 0
+    category = {
+        statecraft
+    }
+    weight = 0
+    potential = {
+        has_country_flag = doa_accepted_ships
+    }
+    modifier = {
+        planet_districts_upkeep_mult = -0.1
+    }
+}

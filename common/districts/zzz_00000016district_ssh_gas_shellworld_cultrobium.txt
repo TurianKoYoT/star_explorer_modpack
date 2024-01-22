@@ -1,0 +1,97 @@
+district_ssh_gas_shellworld_cultrobium = {
+    base_buildtime = 360
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        uses_district_set = gas_shell_world
+        owner = {
+            has_technology = ssh_tech_nuclei_modification
+        }
+    }
+    potential = {
+        AND = {
+            uses_district_set = gas_shell_world
+            owner = {
+                has_technology = ssh_tech_nuclei_modification
+            }
+        }
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_ssh_gas_shellworld_gas_collection
+        district_ssh_gas_shellworld_housing
+        district_ssh_gas_shellworld_industry
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = 1500
+            alloys = 100
+            volatile_motes = 25
+        }
+        upkeep = {
+            energy = 5
+            volatile_motes = 0.5
+        }
+        upkeep = {
+            trigger = {
+                exists = owner
+                owner = {
+                    has_edict = industrial_maintenance
+                }
+            }
+            energy = 2
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 10
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+        }
+        modifier = {
+            job_ssh_cultrobium_foundry_add = 7
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_ssh_cultrobium_foundry_drone_add = 7
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+        }
+        text = job_ssh_cultrobium_foundry_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        text = job_ssh_cultrobium_foundry_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        text = job_ssh_cultrobium_foundry_drone_effect_desc
+    }
+}

@@ -1,0 +1,37 @@
+trait_v_hive_microclimate = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = yes
+        }
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    allowed_ethics = {
+        ethic_gestalt_consciousness
+    }
+    valid_for_all_ethics = no
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    opposites = {
+        "trait_invasive"
+        "trait_v_urban_adaptation"
+        "trait_v_adv_urban_adaptation"
+        "trait_v_adv_hive_microclimate"
+    }
+    custom_tooltip = TRAIT_HIVE_MICROCLIMATE_EFFECT
+    triggered_planet_growth_habitability_modifier = {
+        pop_environment_tolerance = 0.01
+        mult = planet.value:count_v_hive_microclimate
+    }
+    slave_cost = {
+        energy = 3000
+    }
+}

@@ -1,0 +1,128 @@
+building_ult_datacore = {
+    base_buildtime = 720
+    base_cap_amount = 1
+    category = research
+    potential = {
+        exists = owner
+        owner = {
+            is_gestalt = yes
+        }
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            owner = {
+                is_gestalt = no
+                is_regular_empire = no
+            }
+        }
+    }
+    convert_to = {
+        building_ult_library
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 2000
+        }
+        produces = {
+            trigger = {
+                exists = owner
+            }
+            unity = 5
+            multiplier = owner.trigger:num_ascension_perks
+        }
+        upkeep = {
+            energy = 5
+        }
+    }
+    planet_modifier = {
+        planet_researchers_produces_mult = 0.3
+        planet_jobs_unity_produces_mult = 0.2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        modifier = {
+            job_brain_drone_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        modifier = {
+            job_calculator_add = 1
+        }
+    }
+    prerequisites = {
+        "tech_ult_ultimate_technology"
+    }
+    triggered_desc = {
+        text = building_ult_library_effect
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        text = job_brain_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        text = job_calculator_effect_desc
+    }
+    show_tech_unlock_if = {
+        is_gestalt = yes
+    }
+    ai_resource_production = {
+        trigger = {
+            always = yes
+        }
+        physics_research = 5
+        society_research = 5
+        engineering_research = 5
+    }
+    ai_resource_production = {
+        trigger = {
+            planet_resource_compare = {
+                resource = physics_research
+                value >= 30
+            }
+        }
+        physics_research = 5
+        society_research = 5
+        engineering_research = 5
+    }
+    ai_resource_production = {
+        trigger = {
+            planet_resource_compare = {
+                resource = physics_research
+                value >= 60
+            }
+        }
+        physics_research = 5
+        society_research = 5
+        engineering_research = 5
+    }
+}

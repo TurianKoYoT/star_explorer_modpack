@@ -1,0 +1,30 @@
+@feupkeep = 4
+@feproduction = 12
+bwm_building_ancient_factory = {
+    can_build = no
+    can_demolish = yes
+    icon = "building_ancient_factory"
+    category = resources
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 500
+        }
+        produces = {
+            minerals = @feproduction
+        }
+        upkeep = {
+            energy = @feupkeep
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            text = "requires_building_ancient_monolith"
+            planet = {
+                has_building = "bwm_building_ancient_monolith_3"
+            }
+        }
+    }
+    prerequisites = {
+    }
+}

@@ -1,0 +1,62 @@
+building_katzencaches_alpha_theater = {
+    base_buildtime = @b2_time
+    can_build = no
+    category = amenity
+    potential = {
+        owner = {
+            has_origin = origin_katzen
+        }
+    }
+    prerequisites = {
+        "tech_katzen_theater"
+        "tech_dark_matter_power_core_ae"
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 50
+            sr_dark_matter = 450
+        }
+        upkeep = {
+            energy = 10
+            acot_sr_dark_energy = 2
+            sr_dark_matter = 2
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            owner = {
+                is_gestalt = yes
+            }
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            NOT = {
+                owner = {
+                    has_origin = origin_katzen
+                }
+            }
+        }
+        pop_ethic_militarist_attraction_mult = 2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                has_origin = origin_katzen
+            }
+        }
+        pop_government_ethic_attraction = 2
+    }
+    planet_modifier = {
+        planet_housing_add = 130
+        planet_amenities_add = 130
+        job_acot_entertainer_add = 4
+    }
+    upgrades = {
+        building_katzencaches_runic_theater
+    }
+}

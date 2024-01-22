@@ -1,0 +1,11 @@
+opinion_AAA_stole_relic = {
+    opinion = {
+        base = -200
+    }
+    decay = {
+        base = 0.5
+        modifier = {
+            factor = value:negative_opinion_decay_rate
+        }
+    }
+}

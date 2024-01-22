@@ -1,0 +1,159 @@
+ship_section_template = {
+    key = "quasarcraft_main_02_key"
+    ship_size = agx_quasarcraft
+    fits_on_slot = "main2"
+    entity = "qsc_01_locators_entity"
+    icon = "GFX_ship_part_core_mid"
+    component_slot = {
+        name = "TITANIC_GUN_1"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_r1"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_2"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_r2"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_3"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_r3"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_4"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_r4"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_5"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_r5"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_6"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_r6"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_7"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_l1"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_8"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_l2"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_9"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_l3"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_10"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_l4"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_11"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_l5"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_12"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_l6"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_13"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_l1"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_14"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_l2"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_15"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_l3"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_16"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_l4"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_17"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_l5"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_18"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_l6"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_19"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_r1"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_20"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_r2"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_21"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_r3"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_22"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_r4"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_23"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_r5"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_24"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_r6"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_25"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_r1"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_26"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_r2"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_27"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_r3"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_28"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_l1"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_29"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_l2"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_30"
+        template = "giga_invisible_titanic_fixed"
+        locatorname = "bodgun_l3"
+    }
+    large_utility_slots = 20
+    aux_utility_slots = 5
+}

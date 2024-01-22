@@ -1,0 +1,24 @@
+tech_dark_matter_power_core_theta = {
+    area = physics
+    category = {
+        particles
+    }
+    tier = 8
+    cost = 6400000
+    weight = 0
+    ai_update_type = all
+    is_rare = yes
+    is_reverse_engineerable = no
+    potential = {
+        has_country_flag = has_discovered_theta_runic_reactor
+    }
+    prerequisites = {
+    }
+    prereqfor_desc = {
+        hide_prereq_for_desc = component
+        custom = {
+            title = "TECH_UNLOCK_DARK_MATTER_POWER_THETA_TITLE"
+            desc = "TECH_UNLOCK_DARK_MATTER_POWER_THETA_DESC"
+        }
+    }
+}

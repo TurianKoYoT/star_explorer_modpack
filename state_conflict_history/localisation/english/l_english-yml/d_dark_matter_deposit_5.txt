@@ -1,0 +1,2 @@
+l_english:
+ d_dark_matter_deposit_5:1000 "£sr_dark_matter£ +5"

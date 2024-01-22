@@ -1,0 +1,19 @@
+tech_ult_molecular_manipulation = {
+    area = engineering
+    cost = 30000
+    tier = 4
+    category = {
+        materials
+    }
+    is_rare = yes
+    prerequisites = {
+        "tech_ult_ultimate_technology"
+        "tech_engineering_3"
+    }
+    weight = 60
+    modifier = {
+        planet_jobs_upkeep_mult = -0.2
+        planet_artisans_produces_mult = 0.25
+        station_gatherers_produces_mult = 0.5
+    }
+}

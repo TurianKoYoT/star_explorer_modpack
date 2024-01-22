@@ -1,0 +1,8 @@
+tr_psionics_psi_corps = {
+    custom_tooltip = tr_psionics_psi_corps_desc
+    on_enabled = {
+        hidden_effect = {
+            add_research_option = tech_thought_enforcement
+        }
+    }
+}

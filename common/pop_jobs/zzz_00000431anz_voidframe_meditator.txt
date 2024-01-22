@@ -1,0 +1,28 @@
+anz_voidframe_meditator = {
+    category = specialist
+    condition_string = SPECIALIST_JOB_TRIGGER
+    icon = giga_amb_fe_celestial_architect
+    building_icon = building_ae_dimensional_fabricator
+    possible_pre_triggers = {
+        has_owner = yes
+        is_sapient = yes
+        is_enslaved = no
+        is_being_purged = no
+        is_being_assimilated = no
+    }
+    possible_precalc = can_fill_specialist_job
+    possible = {
+        complex_specialist_job_check_trigger = yes
+    }
+    resources = {
+        category = planet_metallurgists
+        produces = {
+            sm_sr_perfect_runic_energy = 0.2
+        }
+        upkeep = {
+        }
+    }
+    weight = {
+        weight = @specialist_job_weight
+    }
+}

@@ -1,0 +1,21 @@
+tech_avb_physics_4 = {
+    cost = @tier5cost2
+    area = physics
+    tier = 5
+    category = {
+        computing
+    }
+    prerequisites = {
+        "tech_physics_3"
+    }
+    weight = @tier5weight2
+    modifier = {
+        planet_researchers_physics_research_produces_mult = 0.2
+    }
+    weight_modifier = {
+        factor = 4
+    }
+    ai_weight = {
+        weight = 10
+    }
+}

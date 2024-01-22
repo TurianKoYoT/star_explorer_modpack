@@ -1,0 +1,60 @@
+building_stellarite_empyrean_shrine = {
+    base_buildtime = 900
+    can_demolish = yes
+    can_build = no
+    category = unity
+    prerequisites = {
+        "tech_stellarite_empyrean_shrine"
+    }
+    potential = {
+        exists = owner
+        owner = {
+            has_technology = tech_stellarite_empyrean_shrine
+        }
+    }
+    allow = {
+        has_stellarite_capital = yes
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_fallen_empire = no
+                is_spiritualist = yes
+            }
+        }
+        job_stellarite_priest_add = 8
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_fallen_empire = no
+                is_spiritualist = no
+            }
+        }
+        job_researcher_add = 7
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 5000
+            minerals = 5000
+            acot_sr_stellarite = 600
+        }
+        produces = {
+            society_research = 320
+            unity = @auto_unity_se
+            unity = 4
+        }
+        upkeep = {
+            energy = 100
+            acot_sr_stellarite = 30
+        }
+    }
+    upgrades = {
+    }
+    ai_weight = {
+        weight = 100
+    }
+}

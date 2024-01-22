@@ -1,0 +1,40 @@
+tech_avb_nanite_transmutation_2 = {
+    cost = @tier4cost3
+    area = engineering
+    tier = 4
+    category = {
+        materials
+    }
+    prerequisites = {
+        "tech_nanite_transmutation"
+        "tech_galactic_administration"
+    }
+    weight = @tier5weight3
+    is_rare = yes
+    potential = {
+        host_has_dlc = "Distant Stars Story Pack"
+    }
+    weight_modifier = {
+        factor = 0.5
+        modifier = {
+            factor = 0
+            NOT = {
+                any_system_within_border = {
+                    any_system_planet = {
+                        has_resource = {
+                            type = nanites
+                            amount > 0
+                        }
+                    }
+                }
+            }
+        }
+        modifier = {
+            factor = @ap_technological_ascendancy_rare_tech
+            has_ascension_perk = ap_technological_ascendancy
+        }
+    }
+    ai_weight = {
+        factor = 5
+    }
+}

@@ -1,0 +1,84 @@
+@resolution_weight_disliked = 4
+@resolution_cost_t3 = 200
+resolution_custodian_disband_gto = {
+    icon = "GFX_resolution_disband_gto"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t3
+        }
+    }
+    target = no
+    modifier = {
+    }
+    effect = {
+        cancel_resolution = "resolution_custodian_gto"
+        set_timed_country_flag = {
+            flag = galcom_resolution_passed_anti_prosperity
+            days = 7200
+        }
+    }
+    fail_effects = {
+    }
+    potential = {
+        has_nemesis = yes
+        is_active_resolution = "resolution_custodian_gto"
+        has_galactic_emperor = no
+    }
+    allow = {
+        NOT = {
+            is_active_resolution = resolution_custodian_gfta
+        }
+    }
+    ai_weight = {
+        base = @resolution_weight_disliked
+        modifier = {
+            factor = 0.6
+            is_capitalist = yes
+            desc = auth_corporate
+        }
+        modifier = {
+            factor = 0.6
+            OR = {
+                has_ai_personality = peaceful_traders
+                has_ai_personality = ruthless_capitalists
+            }
+            desc = gal_com_trader_ai_personality
+        }
+        modifier = {
+            factor = 1.3
+            is_xenophobe = yes
+            desc = ethic_xenophobe
+        }
+        modifier = {
+            factor = 1.8
+            is_xenophobic_isolationists = yes
+            desc = gal_com_isolationist_civic
+        }
+        modifier = {
+            factor = 2
+            is_gestalt = yes
+            desc = ethic_gestalt_consciousness
+        }
+        modifier = {
+            factor = 0
+            is_galactic_custodian = yes
+            desc = gal_com_is_the_custodian
+        }
+        modifier = {
+            factor = 0.25
+            is_civic_free_traders = yes
+            desc = gal_com_trade_civic
+        }
+        modifier = {
+            factor = 0.5
+            is_civic_diplomatic_corps = yes
+            desc = gal_com_diplo_civic
+        }
+        modifier = {
+            factor = 2
+            is_anti_corp = yes
+            desc = gal_com_anti_corp_civic
+        }
+    }
+}

@@ -1,0 +1,40 @@
+leader_trait_expertise_new_worlds = {
+    veteran_class_locked_trait = yes
+    councilor_trait = yes
+    inline_script = {
+        script = trait/icon_society
+        CLASS = scientist
+        ICON = "GFX_leader_trait_expertise_new_worlds"
+        RARITY = free_or_veteran
+        COUNCIL = yes
+        TIER = 1
+    }
+    modifier = {
+        category_new_worlds_research_speed_mult = 0.15
+        category_new_worlds_draw_chance_mult = 0.25
+    }
+    leader_potential_add = {
+        is_specialist_researcher = no
+        OR = {
+            has_paragon_dlc = no
+            has_trait_tier1or2or3 = {
+                TRAIT = leader_trait_society_focus
+            }
+        }
+        NOT = {
+            from = {
+                has_technology = tech_expandable_brain_1
+            }
+        }
+    }
+    leader_class = {
+        scientist
+    }
+    ai_categories = {
+        society
+    }
+    ai_weight = 100
+    selectable_weight = {
+        inline_script = paragon/subclass_free_trait_weight
+    }
+}

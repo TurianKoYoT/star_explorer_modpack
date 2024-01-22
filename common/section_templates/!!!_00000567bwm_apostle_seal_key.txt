@@ -1,0 +1,9 @@
+ship_section_template = {
+    key = "bwm_apostle_seal_key"
+    ship_size = bwm_apostle_seal
+    fits_on_slot = mid
+    entity = "bwm_apostle_seal_hull_entity"
+    icon = "GFX_ship_part_core_mid"
+    large_utility_slots = 24
+    aux_utility_slots = 6
+}

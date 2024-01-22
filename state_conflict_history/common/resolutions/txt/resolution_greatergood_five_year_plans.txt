@@ -1,0 +1,252 @@
+@resolution_weight_popular = 6.5
+@resolution_cost_t2 = 150
+@resolution_flag_timer = 360
+resolution_greatergood_five_year_plans = {
+    icon = "GFX_resolution_greater_good"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t2
+        }
+    }
+    target = no
+    level = 2
+    modifier = {
+        resolution_greatergood_workers_rights = 1
+        resolution_greatergood_five_year_plans = 1
+    }
+    triggered_modifier = {
+        potential = {
+            is_egalitarian = no
+        }
+        modifier = {
+            egalitarian_attraction_NGS = 1
+        }
+    }
+    effect = {
+        custom_tooltip = resolution_greatergood_five_year_plans_tooltip
+        hidden_effect = {
+            set_global_flag = resolution_with_breach_effect_passed
+            set_timed_country_flag = {
+                flag = galactic_community_resolution_passed_greatergood
+                days = @resolution_flag_timer
+            }
+            if = {
+                limit = {
+                    OR = {
+                        has_slaver_civic = yes
+                        is_origin_syncretic_livestock = yes
+                        is_slaver = yes
+                        allows_slavery = yes
+                    }
+                }
+                set_timed_country_flag = {
+                    flag = galcom_resolution_passed_anti_totalitarian
+                    days = 7200
+                }
+            }
+            add_modifier = {
+                modifier = resolution_passed_diplomatic_weight
+                days = 2200
+            }
+            every_playable_country = {
+                limit = {
+                    is_galactic_community_member = yes
+                    is_gestalt = no
+                    any_owned_species = {
+                        is_sapient = yes
+                        has_living_standard = {
+                            type = living_standard_subsistence
+                            country = prev
+                        }
+                    }
+                }
+                country_event = {
+                    id = federations.10200
+                }
+            }
+        }
+    }
+    fail_effects = {
+        hidden_effect = {
+            set_timed_country_flag = {
+                flag = galactic_community_resolution_failed_greatergood
+                days = @resolution_flag_timer
+            }
+            add_modifier = {
+                modifier = resolution_failed_diplomatic_weight
+                days = 2200
+            }
+        }
+    }
+    allow = {
+        is_active_resolution = "resolution_greatergood_workers_rights"
+    }
+    breach = {
+        NOT = {
+            has_country_flag = constitutional_immunity
+        }
+        OR = {
+            in_breach_of = resolution_greatergood_workers_rights
+            AND = {
+                is_gestalt = no
+                any_owned_species = {
+                    is_sapient = yes
+                    has_living_standard = {
+                        type = living_standard_subsistence
+                        country = prev
+                    }
+                }
+            }
+        }
+    }
+    ai_weight = {
+        base = @resolution_weight_popular
+        modifier = {
+            factor = 2
+            OR = {
+                is_egalitarian = yes
+                has_valid_civic = civic_ethical_hedonism
+            }
+            desc = ethic_egalitarian
+        }
+        modifier = {
+            factor = 2
+            has_ethic = ethic_fanatic_egalitarian
+            desc = ethic_egalitarian
+        }
+        modifier = {
+            factor = 1.5
+            NOT = {
+                in_breach_of = resolution_greatergood_five_year_plans
+            }
+            is_xenophile = yes
+            desc = ethic_xenophile
+            is_authoritarian = no
+        }
+        modifier = {
+            factor = 2
+            NOT = {
+                in_breach_of = resolution_greatergood_five_year_plans
+            }
+            has_ethic = ethic_fanatic_xenophile
+            desc = ethic_xenophile
+            is_authoritarian = no
+        }
+        modifier = {
+            factor = 0.5
+            is_authoritarian = yes
+            desc = ethic_authoritarian
+        }
+        modifier = {
+            factor = 0
+            has_ethic = ethic_fanatic_authoritarian
+            desc = ethic_authoritarian
+        }
+        modifier = {
+            factor = 0.5
+            is_civic_has_elite = yes
+            desc = gal_com_elite_civic
+        }
+        modifier = {
+            factor = 1.5
+            is_civic_has_meritocracy = yes
+            desc = gal_com_meritocracy_civic
+        }
+        modifier = {
+            factor = 0.5
+            is_pleasure_seeker = yes
+            desc = civic_pleasure_seekers
+        }
+        modifier = {
+            factor = 0.25
+            has_ai_personality_behaviour = slaver
+            desc = gal_com_slaver_empire
+        }
+        modifier = {
+            factor = 0
+            desc = gal_com_in_breach_of_proposed_resolution
+            NOT = {
+                has_ethic = ethic_fanatic_egalitarian
+            }
+            in_breach_of = resolution_greatergood_five_year_plans
+        }
+        modifier = {
+            factor = 0.75
+            desc = gal_com_ally_in_breach_of_proposed_resolution
+            any_federation_ally = {
+                NOT = {
+                    federation = {
+                        has_federation_type = hegemony_federation
+                    }
+                }
+                in_breach_of = resolution_greatergood_five_year_plans
+            }
+        }
+        modifier = {
+            factor = 0.5
+            is_capitalist = yes
+            is_worker_coop_empire = no
+            desc = auth_corporate
+        }
+        modifier = {
+            factor = 3
+            OR = {
+                is_shared_burden_empire = yes
+                is_worker_coop_empire = yes
+            }
+            desc = civic_shared_burden
+        }
+        modifier = {
+            factor = 3
+            is_civic_machine_servitor = yes
+            desc = civic_machine_servitor
+        }
+        modifier = {
+            factor = 0
+            OR = {
+                has_slaver_civic = yes
+                is_origin_syncretic_livestock = yes
+                is_slaver = yes
+                any_owned_species = {
+                    is_sapient = yes
+                    has_living_standard = {
+                        type = living_standard_subsistence
+                        country = prev
+                    }
+                }
+            }
+            desc = gal_com_slaver_empire
+        }
+        modifier = {
+            factor = 1.5
+            is_agrarian_empire = {
+                allow_invalid = yes
+            }
+            desc = civic_agrarian_idyll
+        }
+        modifier = {
+            factor = 1.5
+            is_civic_free_haven = yes
+            desc = civic_free_haven
+        }
+        modifier = {
+            factor = 1.5
+            OR = {
+                is_inwards_perfection_empire = yes
+                is_pompous_empire = yes
+            }
+            desc = civic_inwards_perfection
+        }
+        modifier = {
+            factor = 0.8
+            is_gestalt = yes
+            desc = ethic_gestalt_consciousness
+        }
+        modifier = {
+            factor = 0.5
+            is_civic_authoritarian = yes
+            desc = ethic_authoritarian
+        }
+    }
+}

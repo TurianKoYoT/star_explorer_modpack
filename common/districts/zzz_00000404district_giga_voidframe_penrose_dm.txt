@@ -1,0 +1,130 @@
+district_giga_voidframe_penrose_dm = {
+    base_buildtime = 720
+    icon = district_giga_voidframe_penrose_dm
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        uses_district_set = giga_frameworld
+        has_planet_flag = frameworld_penrose
+        is_voidframe_exclusive_dm = yes
+    }
+    potential = {
+        uses_district_set = giga_frameworld
+        has_planet_flag = frameworld_penrose
+        if = {
+            limit = {
+                is_voidframe_outdated_dm = yes
+            }
+            has_building = building_fe_power_hub
+            NOR = {
+                has_building = building_ae_power_hub
+                has_building = building_phanon_power_hub
+                has_building = building_stellarite_power_hub
+            }
+        }
+        else = {
+            is_voidframe_dm = yes
+            OR = {
+                has_building = building_fe_power_hub
+                has_building = building_ae_power_hub
+                has_building = building_phanon_power_hub
+                has_building = building_stellarite_power_hub
+            }
+        }
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_giga_frameworld_generator
+        district_giga_frameworld_penrose
+        district_giga_voidframe_generator_dm
+        district_giga_voidframe_generator_de
+        district_giga_voidframe_generator_pe
+        district_giga_voidframe_generator_se
+        district_giga_voidframe_penrose_dm
+        district_giga_voidframe_penrose_de
+        district_giga_voidframe_penrose_pe
+        district_giga_voidframe_penrose_se
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = 1000
+            alloys = 250
+            acot_sr_dark_energy = 400
+        }
+        upkeep = {
+            energy = 4
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 3
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_valid_civic = civic_agrarian_idyll
+            }
+        }
+        modifier = {
+            planet_housing_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+            OR = {
+                has_voidframe_mods_aot = no
+                always = yes
+            }
+        }
+        modifier = {
+            job_acot_energyman_add = 6
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+            OR = {
+                has_voidframe_mods_aot = no
+                always = yes
+            }
+        }
+        modifier = {
+            job_acot_energydrone_add = 6
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+            has_voidframe_mods_aot = yes
+        }
+        modifier = {
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+            has_voidframe_mods_aot = yes
+        }
+        modifier = {
+        }
+    }
+    ai_resource_production = {
+        energy = 100
+        trigger = {
+            always = yes
+        }
+    }
+}

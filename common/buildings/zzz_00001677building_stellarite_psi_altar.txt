@@ -1,0 +1,44 @@
+building_stellarite_psi_altar = {
+    base_buildtime = 900
+    can_build = no
+    category = government
+    potential = {
+        exists = owner
+        owner = {
+            has_technology = tech_stellarite_psi_altar
+        }
+    }
+    planet_modifier = {
+        pop_growth_speed = 2
+    }
+    allow = {
+        has_stellarite_capital = yes
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            sr_zro = 40
+            unity = 200
+        }
+        cost = {
+            energy = 4000
+            minerals = 4000
+            acot_sr_stellarite = 800
+        }
+        upkeep = {
+            acot_sr_stellarite = 20
+        }
+    }
+    prerequisites = {
+        tech_stellarite_psi_altar
+    }
+    ai_weight = {
+        weight = 10000
+        modifier = {
+            factor = 0
+            OR = {
+                has_building = building_stellarite_psi_altar
+            }
+        }
+    }
+}

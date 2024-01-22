@@ -1,0 +1,21 @@
+trait_rootless = {
+    cost = 2
+    potential_crossbreeding_chance = 0.5
+    opposites = {
+        "trait_nomadic"
+        "trait_sedentary"
+        "trait_rooted"
+    }
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    modifier = {
+        pop_growth_from_immigration = 0.3
+        pop_resettlement_cost_mult = -0.5
+        pop_environment_tolerance = 0.025
+    }
+    slave_cost = {
+        energy = 50
+    }
+}

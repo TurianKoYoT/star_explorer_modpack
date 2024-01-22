@@ -1,0 +1,21 @@
+tech_eutab_h_builder_broods = {
+    cost = @tier4cost3
+    area = society
+    tier = 4
+    category = {
+        biology
+    }
+    prerequisites = {
+        "tech_mega_engineering"
+    }
+    weight = @tier4weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_hive_empire = yes
+        has_ascension_perk = ap_master_builders
+    }
+    modifier = {
+        planet_metallurgists_alloys_produces_add = 1
+        starbase_upgrade_speed_mult = 0.33
+    }
+}

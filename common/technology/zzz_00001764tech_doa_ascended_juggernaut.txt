@@ -1,0 +1,25 @@
+tech_doa_ascended_juggernaut = {
+    area = engineering
+    cost = @fallentechcost
+    tier = @fallentechtier
+    category = {
+        ascended_technologies
+    }
+    weight = @tier5weight1
+    potential = {
+        has_country_flag = doa_tech_9
+        has_technology = tech_juggernaut
+    }
+    prereqfor_desc = {
+        custom = {
+            title = "TECH_UNLOCK_ASCENDED_JUGGERNAUT_TITLE"
+            desc = "TECH_UNLOCK_ASCENDED_JUGGERNAUT_DESC"
+        }
+    }
+    prerequisites = {
+        "tech_ascended_juggernaut_hull_1"
+    }
+    ai_weight = {
+        factor = 100
+    }
+}

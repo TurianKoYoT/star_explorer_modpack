@@ -1,0 +1,26 @@
+trait_ancient_knowledge = {
+    cost = -25
+    improves_leaders = yes
+    advanced_trait = yes
+    initial = no
+    randomized = no
+    improves_leaders = yes
+    immortal_leaders = yes
+    species_potential_add = {
+        always = no
+    }
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+        PRESAPIENT
+        MACHINE
+        ROBOT
+        DEITY
+    }
+    modifier = {
+        leader_skill_levels = 100
+        leaders_cost_mult = -10
+        army_experience_gain_mult = 10
+        ship_experience_gain_mult = 10
+    }
+}

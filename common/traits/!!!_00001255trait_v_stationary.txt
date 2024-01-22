@@ -1,0 +1,17 @@
+trait_v_stationary = {
+    cost = -2
+    opposites = {
+        "trait_v_auv"
+        "trait_v_flying_machine"
+    }
+    allowed_archetypes = {
+        ROBOT
+        MACHINE
+    }
+    custom_tooltip = TRAIT_STATIONARY_EFFECT
+    modifier = {
+    }
+    slave_cost = {
+        energy = -1000
+    }
+}

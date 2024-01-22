@@ -1,0 +1,150 @@
+namespace = anomaly
+ship_event = {
+    id = anomaly.6662
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        from = {
+            NOT = {
+                exists = space_owner
+            }
+            gpm_is_planet_class_normal_habitable = no
+            is_colonizable = no
+            gpm_has_precursor_modifiers = no
+            has_deposit_for = shipclass_mining_station
+            OR = {
+                has_modifier = chthonian_planet
+                has_modifier = extensive_moon_system
+                has_modifier = ultra_rich
+                has_modifier = gpm_ultra_rich_2
+                has_modifier = ultra_rich
+                has_modifier = mineral_rich
+                has_modifier = gpm_mineral_rich_2
+                has_modifier = asteroid_impacts
+                has_modifier = gpm_asteroid_impacts_2
+                has_modifier = carbon_world
+                has_modifier = asteroid_belt
+                has_modifier = karstic_world
+                has_modifier = heavy_sandstorms
+                has_modifier = desynchronous_rings
+                has_modifier = iron_planet
+                has_modifier = rich_rings
+                has_modifier = underground_world
+                has_modifier = salt_world
+                has_modifier = glacial_world
+                has_modifier = temperate_zone
+                has_modifier = drought_age
+            }
+            NOR = {
+                has_deposit = d_alloys_1
+                has_deposit = d_alloys_2
+                has_deposit = d_alloys_3
+                has_deposit = d_minerals_4
+                has_deposit = d_minerals_5
+                has_deposit = d_minerals_6
+                has_deposit = d_minerals_7
+                has_deposit = d_minerals_8
+                has_deposit = d_minerals_9
+                has_deposit = d_minerals_10
+                has_deposit = d_guardian_dragon_hoard
+            }
+        }
+    }
+    immediate = {
+        if = {
+            limit = {
+                from = {
+                    is_colonizable = no
+                    OR = {
+                        has_modifier = chthonian_planet
+                        has_modifier = carbon_world
+                        has_modifier = iron_planet
+                    }
+                }
+            }
+            from = {
+                clear_deposits = yes
+                random_list = {
+                    1 = {
+                        add_deposit = d_alloys_1
+                    }
+                    3 = {
+                        add_deposit = d_minerals_4
+                    }
+                    4 = {
+                        add_deposit = d_minerals_3
+                    }
+                    2 = {
+                        add_deposit = d_minerals_2
+                    }
+                }
+            }
+        }
+        else_if = {
+            limit = {
+                from = {
+                    is_colonizable = no
+                    OR = {
+                        has_modifier = heavy_sandstorms
+                        has_modifier = desynchronous_rings
+                    }
+                }
+            }
+            from = {
+                clear_deposits = yes
+                random_list = {
+                    1 = {
+                        add_deposit = d_minerals_3
+                    }
+                    2 = {
+                        add_deposit = d_minerals_2
+                    }
+                    2 = {
+                    }
+                }
+            }
+        }
+        else_if = {
+            limit = {
+                from = {
+                    is_colonizable = no
+                }
+            }
+            from = {
+                clear_deposits = yes
+                random_list = {
+                    1 = {
+                        add_deposit = d_minerals_4
+                    }
+                    4 = {
+                        add_deposit = d_minerals_3
+                    }
+                    3 = {
+                        add_deposit = d_minerals_2
+                    }
+                }
+            }
+        }
+        else_if = {
+            limit = {
+                from = {
+                    OR = {
+                        is_ocean_world = yes
+                        is_tropical_world = yes
+                        is_savannah_world = yes
+                        is_nuked_world = yes
+                        is_gaia_world = yes
+                    }
+                }
+            }
+            from = {
+                add_deposit = d_submerged_ore_veins
+            }
+        }
+        else = {
+            from = {
+                add_deposit = d_rich_mountain
+            }
+        }
+    }
+}

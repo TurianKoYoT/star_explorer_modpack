@@ -1,0 +1,31 @@
+xte_leader_trait_land_of_the_free = {
+    inline_script = {
+        script = trait/xte_icon
+        CLASS = leader
+        ICON = GFX_xte_leader_trait_land_of_the_free
+        RARITY = xte_positive
+        COUNCIL = yes
+        TIER = none
+    }
+    cost = 0
+    triggered_councilor_modifier = {
+        potential = {
+            always = yes
+        }
+        country_trade_attractiveness = 0.15
+        pop_ethics_shift_speed_mult = 1
+        planet_jobs_slave_produces_mult = -0.25
+        planet_crime_mult = 0.25
+        pop_factions_produces_mult = 0.2
+        multiplier = value:xte_anti_stacking_value|LEADER_TRAIT|xte_leader_trait_land_of_the_free|
+    }
+    custom_tooltip_with_modifiers = xte_councilor_trait_efficiency_notification
+    leader_potential_add = {
+        always = no
+    }
+    leader_class = {
+        commander
+        scientist
+        official
+    }
+}

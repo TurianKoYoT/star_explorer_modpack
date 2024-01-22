@@ -1,0 +1,31 @@
+bwm_building_nourishment_center = {
+    base_buildtime = 480
+    can_build = no
+    can_demolish = yes
+    icon = building_food_processing_center
+    position_priority = 2
+    category = resources
+    potential = {
+        OR = {
+            has_building = "bwm_building_ancient_monolith_1"
+            has_building = "bwm_building_ancient_monolith_2"
+            has_building = "bwm_building_ancient_monolith_3"
+        }
+    }
+    planet_modifier = {
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 1000
+        }
+        produces = {
+            food = 100
+        }
+        upkeep = {
+            energy = 20
+        }
+    }
+    upgrades = {
+    }
+}

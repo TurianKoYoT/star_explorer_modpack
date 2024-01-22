@@ -1,0 +1,19 @@
+tech_nanites_processors = {
+    cost = @tier4cost2
+    area = physics
+    tier = 4
+    category = {
+        computing
+    }
+    weight = @tier4weight2
+    is_rare = yes
+    potential = {
+        has_ascension_perk = ap_nano_to_nanite
+    }
+    modifier = {
+        all_technology_research_speed = 0.15
+    }
+    ai_weight = {
+        factor = 19
+    }
+}

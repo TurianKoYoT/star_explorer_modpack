@@ -1,0 +1,42 @@
+building_eutab_preservation_nexus = {
+    base_buildtime = @b2_time
+    category = amenity
+    potential = {
+        exists = owner
+        owner = {
+            is_machine_empire = yes
+        }
+    }
+    planet_modifier = {
+        job_coordinator_add = 1
+        planet_buildings_upkeep_mult = -0.1
+        planet_districts_upkeep_mult = -0.1
+        planet_amenities_mult = 0.1
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            volatile_motes = @b2_rare_cost
+        }
+        upkeep = {
+            energy = @b1_upkeep
+            volatile_motes = @b2_rare_upkeep
+        }
+    }
+    prerequisites = {
+        "tech_micro_replicators"
+    }
+    show_tech_unlock_if = {
+        is_gestalt = yes
+    }
+    triggered_desc = {
+        text = job_coordinator_effect_desc
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            is_machine_empire = no
+        }
+    }
+}

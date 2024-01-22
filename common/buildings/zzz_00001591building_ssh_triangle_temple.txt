@@ -1,0 +1,40 @@
+building_ssh_triangle_temple = {
+    base_buildtime = @b2_time
+    exempt_from_ai_planet_specialization = no
+    category = manufacturing
+    potential = {
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+            owner = {
+                has_country_flag = ssh_triangle_temple_triggered
+            }
+        }
+    }
+    empire_limit = 1
+    planet_modifier = {
+        planet_jobs_unity_produces_mult = 0.3
+        job_priest_add = 1
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            sr_zro = 15
+        }
+    }
+    can_be_ruined = yes
+    prerequisites = {
+        "ssh_tech_triangle_theory"
+    }
+    on_built = {
+        owner = {
+            country_event = {
+                id = ssh_shroud.1
+                days = 60
+                random = 720
+            }
+        }
+    }
+}

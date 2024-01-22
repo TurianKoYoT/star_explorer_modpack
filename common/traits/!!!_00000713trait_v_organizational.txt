@@ -1,0 +1,49 @@
+trait_v_organizational = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    species_possible_merge_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    species_possible_remove = {
+        OR = {
+            can_remove_beneficial_genetic_traits = yes
+            AND = {
+                exists = from
+                from = {
+                    is_gestalt = yes
+                }
+            }
+        }
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_hive_mind"
+        "trait_invasive"
+        "trait_v_competetive"
+        "trait_v_autolatry"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    allowed_ethics = {
+        ethic_authoritarian
+        ethic_fanatic_authoritarian
+    }
+    valid_for_all_ethics = no
+    custom_tooltip_with_modifiers = TRAIT_ORGANIZATIONAL_EFFECT
+    modifier = {
+        pop_ethic_authoritarian_attraction_mult = 0.1
+        pop_government_ethic_attraction = 0.05
+    }
+    slave_cost = {
+        energy = 500
+    }
+}

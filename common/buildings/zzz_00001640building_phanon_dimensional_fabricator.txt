@@ -1,0 +1,68 @@
+building_phanon_dimensional_fabricator = {
+    base_buildtime = 900
+    can_demolish = yes
+    can_build = no
+    category = resource
+    potential = {
+        NOT = {
+            has_global_flag = aot_phanon_content_OFF
+        }
+        exists = owner
+        owner = {
+            has_technology = tech_phanon_dimensional_fabricator
+        }
+    }
+    prerequisites = {
+        tech_phanon_dimensional_fabricator
+    }
+    allow = {
+        has_phanon_capital = yes
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 2500
+            minerals = 2500
+            aot_sr_runic_power = 750
+        }
+        produces = {
+            minerals = @auto_minerals_pe
+            rare_crystals = @auto_sr_pe
+            exotic_gases = @auto_sr_pe
+            volatile_motes = @auto_sr_pe
+            sr_zro = @auto_sr_pe
+            sr_living_metal = @auto_sr_pe
+            sr_dark_matter = @auto_sr_ae
+            acot_sr_dark_energy = @auto_sr_ae
+        }
+        upkeep = {
+            energy = 100
+            aot_sr_runic_power = 30
+        }
+    }
+    upgrades = {
+        building_stellarite_dimensional_fabricator
+    }
+    ai_weight = {
+        weight = 10
+        modifier = {
+            factor = 5
+            owner = {
+                has_monthly_income = {
+                    resource = minerals
+                    value < 10
+                }
+            }
+        }
+    }
+    ai_resource_production = {
+        minerals = 1000
+        rare_crystals = 50
+        exotic_gases = 50
+        volatile_motes = 50
+        sr_living_metal = 25
+        trigger = {
+            always = yes
+        }
+    }
+}

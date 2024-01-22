@@ -1,0 +1,8 @@
+opinion_victory_of_crusade = {
+    opinion = {
+        base = 100
+    }
+    decay = {
+        base = 2
+    }
+}

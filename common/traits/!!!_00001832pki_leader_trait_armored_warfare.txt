@@ -1,0 +1,20 @@
+pki_leader_trait_armored_warfare = {
+    inline_script = {
+        script = trait/icon
+        CLASS = commander
+        ICON = "GFX_leader_trait_artillerist"
+        RARITY = common
+        COUNCIL = no
+        TIER = no
+    }
+    fleet_modifier = {
+        ship_armor_mult = 0.1
+        ship_speed_mult = 0.15
+    }
+    leader_class = {
+        commander
+    }
+    leader_potential_add = {
+        always = no
+    }
+}

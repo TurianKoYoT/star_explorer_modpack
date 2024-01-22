@@ -1,0 +1,21 @@
+xte_commander_trait_underdog = {
+    inline_script = {
+        script = trait/xte_icon
+        CLASS = commander
+        ICON = GFX_xte_leader_trait_underdog
+        RARITY = xte_positive
+        COUNCIL = no
+        TIER = none
+    }
+    cost = 0
+    randomized = no
+    fleet_modifier = {
+        force_disparity_fire_rate_mult = 0.15
+    }
+    leader_potential_add = {
+        always = no
+    }
+    leader_class = {
+        commander
+    }
+}

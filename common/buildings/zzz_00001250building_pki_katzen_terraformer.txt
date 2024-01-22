@@ -1,0 +1,24 @@
+building_pki_katzen_terraformer = {
+    base_buildtime = 360
+    icon = building_giga_katzen_terraformer
+    potential = {
+        owner = {
+            pki_is_katzenartig_imperium = yes
+        }
+    }
+    prerequisites = {
+        "tech_katzen_habitability"
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+        }
+        upkeep = {
+            energy = 20
+        }
+    }
+    planet_modifier = {
+        pop_environment_tolerance = 0.1
+    }
+}

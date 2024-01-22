@@ -1,0 +1,92 @@
+building_avb_nanite_transmuter_2 = {
+    base_buildtime = @avb_b4_time
+    can_build = no
+    category = manufacturing
+    potential = {
+        exists = owner
+        OWNER = {
+            OR = {
+                has_monthly_income = {
+                    resource = nanites
+                    value > 0
+                }
+                AND = {
+                    is_ai = no
+                    has_resource = {
+                        type = nanites
+                        amount > 0
+                    }
+                }
+            }
+        }
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+            AND = {
+                has_z_expanded_mod = yes
+                has_planet_flag = planetary_station
+            }
+        }
+    }
+    allow = {
+        has_fully_upgraded_capital = yes
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+            exists = owner
+            owner = {
+                is_ai = yes
+            }
+            NOT = {
+                has_building = building_ministry_production
+            }
+            or = {
+                has_factory_designation = yes
+                has_foundry_designation = yes
+                has_industrial_designation = yes
+            }
+        }
+        modifier = {
+            job_starnet_spice_melange_farmer_add = 1
+            job_starnet_spice_melange_antifarmer_add = -1
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_b4_minerals
+            rare_crystals = 50
+            volatile_motes = 50
+            exotic_gases = 50
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    NOT = {
+                        has_deficit = nanites
+                    }
+                }
+            }
+            rare_crystals = 6
+            volatile_motes = 6
+            exotic_gases = 6
+        }
+        upkeep = {
+            nanites = 2
+            energy = @avb_b4_upkeep
+        }
+    }
+    prerequisites = {
+        "tech_avb_nanite_transmutation_2"
+    }
+    ai_resource_production = {
+        rare_crystals = 6
+        volatile_motes = 6
+        exotic_gases = 6
+        trigger = {
+            always = yes
+        }
+    }
+}

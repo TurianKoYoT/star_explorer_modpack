@@ -1,0 +1,38 @@
+trait_v_aggregation = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/REP"
+    inline_script = "species_class/ART"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/AQUATIC"
+    custom_tooltip = TRAIT_AGGREGATION_EFFECT
+    opposites = {
+        "trait_invasive"
+        "trait_v_adv_aggregation"
+        "trait_communal"
+        "trait_solitary"
+        "trait_v_urban_adaptation"
+        "trait_v_adv_urban_adaptation"
+        "trait_v_fossorial"
+        "trait_v_adv_fossorial"
+        "trait_v_ecotypic_a"
+        "trait_v_adv_ecotypic_a"
+        "trait_v_ecotypic_b"
+        "trait_v_adv_ecotypic_b"
+    }
+    triggered_pop_modifier = {
+        pop_housing_usage_mult = -0.01
+        mult = planet.value:count_v_aggregation
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

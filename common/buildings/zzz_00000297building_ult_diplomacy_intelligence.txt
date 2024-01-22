@@ -1,0 +1,62 @@
+building_ult_diplomacy_intelligence = {
+    base_buildtime = 720
+    base_cap_amount = 1
+    category = government
+    potential = {
+        exists = owner
+        owner = {
+            is_regular_empire = yes
+        }
+        planet = {
+            is_capital = yes
+        }
+        NOT = {
+            has_modifier = resort_colony
+        }
+        NOT = {
+            has_modifier = slave_colony
+        }
+    }
+    destroy_trigger = {
+        OR = {
+            AND = {
+                exists = owner
+                owner = {
+                    is_regular_empire = no
+                }
+            }
+            planet = {
+                is_capital = no
+            }
+        }
+    }
+    planet_modifier = {
+        job_politician_add = 2
+        job_bureaucrat_add = 4
+        job_culture_worker_add = 2
+    }
+    country_modifier = {
+        envoys_add = 4
+        diplo_weight_mult = 0.2
+        country_base_influence_produces_add = 1
+        intel_decryption_add = 10
+        espionage_operation_difficulty_add = -5
+        add_base_country_intel = 20
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 1000
+            rare_crystals = 500
+        }
+        upkeep = {
+            energy = 10
+        }
+    }
+    prerequisites = {
+        "tech_ult_supreme_power"
+    }
+    show_tech_unlock_if = {
+        is_regular_empire = yes
+    }
+}

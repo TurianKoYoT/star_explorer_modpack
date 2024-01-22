@@ -1,0 +1,48 @@
+building_delta_embassy_crim = {
+    icon = building_dm_embassy
+    base_buildtime = 480
+    base_cap_amount = 1
+    owner_type = corporate
+    category = government
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            is_criminal_syndicate = yes
+        }
+    }
+    allow = {
+        has_upgraded_capital = yes
+    }
+    country_modifier = {
+        spy_network_levels_add = 5
+    }
+    planet_modifier = {
+        job_dm_clerk_add = 2
+        pop_government_ethic_attraction = -0.5
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            energy = 400
+            minerals = 750
+            sr_dark_matter = 200
+        }
+        upkeep = {
+            energy = 15
+            sr_dark_matter = 3
+        }
+    }
+    prerequisites = {
+        tech_dm_embassy
+    }
+    show_tech_unlock_if = {
+        is_megacorp = yes
+        is_criminal_syndicate = yes
+    }
+    upgrades = {
+        building_alpha_embassy_crim
+    }
+    ai_weight = {
+        weight = 50
+    }
+}

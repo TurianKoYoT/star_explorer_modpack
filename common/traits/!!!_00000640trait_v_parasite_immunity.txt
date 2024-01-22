@@ -1,0 +1,28 @@
+trait_v_parasite_immunity = {
+    cost = 1
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    randomized = no
+    potential_crossbreeding_chance = 0
+    opposites = {
+        "trait_zombie"
+        "trait_v_parasitised"
+        "trait_v_weak_immune_system"
+        "trait_v_plague"
+        "trait_v_adv_plague"
+        "trait_invasive"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    custom_tooltip_with_modifiers = TRAIT_PARASITIC_IMMUNITY_EFFECT
+    modifier = {
+        leader_lifespan_add = 10
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

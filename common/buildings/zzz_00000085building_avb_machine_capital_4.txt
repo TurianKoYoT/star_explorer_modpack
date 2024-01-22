@@ -1,0 +1,64 @@
+@buildings_t5 = 5
+@capital_t4_min_pops = 80
+@tier_5_capital_defense_armies = 24
+building_avb_machine_capital_4 = {
+    base_buildtime = @avb_c4_time
+    capital = yes
+    can_build = no
+    can_demolish = no
+    can_be_ruined = no
+    can_be_disabled = no
+    position_priority = 0
+    category = government
+    potential = {
+        exists = owner
+        owner = {
+            OR = {
+                is_machine_empire = yes
+                is_country_type = ai_empire
+            }
+            is_fallen_empire = no
+        }
+    }
+    convert_to = {
+        building_hive_major_capital
+        building_avb_capital_4
+        building_machine_major_capital
+        building_ancient_control_center
+        building_ancient_palace
+    }
+    allow = {
+        num_pops >= @capital_t4_min_pops
+    }
+    prerequisites = {
+        "tech_avb_capital_4"
+    }
+    show_tech_unlock_if = {
+        is_machine_empire = yes
+    }
+    upgrades = {
+        building_avb_machine_capital_5
+    }
+    planet_modifier = {
+        planet_housing_add = 16
+        planet_amenities_add = 22
+        job_replicator_add = 2
+        job_patrol_drone_add = 4
+        job_maintenance_drone_add = 6
+        planet_max_buildings_add = @buildings_t5
+        defense_armies_add = @tier_5_capital_defense_armies
+    }
+    inline_script = {
+        script = capitals/machine/avb_machine_capitals
+        tier = cm4
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_c5_minerals
+        }
+        upkeep = {
+            energy = @avb_c5_upkeep
+        }
+    }
+}

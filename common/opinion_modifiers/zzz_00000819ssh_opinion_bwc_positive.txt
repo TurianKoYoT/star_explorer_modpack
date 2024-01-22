@@ -1,0 +1,5 @@
+ssh_opinion_bwc_positive = {
+    opinion = {
+        base = 50
+    }
+}

@@ -1,0 +1,80 @@
+trait_v_ecotypic_b = {
+    cost = 3
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_agrarian"
+        "trait_ingenious"
+        "trait_industrious"
+        "trait_v_ecotypic_a"
+        "trait_v_adv_ecotypic_a"
+        "trait_v_adv_ecotypic_b"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    custom_tooltip = TRAIT_ECOTYPIC_B_EFFECT
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/FUN"
+    slave_cost = {
+        energy = 2000
+    }
+    triggered_pop_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                is_wet = yes
+            }
+        }
+        planet_jobs_minerals_produces_mult = 0.075
+        planet_jobs_energy_produces_mult = 0.075
+    }
+    triggered_pop_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                is_cold = yes
+            }
+        }
+        planet_jobs_food_produces_mult = 0.075
+        planet_jobs_energy_produces_mult = 0.075
+    }
+    triggered_pop_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                is_dry = yes
+            }
+        }
+        planet_jobs_food_produces_mult = 0.075
+        planet_jobs_minerals_produces_mult = 0.075
+    }
+    triggered_pop_modifier = {
+        potential = {
+            exists = planet
+            OR = {
+                is_v_pc_gaia = yes
+                is_v_pc_hive = yes
+                is_v_pc_radioactive = yes
+            }
+        }
+        planet_jobs_food_produces_mult = 0.15
+        planet_jobs_minerals_produces_mult = 0.15
+        planet_jobs_energy_produces_mult = 0.15
+    }
+    triggered_pop_modifier = {
+        potential = {
+            exists = planet
+            OR = {
+                is_v_pc_hive = yes
+                is_v_pc_radioactive = yes
+            }
+        }
+        pop_housing_usage_mult = -0.1
+        planet_pops_consumer_goods_upkeep_mult = -0.1
+    }
+}

@@ -1,0 +1,103 @@
+building_avb_organic_sanctuary_4 = {
+    base_buildtime = @avb_u5_time
+    can_build = no
+    category = unity
+    potential = {
+        exists = owner
+        owner = {
+            OR = {
+                has_valid_civic = civic_machine_servitor
+                AND = {
+                    has_z_expanded_mod = yes
+                    OR = {
+                        is_servitor_empire = yes
+                        has_valid_civic = civic_machine_consciousness
+                    }
+                }
+            }
+        }
+        OR = {
+            has_z_expanded_mod = no
+            AND = {
+                has_z_expanded_mod = yes
+                NOT = {
+                    has_planet_flag = planetary_station
+                }
+            }
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            NOR = {
+                has_valid_civic = civic_machine_servitor
+                is_servitor_empire = yes
+                has_valid_civic = civic_machine_consciousness
+            }
+        }
+    }
+    convert_to = {
+        building_avb_residence_4
+        building_avb_communal_housing_4
+    }
+    planet_modifier = {
+        job_bio_trophy_add = 40
+        job_artisan_drone_add = 4
+        job_maintenance_drone_add = 3
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+            exists = owner
+            owner = {
+                is_servitor_empire = yes
+            }
+        }
+        modifier = {
+            job_servitor_caretaker_drone_add = 3
+            job_maintenance_drone_add = -3
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            has_z_expanded_mod = yes
+            exists = owner
+            owner = {
+                is_servitor_empire = yes
+            }
+        }
+        text = job_servitor_caretaker_drone_effect_desc
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_u5_minerals
+            exotic_gases = @avb_u5_rare_cost
+        }
+        upkeep = {
+            energy = @avb_u5_upkeep
+            exotic_gases = @avb_u5_rare_upkeep
+        }
+    }
+    triggered_desc = {
+        text = job_bio_trophy_effect_desc
+    }
+    triggered_desc = {
+        text = job_artisan_drone_effect_desc
+    }
+    triggered_desc = {
+        text = job_maintenance_drone_effect_desc
+    }
+    prerequisites = {
+        "tech_avb_residence_4"
+    }
+    show_tech_unlock_if = {
+        owner = {
+            OR = {
+                has_valid_civic = civic_machine_servitor
+                is_servitor_empire = yes
+                has_valid_civic = civic_machine_consciousness
+            }
+        }
+    }
+}

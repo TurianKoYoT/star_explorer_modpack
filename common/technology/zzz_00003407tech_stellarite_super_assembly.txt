@@ -1,0 +1,65 @@
+tech_stellarite_super_assembly = {
+    cost = @acot_tier9cost2
+    area = engineering
+    tier = 9
+    category = {
+        industry
+    }
+    prerequisites = {
+        tech_phanon_super_assembly
+        tech_dark_matter_power_core_se
+    }
+    weight = @tier5weight1
+    potential = {
+        NOR = {
+            is_hive_empire = yes
+            has_global_flag = acot_building_forbidden
+        }
+        has_technology = tech_dark_matter_power_core_se
+        has_technology = tech_phanon_super_assembly
+    }
+    feature_flags = {
+        add_advanced_traits
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            has_policy_flag = robots_outlawed
+        }
+        modifier = {
+            factor = 2
+            has_origin = origin_mechanists
+        }
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_industry
+                LEVEL > 2
+            }
+        }
+    }
+    ai_weight = {
+        weight = 2
+        modifier = {
+            factor = 2
+            is_materialist = yes
+        }
+        modifier = {
+            factor = 0
+            NOR = {
+                has_ai_personality_behaviour = robot_exploiter
+                has_ai_personality_behaviour = robot_liberator
+            }
+        }
+        modifier = {
+            factor = 2
+            has_origin = origin_mechanists
+        }
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_industry
+            }
+        }
+    }
+}

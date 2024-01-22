@@ -1,0 +1,92 @@
+@resolution_weight_disliked = 4
+@resolution_cost_t3 = 200
+resolution_custodian_disband_galpol = {
+    icon = "GFX_resolution_disband_galpol"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t3
+        }
+    }
+    target = no
+    modifier = {
+    }
+    effect = {
+        cancel_resolution = "resolution_custodian_galpol"
+        if = {
+            limit = {
+                is_active_resolution = "resolution_custodian_expand_galpol"
+            }
+            cancel_resolution = "resolution_custodian_expand_galpol"
+        }
+    }
+    fail_effects = {
+    }
+    potential = {
+        is_active_resolution = "resolution_custodian_galpol"
+    }
+    ai_weight = {
+        base = @resolution_weight_disliked
+        modifier = {
+            factor = 6
+            is_criminal_syndicate = yes
+            desc = gov_criminal_syndicate
+        }
+        modifier = {
+            factor = 1.8
+            is_xenophobic_isolationists = yes
+            desc = gal_com_isolationist_civic
+        }
+        modifier = {
+            factor = 0.4
+            any_owned_planet = {
+                planet_crime > 40
+            }
+            desc = gal_com_owns_high_crime_planet
+        }
+        modifier = {
+            factor = 0.2
+            any_owned_planet = {
+                has_branch_office = yes
+                exists = branch_office_owner
+                branch_office_owner = {
+                    is_criminal_syndicate = yes
+                }
+            }
+            desc = gal_com_owns_planet_with_criminal_syndicate_branch_office
+        }
+        modifier = {
+            factor = 0
+            is_galactic_custodian = yes
+            desc = gal_com_is_the_custodian
+        }
+        modifier = {
+            factor = 3
+            is_spy_empire = yes
+            desc = gal_com_spy_civic
+        }
+        modifier = {
+            factor = 0
+            is_civic_police_state = yes
+            desc = gal_com_police_civic
+        }
+        modifier = {
+            factor = 0.5
+            is_civic_diplomatic_corps = yes
+            desc = gal_com_diplo_civic
+        }
+        modifier = {
+            factor = 1.25
+            has_monthly_income = {
+                resource = energy
+                value < 20
+            }
+            desc = gal_com_energy_income
+        }
+        modifier = {
+            factor = 1.5
+            has_deficit = energy
+            desc = gal_com_energy_income
+        }
+    }
+}

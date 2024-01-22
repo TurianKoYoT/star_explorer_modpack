@@ -1,0 +1,206 @@
+guiTypes = {
+    containerWindowType = {
+        name = "holding_per_country_entry"
+        size = {
+            width = 540
+            height = 200
+        }
+        position = {
+            x = 0
+            y = 0
+        }
+        background = {
+            name = "background"
+            spriteType = "GFX_dark_area_cut_light"
+        }
+        containerWindowType = {
+            name = "contents"
+            size = {
+                width = 100%%
+                height = 100%%
+            }
+            position = {
+                x = 0
+                y = 0
+            }
+            buttonType = {
+                name = "country_flag"
+                quadTextureSprite = "GFX_empire_flag_64"
+                position = {
+                    x = 19
+                    y = 7
+                }
+            }
+            containerWindowType = {
+                name = "buildings_container"
+                size = {
+                    width = 238
+                    height = 180
+                }
+                position = {
+                    x = 108
+                    y = 10
+                }
+                background = {
+                    name = "buildings_box_background"
+                    spriteType = "GFX_dark_area_cut_light"
+                }
+                gridBoxType = {
+                    name = "buildings_box"
+                    position = {
+                        x = 4
+                        y = 18
+                    }
+                    size = {
+                        width = 146
+                        height = 144
+                    }
+                    format = "UPPER_LEFT"
+                    slotSize = {
+                        width = 73
+                        height = 72
+                    }
+                    add_horizontal = yes
+                    max_slots_horizontal = 3
+                    max_slots_vertical = 3
+                }
+            }
+            containerWindowType = {
+                name = "holdings_value_container"
+                size = {
+                    width = 88
+                    height = 48
+                }
+                position = {
+                    x = 10
+                    y = 84
+                }
+                background = {
+                    name = "background"
+                    spriteType = "GFX_dark_area_cut_light"
+                }
+                iconType = {
+                    name = "holdings_value_icon"
+                    spriteType = "GFX_resource_energy_large"
+                    position = {
+                        x = -2
+                        y = 8
+                    }
+                }
+                instantTextBoxType = {
+                    name = "holdings_value_amount"
+                    font = "font_text_18"
+                    text = "5"
+                    position = {
+                        x = 25
+                        y = 0
+                    }
+                    maxWidth = 62
+                    maxHeight = 48
+                    fixedSize = yes
+                    format = center
+                    vertical_alignment = center
+                }
+            }
+            containerWindowType = {
+                name = "holdings_resources"
+                size = {
+                    width = 174
+                    height = -10
+                }
+                position = {
+                    x = -10
+                    y = 10
+                }
+                orientation = upper_right
+                origo = upper_right
+                background = {
+                    name = "background"
+                    spriteType = "GFX_dark_area_cut_light"
+                }
+                instantTextBoxType = {
+                    name = "holdings_production_output_title"
+                    font = "font_text_14"
+                    text = "PRODUCTION"
+                    position = {
+                        x = 0
+                        y = 0
+                    }
+                    maxWidth = 174
+                    maxHeight = 30
+                    fixedSize = yes
+                    format = center
+                    vertical_alignment = center
+                    alwaysTransparent = yes
+                }
+                instantTextBoxType = {
+                    name = "holdings_production_output_amount"
+                    font = "font_text_14"
+                    text = "10"
+                    position = {
+                        x = 5
+                        y = 30
+                    }
+                    maxWidth = 164
+                    maxHeight = 60
+                    fixedSize = yes
+                    format = center
+                    scrollbarType = "standardlistbox_slider_thick_small"
+                }
+                instantTextBoxType = {
+                    name = "holdings_consumption_output_title"
+                    font = "font_text_14"
+                    text = "DEFICIT"
+                    position = {
+                        x = 0
+                        y = 90
+                    }
+                    maxWidth = 174
+                    maxHeight = 30
+                    fixedSize = yes
+                    format = center
+                    vertical_alignment = center
+                    alwaysTransparent = yes
+                }
+                instantTextBoxType = {
+                    name = "holdings_consumption_output_amount"
+                    font = "font_text_14"
+                    text = "10"
+                    position = {
+                        x = 5
+                        y = 120
+                    }
+                    maxWidth = 164
+                    maxHeight = 60
+                    fixedSize = yes
+                    format = center
+                    scrollbarType = "standardlistbox_slider_thick_small"
+                }
+            }
+            buttonType = {
+                name = "close_branch_office_button"
+                quadTextureSprite = "GFX_button_close_branch_office"
+                position = {
+                    x = 30
+                    y = -54
+                }
+                orientation = lower_left
+            }
+        }
+        buttonType = {
+            name = "establish_branch_office"
+            position = {
+                x = -112
+                y = 21
+            }
+            quadTextureSprite = "GFX_standard_button_200_34_button"
+            orientation = center_up
+            buttonFont = "font_text_14"
+            text = "ESTABLISH_BRANCH_OFFICE"
+            font = "font_text_14"
+            oversound = mouse_over
+            navLeft = "change"
+            shortcut = "B"
+        }
+    }
+}

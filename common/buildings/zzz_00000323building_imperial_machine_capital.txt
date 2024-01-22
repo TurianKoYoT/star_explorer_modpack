@@ -1,0 +1,70 @@
+@capital_t6_min_pops = 150
+building_imperial_machine_capital = {
+    base_buildtime = @avb_b6_time
+    capital = yes
+    can_build = no
+    can_demolish = no
+    can_be_ruined = no
+    can_be_disabled = no
+    position_priority = 0
+    category = government
+    potential = {
+        exists = owner
+        owner = {
+            OR = {
+                is_machine_empire = yes
+                is_country_type = ai_empire
+            }
+            is_galactic_emperor = yes
+        }
+        planet = {
+            is_capital = yes
+        }
+    }
+    convert_to = {
+        building_avb_capital_6
+        building_avb_hab_capital_3
+        building_avb_hive_capital_4
+        building_avb_machine_capital_6
+        building_ancient_control_center
+        building_ancient_palace
+    }
+    allow = {
+        num_pops >= @capital_t6_min_pops
+    }
+    prerequisites = {
+    }
+    planet_modifier = {
+        planet_housing_add = 30
+        planet_amenities_add = 30
+        job_replicator_add = 4
+        job_patrol_drone_add = 6
+        job_maintenance_drone_add = 10
+        planet_max_buildings_add = 11
+    }
+    inline_script = {
+        script = capitals/machine/avb_machine_capitals
+        tier = cm7
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_servitor_empire = yes
+            }
+        }
+        modifier = {
+            job_bio_trophy_add = 15
+            job_servitor_caretaker_drone_add = 1
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b4_minerals
+        }
+        upkeep = {
+            energy = @b4_upkeep
+        }
+    }
+}

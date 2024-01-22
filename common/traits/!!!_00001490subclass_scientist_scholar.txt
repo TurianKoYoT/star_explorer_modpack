@@ -1,0 +1,29 @@
+subclass_scientist_scholar = {
+    custom_subtitle = scientist_subclass
+    subclass_trait = yes
+    inline_script = {
+        script = trait/icon_subclass
+        SUBCLASS = scientist_scholar
+        COUNCIL = no
+    }
+    custom_tooltip_with_modifiers = scholar_subclass_tt
+    modifier = {
+        ship_anomaly_research_speed_mult = 0.1
+        ship_archaeological_site_excavation_speed_mult = 0.1
+        country_astral_rift_speed_mult = 0.1
+    }
+    ai_weight = {
+        modifier = {
+            is_councilor = yes
+            factor = 0
+        }
+        modifier = {
+            is_councilor = no
+            factor = 2
+        }
+    }
+    leader_class = {
+        scientist
+    }
+    background_icon = "GFX_leader_subclass_scientist_scholar_background"
+}

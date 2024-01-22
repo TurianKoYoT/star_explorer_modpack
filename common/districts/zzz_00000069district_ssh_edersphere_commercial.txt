@@ -1,0 +1,70 @@
+district_ssh_edersphere_commercial = {
+    base_buildtime = 360
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        uses_district_set = edersphere_world
+        exists = from
+        from = {
+            is_gestalt = no
+            is_fallen_empire = no
+        }
+    }
+    potential = {
+        exists = owner
+        owner = {
+            is_gestalt = no
+            is_fallen_empire = no
+        }
+        uses_district_set = edersphere_world
+    }
+    convert_to = {
+        district_ssh_edersphere_city
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = 1500
+            rare_crystals = 50
+        }
+        upkeep = {
+            energy = 5
+            rare_crystals = 1
+        }
+    }
+    triggered_planet_modifier = {
+        planet_housing_add = 15
+        job_merchant_add = 2
+        job_clerk_add = 6
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_active_tradition = tr_mercantile_commercial_enterprise
+            }
+        }
+        modifier = {
+            job_merchant_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+            }
+        }
+        modifier = {
+            job_manager_add = 1
+        }
+    }
+    triggered_desc = {
+        text = job_merchant_effect_desc
+    }
+    triggered_desc = {
+        text = job_clerk_effect_desc
+    }
+    triggered_desc = {
+        text = job_manager_effect_desc
+    }
+}

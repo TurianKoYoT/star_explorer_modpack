@@ -1,0 +1,64 @@
+ssh_tech_molecular_bond_manipulation = {
+    cost = 30000
+    area = physics
+    tier = 4
+    category = {
+        particles
+    }
+    prerequisites = {
+        "ssh_tech_advanced_dna_resequencing"
+    }
+    weight = @tier4weight2
+    is_rare = yes
+    prereqfor_desc = {
+        ship = {
+            title = "ssh_needed_for_subatomic_manipulation"
+        }
+    }
+    modifier = {
+        country_physics_tech_research_speed = 0.05
+        planet_jobs_alloys_produces_mult = 0.15
+        planet_jobs_consumer_goods_produces_mult = 0.15
+        planet_jobs_rare_crystals_produces_mult = 0.15
+        planet_jobs_volatile_motes_produces_mult = 0.15
+    }
+    weight_modifier = {
+        modifier = {
+            factor = @ap_technological_ascendancy_rare_tech
+            has_ascension_perk = ap_technological_ascendancy
+        }
+        modifier = {
+            factor = value:tech_weight_likelihood
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_particles
+            }
+        }
+        modifier = {
+            factor = @federation_perk_factor
+            has_federation = yes
+            federation = {
+                has_federation_perk = rare_tech_boost
+                any_member = {
+                    has_technology = ssh_tech_molecular_bond_manipulation
+                }
+            }
+        }
+        modifier = {
+            factor = 0
+            has_utopia = no
+        }
+    }
+    ai_weight = {
+        factor = 5
+        modifier = {
+            factor = value:tech_weight_likelihood
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_particles
+            }
+        }
+        modifier = {
+            factor = 0
+            has_utopia = no
+        }
+    }
+}

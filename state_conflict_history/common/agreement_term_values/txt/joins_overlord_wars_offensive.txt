@@ -1,0 +1,51 @@
+joins_overlord_wars_offensive = {
+    term = joins_overlord_wars
+    loyalty_change = -20
+    ai_acceptance = {
+        overlord = 120
+        subject = -100
+    }
+    triggered_loyalty_change = {
+        trigger = {
+            target = {
+                OR = {
+                    has_ethic = ethic_pacifist
+                    has_ethic = ethic_fanatic_pacifist
+                }
+            }
+        }
+        loyalty_change = -20
+        ai_acceptance = {
+            subject = -100
+        }
+    }
+    activate_effect = {
+        set_rule_join_overlord_wars = offensive
+    }
+    deactivate_effect = {
+        set_rule_join_overlord_wars = none
+    }
+    target_modifier = {
+        monthly_loyalty = -2
+    }
+    possible = {
+        custom_tooltip = {
+            fail_text = not_allowed_for_tributary
+            NOT = {
+                agreement_preset = preset_tributary
+            }
+        }
+        custom_tooltip = {
+            fail_text = not_allowed_for_katzen_protektorat
+            NOT = {
+                OR = {
+                    agreement_preset = preset_katzen
+                    agreement_preset = preset_katzen_gestalt
+                }
+            }
+        }
+    }
+    potential = {
+        is_imperial_province_agreement = no
+    }
+}

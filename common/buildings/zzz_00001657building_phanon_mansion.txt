@@ -1,0 +1,75 @@
+building_phanon_mansion = {
+    base_buildtime = 900
+    can_build = no
+    category = amenity
+    convert_to = {
+        building_phanon_hive_depot
+        building_phanon_ancient_cryo_chamber
+    }
+    upgrades = {
+        building_stellarite_mansion
+    }
+    potential = {
+        owner = {
+            has_technology = tech_phanon_mansion
+            is_regular_empire = yes
+            NOR = {
+                has_valid_civic = civic_shared_burden
+                has_global_flag = aot_phanon_content_OFF
+            }
+        }
+    }
+    allow = {
+        has_phanon_capital = yes
+    }
+    planet_modifier = {
+        planet_housing_add = 60
+        planet_amenities_add = 60
+        job_phanon_entertainer_add = 4
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            trigger = {
+                has_modifier = acot_modifier_ascended_city
+            }
+            unity = 60
+        }
+        cost = {
+            energy = 2000
+            minerals = 2000
+            aot_sr_runic_power = 800
+        }
+        upkeep = {
+            aot_sr_runic_power = 10
+            sr_dark_matter = 2
+            acot_sr_dark_energy = 2
+        }
+    }
+    prerequisites = {
+        tech_phanon_mansion
+    }
+    show_tech_unlock_if = {
+        owner = {
+            is_regular_empire = yes
+            NOT = {
+                has_valid_civic = civic_shared_burden
+            }
+        }
+    }
+    ai_weight = {
+        weight = 100
+        modifier = {
+            factor = 300000
+            free_amenities < 0
+        }
+        modifier = {
+            factor = 500000
+            free_housing < 1
+        }
+        modifier = {
+            factor = 0
+            free_housing > 1
+        }
+    }
+}

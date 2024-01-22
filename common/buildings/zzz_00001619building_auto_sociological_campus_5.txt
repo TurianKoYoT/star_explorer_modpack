@@ -1,0 +1,22 @@
+building_auto_sociological_campus_5 = {
+    base_buildtime = 180
+    can_build = no
+    allow = {
+        has_major_upgraded_capital = yes
+    }
+    resources = {
+        category = planet_researchers
+        cost = {
+            automatic_drone = 200
+        }
+        produces = {
+            society_research = 20
+        }
+        upkeep = {
+            automatic_drone = 5
+        }
+    }
+    prerequisites = {
+        tech_society_3
+    }
+}

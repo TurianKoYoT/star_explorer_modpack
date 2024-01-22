@@ -1,0 +1,21 @@
+leader_trait_general_youth = {
+    cost = 0
+    icon = "gfx/interface/icons/traits/trait_youth.dds"
+    requires_traits = {
+        trait_youth
+    }
+    modifier = {
+        army_attack_damage_mult = 0.05
+        army_attack_health_mult = 0.15
+        army_defense_damage_mult = 0.1
+        army_defense_health_mult = 0.15
+    }
+    leader_trait = {
+        general
+    }
+    leader_class = {
+        general
+    }
+    initial = no
+    randomized = no
+}

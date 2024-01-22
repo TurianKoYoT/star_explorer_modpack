@@ -1,0 +1,21 @@
+tech_space_elevator = {
+    cost = @tier2cost1
+    area = engineering
+    tier = 2
+    prerequisites = {
+        "tech_engineering_1"
+    }
+    category = {
+        voidcraft
+    }
+    weight = @tier2weight1
+    is_rare = yes
+    potential = {
+        always = no
+    }
+    weight_modifier = {
+        factor = 0
+    }
+    ai_weight = {
+    }
+}

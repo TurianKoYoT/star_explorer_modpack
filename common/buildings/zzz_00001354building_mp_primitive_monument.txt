@@ -1,0 +1,14 @@
+building_mp_primitive_monument = {
+    icon = building_mp_primitive_monument
+    capital = no
+    can_build = no
+    can_demolish = yes
+    can_be_ruined = no
+    ai_weight = {
+        weight = 5
+    }
+    planet_modifier = {
+        pop_happiness = 0.5
+        spiritualist_attraction = 1
+    }
+}

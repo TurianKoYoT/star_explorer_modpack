@@ -1,0 +1,14 @@
+triggered_opinion_resolution_emperor_expand_power_of_council = {
+    trigger = {
+        has_galactic_emperor = yes
+        is_active_resolution = resolution_emperor_expand_power_of_council
+        is_part_of_galactic_council = yes
+        is_galactic_emperor = no
+        FROM = {
+            is_galactic_emperor = yes
+        }
+    }
+    opinion = {
+        base = 50
+    }
+}

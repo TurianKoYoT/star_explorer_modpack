@@ -1,0 +1,22 @@
+building_auto_mining_complex_5 = {
+    base_buildtime = 180
+    can_build = no
+    allow = {
+        has_major_upgraded_capital = yes
+    }
+    resources = {
+        category = planet_miners
+        cost = {
+            automatic_drone = 200
+        }
+        produces = {
+            minerals = 25
+        }
+        upkeep = {
+            automatic_drone = 5
+        }
+    }
+    prerequisites = {
+        tech_mining_3
+    }
+}

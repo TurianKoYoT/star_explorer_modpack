@@ -1,0 +1,60 @@
+building_stellarite_consumer_goods_corp = {
+    icon = building_stellarite_civilian_factory
+    base_buildtime = 360
+    owner_type = corporate
+    category = manufacturing
+    can_build = no
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            is_criminal_syndicate = no
+        }
+        has_global_flag = has_aot_mod
+    }
+    planet_modifier = {
+        job_stellarite_clerk_add = 2
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            energy = 4000
+            minerals = 4000
+            acot_sr_stellarite = 800
+        }
+        produces = {
+            consumer_goods = 240
+        }
+        upkeep = {
+            energy = 40
+            acot_sr_stellarite = 5
+        }
+    }
+    prerequisites = {
+        tech_stellarite_civilian_factory
+    }
+    show_tech_unlock_if = {
+        is_megacorp = yes
+        is_criminal_syndicate = no
+    }
+    ai_weight = {
+        weight = 3
+        modifier = {
+            factor = 5
+            branch_office_owner = {
+                has_monthly_income = {
+                    resource = consumer_goods
+                    value < 0
+                }
+            }
+        }
+        modifier = {
+            factor = 0.5
+            branch_office_owner = {
+                has_monthly_income = {
+                    resource = consumer_goods
+                    value >= 10
+                }
+            }
+        }
+    }
+}

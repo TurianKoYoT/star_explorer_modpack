@@ -1,0 +1,149 @@
+building_avb_communal_housing_4 = {
+    base_buildtime = @avb_b4_time
+    can_build = no
+    category = amenity
+    potential = {
+        has_building = building_avb_communal_housing_3
+        owner = {
+            is_regular_empire = yes
+            OR = {
+                has_valid_civic = civic_shared_burden
+                AND = {
+                    has_z_expanded_mod = yes
+                    has_valid_civic = civic_worker_coop
+                }
+            }
+        }
+        OR = {
+            NOR = {
+                is_planet_class = pc_habitat
+                is_pd_habitat = yes
+            }
+            AND = {
+                exists = owner
+                owner = {
+                    is_void_dweller_empire = yes
+                }
+            }
+            has_modifier = resort_colony_pd_hab
+        }
+    }
+    allow = {
+        has_upgraded_capital_5 = yes
+    }
+    show_tech_unlock_if = {
+        owner = {
+            is_gestalt = no
+            OR = {
+                has_valid_civic = civic_shared_burden
+                AND = {
+                    has_z_expanded_mod = yes
+                    has_valid_civic = civic_worker_coop
+                }
+            }
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            AND = {
+                owner = {
+                    is_ai = yes
+                }
+                free_building_slots = 0
+                free_jobs < 1
+                free_housing > 10
+            }
+            AND = {
+                is_planet_class = pc_habitat
+                NOT = {
+                    has_planet_flag = advanced_habitat
+                }
+            }
+            has_modifier = slave_colony
+            NOT = {
+                owner = {
+                    is_regular_empire = yes
+                    has_valid_civic = civic_shared_burden
+                    OR = {
+                        AND = {
+                            has_z_expanded_mod = yes
+                            has_valid_civic = civic_worker_coop
+                        }
+                    }
+                }
+            }
+        }
+    }
+    convert_to = {
+        building_avb_drone_storage_4
+        building_avb_warren_4
+        building_avb_residence_4
+    }
+    planet_modifier = {
+        planet_housing_add = 35
+        planet_amenities_add = 24
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_active_tradition = tr_domination_imperious_architecture
+            }
+        }
+        modifier = {
+            planet_housing_add = 1
+        }
+    }
+    resources = {
+        category = planet_buildings
+        inline_script = {
+            script = amenity_buildings/avb_communal_resources
+            tier = 4
+        }
+    }
+    upgrades = {
+        "building_avb_communal_housing_5"
+    }
+    prerequisites = {
+        "tech_avb_residence_4"
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+            exists = owner
+            owner = {
+                has_technology = tech_housing_1
+            }
+        }
+        modifier = {
+            planet_housing_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+            exists = owner
+            owner = {
+                has_technology = tech_housing_2
+                NOT = {
+                    is_agrarian_empire = {
+                        allow_invalid = yes
+                    }
+                }
+            }
+        }
+        modifier = {
+            planet_housing_add = 1
+        }
+    }
+    inline_script = {
+        script = job_groups/entertainer_add
+        trigger = "
+exists = owner
+owner = { is_pleasure_seeker = yes }
+"
+        count = 2
+        desc = " "
+    }
+}

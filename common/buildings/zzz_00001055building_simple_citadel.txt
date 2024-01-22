@@ -1,0 +1,168 @@
+@tier_4_capital_defense_armies = 16
+building_simple_citadel = {
+    base_buildtime = @b4_time
+    capital = yes
+    can_build = no
+    can_demolish = no
+    can_be_ruined = no
+    can_be_disabled = no
+    position_priority = 0
+    category = government
+    potential = {
+        exists = owner
+        owner = {
+            is_galactic_custodian = yes
+        }
+        OR = {
+            is_active_resolution = "resolution_combine_citadel"
+            is_active_resolution = "resolution_combine_transarm"
+            is_active_resolution = "resolution_combine_tech"
+            is_active_resolution = "resolution_combine_singularity"
+            is_active_resolution = "resolution_combine_existance"
+        }
+        planet = {
+            is_capital = no
+        }
+    }
+    convert_to = {
+        building_hive_major_capital
+        building_machine_system_capital
+        building_system_capital
+        building_hab_major_capital
+        building_ancient_control_center
+        building_ancient_palace
+    }
+    allow = {
+        num_pops >= 50
+        OR = {
+            is_active_resolution = "resolution_combine_citadel"
+            is_active_resolution = "resolution_combine_transarm"
+            is_active_resolution = "resolution_combine_tech"
+            is_active_resolution = "resolution_combine_singularity"
+            is_active_resolution = "resolution_combine_existance"
+        }
+    }
+    prerequisites = {
+    }
+    planet_modifier = {
+        planet_housing_add = 18
+        planet_amenities_add = 20
+        job_replicator_add = 4
+        job_patrol_drone_add = 5
+        job_maintenance_drone_add = 6
+        planet_max_buildings_add = 11
+        planet_max_branch_office_buildings_add = 3
+        defense_armies_add = @tier_4_capital_defense_armies
+    }
+    inline_script = {
+        script = buildings/on_all_capital_buildings
+    }
+    triggered_planet_modifier = {
+        potential = {
+            num_pops >= 10
+        }
+        modifier = {
+            job_replicator_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            num_pops >= 40
+        }
+        modifier = {
+            job_replicator_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_civic = civic_machine_assimilator
+            }
+        }
+        modifier = {
+            job_replicator_add = -1
+            job_maintenance_drone_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_designation = col_crucible
+        }
+        modifier = {
+            job_replicator_add = -1
+            job_crucible_drone_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_active_tradition = tr_synthetics_finish_machine
+            }
+        }
+        modifier = {
+            job_replicator_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_technology = tech_capital_productivity_1
+            }
+        }
+        modifier = {
+            planet_jobs_productive_upkeep_mult = 0.1
+            planet_jobs_productive_produces_mult = 0.1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_technology = tech_capital_productivity_2
+            }
+        }
+        modifier = {
+            planet_jobs_productive_upkeep_mult = 0.1
+            planet_jobs_productive_produces_mult = 0.1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_technology = tech_capital_productivity_3
+            }
+        }
+        modifier = {
+            planet_jobs_productive_upkeep_mult = 0.1
+            planet_jobs_productive_produces_mult = 0.1
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b4_minerals
+        }
+        upkeep = {
+            energy = @b4_upkeep
+        }
+    }
+    triggered_desc = {
+        text = job_coordinator_effect_desc
+    }
+    triggered_desc = {
+        text = job_replicator_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            has_designation = col_crucible
+        }
+        text = job_crucible_drone_effect_desc
+    }
+    triggered_desc = {
+        text = job_patrol_drone_effect_desc
+    }
+}

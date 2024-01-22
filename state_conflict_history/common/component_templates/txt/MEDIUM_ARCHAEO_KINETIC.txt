@@ -1,0 +1,59 @@
+weapon_component_template = {
+    type = instant
+    key = "MEDIUM_ARCHAEO_KINETIC"
+    size = medium
+    icon = "GFX_ship_part_archaeo_mass_driver"
+    icon_frame = 1
+    prerequisites = {
+        "tech_archaeo_mass_drivers"
+    }
+    component_set = "ARCHAEO_KINETIC"
+    projectile_gfx = "macro_m"
+    tags = {
+        weapon_type_kinetic
+        weapon_archaeotech
+    }
+    ai_tags = {
+        weapon_role_anti_shield
+        gunship
+    }
+    resources = {
+        category = ship_components
+        cost = {
+            alloys = @m_t3_cost
+            minor_artifacts = @minor_artifacts_cost_m
+        }
+        upkeep = {
+            energy = @m_t3_upkeep_energy
+            alloys = @m_t3_upkeep_alloys
+        }
+    }
+    upgrades_to = MEDIUM_ACOT_MASS_DRIVER_DM
+    ai_weight = {
+        weight = 0
+        modifier = {
+            add = 2.5
+            owner = {
+                has_ascension_perk = ap_archaeoengineers
+            }
+        }
+        modifier = {
+            factor = 0
+            owner = {
+                has_monthly_income = {
+                    resource = minor_artifacts
+                    value < 3
+                }
+            }
+        }
+        modifier = {
+            factor = 1.3
+            owner = {
+                resource_stockpile_compare = {
+                    resource = minor_artifacts
+                    value > 250
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+mp_primitive_philosopher = {
+    category = ruler
+    is_capped_by_modifier = yes
+    building_icon = building_mp_primitive_philosophers_palace
+    clothes_texture_index = 1
+    possible_pre_triggers = {
+        has_owner = yes
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_ruler_job
+    possible = {
+        owner = {
+            is_primitive = yes
+            OR = {
+                has_country_flag = philosophy_age
+                has_country_flag = renaissance_age
+            }
+        }
+    }
+    resources = {
+        category = planet_administrators
+        produces = {
+            unity = 50
+            influence = 1
+            society_research = 20
+        }
+    }
+    weight = {
+        weight = 5
+    }
+}

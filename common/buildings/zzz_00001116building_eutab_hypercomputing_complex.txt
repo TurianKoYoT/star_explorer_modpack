@@ -1,0 +1,57 @@
+building_eutab_hypercomputing_complex = {
+    base_buildtime = 720
+    can_build = no
+    category = research
+    icon = building_eutab_foundation_institute
+    potential = {
+        exists = owner
+        owner = {
+            has_ascension_perk = ap_technological_ascendancy
+        }
+    }
+    allow = {
+        has_upgraded_capital = yes
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            exotic_gases = @b3_rare_cost
+        }
+        upkeep = {
+            energy = @b3_upkeep
+            exotic_gases = @b3_rare_upkeep
+        }
+    }
+    country_modifier = {
+        country_scientist_cap_add = 2
+        all_technology_research_speed = 0.1
+    }
+    inline_script = {
+        script = jobs/researchers_add
+        AMOUNT = 4
+    }
+    prerequisites = {
+        "tech_eutab_hypercomputing_complex"
+    }
+    ai_resource_production = {
+        trigger = {
+            has_research_building = yes
+        }
+        physics_research = 18
+        society_research = 18
+        engineering_research = 18
+        mult = value:eutab_ai_resource_production_adjustment_value
+    }
+    convert_to = {
+        building_institute
+        building_supercomputer
+        building_eutab_foundation_institute_1
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            is_gestalt = no
+        }
+    }
+}

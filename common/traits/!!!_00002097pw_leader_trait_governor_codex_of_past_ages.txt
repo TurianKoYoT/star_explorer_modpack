@@ -1,0 +1,23 @@
+pw_leader_trait_governor_codex_of_past_ages = {
+    cost = 1
+    initial = no
+    randomized = no
+    inline_script = {
+        script = trait/icon
+        CLASS = official
+        ICON = "GFX_leader_trait_intellectual"
+        RARITY = common
+        COUNCIL = no
+        TIER = none
+    }
+    modifier = {
+        planet_stability_add = 10
+        planet_jobs_upkeep_mult = -0.1
+    }
+    self_modifier = {
+        species_leader_exp_gain = 0.25
+    }
+    leader_class = {
+        official
+    }
+}

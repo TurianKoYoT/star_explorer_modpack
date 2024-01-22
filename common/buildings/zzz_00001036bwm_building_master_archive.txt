@@ -1,0 +1,36 @@
+bwm_building_master_archive = {
+    base_buildtime = 480
+    can_build = no
+    can_demolish = yes
+    icon = building_master_archive
+    position_priority = 2
+    category = resources
+    potential = {
+        has_building = "bwm_building_ancient_monolith_1"
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_fallen_empire = yes
+            }
+        }
+        job_fe_archivist_add = 10
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 1000
+        }
+        produces = {
+            physics_research = 100
+            society_research = 100
+            engineering_research = 100
+        }
+        upkeep = {
+            energy = 20
+        }
+    }
+    upgrades = {
+    }
+}

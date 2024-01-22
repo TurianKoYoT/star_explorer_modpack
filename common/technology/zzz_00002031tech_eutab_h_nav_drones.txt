@@ -1,0 +1,22 @@
+tech_eutab_h_nav_drones = {
+    cost = @tier4cost3
+    area = engineering
+    tier = 4
+    category = {
+        voidcraft
+    }
+    prerequisites = {
+        "tech_jump_drive_1"
+    }
+    weight = @tier4weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_hive_empire = yes
+        has_galactic_wonders = yes
+    }
+    modifier = {
+        ship_windup_mult = -0.25
+        ship_ftl_jumpdrive_range_mult = 0.2
+        ship_emergency_ftl_mult = -0.2
+    }
+}

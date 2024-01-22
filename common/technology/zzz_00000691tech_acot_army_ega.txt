@@ -1,0 +1,21 @@
+tech_acot_army_ega = {
+    area = society
+    cost = @acot_tier6cost1
+    tier = 6
+    category = {
+        military_theory
+    }
+    is_rare = yes
+    prerequisites = {
+    }
+    weight = 20
+    potential = {
+        has_ethic = ethic_fanatic_egalitarian
+        NOT = {
+            has_global_flag = acot_army_forbidden
+        }
+    }
+    ai_weight = {
+        factor = 1.25
+    }
+}

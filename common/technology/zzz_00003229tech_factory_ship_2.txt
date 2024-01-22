@@ -1,0 +1,36 @@
+tech_factory_ship_2 = {
+    cost = @tier2cost1
+    area = engineering
+    tier = 2
+    is_reverse_engineerable = no
+    category = {
+        voidcraft
+    }
+    prerequisites = {
+        "tech_factory_ship"
+    }
+    potential = {
+        has_ascension_perk = ap_civilian_activities
+    }
+    weight = @tier2weight1
+    modifier = {
+        shipsize_civilian_factory_hull_add = 1000
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_voidcraft
+            }
+        }
+    }
+    prereqfor_desc = {
+        ship = {
+            title = "TECH_UNLOCK_FACTORY_SHIP_2"
+            desc = ""
+        }
+    }
+    ai_weight = {
+        factor = 6
+    }
+}

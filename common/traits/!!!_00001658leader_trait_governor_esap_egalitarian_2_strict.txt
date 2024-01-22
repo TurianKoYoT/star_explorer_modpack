@@ -1,0 +1,31 @@
+leader_trait_governor_esap_egalitarian_2_strict = {
+    cost = 0
+    icon = "gfx/interface/icons/traits/leader_traits/leader_trait_esap_egalitarian_2_strict.dds"
+    planet_modifier = {
+        planet_jobs_minerals_produces_mult = 0.11
+        planet_crime_mult = -0.05
+    }
+    sector_modifier = {
+        planet_jobs_minerals_produces_mult = 0.09
+        planet_crime_mult = -0.04
+    }
+    councilor_modifier = {
+        country_base_minerals_produces_mult = 0.07
+    }
+    leader_potential_add = {
+        from = {
+            has_ascension_perk = ap_esap_egalitarian_2
+        }
+    }
+    leader_class = {
+        commander
+        official
+        scientist
+    }
+    initial = no
+    randomized = yes
+    selectable_weight = {
+        weight = @subclass_trait_weight
+        inline_script = paragon/governor_weight_mult
+    }
+}

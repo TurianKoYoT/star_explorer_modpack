@@ -1,0 +1,26 @@
+tech_eutab_feed_forges = {
+    cost = @tier3cost2
+    area = engineering
+    tier = 3
+    category = {
+        industry
+    }
+    prerequisites = {
+        "tech_mineral_purification_2"
+    }
+    weight = @tier3weight2
+    is_custom_tech_1 = yes
+    potential = {
+        has_ascension_perk = ap_mastery_of_nature
+        OR = {
+            has_ascension_perk = ap_arcology_project
+            has_ascension_perk = ap_machine_worlds
+            has_ascension_perk = ap_hive_worlds
+            has_ascension_perk = ap_galactic_contender
+        }
+    }
+    modifier = {
+        planet_miners_minerals_produces_add = 1
+        planet_metallurgists_alloys_produces_add = 0.5
+    }
+}

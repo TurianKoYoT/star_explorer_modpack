@@ -1,0 +1,30 @@
+leader_trait_fertilizer = {
+    cost = 1
+    inline_script = {
+        script = trait/icon
+        CLASS = governor
+        ICON = "gfx/interface/icons/traits/trait_rapid_breeders.dds"
+        RARITY = common
+        COUNCIL = no
+        TIER = none
+    }
+    icon = "gfx/interface/icons/traits/trait_rapid_breeders.dds"
+    modifier = {
+        pop_growth_speed = 0.3
+    }
+    leader_potential_add = {
+        from = {
+            NAND = {
+                is_machine_empire = yes
+                has_civic = civic_machine_assimilator
+            }
+            OR = {
+                has_technology = tech_expandable_brain_1
+                has_global_flag = ap_expandable_brain_1
+            }
+        }
+    }
+    leader_class = {
+        official
+    }
+}

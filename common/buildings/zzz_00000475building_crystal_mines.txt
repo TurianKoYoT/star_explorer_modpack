@@ -1,0 +1,54 @@
+building_crystal_mines = {
+    base_buildtime = @b1_time
+    icon = building_crystal_mines
+    is_capped_by_modifier = yes
+    category = resource
+    potential = {
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = crucible_colony
+        }
+    }
+    convert_to = {
+        building_lithoid_crystal_mines
+    }
+    destroy_trigger = {
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            job_crystal_miner_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_crystal_mining_drone_add = 1
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 200
+        }
+        upkeep = {
+            energy = 1
+        }
+    }
+    prerequisites = {
+        "tech_mine_rare_crystals"
+    }
+    upgrades = {
+        "building_avb_crystal_mines_2"
+    }
+}

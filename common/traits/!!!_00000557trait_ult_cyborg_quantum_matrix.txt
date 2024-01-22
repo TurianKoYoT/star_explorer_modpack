@@ -1,0 +1,26 @@
+trait_ult_cyborg_quantum_matrix = {
+    cost = 4
+    initial = no
+    species_potential_add = {
+        exists = from
+        from = {
+            can_add_cybernetic_traits = yes
+            has_technology = tech_ult_super_robot_enhance
+        }
+    }
+    species_possible_remove = {
+        can_remove_cybernetic_traits = yes
+    }
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    modifier = {
+        planet_jobs_society_research_produces_mult = 0.2
+        planet_jobs_physics_research_produces_mult = 0.2
+        planet_jobs_engineering_research_produces_mult = 0.2
+        planet_jobs_unity_produces_mult = 0.1
+        species_leader_exp_gain = 0.5
+        negative_leader_traits_species = -1
+    }
+}

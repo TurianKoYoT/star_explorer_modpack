@@ -1,0 +1,86 @@
+building_avb_energy_1 = {
+    base_buildtime = @b1_time
+    category = resource
+    allow = {
+        always = yes
+    }
+    potential = {
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = crucible_colony
+        }
+        OR = {
+            NOT = {
+                is_planet_class = pc_habitat
+            }
+            AND = {
+                is_planet_class = pc_habitat
+                check_modifier_value = {
+                    modifier = district_hab_energy_max
+                    value > 0
+                }
+            }
+        }
+        OR = {
+            owner = {
+                is_ai = no
+            }
+            AND = {
+                owner = {
+                    is_ai = yes
+                    has_monthly_income = {
+                        resource = energy
+                        value < 20
+                    }
+                }
+                free_district_slots = 0
+            }
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            planet = {
+                OR = {
+                    has_modifier = resort_colony
+                    has_modifier = crucible_colony
+                }
+            }
+            planet = {
+                free_building_slots = 0
+                owner = {
+                    is_ai = yes
+                    has_monthly_income = {
+                        resource = energy
+                        value > 20
+                    }
+                }
+            }
+        }
+    }
+    inline_script = {
+        script = jobs/technicians_add
+        AMOUNT = 2
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b1_minerals
+        }
+        upkeep = {
+            energy = @b1_upkeep
+        }
+    }
+    prerequisites = {
+        tech_power_plant_2
+    }
+    upgrades = {
+        building_avb_energy_2
+    }
+    ai_resource_production = {
+        energy = 5
+        trigger = {
+            always = yes
+        }
+    }
+}

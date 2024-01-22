@@ -1,0 +1,112 @@
+building_phanon_enigmatic_lab = {
+    base_buildtime = 900
+    can_build = no
+    can_demolish = yes
+    category = research
+    allow = {
+        has_phanon_capital = yes
+    }
+    upgrades = {
+        building_stellarite_enigmatic_lab
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+        }
+        modifier = {
+            job_phanon_researcher_add = 4
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_phanon_researcher_drone_add = 4
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+                is_galactic_community_member = yes
+            }
+            is_active_resolution = resolution_galacticstudies_extradimensional_experimentation
+            has_modifier = pm_extradimensional_experimentation
+        }
+        modifier = {
+            job_dimensional_portal_researcher_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                is_galactic_community_member = yes
+            }
+            is_active_resolution = resolution_galacticstudies_extradimensional_experimentation
+            has_modifier = pm_extradimensional_experimentation
+        }
+        modifier = {
+            job_dimensional_portal_researcher_gestalt_add = 1
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 2000
+            minerals = 2000
+            aot_sr_runic_power = 800
+        }
+        upkeep = {
+            energy = 20
+            aot_sr_runic_power = 10
+            sr_dark_matter = 5
+            acot_sr_dark_energy = 5
+        }
+        upkeep = {
+            trigger = {
+                owner = {
+                    is_galactic_community_member = yes
+                }
+                is_active_resolution = resolution_galacticstudies_extradimensional_experimentation
+                planet = {
+                    has_modifier = pm_extradimensional_experimentation
+                }
+            }
+            sr_zro = 1
+        }
+    }
+    prerequisites = {
+        tech_phanon_enigmatic_lab
+    }
+    ai_weight = {
+        weight = 50
+        modifier = {
+            factor = 0
+            owner = {
+                has_monthly_income = {
+                    resource = sr_dark_matter
+                    value <= 3
+                }
+            }
+        }
+        modifier = {
+            factor = 0
+            owner = {
+                has_monthly_income = {
+                    resource = energy
+                    value <= 10
+                }
+            }
+        }
+    }
+}

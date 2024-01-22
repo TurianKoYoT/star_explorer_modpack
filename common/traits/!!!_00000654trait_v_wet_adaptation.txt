@@ -1,0 +1,47 @@
+trait_v_wet_adaptation = {
+    cost = 1
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_v_dry_adaptation"
+        "trait_v_frozen_adaptation"
+        "trait_nonadaptive"
+        "trait_adaptive"
+        "trait_robust"
+        "trait_adaptive_lithoid"
+        "trait_extremely_adaptive"
+        "trait_robust"
+        "trait_invasive"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    custom_tooltip = TRAIT_WET_ADAPTATION_EFFECT
+    triggered_planet_growth_habitability_modifier = {
+        potential = {
+            planet = {
+                is_wet = yes
+                is_artificial = no
+                is_ideal = no
+            }
+        }
+        pop_environment_tolerance = 0.2
+    }
+    triggered_planet_growth_habitability_modifier = {
+        potential = {
+            planet = {
+                is_wet = no
+                is_artificial = no
+                is_ideal = no
+            }
+        }
+        pop_environment_tolerance = -0.1
+    }
+    slave_cost = {
+        energy = 500
+    }
+}

@@ -1,0 +1,84 @@
+building_drone_megastorage = {
+    base_buildtime = @b2_time
+    can_build = no
+    icon = building_drone_megastorage
+    category = amenity
+    allow = {
+        has_upgraded_capital = yes
+    }
+    potential = {
+        has_building = building_drone_storage
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            is_machine_empire = no
+        }
+    }
+    convert_to = {
+        building_paradise_dome
+        building_expanded_warren
+        building_communal_housing_large
+    }
+    planet_modifier = {
+        planet_housing_add = 8
+        planet_amenities_add = 6
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_active_tradition = tr_domination_imperious_architecture
+            }
+        }
+        modifier = {
+            planet_housing_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+            exists = owner
+            owner = {
+                has_technology = tech_housing_1
+            }
+        }
+        modifier = {
+            planet_housing_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+            exists = owner
+            owner = {
+                has_technology = tech_housing_2
+                NOT = {
+                    is_agrarian_empire = {
+                        allow_invalid = yes
+                    }
+                }
+            }
+        }
+        modifier = {
+            planet_housing_add = 1
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            rare_crystals = @b2_rare_cost
+        }
+        upkeep = {
+            energy = 3
+            rare_crystals = @b2_rare_upkeep
+        }
+    }
+    prerequisites = {
+        "tech_micro_replicators"
+    }
+    upgrades = {
+        "building_avb_drone_storage_3"
+    }
+}

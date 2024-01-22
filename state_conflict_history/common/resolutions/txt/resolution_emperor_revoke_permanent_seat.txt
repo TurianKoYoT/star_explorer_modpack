@@ -1,0 +1,41 @@
+@resolution_weight_disliked = 4
+@resolution_cost_t5 = 300
+resolution_emperor_revoke_permanent_seat = {
+    icon = "GFX_resolution_imperial_council_member_permanent"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t5
+        }
+    }
+    target = yes
+    harmful = yes
+    valid_target = {
+        is_country_type = default
+        is_galactic_community_member = yes
+        is_part_of_galactic_council = yes
+        is_permanent_councillor = yes
+        is_galactic_emperor = no
+    }
+    effect = {
+        remove_permanent_councillor = yes
+    }
+    potential = {
+        has_nemesis = yes
+        is_galactic_emperor = yes
+        is_galactic_council_established = yes
+        NOR = {
+            is_active_resolution = "resolution_emperor_trial_of_advancement"
+            is_active_resolution = "resolution_emperor_by_appointment"
+        }
+        NOT = {
+            has_global_flag = imperial_unification_start
+        }
+    }
+    active = {
+        has_galactic_emperor = yes
+    }
+    ai_weight = {
+        base = @resolution_weight_disliked
+    }
+}

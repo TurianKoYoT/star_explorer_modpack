@@ -1,0 +1,21 @@
+tech_eutab_psychohistory = {
+    cost = @tier3cost3
+    area = society
+    tier = 3
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_living_state"
+    }
+    weight = @tier3weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_egalitarian = yes
+        has_ascension_perk = ap_interstellar_dominion
+    }
+    gateway = eu_dominion
+    modifier = {
+        job_bureaucrat_per_pop = 0.02
+    }
+}

@@ -1,0 +1,15 @@
+tech_ult_star_killer = {
+    area = engineering
+    cost = 40000
+    tier = 5
+    category = {
+        propulsion
+    }
+    is_rare = yes
+    is_reverse_engineerable = no
+    prerequisites = {
+        "tech_ult_gluon_phase_torpedoes"
+        "tech_ult_dark_energy_phase_torpedo"
+    }
+    weight = 20
+}

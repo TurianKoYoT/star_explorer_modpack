@@ -1,0 +1,44 @@
+leader_trait_military_awe = {
+    veteran_class_locked_trait = yes
+    inline_script = {
+        script = trait/icon
+        CLASS = official
+        ICON = GFX_leader_trait_intimidator
+        RARITY = veteran
+        COUNCIL = no
+        TIER = 1
+    }
+    leader_potential_add = {
+        from = {
+            is_galactic_emperor = yes
+        }
+        OR = {
+            has_paragon_dlc = no
+            has_trait = subclass_official_delegate
+        }
+        is_assigned_to_federation = no
+    }
+    triggered_galcom_modifier = {
+        potential = {
+            owner = {
+                is_galactic_emperor = yes
+            }
+        }
+        country_power_projection_influence_produces_add = 0.5
+        diplo_weight_naval_mult = 0.1
+        catapult_spread_mult = 0.25
+    }
+    leader_class = {
+        official
+    }
+    selectable_weight = {
+        inline_script = paragon/subclass_free_trait_weight
+        inline_script = paragon/galcom_weight_mult_MECR
+        mult = 2
+    }
+    opposites = {
+        "leader_trait_cultural_understanding"
+        "leader_trait_cultural_understanding_2"
+        "leader_trait_cultural_understanding_3"
+    }
+}

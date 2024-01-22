@@ -1,0 +1,115 @@
+ship_section_template = {
+    key = "attack_moon_pd_mid_01_key"
+    ship_size = giga_massive_planet
+    fits_on_slot = "mid"
+    entity = "war_moon_hull_entity"
+    icon = "GFX_ship_part_core_mid"
+    prerequisites = {
+        "giga_tech_war_moon_sections"
+    }
+    component_slot = {
+        name = "PD_01"
+        template = "point_defence_turret"
+        locatorname = "missile_gun_01"
+    }
+    component_slot = {
+        name = "PD_02"
+        template = "point_defence_turret"
+        locatorname = "missile_gun_02"
+    }
+    component_slot = {
+        name = "PD_03"
+        template = "point_defence_turret"
+        locatorname = "missile_gun_03"
+    }
+    component_slot = {
+        name = "PD_04"
+        template = "point_defence_turret"
+        locatorname = "missile_gun_04"
+    }
+    component_slot = {
+        name = "PD_05"
+        template = "point_defence_turret"
+        locatorname = "missile_gun_01"
+    }
+    component_slot = {
+        name = "PD_06"
+        template = "point_defence_turret"
+        locatorname = "missile_gun_02"
+    }
+    component_slot = {
+        name = "PD_07"
+        template = "point_defence_turret"
+        locatorname = "missile_gun_03"
+    }
+    component_slot = {
+        name = "PD_08"
+        template = "point_defence_turret"
+        locatorname = "missile_gun_04"
+    }
+    component_slot = {
+        name = "PD_09"
+        template = "point_defence_turret"
+        locatorname = "missile_gun_01"
+    }
+    component_slot = {
+        name = "PD_10"
+        template = "point_defence_turret"
+        locatorname = "missile_gun_02"
+    }
+    component_slot = {
+        name = "PD_11"
+        template = "point_defence_turret"
+        locatorname = "strike_craft_01"
+    }
+    component_slot = {
+        name = "PD_12"
+        template = "point_defence_turret"
+        locatorname = "strike_craft_01"
+    }
+    component_slot = {
+        name = "PD_13"
+        template = "point_defence_turret"
+        locatorname = "strike_craft_02"
+    }
+    component_slot = {
+        name = "PD_14"
+        template = "point_defence_turret"
+        locatorname = "strike_craft_02"
+    }
+    component_slot = {
+        name = "PD_15"
+        template = "point_defence_turret"
+        locatorname = "missile_gun_03"
+    }
+    component_slot = {
+        name = "PD_16"
+        template = "point_defence_turret"
+        locatorname = "missile_gun_04"
+    }
+    component_slot = {
+        name = "PD_17"
+        template = "point_defence_turret"
+        locatorname = "strike_craft_01"
+    }
+    component_slot = {
+        name = "PD_18"
+        template = "point_defence_turret"
+        locatorname = "strike_craft_01"
+    }
+    component_slot = {
+        name = "PD_19"
+        template = "point_defence_turret"
+        locatorname = "strike_craft_02"
+    }
+    component_slot = {
+        name = "PD_20"
+        template = "point_defence_turret"
+        locatorname = "strike_craft_02"
+    }
+    ai_tags = {
+        screen
+    }
+    large_utility_slots = 10
+    aux_utility_slots = 0
+}

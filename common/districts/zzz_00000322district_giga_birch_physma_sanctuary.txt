@@ -1,0 +1,92 @@
+@giga_birch_sector_cost = 1500
+@giga_birch_sector_sr_cost = 200
+@giga_birch_sector_time = 360
+@giga_birch_sector_maintenance = 5
+@giga_birch_sector_sr_maintenance = 2
+@sector_workers = -7
+district_giga_birch_physma_sanctuary = {
+    base_buildtime = @giga_birch_sector_time
+    is_capped_by_modifier = yes
+    icon = district_giga_birch_physma_unity
+    show_on_uncolonized = {
+        uses_district_set = giga_birch
+        has_district = district_giga_birch_physma
+        exists = from
+        from = {
+            is_gestalt = yes
+            has_valid_civic = civic_machine_servitor
+        }
+    }
+    potential = {
+        uses_district_set = giga_birch
+        has_district = district_giga_birch_physma
+        exists = owner
+        owner = {
+            is_gestalt = yes
+            has_valid_civic = civic_machine_servitor
+        }
+    }
+    allow = {
+        giga_birch_district_allow = {
+            category = physma
+        }
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_giga_birch_physma_bureaucratic
+        district_giga_birch_physma_temple
+        district_giga_birch_physma_relay
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = @giga_birch_sector_cost
+            exotic_gases = @giga_birch_sector_sr_cost
+        }
+        upkeep = {
+            energy = @giga_birch_sector_maintenance
+            exotic_gases = @giga_birch_sector_sr_maintenance
+        }
+    }
+    planet_modifier = {
+        giga_birch_district_physma_tag = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        job_bio_trophy_add = 30
+        job_artisan_drone_add = 2
+        job_giga_birch_physma_worker_drone_add = @sector_workers
+    }
+    triggered_desc = {
+        text = job_bio_trophy_effect_desc
+    }
+    triggered_desc = {
+        text = job_artisan_drone_effect_desc
+    }
+    on_queued = {
+        giga_birch_district_queued = {
+            category = physma
+            type = physma_sanctuary
+        }
+    }
+    on_unqueued = {
+        giga_birch_district_unqueued = {
+            category = physma
+            type = physma_sanctuary
+        }
+    }
+    on_built = {
+        giga_birch_district_built = {
+            category = physma
+            type = physma_sanctuary
+        }
+    }
+    on_destroy = {
+        giga_birch_district_destroy = {
+            category = physma
+            type = physma_sanctuary
+        }
+    }
+}

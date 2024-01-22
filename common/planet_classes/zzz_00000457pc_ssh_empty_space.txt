@@ -1,0 +1,23 @@
+pc_ssh_empty_space = {
+    entity = "ssh_empty"
+    entity_scale = 1
+    icon = GFX_planet_type_ssh_empty_space
+    picture = pc_ssh_empty_space
+    starting_planet = no
+    spawn_odds = 0
+    atmosphere_color = hsv {
+        0
+        0
+        0
+    }
+    atmosphere_intensity = 1
+    atmosphere_width = 0.5
+    city_color_lut = "gfx/portraits/misc/colorcorrection_neutral.dds"
+    can_be_moon = no
+    chance_of_ring = 0
+    enable_tilt = no
+    colonizable = no
+    uses_alternative_skies_for_moons = no
+    orbit_lines = no
+    star = yes
+}

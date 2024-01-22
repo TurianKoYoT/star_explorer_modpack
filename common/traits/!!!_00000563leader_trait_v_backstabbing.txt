@@ -1,0 +1,33 @@
+leader_trait_v_backstabbing = {
+    negative = yes
+    inline_script = {
+        script = trait/icon_negative
+        ICON = "GFX_leader_trait_v_backstabbing"
+        RARITY = common
+        COUNCIL = yes
+        TIER = none
+    }
+    leader_potential_add = {
+        has_global_flag = game_started
+        this.species = {
+            OR = {
+                has_trait = trait_v_behavioral_sink
+                has_trait = trait_v_adv_behavioral_sink
+            }
+        }
+        background_planet = {
+            has_planet_flag = v_behavioral_sink_flag
+        }
+        trait_is_gestalt_check = no
+    }
+    leader_class = {
+        official
+        scientist
+        commander
+    }
+    custom_tooltip = LEADER_TRAIT_BACKSTABBING_EFFECT
+    selectable_weight = {
+        weight = @shared_negative_trait_weight
+        inline_script = paragon/council_weight_mult
+    }
+}

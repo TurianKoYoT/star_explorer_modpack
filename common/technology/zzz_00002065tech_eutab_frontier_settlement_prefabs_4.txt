@@ -1,0 +1,20 @@
+tech_eutab_frontier_settlement_prefabs_4 = {
+    cost = @tier5cost1
+    area = society
+    tier = 5
+    prerequisites = {
+        "tech_eutab_frontier_settlement_prefabs_3"
+    }
+    category = {
+        new_worlds
+    }
+    weight = @tier5weight1
+    is_custom_tech_1 = yes
+    potential = {
+        is_gestalt = no
+    }
+    modifier = {
+        planet_building_eutab_dev_district_build_speed_mult = 0.15
+        eutab_developmental_buildings_max_slots_add = 0.25
+    }
+}

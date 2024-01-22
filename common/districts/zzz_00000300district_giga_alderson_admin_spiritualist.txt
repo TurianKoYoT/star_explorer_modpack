@@ -1,0 +1,66 @@
+district_giga_alderson_admin_spiritualist = {
+    base_buildtime = @giga_alderson_district_buildtime
+    is_capped_by_modifier = no
+    icon = district_arcology_administrative
+    show_on_uncolonized = {
+        or = {
+            uses_district_set = giga_alderson_ecu
+            uses_district_set = giga_alderson_pc
+        }
+        exists = from
+        from = {
+            giga_country_uses_priests = yes
+        }
+    }
+    potential = {
+        or = {
+            uses_district_set = giga_alderson_ecu
+            uses_district_set = giga_alderson_pc
+        }
+        exists = owner
+        owner = {
+            giga_country_uses_priests = yes
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = @giga_alderson_cost
+            rare_crystals = @giga_alderson_cost_sr
+        }
+        upkeep = {
+            energy = @giga_alderson_maintenance
+            rare_crystals = @giga_alderson_maintenance_sr
+        }
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_giga_alderson_admin
+        district_giga_alderson_sanctuary
+    }
+    triggered_planet_modifier = {
+        potential = {
+            not = {
+                uses_district_set = giga_alderson_ecu
+            }
+        }
+        planet_housing_add = @alderson_auto_housing
+    }
+    triggered_planet_modifier = {
+        potential = {
+            uses_district_set = giga_alderson_ecu
+        }
+        planet_housing_add = @alderson_auto_housing_ecu
+    }
+    inline_script = {
+        script = planet/unity/giga_priest_swap
+        jobs = @alderson_auto_jobs
+    }
+    inline_script = {
+        script = planet/unity/parts/giga_priest_swap
+        jobs = @[ alderson_auto_jobs_ecu - alderson_auto_jobs ]
+        condition = "uses_district_set = giga_alderson_ecu"
+        description = @no
+        multiplier_string = ""
+    }
+}

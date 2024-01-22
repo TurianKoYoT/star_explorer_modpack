@@ -1,0 +1,73 @@
+district_virtual_religious = {
+    base_buildtime = @giga_rw_district_buildtime
+    is_capped_by_modifier = no
+    icon = district_arcology_administrative
+    show_on_uncolonized = {
+        from = {
+            is_gestalt = no
+            giga_country_uses_priests = yes
+        }
+        uses_district_set = virtual_ring
+    }
+    potential = {
+        exists = owner
+        owner = {
+            is_gestalt = no
+            giga_country_uses_priests = yes
+        }
+        uses_district_set = virtual_ring
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_virtual_administrative
+        district_virtual_relay
+        district_virtual_organic_housing
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = @giga_rw_cost
+            rare_crystals = @giga_rw_cost_sr
+        }
+        upkeep = {
+            energy = @giga_rw_maintenance
+            rare_crystals = @giga_rw_maintenance_sr
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 10
+    }
+    inline_script = {
+        script = planet/unity/giga_priest_swap
+        jobs = 10
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+        }
+        planet_priests_unity_produces_add = 1
+        planet_priests_energy_upkeep_add = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_worker_coop_empire = no
+            }
+        }
+        planet_managers_unity_produces_add = 1
+        planet_managers_energy_upkeep_add = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_worker_coop_empire = yes
+            }
+        }
+        planet_administrators_unity_produces_add = 1
+        planet_administrators_energy_upkeep_add = 1
+    }
+}

@@ -1,0 +1,23 @@
+tech_ae_alloy_foundry = {
+    cost = @acot_tier7cost1
+    area = engineering
+    tier = 7
+    category = {
+        materials
+    }
+    prerequisites = {
+        "tech_fe_alloy_foundry"
+    }
+    weight = @tier5weight1
+    potential = {
+        NOT = {
+            has_global_flag = acot_building_forbidden
+        }
+        has_technology = tech_dark_matter_power_core_ae
+    }
+    weight_modifier = {
+        factor = 2
+    }
+    ai_weight = {
+    }
+}

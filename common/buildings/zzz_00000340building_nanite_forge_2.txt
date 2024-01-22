@@ -1,0 +1,37 @@
+building_nanite_forge_2 = {
+    base_buildtime = @b1_time
+    category = resource
+    can_build = no
+    destroy_trigger = {
+        owner = {
+            NOT = {
+                has_valid_civic = civic_machine_selfreplicating_machines
+            }
+        }
+    }
+    potential = {
+        is_capital = yes
+        owner = {
+            has_valid_civic = civic_machine_selfreplicating_machines
+        }
+    }
+    planet_modifier = {
+        job_nanite_synthesiser_add = 2
+        planet_pop_assemblers_produces_mult = 0.05
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+        }
+        upkeep = {
+            energy = @b2_upkeep
+        }
+    }
+    triggered_desc = {
+        text = job_nanite_synthesiser_effect_desc
+    }
+    ai_weight = {
+        weight = 10
+    }
+}

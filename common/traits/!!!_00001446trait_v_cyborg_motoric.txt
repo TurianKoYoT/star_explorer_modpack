@@ -1,0 +1,27 @@
+trait_v_cyborg_motoric = {
+    cost = 3
+    initial = no
+    species_potential_add = {
+        can_add_cybernetic_traits = yes
+    }
+    species_possible_remove = {
+        can_remove_cybernetic_traits = yes
+    }
+    randomized = no
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    opposites = {
+        "trait_cyborg_logic_engines"
+        "trait_v_cyborg_servitor"
+        "trait_v_cyborg_crypto_miner"
+    }
+    custom_tooltip_with_modifiers = CYBORG_ENERGY_UPKEEP_EFFECT
+    modifier = {
+        planet_jobs_specialist_produces_mult = 0.05
+        army_damage_mult = 0.3
+        army_collateral_damage_mult = -0.4
+    }
+    slave_cost = {
+        energy = 750
+    }
+}

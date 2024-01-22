@@ -1,0 +1,45 @@
+tech_stellarite_ancient_cryo_chamber = {
+    cost = @acot_tier9cost1
+    area = society
+    category = {
+        statecraft
+    }
+    tier = 9
+    prerequisites = {
+        tech_dark_matter_power_core_se
+        tech_phanon_ancient_cryo_chamber
+    }
+    weight = @tier5weight1
+    potential = {
+        is_machine_empire = yes
+        NOR = {
+            has_global_flag = acot_building_forbidden
+            is_fallen_empire = yes
+        }
+        has_technology = tech_dark_matter_power_core_se
+        has_technology = tech_phanon_ancient_cryo_chamber
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            NOR = {
+                has_technology = tech_mine_dark_matter
+                has_country_flag = has_market_access
+            }
+        }
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_statecraft
+            }
+        }
+    }
+    ai_weight = {
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_statecraft
+            }
+        }
+    }
+}

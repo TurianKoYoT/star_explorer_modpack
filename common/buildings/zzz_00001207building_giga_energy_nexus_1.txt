@@ -1,0 +1,188 @@
+building_giga_energy_nexus_1 = {
+    base_buildtime = @b3_time
+    category = resource
+    empire_limit = {
+        base = 1
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            exotic_gases = @b3_rare_cost
+        }
+        cost = {
+            trigger = {
+                owner = {
+                    is_robot_empire = yes
+                }
+            }
+            minerals = 100
+            alloys = 100
+        }
+        upkeep = {
+            energy = 6
+            exotic_gases = @b3_rare_upkeep
+        }
+    }
+    potential = {
+        nor = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+        }
+        exists = owner
+        hidden_trigger = {
+            OR = {
+                AND = {
+                    owner = {
+                        is_ai = yes
+                    }
+                    OR = {
+                        has_any_generator_district_or_building = yes
+                        has_designation = col_generator
+                    }
+                }
+                owner = {
+                    is_ai = no
+                }
+            }
+        }
+    }
+    destroy_trigger = {
+        or = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+        }
+        exists = owner
+        hidden_trigger = {
+            OR = {
+                AND = {
+                    owner = {
+                        is_ai = yes
+                    }
+                    NOR = {
+                        has_any_generator_district_or_building = yes
+                        has_designation = col_generator
+                    }
+                }
+                owner = {
+                    is_ai = no
+                }
+            }
+        }
+    }
+    allow = {
+        has_major_upgraded_capital = yes
+        exists = owner
+        hidden_trigger = {
+            OR = {
+                AND = {
+                    owner = {
+                        is_ai = yes
+                    }
+                    OR = {
+                        has_any_generator_district_or_building = yes
+                        has_designation = col_generator
+                    }
+                }
+                owner = {
+                    is_ai = no
+                }
+            }
+        }
+    }
+    prerequisites = {
+        tech_l_conductor
+    }
+    planet_modifier = {
+        planet_technician_energy_produces_add = 2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        multiplier = modifier:giga_planet_job_size
+        planet_technician_energy_produces_add = 2
+    }
+    upgrades = {
+        building_giga_energy_nexus_2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        modifier = {
+            job_technician_add = 3
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_fallen_empire_spiritualist = yes
+            }
+        }
+        modifier = {
+            job_fe_acolyte_generator_add = 3
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_technician_drone_add = 3
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_robot_empire = yes
+            }
+            NOR = {
+                is_planet_class = pc_habitat
+                is_planet_class = pc_machine
+                is_planet_class = pc_hive
+                is_planet_class = pc_city
+            }
+        }
+        modifier = {
+            district_generator_max = 4
+        }
+    }
+    ai_resource_production = {
+        energy = 8
+        trigger = {
+            always = yes
+        }
+    }
+    ai_resource_production = {
+        energy = 8
+        trigger = {
+            planet_resource_compare = {
+                resource = energy
+                value >= 36
+                type = produces
+            }
+        }
+    }
+    ai_resource_production = {
+        energy = 8
+        trigger = {
+            planet_resource_compare = {
+                resource = energy
+                value >= 64
+                type = produces
+            }
+        }
+    }
+}

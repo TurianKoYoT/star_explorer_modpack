@@ -1,0 +1,41 @@
+xte_leader_trait_extravagant_3 = {
+    inline_script = {
+        script = trait/icon_negative
+        ICON = GFX_xte_leader_trait_extravagant
+        COUNCIL = yes
+        TIER = 2
+    }
+    cost = 1
+    negative = yes
+    opposites = {
+        "trait_ruler_investor"
+        "trait_ruler_investor_2"
+        "trait_ruler_investor_3"
+    }
+    custom_tooltip_with_modifiers = xte_councilor_trait_efficiency_notification
+    triggered_councilor_modifier = {
+        potential = {
+            always = yes
+        }
+        trade_value_mult = -0.2
+        pop_happiness = -0.2
+        leaders_unity_upkeep_mult = 0.1
+        multiplier = value:xte_anti_stacking_extravagant_value
+    }
+    leader_potential_add = {
+        species = {
+            has_trait = xte_trait_hedonistic
+        }
+    }
+    requires_traits = {
+        xte_trait_hedonistic
+    }
+    replace_traits = {
+        xte_leader_trait_extravagant_2
+    }
+    leader_class = {
+        commander
+        scientist
+        official
+    }
+}

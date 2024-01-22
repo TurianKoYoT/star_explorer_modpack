@@ -1,0 +1,43 @@
+ap_consecrated_worlds = {
+    on_enabled = {
+        custom_tooltip = "allow_edict_consectrated_worlds"
+        if = {
+            limit = {
+                NOT = {
+                    has_global_flag = has_mute_ap_mod
+                }
+            }
+            custom_tooltip = "describe_edict_consectrated_worlds"
+        }
+        if = {
+            limit = {
+                has_global_flag = has_mute_ap_mod
+            }
+            custom_tooltip = "describe_edict_consectrated_worlds_worthy"
+            hidden_effect = {
+                country_event = {
+                    id = worthyperks.05
+                }
+            }
+        }
+    }
+    modifier = {
+        pop_ethic_spiritualist_attraction_mult = @[ 0.25 * sartek_utopian_mod_active ]
+        planet_priests_consumer_goods_upkeep_mult = @[ -0.5 * sartek_utopian_mod_active ]
+        planet_priests_unity_produces_mult = @[ ( 0.15 * sartek_worthy_mod_active ) + ( 0.25 * sartek_utopian_mod_active ) - ( 0.15 * sartek_utopian_mod_active * sartek_worthy_mod_active ) ]
+    }
+    potential = {
+        NOR = {
+            has_ascension_perk = ap_consecrated_worlds
+            has_ascension_perk = ap_consecrated_worlds_nihilistic
+            is_nihil_cult_emex = yes
+        }
+        OR = {
+            has_ethic = ethic_spiritualist
+            has_ethic = ethic_fanatic_spiritualist
+        }
+    }
+    ai_weight = {
+        factor = 10
+    }
+}

@@ -1,0 +1,36 @@
+tech_avb_slave_huts_2 = {
+    cost = @tier4cost3
+    area = society
+    tier = 4
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_slave_colonies"
+        "tech_avb_capital_4"
+    }
+    weight = @tier4weight3
+    gateway = capital
+    weight_modifier = {
+        factor = 4
+        modifier = {
+            factor = 0
+            NOT = {
+                any_owned_planet = {
+                    has_modifier = slave_colony
+                }
+            }
+        }
+    }
+    ai_weight = {
+        factor = 10
+        modifier = {
+            factor = 0
+            NOT = {
+                any_owned_planet = {
+                    has_modifier = slave_colony
+                }
+            }
+        }
+    }
+}

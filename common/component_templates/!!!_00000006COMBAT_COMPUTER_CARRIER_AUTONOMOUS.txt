@@ -1,0 +1,44 @@
+@cost3 = 20
+@power3 = -25
+utility_component_template = {
+    key = "COMBAT_COMPUTER_CARRIER_AUTONOMOUS"
+    size = small
+    icon = "GFX_ship_part_computer_carrier_sapient"
+    icon_frame = 1
+    power = @power3
+    resources = {
+        category = ship_components
+        cost = {
+            alloys = @cost3
+        }
+    }
+    class_restriction = {
+        shipclass_military
+        shipclass_starbase
+        shipclass_military_special
+    }
+    size_restriction = {
+        cruiser
+        battleship
+        juggernaut
+        titan
+        star_eater
+        offspring_cruiser
+        offspring_battleship
+    }
+    component_set = "combat_computers"
+    ship_behavior = "carrier"
+    prerequisites = {
+        "tech_combat_computers_autonomous"
+    }
+    ai_tags = {
+        carrier
+    }
+    ai_tag_weight = 0
+    ship_modifier = {
+        ship_engagement_range_mult = 1
+    }
+    ai_weight = {
+        weight = 5
+    }
+}

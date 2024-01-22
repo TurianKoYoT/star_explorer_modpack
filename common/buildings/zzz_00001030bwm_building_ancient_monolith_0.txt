@@ -1,0 +1,17 @@
+bwm_building_ancient_monolith_0 = {
+    can_build = no
+    can_demolish = yes
+    icon = "building_monolith"
+    position_priority = 1
+    category = government
+    potential = {
+    }
+    upgrades = {
+        bwm_building_ancient_monolith_1
+        bwm_building_ancient_monolith_2
+        bwm_building_ancient_monolith_3
+        bwm_building_ancient_monolith_4
+    }
+    prerequisites = {
+    }
+}

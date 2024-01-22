@@ -1,0 +1,37 @@
+building_imp_stronghold = {
+    base_buildtime = @b2_time
+    can_build = no
+    icon = building_fortress
+    potential = {
+        exists = owner
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        job_soldier_add = 10
+        job_enforcer_add = 10
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        job_warrior_drone_add = 10
+        job_patrol_drone_add = 10
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+        }
+        upkeep = {
+            energy = 10
+        }
+    }
+}

@@ -1,0 +1,22 @@
+tech_super_hivemind = {
+    cost = @tier3cost3
+    area = society
+    tier = 3
+    category = {
+        military_theory
+    }
+    weight = @tier3weight3
+    is_rare = yes
+    prerequisites = {
+    }
+    potential = {
+        has_country_flag = super_hivemind_project
+    }
+    modifier = {
+        army_damage_mult = 0.3
+        pop_environment_tolerance = 0.15
+    }
+    ai_weight = {
+        factor = 20
+    }
+}

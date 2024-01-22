@@ -1,0 +1,19 @@
+action_release_subject = {
+    icon = "GFX_diplomacy_status_has_vassal"
+    requires_recipient_independence = no
+    auto_accepted = yes
+    should_notify_all_communications = yes
+    should_show_auto_accept_message_recipient = yes
+    action_type = positive
+    potential = {
+        NAND = {
+            has_federation = yes
+            federation = {
+                has_federation_perk = imperium_provinces
+            }
+            from = {
+                is_imperial_province_with_custom_tooltip = yes
+            }
+        }
+    }
+}

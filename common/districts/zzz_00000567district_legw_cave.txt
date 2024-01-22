@@ -1,0 +1,44 @@
+district_legw_cave = {
+    base_buildtime = 500
+    is_capped_by_modifier = no
+    prerequisites = {
+        tech_mining_2
+    }
+    show_on_uncolonized = {
+        exists = from
+        uses_district_set = standard
+        has_district_legw_cave = yes
+    }
+    potential = {
+        exists = owner
+        uses_district_set = standard
+        has_district_legw_cave = yes
+    }
+    allow = {
+        NOT = {
+            has_modifier = resort_colony
+        }
+        NOT = {
+            has_modifier = slave_colony
+        }
+    }
+    resources = {
+        category = planet_districts_industrial
+        cost = {
+            minerals = 850
+        }
+        upkeep = {
+            energy = 2
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 1
+        planet_max_buildings_add = 0.2
+        planet_max_districts_add = 2
+        planet_buildings_cost_mult = 0.2
+        planet_districts_cost_mult = 0.2
+    }
+    show_tech_unlock_if = {
+        always = no
+    }
+}

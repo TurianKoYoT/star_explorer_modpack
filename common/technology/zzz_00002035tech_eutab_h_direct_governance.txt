@@ -1,0 +1,22 @@
+tech_eutab_h_direct_governance = {
+    cost = @tier3cost3
+    area = society
+    tier = 3
+    category = {
+        biology
+    }
+    prerequisites = {
+        "tech_eutab_breed_t3"
+        "tech_autonomous_agents"
+    }
+    weight = @tier3weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_hive_empire = yes
+        has_ascension_perk = ap_executive_vigor
+    }
+    modifier = {
+        leader_officials_cost_mult = -0.75
+        country_official_cap_add = 1
+    }
+}

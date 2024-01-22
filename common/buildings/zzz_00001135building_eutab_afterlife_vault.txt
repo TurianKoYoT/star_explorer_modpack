@@ -1,0 +1,81 @@
+building_eutab_afterlife_vault = {
+    base_buildtime = @b3_time
+    can_build = no
+    category = research
+    potential = {
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+        }
+        exists = owner
+        owner = {
+            has_ethic = ethic_fanatic_pacifist
+        }
+    }
+    allow = {
+        has_major_upgraded_capital = yes
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            exotic_gases = @b3_rare_cost
+        }
+        upkeep = {
+            energy = @b3_upkeep
+            exotic_gases = @b3_rare_upkeep
+        }
+    }
+    planet_modifier = {
+        job_head_researcher_add = 3
+    }
+    country_modifier = {
+        country_scientist_cap_add = 1
+        all_technology_research_speed = 0.1
+        category_computing_research_speed_mult = 0.05
+    }
+    prerequisites = {
+        "tech_eutab_digital_afterlife"
+    }
+    triggered_desc = {
+        text = job_head_researcher_effect_desc
+    }
+    show_tech_unlock_if = {
+        is_regular_empire = yes
+    }
+    ai_resource_production = {
+        trigger = {
+            has_research_building = yes
+        }
+        physics_research = 10
+        society_research = 10
+        engineering_research = 10
+        mult = value:eutab_ai_resource_production_adjustment_value
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            NOR = {
+                has_modifier = resort_colony
+                has_modifier = slave_colony
+                has_modifier = crucible_colony
+                owner = {
+                    NOT = {
+                        has_ethic = ethic_fanatic_pacifist
+                    }
+                }
+            }
+            AND = {
+                owner = {
+                    is_ai = yes
+                }
+                has_research_building = no
+            }
+        }
+    }
+    convert_to = {
+        building_supercomputer
+        building_institute
+    }
+}

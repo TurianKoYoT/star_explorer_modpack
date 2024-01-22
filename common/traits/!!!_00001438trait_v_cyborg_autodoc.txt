@@ -1,0 +1,20 @@
+trait_v_cyborg_autodoc = {
+    cost = 2
+    initial = no
+    species_potential_add = {
+        can_add_cybernetic_traits = yes
+    }
+    species_possible_remove = {
+        can_remove_cybernetic_traits = yes
+    }
+    randomized = no
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    custom_tooltip_with_modifiers = CYBORG_ENERGY_UPKEEP_EFFECT
+    modifier = {
+        leader_lifespan_add = 80
+    }
+    slave_cost = {
+        energy = 750
+    }
+}

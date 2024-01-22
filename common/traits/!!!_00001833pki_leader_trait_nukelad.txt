@@ -1,0 +1,25 @@
+pki_leader_trait_nukelad = {
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = "GFX_leader_trait_expertise_propulsion"
+        RARITY = common
+        COUNCIL = no
+        TIER = no
+    }
+    army_modifier = {
+        army_collateral_damage_mult = 0.5
+        army_damage_mult = 0.5
+    }
+    fleet_modifier = {
+        weapon_type_explosive_weapon_damage_mult = 0.1
+        weapon_type_explosive_weapon_fire_rate_mult = 0.1
+    }
+    fleet_specialization_tag = explosive
+    leader_class = {
+        commander
+    }
+    leader_potential_add = {
+        always = no
+    }
+}

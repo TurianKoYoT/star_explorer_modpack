@@ -1,0 +1,65 @@
+trait_v_adv_extremely_precise = {
+    cost = 3
+    icon = "gfx/interface/icons/traits/trait_v_extremely_precise.dds"
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    potential_crossbreeding_chance = 1
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_v_zoological_transgenesis
+        }
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_v_imprecise"
+        "trait_v_precise"
+        "trait_v_extremely_precise"
+    }
+    inline_script = "allowed_archetypes/adv_biological_traits/BIOLOGICAL"
+    inline_script = "allowed_archetypes/adv_biological_traits/LITHOID"
+    inline_script = "species_class/REP"
+    inline_script = "species_class/ART"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/FUN"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/LITHOID"
+    inline_script = "species_class/NECROID"
+    inline_script = "species_class/AQUATIC"
+    modifier = {
+        army_collateral_damage_mult = -0.4
+        army_damage_mult = 0.3
+        planet_jobs_specialist_produces_mult = 0.05
+    }
+    slave_cost = {
+        energy = 4000
+    }
+    assembly_score = {
+        modifier = {
+            add = 0.5
+            from = {
+                OR = {
+                    has_factory_designation = yes
+                    has_foundry_designation = yes
+                    has_industrial_designation = yes
+                    has_refinery_designation = yes
+                    has_unity_designation = yes
+                }
+            }
+        }
+        modifier = {
+            add = 1.5
+            from = {
+                has_fortress_designation = yes
+            }
+        }
+    }
+}

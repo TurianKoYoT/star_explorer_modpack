@@ -1,0 +1,28 @@
+GT_country_admin_cap_add2 = {
+    cost = @tier3cost1
+    area = society
+    tier = 3
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_colonial_bureaucracy"
+        "GT_country_admin_cap_add"
+    }
+    weight = @tier3weight1
+    modifier = {
+        planet_max_buildings_add = 1
+        country_edict_fund_add = 20
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            num_researched_techs_of_tier = {
+                tier = 3
+                value > 5
+            }
+        }
+    }
+    ai_weight = {
+    }
+}

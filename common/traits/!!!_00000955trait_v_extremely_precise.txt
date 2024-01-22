@@ -1,0 +1,48 @@
+trait_v_extremely_precise = {
+    cost = 3
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_v_imprecise"
+        "trait_v_precise"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/TOX"
+    modifier = {
+        army_collateral_damage_mult = -0.4
+        army_damage_mult = 0.3
+        planet_jobs_specialist_produces_mult = 0.05
+    }
+    slave_cost = {
+        energy = 4000
+    }
+    assembly_score = {
+        modifier = {
+            add = 0.5
+            from = {
+                OR = {
+                    has_factory_designation = yes
+                    has_foundry_designation = yes
+                    has_industrial_designation = yes
+                    has_refinery_designation = yes
+                    has_unity_designation = yes
+                }
+            }
+        }
+        modifier = {
+            add = 1.5
+            from = {
+                has_fortress_designation = yes
+            }
+        }
+    }
+}

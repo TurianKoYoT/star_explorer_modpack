@@ -1,0 +1,38 @@
+tech_acot_create_enigmapolis = {
+    cost = @acot_tier10cost3
+    area = society
+    tier = 8
+    category = {
+        new_worlds
+    }
+    is_rare = yes
+    prerequisites = {
+        tech_acot_create_enigmatic_world
+        tech_acot_automated_systems
+        tech_acot_fractured_autoharvesting
+        tech_acot_supercharged_reactor
+        tech_acot_supercharged_pylon
+        tech_precursor_citadel
+        tech_acot_fractured_shelter
+        tech_acot_fractured_trapper
+        tech_acot_fractured_fort
+        tech_acot_fractured_science_dome
+        tech_acot_fractured_size_upgrade_1
+        tech_acot_fractured_size_upgrade_2
+    }
+    weight = 20
+    potential = {
+        any_owned_planet = {
+            OR = {
+                is_planet_class = pc_acot_enigmatic
+                is_planet_class = pc_acot_enigmopolis
+            }
+        }
+        NOT = {
+            has_global_flag = acot_voidsphere_forbidden
+        }
+    }
+    weight_modifier = {
+        factor = 1
+    }
+}

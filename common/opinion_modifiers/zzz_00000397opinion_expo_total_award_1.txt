@@ -1,0 +1,9 @@
+opinion_expo_total_award_1 = {
+    opinion = {
+        base = 100
+    }
+    unique = yes
+    decay = {
+        base = 2
+    }
+}

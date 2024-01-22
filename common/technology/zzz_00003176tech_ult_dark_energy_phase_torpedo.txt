@@ -1,0 +1,15 @@
+tech_ult_dark_energy_phase_torpedo = {
+    area = physics
+    cost = 20000
+    tier = 4
+    category = {
+        field_manipulation
+    }
+    is_rare = yes
+    is_reverse_engineerable = no
+    prerequisites = {
+        "tech_energy_torpedoes_2"
+        "tech_ult_control_dark_energy"
+    }
+    weight = 20
+}

@@ -1,0 +1,35 @@
+@primary = 0.8
+@secondary = 0.6
+@tertiary = 0.2
+trait_pc_nuked_preference_AAA_banished_threat_wet = {
+    icon = "gfx/interface/icons/traits/trait_pc_nuked_preference_AAA_banished_threat_wet.dds"
+    ideal_planet_class = pc_nuked
+    allowed_archetypes = {
+        BIOLOGICAL
+        PRESAPIENT
+        LITHOID
+    }
+    initial = no
+    species_potential_add = {
+        always = no
+    }
+    species_possible_merge_add = {
+        always = yes
+    }
+    sorting_priority = 30
+    modifier = {
+        pc_nuked_habitability = @primary
+        pc_tropical_habitability = @secondary
+        pc_continental_habitability = @secondary
+        pc_ocean_habitability = @secondary
+        pc_desert_habitability = @tertiary
+        pc_arid_habitability = @tertiary
+        pc_tundra_habitability = @tertiary
+        pc_arctic_habitability = @tertiary
+        pc_alpine_habitability = @tertiary
+        pc_savannah_habitability = @tertiary
+    }
+    ai_weight = {
+        weight = 0
+    }
+}

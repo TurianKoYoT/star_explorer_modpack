@@ -1,0 +1,2 @@
+l_english:
+ building_stellarite_generator_ae_desc:1000 "The second iteration of the Stellarite Generator, offering improved stability and safety. This allows you to safely build and operate multiple generators on one planet.\n\n§YHint:§! If a Stellarite Power Conduit has been constructed on this planet, each $building_stellarite_generator_ae$ will produce additional stellarite."

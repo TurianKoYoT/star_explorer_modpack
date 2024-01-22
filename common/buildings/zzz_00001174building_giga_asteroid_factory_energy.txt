@@ -1,0 +1,31 @@
+building_giga_asteroid_factory_energy = {
+    inline_script = {
+        script = buildings/asteroid_industry/building_giga_asteroid_factory
+        cap_modifier = building_giga_asteroid_factory_energy_country_max
+        unlock = "always = yes"
+        modifiers = "
+triggered_planet_modifier = {
+potential = {
+solar_system = {
+any_system_megastructure = {
+is_megastructure_type = asteroid_manufactory_energy
+}
+}
+}
+planet_buildings_energy_upkeep_mult = -0.1
+planet_districts_energy_upkeep_mult = -0.1
+planet_jobs_energy_upkeep_mult = -0.05
+}
+inline_script = {
+script = planet/energy/giga_technician_job_swap
+jobs = @asteroid_industry_job_count
+}
+"
+    }
+    ai_resource_production = {
+        trigger = {
+            has_generator_designation = yes
+        }
+        ai_unobtainium = 1000
+    }
+}

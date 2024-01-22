@@ -1,0 +1,98 @@
+building_phanon_stronghold = {
+    base_buildtime = 900
+    planetary_ftl_inhibitor = yes
+    add_to_first_building_slot = yes
+    can_build = no
+    category = army
+    position_priority = 100
+    allow = {
+        has_phanon_capital = yes
+    }
+    planet_modifier = {
+        planet_housing_add = 20
+        planet_army_build_time_mult = -0.05
+        planet_stability_add = 5
+    }
+    army_modifier = {
+        army_defense_damage_mult = 2
+        army_defense_health_mult = 2
+        army_defense_morale_mult = 2
+    }
+    potential = {
+        NOT = {
+            has_global_flag = aot_phanon_content_OFF
+        }
+        exists = owner
+        owner = {
+            has_technology = tech_phanon_stronghold
+        }
+    }
+    upgrades = {
+        building_stellarite_stronghold
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_fallen_empire = no
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            job_phanon_enforcer_add = 8
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_fallen_empire = no
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_phanon_enforcer_drone_add = 8
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 2500
+            energy = 2500
+            aot_sr_runic_power = 600
+        }
+        upkeep = {
+            trigger = {
+                owner = {
+                    is_ai = no
+                }
+            }
+            energy = 60
+            aot_sr_runic_power = 20
+            sr_dark_matter = 5
+            acot_sr_dark_energy = 5
+        }
+    }
+    prerequisites = {
+        tech_phanon_stronghold
+    }
+    ai_weight = {
+        weight = 0
+        modifier = {
+            weight = 100000
+            num_pops >= 40
+            NOR = {
+                num_buildings = {
+                    type = building_phanon_stronghold
+                    value <= 2
+                }
+            }
+            owner = {
+                has_monthly_income = {
+                    resource = aot_sr_runic_power
+                    value <= 3
+                }
+            }
+        }
+    }
+}

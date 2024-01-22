@@ -1,0 +1,186 @@
+building_avb_noble_estates_2 = {
+    base_buildtime = @avb_g4_time
+    can_build = no
+    category = government
+    potential = {
+        exists = owner
+        planet = {
+            or = {
+                has_building = building_noble_estates
+                owner = {
+                    is_ai = no
+                }
+            }
+        }
+        owner = {
+            OR = {
+                has_valid_civic = civic_aristocratic_elite
+                AND = {
+                    has_global_flag = ethic_civic_classic_active
+                    has_civic = civic_harmonious_hierarchy
+                }
+                AND = {
+                    has_global_flag = bug_branch_active
+                    is_bugged_governmental_elitist = yes
+                }
+            }
+        }
+        NOT = {
+            has_modifier = slave_colony
+        }
+        OR = {
+            has_z_expanded_mod = no
+            AND = {
+                has_z_expanded_mod = yes
+                NOT = {
+                    has_planet_flag = planetary_station
+                }
+            }
+        }
+    }
+    allow = {
+        has_upgraded_capital_4 = yes
+        if = {
+            limit = {
+                exists = orbital_defence
+            }
+            orbital_defence = {
+                exists = starbase
+                starbase = {
+                    NOR = {
+                        has_starbase_building = ring_noble_estates
+                        is_starbase_building_building = ring_noble_estates
+                    }
+                }
+            }
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        NOT = {
+            owner = {
+                OR = {
+                    has_valid_civic = civic_aristocratic_elite
+                    AND = {
+                        has_global_flag = ethic_civic_classic_active
+                        has_civic = civic_harmonious_hierarchy
+                    }
+                    AND = {
+                        has_global_flag = bug_branch_active
+                        is_bugged_governmental_elitist = yes
+                    }
+                    AND = {
+                        has_z_expanded_mod = yes
+                        is_aristocratic_empire = {
+                            allow_invalid = yes
+                        }
+                    }
+                }
+            }
+        }
+    }
+    planet_modifier = {
+        job_noble_add = 3
+        planet_housing_add = 3
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_g4_minerals
+        }
+        upkeep = {
+            energy = @avb_g4_upkeep
+        }
+    }
+    triggered_desc = {
+        text = job_noble_effect_desc
+    }
+    prerequisites = {
+        "tech_avb_noble_estates_2"
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_global_flag = ethic_civic_classic_active
+                has_valid_civic = civic_harmious_hierarchy
+            }
+        }
+        modifier = {
+            job_noble_per_pop = 0.03
+            planet_housing_add = 2
+            pop_government_ethic_attraction = 0.2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                AND = {
+                    has_global_flag = ethic_civic_classic_active
+                    has_civic = civic_aristocratic_elite
+                    is_anglers_empire = no
+                }
+            }
+        }
+        modifier = {
+            planet_housing_add = 1
+            job_farmer_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                AND = {
+                    has_global_flag = ethic_civic_classic_active
+                    has_civic = civic_aristocratic_elite
+                    is_anglers_empire = yes
+                }
+            }
+        }
+        modifier = {
+            planet_housing_add = 1
+            job_angler_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_global_flag = bug_branch_active
+            exists = owner
+            owner = {
+                has_valid_civic = civic_bugged_peerage_assembly
+            }
+        }
+        job_noble_add = 1
+        planet_housing_add = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+        }
+        modifier = {
+            planet_housing_add = 6
+            planet_amenities_add = 15
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+            exists = owner
+            owner = {
+                is_ai = yes
+            }
+            NOT = {
+                has_building = building_noble_estates
+            }
+            NOT = {
+                has_building = building_palatial_estates
+            }
+        }
+        modifier = {
+            job_starnet_spice_melange_farmer_add = 1
+            job_starnet_spice_melange_antifarmer_add = -1
+        }
+    }
+}

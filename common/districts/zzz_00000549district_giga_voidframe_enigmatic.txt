@@ -1,0 +1,158 @@
+district_giga_voidframe_enigmatic = {
+    base_buildtime = 480
+    icon = district_dm_hab_dark_matter_energy
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        always = no
+    }
+    potential = {
+        uses_district_set = giga_frameworld
+        OR = {
+            is_voidframe_upgraded = no
+            is_voidframe_exclusive_dm = yes
+        }
+        owner = {
+            OR = {
+                has_technology = tech_dark_energy_pylon
+                has_technology = tech_dark_matter_generator
+            }
+        }
+        has_enigmatic_capital = yes
+    }
+    conversion_ratio = 0.5
+    convert_to = {
+        district_giga_voidframe_enigmatic_ae
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                NAND = {
+                    has_technology = "tech_dark_energy_pylon"
+                    has_technology = "tech_dark_matter_generator"
+                }
+            }
+        }
+        text = district_giga_frameworld_refinery_unlocks
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+                not = {
+                    has_technology = "tech_dark_energy_pylon"
+                }
+            }
+        }
+        text = district_giga_voidframe_enigmatic_unlock_de
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                not = {
+                    has_technology = "tech_dark_energy_pylon"
+                }
+            }
+        }
+        text = district_giga_voidframe_enigmatic_unlock_de_gestalt
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+                not = {
+                    has_technology = "tech_dark_matter_generator"
+                }
+            }
+        }
+        text = district_giga_voidframe_enigmatic_unlock_dm
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                not = {
+                    has_technology = "tech_dark_matter_generator"
+                }
+            }
+        }
+        text = district_giga_voidframe_enigmatic_unlock_dm_gestalt
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                NAND = {
+                    has_technology = "tech_dark_energy_pylon"
+                    has_technology = "tech_dark_matter_generator"
+                }
+            }
+        }
+        text = district_giga_frameworld_refinery_empty
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = 1000
+        }
+        upkeep = {
+            energy = 10
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 4
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                has_technology = "tech_dark_energy_pylon"
+            }
+        }
+        modifier = {
+            job_acot_dark_energy_man_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                has_technology = "tech_dark_matter_generator"
+            }
+        }
+        modifier = {
+            job_acot_dark_matter_man_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                has_technology = "tech_dark_energy_pylon"
+            }
+        }
+        modifier = {
+            job_acot_dark_energy_drone_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+                has_technology = "tech_dark_matter_generator"
+            }
+        }
+        modifier = {
+            job_acot_dark_matter_drone_add = 2
+        }
+    }
+}

@@ -1,0 +1,37 @@
+tech_acot_army_psi_hero = {
+    cost = @acot_tier7cost2
+    area = society
+    tier = 8
+    category = {
+        psionics
+    }
+    is_rare = yes
+    weight = 20
+    is_reverse_engineerable = no
+    prerequisites = {
+        "tech_acot_army_psi"
+    }
+    potential = {
+        has_tradition = tr_psionics_finish
+        NOT = {
+            has_global_flag = acot_army_forbidden
+        }
+    }
+    weight_modifier = {
+        factor = 1
+        modifier = {
+            factor = 2
+            has_ethic = "ethic_fanatic_spiritualist"
+        }
+    }
+    ai_weight = {
+        factor = 5
+        modifier = {
+            factor = 1.5
+            OR = {
+                has_ethic = ethic_spiritualist
+                has_ethic = ethic_fanatic_spiritualist
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+tech_eutab_new_world_missions = {
+    cost = @tier3cost1
+    area = society
+    tier = 3
+    category = {
+        new_worlds
+    }
+    prerequisites = {
+        "tech_adaptive_bureaucracy"
+    }
+    weight = @tier3weight1
+    is_custom_tech_1 = yes
+    potential = {
+        is_spiritualist = yes
+        has_ascension_perk = ap_imperial_prerogative
+    }
+    gateway = eu_imperial
+    modifier = {
+        colony_start_num_pops_add = 2
+    }
+}

@@ -1,0 +1,32 @@
+ship_section_template = {
+    key = "NANITE_SNIPER_BOW_CRUISER"
+    ship_size = cruiser
+    fits_on_slot = bow
+    should_draw_components = yes
+    entity = "cruiser_bow_L1_entity"
+    icon = "GFX_ship_part_core_bow"
+    prerequisites = {
+        tech_nanite_ship_section
+    }
+    ai_weight = {
+        factor = 5
+    }
+    component_slot = {
+        name = "LARGE_GUN_01"
+        template = "large_turret"
+        locatorname = "large_gun_01"
+    }
+    component_slot = {
+        name = "LARGE_GUN_02"
+        template = "large_turret"
+        locatorname = "large_gun_01"
+    }
+    medium_utility_slots = 5
+    resources = {
+        category = ship_sections
+        cost = {
+            alloys = 50
+            nanites = 150
+        }
+    }
+}

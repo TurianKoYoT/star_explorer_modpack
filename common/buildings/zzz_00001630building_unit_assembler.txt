@@ -1,0 +1,49 @@
+building_unit_assembler = {
+    base_buildtime = 720
+    base_cap_amount = 1
+    category = pop_assembly
+    allow = {
+    }
+    prerequisites = {
+        tech_unit_assembler
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = no
+            }
+        }
+        modifier = {
+            job_roboticist_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        modifier = {
+            job_replicator_add = 1
+        }
+    }
+    planet_modifier = {
+        planet_pop_assembly_mult = 0.1
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 1200
+            alloys = 300
+        }
+        upkeep = {
+            energy = 4
+            alloys = 2
+        }
+        produces = {
+            engineering_research = 4
+        }
+    }
+}

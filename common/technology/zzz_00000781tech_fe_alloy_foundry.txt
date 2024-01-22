@@ -1,0 +1,23 @@
+tech_fe_alloy_foundry = {
+    cost = @acot_tier6cost1
+    area = engineering
+    tier = 6
+    category = {
+        materials
+    }
+    prerequisites = {
+        "tech_alloys_2"
+        "tech_fe_mineral_processing_plant"
+    }
+    weight = @tier5weight1
+    potential = {
+        NOT = {
+            has_global_flag = acot_building_forbidden
+        }
+    }
+    weight_modifier = {
+        factor = 2
+    }
+    ai_weight = {
+    }
+}

@@ -1,0 +1,28 @@
+leader_trait_admiral_esap_egalitarian_2_shipwrighter = {
+    cost = 0
+    icon = "gfx/interface/icons/traits/leader_traits/leader_trait_esap_egalitarian_2_shipwrighter.dds"
+    fleet_modifier = {
+        ship_armor_mult = 0.09
+        ship_hull_mult = 0.06
+        ship_armor_hardening_add = 0.05
+    }
+    councilor_modifier = {
+        ship_armor_mult = 0.05
+        ship_hull_mult = 0.03
+        ship_armor_hardening_add = 0.02
+    }
+    leader_potential_add = {
+        from = {
+            has_ascension_perk = ap_esap_egalitarian_2
+        }
+    }
+    leader_class = {
+        commander
+    }
+    initial = no
+    randomized = yes
+    selectable_weight = {
+        weight = @class_trait_weight
+        inline_script = paragon/council_weight_mult
+    }
+}

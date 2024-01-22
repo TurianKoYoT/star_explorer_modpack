@@ -1,0 +1,271 @@
+building_avb_league_offices_2 = {
+    base_buildtime = @avb_f4_time
+    can_build = no
+    category = unity
+    potential = {
+        exists = owner
+        owner = {
+            has_technology = tech_avb_secrets_league_2
+        }
+        NOT = {
+            has_modifier = slave_colony
+        }
+    }
+    allow = {
+        has_fully_upgraded_capital = yes
+    }
+    destroy_trigger = {
+        has_modifier = slave_colony
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_f4_minerals
+            rare_crystals = @avb_f4_rare_cost
+            minor_artifacts = 60
+        }
+        upkeep = {
+            energy = @avb_f4_upkeep
+            rare_crystals = @avb_f4_rare_upkeep
+        }
+    }
+    country_modifier = {
+        country_edict_fund_add = 100
+    }
+    triggered_country_modifier = {
+        potential = {
+            owner = {
+                has_ascension_perk = ap_archaeoengineers
+            }
+        }
+        country_edict_fund_add = 50
+    }
+    planet_modifier = {
+        planet_administrators_unity_produces_add = 2
+        planet_managers_unity_produces_add = 2
+        planet_priests_unity_produces_add = 2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+                is_spiritualist = no
+                is_megacorp = no
+                has_make_spiritualist_perk = no
+                OR = {
+                    has_z_expanded_mod = no
+                    AND = {
+                        has_z_expanded_mod = yes
+                        NOT = {
+                            has_valid_civic = civic_ethical_hedonism
+                        }
+                    }
+                }
+            }
+        }
+        modifier = {
+            job_bureaucrat_add = 4
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+                is_spiritualist = no
+                is_megacorp = no
+                has_make_spiritualist_perk = no
+                has_valid_civic = civic_ethical_hedonism
+            }
+        }
+        modifier = {
+            job_bureaucrat_add = 2
+            job_culture_worker_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_megacorp = yes
+                has_valid_civic = civic_private_military_companies
+            }
+        }
+        modifier = {
+            job_chaplain_add = 2
+            job_logistics_officer_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_spiritualist = no
+                has_make_spiritualist_perk = no
+                has_valid_civic = civic_private_military_companies
+            }
+        }
+        modifier = {
+            job_logistics_officer_add = 4
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                is_megacorp = no
+                has_valid_civic = civic_machine_cult
+            }
+        }
+        modifier = {
+            job_tech_priest_add = 4
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_spiritualist = yes
+                    has_make_spiritualist_perk = yes
+                }
+                OR = {
+                    has_z_expanded_mod = no
+                    AND = {
+                        has_z_expanded_mod = yes
+                        NOT = {
+                            has_valid_civic = civic_machine_cult
+                        }
+                    }
+                }
+            }
+        }
+        modifier = {
+            job_priest_add = 4
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_spiritualist = no
+            }
+        }
+        modifier = {
+            job_manager_add = 4
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+                is_spiritualist = yes
+                OR = {
+                    has_z_expanded_mod = no
+                    AND = {
+                        has_z_expanded_mod = yes
+                        NOT = {
+                            has_valid_civic = civic_private_military_companies
+                        }
+                    }
+                }
+            }
+        }
+        modifier = {
+            job_manager_add = 2
+            job_priest_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        modifier = {
+            job_synapse_drone_add = 4
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        modifier = {
+            job_coordinator_add = 4
+        }
+    }
+    triggered_desc = {
+        text = building_league_offices_effect
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_megacorp = no
+                is_spiritualist = yes
+            }
+        }
+        text = job_priest_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        text = job_coordinator_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        text = job_synapse_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_megacorp = yes
+            }
+        }
+        text = job_manager_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+                is_spiritualist = no
+                is_megacorp = no
+            }
+        }
+        text = job_bureaucrat_effect_desc
+    }
+    prerequisites = {
+        "tech_avb_league_offices_2"
+    }
+}

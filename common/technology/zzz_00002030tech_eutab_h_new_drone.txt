@@ -1,0 +1,20 @@
+tech_eutab_h_new_drone = {
+    cost = @tier3cost3
+    area = society
+    tier = 3
+    category = {
+        biology
+    }
+    prerequisites = {
+        "tech_gene_banks"
+    }
+    weight = @tier3weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_hive_empire = yes
+        has_ascension_perk = ap_nihilistic_acquisition
+    }
+    modifier = {
+        pop_amenities_usage_no_happiness_mult = -0.15
+    }
+}

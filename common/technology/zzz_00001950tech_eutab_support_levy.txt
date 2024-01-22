@@ -1,0 +1,22 @@
+tech_eutab_support_levy = {
+    cost = @tier3cost3
+    area = society
+    tier = 3
+    category = {
+        military_theory
+    }
+    prerequisites = {
+        "tech_doctrine_fleet_size_3"
+        "tech_command_matrix"
+    }
+    weight = @tier3weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_militarist = yes
+        has_ascension_perk = ap_shared_destiny
+    }
+    gateway = eu_destiny
+    modifier = {
+        country_vassal_naval_capacity_contribution_mult = 0.2
+    }
+}

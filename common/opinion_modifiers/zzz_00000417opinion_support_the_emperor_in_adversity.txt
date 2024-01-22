@@ -1,0 +1,8 @@
+opinion_support_the_emperor_in_adversity = {
+    opinion = {
+        base = 100
+    }
+    decay = {
+        base = 1
+    }
+}

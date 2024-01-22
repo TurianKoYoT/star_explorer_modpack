@@ -1,0 +1,99 @@
+@giga_birch_insula_cost = 5000
+@giga_birch_insula_time = 2400
+@giga_birch_insula_maintenance = 40
+district_giga_birch_structure = {
+    base_buildtime = @giga_birch_insula_time
+    is_capped_by_modifier = yes
+    can_demolish = no
+    exempt_from_ai_planet_specialization = yes
+    show_on_uncolonized = {
+        uses_district_set = giga_birch
+        not = {
+            has_planet_flag = giga_birch_ruined
+        }
+    }
+    potential = {
+        uses_district_set = giga_birch
+        not = {
+            has_planet_flag = giga_birch_ruined
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = @giga_birch_insula_cost
+            alloys = @giga_birch_insula_cost
+        }
+        upkeep = {
+            energy = @giga_birch_insula_maintenance
+        }
+    }
+    planet_modifier = {
+        giga_birch_district_insula_max = 1
+        giga_birch_district_insula_per_pop = 0.01
+    }
+    triggered_desc = {
+        trigger = {
+            always = yes
+        }
+        text = giga_birch_district_insula_tooltip
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        job_giga_birch_structure_manager_add = 1
+        job_giga_birch_structure_manager_per_pop = 0.01
+        job_enforcer_per_pop = 0.04
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = job_giga_birch_structure_manager_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = job_enforcer_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        job_giga_birch_structure_manager_drone_add = 1
+        job_giga_birch_structure_manager_drone_per_pop = 0.01
+        job_patrol_drone_per_pop = 0.06
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_giga_birch_structure_manager_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_patrol_drone_effect_desc
+    }
+}

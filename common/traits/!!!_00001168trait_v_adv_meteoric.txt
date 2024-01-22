@@ -1,0 +1,41 @@
+trait_v_adv_meteoric = {
+    cost = 1
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    host_has_dlc = "Lithoids Species Pack"
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_lithoid_transgenesis
+        }
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_v_rooted"
+        "trait_v_adv_rooted"
+        "trait_v_living_mountain"
+        "trait_v_mycorrhizal_a"
+        "trait_v_adv_mycorrhizal_a"
+        "trait_v_mycorrhizal_b"
+        "trait_v_adv_mycorrhizal_b"
+        "trait_v_meteoric"
+        "trait_invasive"
+    }
+    inline_script = "allowed_archetypes/adv_lithoid_traits/BIOLOGICAL"
+    custom_tooltip_with_modifiers = TRAIT_METEORIC_EFFECT
+    modifier = {
+        pop_resettlement_cost_mult = -0.25
+        army_attack_health_mult = 0.5
+        army_defense_health_mult = 0.5
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

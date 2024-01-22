@@ -1,0 +1,106 @@
+district_giga_voidframe_temple_de = {
+    base_buildtime = 480
+    icon = district_giga_voidframe_admin_de
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        exists = from
+        uses_district_set = giga_frameworld
+        owner = {
+            has_ethic = ethic_fanatic_spiritualist
+        }
+        is_voidframe_exclusive_de = yes
+    }
+    potential = {
+        exists = owner
+        uses_district_set = giga_frameworld
+        owner = {
+            has_ethic = ethic_fanatic_spiritualist
+        }
+        if = {
+            limit = {
+                is_voidframe_outdated_de = yes
+            }
+            has_building = building_ae_empyrean_shrine
+            NOR = {
+                has_building = building_phanon_empyrean_shrine
+                has_building = building_stellarite_empyrean_shrine
+            }
+        }
+        else = {
+            is_voidframe_de = yes
+            OR = {
+                has_building = building_ae_empyrean_shrine
+                has_building = building_phanon_empyrean_shrine
+                has_building = building_stellarite_empyrean_shrine
+            }
+        }
+    }
+    prerequisites = {
+        tech_aot_ae_empyrean_shrine
+    }
+    show_tech_unlock_if = {
+        giga_has_frameworld_origin = yes
+        has_ethic = ethic_fanatic_spiritualist
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_giga_frameworld_administrative
+        district_giga_voidframe_admin_dm
+        district_giga_voidframe_admin_de
+        district_giga_voidframe_admin_pe
+        district_giga_voidframe_admin_se
+        district_giga_frameworld_temple
+        district_giga_voidframe_temple_dm
+        district_giga_voidframe_temple_de
+        district_giga_voidframe_temple_pe
+        district_giga_voidframe_temple_se
+        district_giga_frameworld_simulator
+        district_giga_voidframe_simulation_dm
+        district_giga_voidframe_simulation_de
+        district_giga_voidframe_simulation_pe
+        district_giga_voidframe_simulation_se
+        district_giga_frameworld_synapse
+        district_giga_voidframe_synapse_dm
+        district_giga_voidframe_synapse_de
+        district_giga_voidframe_synapse_pe
+        district_giga_voidframe_synapse_se
+        district_giga_frameworld_sanctuary
+        district_giga_voidframe_sanctuary_dm
+        district_giga_voidframe_sanctuary_de
+        district_giga_voidframe_sanctuary_pe
+        district_giga_voidframe_sanctuary_se
+    }
+    resources = {
+        category = planet_districts_hab_research
+        cost = {
+            minerals = 1000
+            sr_dark_matter = 400
+            acot_sr_dark_energy = 400
+        }
+        upkeep = {
+            energy = 6
+            sr_dark_matter = 2
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = $house$
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+            has_voidframe_mods_aot = yes
+        }
+        modifier = {
+            job_acot_priest_add = 4
+        }
+    }
+    ai_resource_production = {
+        unity = 2
+        trigger = {
+            always = yes
+        }
+    }
+}

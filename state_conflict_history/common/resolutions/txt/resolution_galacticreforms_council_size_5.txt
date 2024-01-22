@@ -1,0 +1,103 @@
+@resolution_weight_popular = 6.5
+@resolution_cost_t3 = 200
+@resolution_flag_timer = 360
+resolution_galacticreforms_council_size_5 = {
+    icon = "GFX_resolution_council_size"
+    potential = {
+        OR = {
+            has_federations_dlc = yes
+            has_nemesis = yes
+        }
+        has_global_flag = galactic_council_formed
+        num_council_positions = 4
+        has_galactic_emperor = no
+    }
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t3
+        }
+    }
+    target = no
+    modifier = {
+    }
+    effect = {
+        set_council_size = 5
+        set_global_flag = galactic_council_formed
+        hidden_effect = {
+            set_timed_country_flag = {
+                flag = galactic_community_resolution_passed_general
+                days = @resolution_flag_timer
+            }
+            add_modifier = {
+                modifier = resolution_passed_diplomatic_weight
+                days = 2200
+            }
+        }
+    }
+    fail_effects = {
+        hidden_effect = {
+            set_timed_country_flag = {
+                flag = galactic_community_resolution_failed_general
+                days = @resolution_flag_timer
+            }
+            add_modifier = {
+                modifier = resolution_failed_diplomatic_weight
+                days = 2200
+            }
+        }
+    }
+    ai_weight = {
+        base = @resolution_weight_popular
+        modifier = {
+            factor = 3
+            num_council_positions = 4
+            OR = {
+                galactic_community_rank = 5
+                AND = {
+                    is_subject = yes
+                    overlord = {
+                        opinion_level = {
+                            who = prev
+                            level >= neutral
+                        }
+                        galactic_community_rank = 5
+                    }
+                }
+            }
+            desc = gal_com_wants_to_add_themselves_or_overlord_to_council
+        }
+        modifier = {
+            factor = 10
+            num_council_positions = 4
+            galactic_community_rank = 5
+            desc = gal_com_wants_to_add_themselves_or_overlord_to_council
+        }
+        modifier = {
+            factor = 0.8
+            is_part_of_galactic_council = yes
+            is_egalitarian = no
+            desc = gal_com_negative_sentiment
+        }
+        modifier = {
+            factor = 0
+            is_authoritarian = yes
+            desc = ethic_authoritarian
+        }
+        modifier = {
+            factor = 1.5
+            is_egalitarian = yes
+            desc = ethic_egalitarian
+        }
+        modifier = {
+            factor = 1.5
+            has_ethic = ethic_fanatic_egalitarian
+            desc = ethic_egalitarian
+        }
+        modifier = {
+            factor = 1.5
+            is_civic_diplomatic_corps = yes
+            desc = gal_com_diplo_civic
+        }
+    }
+}

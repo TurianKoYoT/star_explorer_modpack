@@ -1,0 +1,79 @@
+building_avb_monument_hive_4 = {
+    base_buildtime = @avb_u4_time
+    can_build = no
+    icon = building_avb_holo_theatre_4
+    category = unity
+    potential = {
+        exists = owner
+        NOT = {
+            has_modifier = slave_colony
+        }
+        owner = {
+            is_hive_empire = yes
+            is_memorialist_empire = no
+        }
+        OR = {
+            has_z_expanded_mod = no
+            AND = {
+                has_z_expanded_mod = yes
+                NOT = {
+                    has_planet_flag = planetary_station
+                }
+            }
+        }
+    }
+    allow = {
+        has_fully_upgraded_capital = yes
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            has_modifier = slave_colony
+            owner = {
+                OR = {
+                    is_hive_empire = no
+                    is_memorialist_empire = yes
+                }
+            }
+        }
+    }
+    convert_to = {
+        building_avb_monument_corp_4
+        building_avb_monument_4
+        building_avb_monument_machine_4
+        building_avb_monument_memorial_4
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            trigger = {
+                exists = owner
+            }
+            unity = 4
+            multiplier = owner.trigger:num_ascension_perks
+        }
+        cost = {
+            minerals = @avb_u4_minerals
+        }
+    }
+    planet_modifier = {
+        planet_jobs_unity_produces_mult = 0.2
+        job_evaluator_add = @avb_u4_jobs
+    }
+    triggered_desc = {
+        text = building_avb_monument_effect_4
+    }
+    triggered_desc = {
+        text = job_evaluator_effect_desc
+    }
+    prerequisites = {
+        "tech_avb_monument_4"
+    }
+    show_tech_unlock_if = {
+        is_hive_empire = yes
+        is_memorialist_empire = no
+    }
+    upgrades = {
+        building_avb_monument_hive_5
+    }
+}

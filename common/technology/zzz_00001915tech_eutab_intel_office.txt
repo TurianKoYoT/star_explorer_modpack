@@ -1,0 +1,19 @@
+tech_eutab_intel_office = {
+    cost = @tier3cost2
+    area = society
+    tier = 3
+    category = {
+        military_theory
+    }
+    is_custom_tech_1 = yes
+    prerequisites = {
+        "tech_starbase_3"
+        "tech_doctrine_navy_size_2"
+    }
+    weight = @tier3weight2
+    potential = {
+        is_xenophobe = yes
+        has_ascension_perk = ap_one_vision
+    }
+    gateway = eu_vision
+}

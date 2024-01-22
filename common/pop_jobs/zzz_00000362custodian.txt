@@ -1,0 +1,301 @@
+custodian = {
+    category = specialist
+    condition_string = SPECIALIST_JOB_TRIGGER
+    building_icon = building_museum
+    clothes_texture_index = 3
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+    }
+    possible_precalc = can_fill_specialist_job
+    possible = {
+        hidden_trigger = {
+            exists = owner
+        }
+        owner = {
+            is_gestalt = no
+        }
+    }
+    resources = {
+        category = AAA_planet_custodians
+        produces = {
+            unity = 3
+        }
+        produces = {
+            unity = 1
+            mult = owner.trigger:num_owned_relics
+        }
+        upkeep = {
+            consumer_goods = 1
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_relic = r_plexi_log
+                }
+            }
+            unity = 1
+            mult = value:scripted_modifier_mult|MODIFIER|pop_job_AAA_relic_effect_mult|
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_relic = r_eztarta
+                }
+            }
+            minor_artifacts = 1
+            mult = value:scripted_modifier_mult|MODIFIER|pop_job_AAA_relic_effect_mult|
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_relic = r_khans_throne
+                }
+            }
+            influence = 0.1
+            mult = value:scripted_modifier_mult|MODIFIER|pop_job_AAA_relic_effect_mult|
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_relic = r_galatron
+                }
+            }
+            unity = 5
+            mult = value:scripted_modifier_mult|MODIFIER|pop_job_AAA_relic_effect_mult|
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_relic = r_prethoryn_queen
+                }
+            }
+            unity = 5
+            mult = value:scripted_modifier_mult|MODIFIER|pop_job_AAA_relic_effect_mult|
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_relic = r_unbidden_warlock
+                }
+            }
+            unity = 5
+            mult = value:scripted_modifier_mult|MODIFIER|pop_job_AAA_relic_effect_mult|
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_relic = r_contingency_core
+                }
+            }
+            unity = 5
+            mult = value:scripted_modifier_mult|MODIFIER|pop_job_AAA_relic_effect_mult|
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_relic = r_the_last_baol
+                }
+            }
+            food = 4
+            mult = value:scripted_modifier_mult|MODIFIER|pop_job_AAA_relic_effect_mult|
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_relic = r_pox_sample
+                }
+            }
+            society_research = 8
+            mult = value:scripted_modifier_mult|MODIFIER|pop_job_AAA_relic_effect_mult|
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_relic = r_toxic_god
+                    has_origin = origin_toxic_knights
+                }
+            }
+            unity = 3
+            mult = value:scripted_modifier_mult|MODIFIER|pop_job_AAA_relic_effect_mult|
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_ezentian_core = yes
+                }
+            }
+            engineering_research = 6
+            mult = value:scripted_modifier_mult|MODIFIER|pop_job_AAA_relic_effect_mult|
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_werediran_core = yes
+                }
+            }
+            unity = 1
+            mult = value:scripted_modifier_mult|MODIFIER|pop_job_AAA_relic_effect_mult|
+        }
+        inline_script = "jobs/AAA_museum_worker_outputs_slot_4"
+        inline_script = "jobs/AAA_museum_worker_outputs_slot_5"
+        inline_script = "jobs/AAA_museum_worker_outputs_slot_6"
+        inline_script = {
+            script = comptriggers/AAA_scfe_trigger_produces
+            HAS_SCFE = @AAA_museum_number
+        }
+    }
+    inline_script = "jobs/AAA_museum_worker_outputs_slot_1"
+    inline_script = "jobs/AAA_museum_worker_outputs_slot_2"
+    inline_script = "jobs/AAA_museum_worker_outputs_slot_3"
+    inline_script = {
+        script = comptriggers/AAA_scfe_trigger_modifiers
+        HAS_SCFE = @AAA_museum_number
+    }
+    triggered_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        planet_amenities_add = 4
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                has_modifier = planet_museum_exhibits
+            }
+        }
+        planet_amenities_add = 4
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = planet
+            owner = {
+                has_relic = r_reality_perforator
+            }
+        }
+        planet_amenities_add = 8
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_AAA_relic_effect_mult|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = planet
+            owner = {
+                has_relic = r_cryo_core
+            }
+        }
+        modifier = {
+            planet_pops_upkeep_mult = -0.05
+        }
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_AAA_relic_effect_mult|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = planet
+            owner = {
+                has_relic = r_zro_crystal
+            }
+        }
+        modifier = {
+            planet_psionic_jobs_unity_produces_mult = 0.2
+        }
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_AAA_relic_effect_mult|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = planet
+            owner = {
+                has_ixardian_database = yes
+            }
+        }
+        trade_value_add = 4
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_AAA_relic_effect_mult|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = planet
+            owner = {
+                has_relic = r_pspmod_diary_of_innovo
+            }
+        }
+        modifier = {
+            planet_jobs_unity_produces_mult = 0.05
+        }
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_AAA_relic_effect_mult|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = planet
+            owner = {
+                has_frozen_engine = yes
+            }
+        }
+        modifier = {
+            planet_jobs_energy_produces_mult = 0.1
+        }
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_AAA_relic_effect_mult|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = planet
+            owner = {
+                has_relic = r_pspmod_astanine_last_projector
+            }
+        }
+        modifier = {
+            pop_happiness = 0.05
+        }
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_AAA_relic_effect_mult|
+    }
+    triggered_pop_modifier = {
+        potential = {
+            exists = planet
+            owner = {
+                has_relic = r_pspmod_sless_gene_template
+            }
+        }
+        modifier = {
+            pop_defense_armies_add = 6
+        }
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_AAA_relic_effect_mult|
+    }
+    weight = {
+        weight = @specialist_job_weight
+        mult = value:job_weights_modifier|JOB|custodian|RESOURCE|unity|
+        modifier = {
+            factor = 2
+            is_enslaved = yes
+            can_take_servant_job = no
+        }
+        modifier = {
+            factor = 5
+            has_job = custodian
+        }
+        modifier = {
+            factor = 0.1
+            NOT = {
+                has_job = custodian
+            }
+            exists = planet
+            planet = {
+                free_amenities > 5
+            }
+        }
+        modifier = {
+            factor = 2
+            NOT = {
+                has_job = custodian
+            }
+            exists = planet
+            planet = {
+                free_amenities < 2
+                has_available_jobs = custodian
+            }
+        }
+    }
+}

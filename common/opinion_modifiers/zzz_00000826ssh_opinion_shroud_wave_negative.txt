@@ -1,0 +1,7 @@
+ssh_opinion_shroud_wave_negative = {
+    opinion = {
+        base = -500
+    }
+    monthly = yes
+    decay = 2
+}

@@ -1,0 +1,5 @@
+doa_opinion_spied_on_us = {
+    opinion = {
+        base = -30
+    }
+}

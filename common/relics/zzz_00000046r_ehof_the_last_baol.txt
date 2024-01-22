@@ -1,0 +1,61 @@
+@activation_cost = 3000
+@activation_cost_qnm = 1500
+@triumph_duration = 3600
+r_ehof_the_last_baol = {
+    activation_duration = @triumph_duration
+    portrait = "GFX_relic_baol"
+    sound = "relic_activation_the_last_baol"
+    resources = {
+        category = relics
+        cost = {
+            unity = @activation_cost
+            ehof_sr_negative_mass = @activation_cost_qnm
+        }
+    }
+    ai_weight = {
+        weight = 100
+    }
+    triggered_country_modifier = {
+        potential = {
+            is_machine_empire = no
+        }
+        modifier = {
+            pop_growth_speed = 0.1
+        }
+    }
+    triggered_country_modifier = {
+        potential = {
+            is_machine_empire = yes
+        }
+        modifier = {
+            pop_growth_speed = 0.1
+            country_society_research_produces_mult = 0.1
+        }
+    }
+    score = 0
+    active_effect = {
+        custom_tooltip = relic_last_baol_active_tooltip
+        custom_tooltip = relic_triumph_cooldown
+        hidden_effect = {
+            add_modifier = {
+                modifier = "relic_activation_cooldown"
+                days = @triumph_duration
+            }
+            remove_country_flag = ehof_has_the_last_baol
+            remove_relic = r_ehof_the_last_baol
+            set_country_flag = not_activated_baol
+            set_timed_country_flag = {
+                flag = relic_last_baol_activated
+                days = @triumph_duration
+            }
+        }
+    }
+    possible = {
+        custom_tooltip = {
+            fail_text = "requires_relic_no_cooldown"
+            NOT = {
+                has_modifier = relic_activation_cooldown
+            }
+        }
+    }
+}

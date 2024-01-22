@@ -1,0 +1,34 @@
+tech_avb_military_academy_2 = {
+    cost = @tier5cost1
+    area = society
+    tier = 5
+    category = {
+        military_theory
+    }
+    prerequisites = {
+        "tech_combat_training"
+        "tech_command_matrix"
+        "tech_avb_capital_4"
+    }
+    weight = @tier5weight1
+    modifier = {
+        country_occupation_armies_add = 2
+    }
+    weight_modifier = {
+        factor = 2
+        modifier = {
+            factor = 0
+            any_owned_planet = {
+                NOR = {
+                    has_building = building_military_academy
+                    has_building = building_dread_encampment
+                }
+            }
+        }
+        inline_script = "tech_weights/avb_military_weight"
+    }
+    ai_weight = {
+        factor = 2
+        inline_script = "tech_weights/avb_military_weight"
+    }
+}

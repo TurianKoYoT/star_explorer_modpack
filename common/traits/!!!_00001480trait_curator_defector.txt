@@ -1,0 +1,39 @@
+trait_curator_defector = {
+    cost = 1
+    sorting_priority = 20
+    initial = no
+    randomized = no
+    improves_leaders = yes
+    species_potential_add = {
+        always = no
+    }
+    species_possible_remove = {
+        always = no
+    }
+    species_possible_merge_add = {
+        always = no
+    }
+    forced_happiness = no
+    immortal_leaders = no
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+        ROBOT
+        MACHINE
+    }
+    ai_weight = {
+        weight = 0
+    }
+    icon = "gfx/interface/icons/traits/leader_traits/leader_trait_psionic_leader.dds"
+    modifier = {
+        scientist_skill_levels = 1
+        planet_jobs_engineering_research_produces_mult = 0.2
+        planet_jobs_physics_research_produces_mult = 0.2
+        planet_jobs_society_research_produces_mult = 0.2
+        planet_jobs_specialist_produces_mult = 0.1
+        planet_jobs_worker_produces_mult = -0.1
+        habitat_jobs_produces_mult = 0.15
+        non_artificial_planet_jobs_produces_mult = -0.15
+        pop_growth_speed = -0.33
+    }
+}

@@ -1,0 +1,20 @@
+tech_doa_dark_matter_repair_drones_6 = {
+    area = physics
+    cost = @tier5cost2
+    tier = @fallentechtier
+    category = {
+        ascended_technologies
+    }
+    weight = @tier5weight2
+    prerequisites = {
+        "tech_doa_stabilized_power_reactor"
+    }
+    ai_update_type = military
+    is_reverse_engineerable = no
+    potential = {
+        has_technology = tech_doa_stabilized_power_reactor
+    }
+    ai_weight = {
+        factor = 2
+    }
+}

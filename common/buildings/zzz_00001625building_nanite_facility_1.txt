@@ -1,0 +1,28 @@
+building_nanite_facility_1 = {
+    base_buildtime = 180
+    category = pop_assembly
+    can_build = no
+    resources = {
+        category = planet_buildings
+        cost = {
+            automatic_drone = 400
+        }
+        produces = {
+            nanites = 2
+        }
+        upkeep = {
+            automatic_drone = 6
+        }
+    }
+    upgrades = {
+        building_nanite_facility_2
+    }
+    potential = {
+        owner = {
+            has_ascension_perk = ap_nano_to_nanite
+        }
+    }
+    show_tech_unlock_if = {
+        has_ascension_perk = ap_nano_to_nanite
+    }
+}

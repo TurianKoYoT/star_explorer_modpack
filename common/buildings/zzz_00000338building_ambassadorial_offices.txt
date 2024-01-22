@@ -1,0 +1,35 @@
+building_ambassadorial_offices = {
+    base_buildtime = @b1_time
+    owner_type = subject_holding
+    base_cap_amount = 1
+    category = unity
+    potential = {
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = subject_is_comvas
+            exists = planet.owner
+            planet.owner = {
+                is_specialist_subject_type = {
+                    TYPE = community_vassal
+                }
+            }
+        }
+    }
+    resources = {
+        category = planet_holdings
+        cost = {
+            minerals = @b1_minerals
+        }
+        upkeep = {
+            energy = @b1_upkeep
+        }
+    }
+    planet_modifier = {
+        monthly_loyalty = -1
+        job_overlord_diplomat_add = 2
+    }
+    triggered_country_modifier = {
+        diplo_weight_pops_mult = 0.1
+    }
+}

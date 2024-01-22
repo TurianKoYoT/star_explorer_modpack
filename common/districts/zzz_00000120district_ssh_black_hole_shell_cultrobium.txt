@@ -1,0 +1,99 @@
+@ssh_sh_cost = 1500
+@ssh_sh_alloys_cost = 200
+@ssh_sh_cost_sr = 50
+@ssh_sh_maintenance = 5
+@ssh_sh_maintenance_sr = 2
+@ssh_sh_district_buildtime = 360
+district_ssh_black_hole_shell_cultrobium = {
+    base_buildtime = @ssh_sh_district_buildtime
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        uses_district_set = black_hole_shell_world
+    }
+    potential = {
+        AND = {
+            uses_district_set = black_hole_shell_world
+            owner = {
+                has_technology = ssh_tech_nuclei_modification
+            }
+        }
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_ssh_black_hole_shell_city
+        district_ssh_black_hole_shell_science
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = @ssh_sh_cost
+            alloys = @ssh_sh_alloys_cost
+            volatile_motes = @ssh_sh_cost_sr
+        }
+        upkeep = {
+            energy = @ssh_sh_maintenance
+            volatile_motes = @ssh_sh_maintenance_sr
+        }
+        upkeep = {
+            trigger = {
+                exists = owner
+                owner = {
+                    has_edict = industrial_maintenance
+                }
+            }
+            energy = 2
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 15
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+        }
+        modifier = {
+            job_ssh_cultrobium_foundry_add = 10
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_ssh_cultrobium_foundry_drone_add = 10
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+        }
+        text = job_ssh_cultrobium_foundry_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        text = job_ssh_cultrobium_foundry_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        text = job_ssh_cultrobium_foundry_drone_effect_desc
+    }
+}

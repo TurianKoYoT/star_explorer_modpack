@@ -1,0 +1,23 @@
+tech_emex_biomech_world_cap1 = {
+    cost = @tier3cost1
+    area = society
+    tier = 3
+    category = {
+        new_worlds
+    }
+    prerequisites = {
+        "tech_emex_biomech_world"
+        "tech_self_aware_logic"
+    }
+    weight = @tier3weight1
+    potential = {
+        has_origin = origin_born_of_knowledge
+    }
+    modifier = {
+        description = bok_biomech_cap_add
+    }
+    weight_modifier = {
+    }
+    ai_weight = {
+    }
+}

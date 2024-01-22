@@ -1,0 +1,49 @@
+ship_section_template = {
+    key = "DOA_ASCENDED_BATTLECRUISER_BOW_KEY"
+    ship_size = doa_battlecruiser
+    fits_on_slot = bow
+    should_draw_components = yes
+    entity = "doa_battlecruiser_bow_entity"
+    icon = "GFX_ship_part_core_mid"
+    ai_tags = {
+        explosive
+        gunship
+        artillery
+    }
+    prerequisites = {
+        tech_doa_ascended_battlecruiser
+    }
+    component_slot = {
+        name = "EXTRA_LARGE_01"
+        template = "invisible_extra_large_fixed"
+        locatorname = "large_gun_01"
+    }
+    component_slot = {
+        name = "STRIKE_CRAFT_01"
+        template = "large_strike_craft"
+        rotation = 90
+        locatorname = "medium_gun_01"
+    }
+    component_slot = {
+        name = "STRIKE_CRAFT_02"
+        template = "large_strike_craft"
+        rotation = 90
+        locatorname = "medium_gun_02"
+    }
+    component_slot = {
+        name = "STRIKE_CRAFT_03"
+        template = "large_strike_craft"
+        rotation = 90
+        locatorname = "medium_gun_02"
+    }
+    aux_utility_slots = 3
+    modifier = {
+        ship_hull_add = 450
+    }
+    resources = {
+        category = ship_sections
+        cost = {
+            alloys = 80
+        }
+    }
+}

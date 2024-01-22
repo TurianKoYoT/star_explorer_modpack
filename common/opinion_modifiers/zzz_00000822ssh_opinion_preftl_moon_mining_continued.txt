@@ -1,0 +1,6 @@
+ssh_opinion_preftl_moon_mining_continued = {
+    opinion = {
+        base = -500
+    }
+    unique = yes
+}

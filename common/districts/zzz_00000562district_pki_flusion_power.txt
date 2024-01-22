@@ -1,0 +1,42 @@
+district_pki_flusion_power = {
+    icon = district_generator
+    base_buildtime = 480
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        is_planet_class = pc_pki_flusion_ecu
+        uses_district_set = pki_flusion_ecu
+    }
+    potential = {
+        exists = owner
+        is_planet_class = pc_pki_flusion_ecu
+        uses_district_set = pki_flusion_ecu
+    }
+    allow = {
+        NOT = {
+            has_modifier = resort_colony
+        }
+        NOT = {
+            has_modifier = slave_colony
+        }
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_generator
+    }
+    resources = {
+        category = planet_districts_generator
+        cost = {
+            minerals = 720
+        }
+        upkeep = {
+            energy = 5
+        }
+    }
+    planet_modifier = {
+        pop_environment_tolerance = -0.025
+    }
+    inline_script = {
+        script = jobs/technicians_add
+        AMOUNT = 8
+    }
+}

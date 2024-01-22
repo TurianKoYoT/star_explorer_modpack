@@ -1,0 +1,98 @@
+@resolution_weight_unpopular = 5
+@resolution_cost_t2 = 150
+@resolution_flag_timer = 360
+resolution_healthcare_repeal_2 = {
+    icon = "GFX_repeal_blue"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t2
+        }
+    }
+    target = no
+    fire_and_forget = yes
+    effect = {
+        custom_tooltip = resolution_healthcare_repeal_2_effect_success
+        hidden_effect = {
+            cancel_resolution = "resolution_healthcare_2"
+            set_timed_country_flag = {
+                flag = galactic_community_resolution_passed_healthcare_repeal
+                days = @resolution_flag_timer
+            }
+        }
+    }
+    fail_effects = {
+        hidden_effect = {
+            set_timed_country_flag = {
+                flag = galactic_community_resolution_failed_healthcare_repeal
+                days = @resolution_flag_timer
+            }
+        }
+    }
+    potential = {
+        is_active_resolution = "resolution_healthcare_2"
+    }
+    modifier = {
+        resolution_healthcare_1 = 1
+    }
+    allow = {
+    }
+    ai_weight = {
+        base = @resolution_weight_unpopular
+        modifier = {
+            factor = 0.5
+            is_materialist = yes
+            desc = ethic_materialist
+        }
+        modifier = {
+            factor = 3
+            is_xenophobe = yes
+            desc = ethic_xenophobe
+        }
+        modifier = {
+            factor = 1.5
+            is_spiritualist = yes
+            is_egalitarian = no
+            desc = ethic_spiritualist
+        }
+        modifier = {
+            factor = 0
+            OR = {
+                is_active_resolution = resolution_natural_hierarchy
+                is_active_resolution = resolution_superior_deference
+                is_active_resolution = resolution_a_whiff_of_grapeshot
+                is_active_resolution = resolution_let_them_eat_cake
+            }
+            NOR = {
+                has_valid_civic = civic_dystopian_society
+                is_megacorp = yes
+            }
+            desc = happiness_negative_passed
+        }
+        modifier = {
+            factor = 0.25
+            is_xenophile = yes
+            desc = ethic_xenophile
+        }
+        modifier = {
+            factor = 0.85
+            is_egalitarian = yes
+            desc = ethic_egalitarian
+        }
+        modifier = {
+            factor = 1.25
+            has_valid_civic = civic_dystopian_society
+            desc = civic_dystopian_society
+        }
+        modifier = {
+            factor = 1.25
+            is_megacorp = yes
+            desc = gov_megacorporation
+        }
+        modifier = {
+            factor = 0.75
+            has_valid_civic = civic_shared_burden
+            desc = civic_shared_burden
+        }
+    }
+}

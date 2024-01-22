@@ -1,0 +1,31 @@
+tech_sensor_se = {
+    area = physics
+    tier = 8
+    cost = @acot_tier8cost1
+    category = {
+        computing
+    }
+    weight = 5
+    ai_update_type = military
+    is_reverse_engineerable = no
+    prerequisites = {
+        "tech_dark_matter_power_core_se"
+        "tech_computer_stellarite"
+    }
+    potential = {
+        NOT = {
+            has_global_flag = acot_shipcom_forbidden
+        }
+        has_technology = tech_dark_matter_power_core_se
+    }
+    prereqfor_desc = {
+        hide_prereq_for_desc = component
+        custom = {
+            title = "TECH_UNLOCK_STELLARITE_SENSORS_TITLE"
+            desc = "TECH_UNLOCK_STELLARITE_SENSORS_DESC"
+        }
+    }
+    ai_weight = {
+        factor = 200
+    }
+}

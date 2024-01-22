@@ -1,0 +1,48 @@
+trait_ssh_robot_neuronal_network = {
+    cost = 3
+    opposites = {
+        "trait_robot_learning_algorithms"
+        "trait_cyborg_learning_algorithms"
+        "trait_robot_logic_engines"
+        "trait_cyborg_logic_engines"
+    }
+    initial = no
+    randomized = no
+    prerequisites = {
+        "ssh_tech_advanced_dna_resequencing"
+    }
+    allowed_archetypes = {
+        ROBOT
+        MACHINE
+    }
+    species_potential_add = {
+        exists = from
+        from = {
+            OR = {
+                has_authority = auth_machine_intelligence
+                has_technology = tech_synthetic_leaders
+            }
+            NOR = {
+                has_policy_flag = ai_outlawed
+                has_civic = civic_machine_terminator
+            }
+        }
+    }
+    modifier = {
+        species_leader_exp_gain = 0.5
+        planet_jobs_physics_research_produces_mult = 0.15
+        planet_jobs_society_research_produces_mult = 0.15
+        planet_jobs_engineering_research_produces_mult = 0.15
+    }
+    slave_cost = {
+        energy = 750
+    }
+    assembly_score = {
+        modifier = {
+            add = 1.5
+            from = {
+                has_research_designation = yes
+            }
+        }
+    }
+}

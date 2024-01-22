@@ -1,0 +1,23 @@
+tech_eutab_gal_good_will = {
+    cost = @tier3cost3
+    area = society
+    tier = 3
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_manifest_destiny"
+        "tech_command_matrix"
+    }
+    weight = @tier3weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_xenophile = yes
+        has_ascension_perk = ap_shared_destiny
+    }
+    gateway = eu_destiny
+    modifier = {
+        defensive_war_influence_gain_add = 1.5
+        country_subject_trust_cap_add = 50
+    }
+}

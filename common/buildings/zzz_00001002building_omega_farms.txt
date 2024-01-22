@@ -1,0 +1,45 @@
+building_omega_farms = {
+    base_buildtime = 480
+    category = resource
+    prerequisites = {
+        tech_yanz_advanced_nutrient_production
+    }
+    allow = {
+        has_upgraded_capital = yes
+    }
+    potential = {
+        exists = owner
+        owner = {
+            is_regular_empire = yes
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            alloys = 250
+            minerals = 2500
+            food = 5000
+            exotic_gases = 100
+        }
+        upkeep = {
+            energy = 10
+            exotic_gases = 3
+        }
+    }
+    planet_modifier = {
+        planet_farmers_food_produces_add = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+        }
+        modifier = {
+            planet_jobs_food_produces_mult = 0.1
+            job_researcher_add = 1
+            job_farmer_add = 5
+        }
+    }
+}

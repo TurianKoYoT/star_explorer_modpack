@@ -1,0 +1,85 @@
+ap_voidborn = {
+    potential = {
+        host_has_dlc = "Utopia"
+        NOR = {
+            has_ascension_perk = ap_voidborn
+            has_origin = origin_void_dwellers
+        }
+    }
+    possible = {
+        custom_tooltip = {
+            fail_text = "requires_technology_habitat_1"
+            has_technology = tech_habitat_1
+        }
+    }
+    on_enabled = {
+        custom_tooltip = "ap_voidborn_habitat_effect"
+        if = {
+            limit = {
+                NOT = {
+                    has_technology = tech_habitat_2
+                }
+            }
+            add_research_option = tech_habitat_2
+            custom_tooltip = "add_research_options_voidborn"
+        }
+        if = {
+            limit = {
+                has_technology = tech_habitat_2
+                NOT = {
+                    has_technology = tech_habitat_3
+                }
+            }
+            add_research_option = tech_habitat_3
+        }
+    }
+    modifier = {
+        pc_habitat_habitability = 0.2
+        megastructures_habitat_cost_mult = -0.2
+        habitat_districts_building_slots_add = 0.25
+        habitat_max_districts_add = 2
+        habitat_district_jobs_add = 1
+        pc_pd_barren_hab_habitability = 0.2
+        pc_pd_barren_cold_hab_habitability = 0.2
+        pc_pd_frozen_hab_habitability = 0.2
+        pc_pd_molten_hab_habitability = 0.2
+        pc_pd_hothouse_hab_habitability = 0.2
+        pc_pd_toxic_hab_habitability = 0.2
+        pc_pd_gas_giant_hab_habitability = 0.2
+        pc_pd_asteroid_hab_habitability = 0.2
+        category_voidcraft_research_speed_mult = @[ 0.25 * sartek_utopian_legacy_mod_active ]
+    }
+    ai_weight = {
+        base = 10
+        complex_trigger_modifier = {
+            trigger = count_owned_planet
+            parameters = {
+                limit = {
+                    is_planet_class = pc_habitat
+                }
+            }
+            mode = add
+            mult = 2
+        }
+        modifier = {
+            factor = 2
+            has_ethic = ethic_pacifist
+        }
+        modifier = {
+            factor = 3
+            has_ethic = ethic_fanatic_pacifist
+        }
+        modifier = {
+            factor = 100
+            OR = {
+                has_origin = origin_toxic_knights
+                has_country_flag = payback_habitat
+                has_valid_civic = civic_void_hive
+            }
+        }
+        modifier = {
+            factor = 1000
+            has_origin = origin_void_dwellers
+        }
+    }
+}

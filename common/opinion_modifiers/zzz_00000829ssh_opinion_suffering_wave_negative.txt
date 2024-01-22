@@ -1,0 +1,7 @@
+ssh_opinion_suffering_wave_negative = {
+    opinion = {
+        base = -400
+    }
+    monthly = yes
+    decay = 2
+}

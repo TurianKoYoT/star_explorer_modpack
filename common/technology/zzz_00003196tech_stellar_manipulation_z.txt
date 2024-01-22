@@ -1,0 +1,30 @@
+tech_stellar_manipulation_z = {
+    cost = @tier2cost2
+    area = physics
+    tier = 3
+    category = {
+        field_manipulation
+    }
+    weight = @tier3weight2
+    weight_modifier = {
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_field_manipulation
+            }
+        }
+    }
+    is_rare = yes
+    prerequisites = {
+        "tech_stellar_manipulation_2"
+    }
+    ai_weight = {
+        factor = 5
+    }
+    prereqfor_desc = {
+        custom = {
+            title = "ALLOW_PLANETARY_PROJECT_Z_TITLE"
+            desc = ""
+        }
+    }
+}

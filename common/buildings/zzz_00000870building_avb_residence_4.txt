@@ -1,0 +1,165 @@
+building_avb_residence_4 = {
+    base_buildtime = @avb_b4_time
+    can_build = no
+    category = amenity
+    potential = {
+        has_building = building_avb_residence_3
+        OR = {
+            NOR = {
+                is_habitat = yes
+                is_pd_habitat = yes
+            }
+            AND = {
+                exists = owner
+                owner = {
+                    is_void_dweller_empire = yes
+                }
+            }
+            has_modifier = resort_colony_pd_hab
+        }
+    }
+    allow = {
+        has_upgraded_capital_5 = yes
+        owner = {
+            is_ai = no
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            owner = {
+                is_gestalt = yes
+            }
+            owner = {
+                has_valid_civic = civic_shared_burden
+            }
+            has_modifier = slave_colony
+            owner = {
+                is_ai = yes
+            }
+            AND = {
+                OR = {
+                    owner = {
+                        is_shared_burden_empire = yes
+                    }
+                    owner = {
+                        has_valid_civic = civic_worker_coop
+                    }
+                }
+                has_z_expanded_mod = yes
+            }
+        }
+    }
+    convert_to = {
+        building_organic_paradise
+        building_avb_drone_storage_4
+        building_avb_warren_4
+        building_avb_communal_housing_4
+    }
+    planet_modifier = {
+        planet_housing_add = 24
+        planet_amenities_add = 35
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_active_tradition = tr_domination_imperious_architecture
+            }
+        }
+        modifier = {
+            planet_housing_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    AND = {
+                        has_global_flag = ethic_civic_classic_active
+                        has_civic = civic_keepers_harmony
+                    }
+                    AND = {
+                        has_global_flag = bug_branch_active
+                        is_bugged_keepers_of_harmony = yes
+                    }
+                }
+            }
+        }
+        modifier = {
+            planet_jobs_unity_produces_mult = 0.1
+            planet_housing_add = 2
+        }
+    }
+    inline_script = {
+        script = job_groups/entertainer_add
+        trigger = "
+has_z_expanded_mod = yes
+exists = owner
+owner = { is_pleasure_seeker = yes }
+"
+        count = 3
+        desc = " "
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+            exists = owner
+            owner = {
+                has_technology = tech_housing_1
+            }
+        }
+        modifier = {
+            planet_housing_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+            exists = owner
+            owner = {
+                has_technology = tech_housing_2
+                NOT = {
+                    is_agrarian_empire = {
+                        allow_invalid = yes
+                    }
+                }
+            }
+        }
+        modifier = {
+            planet_housing_add = 1
+        }
+    }
+    resources = {
+        category = planet_buildings
+        inline_script = {
+            script = "amenity_buildings/avb_residence_resources"
+            tier = 4
+        }
+    }
+    upgrades = {
+        "building_avb_residence_5"
+    }
+    prerequisites = {
+        "tech_avb_residence_4"
+    }
+    show_tech_unlock_if = {
+        owner = {
+            is_regular_empire = yes
+            NOT = {
+                has_valid_civic = civic_shared_burden
+            }
+            OR = {
+                has_z_expanded_mod = no
+                AND = {
+                    has_z_expanded_mod = yes
+                    NOR = {
+                        is_shared_burden_empire = yes
+                        has_valid_civic = civic_worker_coop
+                    }
+                }
+            }
+        }
+    }
+}

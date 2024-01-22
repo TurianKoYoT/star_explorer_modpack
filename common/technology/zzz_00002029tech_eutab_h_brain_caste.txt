@@ -1,0 +1,22 @@
+tech_eutab_h_brain_caste = {
+    cost = @tier3cost3
+    area = society
+    tier = 3
+    category = {
+        biology
+    }
+    prerequisites = {
+        "tech_global_research_initiative"
+    }
+    weight = @tier3weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_hive_empire = yes
+        has_ascension_perk = ap_technological_ascendancy
+    }
+    modifier = {
+        planet_researchers_physics_research_produces_add = 1
+        planet_researchers_society_research_produces_add = 1
+        planet_researchers_engineering_research_produces_add = 1
+    }
+}

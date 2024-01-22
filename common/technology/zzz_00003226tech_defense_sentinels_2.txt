@@ -1,0 +1,32 @@
+tech_defense_sentinels_2 = {
+    cost = @tier3cost1
+    area = physics
+    tier = 3
+    category = {
+        computing
+    }
+    weight = @tier3weight1
+    weight_modifier = {
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_computing
+            }
+        }
+    }
+    prerequisites = {
+        "tech_defense_sentinels_1"
+    }
+    potential = {
+        has_ascension_perk = ap_defense_sentinels
+    }
+    ai_weight = {
+        factor = 5
+    }
+    prereqfor_desc = {
+        custom = {
+            title = "SENTINEL_2"
+            desc = ""
+        }
+    }
+}

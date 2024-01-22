@@ -1,0 +1,16 @@
+trait_v_emergency_repairs = {
+    cost = 2
+    allowed_archetypes = {
+        ROBOT
+        MACHINE
+    }
+    opposites = {
+        "trait_v_living_metal"
+    }
+    custom_tooltip = TRAIT_EMERGENCY_REPAIRS_EFFECT
+    modifier = {
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

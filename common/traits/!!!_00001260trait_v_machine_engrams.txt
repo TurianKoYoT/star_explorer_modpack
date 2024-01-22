@@ -1,0 +1,17 @@
+trait_v_machine_engrams = {
+    cost = 2
+    allowed_archetypes = {
+        ROBOT
+        MACHINE
+    }
+    custom_tooltip_with_modifiers = TRAIT_MACHINE_ENGRAMS_EFFECT
+    opposites = {
+        "trait_v_backups"
+    }
+    modifier = {
+        army_experience_gain_mult = 1
+    }
+    slave_cost = {
+        energy = 2000
+    }
+}

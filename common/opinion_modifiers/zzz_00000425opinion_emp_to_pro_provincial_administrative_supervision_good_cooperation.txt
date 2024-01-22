@@ -1,0 +1,10 @@
+opinion_emp_to_pro_provincial_administrative_supervision_good_cooperation = {
+    opinion = {
+        base = 80
+    }
+    accumulative = yes
+    max = 100
+    decay = {
+        base = 2
+    }
+}

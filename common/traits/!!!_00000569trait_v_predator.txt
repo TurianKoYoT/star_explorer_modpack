@@ -1,0 +1,63 @@
+trait_v_predator = {
+    cost = 1
+    initial = no
+    sapient = no
+    species_possible_remove = {
+        can_remove_presapient_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    species_possible_merge_add = {
+        always = no
+    }
+    opposites = {
+        "trait_v_prey"
+    }
+    allowed_archetypes = {
+        BIOLOGICAL
+        PRESAPIENT
+        LITHOID
+    }
+    custom_tooltip_with_modifiers = TRAIT_PREDATOR_EFFECT
+    modifier = {
+        pop_housing_usage_mult = 0.05
+        army_morale_damage_mult = 0.25
+        army_damage_mult = 0.25
+    }
+    triggered_pop_modifier = {
+        potential = {
+            exists = planet
+            OR = {
+                AND = {
+                    NOT = {
+                        has_trait = trait_lithoid
+                    }
+                    planet = {
+                        any_owned_species = {
+                            has_trait = trait_v_prey
+                            NOT = {
+                                has_trait = trait_lithoid
+                            }
+                        }
+                    }
+                }
+                AND = {
+                    has_trait = trait_lithoid
+                    planet = {
+                        any_owned_species = {
+                            has_trait = trait_v_prey
+                            has_trait = trait_lithoid
+                        }
+                    }
+                }
+                planet = {
+                    any_owned_species = {
+                        has_trait = trait_v_ecomorph
+                    }
+                }
+            }
+        }
+        pop_happiness = 0.1
+    }
+}

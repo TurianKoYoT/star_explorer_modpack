@@ -1,0 +1,53 @@
+building_eutab_monument_unity = {
+    base_buildtime = @b2_time
+    can_build = no
+    category = unity
+    potential = {
+        NOR = {
+            is_planet_class = pc_habitat
+            has_modifier = slave_colony
+        }
+        exists = owner
+        owner = {
+            is_spiritualist = yes
+        }
+    }
+    allow = {
+        has_upgraded_capital = yes
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+        }
+        upkeep = {
+            energy = @b2_upkeep
+        }
+    }
+    planet_modifier = {
+        job_culture_worker_add = 4
+        pop_happiness = 0.05
+        planet_max_buildings_add = 1
+    }
+    inline_script = "buildings/eutab_dev_structures_modifiers"
+    prerequisites = {
+        "tech_eutab_monument_unity"
+    }
+    triggered_desc = {
+        text = job_culture_worker_effect_desc
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            OR = {
+                is_spiritualist = no
+                prev = {
+                    has_modifier = slave_colony
+                }
+            }
+        }
+    }
+    convert_to = {
+        building_eutab_dev_district
+    }
+}

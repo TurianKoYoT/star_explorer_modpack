@@ -1,0 +1,22 @@
+tech_eutab_hive_node_research = {
+    cost = @tier3cost2
+    area = physics
+    tier = 3
+    category = {
+        computing
+    }
+    prerequisites = {
+        "tech_eutab_hive_alpha_node"
+    }
+    weight = @tier3weight2
+    is_custom_tech_1 = yes
+    potential = {
+        is_hive_empire = yes
+        has_ascension_perk = ap_eutab_mind_matter
+        OR = {
+            has_ascension_perk = ap_transcendent_learning
+            has_ascension_perk = ap_technological_ascendancy
+            has_ascension_perk = ap_enigmatic_engineering
+        }
+    }
+}

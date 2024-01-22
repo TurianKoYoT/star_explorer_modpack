@@ -1,0 +1,158 @@
+@espionage_flag = custom_preftl_espionage
+@diff_t2 = 6
+@diff_t3 = 7
+@diff_t4 = 8
+@operationTargetedByTimer = 10800
+operation_plant_advanced_knowledge = {
+    target = none
+    categories = {
+        op_cat_infiltration
+        op_cat_technology
+    }
+    picture = GFX_evt_friendly_enlightenment
+    desc = operation_plant_advanced_knowledge_desc
+    stages = 4
+    resources = {
+        category = operations
+        cost = {
+            trigger = {
+                owner = {
+                    has_appearance_modding_technology = no
+                    is_materialist = no
+                }
+            }
+            influence = 30
+        }
+        cost = {
+            trigger = {
+                owner = {
+                    has_appearance_modding_technology = yes
+                    is_materialist = no
+                }
+            }
+            influence = 20
+        }
+        cost = {
+            trigger = {
+                owner = {
+                    has_appearance_modding_technology = no
+                    is_materialist = yes
+                }
+            }
+            influence = 20
+        }
+        cost = {
+            trigger = {
+                owner = {
+                    has_appearance_modding_technology = yes
+                    is_materialist = yes
+                }
+            }
+            influence = 10
+        }
+        upkeep = {
+            energy = 7
+        }
+    }
+    spy_power_cost = 20
+    potential = {
+        target = {
+            is_primitive = yes
+            NOT = {
+                has_country_flag = @espionage_flag
+            }
+            NOR = {
+                has_country_flag = fotd_seperatist_country@root.owner
+                has_country_flag = solarpunk_country
+            }
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            is_running_espionage_operation = no
+            fail_text = operation_one_at_a_time
+        }
+        custom_tooltip = {
+            owner = {
+                OR = {
+                    has_policy_flag = interference_subtle
+                    has_policy_flag = interference_active
+                }
+            }
+            fail_text = operation_wrong_interference_policy
+        }
+        custom_tooltip = {
+            owner = {
+                OR = {
+                    has_policy_flag = enlightenment_covert_only
+                    has_policy_flag = enlightenment_allowed
+                }
+            }
+            fail_text = operation_wrong_enlightenment_policy
+        }
+        custom_tooltip = {
+            target = {
+                capital_scope = {
+                    has_observation_outpost = yes
+                    observation_outpost_owner = {
+                        is_same_value = root.owner
+                    }
+                }
+            }
+            fail_text = operation_requires_observation_outpost
+        }
+    }
+    abort = {
+        OR = {
+            owner = {
+                OR = {
+                    has_policy_flag = interference_not_allowed
+                    has_policy_flag = interference_aggressive
+                    has_policy_flag = enlightenment_not_allowed
+                }
+            }
+            target = {
+                OR = {
+                    is_primitive = no
+                    has_country_flag = organic_singularity_communion
+                    capital_scope = {
+                        has_observation_outpost = no
+                    }
+                }
+            }
+        }
+    }
+    stage = {
+        difficulty = @diff_t2
+        icon = GFX_espionage_chapter_icon_document
+        event = preftl_operation.100
+    }
+    stage = {
+        difficulty = @diff_t3
+        icon = GFX_espionage_chapter_icon_document
+        event = preftl_operation.100
+    }
+    stage = {
+        difficulty = @diff_t3
+        icon = GFX_espionage_chapter_icon_document
+        event = preftl_operation.100
+    }
+    stage = {
+        difficulty = @diff_t4
+        icon = GFX_espionage_chapter_icon_document
+        event = preftl_operation.1045
+    }
+    on_roll_failed = {
+        pre_ftl_espionage_operation_on_roll_failed = {
+            RANDOM_EVENTS = operation_random_events_pre_ftl
+        }
+    }
+    on_create = {
+        target = {
+            set_timed_country_flag = {
+                flag = preftl_espionage_operation_targeted_by@root.owner
+                days = @operationTargetedByTimer
+            }
+        }
+    }
+}

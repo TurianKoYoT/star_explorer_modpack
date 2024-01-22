@@ -1,0 +1,24 @@
+leader_trait_ruler_esap_egalitarian_2_military_background = {
+    cost = 0
+    icon = "gfx/interface/icons/traits/leader_traits/leader_trait_esap_egalitarian_2_military_background.dds"
+    sector_modifier = {
+        ship_starting_experience_add = 100
+        army_starting_experience_add = 100
+    }
+    councilor_modifier = {
+        ship_starting_experience_add = 150
+        army_starting_experience_add = 150
+    }
+    leader_potential_add = {
+        from = {
+            has_ascension_perk = ap_esap_egalitarian_2
+        }
+    }
+    leader_class = {
+        commander
+        official
+    }
+    initial = no
+    randomized = yes
+    selectable_weight = @class_trait_weight
+}

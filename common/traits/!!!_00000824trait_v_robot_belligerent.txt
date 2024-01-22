@@ -1,0 +1,58 @@
+trait_v_robot_belligerent = {
+    cost = 1
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_synthetic_workers
+            NOT = {
+                has_policy_flag = ai_outlawed
+            }
+        }
+    }
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+            has_technology = tech_v_robot_neural_mimicry
+        }
+    }
+    species_possible_merge_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    allowed_archetypes = {
+        ROBOT
+    }
+    allowed_ethics = {
+        ethic_militarist
+        ethic_fanatic_militarist
+    }
+    valid_for_all_ethics = no
+    custom_tooltip_with_modifiers = TRAIT_PATRIOT_EFFECT
+    opposites = {
+        "trait_machine_unit"
+        "trait_v_robot_cowardly"
+        "trait_v_robot_tight_knit"
+    }
+    modifier = {
+        pop_ethic_militarist_attraction_mult = 0.1
+    }
+    triggered_pop_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    is_at_war = yes
+                    has_crisis = yes
+                }
+            }
+        }
+        planet_jobs_produces_mult = 0.1
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

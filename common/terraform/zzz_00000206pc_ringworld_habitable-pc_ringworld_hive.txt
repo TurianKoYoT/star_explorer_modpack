@@ -1,0 +1,93 @@
+terraform_link = {
+    from = "pc_ringworld_habitable"
+    to = "pc_ringworld_hive"
+    resources = {
+        category = terraforming
+        cost = {
+            energy = 10000
+            food = 5000
+        }
+    }
+    duration = 1800
+    condition = {
+        has_ascension_perk = "ap_hive_worlds"
+    }
+    potential = {
+        is_hive_empire = yes
+        NOT = {
+            has_global_flag = hivering_disabled
+        }
+    }
+    ai_weight = {
+        weight = 20
+        modifier = {
+            factor = 0
+            from = {
+                any_owned_pop = {
+                    NOT = {
+                        has_trait = trait_hive_mind
+                    }
+                }
+            }
+        }
+        modifier = {
+            factor = 0
+            from = {
+                is_colony = no
+            }
+        }
+    }
+    effect = {
+        from = {
+            set_planet_flag = giga_rw_hive
+        }
+        if = {
+            limit = {
+                from = {
+                    has_planet_flag = giga_ringworld_gar
+                }
+            }
+            giga_set_ringworld_graphical_culture = {
+                TARGET = from
+                SOURCE = this
+                SIZE = gargantuan
+                TYPE = hive_habitable
+            }
+        }
+        else_if = {
+            limit = {
+                from = {
+                    has_planet_flag = giga_ringworld_beh
+                }
+            }
+            giga_set_ringworld_graphical_culture = {
+                TARGET = from
+                SOURCE = this
+                SIZE = behemoth
+                TYPE = hive_habitable
+            }
+        }
+        else_if = {
+            limit = {
+                from = {
+                    has_planet_flag = giga_ringworld_tit
+                }
+            }
+            giga_set_ringworld_graphical_culture = {
+                TARGET = from
+                SOURCE = this
+                SIZE = titanic
+                TYPE = hive_habitable
+            }
+        }
+        else = {
+            giga_set_ringworld_graphical_culture = {
+                TARGET = from
+                SOURCE = this
+                SIZE = vanilla
+                TYPE = hive_habitable
+                VANILLA_TYPE = habitable
+            }
+        }
+    }
+}

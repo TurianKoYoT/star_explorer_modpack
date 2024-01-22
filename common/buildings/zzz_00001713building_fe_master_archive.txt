@@ -1,0 +1,46 @@
+building_fe_master_archive = {
+    base_buildtime = 360
+    can_build = yes
+    can_demolish = yes
+    icon = building_master_archive
+    base_cap_amount = 1
+    category = research
+    potential = {
+        exists = owner
+        owner = {
+            has_technology = tech_fe_master_archive
+        }
+    }
+    allow = {
+        has_enigmatic_capital = yes
+        NOR = {
+            has_building = building_ae_master_archive
+            has_building = building_stellarite_master_archive
+            has_building = building_phanon_master_archive
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 1000
+            exotic_gases = 200
+        }
+        produces = {
+            physics_research = @auto_research_dm
+            society_research = @auto_research_dm
+            engineering_research = @auto_research_dm
+        }
+        upkeep = {
+            energy = 20
+        }
+    }
+    upgrades = {
+        building_ae_master_archive
+    }
+    prerequisites = {
+        tech_fe_master_archive
+    }
+    ai_weight = {
+        weight = 10000
+    }
+}

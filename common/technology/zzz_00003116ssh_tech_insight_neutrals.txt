@@ -1,0 +1,24 @@
+ssh_tech_insight_neutrals = {
+    cost = 12500
+    area = society
+    tier = 4
+    category = {
+        statecraft
+    }
+    weight = 0
+    is_rare = yes
+    modifier = {
+        diplo_action_acceptance_add = 25
+        country_trust_growth = 0.1
+    }
+    weight_modifier = {
+        factor = 0
+    }
+    ai_weight = {
+        factor = 10
+        modifier = {
+            factor = 0
+            has_utopia = no
+        }
+    }
+}

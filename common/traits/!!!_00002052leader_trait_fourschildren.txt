@@ -1,0 +1,57 @@
+leader_trait_fourschildren = {
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = "GFX_leader_trait_biosynth_leadwer"
+        RARITY = common
+        COUNCIL = no
+        TIER = none
+    }
+    triggered_modifier = {
+        potential = {
+            is_ruler = no
+            leader_class = admiral
+        }
+        ship_fire_rate_mult = 0.1
+        ship_disengage_chance_mult = 0.1
+    }
+    triggered_modifier = {
+        potential = {
+            is_ruler = no
+            leader_class = scientist
+        }
+        species_leader_exp_gain = 0.05
+        science_ship_survey_speed = 0.25
+        ship_anomaly_generation_chance_mult = 0.05
+    }
+    triggered_modifier = {
+        potential = {
+            is_ruler = no
+            leader_class = general
+        }
+        army_damage_mult = 0.1
+        army_disengage_chance_mult = 0.1
+    }
+    triggered_modifier = {
+        potential = {
+            is_ruler = no
+            leader_class = governor
+        }
+        planet_stability_add = 10
+    }
+    triggered_modifier = {
+        potential = {
+            is_ruler = yes
+        }
+        country_ruler_influence_produces_add = 0.5
+        country_unity_produces_mult = 0.1
+    }
+    leader_class = {
+        admiral
+        scientist
+        general
+        governor
+    }
+    initial = no
+    randomized = no
+}

@@ -1,0 +1,41 @@
+building_phanon_lab = {
+    base_buildtime = 900
+    can_be_ruined = yes
+    can_be_disabled = yes
+    can_build = no
+    category = government
+    potential = {
+        exists = owner
+        has_building = building_phanon_tower
+    }
+    destroy_trigger = {
+        NOT = {
+            has_building = building_phanon_tower
+        }
+    }
+    allow = {
+    }
+    show_tech_unlock_if = {
+        is_regular_empire = yes
+    }
+    army_modifier = {
+        army_starting_experience_add = 2500
+        army_health = 0.25
+        army_damage_mult = 0.25
+        army_morale = 0.25
+    }
+    planet_modifier = {
+        planet_army_build_speed_mult = 0.25
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            unity = 5000
+        }
+        cost = {
+        }
+    }
+    ai_weight = {
+        weight = 100
+    }
+}

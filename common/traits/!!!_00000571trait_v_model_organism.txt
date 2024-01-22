@@ -1,0 +1,20 @@
+trait_v_model_organism = {
+    sorting_priority = 29
+    cost = -4
+    initial = no
+    sapient = no
+    allowed_archetypes = {
+        BIOLOGICAL
+        PRESAPIENT
+        LITHOID
+    }
+    species_possible_remove = {
+        can_remove_presapient_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    species_possible_merge_add = {
+        always = no
+    }
+}

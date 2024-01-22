@@ -1,0 +1,106 @@
+building_ult_dark_energy_nexus = {
+    base_buildtime = 360
+    base_cap_amount = 1
+    category = resource
+    potential = {
+        NOT = {
+            has_modifier = resort_colony
+        }
+    }
+    destroy_trigger = {
+        has_modifier = resort_colony
+    }
+    planet_modifier = {
+        planet_jobs_energy_produces_mult = 0.3
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+        }
+        modifier = {
+            job_ult_dark_energy_field_operator_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_technician_drone_add = 4
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 1000
+        }
+        produces = {
+            physics_research = 30
+        }
+        upkeep = {
+            energy = 1
+        }
+    }
+    prerequisites = {
+        "tech_ult_control_dark_energy"
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+        }
+        text = building_ult_dark_energy_nexus_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_technician_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = job_ult_dark_energy_field_operator_effect_desc
+    }
+    ai_resource_production = {
+        energy = 5
+        trigger = {
+            always = yes
+        }
+    }
+    ai_resource_production = {
+        energy = 10
+        trigger = {
+            planet_resource_compare = {
+                resource = energy
+                value >= 20
+                type = produces
+            }
+        }
+    }
+    ai_resource_production = {
+        energy = 20
+        trigger = {
+            planet_resource_compare = {
+                resource = energy
+                value >= 40
+                type = produces
+            }
+        }
+    }
+}

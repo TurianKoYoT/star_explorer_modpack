@@ -1,0 +1,19 @@
+tech_eutab_starship_parts = {
+    cost = @tier3cost2
+    area = engineering
+    tier = 3
+    category = {
+        materials
+    }
+    prerequisites = {
+        "tech_modular_engineering"
+        "tech_starbase_5"
+    }
+    weight = @tier3weight2
+    is_custom_tech_1 = yes
+    potential = {
+        is_materialist = yes
+        has_ascension_perk = ap_master_builders
+    }
+    gateway = eu_masterbuild
+}

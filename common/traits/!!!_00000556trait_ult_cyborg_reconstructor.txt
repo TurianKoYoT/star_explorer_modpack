@@ -1,0 +1,25 @@
+trait_ult_cyborg_reconstructor = {
+    cost = 3
+    opposites = {
+        "trait_cyborg_power_drills"
+    }
+    initial = no
+    species_potential_add = {
+        exists = from
+        from = {
+            can_add_cybernetic_traits = yes
+            has_technology = tech_ult_super_robot_enhance
+        }
+    }
+    species_possible_remove = {
+        can_remove_cybernetic_traits = yes
+    }
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    modifier = {
+        planet_jobs_minerals_produces_mult = 0.25
+        planet_jobs_alloys_produces_mult = 0.15
+    }
+}

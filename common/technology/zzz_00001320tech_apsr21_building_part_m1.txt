@@ -1,0 +1,44 @@
+@apsr21cost1 = 5000
+@apsr21weight1 = 50
+tech_apsr21_building_part_m1 = {
+    cost = @apsr21cost1
+    area = engineering
+    tier = 2
+    category = {
+        industry
+    }
+    prerequisites = {
+        "tech_fission_power"
+    }
+    weight = @apsr21weight1
+    is_rare = yes
+    prereqfor_desc = {
+        custom = {
+            title = "TECH_APSR21_PART1M_TITLE"
+            desc = "TECH_APSR21_PART1M_DESC"
+        }
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            NOT = {
+                any_owned_planet = {
+                    has_deposit = apsr21_deposit
+                }
+            }
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            factor = 5
+            has_origin = apsr_origin_unique_capital
+        }
+    }
+    ai_weight = {
+        factor = 150
+    }
+}

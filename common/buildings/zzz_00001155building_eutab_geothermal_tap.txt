@@ -1,0 +1,61 @@
+building_eutab_geothermal_tap = {
+    base_buildtime = @b2_time
+    base_cap_amount = 2
+    category = resource
+    potential = {
+        is_artificial = no
+        exists = owner
+        owner = {
+            is_gestalt = yes
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+            volatile_motes = @b2_rare_cost
+        }
+        upkeep = {
+            volatile_motes = @b2_rare_upkeep
+        }
+        produces = {
+            energy = 10
+        }
+    }
+    planet_modifier = {
+        job_technician_drone_add = 4
+        pop_environment_tolerance = -0.1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        planet_jobs_upkeep_mult = 0.025
+    }
+    triggered_desc = {
+        text = job_technician_drone_effect_desc
+    }
+    prerequisites = {
+        "tech_eutab_geothermal_tap"
+    }
+    ai_resource_production = {
+        trigger = {
+            exists = owner
+            habitability = {
+                who = owner_main_species
+                value < 0.8
+            }
+        }
+        energy = -40
+        mult = value:eutab_ai_resource_production_adjustment_value
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            is_gestalt = no
+        }
+    }
+}

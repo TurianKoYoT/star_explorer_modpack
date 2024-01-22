@@ -1,0 +1,55 @@
+triggered_opinion_resolution_custodian_assist_the_developing_countries = {
+    trigger = {
+        has_galactic_custodian = yes
+        is_active_resolution = resolution_custodian_assist_the_developing_countries
+        is_galactic_community_member = yes
+        is_galactic_custodian = no
+        relative_power = {
+            who = galactic_custodian
+            category = economy
+            value < equivalent
+        }
+        FROM = {
+            is_galactic_community_member = yes
+            OR = {
+                is_galactic_custodian = yes
+                AND = {
+                    is_galactic_custodian = no
+                    relative_power = {
+                        who = galactic_custodian
+                        category = economy
+                        value > inferior
+                    }
+                }
+            }
+        }
+    }
+    opinion = {
+        base = 50
+        modifier = {
+            add = 50
+            relative_power = {
+                who = galactic_custodian
+                category = economy
+                value = pathetic
+            }
+        }
+        modifier = {
+            factor = 2
+            from = {
+                is_galactic_custodian = yes
+            }
+        }
+        modifier = {
+            factor = 1.5
+            from = {
+                is_galactic_custodian = no
+                relative_power = {
+                    who = galactic_custodian
+                    category = economy
+                    value > equivalent
+                }
+            }
+        }
+    }
+}

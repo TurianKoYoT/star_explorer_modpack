@@ -1,0 +1,29 @@
+bwm_building_ancient_monolith_1 = {
+    can_build = no
+    can_demolish = yes
+    icon = "building_bwm_lex_ring_monolith"
+    position_priority = 1
+    category = government
+    resources = {
+        category = planet_buildings
+        cost = {
+            energy = 1000
+        }
+    }
+    potential = {
+        owner = {
+            has_country_flag = bwm_monolith
+        }
+        has_planet_flag = "bwm_ring_1"
+        NOT = {
+            has_planet_flag = "bwm_nuked"
+        }
+    }
+    planet_modifier = {
+        planet_jobs_engineering_research_produces_mult = 0.5
+        planet_jobs_society_research_produces_mult = 0.5
+        planet_jobs_physics_research_produces_mult = 0.5
+    }
+    prerequisites = {
+    }
+}

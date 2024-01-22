@@ -1,0 +1,56 @@
+giga_megaengineer_acot_phanon = {
+    category = specialist
+    condition_string = SPECIALIST_JOB_TRIGGER
+    building_icon = building_giga_megaworkshop_acot_phanon
+    clothes_texture_index = 3
+    icon = "giga_megaengineer_acot_phanon"
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_specialist_job
+    possible = {
+        complex_specialist_job_check_trigger = yes
+    }
+    resources = {
+        category = planet_giga_megaengineers_job
+        produces = {
+            giga_sr_amb_megaconstruction = @giga_amb_megaengineer_phanon_output
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+        upkeep = {
+            alloys = @giga_amb_megaengineer_phanon_alloys_upkeep
+            unity = @giga_amb_megaengineer_phanon_unity_upkeep
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+        upkeep = {
+            aot_sr_runic_power = @giga_amb_megaengineer_phanon_resource1_upkeep
+            energy = @giga_amb_megaengineer_phanon_resource2_upkeep
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_edict = giga_amb_sentient_metal_supertensiles
+                }
+            }
+            giga_sr_amb_megaconstruction = @giga_amb_megaengineer_phanon_output_edict
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+        upkeep = {
+            trigger = {
+                owner = {
+                    has_edict = giga_amb_sentient_metal_supertensiles
+                }
+            }
+            alloys = @giga_amb_megaengineer_phanon_alloys_edict
+            ehof_sr_sentient_metal = @giga_amb_megaengineer_sentient_metal_edict
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+    }
+    weight = {
+        weight = value:giga_specialist_weight|JOB|giga_megaengineer_acot_phanon|RESOURCE|giga_sr_amb_megaconstruction|
+    }
+}

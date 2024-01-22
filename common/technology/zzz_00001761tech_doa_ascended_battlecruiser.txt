@@ -1,0 +1,24 @@
+tech_doa_ascended_battlecruiser = {
+    area = engineering
+    cost = @fallentechcost
+    tier = @fallentechtier
+    category = {
+        ascended_technologies
+    }
+    weight = @tier5weight1
+    potential = {
+        has_country_flag = doa_tech_9
+    }
+    prereqfor_desc = {
+        custom = {
+            title = "TECH_UNLOCK_ASCENDED_BATTLECRUISER_TITLE"
+            desc = "TECH_UNLOCK_ASCENDED_BATTLECRUISER_DESC"
+        }
+    }
+    prerequisites = {
+        "tech_ascended_battlecruiser_hull_1"
+    }
+    ai_weight = {
+        factor = 100
+    }
+}

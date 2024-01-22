@@ -1,0 +1,20 @@
+trait_blokkat_catgirl = {
+    cost = 0
+    leader_potential_add = {
+        always = no
+    }
+    icon = "gfx/interface/icons/traits/trait_blokkat_catgirl.dds"
+    immortal_leaders = yes
+    fleet_modifier = {
+        ship_speed_mult = 0.2
+        ship_evasion_mult = 0.1
+        weapon_type_energy_weapon_damage_mult = -0.2
+        weapon_type_kinetic_weapon_damage_mult = 0.5
+    }
+    leader_class = all
+    initial = no
+    randomized = no
+    ai_weight = {
+        weight = 0
+    }
+}

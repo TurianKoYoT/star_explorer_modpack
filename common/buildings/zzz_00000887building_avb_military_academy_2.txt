@@ -1,0 +1,148 @@
+building_avb_military_academy_2 = {
+    base_buildtime = @avb_b3_time
+    can_build = no
+    category = army
+    potential = {
+        exists = owner
+        owner = {
+            OR = {
+                NOT = {
+                    has_global_flag = bug_branch_active
+                }
+                AND = {
+                    has_global_flag = bug_branch_active
+                    is_bugged_reanimator = no
+                }
+            }
+            OR = {
+                has_z_expanded_mod = no
+                AND = {
+                    has_z_expanded_mod = yes
+                    NOT = {
+                        has_valid_civic = civic_machine_terminator
+                    }
+                }
+            }
+        }
+        OR = {
+            has_z_expanded_mod = no
+            AND = {
+                has_z_expanded_mod = yes
+                NOT = {
+                    has_planet_flag = planetary_station
+                }
+            }
+        }
+    }
+    convert_to = {
+        building_avb_dread_encampment_2
+    }
+    allow = {
+        has_upgraded_capital_4 = yes
+    }
+    country_modifier = {
+        country_commander_cap_add = 2
+        country_naval_cap_mult = 0.1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            job_politician_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_evaluator_add = 4
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+        }
+        modifier = {
+            planet_army_build_speed_mult = 0.5
+        }
+    }
+    triggered_country_modifier = {
+        potential = {
+            has_z_expanded_mod = yes
+            exists = army_leader
+        }
+        modifier = {
+            empire_size_colonies_mult = 0.1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_global_flag = ethic_civic_classic_active
+            exists = owner
+            owner = {
+                has_civic = civic_martial_brotherhood
+            }
+        }
+        modifier = {
+            planet_housing_add = 2
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b3_minerals
+            volatile_motes = @b3_rare_cost
+        }
+        upkeep = {
+            energy = @b3_upkeep
+            volatile_motes = @b3_rare_upkeep
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_global_flag = ethic_civic_classic_active
+                    has_civic = civic_martial_brotherhood
+                }
+            }
+            unity = 5
+        }
+    }
+    prerequisites = {
+        "tech_avb_military_academy_2"
+    }
+    show_tech_unlock_if = {
+        always = yes
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = job_politician_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_evaluator_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            has_z_expanded_mod = yes
+        }
+        text = building_military_academy_tooltip
+    }
+}

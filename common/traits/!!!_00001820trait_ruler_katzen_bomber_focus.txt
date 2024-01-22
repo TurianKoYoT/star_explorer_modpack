@@ -1,0 +1,34 @@
+trait_ruler_katzen_bomber_focus = {
+    inline_script = {
+        script = trait/icon
+        CLASS = commander
+        ICON = GFX_leader_trait_cruiser_focus
+        RARITY = veteran
+        COUNCIL = yes
+        TIER = none
+    }
+    councilor_modifier = {
+        ship_katzen_bomber_cost_mult = -0.3
+    }
+    leader_potential_add = {
+        has_paragon_dlc = no
+        from = {
+            has_country_flag = kaiser_preset
+        }
+    }
+    leader_class = {
+        commander
+    }
+    prerequisites = {
+        tech_cruisers
+    }
+    opposites = {
+        trait_ruler_corvette_focus
+        trait_ruler_destroyer_focus
+        trait_ruler_cruiser_focus
+        trait_ruler_battleship_focus
+        trait_ruler_katzen_panzer_focus
+        trait_ruler_katzen_unterraumboot_focus
+        trait_ruler_katzen_cruiser_focus
+    }
+}

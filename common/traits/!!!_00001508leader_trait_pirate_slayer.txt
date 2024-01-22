@@ -1,0 +1,28 @@
+leader_trait_pirate_slayer = {
+    cost = 1
+    icon = "gfx/interface/icons/traits/leader_traits/leader_trait_pirate_slayer.dds"
+    fleet_modifier = {
+        ship_piracy_suppression_add = 10
+        damage_vs_country_type_pirate_mult = 0.5
+        ship_weapon_range_mult = -0.4
+    }
+    initial = no
+    randomized = no
+    leader_class = {
+        commander
+    }
+    leader_potential_add = {
+        always = no
+        from = {
+            is_gestalt = no
+            is_galactic_community_member = yes
+            has_federation = yes
+            federation = {
+                OR = {
+                    has_federation_law = imperial_ministry_of_defence_strategy_institute
+                    has_federation_law = imperial_ministry_of_defence_joint_headquarter
+                }
+            }
+        }
+    }
+}

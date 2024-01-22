@@ -1,0 +1,16 @@
+tech_weapons_complex_0 = {
+    cost = 100000
+    area = engineering
+    tier = 5
+    category = {
+        voidcraft
+    }
+    potential = {
+        has_ascension_perk = ap_weapons_complex
+    }
+    weight = 100000
+    ai_weight = {
+        factor = 100
+    }
+    is_dangerous = yes
+}

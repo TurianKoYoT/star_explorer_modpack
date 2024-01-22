@@ -1,0 +1,34 @@
+leader_trait_prime_minister_chancellor = {
+    destiny_trait = yes
+    cost = 1
+    inline_script = {
+        script = trait/icon
+        CLASS = official
+        ICON = "GFX_leader_trait_bureaucrat"
+        RARITY = paragon
+        COUNCIL = no
+        TIER = none
+    }
+    triggered_galcom_modifier = {
+        potential = {
+            owner = {
+                is_galactic_emperor = yes
+            }
+        }
+        imperial_governance_produces_delegate_mult = 0.02
+    }
+    leader_potential_add = {
+        from = {
+            is_galactic_emperor = yes
+        }
+        has_trait = subclass_official_delegate
+        is_assigned_to_federation = no
+    }
+    leader_class = {
+        official
+    }
+    selectable_weight = {
+        weight = 200
+    }
+    background_icon = "GFX_leader_background_destiny_1"
+}

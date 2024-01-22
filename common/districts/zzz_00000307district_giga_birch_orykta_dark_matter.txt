@@ -1,0 +1,108 @@
+@giga_birch_sector_cost = 1500
+@giga_birch_sector_sr_cost = 200
+@giga_birch_sector_time = 360
+@giga_birch_sector_maintenance = 5
+@giga_birch_sector_sr_maintenance = 2
+@sector_jobs = 7
+@sector_workers = -7
+district_giga_birch_orykta_dark_matter = {
+    base_buildtime = @giga_birch_sector_time
+    is_capped_by_modifier = yes
+    show_on_uncolonized = {
+        uses_district_set = giga_birch
+        has_district = district_giga_birch_orykta
+        exists = from
+        from = {
+            has_technology = tech_mine_dark_matter
+        }
+    }
+    potential = {
+        uses_district_set = giga_birch
+        has_district = district_giga_birch_orykta
+        exists = owner
+        owner = {
+            has_technology = tech_mine_dark_matter
+        }
+    }
+    allow = {
+        giga_birch_district_allow = {
+            category = orykta
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = @giga_birch_sector_cost
+            volatile_motes = @giga_birch_sector_sr_cost
+        }
+        upkeep = {
+            energy = @giga_birch_sector_maintenance
+            volatile_motes = @giga_birch_sector_sr_maintenance
+        }
+    }
+    planet_modifier = {
+        giga_birch_district_orykta_tag = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        job_giga_dark_matter_weaver_add = @sector_jobs
+        job_giga_birch_orykta_worker_add = @sector_workers
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = job_giga_dark_matter_weaver_effect_desc
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        job_giga_dark_matter_weaver_drone_add = @sector_jobs
+        job_giga_birch_orykta_worker_drone_add = @sector_workers
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_giga_dark_matter_weaver_drone_effect_desc
+    }
+    on_queued = {
+        giga_birch_district_queued = {
+            category = orykta
+            type = orykta_dark_matter
+        }
+    }
+    on_unqueued = {
+        giga_birch_district_unqueued = {
+            category = orykta
+            type = orykta_dark_matter
+        }
+    }
+    on_built = {
+        giga_birch_district_built = {
+            category = orykta
+            type = orykta_dark_matter
+        }
+    }
+    on_destroy = {
+        giga_birch_district_destroy = {
+            category = orykta
+            type = orykta_dark_matter
+        }
+    }
+}

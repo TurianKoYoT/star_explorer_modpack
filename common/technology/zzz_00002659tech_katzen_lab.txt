@@ -1,0 +1,45 @@
+tech_katzen_lab = {
+    cost = @tier3cost1
+    area = physics
+    tier = 3
+    category = {
+        computing
+    }
+    prerequisites = {
+        "tech_basic_science_lab_2"
+        "tech_colonial_centralization"
+    }
+    weight = @tier3weight1
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            NOT = {
+                has_origin = origin_katzen
+            }
+        }
+        factor = 2
+        modifier = {
+            factor = value:tech_weight_likelihood
+            research_leader = {
+                area = physics
+                has_trait = "leader_trait_expertise_computing"
+            }
+        }
+        modifier = {
+            factor = 1.5
+            is_specialist_subject_type = {
+                TYPE = scholarium
+            }
+        }
+    }
+    ai_weight = {
+        factor = @ai_research_lab_factor
+        modifier = {
+            factor = 1.25
+            research_leader = {
+                area = physics
+                has_trait = "leader_trait_expertise_computing"
+            }
+        }
+    }
+}

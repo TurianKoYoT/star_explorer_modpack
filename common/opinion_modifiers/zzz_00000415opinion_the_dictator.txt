@@ -1,0 +1,8 @@
+opinion_the_dictator = {
+    opinion = {
+        base = -200
+    }
+    decay = {
+        base = 2
+    }
+}

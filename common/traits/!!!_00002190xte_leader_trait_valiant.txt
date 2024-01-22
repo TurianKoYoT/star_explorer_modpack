@@ -1,0 +1,30 @@
+xte_leader_trait_valiant = {
+    inline_script = {
+        script = trait/xte_icon
+        CLASS = leader
+        ICON = GFX_xte_leader_trait_valiant
+        RARITY = xte_positive
+        COUNCIL = yes
+        TIER = none
+    }
+    cost = 0
+    randomized = no
+    triggered_councilor_modifier = {
+        potential = {
+            always = yes
+        }
+        defensive_war_influence_gain_add = 0.5
+        starbase_defensive_war_ship_build_speed_mult = 0.25
+        country_war_exhaustion_mult = -0.1
+        multiplier = value:xte_anti_stacking_value|LEADER_TRAIT|xte_leader_trait_valiant|
+    }
+    custom_tooltip_with_modifiers = xte_councilor_trait_efficiency_notification
+    leader_potential_add = {
+        always = no
+    }
+    leader_class = {
+        commander
+        scientist
+        official
+    }
+}

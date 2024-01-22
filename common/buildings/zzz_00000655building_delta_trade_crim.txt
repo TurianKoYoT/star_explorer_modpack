@@ -1,0 +1,42 @@
+building_delta_trade_crim = {
+    icon = building_dm_commercial_megaplex
+    base_buildtime = 480
+    base_cap_amount = 1
+    owner_type = corporate
+    category = government
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            is_criminal_syndicate = yes
+        }
+    }
+    planet_modifier = {
+        planet_crime_add = 200
+        branch_office_value_mult = 1
+        job_merchant_add = 1
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            minerals = 500
+            sr_dark_matter = 200
+        }
+        upkeep = {
+            energy = 15
+            sr_dark_matter = 2
+        }
+    }
+    prerequisites = {
+        tech_dm_commercial_megaplex
+    }
+    show_tech_unlock_if = {
+        is_megacorp = yes
+        is_criminal_syndicate = yes
+    }
+    upgrades = {
+        building_alpha_trade_crim
+    }
+    ai_weight = {
+        weight = 50
+    }
+}

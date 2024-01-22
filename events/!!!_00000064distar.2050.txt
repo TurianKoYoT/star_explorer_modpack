@@ -1,0 +1,37 @@
+namespace = distar
+event = {
+    id = distar.2050
+    is_triggered_only = yes
+    hide_window = yes
+    trigger = {
+        has_distar = yes
+        NOT = {
+            any_system = {
+                has_star_flag = enigmatic_cache_system
+            }
+        }
+        any_playable_country = {
+            is_ai = no
+        }
+    }
+    immediate = {
+        random_system = {
+            limit = {
+                any_system_megastructure = {
+                    OR = {
+                        is_megastructure_type = gateway_ruined
+                        is_megastructure_type = gateway_restored
+                        is_megastructure_type = gateway_final
+                        is_megastructure_type = lgate_base
+                        is_megastructure_type = lgate_disabled
+                    }
+                }
+            }
+            star = {
+                planet_event = {
+                    id = distar.20501
+                }
+            }
+        }
+    }
+}

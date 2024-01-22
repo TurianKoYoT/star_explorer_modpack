@@ -1,0 +1,32 @@
+trait_v_creature_of_paradise = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_v_adv_creature_of_paradise"
+        "trait_hive_mind"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/ART"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/AQUATIC"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/FUN"
+    custom_tooltip_with_modifiers = TRAIT_CREATURE_OF_PARADISE_EFFECT
+    modifier = {
+        planet_entertainers_society_research_produces_add = 1
+        planet_entertainers_unity_produces_add = 1
+        pop_job_amenities_mult = 0.1
+        planet_pops_consumer_goods_upkeep_mult = 0.1
+    }
+    slave_cost = {
+        energy = 2000
+    }
+}

@@ -1,0 +1,30 @@
+tech_thrusters_dm = {
+    area = engineering
+    category = {
+        propulsion
+    }
+    cost = @acot_tier6cost1
+    tier = 6
+    weight = @tier5weight2
+    ai_update_type = all
+    is_reverse_engineerable = no
+    potential = {
+        NOT = {
+            has_global_flag = acot_shipcom_forbidden
+        }
+        NOT = {
+            has_global_flag = acot_delta_forbidden
+        }
+    }
+    prerequisites = {
+        "tech_dark_matter_propulsion"
+        tech_dark_matter_power_core_dm
+    }
+    prereqfor_desc = {
+        hide_prereq_for_desc = component
+        custom = {
+            title = "TECH_UNLOCK_DM_THRUSTER_TITLE"
+            desc = "TECH_UNLOCK_DM_THRUSTER_DESC"
+        }
+    }
+}

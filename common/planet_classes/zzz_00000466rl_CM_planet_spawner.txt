@@ -1,0 +1,23 @@
+random_list = {
+    name = "rl_CM_planet_spawner"
+    planets = {
+        "pc_alpine"
+        "pc_arctic"
+        "pc_arid"
+        "pc_barren_cold"
+        "pc_barren_cold"
+        "pc_barren"
+        "pc_barren"
+        "pc_continental"
+        "pc_desert"
+        "pc_frozen"
+        "pc_frozen"
+        "pc_ocean"
+        "pc_savannah"
+        "pc_toxic"
+        "pc_toxic"
+        "pc_toxic"
+        "pc_tropical"
+        "pc_tundra"
+    }
+}

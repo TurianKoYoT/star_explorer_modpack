@@ -1,0 +1,19 @@
+tech_class_4_singularity_2 = {
+    area = physics
+    cost = @tier5cost2
+    tier = @fallentechtier
+    category = {
+        ascended_technologies
+    }
+    weight = @tier5weight2
+    prerequisites = {
+        "tech_class_4_singularity_1"
+        "tech_automation_uplink_2"
+    }
+    potential = {
+        has_country_flag = doa_tech_6
+    }
+    ai_weight = {
+        factor = 4
+    }
+}

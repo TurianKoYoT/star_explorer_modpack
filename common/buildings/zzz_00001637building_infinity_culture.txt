@@ -1,0 +1,32 @@
+building_infinity_culture = {
+    base_buildtime = 640
+    can_demolish = yes
+    base_cap_amount = 1
+    empire_limit = {
+        base = 2
+    }
+    category = unity
+    potential = {
+        owner = {
+            has_ascension_perk = ap_expansion_infinity
+        }
+    }
+    show_tech_unlock_if = {
+        has_ascension_perk = ap_expansion_infinity
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 2500
+        }
+        upkeep = {
+            energy = 8
+        }
+        produces = {
+            unity = 100
+        }
+    }
+    ai_weight = {
+        weight = 3
+    }
+}

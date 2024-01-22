@@ -1,0 +1,39 @@
+trait_v_mayfly = {
+    cost = 1
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    potential_crossbreeding_chance = 0
+    opposites = {
+        "trait_invasive"
+        "trait_v_adv_mayfly"
+        "trait_quick_learners"
+        "trait_slow_learners"
+        "trait_clone_soldier_infertile"
+        "trait_clone_soldier_infertile_full_potential"
+        "trait_vat_grown"
+        "trait_clone_soldier_fertile"
+        "trait_enduring"
+        "trait_fleeting"
+        "trait_fleeting_lithoid"
+        "trait_venerable"
+        "trait_v_biological_immortality"
+        "trait_v_ectotherm"
+        "trait_v_hale"
+        "trait_v_sickly"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/ART"
+    custom_tooltip_with_modifiers = TRAIT_MAYFLY_EFFECT
+    leader_age_min = 2
+    leader_age_max = 5
+    modifier = {
+        species_leader_exp_gain = 3
+        leaders_cost_mult = -0.25
+        leaders_upkeep_mult = -0.25
+        leader_lifespan_mult = -0.75
+    }
+    slave_cost = {
+        energy = -5000
+    }
+}

@@ -1,0 +1,173 @@
+frame_maintenance_worker = {
+    category = worker
+    condition_string = WORKER_JOB_TRIGGER
+    building_icon = building_maintenance_depot
+    clothes_texture_index = 2
+    icon = giga_birch_ktisma_worker
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_worker_job
+    resources = {
+        category = planet_jobs
+        produces = {
+            trigger = {
+                is_robot_pop = no
+                is_lithoid = no
+            }
+            food = 0.5
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+        produces = {
+            trigger = {
+                is_lithoid = yes
+            }
+            minerals = 0.5
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+        produces = {
+            trigger = {
+                is_robot_pop = yes
+            }
+            energy = 0.5
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+    }
+    planet_modifier = {
+        planet_jobs_productive_upkeep_mult = 0.0025
+        planet_jobs_productive_produces_mult = 0.0025
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                is_synthetic_empire = no
+            }
+        }
+        giga_pop_growth_speed_extra_add = -0.125
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                is_synthetic_empire = no
+            }
+            planet = {
+                free_housing < 0
+            }
+        }
+        giga_pop_growth_speed_extra_add = -0.125
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                is_synthetic_empire = no
+            }
+            planet = {
+                giga_planet_has_robot_assembly_facilities = no
+                giga_planet_has_cloning_assembly_facilities = no
+                giga_planet_has_zombie_assembly_facilities = no
+            }
+        }
+        giga_pop_growth_speed_extra_add = -0.125
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                is_synthetic_empire = no
+            }
+            planet = {
+                free_housing < 0
+                giga_planet_has_robot_assembly_facilities = no
+                giga_planet_has_cloning_assembly_facilities = no
+                giga_planet_has_zombie_assembly_facilities = no
+            }
+        }
+        giga_pop_growth_speed_extra_add = -0.125
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                is_synthetic_empire = no
+            }
+            planet = {
+                giga_planet_has_robot_assembly_facilities = yes
+                giga_planet_has_cloning_assembly_facilities = no
+                giga_planet_has_zombie_assembly_facilities = no
+            }
+        }
+        planet_pop_assembly_add = -0.125
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                is_synthetic_empire = no
+            }
+            planet = {
+                free_housing < 0
+                giga_planet_has_robot_assembly_facilities = yes
+                giga_planet_has_cloning_assembly_facilities = no
+                giga_planet_has_zombie_assembly_facilities = no
+            }
+        }
+        planet_pop_assembly_add = -0.125
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                is_synthetic_empire = no
+            }
+            planet = {
+                or = {
+                    giga_planet_has_cloning_assembly_facilities = yes
+                    giga_planet_has_zombie_assembly_facilities = yes
+                }
+            }
+        }
+        planet_pop_assembly_organic_add = -0.125
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                is_synthetic_empire = no
+            }
+            planet = {
+                free_housing < 0
+                or = {
+                    giga_planet_has_cloning_assembly_facilities = yes
+                    giga_planet_has_zombie_assembly_facilities = yes
+                }
+            }
+        }
+        planet_pop_assembly_organic_add = -0.125
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                is_synthetic_empire = yes
+            }
+        }
+        giga_pop_growth_speed_extra_add = -0.25
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = {
+                is_synthetic_empire = yes
+            }
+            planet = {
+                free_housing < 0
+            }
+        }
+        giga_pop_growth_speed_extra_add = -0.25
+    }
+    weight = {
+        weight = @special_job_weight
+        modifier = {
+            factor = -10000
+            planet = {
+                giga_frameworld_has_expanded_maintenance_modifier = no
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+tech_eutab_hivee_pop = {
+    cost = @tier2cost2
+    area = society
+    tier = 2
+    is_custom_tech_1 = yes
+    category = {
+        biology
+    }
+    prerequisites = {
+        "tech_autonomous_agents"
+    }
+    weight = @tier2weight2
+    potential = {
+        is_hive_empire = yes
+    }
+}

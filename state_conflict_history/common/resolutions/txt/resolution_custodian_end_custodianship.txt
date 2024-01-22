@@ -1,0 +1,57 @@
+@resolution_weight_popular = 6.5
+@resolution_cost_t3 = 200
+resolution_custodian_end_custodianship = {
+    icon = "GFX_resolution_end_custodianship"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t3
+        }
+    }
+    target = no
+    modifier = {
+    }
+    effect = {
+        custom_tooltip = resolution_custodian_end_custodianship_tooltip
+        galactic_custodian = {
+            add_modifier = {
+                modifier = modern_cincinnatus
+                years = 10
+            }
+        }
+        hidden_effect = {
+            country_event = {
+                id = custodian.14
+            }
+        }
+        pass_resolution_modifier = {
+            CATEGORY = general
+        }
+    }
+    fail_effects = {
+        fail_resolution_modifier = {
+            CATEGORY = general
+        }
+    }
+    potential = {
+        has_nemesis = yes
+        is_galactic_custodian = yes
+        NOT = {
+            is_active_resolution = resolution_custodian_peace_windows_project
+        }
+        NOT = {
+            has_global_flag = grand_custodianship_declared
+        }
+    }
+    active = {
+        has_galactic_custodian = yes
+    }
+    ai_weight = {
+        base = @resolution_weight_popular
+        modifier = {
+            factor = 0
+            is_galactic_custodian = yes
+            desc = gal_com_is_the_custodian
+        }
+    }
+}

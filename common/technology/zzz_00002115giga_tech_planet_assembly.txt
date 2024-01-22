@@ -1,0 +1,41 @@
+giga_tech_planet_assembly = {
+    cost = 1000000
+    area = physics
+    tier = 5
+    category = {
+        particles
+    }
+    is_rare = yes
+    weight = 25
+    prerequisites = {
+        "giga_tech_lunar_assembly"
+    }
+    modifier = {
+        megastructure_build_speed_mult = 0.05
+    }
+    prereqfor_desc = {
+        custom = {
+            title = "allow_planet_assembly"
+            desc = "allow_planet_assembly_desc"
+        }
+    }
+    weight_modifier = {
+        modifier = {
+            factor = @ap_technological_ascendancy_rare_tech
+            has_ascension_perk = ap_technological_ascendancy
+        }
+        modifier = {
+            factor = 0
+            has_global_flag = giga_celestial_printing_planet_disabled
+        }
+    }
+    ai_weight = {
+        factor = @giga_aiweight_multiplier_insane
+        modifier = {
+            factor = value:tech_weight_likelihood
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_particles
+            }
+        }
+    }
+}

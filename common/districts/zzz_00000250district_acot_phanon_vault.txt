@@ -1,0 +1,31 @@
+district_acot_phanon_vault = {
+    base_buildtime = 20
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        uses_district_set = phanon_vault
+    }
+    allow = {
+        exists = owner
+    }
+    potential = {
+        uses_district_set = phanon_vault
+    }
+    planet_modifier = {
+        army_health = 0.1
+        army_damage_mult = 0.1
+        planet_orbital_bombardment_damage = -0.1
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+        }
+        produces = {
+        }
+        upkeep = {
+            energy = 50
+        }
+    }
+    ai_weight = {
+        weight = 0
+    }
+}

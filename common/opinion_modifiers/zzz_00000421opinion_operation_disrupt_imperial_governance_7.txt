@@ -1,0 +1,10 @@
+opinion_operation_disrupt_imperial_governance_7 = {
+    opinion = {
+        base = -120
+    }
+    unique = yes
+    monthly = yes
+    decay = {
+        base = 1
+    }
+}

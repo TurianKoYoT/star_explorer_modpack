@@ -1,0 +1,54 @@
+trait_v_overtuned_digestion_l = {
+    host_has_dlc = "Toxoids Species Pack"
+    cost = 1
+    potential_crossbreeding_chance = 0
+    icon = "gfx/interface/icons/traits/trait_v_overtuned_digestion.dds"
+    allowed_archetypes = {
+        LITHOID
+    }
+    allowed_origins = {
+        origin_overtuned
+    }
+    opposites = {
+        "trait_v_overtuned_digestion"
+    }
+    valid_for_all_origins = no
+    randomized = no
+    species_potential_add = {
+        exists = from
+        from = {
+            has_origin = origin_overtuned
+        }
+    }
+    species_possible_remove = {
+        can_remove_overtuned_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    custom_tooltip_with_modifiers = trait_v_overtuned_digestion_l_tooltip
+    triggered_pop_modifier = {
+        potential = {
+            exists = fromfrom
+            fromfrom = {
+                has_edict = damn_the_consequences
+            }
+        }
+        planet_pops_organics_minerals_upkeep_mult = -0.1
+    }
+    triggered_pop_modifier = {
+        potential = {
+            exists = fromfrom
+            fromfrom = {
+                has_edict = damn_the_consequences
+            }
+        }
+        planet_pops_organics_minerals_upkeep_mult = -0.2
+    }
+    modifier = {
+        leader_lifespan_add = -10
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

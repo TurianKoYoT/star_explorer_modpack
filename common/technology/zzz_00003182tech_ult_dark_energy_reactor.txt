@@ -1,0 +1,21 @@
+tech_ult_dark_energy_reactor = {
+    area = physics
+    cost = 30000
+    tier = 4
+    category = {
+        field_manipulation
+    }
+    is_rare = yes
+    is_reverse_engineerable = no
+    prerequisites = {
+        "tech_ult_control_dark_energy"
+    }
+    prereqfor_desc = {
+        hide_prereq_for_desc = component
+        custom = {
+            title = "TECH_UNLOCK_ULT_DARK_ENERGY_POWER_TITLE"
+            desc = "TECH_UNLOCK_ULT_DARK_ENERGY_POWER_DESC"
+        }
+    }
+    weight = 20
+}

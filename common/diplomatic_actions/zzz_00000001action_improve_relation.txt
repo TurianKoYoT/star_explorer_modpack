@@ -1,0 +1,66 @@
+action_improve_relation = {
+    icon = "GFX_diplomacy_improve_relation"
+    auto_accepted = yes
+    require_envoy = yes
+    envoy_assignment = improve_relations
+    requires_actor_independence = no
+    requires_recipient_independence = no
+    action_type = positive
+    potential = {
+        hidden_trigger = {
+            is_playable = yes
+            from = {
+                OR = {
+                    is_playable = yes
+                    AND = {
+                        is_country_type = primitive
+                        NOR = {
+                            has_country_flag = solarpunk_country
+                            has_country_flag = primitives_fanatic_purifier
+                        }
+                        current_awareness_level = full
+                    }
+                }
+            }
+        }
+    }
+    possible = {
+        custom_tooltip = {
+            fail_text = "DIPLOMACY_STATUS_WAR"
+            NOT = {
+                is_at_war_with = from
+            }
+        }
+        homicidal_diplomacy_restrictions = {
+            mirror = yes
+        }
+        custom_tooltip = {
+            fail_text = "ACTION_CANNOT_INTERFERE_POLICY"
+            OR = {
+                has_policy_flag = interference_subtle
+                has_policy_flag = interference_active
+                from = {
+                    NOT = {
+                        is_country_type = primitive
+                    }
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = "requires_recipient_not_fotd_seperatist"
+            from = {
+                NOT = {
+                    has_country_flag = fotd_seperatist_country@root
+                }
+            }
+        }
+    }
+    proposable = {
+        custom_tooltip = {
+            fail_text = "requires_envoy_not_harming_relations"
+            NOT = {
+                is_harming_relations_with = from
+            }
+        }
+    }
+}

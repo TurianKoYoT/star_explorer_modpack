@@ -1,0 +1,25 @@
+building_auto_physics_campus_4 = {
+    base_buildtime = 180
+    can_build = no
+    allow = {
+        has_upgraded_capital = yes
+    }
+    resources = {
+        category = planet_researchers
+        cost = {
+            automatic_drone = 200
+        }
+        produces = {
+            physics_research = 15
+        }
+        upkeep = {
+            automatic_drone = 4
+        }
+    }
+    upgrades = {
+        building_auto_physics_campus_5
+    }
+    prerequisites = {
+        tech_physics_2
+    }
+}

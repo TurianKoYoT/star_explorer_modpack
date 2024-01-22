@@ -1,0 +1,56 @@
+@avb_d4_time = 960
+building_avb_lithoid_crystal_mines_2 = {
+    base_buildtime = @avb_d4_time
+    can_build = no
+    category = resource
+    potential = {
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = crucible_colony
+        }
+        has_modifier = lithoid_crater
+    }
+    allow = {
+        has_fully_upgraded_capital = yes
+    }
+    convert_to = {
+        building_avb_crystal_mines_2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            job_crystal_miner_add = @avb_d4_jobs
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_crystal_mining_drone_add = @avb_d4_jobs
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_d4_minerals
+        }
+        upkeep = {
+            energy = @avb_d4_upkeep
+        }
+    }
+    show_tech_unlock_if = {
+        always = no
+    }
+    prerequisites = {
+        "tech_avb_crystal_mines_2"
+    }
+}

@@ -1,0 +1,23 @@
+tech_fe_machine_dome = {
+    cost = @acot_tier6cost2
+    area = engineering
+    tier = 6
+    category = {
+        industry
+    }
+    prerequisites = {
+        tech_super_assembly
+    }
+    weight = @tier4weight2
+    potential = {
+        NOT = {
+            has_global_flag = acot_building_forbidden
+        }
+        is_machine_empire = yes
+    }
+    weight_modifier = {
+    }
+    ai_weight = {
+        weight = 2
+    }
+}

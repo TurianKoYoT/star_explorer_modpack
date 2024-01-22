@@ -1,0 +1,25 @@
+trait_ult_inherent_innovator = {
+    cost = 2
+    potential_crossbreeding_chance = 1
+    initial = no
+    randomized = no
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_ult_nano_drone_enhance
+        }
+    }
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    modifier = {
+        planet_jobs_unity_produces_mult = 0.15
+        planet_jobs_specialist_produces_mult = 0.05
+        planet_jobs_ruler_produces_mult = 0.05
+        leaders_upkeep_mult = -0.1
+    }
+    slave_cost = {
+        energy = 300
+    }
+}

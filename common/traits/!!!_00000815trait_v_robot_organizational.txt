@@ -1,0 +1,47 @@
+trait_v_robot_organizational = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_synthetic_workers
+            NOT = {
+                has_policy_flag = ai_outlawed
+            }
+        }
+    }
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+            has_technology = tech_v_robot_neural_mimicry
+        }
+    }
+    species_possible_merge_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    opposites = {
+        "trait_machine_unit"
+        "trait_v_robot_competetive"
+        "trait_v_robot_autolatry"
+    }
+    allowed_archetypes = {
+        ROBOT
+    }
+    allowed_ethics = {
+        ethic_authoritarian
+        ethic_fanatic_authoritarian
+    }
+    valid_for_all_ethics = no
+    custom_tooltip_with_modifiers = TRAIT_ORGANIZATIONAL_EFFECT
+    modifier = {
+        pop_ethic_authoritarian_attraction_mult = 0.1
+        pop_government_ethic_attraction = 0.05
+    }
+    slave_cost = {
+        energy = 500
+    }
+}

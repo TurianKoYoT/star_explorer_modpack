@@ -1,0 +1,19 @@
+tech_nourishment_center_1 = {
+    area = society
+    cost = @tier5cost1
+    tier = @fallentechtier
+    category = {
+        ascended_technologies
+    }
+    weight = @tier5weight1
+    prerequisites = {
+        "tech_doa_ascended_industries"
+    }
+    potential = {
+        has_technology = tech_doa_ascended_industries
+        country_uses_food = yes
+    }
+    ai_weight = {
+        factor = 4
+    }
+}

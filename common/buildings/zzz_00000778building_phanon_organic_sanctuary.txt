@@ -1,0 +1,111 @@
+building_phanon_organic_sanctuary = {
+    icon = building_phanon_sky_dome
+    base_buildtime = 900
+    can_build = no
+    category = unity
+    potential = {
+        exists = owner
+        owner = {
+            has_valid_civic = civic_machine_servitor
+        }
+        NOT = {
+            has_global_flag = aot_phanon_content_OFF
+        }
+    }
+    allow = {
+        has_phanon_capital = yes
+    }
+    destroy_trigger = {
+        exists = owner
+        NOT = {
+            owner = {
+                has_valid_civic = civic_machine_servitor
+            }
+        }
+    }
+    convert_to = {
+        building_phanon_mansion
+        building_phanon_hive_depot
+        building_phanon_ancient_cryo_chamber
+    }
+    prerequisites = {
+        tech_phanon_mansion
+    }
+    show_tech_unlock_if = {
+        owner = {
+            has_valid_civic = civic_machine_servitor
+        }
+    }
+    planet_modifier = {
+        job_bio_trophy_add = 160
+        job_phanon_artisan_add = 4
+        job_maintenance_drone_add = 8
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            trigger = {
+                has_modifier = acot_modifier_ascended_city
+            }
+            unity = 60
+        }
+        cost = {
+            energy = 2000
+            minerals = 2000
+            aot_sr_runic_power = 800
+        }
+        upkeep = {
+            aot_sr_runic_power = 10
+            sr_dark_matter = 2
+            acot_sr_dark_energy = 2
+        }
+    }
+    triggered_desc = {
+        text = job_bio_trophy_effect_desc
+    }
+    triggered_desc = {
+        text = job_artisan_drone_effect_desc
+    }
+    triggered_desc = {
+        text = job_maintenance_drone_effect_desc
+    }
+    upgrades = {
+        building_stellarite_organic_sanctuary
+    }
+    ai_resource_production = {
+        unity = 160
+        physics_research = 160
+        trigger = {
+            has_unemployed_pop_of_category = bio_trophy
+            planet_resource_compare = {
+                resource = physics_research
+                value >= 800
+                type = produces
+            }
+        }
+    }
+    ai_resource_production = {
+        unity = 160
+        alloys = 160
+        trigger = {
+            has_unemployed_pop_of_category = bio_trophy
+            planet_resource_compare = {
+                resource = alloys
+                value >= 800
+                type = produces
+            }
+        }
+    }
+    ai_resource_production = {
+        unity = 160
+        consumer_goods = 160
+        trigger = {
+            has_unemployed_pop_of_category = bio_trophy
+            planet_resource_compare = {
+                resource = consumer_goods
+                value >= 800
+                type = produces
+            }
+        }
+    }
+}

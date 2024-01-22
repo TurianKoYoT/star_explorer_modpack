@@ -1,0 +1,59 @@
+ssh_tech_black_hole_shellworld = {
+    cost = 25000
+    area = engineering
+    tier = 4
+    category = {
+        voidcraft
+    }
+    prerequisites = {
+        "tech_mega_engineering"
+        "ssh_tech_nuclei_modification"
+    }
+    potential = {
+        has_ascension_perk = ap_galactic_hyperstructures
+    }
+    weight = @tier4weight1
+    is_rare = yes
+    modifier = {
+        megastructure_build_speed_mult = 0.05
+    }
+    weight_modifier = {
+        modifier = {
+            factor = @ap_technological_ascendancy_rare_tech
+            has_ascension_perk = ap_technological_ascendancy
+        }
+        modifier = {
+            factor = @federation_perk_factor
+            has_federation = yes
+            federation = {
+                has_federation_perk = rare_tech_boost
+                any_member = {
+                    has_technology = ssh_tech_black_hole_shellworld
+                }
+            }
+        }
+        modifier = {
+            factor = value:tech_weight_likelihood
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_voidcraft
+            }
+        }
+        modifier = {
+            factor = 0
+            has_utopia = no
+        }
+    }
+    ai_weight = {
+        factor = 10
+        modifier = {
+            factor = value:tech_weight_likelihood
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_voidcraft
+            }
+        }
+        modifier = {
+            factor = 0
+            has_utopia = no
+        }
+    }
+}

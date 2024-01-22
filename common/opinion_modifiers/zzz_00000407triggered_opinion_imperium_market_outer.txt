@@ -1,0 +1,48 @@
+triggered_opinion_imperium_market_outer = {
+    trigger = {
+        has_galactic_emperor = yes
+        is_country_type = default
+        OR = {
+            has_modifier = imperial_preference_outer_1
+            has_modifier = imperial_preference_outer_2
+            has_modifier = imperial_preference_outer_3
+            has_modifier = imperial_preference_outer_4
+        }
+        FROM = {
+            has_modifier = imperium_market_energy
+        }
+    }
+    opinion = {
+        base = -40
+        modifier = {
+            add = -20
+            FROM = {
+                federation = {
+                    has_federation_perk = imperium_market_2
+                }
+            }
+        }
+        modifier = {
+            add = -20
+            FROM = {
+                federation = {
+                    has_federation_perk = imperium_market_3
+                }
+            }
+        }
+        modifier = {
+            add = -20
+            FROM = {
+                federation = {
+                    has_federation_perk = imperium_market_4
+                }
+            }
+        }
+        modifier = {
+            add = -80
+            FROM = {
+                is_federation_leader = yes
+            }
+        }
+    }
+}

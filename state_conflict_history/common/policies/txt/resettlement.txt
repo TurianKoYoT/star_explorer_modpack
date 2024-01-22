@@ -1,0 +1,79 @@
+resettlement = {
+    potential = {
+        NOT = {
+            has_ethic = "ethic_gestalt_consciousness"
+        }
+    }
+    option = {
+        name = "resettlement_not_allowed"
+        policy_flags = {
+            resettlement_not_allowed
+        }
+        in_breach_of = {
+             {
+                key = resolution_superior_deference
+            }
+             {
+                key = resolution_a_whiff_of_grapeshot
+            }
+             {
+                key = resolution_let_them_eat_cake
+            }
+             {
+                key = resolution_lawandorder_free_migration
+            }
+        }
+        AI_weight = {
+            factor = 2
+            modifier = {
+                factor = 0.1
+                is_galactic_community_member = yes
+                OR = {
+                    is_active_resolution = resolution_superior_deference
+                    is_active_resolution = resolution_a_whiff_of_grapeshot
+                    is_active_resolution = resolution_let_them_eat_cake
+                }
+            }
+        }
+    }
+    option = {
+        name = "resettlement_allowed"
+        policy_flags = {
+            resettlement_allowed
+        }
+        in_breach_of = {
+             {
+                key = resolution_greatergood_balance_in_the_middle
+            }
+             {
+                key = resolution_greatergood_universal_prosperity_mandate
+            }
+             {
+                key = resolution_greatergood_6
+            }
+        }
+        modifier = {
+        }
+        AI_weight = {
+            factor = 10
+            modifier = {
+                factor = 0.1
+                OR = {
+                    has_ethic = ethic_egalitarian
+                    has_ethic = ethic_fanatic_egalitarian
+                }
+            }
+            modifier = {
+                factor = 0.1
+                is_galactic_community_member = yes
+                OR = {
+                    is_active_resolution = resolution_greatergood_balance_in_the_middle
+                    is_active_resolution = resolution_greatergood_universal_prosperity_mandate
+                    is_active_resolution = resolution_greatergood_6
+                    is_active_resolution = "resolution_lawandorder_free_migration"
+                    is_active_resolution = "resolution_lawandorder_informed_governance"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+leader_trait_adventurous_spirit = {
+    veteran_class_locked_trait = yes
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = "GFX_leader_trait_adventurous_spirit"
+        RARITY = veteran
+        COUNCIL = no
+        TIER = 1
+    }
+    triggered_self_modifier = {
+        potential = {
+            is_councilor = no
+        }
+        leaders_upkeep_mult = -0.1
+    }
+    leader_potential_add = {
+        trait_is_crisis_faction_check = no
+        has_paragon_dlc = yes
+        NOT = {
+            has_trait_tier1or2 = {
+                TRAIT = leader_trait_eager
+            }
+        }
+    }
+    custom_tooltip_with_modifiers = leader_trait_adventurous_spirit_effect
+    triggered_desc = {
+        trigger = {
+            is_councilor = yes
+        }
+        text = leader_trait_adventurous_spirit_1_tt
+    }
+    leader_class = {
+        commander
+        scientist
+        official
+    }
+    selectable_weight = {
+        weight = @shared_trait_weight
+        inline_script = paragon/not_council_weight_mult
+    }
+}

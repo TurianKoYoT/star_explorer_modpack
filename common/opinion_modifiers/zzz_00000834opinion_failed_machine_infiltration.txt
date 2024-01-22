@@ -1,0 +1,8 @@
+opinion_failed_machine_infiltration = {
+    opinion = {
+        base = -200
+    }
+    decay = {
+        base = 1
+    }
+}

@@ -1,0 +1,57 @@
+district_ult_hab_nano_garden_district = {
+    base_buildtime = 240
+    icon = district_ult_nano_garden_district
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        OR = {
+            has_modifier = ult_utopia_infrastructure_hab_economic
+            has_modifier = ult_utopia_infrastructure_hab_research
+        }
+    }
+    potential = {
+        exists = owner
+        owner = {
+            is_regular_empire = yes
+        }
+        is_planet_class = pc_habitat
+        OR = {
+            has_modifier = ult_utopia_infrastructure_hab_economic
+            has_modifier = ult_utopia_infrastructure_hab_research
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = 500
+        }
+        produces = {
+            nanites = 0.2
+        }
+        upkeep = {
+            energy = 5
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 2
+        planet_amenities_add = 20
+        job_ult_nutritionist_add = 2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_valid_civic = civic_agrarian_idyll
+            }
+        }
+        modifier = {
+            planet_housing_add = 4
+            job_ult_nutritionist_add = 1
+        }
+    }
+    ai_resource_production = {
+        food = 1
+        trigger = {
+            always = yes
+        }
+    }
+}

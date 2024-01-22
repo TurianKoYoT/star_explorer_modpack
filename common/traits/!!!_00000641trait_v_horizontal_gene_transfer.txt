@@ -1,0 +1,24 @@
+trait_v_horizontal_gene_transfer = {
+    cost = 4
+    species_potential_add = {
+        exists = from
+        from = {
+            is_ai = no
+        }
+        can_do_advanced_gene_modding = yes
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    randomized = no
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    custom_tooltip_with_modifiers = TRAIT_HGT_EFFECT
+    inline_script = "traits/hgt_trait_effect"
+    opposites = {
+        "trait_invasive"
+    }
+    slave_cost = {
+        energy = 5000
+    }
+}

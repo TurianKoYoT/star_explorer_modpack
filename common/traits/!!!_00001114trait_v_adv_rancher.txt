@@ -1,0 +1,46 @@
+trait_v_adv_rancher = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_v_zoological_transgenesis
+        }
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/adv_biological_traits/BIOLOGICAL"
+    inline_script = "allowed_archetypes/adv_biological_traits/LITHOID"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/REP"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/FUN"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/LITHOID"
+    inline_script = "species_class/AQUATIC"
+    custom_tooltip_with_modifiers = TRAIT_RANCHER_EFFECT
+    opposites = {
+        "trait_invasive"
+        "trait_v_adv_rancher"
+        "trait_v_webbing"
+        "trait_v_adv_webbing"
+        "trait_v_bioluminesce"
+        "trait_v_adv_bioluminesce"
+        "trait_v_fungus_farmer"
+        "trait_v_adv_fungus_farmer"
+    }
+    modifier = {
+        planet_farmers_food_produces_add = -2
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

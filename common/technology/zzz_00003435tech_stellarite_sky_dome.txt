@@ -1,0 +1,47 @@
+tech_stellarite_sky_dome = {
+    cost = @acot_tier9cost3
+    area = society
+    tier = 9
+    is_rare = yes
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        tech_phanon_sky_dome
+        tech_dark_matter_power_core_se
+        tech_dm_production_core
+    }
+    weight = @tier5weight1
+    potential = {
+        NOR = {
+            has_global_flag = acot_building_forbidden
+            is_fallen_empire = yes
+        }
+        has_technology = tech_dark_matter_power_core_se
+        has_technology = tech_phanon_sky_dome
+        has_technology = tech_dm_production_core
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 10
+            OR = {
+                has_technology = tech_mine_rare_crystals
+                has_technology = tech_rare_crystals
+            }
+        }
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_statecraft
+            }
+        }
+    }
+    ai_weight = {
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_statecraft
+            }
+        }
+    }
+}

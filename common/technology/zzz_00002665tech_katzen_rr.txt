@@ -1,0 +1,21 @@
+tech_katzen_rr = {
+    cost = @tier3cost1
+    area = engineering
+    tier = 3
+    category = {
+        materials
+    }
+    prerequisites = {
+    }
+    weight = @tier3weight1
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            NOT = {
+                has_origin = origin_katzen
+            }
+        }
+    }
+    ai_weight = {
+    }
+}

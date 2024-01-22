@@ -1,0 +1,30 @@
+tech_avb_clinic_3 = {
+    cost = @tier3cost3
+    area = society
+    tier = 3
+    category = {
+        biology
+    }
+    prerequisites = {
+        "tech_frontier_hospital"
+        "tech_galactic_administration"
+    }
+    weight = @tier3weight3
+    potential = {
+        is_gestalt = no
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            NOR = {
+                has_technology = tech_mine_exotic_gases
+                has_technology = tech_exotic_gases
+                has_country_flag = has_market_access
+            }
+        }
+        modifier = {
+            factor = 1.25
+            has_tradition = tr_harmony_adopt
+        }
+    }
+}

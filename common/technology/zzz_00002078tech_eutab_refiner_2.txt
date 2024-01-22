@@ -1,0 +1,24 @@
+tech_eutab_refiner_2 = {
+    cost = @tier4cost3
+    area = engineering
+    tier = 4
+    category = {
+        materials
+    }
+    prerequisites = {
+        "tech_eutab_refiner_1"
+    }
+    weight = @tier4weight3
+    is_custom_tech_1 = yes
+    potential = {
+        OR = {
+            has_ascension_perk = ap_technological_ascendancy
+            has_ascension_perk = ap_enigmatic_engineering
+        }
+    }
+    modifier = {
+        planet_translucers_produces_mult = 0.25
+        planet_chemists_produces_mult = 0.25
+        planet_refiners_produces_mult = 0.25
+    }
+}

@@ -1,0 +1,36 @@
+trait_v_litholytic_enzymes = {
+    cost = 3
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_v_adv_litholytic_enzymes"
+    }
+    inline_script = "allowed_archetypes/LITHOID"
+    custom_tooltip = TRAIT_LITHOLYTIC_ENZYMES_EFFECT
+    modifier = {
+    }
+    slave_cost = {
+        energy = 1000
+    }
+    assembly_score = {
+        modifier = {
+            add = 1.5
+            from = {
+                has_mining_designation = yes
+            }
+        }
+        modifier = {
+            add = 0.5
+            from = {
+                has_rural_designation = yes
+            }
+        }
+    }
+}

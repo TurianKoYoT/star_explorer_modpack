@@ -1,0 +1,16 @@
+tech_habitability_mutation = {
+    cost = @tier5cost1
+    area = society
+    tier = 5
+    category = {
+        new_worlds
+    }
+    weight = 0
+    is_rare = yes
+    modifier = {
+        pop_environment_tolerance = 0.4
+    }
+    ai_weight = {
+        factor = 20
+    }
+}

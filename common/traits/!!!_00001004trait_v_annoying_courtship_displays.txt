@@ -1,0 +1,37 @@
+trait_v_annoying_courtship_displays = {
+    cost = -1
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_hive_mind"
+        "trait_invasive"
+        "trait_v_courtship_displays"
+        "trait_v_adv_courtship_displays"
+        "trait_v_adv_annoying_courtship_displays"
+        "trait_clone_soldier_infertile"
+        "trait_clone_soldier_infertile_full_potential"
+        "trait_vat_grown"
+        "trait_v_asexual_reproduction"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/REP"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/ART"
+    inline_script = "species_class/NECROID"
+    inline_script = "species_class/TOX"
+    custom_tooltip = TRAIT_ANNOYING_COURTSHIP_DISPLAYS_EFFECT
+    growing_modifier = {
+        planet_emigration_push_add = 25
+    }
+    slave_cost = {
+        energy = -1000
+    }
+}

@@ -1,0 +1,26 @@
+tech_yanz_advanced_nutrient_production = {
+    area = society
+    start_tech = no
+    cost = @tier5cost3
+    is_rare = yes
+    tier = 5
+    category = {
+        biology
+    }
+    prerequisites = {
+        "tech_yanz_quantum_biology"
+    }
+    weight = @tier5weight1
+    potential = {
+        is_gestalt = no
+    }
+    modifier = {
+        country_food_produces_mult = 0.1
+    }
+    prereqfor_desc = {
+        custom = {
+            title = ""
+            desc = ""
+        }
+    }
+}

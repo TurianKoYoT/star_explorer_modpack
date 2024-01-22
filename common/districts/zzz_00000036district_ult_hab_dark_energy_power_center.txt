@@ -1,0 +1,57 @@
+district_ult_hab_dark_energy_power_center = {
+    base_buildtime = 240
+    icon = district_ult_dark_energy_power_center
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        has_modifier = ult_utopia_infrastructure_hab_research
+    }
+    potential = {
+        exists = owner
+        owner = {
+            is_regular_empire = yes
+        }
+        is_planet_class = pc_habitat
+        has_modifier = ult_utopia_infrastructure_hab_research
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = 500
+        }
+        upkeep = {
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 2
+        job_ult_dark_energy_field_operator_add = 2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_valid_civic = civic_agrarian_idyll
+            }
+        }
+        modifier = {
+            planet_housing_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+            has_active_building = building_ult_dark_energy_nexus
+        }
+        modifier = {
+            job_ult_dark_energy_field_operator_add = 1
+        }
+    }
+    ai_resource_production = {
+        energy = 1
+        trigger = {
+            always = yes
+        }
+    }
+}

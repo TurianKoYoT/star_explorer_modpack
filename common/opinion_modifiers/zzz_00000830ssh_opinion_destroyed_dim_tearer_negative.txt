@@ -1,0 +1,8 @@
+ssh_opinion_destroyed_dim_tearer_negative = {
+    opinion = {
+        base = -2000
+    }
+    unique = yes
+    monthly = yes
+    decay = 1
+}

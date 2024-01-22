@@ -1,0 +1,55 @@
+giga_megaengineering_overseer_acot_sigma = {
+    category = ruler
+    condition_string = RULER_JOB_TRIGGER
+    building_icon = building_giga_megaworkshop_hub_acot_sigma
+    clothes_texture_index = 1
+    icon = "giga_megaengineering_overseer_acot_sigma"
+    possible_pre_triggers = {
+        has_owner = yes
+        is_enslaved = no
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_ruler_job
+    resources = {
+        category = planet_giga_megaengineering_overseers
+        produces = {
+            giga_sr_amb_megaconstruction = @giga_amb_megaengineering_overseer_sigma_output
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+        upkeep = {
+            consumer_goods = @giga_amb_megaengineering_overseer_sigma_extra
+            alloys = @giga_amb_megaengineering_overseer_sigma_alloys_upkeep
+            unity = @giga_amb_megaengineering_overseer_sigma_unity_upkeep
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+        upkeep = {
+            acot_sr_stellarite = @giga_amb_megaengineering_overseer_sigma_resource1_upkeep
+            energy = @giga_amb_megaengineering_overseer_sigma_resource2_upkeep
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_edict = giga_amb_sentient_metal_supertensiles
+                }
+            }
+            giga_sr_amb_megaconstruction = @giga_amb_megaengineering_overseer_sigma_output_edict
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+        upkeep = {
+            trigger = {
+                owner = {
+                    has_edict = giga_amb_sentient_metal_supertensiles
+                }
+            }
+            alloys = @giga_amb_megaengineering_overseer_alloys_edict
+            ehof_sr_sentient_metal = @giga_amb_megaengineering_overseer_sigma_sentient_metal_edict
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+    }
+    weight = {
+        weight = value:giga_ruler_weight|JOB|giga_megaengineering_overseer_acot_sigma|RESOURCE|giga_sr_amb_megaconstruction|
+    }
+}

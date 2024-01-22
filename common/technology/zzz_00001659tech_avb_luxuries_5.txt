@@ -1,0 +1,55 @@
+tech_avb_luxuries_5 = {
+    cost = @avbtier6cost1
+    area = engineering
+    tier = 6
+    category = {
+        materials
+    }
+    prerequisites = {
+        "tech_avb_luxuries_4"
+        "tech_avb_capital_5"
+    }
+    weight = @avbtier6weight1
+    potential = {
+        OR = {
+            is_gestalt = no
+            has_valid_civic = civic_machine_servitor
+        }
+    }
+    weight_modifier = {
+        factor = 2
+        modifier = {
+            factor = 2
+            any_owned_pop = {
+                OR = {
+                    has_living_standard = {
+                        type = living_standard_utopian
+                    }
+                    has_living_standard = {
+                        type = living_standard_decadent
+                    }
+                    has_living_standard = {
+                        type = living_standard_academic_privilege
+                    }
+                }
+            }
+        }
+        modifier = {
+            factor = 1.5
+            OR = {
+                has_civic = civic_exalted_priesthood
+                AND = {
+                    has_global_flag = ethic_civic_classic_active
+                    OR = {
+                        has_civic = civic_imperial_cult
+                        has_civic = civic_divine_council
+                        has_civic = civic_spiritual_democracy
+                    }
+                }
+            }
+        }
+    }
+    ai_weight = {
+        factor = 4
+    }
+}

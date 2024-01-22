@@ -1,0 +1,42 @@
+tech_avb_global_research_initiative_2 = {
+    area = physics
+    tier = 5
+    cost = @tier5cost1
+    category = {
+        computing
+    }
+    prerequisites = {
+        "tech_global_research_initiative"
+        "tech_physics_3"
+        "tech_avb_capital_4"
+    }
+    weight = @tier5weight1
+    weight_modifier = {
+        factor = 1.5
+        modifier = {
+            factor = 2
+            is_materialist = yes
+        }
+        modifier = {
+            factor = 2.5
+            is_fanatic_materialist = yes
+        }
+        modifier = {
+            factor = 1.5
+            OR = {
+                has_civic = civic_technocracy
+                AND = {
+                    has_global_flag = ethic_civic_classic_active
+                    OR = {
+                        has_civic = civic_cyber_dictatorship
+                        has_civic = civic_science_directorate
+                        has_civic = civic_cyber_demos_cratos
+                    }
+                }
+            }
+        }
+    }
+    ai_weight = {
+        factor = 4
+    }
+}

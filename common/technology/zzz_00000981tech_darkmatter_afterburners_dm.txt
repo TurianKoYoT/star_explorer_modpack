@@ -1,0 +1,23 @@
+tech_darkmatter_afterburners_dm = {
+    area = engineering
+    category = {
+        propulsion
+    }
+    cost = @acot_tier6cost1
+    tier = 6
+    weight = @tier5weight2
+    ai_update_type = all
+    is_reverse_engineerable = no
+    potential = {
+        NOT = {
+            has_global_flag = acot_shipcom_forbidden
+        }
+        NOT = {
+            has_global_flag = acot_delta_forbidden
+        }
+    }
+    prerequisites = {
+        "tech_thrusters_dm"
+        "tech_afterburners_2"
+    }
+}

@@ -1,0 +1,28 @@
+trait_youth = {
+    cost = 0
+    potential_crossbreeding_chance = 0.5
+    icon = "gfx/interface/icons/traits/trait_youth.dds"
+    initial = no
+    randomized = no
+    improves_leaders = yes
+    immortal_leaders = yes
+    prerequisites = {
+        tech_synthetic_youth
+    }
+    opposites = {
+        "trait_fleeting"
+        "trait_fleeting_lithoid"
+    }
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    modifier = {
+        species_leader_exp_gain = 0.1
+        pop_environment_tolerance = 0.2
+        planet_pops_organics_food_upkeep_mult = 0.1
+        army_health = 0.25
+        pop_happiness = 0.1
+        pop_growth_speed = 0.1
+    }
+}

@@ -1,0 +1,43 @@
+xte_leader_trait_peacemonger = {
+    inline_script = {
+        script = trait/icon_negative_no_tiers
+        ICON = GFX_xte_leader_trait_peacemonger
+        COUNCIL = yes
+    }
+    cost = 1
+    negative = yes
+    opposites = {
+        "trait_ruler_warlike"
+        "trait_ruler_warlike_2"
+        "leader_trait_fleet_organizer"
+        "leader_trait_fleet_organizer_2"
+        "trait_ruler_fortifier"
+        "trait_ruler_fortifier_2"
+        "trait_ruler_fortifier_3"
+        "xte_leader_trait_domineering"
+        "xte_leader_trait_indulgent"
+        "xte_leader_trait_spineless"
+        "xte_leader_trait_hateful"
+        "xte_leader_trait_warmonger"
+        "xte_leader_trait_superstitious"
+        "xte_leader_trait_cynical"
+    }
+    triggered_councilor_modifier = {
+        potential = {
+            always = yes
+        }
+        country_alloys_produces_mult = -0.1
+        country_naval_cap_mult = -0.15
+        pop_ethic_militarist_attraction_mult = 0.5
+        multiplier = value:xte_anti_stacking_value|LEADER_TRAIT|xte_leader_trait_peacemonger|
+    }
+    custom_tooltip_with_modifiers = xte_councilor_trait_efficiency_notification
+    leader_potential_add = {
+        always = no
+    }
+    leader_class = {
+        commander
+        scientist
+        official
+    }
+}

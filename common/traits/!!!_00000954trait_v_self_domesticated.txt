@@ -1,0 +1,30 @@
+trait_v_self_domesticated = {
+    cost = 3
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_docile"
+        "trait_unruly"
+        "trait_conformists"
+        "trait_deviants"
+        "trait_hive_mind"
+        "trait_machine_unit"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/TOX"
+    modifier = {
+        species_empire_size_mult = -0.2
+        pop_government_ethic_attraction = 0.4
+    }
+    slave_cost = {
+        energy = 2000
+    }
+}

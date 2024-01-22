@@ -1,0 +1,39 @@
+trait_v_hive_bivouac = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = yes
+        }
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    allowed_ethics = {
+        ethic_gestalt_consciousness
+    }
+    valid_for_all_ethics = no
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    opposites = {
+        "trait_void_dweller_1"
+        "trait_invasive"
+        "trait_v_adv_hive_bivouac"
+        "trait_v_biophobia"
+        "trait_v_pest_sensitive"
+        "trait_v_adv_pest_sensitive"
+    }
+    triggered_pop_modifier = {
+        pop_housing_usage_mult = -0.05
+        mult = planet.value:natural_blocker_count
+    }
+    custom_tooltip = TRAIT_HIVE_BIVOUAC_EFFECT
+    slave_cost = {
+        energy = 3000
+    }
+}

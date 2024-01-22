@@ -1,0 +1,38 @@
+tech_ascend_beyond_hard = {
+    area = society
+    cost = 60000
+    cost_per_level = 15000
+    tier = 4
+    category = {
+        statecraft
+    }
+    is_rare = yes
+    levels = 200
+    prerequisites = {
+        "tech_ascension_theory"
+    }
+    weight = @tier4weight3
+    potential = {
+        has_global_flag = repeat_tech_hard
+    }
+    modifier = {
+        ascension_perks_add = 1
+    }
+    weight_groups = {
+        repeatable
+    }
+    ai_weight = {
+        modifier = {
+            factor = 2
+            num_ascension_perk_slots > 4
+        }
+        modifier = {
+            factor = 4
+            num_ascension_perk_slots > 8
+        }
+        modifier = {
+            factor = 8
+            num_ascension_perk_slots > 16
+        }
+    }
+}

@@ -1,0 +1,22 @@
+trait_v_imprecise = {
+    cost = -1
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_v_precise"
+        "trait_v_extremely_precise"
+        "trait_v_adv_extremely_precise"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    modifier = {
+        army_collateral_damage_mult = 0.2
+        army_damage_mult = -0.1
+        planet_jobs_specialist_produces_mult = -0.025
+    }
+    slave_cost = {
+        energy = -1000
+    }
+}

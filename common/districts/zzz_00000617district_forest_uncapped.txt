@@ -1,0 +1,59 @@
+district_forest_uncapped = {
+    icon = district_forest
+    base_buildtime = 300
+    is_capped_by_modifier = no
+    conversion_ratio = 1
+    convert_to = {
+        district_forest
+    }
+    show_on_uncolonized = {
+        from = {
+            OR = {
+                has_ascension_perk = ap_pyramidal_society
+                has_country_flag = ap_pyramidal_society
+            }
+            is_hive_empire = yes
+        }
+        sartek_hive_mod_or_hive_vanilla = yes
+    }
+    potential = {
+        exists = owner
+        owner = {
+            OR = {
+                has_ascension_perk = ap_pyramidal_society
+                has_country_flag = ap_pyramidal_society
+            }
+            is_hive_empire = yes
+        }
+        sartek_hive_mod_or_hive_vanilla = yes
+    }
+    allow = {
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            energy = 500
+        }
+        produces = {
+            food = 2
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 4
+        job_botanist_add = 4
+        job_u_biologist_drone_add = 1
+    }
+    ai_weight = {
+        weight = 2
+    }
+    ai_resource_production = {
+        food = 4
+        trigger = {
+            always = yes
+        }
+    }
+}

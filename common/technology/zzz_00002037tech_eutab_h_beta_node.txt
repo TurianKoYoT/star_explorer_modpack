@@ -1,0 +1,19 @@
+tech_eutab_h_beta_node = {
+    cost = @tier2cost3
+    area = society
+    tier = 2
+    category = {
+        biology
+    }
+    prerequisites = {
+        "tech_gene_banks"
+    }
+    weight = @tier2weight3
+    is_custom_tech_1 = yes
+    potential = {
+        is_hive_empire = yes
+    }
+    ai_weight = {
+        factor = 20
+    }
+}

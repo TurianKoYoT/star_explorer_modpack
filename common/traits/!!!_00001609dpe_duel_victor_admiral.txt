@@ -1,0 +1,18 @@
+dpe_duel_victor_admiral = {
+    inline_script = {
+        script = trait/icon
+        CLASS = leader
+        ICON = "GFX_leader_trait_glory_seeker"
+        RARITY = common
+        COUNCIL = no
+        TIER = none
+    }
+    modifier = {
+        ship_fire_rate_mult = 0.1
+    }
+    leader_class = {
+        admiral
+    }
+    initial = no
+    randomized = no
+}

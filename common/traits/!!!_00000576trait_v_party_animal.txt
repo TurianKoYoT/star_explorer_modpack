@@ -1,0 +1,28 @@
+trait_v_party_animal = {
+    cost = 1
+    initial = no
+    sapient = no
+    allowed_archetypes = {
+        BIOLOGICAL
+        PRESAPIENT
+        LITHOID
+    }
+    opposites = {
+        "trait_v_ascetic"
+        "trait_v_sybaritic"
+    }
+    potential_crossbreeding_chance = 1
+    modifier = {
+        pop_job_amenities_mult = 0.2
+        pop_amenities_usage_mult = 0.2
+    }
+    species_possible_remove = {
+        can_remove_presapient_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    species_possible_merge_add = {
+        always = no
+    }
+}

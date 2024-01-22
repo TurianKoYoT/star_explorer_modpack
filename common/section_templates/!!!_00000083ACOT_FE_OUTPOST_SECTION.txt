@@ -1,0 +1,27 @@
+ship_section_template = {
+    key = "ACOT_FE_OUTPOST_SECTION"
+    ship_size = acot_fallen_outpost
+    fits_on_slot = "core"
+    should_draw_components = yes
+    entity = "starbase_outpost_section_entity"
+    icon = "GFX_ship_part_core_mid"
+    component_slot = {
+        name = "XL_01"
+        template = "invisible_extra_large_turret"
+        locatorname = "medium_gun_01"
+    }
+    component_slot = {
+        name = "LARGE_GUN_01"
+        template = "invisible_large_turret"
+        locatorname = "medium_gun_01"
+    }
+    component_slot = {
+        name = "LARGE_GUN_02"
+        template = "invisible_large_turret"
+        locatorname = "medium_gun_01"
+    }
+    small_utility_slots = 0
+    medium_utility_slots = 0
+    large_utility_slots = 6
+    aux_utility_slots = 0
+}

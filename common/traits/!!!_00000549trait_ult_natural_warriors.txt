@@ -1,0 +1,20 @@
+trait_ult_natural_warriors = {
+    cost = 2
+    potential_crossbreeding_chance = 1
+    initial = no
+    randomized = no
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_ult_nano_drone_enhance
+        }
+    }
+    allowed_archetypes = {
+        BIOLOGICAL
+        LITHOID
+    }
+    modifier = {
+        army_damage_mult = 0.5
+        planet_jobs_unity_produces_mult = 0.1
+    }
+}

@@ -1,0 +1,29 @@
+leader_trait_schulz = {
+    destiny_trait = yes
+    ethic_destiny_trait = no
+    inline_script = {
+        script = trait/icon
+        CLASS = scientist
+        ICON = "GFX_leader_trait_legendary_xenophobe_one"
+        RARITY = paragon
+        COUNCIL = no
+        TIER = none
+    }
+    triggered_self_modifier = {
+        potential = {
+            always = yes
+        }
+        leader_scientists_physics_research_produces_add = 2
+        leader_scientists_society_research_produces_add = 3
+        leader_scientists_engineering_research_produces_add = 2
+        mult = trigger:has_skill
+    }
+    leader_potential_add = {
+        always = no
+    }
+    leader_class = {
+        scientist
+    }
+    custom_tooltip_with_modifiers = leader_trait_schulz_effect
+    selectable_weight = 0
+}

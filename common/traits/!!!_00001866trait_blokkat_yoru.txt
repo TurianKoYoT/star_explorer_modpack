@@ -1,0 +1,20 @@
+trait_blokkat_yoru = {
+    cost = 0
+    leader_potential_add = {
+        always = no
+    }
+    icon = "gfx/interface/icons/traits/trait_blokkat_yoru.dds"
+    immortal_leaders = yes
+    fleet_modifier = {
+        ship_speed_mult = 0.1
+        ship_evasion_mult = -0.5
+        ship_emergency_ftl_mult = -1
+        ship_fire_rate_mult = 0.33
+    }
+    leader_class = all
+    initial = no
+    randomized = no
+    ai_weight = {
+        weight = 0
+    }
+}

@@ -1,0 +1,22 @@
+trait_tough = {
+    cost = 1
+    species_possible_remove = {
+        can_remove_beneficial_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_frail"
+        "trait_invasive"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    modifier = {
+        army_health = 0.25
+    }
+    slave_cost = {
+        energy = -1000
+    }
+}

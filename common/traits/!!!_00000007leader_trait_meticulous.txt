@@ -1,0 +1,34 @@
+leader_trait_meticulous = {
+    inline_script = {
+        script = trait/icon
+        CLASS = scientist
+        ICON = "GFX_leader_trait_meticulous"
+        RARITY = common
+        COUNCIL = no
+        TIER = 1
+    }
+    modifier = {
+        ship_anomaly_generation_chance_mult = 0.1
+    }
+    leader_potential_add = {
+        is_ruler = no
+        NOT = {
+            from = {
+                has_technology = tech_expandable_brain_1
+            }
+        }
+    }
+    leader_class = {
+        scientist
+    }
+    opposites = {
+        leader_trait_carefree
+    }
+    selectable_weight = {
+        weight = @class_trait_weight
+    }
+    ai_categories = {
+        survey
+    }
+    ai_weight = 50
+}

@@ -1,0 +1,22 @@
+tech_ult_super_robot_enhance = {
+    area = engineering
+    cost = 30000
+    tier = 4
+    category = {
+        industry
+    }
+    is_rare = yes
+    potential = {
+        NOT = {
+            has_ethic = "ethic_gestalt_consciousness"
+        }
+    }
+    prerequisites = {
+        "tech_ult_super_ai_network"
+    }
+    weight = 20
+    modifier = {
+        ROBOT_species_trait_points_add = 4
+        planet_pop_assembly_mult = 0.2
+    }
+}

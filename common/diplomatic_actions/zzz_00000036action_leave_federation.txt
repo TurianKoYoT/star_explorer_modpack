@@ -1,0 +1,50 @@
+action_leave_federation = {
+    icon = "GFX_diplomacy_status_federation"
+    auto_accepted = yes
+    requires_actor_peace = yes
+    show_to_alliance_members = yes
+    should_notify_all_communications = yes
+    action_type = negative
+    should_ai_propose = {
+        weight = 1
+        modifier = {
+            factor = 0
+            exists = from
+            from = {
+                is_subject = yes
+            }
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                has_ascension_perk = ap_become_the_crisis
+            }
+            federation = {
+                has_federation_perk = galactic_confederation_passive
+            }
+        }
+    }
+    potential = {
+        hidden_trigger = {
+            is_subject = no
+        }
+    }
+    possible = {
+        if = {
+            limit = {
+                federation = {
+                    has_federation_perk = galactic_confederation_passive
+                }
+            }
+            custom_tooltip = "will_make_us_diplo_weight_mult_n0_5"
+            is_galactic_custodian = no
+            is_part_of_galactic_council = no
+        }
+        custom_tooltip = {
+            fail_text = requires_federation_leader_exists
+            federation = {
+                federation_election_underway = no
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+ssh_tech_hydrogen = {
+    cost = @tier2cost1
+    area = engineering
+    tier = 2
+    category = {
+        materials
+    }
+    prerequisites = {
+        "tech_space_construction"
+    }
+    weight = @tier2weight1
+    weight_modifier = {
+        factor = 2
+        modifier = {
+            factor = 0.5
+            NOT = {
+                any_owned_planet = {
+                    OR = {
+                        has_deposit = d_hydrogen_deposit
+                    }
+                }
+                any_planet_within_border = {
+                    OR = {
+                        has_deposit = d_hydrogen_deposit
+                    }
+                }
+            }
+        }
+    }
+    ai_weight = {
+        factor = @strategic_resource_ai_tech_factor
+    }
+}

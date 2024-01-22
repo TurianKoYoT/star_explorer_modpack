@@ -1,0 +1,90 @@
+@diff_t7 = 11
+operation_spark_rebellion = {
+    target = none
+    categories = {
+        op_cat_subterfuge
+        op_cat_technology
+    }
+    picture = GFX_evt_open_revolt
+    desc = operation_spark_rebellion_desc
+    stages = 5
+    resources = {
+        category = operations
+        cost = {
+            influence = 250
+        }
+        upkeep = {
+            energy = 14
+        }
+    }
+    spy_power_cost = 70
+    potential = {
+        has_nemesis = yes
+        target = {
+            is_primitive = no
+        }
+        has_galactic_emperor = yes
+        target = {
+            is_galactic_emperor = yes
+        }
+        root.owner = {
+            is_galactic_community_member = yes
+            is_galactic_emperor = no
+        }
+    }
+    allow = {
+        imperial_authority <= 50
+        custom_tooltip = {
+            fail_text = spark_rebellion_already_sparked
+            NOT = {
+                any_playable_country = {
+                    any_war = {
+                        using_war_goal = {
+                            type = wg_galactic_civil_war_loyalists
+                            owner = attacker
+                        }
+                    }
+                }
+            }
+        }
+        custom_tooltip = {
+            is_running_espionage_operation = no
+            fail_text = operation_one_at_a_time
+        }
+    }
+    abort = {
+        has_global_flag = abort_spark_rebellion
+    }
+    stage = {
+        difficulty = @diff_t7
+        icon = GFX_espionage_chapter_icon_motion
+        event = operation.6100
+    }
+    stage = {
+        difficulty = @diff_t7
+        icon = GFX_espionage_chapter_icon_target
+        event = operation.6105
+    }
+    stage = {
+        difficulty = @diff_t7
+        icon = GFX_espionage_chapter_icon_motion
+        event = operation.6110
+    }
+    stage = {
+        difficulty = @diff_t7
+        icon = GFX_espionage_chapter_icon_motion
+        event = operation.6115
+    }
+    stage = {
+        difficulty = @diff_t7
+        icon = GFX_espionage_chapter_icon_success
+        event = operation.6120
+    }
+    on_roll_failed = {
+        standard_espionage_operation_on_roll_failed = {
+            RANDOM_EVENTS = operation_random_events_generic
+        }
+    }
+    on_create = {
+    }
+}

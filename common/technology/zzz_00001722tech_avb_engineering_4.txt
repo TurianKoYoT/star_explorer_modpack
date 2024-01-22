@@ -1,0 +1,21 @@
+tech_avb_engineering_4 = {
+    cost = @tier5cost2
+    area = engineering
+    tier = 5
+    category = {
+        industry
+    }
+    prerequisites = {
+        "tech_society_3"
+    }
+    weight = @tier5weight2
+    modifier = {
+        planet_researchers_engineering_research_produces_mult = 0.2
+    }
+    weight_modifier = {
+        factor = 4
+    }
+    ai_weight = {
+        weight = 10
+    }
+}

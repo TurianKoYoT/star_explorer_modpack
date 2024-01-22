@@ -1,0 +1,35 @@
+tech_kinetic_core_ae = {
+    area = physics
+    tier = 7
+    cost = @acot_tier7cost1
+    category = {
+        computing
+    }
+    ai_update_type = all
+    is_reverse_engineerable = no
+    weight = 15
+    prerequisites = {
+        "tech_dark_matter_power_core_ae"
+    }
+    potential = {
+        NOT = {
+            has_global_flag = acot_aux_forbidden
+        }
+        has_technology = tech_dark_matter_power_core_ae
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            NOT = {
+                has_technology = tech_dark_matter_power_core_ae
+            }
+        }
+        modifier = {
+            factor = 1.25
+            has_tradition = tr_discovery_adopt
+        }
+    }
+    ai_weight = {
+        factor = 20
+    }
+}

@@ -1,0 +1,39 @@
+@tier3cost1 = 4000
+@tier3weight1 = 65
+tech_military_habitats = {
+    cost = @tier3cost1
+    area = society
+    tier = 3
+    category = {
+        military_theory
+    }
+    prerequisites = {
+        "tech_centralized_command"
+    }
+    weight = @tier3weight1
+    is_rare = yes
+    weight_modifier = {
+        modifier = {
+            factor = 2
+            is_militarist = yes
+        }
+        modifier = {
+            factor = value:tech_weight_likelihood
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_voidcraft
+            }
+        }
+    }
+    ai_weight = {
+        modifier = {
+            factor = 2
+            is_militarist = yes
+        }
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_voidcraft
+            }
+        }
+    }
+}

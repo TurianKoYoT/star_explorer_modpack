@@ -1,0 +1,122 @@
+@resolution_weight_unpopular = 5
+@resolution_cost_t1 = 100
+@resolution_flag_timer = 360
+resolution_pre_ftl_stances_repeal_2 = {
+    icon = "GFX_resolution_repeal_red"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t1
+        }
+    }
+    target = no
+    fire_and_forget = yes
+    effect = {
+        custom_tooltip = resolution_pre_ftl_stances_repeal_2_effect_success
+        hidden_effect = {
+            cancel_resolution = "resolution_pre_ftl_stances_non_interference"
+            set_timed_country_flag = {
+                flag = galactic_community_resolution_passed_pre_ftl_stances_repeal
+                days = @resolution_flag_timer
+            }
+            set_timed_country_flag = {
+                flag = galcom_resolution_passed_anti_isolationist
+                days = 7200
+            }
+            add_modifier = {
+                modifier = resolution_passed_diplomatic_weight
+                days = 2200
+            }
+        }
+    }
+    fail_effects = {
+        hidden_effect = {
+            set_timed_country_flag = {
+                flag = galactic_community_resolution_failed_pre_ftl_stances_repeal
+                days = @resolution_flag_timer
+            }
+            add_modifier = {
+                modifier = resolution_failed_diplomatic_weight
+                days = 2200
+            }
+        }
+    }
+    potential = {
+        has_first_contact_dlc = yes
+        is_active_resolution = "resolution_pre_ftl_stances_non_interference"
+    }
+    ai_weight = {
+        base = @resolution_weight_unpopular
+        modifier = {
+            factor = 0.8
+            is_pacifist = yes
+            is_xenophobe = no
+            desc = ethic_pacifist
+        }
+       modifier = {
+            factor = 0.25
+            is_pacifist = yes
+            is_xenophobe = yes
+            desc = diplo_stance_isolationist
+        }
+        modifier = {
+            factor = 0.8
+            has_ethic = ethic_fanatic_pacifist
+            is_xenophobe = no
+            desc = ethic_pacifist
+        }
+        modifier = {
+            factor = 1.2
+            OR = {
+                is_militarist = yes
+                is_civic_militarist = yes
+            }
+            is_xenophobe = yes
+            desc = ethic_militarist
+        }
+        modifier = {
+            factor = 1.2
+            has_ethic = ethic_fanatic_militarist
+            desc = ethic_militarist
+        }
+        modifier = {
+            factor = 0.8
+            is_civic_environmentalist = yes
+            desc = gal_com_opposing_civics
+        }
+        modifier = {
+            factor = 1.2
+            OR = {
+                has_valid_civic = civic_pompous_purists
+                is_civic_expansionist = yes
+            }
+            desc = gal_com_supporting_civics
+        }
+        modifier = {
+            factor = 1.8
+            OR = {
+                is_slaver = yes
+                has_slaver_civic = yes
+            }
+            desc = gal_com_slaver_empire
+        }
+        modifier = {
+            factor = 0
+            has_valid_civic = civic_machine_exploration_protocol
+            desc = civic_machine_exploration_protocol
+        }
+        modifier = {
+            factor = 0
+            OR = {
+                is_inwards_perfection_empire = yes
+                is_pompous_empire = yes
+            }
+            desc = civic_inwards_perfection
+        }
+        modifier = {
+            factor = 2
+            is_civic_machine_servitor = yes
+            desc = civic_machine_servitor
+        }
+    }
+}

@@ -1,0 +1,163 @@
+building_delta_necrophage_elevation_chamber = {
+    icon = building_chamber_of_elevation_1
+    base_buildtime = 480
+    base_cap_amount = 1
+    position_priority = 100
+    category = pop_assembly
+    potential = {
+        exists = owner
+        owner = {
+            has_origin = origin_necrophage
+            has_trait = trait_necrophage
+            NOR = {
+                has_valid_civic = civic_fanatic_purifiers
+                has_valid_civic = civic_hive_devouring_swarm
+            }
+        }
+    }
+    allow = {
+        has_enigmatic_capital = yes
+        OR = {
+            has_building = building_necrophage_elevation_chamber
+            has_building = building_necrophage_house_of_apotheosis
+        }
+        custom_tooltip = {
+            fail_text = NO_CULTURE_SHOCK
+            NOT = {
+                has_modifier = planet_culture_shock
+            }
+        }
+        if = {
+            limit = {
+                owner = {
+                    is_hive_empire = no
+                }
+            }
+            NOT = {
+                is_planet_class = pc_hive
+            }
+        }
+        NOT = {
+            is_planet_class = pc_machine
+        }
+        hidden_trigger = {
+            if = {
+                limit = {
+                    owner = {
+                        is_ai = yes
+                    }
+                }
+                any_owned_species = {
+                    species_can_be_necrophaged = yes
+                }
+                num_pops > 5
+            }
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            owner = {
+                OR = {
+                    NOT = {
+                        has_origin = origin_necrophage
+                    }
+                    NOT = {
+                        has_trait = trait_necrophage
+                    }
+                }
+            }
+            AND = {
+                owner = {
+                    is_ai = yes
+                }
+                NOT = {
+                    any_owned_species = {
+                        species_can_be_necrophaged = yes
+                    }
+                }
+            }
+        }
+    }
+    planet_modifier = {
+        job_necro_apprentice_add = 6
+    }
+    triggered_planet_modifier = {
+        potential = {
+            is_planet_class = pc_hive
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        job_necro_apprentice_add = 4
+    }
+    upgrades = {
+        building_alpha_necrophage_elevation_chamber
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = 650
+            sr_dark_matter = 50
+        }
+        upkeep = {
+            energy = 5
+            sr_dark_matter = 1
+        }
+    }
+    prerequisites = {
+        tech_dark_mansion
+    }
+    show_tech_unlock_if = {
+        has_origin = origin_necrophage
+        has_trait = trait_necrophage
+    }
+    triggered_desc = {
+        text = job_necro_apprentice_effect_desc
+        trigger = {
+            exists = owner
+            owner = {
+                is_lithoid_empire = no
+                is_hive_empire = no
+            }
+        }
+    }
+    triggered_desc = {
+        text = job_necro_apprentice_effect_lithoid_desc
+        trigger = {
+            exists = owner
+            owner = {
+                is_lithoid_empire = yes
+                is_hive_empire = no
+            }
+        }
+    }
+    triggered_desc = {
+        text = job_necro_apprentice_effect_hive_desc
+        trigger = {
+            exists = owner
+            owner = {
+                is_lithoid_empire = no
+                is_hive_empire = yes
+            }
+        }
+    }
+    triggered_desc = {
+        text = job_necro_apprentice_effect_hive_lithoid_desc
+        trigger = {
+            exists = owner
+            owner = {
+                is_lithoid_empire = yes
+                is_hive_empire = yes
+            }
+        }
+    }
+    triggered_desc = {
+        text = necrophage_elevation_timer_tooltip
+        trigger = {
+            has_planet_flag = necrophage_elevation_timer
+        }
+    }
+    is_essential = yes
+}

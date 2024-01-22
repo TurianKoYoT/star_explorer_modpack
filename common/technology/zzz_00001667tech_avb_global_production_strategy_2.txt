@@ -1,0 +1,20 @@
+tech_avb_global_production_strategy_2 = {
+    cost = @tier4cost1
+    area = society
+    tier = 4
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_avb_alloys_3"
+        "tech_avb_luxuries_3"
+        "tech_avb_capital_4"
+    }
+    weight = @tier4weight1
+    weight_modifier = {
+        factor = 1.5
+    }
+    ai_weight = {
+        factor = 1.5
+    }
+}

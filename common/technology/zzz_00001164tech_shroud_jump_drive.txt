@@ -1,0 +1,39 @@
+tech_shroud_jump_drive = {
+    area = society
+    cost = @acot_tier8cost2
+    tier = 6
+    category = {
+        psionics
+    }
+    ai_update_type = all
+    is_rare = yes
+    prerequisites = {
+        "tech_psi_jump_drive_1"
+        tech_dark_matter_power_core_dm
+    }
+    weight = 15
+    is_reverse_engineerable = no
+    modifier = {
+        ship_landing_time_mult = -1
+    }
+    potential = {
+        has_tradition = tr_psionics_finish
+        any_country = {
+            is_country_type = shroud
+            has_established_contact = root
+        }
+        is_fallen_empire = no
+        NOT = {
+            has_global_flag = acot_shipcom_forbidden
+        }
+    }
+    prereqfor_desc = {
+        component = {
+            title = "TECH_UNLOCK_SHROUDDRIVE"
+            desc = "TECH_UNLOCK_SHROUDDRIVE_DESC"
+        }
+    }
+    weight_modifier = {
+        factor = 1
+    }
+}

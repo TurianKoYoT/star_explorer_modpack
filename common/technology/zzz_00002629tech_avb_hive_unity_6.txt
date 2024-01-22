@@ -1,0 +1,18 @@
+tech_avb_hive_unity_6 = {
+    cost = @avbtier7cost2
+    area = society
+    category = {
+        statecraft
+    }
+    tier = 7
+    prerequisites = {
+        "tech_avb_hive_unity_5"
+    }
+    weight = @avbtier7weight2
+    weight_modifier = {
+        factor = 4
+    }
+    ai_weight = {
+        factor = 4
+    }
+}

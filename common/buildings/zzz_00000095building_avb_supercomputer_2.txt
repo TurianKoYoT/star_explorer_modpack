@@ -1,0 +1,156 @@
+building_avb_supercomputer_2 = {
+    base_buildtime = @avb_b4_time
+    icon = building_institute
+    can_build = no
+    category = research
+    potential = {
+        exists = owner
+        owner = {
+            is_gestalt = yes
+        }
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+        }
+    }
+    allow = {
+        has_upgraded_capital_4 = yes
+        OR = {
+            owner = {
+                is_ai = no
+            }
+            planet_resource_compare = {
+                resource = physics_research
+                value > 60
+            }
+            has_designation = col_research
+        }
+    }
+    destroy_trigger = {
+        exists = owner
+        OR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+            owner = {
+                is_gestalt = no
+            }
+        }
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @avb_r4_minerals
+            exotic_gases = @avb_r4_rare_cost
+        }
+        upkeep = {
+            energy = @avb_r4_upkeep
+        }
+    }
+    convert_to = {
+        building_avb_institute_2
+    }
+    country_modifier = {
+        country_scientist_cap_add = 2
+        all_technology_research_speed = 0.1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        modifier = {
+            job_brain_drone_add = 4
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        modifier = {
+            job_calculator_add = 4
+        }
+    }
+    prerequisites = {
+        "tech_avb_global_research_initiative_2"
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        text = job_brain_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        text = job_calculator_effect_desc
+    }
+    show_tech_unlock_if = {
+        is_gestalt = yes
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_global_flag = bug_branch_active
+            exists = owner
+            owner = {
+                has_civic = civic_bugged_machine_researcher
+            }
+        }
+        modifier = {
+            job_bugged_examinatron_add = 2
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            has_global_flag = bug_branch_active
+            exists = owner
+            owner = {
+                has_civic = civic_bugged_machine_researcher
+            }
+        }
+        text = job_bugged_examinatron_effect_desc
+    }
+    ai_resource_production = {
+        trigger = {
+            always = yes
+        }
+        physics_research = 3
+        society_research = 3
+        engineering_research = 3
+    }
+    ai_resource_production = {
+        trigger = {
+            planet_resource_compare = {
+                resource = physics_research
+                value >= 20
+            }
+        }
+        physics_research = 3
+        society_research = 3
+        engineering_research = 3
+    }
+    ai_resource_production = {
+        trigger = {
+            planet_resource_compare = {
+                resource = physics_research
+                value >= 40
+            }
+        }
+        physics_research = 3
+        society_research = 3
+        engineering_research = 3
+    }
+}

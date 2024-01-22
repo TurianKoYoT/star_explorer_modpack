@@ -1,0 +1,23 @@
+leader_trait_admiral_astute = {
+    inline_script = {
+        script = trait/giga_icon_classic
+        CLASS = commander
+        ICON = "GFX_leader_trait_admiral_astute"
+        RARITY = common
+        COUNCIL = no
+        TIER = none
+    }
+    self_modifier = {
+        leader_lifespan_add = 80
+    }
+    modifier = {
+        ships_upkeep_mult = -0.3
+        ship_disengage_chance_mult = 0.75
+        ship_emergency_ftl_mult = -0.45
+    }
+    leader_class = {
+        commander
+    }
+    initial = no
+    randomized = no
+}

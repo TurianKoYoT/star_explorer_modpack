@@ -1,0 +1,39 @@
+leader_trait_armada_coordinator = {
+    veteran_class_locked_trait = yes
+    inline_script = {
+        script = trait/icon
+        CLASS = official
+        ICON = GFX_leader_trait_fleet_organizer
+        RARITY = veteran
+        COUNCIL = no
+        TIER = 1
+    }
+    leader_potential_add = {
+        from = {
+            is_galactic_emperor = yes
+        }
+        OR = {
+            has_paragon_dlc = no
+            has_trait = subclass_official_delegate
+        }
+        is_assigned_to_federation = no
+    }
+    triggered_galcom_modifier = {
+        potential = {
+            owner = {
+                is_galactic_emperor = yes
+            }
+        }
+        imperial_governance_usage_naval_mult = -0.1
+        gdf_ship_alloys_cost_mult = -0.02
+        max_imperial_armada_conscription_add = 500
+    }
+    leader_class = {
+        official
+    }
+    selectable_weight = {
+        inline_script = paragon/subclass_free_trait_weight
+        inline_script = paragon/galcom_weight_mult_MECR
+        mult = 2
+    }
+}

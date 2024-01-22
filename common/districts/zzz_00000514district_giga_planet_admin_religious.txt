@@ -1,0 +1,40 @@
+district_giga_planet_admin_religious = {
+    base_buildtime = @giga_planet_district_buildtime
+    icon = district_arcology_religious
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        giga_uses_admin_district = yes
+        from = {
+            giga_country_uses_priests = yes
+        }
+    }
+    potential = {
+        giga_uses_admin_district = yes
+        exists = owner
+        owner = {
+            giga_country_uses_priests = yes
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = @giga_planet_cost
+        }
+        upkeep = {
+            energy = @giga_planet_maintenance
+        }
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_giga_planet_admin
+        district_giga_planet_sanctuary
+        district_giga_orbital_sanctuary
+    }
+    planet_modifier = {
+        planet_housing_add = 2
+    }
+    inline_script = {
+        script = planet/unity/giga_priest_swap
+        jobs = 2
+    }
+}

@@ -1,0 +1,52 @@
+tech_sm_autocannons = {
+    area = engineering
+    cost = @tier7cost3
+    weight = @tier7weight3
+    tier = 5
+    category = {
+        propulsion
+    }
+    ai_update_type = military
+    potential = {
+        or = {
+            AND = {
+                has_technology = tech_autocannons_3
+                has_technology = tech_qnm_utilities
+            }
+            has_country_flag = giga_special_tech_compound_weapon_bypass
+        }
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 1.25
+            has_ethic = ethic_militarist
+        }
+        modifier = {
+            factor = 1.5
+            has_ethic = ethic_fanatic_militarist
+        }
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_propulsion
+            }
+        }
+    }
+    ai_weight = {
+        factor = @giga_aiweight_multiplier_questionable
+        modifier = {
+            factor = 1.25
+            has_ethic = ethic_militarist
+        }
+        modifier = {
+            factor = 1.5
+            has_ethic = ethic_fanatic_militarist
+        }
+        modifier = {
+            factor = 1.25
+            has_trait_in_council = {
+                TRAIT = leader_trait_expertise_propulsion
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+tech_avb_positronic_implants_2 = {
+    area = physics
+    tier = 6
+    cost = @avbtier6cost1
+    category = {
+        computing
+    }
+    prerequisites = {
+        "tech_positronic_implants"
+    }
+    weight = @avbtier6weight1
+    modifier = {
+        all_technology_research_speed = 0.05
+    }
+    potential = {
+        is_regular_empire = no
+    }
+    weight_modifier = {
+        factor = 4
+    }
+    ai_weight = {
+        factor = 4
+    }
+}

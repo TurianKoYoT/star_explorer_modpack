@@ -1,0 +1,17 @@
+tech_sce_strike_craft_3 = {
+    cost = @tier4cost1
+    area = engineering
+    tier = 4
+    ai_update_type = military
+    category = {
+        voidcraft
+    }
+    prerequisites = {
+        "tech_sce_strike_craft_2"
+        "tech_titans"
+    }
+    weight = 2000
+    ai_weight = {
+        weight = 2000
+    }
+}

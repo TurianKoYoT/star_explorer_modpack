@@ -1,0 +1,61 @@
+building_nourishment_center = {
+    base_buildtime = 480
+    can_build = yes
+    can_demolish = yes
+    potential = {
+        custom_tooltip = {
+            exists = owner
+            OR = {
+                owner = {
+                    is_fallen_empire = yes
+                }
+                owner = {
+                    has_country_flag = nourishment_center_can_build
+                }
+                has_planet_flag = fallen_empire_world
+            }
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = ancrel.10004.failtext
+            owner = {
+                check_variable = {
+                    which = nourishment_center_build_count
+                    value >= 1
+                }
+            }
+        }
+    }
+    planet_modifier = {
+        biological_pop_happiness = 0.2
+        BIOLOGICAL_pop_growth_speed = 0.1
+    }
+    resources = {
+        category = planet_buildings
+        produces = {
+            food = 200
+        }
+        upkeep = {
+        }
+    }
+    on_queued = {
+        owner = {
+            subtract_variable = {
+                which = nourishment_center_build_count
+                value = 1
+            }
+        }
+    }
+    on_unqueued = {
+        owner = {
+            change_variable = {
+                which = nourishment_center_build_count
+                value = 1
+            }
+        }
+    }
+    upgrades = {
+        building_ae_nourishment_center
+    }
+}

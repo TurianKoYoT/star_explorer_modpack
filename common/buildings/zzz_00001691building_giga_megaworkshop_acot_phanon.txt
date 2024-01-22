@@ -1,0 +1,100 @@
+building_giga_megaworkshop_acot_phanon = {
+    base_buildtime = @giga_amb_workshop_time_phanon
+    category = manufacturing
+    icon = "acot_compat/building_giga_megaworkshop_acot_phanon"
+    can_build = no
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @giga_amb_workshop_cost_minerals_phanon
+            aot_sr_runic_power = @giga_amb_workshop_cost_resource1_phanon
+            energy = @giga_amb_workshop_cost_resource2_phanon
+        }
+        upkeep = {
+            aot_sr_runic_power = @giga_amb_workshop_upkeep_phanon
+        }
+        upkeep = {
+            trigger = {
+                has_modifier = acot_modifier_ascended_city
+            }
+            alloys = @giga_amb_megaengineer_phanon_alloys_upkeep
+            unity = @giga_amb_megaengineer_phanon_unity_upkeep
+            aot_sr_runic_power = @giga_amb_megaengineer_phanon_resource1_upkeep
+            energy = @giga_amb_megaengineer_phanon_resource2_upkeep
+        }
+        produces = {
+            trigger = {
+                has_modifier = acot_modifier_ascended_city
+            }
+            giga_sr_amb_megaconstruction = @giga_amb_megaengineer_phanon_output
+        }
+    }
+    prerequisites = {
+        giga_tech_amb_supertensiles_acot_phanon
+    }
+    potential = {
+        nor = {
+            has_global_flag = acot_building_forbidden
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+        }
+        has_global_flag = @giga_amb_flag
+    }
+    allow = {
+        has_phanon_capital = yes
+    }
+    destroy_trigger = {
+        OR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+            NOT = {
+                has_global_flag = @giga_amb_flag
+            }
+        }
+    }
+    upgrades = {
+        building_giga_megaworkshop_acot_sigma
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        modifier = {
+            job_giga_megaengineer_drone_acot_phanon_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            job_giga_megaengineer_acot_phanon_add = 2
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = job_giga_megaengineer_acot_phanon_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_giga_megaengineer_drone_acot_phanon_effect_desc
+    }
+}

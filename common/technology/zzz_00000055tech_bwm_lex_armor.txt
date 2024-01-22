@@ -1,0 +1,14 @@
+tech_bwm_lex_armor = {
+    area = engineering
+    cost = 8000
+    tier = 4
+    is_rare = yes
+    category = {
+        materials
+    }
+    ai_update_type = all
+    weight = 0
+    weight_modifier = {
+        factor = 0
+    }
+}

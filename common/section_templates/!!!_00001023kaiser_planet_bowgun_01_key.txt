@@ -1,0 +1,116 @@
+ship_section_template = {
+    key = "kaiser_planet_bowgun_01_key"
+    ship_size = giga_planet_behemoth
+    fits_on_slot = "bowgun"
+    entity = "kaiser_planet_bowgun_entity"
+    icon = "GFX_ship_part_core_mid"
+    component_slot = {
+        name = "TITANIC_GUN_01"
+        template = "invisible_titanic_fixed"
+        locatorname = "titanic_gun_01"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_02"
+        template = "invisible_titanic_fixed"
+        locatorname = "titanic_gun_01"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_03"
+        template = "invisible_titanic_fixed"
+        locatorname = "titanic_gun_01"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_04"
+        template = "invisible_titanic_fixed"
+        locatorname = "titanic_gun_01"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_05"
+        template = "invisible_titanic_fixed"
+        locatorname = "titanic_gun_01"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_06"
+        template = "invisible_titanic_fixed"
+        locatorname = "titanic_gun_01"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_07"
+        template = "invisible_titanic_fixed"
+        locatorname = "titanic_gun_01"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_08"
+        template = "invisible_titanic_fixed"
+        locatorname = "titanic_gun_01"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_09"
+        template = "invisible_titanic_fixed"
+        locatorname = "titanic_gun_01"
+    }
+    component_slot = {
+        name = "TITANIC_GUN_10"
+        template = "invisible_titanic_fixed"
+        locatorname = "titanic_gun_01"
+    }
+    component_slot = {
+        name = "MISSILE_01"
+        template = "invisible_missile_fixed"
+        locatorname = "torp_01"
+    }
+    component_slot = {
+        name = "MISSILE_02"
+        template = "invisible_missile_fixed"
+        locatorname = "torp_02"
+    }
+    component_slot = {
+        name = "MISSILE_03"
+        template = "invisible_missile_fixed"
+        locatorname = "torp_03"
+    }
+    component_slot = {
+        name = "MISSILE_04"
+        template = "invisible_missile_fixed"
+        locatorname = "torp_04"
+    }
+    component_slot = {
+        name = "MISSILE_05"
+        template = "invisible_missile_fixed"
+        locatorname = "torp_05"
+    }
+    component_slot = {
+        name = "MISSILE_06"
+        template = "invisible_missile_fixed"
+        locatorname = "torp_06"
+    }
+    component_slot = {
+        name = "MISSILE_07"
+        template = "invisible_missile_fixed"
+        locatorname = "torp_07"
+    }
+    component_slot = {
+        name = "MISSILE_08"
+        template = "invisible_missile_fixed"
+        locatorname = "torp_08"
+    }
+    component_slot = {
+        name = "MISSILE_09"
+        template = "invisible_missile_fixed"
+        locatorname = "torp_09"
+    }
+    component_slot = {
+        name = "MISSILE_10"
+        template = "invisible_missile_fixed"
+        locatorname = "torp_10"
+    }
+    prerequisites = {
+        "tech_kaiser_planet_sections"
+    }
+    ai_tags = {
+        artillery
+        explosive
+    }
+    large_utility_slots = 15
+    aux_utility_slots = 3
+}

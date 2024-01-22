@@ -1,0 +1,57 @@
+trait_v_robot_tight_knit = {
+    cost = 3
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_synthetic_workers
+            NOT = {
+                has_policy_flag = ai_outlawed
+            }
+        }
+    }
+    species_potential_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+            has_technology = tech_v_robot_neural_mimicry
+        }
+    }
+    species_possible_merge_add = {
+        exists = from
+        from = {
+            is_gestalt = no
+        }
+    }
+    allowed_archetypes = {
+        ROBOT
+    }
+    allowed_ethics = {
+        ethic_pacifist
+        ethic_fanatic_pacifist
+    }
+    valid_for_all_ethics = no
+    custom_tooltip_with_modifiers = TRAIT_TIGHT_KNIT_EFFECT
+    opposites = {
+        "trait_machine_unit"
+        "trait_v_robot_belligerent"
+    }
+    modifier = {
+        pop_ethic_pacifist_attraction_mult = 0.1
+    }
+    triggered_pop_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                NOR = {
+                    is_at_war = yes
+                    has_crisis = yes
+                }
+            }
+        }
+        species_empire_size_mult = -0.25
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

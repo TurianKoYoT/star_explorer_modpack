@@ -1,0 +1,21 @@
+tech_eutab_field_research = {
+    cost = @tier3cost1
+    area = society
+    tier = 3
+    category = {
+        military_theory
+    }
+    prerequisites = {
+        "tech_combat_training"
+    }
+    weight = @tier3weight1
+    is_custom_tech_1 = yes
+    potential = {
+        is_materialist = yes
+        has_ascension_perk = ap_transcendent_learning
+    }
+    gateway = eu_learning
+    modifier = {
+        job_researcher_per_pop = 0.05
+    }
+}

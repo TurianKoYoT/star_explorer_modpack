@@ -1,0 +1,21 @@
+trait_v_cyborg_no_crime = {
+    cost = 4
+    initial = no
+    species_potential_add = {
+        can_add_cybernetic_traits = yes
+    }
+    species_possible_remove = {
+        can_remove_cybernetic_traits = yes
+    }
+    randomized = no
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    custom_tooltip_with_modifiers = TRAIT_NO_CRIME_EFFECT
+    modifier = {
+        leader_lifespan_add = 5
+        species_empire_size_mult = 0.5
+    }
+    slave_cost = {
+        energy = 5000
+    }
+}

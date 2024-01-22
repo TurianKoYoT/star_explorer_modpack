@@ -1,0 +1,54 @@
+trait_v_adv_living_reactors = {
+    cost = 3
+    inline_script = "traits/no_randomized"
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    host_has_dlc = "Lithoids Species Pack"
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_lithoid_transgenesis
+        }
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_plantoid_phototrophic"
+        "trait_advanced_phototrophic"
+        "trait_v_kleptoplasty"
+        "trait_plantoid_radiotrophic"
+        "trait_advanced_radiotrophic"
+        "trait_harvested_radiotrophic"
+        "trait_lithoid_radiotrophic"
+        "trait_radiotrophic_mutants"
+        "trait_v_living_reactors"
+        "trait_v_reanimation"
+        "trait_v_adv_reanimation"
+        "trait_v_explosive_autothysis"
+        "trait_v_adv_explosive_autothysis"
+        "trait_voidling"
+    }
+    inline_script = "allowed_archetypes/adv_lithoid_traits/BIOLOGICAL"
+    custom_tooltip_with_modifiers = TRAIT_LIVING_REACTOR_EFFECT
+    modifier = {
+        pc_irradiated_habitability = 1
+        pc_nuked_habitability = 1
+        army_defense_damage_mult = 0.5
+        army_damage_mult = 0.5
+        planet_jobs_physics_research_produces_mult = 0.1
+    }
+    triggered_planet_growth_habitability_modifier = {
+        pop_environment_tolerance = 0.01
+        mult = planet.value:count_v_radiating
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

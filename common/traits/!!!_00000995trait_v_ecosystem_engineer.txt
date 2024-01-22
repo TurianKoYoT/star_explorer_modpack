@@ -1,0 +1,30 @@
+trait_v_ecosystem_engineer = {
+    cost = 2
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "allowed_archetypes/LITHOID"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/ART"
+    inline_script = "species_class/FUN"
+    inline_script = "species_class/PLANT"
+    inline_script = "species_class/LITHOID"
+    custom_tooltip = TRAIT_ECOSYSTEM_ENGINEER_EFFECT
+    opposites = {
+        "trait_v_adv_ecosystem_engineer"
+        "trait_v_pumice_raft"
+        "trait_v_adv_pumice_raft"
+        "trait_void_dweller_1"
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

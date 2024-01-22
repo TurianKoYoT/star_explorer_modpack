@@ -1,0 +1,77 @@
+@resolution_weight_disliked = 4
+@resolution_cost_t3 = 200
+resolution_emperor_disband_ina = {
+    icon = "GFX_resolution_council_size"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t3
+        }
+    }
+    target = no
+    fire_and_forget = yes
+    effect = {
+        cancel_resolution = "resolution_emperor_ina"
+        hidden_effect = {
+            cancel_resolution = "resolution_custodian_ina"
+        }
+        hidden_effect = {
+            pass_resolution_no_cooldown = resolution_category_emperor_imperial_institutions_reset_cooldown
+        }
+        pass_resolution_modifier = {
+            CATEGORY = general
+        }
+    }
+    fail_effects = {
+        fail_resolution_modifier = {
+            CATEGORY = general
+        }
+    }
+    potential = {
+        has_nemesis = yes
+        OR = {
+            is_galactic_emperor = yes
+            and = {
+                has_galactic_emperor = yes
+                is_part_of_galactic_council = yes
+                is_active_resolution = "resolution_emperor_expand_power_of_council"
+            }
+            is_country_type = imperial_senator
+        }
+        is_active_resolution = "resolution_emperor_ina"
+    }
+    ai_weight = {
+        base = @resolution_weight_disliked
+        modifier = {
+            factor = 1.2
+            is_xenophobe = yes
+            desc = ethic_xenophobe
+        }
+        modifier = {
+            factor = 2
+            has_ai_personality = xenophobic_isolationists
+            desc = personality_xenophobic_isolationists
+        }
+        modifier = {
+            factor = 0.8
+            is_xenophile = yes
+            desc = ethic_xenophile
+        }
+        modifier = {
+            factor = 0.4
+            has_ai_personality = erudite_explorers
+            desc = personality_erudite_explorers
+        }
+        modifier = {
+            factor = 0
+            is_galactic_emperor = yes
+            desc = galactic_emperor
+        }
+        modifier = {
+            factor = 0.4
+            is_galactic_emperor = no
+            is_part_of_galactic_council = yes
+            desc = gal_com_on_galatic_council
+        }
+    }
+}

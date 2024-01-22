@@ -1,0 +1,49 @@
+giga_dark_matter_weaver = {
+    category = specialist
+    condition_string = SPECIALIST_JOB_TRIGGER
+    building_icon = building_giga_iodizium_plant
+    clothes_texture_index = 2
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_specialist_job
+    possible = {
+        owner = {
+            is_fallen_empire = no
+        }
+    }
+    resources = {
+        category = planet_giga_dark_matter_weavers
+        produces = {
+            sr_dark_matter = 2
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+        produces = {
+            trigger = {
+                has_global_flag = acot_activated
+            }
+            sr_dark_matter = 6
+            acot_sr_dark_energy = 8
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+        upkeep = {
+            energy = 4
+            minerals = 4
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+        upkeep = {
+            trigger = {
+                has_global_flag = acot_activated
+            }
+            energy = 4
+            minerals = 4
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+    }
+    weight = {
+        weight = value:giga_specialist_weight|JOB|giga_dark_matter_weaver|RESOURCE|sr_dark_matter|STICKY|7|INDENTURED|1.2|
+    }
+}

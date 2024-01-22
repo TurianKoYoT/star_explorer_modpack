@@ -1,0 +1,29 @@
+trait_blokkat_mineralizer = {
+    cost = 0
+    leader_potential_add = {
+        always = no
+    }
+    icon = "gfx/interface/icons/traits/trait_blokkat_mineralizer.dds"
+    immortal_leaders = yes
+    planet_modifier = {
+        planet_buildings_upkeep_mult = -0.25
+        planet_jobs_upkeep_mult = -0.2
+        planet_jobs_minerals_produces_mult = 0.25
+        planet_jobs_alloys_produces_mult = 0.25
+    }
+    fleet_modifier = {
+        ships_upkeep_mult = -0.2
+    }
+    army_modifier = {
+        armies_upkeep_mult = -0.2
+    }
+    councilor_modifier = {
+        category_materials_research_speed_mult = 0.3
+    }
+    leader_class = all
+    initial = no
+    randomized = no
+    ai_weight = {
+        weight = 0
+    }
+}

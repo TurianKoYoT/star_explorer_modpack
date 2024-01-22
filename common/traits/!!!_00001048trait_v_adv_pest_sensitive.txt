@@ -1,0 +1,65 @@
+trait_v_adv_pest_sensitive = {
+    cost = 1
+    inline_script = "traits/no_randomized"
+    icon = "gfx/interface/icons/traits/trait_v_pest_sensitive.dds"
+    host_has_dlc = "Plantoids Species Pack"
+    initial = no
+    randomized = no
+    advanced_trait = yes
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_potential_add = {
+        exists = from
+        from = {
+            has_technology = tech_plantoid_transgenesis
+        }
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_v_kairomones"
+        "trait_v_adv_kairomones"
+        "trait_void_dweller_1"
+        "trait_v_pest_sensitive"
+        "trait_v_biophilia"
+        "trait_v_druidic"
+        "trait_v_hive_bivouac"
+        "trait_v_adv_hive_bivouac"
+        "trait_v_nectaries"
+        "trait_v_adv_nectaries"
+        "trait_v_mycorrhizal"
+        "trait_v_adv_mycorrhizal"
+        "trait_v_lithoid_mycorrhizal"
+        "trait_v_webbing"
+        "trait_v_adv_webbing"
+        "trait_v_bioluminesce"
+        "trait_v_adv_bioluminesce"
+        "trait_v_overgrown"
+        "trait_v_self_decoration"
+        "trait_v_adv_self_decoration"
+    }
+    inline_script = "allowed_archetypes/adv_biological_traits/BIOLOGICAL"
+    inline_script = "allowed_archetypes/adv_biological_traits/LITHOID"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/REP"
+    inline_script = "species_class/ART"
+    inline_script = "species_class/MOL"
+    inline_script = "species_class/LITHOID"
+    inline_script = "species_class/NECROID"
+    inline_script = "species_class/AQUATIC"
+    inline_script = "species_class/TOX"
+    custom_tooltip = TRAIT_KAIROMONES_EFFECT
+    triggered_planet_growth_habitability_modifier = {
+        pop_environment_tolerance = 0.05
+        mult = planet.value:natural_blocker_count
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

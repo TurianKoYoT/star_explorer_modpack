@@ -1,0 +1,50 @@
+@insula_worker_weight = 0.5
+giga_birch_ktisma_worker = {
+    category = worker
+    condition_string = WORKER_JOB_TRIGGER
+    building_icon = building_resource_silo
+    clothes_texture_index = 2
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_worker_job
+    resources = {
+        category = planet_giga_birch_insula_workers
+        produces = {
+            consumer_goods = 1
+            alloys = 0.5
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+        upkeep = {
+            minerals = 1
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+        upkeep = {
+            trigger = {
+                exists = owner
+                owner = {
+                    is_catalytic_empire = no
+                }
+            }
+            minerals = 1
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+        upkeep = {
+            trigger = {
+                exists = owner
+                owner = {
+                    is_catalytic_empire = yes
+                }
+            }
+            food = 1.5
+            multiplier = planet.value:giga_job_scaling_plus_base
+        }
+    }
+    weight = {
+        weight = value:giga_worker_weight|JOB|giga_birch_ktisma_worker|RESOURCE|alloys|WEIGHT|0.34|RESOURCE2|consumer_goods|WEIGHT2|0.66|
+        mult = @insula_worker_weight
+    }
+}

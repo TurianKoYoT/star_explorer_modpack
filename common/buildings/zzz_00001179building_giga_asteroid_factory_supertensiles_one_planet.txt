@@ -1,0 +1,18 @@
+building_giga_asteroid_factory_supertensiles_one_planet = {
+    icon = building_giga_asteroid_factory_supertensiles
+    inline_script = {
+        script = buildings/asteroid_industry/building_giga_asteroid_factory_one_planet
+        cap_modifier = building_giga_asteroid_factory_supertensiles_country_max
+        unlock = "has_global_flag = @giga_amb_flag"
+        modifiers = "
+inline_script = {
+script = planet/supertensiles/parts/giga_megaengineer_job_swap
+jobs = @asteroid_industry_job_count
+condition = \"\"
+description = @yes
+multiplier_string = \"multiplier = value:giga_asteroid_industry_building_job_mult|modifier|building_giga_asteroid_factory_supertensiles_country_max|\"
+}
+triggered_desc = { text = building_giga_asteroid_factory_supertensiles_one_planet_scaling }
+"
+    }
+}

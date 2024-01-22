@@ -1,0 +1,2 @@
+l_english:
+ EMISSARY_SIGMA_COMPUTER_DESC:1000 "Powerful sets of nano-technologies and frameworks necessary for the rapid deployment of heavy infrastructures and invasion forces.\n\nEmissary will settle on the planet with §Y20§! pops.\nProvides §Y25§! Black Guards as garrisons or invasion forces."

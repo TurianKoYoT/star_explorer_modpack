@@ -1,0 +1,17 @@
+tech_mineral_extraction = {
+    cost = @tier5cost1
+    area = engineering
+    tier = 5
+    category = {
+        materials
+    }
+    weight = 0
+    is_rare = yes
+    modifier = {
+        country_base_minerals_produces_add = 100
+        country_minerals_produces_mult = 0.25
+    }
+    ai_weight = {
+        factor = 20
+    }
+}

@@ -1,0 +1,34 @@
+tech_avb_interstellar_economics_3 = {
+    cost = @tier5cost1
+    area = society
+    tier = 5
+    category = {
+        statecraft
+    }
+    prerequisites = {
+        "tech_avb_interstellar_economics_2"
+        "tech_avb_capital_4"
+    }
+    weight = @tier5weight1
+    potential = {
+        is_gestalt = no
+    }
+    weight_modifier = {
+        factor = 2
+        modifier = {
+            factor = 0
+            NOR = {
+                has_technology = tech_mine_rare_crystals
+                has_technology = tech_rare_crystals
+                has_country_flag = has_market_access
+            }
+        }
+        modifier = {
+            factor = 1.25
+            has_tradition = tr_prosperity_adopt
+        }
+    }
+    ai_weight = {
+        factor = 2
+    }
+}

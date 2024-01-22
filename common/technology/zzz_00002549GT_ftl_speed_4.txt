@@ -1,0 +1,29 @@
+GT_ftl_speed_4 = {
+    cost = @tier4cost3
+    area = physics
+    tier = 4
+    category = {
+        field_manipulation
+    }
+    ai_update_type = all
+    prerequisites = {
+        "GT_ftl_speed_3"
+    }
+    weight = @tier4weight3
+    modifier = {
+        ship_interstellar_speed_mult = 0.4
+        ship_windup_mult = -0.4
+        ship_winddown_mult = -0.4
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            num_researched_techs_of_tier = {
+                tier = 4
+                value > 5
+            }
+        }
+    }
+    ai_weight = {
+    }
+}

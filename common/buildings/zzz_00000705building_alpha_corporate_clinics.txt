@@ -1,0 +1,69 @@
+building_alpha_corporate_clinics = {
+    base_buildtime = 480
+    icon = building_ae_hospital
+    base_cap_amount = 1
+    owner_type = corporate
+    category = resource
+    can_build = no
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            has_valid_civic = civic_private_healthcare_corporate
+        }
+    }
+    on_built = {
+        planet = {
+            set_planet_flag = has_private_clinics
+        }
+    }
+    on_destroy = {
+        planet = {
+            remove_planet_flag = has_private_clinics
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            branch_office_owner = {
+                is_criminal_syndicate = yes
+            }
+        }
+        planet_crime_add = 150
+    }
+    planet_modifier = {
+        job_acot_apothecary_add = 2
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            minerals = 200
+            sr_dark_matter = 600
+            acot_sr_dark_energy = 600
+        }
+        produces = {
+            energy = 80
+            unity = 20
+        }
+        upkeep = {
+            sr_dark_matter = 2
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = planet.owner
+        }
+        text = building_corporate_clinics_effect
+    }
+    prerequisites = {
+        tech_ae_hospital
+    }
+    show_tech_unlock_if = {
+        is_megacorp = yes
+        has_valid_civic = civic_private_healthcare_corporate
+    }
+    upgrades = {
+        building_phanon_corporate_clinics
+    }
+    ai_weight = {
+        weight = 120
+    }
+}

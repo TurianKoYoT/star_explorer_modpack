@@ -1,0 +1,10 @@
+opinion_pse_brainwash_us = {
+    opinion = {
+        base = -0.5
+    }
+    decay = {
+        base = 10
+    }
+    min = -200
+    accumulative = yes
+}

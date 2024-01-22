@@ -1,0 +1,131 @@
+building_avb_hive_unity_6 = {
+    base_buildtime = @avb_u6_time
+    can_build = no
+    category = unity
+    potential = {
+        exists = owner
+        owner = {
+            is_hive_empire = yes
+        }
+        OR = {
+            has_z_expanded_mod = no
+            AND = {
+                has_z_expanded_mod = yes
+                NOT = {
+                    has_planet_flag = planetary_station
+                }
+            }
+        }
+    }
+    allow = {
+        has_upgraded_capital_4 = yes
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            is_hive_empire = no
+        }
+    }
+    convert_to = {
+        building_avb_temple_6
+        building_avb_machine_unity_6
+        building_avb_bureaucratic_6
+        building_avb_death_temple_6
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            trigger = {
+                has_z_expanded_mod = no
+            }
+            minerals = @avb_u6_minerals
+            exotic_gases = @avb_u6_rare_cost
+        }
+        upkeep = {
+            trigger = {
+                has_z_expanded_mod = no
+            }
+            energy = @avb_u6_upkeep
+            exotic_gases = @avb_u6_rare_upkeep
+        }
+        upkeep = {
+            trigger = {
+                has_z_expanded_mod = no
+                exists = owner
+                owner = {
+                    has_edict = synaptic_reinforcement
+                }
+            }
+            energy = 2
+        }
+        inline_script = {
+            script = "unity_buildings/avb_hive_confluence_resources"
+            tier = 6
+        }
+    }
+    planet_modifier = {
+        job_synapse_drone_add = @avb_u6_jobs
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_plentiful_tradition_mod = yes
+            exists = owner
+            owner = {
+                has_tradition = tr_plentiful_aspiration_3
+            }
+        }
+        modifier = {
+            job_synapse_drone_add = @avb_u6_jobs
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_plentiful_tradition_mod = yes
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+            owner = {
+                has_tradition = tr_plentiful_aspiration_3
+            }
+        }
+        modifier = {
+            job_synapse_drone_add = 10
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_active_tradition = tr_domination_synaptic_extensions
+            }
+        }
+        modifier = {
+            planet_housing_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_edict = synaptic_reinforcement
+            }
+        }
+        job_maintenance_drone_add = 1
+    }
+    prerequisites = {
+        tech_avb_hive_unity_6
+    }
+    triggered_desc = {
+        text = job_synapse_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                has_edict = synaptic_reinforcement
+            }
+        }
+        text = job_maintenance_drone_effect_desc
+    }
+}

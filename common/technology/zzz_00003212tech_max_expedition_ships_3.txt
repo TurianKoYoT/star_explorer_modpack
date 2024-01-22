@@ -1,0 +1,27 @@
+tech_max_expedition_ships_3 = {
+    cost = @tier4cost1
+    area = physics
+    tier = 4
+    category = {
+        computing
+    }
+    weight = @tier4weight1
+    is_rare = yes
+    prerequisites = {
+        "tech_max_expedition_ships_2"
+    }
+    potential = {
+        has_country_flag = ap_void_expedition_project
+    }
+    modifier = {
+    }
+    prereqfor_desc = {
+        custom = {
+            title = "EXPEDITION_3"
+            desc = ""
+        }
+    }
+    ai_weight = {
+        factor = 10
+    }
+}

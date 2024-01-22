@@ -1,0 +1,22 @@
+xte_scientist_trait_pioneer = {
+    inline_script = {
+        script = trait/xte_icon
+        CLASS = scientist
+        ICON = GFX_xte_leader_trait_pioneer
+        RARITY = xte_positive
+        COUNCIL = no
+        TIER = none
+    }
+    cost = 0
+    randomized = no
+    modifier = {
+        science_ship_survey_speed = -0.35
+        ship_anomaly_generation_chance_mult = 0.25
+    }
+    leader_potential_add = {
+        always = no
+    }
+    leader_class = {
+        scientist
+    }
+}

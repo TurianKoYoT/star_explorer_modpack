@@ -1,0 +1,306 @@
+@resolution_weight_disliked = 4
+@resolution_cost_t4 = 250
+resolution_custodian_form_empire = {
+    icon = "GFX_resolution_form_galactic_empire"
+    resources = {
+        category = resolutions
+        cost = {
+            influence = @resolution_cost_t4
+        }
+    }
+    target = no
+    modifier = {
+    }
+    effect = {
+        if = {
+            limit = {
+                is_gestalt = no
+            }
+            custom_tooltip = resolution_custodian_form_empire_tooltip
+        }
+        if = {
+            limit = {
+                is_machine_empire = yes
+            }
+            custom_tooltip = resolution_custodian_form_empire_tooltip_machine
+        }
+        if = {
+            limit = {
+                is_hive_empire = yes
+            }
+            custom_tooltip = resolution_custodian_form_empire_tooltip_hive
+        }
+        hidden_effect = {
+            set_global_flag = galactic_headquarter_founded
+            if = {
+                limit = {
+                    exists = event_target:headquarter_founder
+                }
+                event_target:headquarter_founder = {
+                    remove_modifier = galactic_headquarter_founder
+                }
+            }
+            if = {
+                limit = {
+                    exists = event_target:headquarter_founder_planet
+                }
+                event_target:headquarter_founder_planet = {
+                    remove_deposit = d_galactic_senate
+                }
+            }
+            clear_global_event_target = headquarter_founder
+            clear_global_event_target = headquarter_founder_planet
+            random_playable_country = {
+                limit = {
+                    is_galactic_custodian = yes
+                }
+                set_timed_country_flag = {
+                    flag = galcom_resolution_passed_anti_progressive
+                    days = 7200
+                }
+                country_event = {
+                    id = emperor.1
+                }
+                add_modifier = {
+                    modifier = galactic_headquarter_founder
+                    days = -1
+                }
+                save_global_event_target_as = headquarter_founder
+                capital_scope = {
+                    add_deposit = d_galactic_senate
+                    save_global_event_target_as = headquarter_founder_planet
+                }
+            }
+        }
+    }
+    fail_effects = {
+        hidden_effect = {
+            set_timed_country_flag = {
+                flag = tried_to_become_emperor
+                days = 7200
+            }
+        }
+    }
+    potential = {
+        has_nemesis = yes
+        is_galactic_custodian = yes
+        is_subject = no
+        is_active_resolution = "resolution_custodian_perpetual_custodianship"
+        has_galactic_emperor = no
+        has_galactic_republic = no
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = "requires_no_war_in_heaven"
+            NOT = {
+                has_global_flag = war_in_heaven_ongoing
+            }
+        }
+    }
+    active = {
+        has_galactic_custodian = yes
+    }
+    ai_weight = {
+        base = @resolution_weight_disliked
+        modifier = {
+            factor = 5
+            any_neighbor_country = {
+                is_crisis_faction = yes
+            }
+            desc = gal_com_neighboring_crisis_empire
+        }
+        modifier = {
+            factor = 2
+            has_crisis_stage_1 = yes
+            desc = gal_com_crisis_stage_1
+        }
+        modifier = {
+            factor = 3
+            has_crisis_stage_2 = yes
+            desc = gal_com_crisis_stage_2
+        }
+        modifier = {
+            factor = 4
+            has_crisis_stage_3 = yes
+            desc = gal_com_crisis_stage_3
+        }
+        modifier = {
+            factor = 5
+            has_crisis_stage_4 = yes
+            desc = gal_com_crisis_stage_4
+        }
+        modifier = {
+            factor = 6
+            any_playable_country = {
+                has_country_flag = crisis_sphere_revealed
+            }
+            desc = gal_com_crisis_sphere_revealed
+        }
+        modifier = {
+            factor = 20
+            is_galactic_custodian = yes
+            is_authoritarian = yes
+            desc = gal_com_authoritarian_custodian
+        }
+        modifier = {
+            factor = 2
+            is_authoritarian = yes
+            is_galactic_custodian = no
+            desc = ethic_authoritarian
+        }
+        modifier = {
+            factor = 2
+            is_galactic_custodian = yes
+            is_authoritarian = no
+            desc = gal_com_is_the_custodian
+        }
+        modifier = {
+            factor = 0.75
+            is_xenophobe = yes
+            is_galactic_custodian = no
+            desc = ethic_xenophobe
+        }
+        modifier = {
+            factor = 8
+            any_playable_country = {
+                has_been_declared_crisis = yes
+            }
+            desc = gal_com_someone_declared_crisis
+        }
+        modifier = {
+            factor = 5
+            has_global_flag = gray_goo_crisis_active
+            desc = gal_com_someone_is_revealed_crisis
+        }
+        modifier = {
+            factor = 5
+            has_global_flag = marauder_crisis_ongoing
+            desc = gal_com_someone_is_revealed_crisis
+        }
+        modifier = {
+            factor = 0
+            is_egalitarian = yes
+            desc = ethic_egalitarian
+        }
+        modifier = {
+            factor = 0.5
+            is_xenophobic_isolationists = yes
+            desc = gal_com_isolationist_civic
+        }
+        modifier = {
+            factor = 0
+            has_ascension_perk = ap_become_the_crisis
+            desc = gal_com_we_have_crisis_perk
+        }
+        modifier = {
+            factor = 0
+            is_subject = yes
+            overlord = {
+                OR = {
+                    is_country_type = fallen_empire
+                    is_country_type = awakened_fallen_empire
+                }
+            }
+            desc = gal_com_subject_of_fallen_empire
+        }
+        modifier = {
+            factor = 10
+            any_country = {
+                is_country_type = awakened_fallen_empire
+            }
+            desc = gal_com_exists_awakened_fallen_empire
+        }
+        modifier = {
+            factor = 1.25
+            is_xenophile = yes
+            desc = ethic_xenophile
+        }
+        modifier = {
+            factor = 0.5
+            is_civic_machine_servitor = yes
+            desc = civic_machine_servitor
+            NOT = {
+                any_country = {
+                    is_galactic_custodian = yes
+                    is_civic_machine_servitor = yes
+                }
+            }
+        }
+        modifier = {
+            factor = 2
+            is_civic_has_elite = yes
+            desc = gal_com_elite_civic
+        }
+        modifier = {
+            factor = 2
+            is_authoritarian = yes
+            desc = ethic_authoritarian
+        }
+        modifier = {
+            factor = 2
+            is_civic_authoritarian = yes
+            desc = ethic_authoritarian
+        }
+        modifier = {
+            factor = 0.25
+            is_civic_has_meritocracy = yes
+            desc = gal_com_meritocracy_civic
+        }
+        modifier = {
+            factor = 0.25
+            is_civic_cutthroat_politics = yes
+            desc = gal_com_cutthroat_civic
+            is_galactic_custodian = no
+        }
+        modifier = {
+            factor = 4
+            is_civic_cutthroat_politics = yes
+            desc = gal_com_cutthroat_civic
+            is_galactic_custodian = yes
+        }
+        modifier = {
+            factor = 2
+            is_egalitarian = no
+            is_civic_diplomatic_corps = yes
+            desc = gal_com_diplo_civic
+        }
+        modifier = {
+            factor = 2
+            OR = {
+                has_civic = civic_feudal_realm
+                has_civic = civic_aristocratic_elite
+                has_civic = civic_police_state
+            }
+            is_egalitarian = no
+            desc = gal_com_supporting_civics
+        }
+        modifier = {
+            factor = 1.25
+            from = {
+                is_galactic_community_member = yes
+            }
+            opinion_level = {
+                who = from
+                level > neutral
+            }
+            NOT = {
+                opinion_level = {
+                    who = from
+                    level > good
+                }
+            }
+            desc = good_opinion
+        }
+        modifier = {
+            factor = 1.5
+            from = {
+                is_galactic_community_member = yes
+            }
+            opinion_level = {
+                who = from
+                level > good
+            }
+            desc = excellent_opinion
+        }
+    }
+}

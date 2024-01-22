@@ -1,0 +1,25 @@
+tech_doa_stabilized_power_reactor = {
+    area = physics
+    cost = 0
+    tier = 0
+    category = {
+        particles
+    }
+    ai_update_type = all
+    weight = 0
+    ai_update_type = military
+    is_reverse_engineerable = no
+    potential = {
+        has_country_flag = doa_tech_6
+    }
+    prereqfor_desc = {
+        hide_prereq_for_desc = component
+        custom = {
+            title = "TECH_UNLOCK_STABILIZED_DARK_MATTER_POWER_TITLE"
+            desc = "TECH_UNLOCK_STABILIZED_DARK_MATTER_POWER_DESC"
+        }
+    }
+    ai_weight = {
+        factor = 0
+    }
+}

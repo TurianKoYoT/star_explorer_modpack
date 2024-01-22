@@ -1,0 +1,37 @@
+leader_trait_military_awe_2 = {
+    veteran_class_locked_trait = yes
+    replace_traits = {
+        "leader_trait_military_awe"
+    }
+    inline_script = {
+        script = trait/icon
+        CLASS = official
+        ICON = GFX_leader_trait_intimidator
+        RARITY = veteran
+        COUNCIL = no
+        TIER = 2
+    }
+    leader_potential_add = {
+        from = {
+            is_galactic_emperor = yes
+        }
+    }
+    triggered_galcom_modifier = {
+        potential = {
+            owner = {
+                is_galactic_emperor = yes
+            }
+        }
+        country_power_projection_influence_produces_add = 0.75
+        diplo_weight_naval_mult = 0.15
+        catapult_spread_mult = 0.5
+    }
+    leader_class = {
+        official
+    }
+    opposites = {
+        "leader_trait_cultural_understanding"
+        "leader_trait_cultural_understanding_2"
+        "leader_trait_cultural_understanding_3"
+    }
+}

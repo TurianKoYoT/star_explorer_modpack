@@ -1,0 +1,44 @@
+building_auto_engineering_campus_3 = {
+    base_buildtime = 180
+    can_build = no
+    resources = {
+        category = planet_researchers
+        cost = {
+            automatic_drone = 200
+        }
+        produces = {
+            engineering_research = 12
+        }
+        upkeep = {
+            automatic_drone = 3
+        }
+    }
+    upgrades = {
+        building_auto_engineering_campus_4
+    }
+    prerequisites = {
+        tech_engineering_2
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = no
+            }
+        }
+        modifier = {
+            job_builder_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        modifier = {
+            job_builder_drone_add = 1
+        }
+    }
+}

@@ -1,0 +1,28 @@
+trait_v_ghoulish = {
+    cost = -3
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_charismatic"
+        "trait_repugnant"
+        "trait_v_adv_ghoulish"
+        "trait_v_prismatic"
+        "trait_v_adv_prismatic"
+        "trait_v_creature_of_paradise"
+        "trait_v_adv_creature_of_paradise"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/NECROID"
+    inline_script = "species_class/TOX"
+    custom_tooltip_with_modifiers = TRAIT_GHOULISH_EFFECT
+    modifier = {
+        pop_job_amenities_mult = -0.3
+    }
+    slave_cost = {
+        energy = -1000
+    }
+}

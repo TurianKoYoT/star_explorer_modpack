@@ -1,0 +1,26 @@
+planet_farmers = {
+    parent = planet_jobs_productive
+    generate_mult_modifiers = {
+        produces
+        upkeep
+    }
+    generate_add_modifiers = {
+        produces
+        upkeep
+    }
+    modifier_category = pop
+    triggered_produces_modifier = {
+        key = planet_artisans
+        modifier_types = {
+            mult
+            add
+        }
+        trigger = {
+            OR = {
+                has_trait = trait_v_weaver
+                has_trait = trait_v_adv_weaver
+            }
+        }
+        use_parent_icon = yes
+    }
+}

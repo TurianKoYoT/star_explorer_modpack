@@ -1,0 +1,113 @@
+imperial_senator = {
+    default_ships = no
+    has_difficulty_bonuses = yes
+    counts_for_victory = no
+    pop_growth = no
+    playable = yes
+    has_pulse_events = yes
+    piracy_risk = no
+    randomize_ethos = no
+    shuffle_pop_ethos = no
+    needs_survey = yes
+    diplomatic_wars = yes
+    ship_disengagement = yes
+    army_disengagement = yes
+    relations = yes
+    observable = yes
+    can_use_invalid_technology = no
+    can_receive_envoys = yes
+    show_in_contacts_list = yes
+    ai = {
+        enabled = yes
+        declare_war = no
+        colonizer = no
+        internal_policies = no
+        modification = no
+        government = yes
+        traditions = yes
+        ascension_perks = yes
+        construction = no
+        follow = yes
+        can_use_market = yes
+        modules = {
+            military_minister_module
+            foreign_minister_module
+        }
+    }
+    faction = {
+        needs_border_access = no
+        generate_borders = no
+        needs_colony = no
+        auto_delete = no
+    }
+    trade_routes_available = {
+        always = no
+    }
+    modules = {
+        standard_diplomacy_module = {
+            contact_rule = does_first_contact_sites
+        }
+        standard_technology_module = {
+        }
+        standard_species_rights_module = {
+        }
+    }
+    resources = {
+        category = country_base
+        produces = {
+            energy = 20
+            minerals = 20
+            physics_research = 10
+            society_research = 10
+            engineering_research = 10
+            influence = 3
+            unity = 5
+            alloys = 5
+        }
+        produces = {
+            trigger = {
+                OR = {
+                    NOT = {
+                        has_ethic = ethic_gestalt_consciousness
+                    }
+                    has_valid_civic = civic_machine_servitor
+                }
+            }
+            consumer_goods = 10
+        }
+        produces = {
+            trigger = {
+                OR = {
+                    is_regular_empire = yes
+                    is_hive_empire = yes
+                }
+                is_lithoid_empire = no
+            }
+            food = 10
+        }
+        produces = {
+            trigger = {
+                OR = {
+                    is_regular_empire = yes
+                    is_hive_empire = yes
+                }
+                is_lithoid_empire = yes
+            }
+            minerals = 10
+        }
+        produces = {
+            trigger = {
+                is_machine_empire = yes
+            }
+            energy = 10
+            minerals = 10
+        }
+    }
+    branch_office_resources = {
+        category = planet_branch_offices
+        cost = {
+            energy = 1000
+            influence = 50
+        }
+    }
+}

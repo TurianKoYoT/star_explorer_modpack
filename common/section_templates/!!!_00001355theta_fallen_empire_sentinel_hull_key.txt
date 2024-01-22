@@ -1,0 +1,34 @@
+ship_section_template = {
+    key = "theta_fallen_empire_sentinel_hull_key"
+    ship_size = precursor_sentinel
+    fits_on_slot = mid
+    entity = "theta_sentinel_hull_entity"
+    icon = "GFX_ship_part_core_mid"
+    prerequisites = {
+        tech_precursor_theia_design
+    }
+    component_slot = {
+        name = "TITANIC_01"
+        template = "invisible_titanic_turret"
+        locatorname = "large_gun_01"
+    }
+    component_slot = {
+        name = "TITANIC_02"
+        template = "invisible_titanic_turret"
+        locatorname = "large_gun_01"
+    }
+    component_slot = {
+        name = "TITANIC_03"
+        template = "invisible_titanic_turret"
+        locatorname = "large_gun_01"
+    }
+    large_utility_slots = 12
+    aux_utility_slots = 2
+    resources = {
+        category = ship_sections
+        cost = {
+            alloys = 7200
+            sm_sr_perfect_runic_energy = 0.072
+        }
+    }
+}

@@ -1,0 +1,21 @@
+trait_v_inefficient_digestion = {
+    cost = -1
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    potential_crossbreeding_chance = 0
+    opposites = {
+        "trait_v_efficient_digestion"
+        "trait_v_efficient_digestion_l"
+        "trait_v_inefficient_digestion_l"
+        "trait_v_complex_digestive_system"
+        "trait_v_old_instincts"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    modifier = {
+        planet_pops_organics_food_upkeep_mult = 0.1
+    }
+    slave_cost = {
+        energy = -500
+    }
+}

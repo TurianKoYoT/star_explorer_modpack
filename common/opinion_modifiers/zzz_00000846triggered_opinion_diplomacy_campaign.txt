@@ -1,0 +1,19 @@
+triggered_opinion_diplomacy_campaign = {
+    opinion = {
+        base = 0
+        modifier = {
+            add = 40
+            merg_is_default_empire = yes
+            FROM = {
+                has_edict = lw_diplomacy_campaign
+            }
+        }
+        modifier = {
+            add = 20
+            is_fallen_empire = yes
+            FROM = {
+                has_edict = lw_diplomacy_campaign
+            }
+        }
+    }
+}

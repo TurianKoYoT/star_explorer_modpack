@@ -1,0 +1,24 @@
+trait_yanz_ultra_servitor = {
+    cost = 0
+    initial = no
+    randomized = no
+    species_potential_add = {
+        always = no
+    }
+    potential_crossbreeding_chance = 0
+    opposites = {
+    }
+    allowed_archetypes = {
+        MACHINE
+    }
+    sorting_priority = 10
+    icon = "gfx/interface/icons/traits/trait_yanz_ultra_servitor.dds"
+    modifier = {
+        planet_jobs_society_research_produces_mult = 0.1
+        planet_jobs_consumer_goods_produces_mult = 0.1
+        planet_jobs_food_produces_mult = 0.1
+    }
+    slave_cost = {
+        energy = 2000
+    }
+}

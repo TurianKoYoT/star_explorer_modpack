@@ -1,0 +1,18 @@
+tech_eutab_moral_codes = {
+    cost = @tier3cost1
+    area = society
+    tier = 3
+    category = {
+        statecraft
+    }
+    weight = @tier3weight1
+    is_custom_tech_1 = yes
+    potential = {
+        is_authoritarian = yes
+        has_ascension_perk = ap_imperial_prerogative
+    }
+    gateway = eu_imperial
+    modifier = {
+        country_edict_fund_add = 20
+    }
+}

@@ -1,0 +1,30 @@
+trait_v_lithoid_aeroplankton = {
+    cost = 1
+    inline_script = "traits/no_randomized"
+    species_possible_remove = {
+        can_remove_beneficial_genetic_traits = yes
+    }
+    species_possible_merge_remove = {
+        always = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_v_aeroplankton"
+        "trait_v_adv_aeroplankton"
+    }
+    inline_script = "traits/vanilla_opposites_pop_growth"
+    inline_script = "allowed_archetypes/LITHOID"
+    custom_tooltip_with_modifiers = TRAIT_LITHOID_AEROPLANKTON_EFFECT
+    triggered_planet_growth_habitability_modifier = {
+        pop_growth_speed = 0.05
+        mult = planet.value:count_aeroplankton
+    }
+    triggered_planet_growth_habitability_modifier = {
+        pop_environment_tolerance = 0.01
+        mult = planet.value:count_v_lithoid_aeroplankton
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

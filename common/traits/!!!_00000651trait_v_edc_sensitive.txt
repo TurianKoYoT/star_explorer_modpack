@@ -1,0 +1,20 @@
+trait_v_edc_sensitive = {
+    cost = -3
+    inline_script = "traits/no_randomized"
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    potential_crossbreeding_chance = 0
+    opposites = {
+        "trait_v_lithoid_edc_sensitive"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    custom_tooltip = TRAIT_EDC_SENSITIVE_EFFECT
+    triggered_planet_growth_habitability_modifier = {
+        pop_growth_speed = -0.025
+        mult = planet.value:count_v_polluting_districts_d
+    }
+    slave_cost = {
+        energy = -2000
+    }
+}

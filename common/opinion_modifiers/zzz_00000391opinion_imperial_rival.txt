@@ -1,0 +1,17 @@
+opinion_imperial_rival = {
+    trigger = {
+        OR = {
+            is_galactic_emperor = yes
+        }
+    }
+    opinion = {
+        modifier = {
+            add = -1000
+            is_galactic_emperor = yes
+            FROM = {
+                is_federation_leader = yes
+            }
+            is_same_species = FROM
+        }
+    }
+}

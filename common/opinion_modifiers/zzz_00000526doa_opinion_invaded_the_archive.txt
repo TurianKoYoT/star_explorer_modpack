@@ -1,0 +1,5 @@
+doa_opinion_invaded_the_archive = {
+    opinion = {
+        base = -50
+    }
+}

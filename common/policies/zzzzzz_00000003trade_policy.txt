@@ -1,0 +1,803 @@
+trade_policy = {
+    potential = {
+        NOT = {
+            has_ethic = ethic_gestalt_consciousness
+        }
+    }
+    option = {
+        name = "trade_policy_default"
+        policy_flags = {
+            trade_policy_default
+            trade_conversion_default
+        }
+        potential = {
+            OR = {
+                NOT = {
+                    has_global_flag = expanded_pops_active
+                }
+                OR = {
+                    has_federation = no
+                    AND = {
+                        has_federation = yes
+                        federation = {
+                            NOT = {
+                                has_federation_perk = trade_federation_passive
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        valid = {
+            NOR = {
+                has_policy_flag = "economic_stance_planned"
+                has_ethic = "ethic_fanatic_socialism"
+            }
+        }
+        AI_weight = {
+            factor = 0
+            modifier = {
+                weight = 2
+                has_monthly_income = {
+                    resource = energy
+                    value < 25
+                }
+            }
+        }
+    }
+    option = {
+        name = "trade_policy_mutual_aid"
+        potential = {
+            is_worker_coop_empire = yes
+        }
+        policy_flags = {
+            trade_conversion_mutual_aid
+        }
+        modifier = {
+        }
+        AI_weight = {
+            factor = 1000
+        }
+    }
+    option = {
+        name = "trade_policy_consumer_goods"
+        potential = {
+            OR = {
+                has_federation = no
+                AND = {
+                    has_federation = yes
+                    federation = {
+                        NOT = {
+                            has_federation_perk = trade_federation_passive
+                        }
+                    }
+                }
+            }
+            has_tradition = tr_mercantile_adaptive_economic_policies
+        }
+        policy_flags = {
+            trade_conversion_consumer_goods
+        }
+        valid = {
+            merg_is_default_empire = yes
+            NOR = {
+                has_policy_flag = "economic_stance_planned"
+                has_ethic = "ethic_fanatic_socialism"
+            }
+        }
+        modifier = {
+        }
+        AI_weight = {
+            factor = 1
+        }
+    }
+    option = {
+        name = "trade_policy_unity"
+        potential = {
+            OR = {
+                has_federation = no
+                AND = {
+                    has_federation = yes
+                    federation = {
+                        NOR = {
+                            has_federation_perk = trade_federation_passive
+                            has_federation_perk = unity_trade_1
+                        }
+                    }
+                }
+            }
+            has_tradition = tr_mercantile_adaptive_economic_policies
+        }
+        policy_flags = {
+            trade_conversion_unity
+        }
+        valid = {
+            NOR = {
+                has_policy_flag = "economic_stance_market"
+                has_policy_flag = "economic_stance_planned"
+            }
+        }
+        modifier = {
+        }
+        AI_weight = {
+            weight = 0
+            modifier = {
+                weight = 2
+                is_at_war = no
+                has_monthly_income = {
+                    resource = consumer_goods
+                    value > 50
+                }
+            }
+        }
+    }
+    option = {
+        name = "trade_policy_research"
+        potential = {
+            OR = {
+                has_civic = civic_public_informants
+                has_civic = civic_corp_public_informants
+            }
+        }
+        policy_flags = {
+            trade_policy_research
+        }
+        modifier = {
+        }
+        AI_weight = {
+            weight = 5
+            modifier = {
+                weight = 2
+                years_passed < 10
+            }
+            modifier = {
+                weight = 3
+                is_ai = no
+            }
+        }
+    }
+    option = {
+        name = "trade_policy_mineral_corp"
+        potential = {
+            has_global_flag = expanded_pops_active
+            OR = {
+                is_megacorp = yes
+                has_civic = civic_corporate_dominion
+            }
+            OR = {
+                has_federation = no
+                AND = {
+                    has_federation = yes
+                    federation = {
+                        NOT = {
+                            has_federation_perk = trade_federation_passive
+                        }
+                    }
+                }
+            }
+        }
+        policy_flags = {
+            trade_conversion_mineral_corp
+        }
+        modifier = {
+        }
+        AI_weight = {
+            weight = 0
+            modifier = {
+                weight = 3
+                is_at_war = no
+                has_monthly_income = {
+                    resource = minerals
+                    value < 25
+                }
+            }
+        }
+    }
+    option = {
+        name = "trade_policy_food_corp"
+        potential = {
+            has_global_flag = expanded_pops_active
+            OR = {
+                is_megacorp = yes
+                has_civic = civic_corporate_dominion
+            }
+            OR = {
+                has_federation = no
+                AND = {
+                    has_federation = yes
+                    federation = {
+                        NOT = {
+                            has_federation_perk = trade_federation_passive
+                        }
+                    }
+                }
+            }
+        }
+        policy_flags = {
+            trade_conversion_food_corp
+        }
+        modifier = {
+        }
+        AI_weight = {
+            weight = 0
+            modifier = {
+                weight = 3
+                is_at_war = no
+                has_monthly_income = {
+                    resource = food
+                    value < 25
+                }
+            }
+        }
+    }
+    option = {
+        name = "trade_policy_trade_league"
+        potential = {
+            has_global_flag = expanded_pops_active
+            has_federation = yes
+            federation = {
+                has_federation_perk = trade_federation_passive
+            }
+        }
+        policy_flags = {
+            trade_conversion_trade_league
+        }
+        modifier = {
+        }
+        AI_weight = {
+            factor = 1000
+            modifier = {
+                weight = 3
+                is_ai = no
+            }
+        }
+    }
+    option = {
+        name = "trade_policy_trade_league_raw"
+        potential = {
+            has_global_flag = expanded_pops_active
+            has_federation = yes
+            federation = {
+                has_federation_perk = trade_federation_passive
+            }
+        }
+        policy_flags = {
+            trade_conversion_trade_league_raw
+        }
+        modifier = {
+        }
+        AI_weight = {
+            weight = 0
+            modifier = {
+                weight = 2000
+                OR = {
+                    AND = {
+                        country_uses_food = yes
+                        has_monthly_income = {
+                            resource = food
+                            value < 25
+                        }
+                    }
+                    has_monthly_income = {
+                        resource = minerals
+                        value < 25
+                    }
+                }
+            }
+        }
+    }
+    option = {
+        name = "trade_policy_trade_league_academic"
+        potential = {
+            has_federation = yes
+            federation = {
+                has_federation_perk = trade_federation_passive
+            }
+            OR = {
+                has_civic = civic_public_informants
+                has_civic = civic_corp_public_informants
+            }
+        }
+        policy_flags = {
+            trade_conversion_trade_league_academic
+        }
+        modifier = {
+        }
+        AI_weight = {
+            weight = 2500
+        }
+    }
+    option = {
+        name = "trade_policy_trade_league"
+        potential = {
+            has_federation = yes
+            federation = {
+                has_federation_perk = trade_federation_passive
+            }
+            NOR = {
+                has_global_flag = bug_branch_active
+                has_global_flag = expanded_pops_active
+            }
+        }
+        policy_flags = {
+            trade_conversion_trade_league
+        }
+        modifier = {
+        }
+        AI_weight = {
+            factor = 100
+        }
+    }
+    option = {
+        name = "trade_policy_holy_covenant"
+        potential = {
+            has_federation = yes
+            federation = {
+                has_federation_perk = unity_trade_1
+            }
+        }
+        policy_flags = {
+            trade_conversion_holy_covenant
+        }
+        modifier = {
+        }
+        AI_weight = {
+            factor = 1000
+        }
+    }
+    option = {
+        name = "trade_policy_mutual_aid"
+        potential = {
+            is_worker_coop_empire = yes
+        }
+        policy_flags = {
+            trade_conversion_mutual_aid
+        }
+        modifier = {
+        }
+        AI_weight = {
+            factor = 1000
+        }
+    }
+    option = {
+        name = "trade_policy_technocorp"
+        potential = {
+            has_valid_civic = civic_technocorp
+        }
+        policy_flags = {
+            trade_conversion_technocorp
+        }
+        modifier = {
+        }
+        AI_weight = {
+            factor = 100
+        }
+    }
+    option = {
+        name = "trade_policy_technocorp_tl"
+        potential = {
+            has_valid_civic = civic_technocorp
+            has_federation = yes
+            federation = {
+                has_federation_perk = trade_federation_passive
+            }
+        }
+        policy_flags = {
+            trade_conversion_technocorp_tl
+        }
+        modifier = {
+        }
+        AI_weight = {
+            factor = 1100
+        }
+    }
+    option = {
+        name = "trade_policy_social"
+        potential = {
+            has_global_flag = stellarisevolved
+        }
+        policy_flags = {
+            trade_conversion_social
+        }
+        valid = {
+            tec_is_default_country = yes
+            OR = {
+                has_ethic = "ethic_socialism"
+                has_ethic = "ethic_fanatic_socialism"
+            }
+        }
+        modifier = {
+            planet_colony_development_speed_mult = 0.25
+        }
+        AI_weight = {
+            factor = 0
+        }
+    }
+    option = {
+        name = "trade_policy_infrastructure"
+        potential = {
+            has_global_flag = stellarisevolved
+        }
+        policy_flags = {
+            trade_conversion_infrastructure
+        }
+        modifier = {
+            planet_building_build_speed_mult = 0.2
+            starbase_shipyard_build_speed_mult = 0.1
+        }
+        valid = {
+            OR = {
+                tec_is_trade_gestalt = yes
+                tec_is_default_country = yes
+            }
+        }
+        AI_weight = {
+            factor = 0
+        }
+    }
+    option = {
+        name = "trade_policy_innovation"
+        potential = {
+            has_global_flag = stellarisevolved
+            OR = {
+                OR = {
+                    custom_tooltip = "civic_tooltip_materialist"
+                    has_ethic = ethic_materialist
+                    has_ethic = ethic_fanatic_materialist
+                    has_ethic = ethic_gestalt_consciousness
+                }
+            }
+        }
+        policy_flags = {
+            trade_conversion_innovation
+        }
+        valid = {
+            tec_is_default_country = yes
+            OR = {
+                custom_tooltip = "civic_tooltip_materialist"
+                has_ethic = ethic_materialist
+                has_ethic = ethic_fanatic_materialist
+                has_ethic = ethic_gestalt_consciousness
+            }
+            NOR = {
+                has_valid_civic = civic_tec_immutable_hierarchy
+            }
+        }
+        modifier = {
+        }
+        AI_weight = {
+            factor = 0
+        }
+    }
+    option = {
+        name = "trade_policy_food"
+        potential = {
+            has_global_flag = stellarisevolved
+        }
+        policy_flags = {
+            trade_conversion_food
+        }
+        modifier = {
+        }
+        valid = {
+            tec_is_default_country = yes
+            OR = {
+                OR = {
+                    custom_tooltip = "civic_tooltip_green"
+                    has_ethic = ethic_green
+                    has_ethic = ethic_fanatic_green
+                    has_ethic = ethic_gestalt_preservation
+                }
+            }
+        }
+        AI_weight = {
+            factor = 0
+        }
+    }
+    option = {
+        name = "trade_policy_mining"
+        potential = {
+            has_global_flag = stellarisevolved
+        }
+        policy_flags = {
+            trade_conversion_mining
+        }
+        modifier = {
+        }
+        valid = {
+            tec_is_default_country = yes
+            OR = {
+                custom_tooltip = "civic_tooltip_industrial"
+                has_ethic = ethic_industrial
+                has_ethic = ethic_fanatic_industrial
+                has_ethic = ethic_gestalt_disregard
+            }
+        }
+        AI_weight = {
+            factor = 0
+        }
+    }
+    option = {
+        name = "trade_policy_growth_dev"
+        policy_flags = {
+            trade_conversion_growth_dev
+        }
+        potential = {
+            has_global_flag = cultural_overhaul_active
+            NOR = {
+                has_global_flag = bug_branch_active
+                has_global_flag = bug_branch_active
+            }
+        }
+        valid = {
+            merg_is_default_empire = yes
+            NOR = {
+                has_policy_flag = "economic_stance_market"
+                has_ethic = "ethic_fanatic_capitalism"
+            }
+        }
+        modifier = {
+        }
+        AI_weight = {
+            factor = 0
+        }
+    }
+    option = {
+        name = "trade_policy_development"
+        policy_flags = {
+            trade_conversion_development
+        }
+        potential = {
+            has_global_flag = cultural_overhaul_active
+            NOR = {
+                has_global_flag = bug_branch_active
+                has_global_flag = bug_branch_active
+            }
+        }
+        modifier = {
+            planet_building_build_speed_mult = 0.15
+            starbase_shipyard_build_speed_mult = 0.15
+            planet_colony_development_speed_mult = 0.15
+        }
+        valid = {
+            NOR = {
+                has_policy_flag = "economic_stance_market"
+                has_ethic = "ethic_fanatic_capitalism"
+            }
+        }
+        AI_weight = {
+            factor = 0
+        }
+    }
+    option = {
+        name = "trade_policy_innovation"
+        policy_flags = {
+            trade_conversion_innovation
+        }
+        potential = {
+            has_global_flag = cultural_overhaul_active
+            NOR = {
+                has_global_flag = bug_branch_active
+                has_global_flag = bug_branch_active
+            }
+        }
+        valid = {
+            or = {
+                has_technology = tech_innovations
+            }
+            NOR = {
+                has_valid_civic = civic_ultimate_collective
+            }
+            NOR = {
+                has_policy_flag = "economic_stance_market"
+                has_policy_flag = "economic_stance_planned"
+            }
+        }
+        modifier = {
+        }
+        AI_weight = {
+            factor = 0
+        }
+    }
+    option = {
+        name = "trade_policy_growth"
+        policy_flags = {
+            trade_conversion_growth
+        }
+        potential = {
+            has_global_flag = cultural_overhaul_active
+            NOR = {
+                has_global_flag = bug_branch_active
+                has_global_flag = bug_branch_active
+            }
+        }
+        modifier = {
+        }
+        valid = {
+            or = {
+                has_technology = tech_agri_consortium
+            }
+            NOR = {
+                has_policy_flag = "economic_stance_market"
+            }
+        }
+        AI_weight = {
+            factor = 0
+        }
+    }
+    option = {
+        name = "trade_policy_mining"
+        policy_flags = {
+            trade_conversion_mining
+        }
+        potential = {
+            has_global_flag = cultural_overhaul_active
+            NOR = {
+                has_global_flag = bug_branch_active
+                has_global_flag = bug_branch_active
+            }
+        }
+        modifier = {
+        }
+        valid = {
+            or = {
+                has_technology = tech_mining_consortium
+            }
+            NOR = {
+                has_policy_flag = "economic_stance_market"
+            }
+        }
+        AI_weight = {
+            factor = 0
+        }
+    }
+    option = {
+        name = "trade_policy_adv_conversion_energy_name"
+        policy_flags = {
+            trade_policy_adv_conversion_energy
+        }
+        potential = {
+            OR = {
+                has_ascension_perk = ap_economic_prospertity
+                AND = {
+                    mid_game_years_passed > 0
+                    is_trade_league_federation = no
+                }
+            }
+        }
+        modifier = {
+        }
+        AI_weight = {
+            factor = 5
+        }
+    }
+    option = {
+        name = "trade_policy_adv_conversion_minerals_name"
+        policy_flags = {
+            trade_policy_adv_conversion_minerals
+        }
+        potential = {
+            OR = {
+                has_ascension_perk = ap_economic_prospertity
+                AND = {
+                    mid_game_years_passed > 0
+                    is_trade_league_federation = no
+                }
+            }
+        }
+        modifier = {
+        }
+        AI_weight = {
+            factor = 0
+        }
+    }
+    option = {
+        name = "trade_policy_adv_conversion_food_name"
+        policy_flags = {
+            trade_policy_adv_conversion_food
+        }
+        potential = {
+            OR = {
+                has_ascension_perk = ap_economic_prospertity
+                AND = {
+                    mid_game_years_passed > 0
+                    is_trade_league_federation = no
+                }
+            }
+        }
+        modifier = {
+        }
+        AI_weight = {
+            factor = 0
+        }
+    }
+    option = {
+        name = "trade_policy_adv_conversion_consumer_goods_name"
+        policy_flags = {
+            trade_policy_adv_conversion_consumer_goods
+        }
+        potential = {
+            OR = {
+                has_ascension_perk = ap_economic_prospertity
+                AND = {
+                    mid_game_years_passed > 0
+                    is_trade_league_federation = no
+                }
+            }
+        }
+        modifier = {
+        }
+        AI_weight = {
+            factor = 0
+        }
+    }
+    option = {
+        name = "trade_policy_adv_conversion_unity_name"
+        policy_flags = {
+            trade_policy_adv_conversion_unity
+        }
+        potential = {
+            OR = {
+                has_ascension_perk = ap_economic_prospertity
+                AND = {
+                    mid_game_years_passed > 0
+                    is_trade_league_federation = no
+                }
+            }
+        }
+        modifier = {
+        }
+        AI_weight = {
+            factor = 0
+        }
+    }
+    option = {
+        name = "trade_policy_adv_conversion_research_name"
+        policy_flags = {
+            trade_policy_adv_conversion_research
+        }
+        potential = {
+            OR = {
+                has_ascension_perk = ap_economic_prospertity
+                AND = {
+                    mid_game_years_passed > 0
+                    is_trade_league_federation = no
+                }
+            }
+        }
+        modifier = {
+        }
+        AI_weight = {
+            factor = 0
+        }
+    }
+    option = {
+        name = "trade_policy_adv_conversion_trade_league_name"
+        potential = {
+            mid_game_years_passed > 0
+            OR = {
+                has_ascension_perk = ap_economic_prospertity
+                AND = {
+                    is_trade_league_federation = yes
+                    federation = {
+                        federation_level > 1
+                    }
+                    OR = {
+                        is_federation_leader = yes
+                        federation = {
+                            federation_level > 3
+                        }
+                    }
+                }
+            }
+        }
+        policy_flags = {
+            trade_policy_adv_conversion_trade_league
+        }
+        modifier = {
+        }
+        AI_weight = {
+            factor = 220
+        }
+    }
+}

@@ -1,0 +1,38 @@
+district_giga_pcc_admin_religious = {
+    base_buildtime = @giga_planet_district_buildtime
+    icon = district_giga_pcc_admin
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        uses_district_set = giga_planetary_computer
+        from = {
+            giga_country_uses_priests = yes
+        }
+    }
+    potential = {
+        uses_district_set = giga_planetary_computer
+        exists = owner
+        owner = {
+            giga_country_uses_priests = yes
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = @giga_planet_science_cost
+        }
+        upkeep = {
+            energy = @giga_planet_science_maintenance
+        }
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_giga_planet_admin
+    }
+    planet_modifier = {
+        planet_housing_add = 5
+    }
+    inline_script = {
+        script = planet/unity/giga_priest_swap
+        jobs = 5
+    }
+}

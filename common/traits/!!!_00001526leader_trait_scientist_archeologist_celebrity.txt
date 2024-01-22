@@ -1,0 +1,22 @@
+leader_trait_scientist_archeologist_celebrity = {
+    cost = 0
+    inline_script = {
+        script = trait/icon
+        CLASS = scientist
+        ICON = "GFX_leader_trait_champion_of_the_people"
+        RARITY = common
+        COUNCIL = no
+        TIER = none
+    }
+    modifier = {
+        ship_archaeological_site_clues_add = 1
+        ship_archaeological_site_excavation_speed_mult = 0.1
+        science_ship_survey_speed = 0.25
+    }
+    leader_class = {
+        scientist
+    }
+    initial = no
+    randomized = no
+    ai_weight = 100
+}

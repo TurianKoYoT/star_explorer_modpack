@@ -1,0 +1,108 @@
+holding_bio_ascension_embassy = {
+    base_buildtime = 1200
+    owner_type = subject_holding
+    prerequisites = {
+        tech_yanz_biological_ascension
+    }
+    base_cap_amount = 1
+    allow = {
+        custom_tooltip = {
+            fail_text = overlord_is_homicidal
+            exists = owner.overlord
+            owner.overlord = {
+                is_homicidal = no
+            }
+        }
+        custom_tooltip = {
+            fail_text = overlord_is_xenophobe
+            exists = owner.overlord
+            owner.overlord = {
+                NOR = {
+                    has_ethic = ethic_xenophobe
+                    has_ethic = ethic_fanatic_xenophobe
+                }
+            }
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = planet.owner
+            planet.owner = {
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            planet_crime_add = -50
+            pop_happiness = 0.15
+            monthly_loyalty = 2
+        }
+        job_healthcare_add = 10
+        job_overlord_propagandist_add = 5
+        job_gaia_specialist_per_pop = 0.05
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = planet.owner
+            planet.owner = {
+                is_gestalt = yes
+            }
+        }
+        job_aid_worker_drone_add = 10
+        job_overlord_propagandist_drone_add = 2
+    }
+    planet_modifier = {
+        monthly_loyalty = 2
+    }
+    resources = {
+        category = planet_holdings
+        cost = {
+            unity = 5000
+            alloys = 2000
+            minerals = 20000
+            food = 10000
+            exotic_gases = 500
+            influence = 100
+        }
+        upkeep = {
+            energy = 100
+        }
+        upkeep = {
+            trigger = {
+                exists = planet.owner
+                planet.owner = {
+                    is_lithoid = yes
+                }
+            }
+            food = 100
+            exotic_gases = 10
+        }
+        upkeep = {
+            trigger = {
+                exists = planet.owner
+                planet.owner = {
+                    OR = {
+                        is_machine_empire = yes
+                        is_mechanical_empire = yes
+                    }
+                }
+            }
+            food = 100
+            exotic_gases = 10
+        }
+        upkeep = {
+            trigger = {
+                exists = planet.owner
+                planet.owner = {
+                    is_lithoid = no
+                    is_machine_empire = no
+                    is_mechanical_empire = no
+                }
+            }
+            food = 100
+            exotic_gases = 10
+        }
+    }
+    triggered_desc = {
+        text = job_aid_worker_effect_desc
+    }
+}

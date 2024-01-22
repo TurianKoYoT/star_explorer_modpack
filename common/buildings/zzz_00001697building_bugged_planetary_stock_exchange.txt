@@ -1,0 +1,9 @@
+building_bugged_planetary_stock_exchange = {
+    category = trade
+    potential = {
+        always = no
+    }
+    allow = {
+        always = no
+    }
+}

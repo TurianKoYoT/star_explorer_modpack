@@ -1,0 +1,32 @@
+triggered_opinion_imperium_market_inner = {
+    trigger = {
+        has_galactic_emperor = yes
+        is_country_type = default
+        has_modifier = imperium_market_energy
+        FROM = {
+            is_country_type = default
+            has_modifier = imperium_market_energy
+        }
+    }
+    opinion = {
+        base = 30
+        modifier = {
+            add = 15
+            federation = {
+                has_federation_perk = imperium_market_2
+            }
+        }
+        modifier = {
+            add = 15
+            federation = {
+                has_federation_perk = imperium_market_3
+            }
+        }
+        modifier = {
+            add = 15
+            federation = {
+                has_federation_perk = imperium_market_4
+            }
+        }
+    }
+}

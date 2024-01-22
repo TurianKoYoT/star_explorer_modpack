@@ -1,0 +1,28 @@
+building_ssh_conmat_lab = {
+    base_buildtime = @b2_time
+    exempt_from_ai_planet_specialization = no
+    category = manufacturing
+    potential = {
+        NOR = {
+            has_modifier = resort_colony
+            has_modifier = slave_colony
+            has_modifier = crucible_colony
+        }
+    }
+    inline_script = {
+        script = jobs/conmat_biologist_add
+        AMOUNT = 1
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b2_minerals
+        }
+        upkeep = {
+            energy = 3
+        }
+    }
+    prerequisites = {
+        "ssh_tech_conscious_matter"
+    }
+}

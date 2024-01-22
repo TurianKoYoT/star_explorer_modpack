@@ -1,0 +1,90 @@
+district_giga_voidframe_amenities_gestalt_de = {
+    base_buildtime = 480
+    icon = district_giga_voidframe_maintain_de
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        exists = from
+        from = {
+            is_gestalt = yes
+        }
+        uses_district_set = giga_frameworld
+        is_voidframe_exclusive_de = yes
+    }
+    potential = {
+        exists = owner
+        owner = {
+            is_gestalt = yes
+            NOT = {
+                has_valid_civic = civic_dystopian_society
+            }
+        }
+        uses_district_set = giga_frameworld
+        is_voidframe_exclusive_de = yes
+    }
+    show_tech_unlock_if = {
+        giga_has_frameworld_origin = yes
+        is_gestalt = yes
+        NOT = {
+            has_valid_civic = civic_dystopian_society
+        }
+    }
+    conversion_ratio = 1
+    convert_to = {
+        district_giga_frameworld_amenities
+        district_giga_voidframe_amenities_dm
+        district_giga_voidframe_amenities_de
+        district_giga_voidframe_amenities_pe
+        district_giga_voidframe_amenities_se
+        district_giga_frameworld_amenities_gestalt
+        district_giga_voidframe_amenities_gestalt_dm
+        district_giga_voidframe_amenities_gestalt_de
+        district_giga_voidframe_amenities_gestalt_pe
+        district_giga_voidframe_amenities_gestalt_se
+        district_giga_frameworld_amenities_dystopian
+        district_giga_voidframe_amenities_dystopian_dm
+        district_giga_voidframe_amenities_dystopian_de
+        district_giga_voidframe_amenities_dystopian_pe
+        district_giga_voidframe_amenities_dystopian_se
+    }
+    resources = {
+        category = planet_districts_hab_research
+        cost = {
+            minerals = 1000
+            sr_dark_matter = 400
+            acot_sr_dark_energy = 400
+        }
+        upkeep = {
+            energy = 6
+            sr_dark_matter = 2
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = $house$
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+            OR = {
+                has_voidframe_mods_aot = no
+                always = yes
+            }
+        }
+        modifier = {
+            job_acot_entertainer_drone_add = 4
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+            has_voidframe_mods_aot = yes
+        }
+        modifier = {
+        }
+    }
+}

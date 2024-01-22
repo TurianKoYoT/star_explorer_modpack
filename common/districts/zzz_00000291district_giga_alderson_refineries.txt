@@ -1,0 +1,123 @@
+district_giga_alderson_refineries = {
+    base_buildtime = @giga_alderson_district_buildtime
+    is_capped_by_modifier = no
+    show_on_uncolonized = {
+        or = {
+            uses_district_set = giga_alderson_hive
+            uses_district_set = giga_alderson_machine
+            uses_district_set = giga_alderson_ecu
+        }
+    }
+    potential = {
+        or = {
+            uses_district_set = giga_alderson_hive
+            uses_district_set = giga_alderson_machine
+            uses_district_set = giga_alderson_ecu
+        }
+    }
+    resources = {
+        category = planet_districts
+        cost = {
+            minerals = @giga_alderson_cost
+        }
+        upkeep = {
+            energy = @giga_alderson_maintenance
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            planet_housing_add = @alderson_auto_housing_ecu
+            job_gas_refiner_add = @alderson_auto_jobs_refiners
+            job_chemist_add = @alderson_auto_jobs_refiners
+            job_translucer_add = @alderson_auto_jobs_refiners
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        modifier = {
+            planet_housing_add = @alderson_auto_housing_ecu
+            job_gas_refiner_drone_add = @alderson_auto_jobs_refiners
+            job_chemist_drone_add = @alderson_auto_jobs_refiners
+            job_translucer_drone_add = @alderson_auto_jobs_refiners
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        modifier = {
+            planet_housing_add = @alderson_auto_housing_ecu
+            job_gas_refiner_drone_add = @alderson_auto_jobs_refiners
+            job_chemist_drone_add = @alderson_auto_jobs_refiners
+            job_translucer_drone_add = @alderson_auto_jobs_refiners
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = job_gas_refiner_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = job_chemist_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        text = job_translucer_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_gas_refiner_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_chemist_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_translucer_drone_effect_desc
+    }
+}

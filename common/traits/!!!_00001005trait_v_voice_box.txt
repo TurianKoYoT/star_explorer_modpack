@@ -1,0 +1,24 @@
+trait_v_voice_box = {
+    cost = 2
+    species_potential_add = {
+        can_do_advanced_gene_modding = yes
+    }
+    potential_crossbreeding_chance = 1
+    opposites = {
+        "trait_invasive"
+        "trait_charismatic"
+        "trait_repugnant"
+    }
+    inline_script = "allowed_archetypes/BIOLOGICAL"
+    inline_script = "species_class/HUM"
+    inline_script = "species_class/MAM"
+    inline_script = "species_class/AVI"
+    inline_script = "species_class/NECROID"
+    modifier = {
+        army_morale_damage_mult = 1
+        pop_job_amenities_mult = 0.1
+    }
+    slave_cost = {
+        energy = 1000
+    }
+}

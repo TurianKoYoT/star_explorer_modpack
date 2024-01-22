@@ -1,0 +1,23 @@
+tech_yanz_rs_deviant = {
+    area = engineering
+    start_tech = no
+    cost = @tier5cost3
+    is_rare = yes
+    tier = 5
+    category = {
+        industry
+    }
+    prerequisites = {
+        "tech_yanz_rs_assembly"
+    }
+    weight = @tier5weight1
+    potential = {
+        has_civic = "civic_yanz_machine_servitor"
+    }
+    prereqfor_desc = {
+        custom = {
+            title = ""
+            desc = ""
+        }
+    }
+}

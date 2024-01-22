@@ -1,0 +1,26 @@
+tech_mining_utility_lift_engine = {
+    area = engineering
+    cost = @tier5cost3
+    tier = 1
+    category = {
+        industry
+    }
+    ai_update_type = all
+    weight = 1
+    is_rare = yes
+    is_dangerous = no
+    prereqfor_desc = {
+        feature = {
+            title = "feature_add_mule_trait"
+            desc = "feature_add_mule_trait_desc"
+        }
+    }
+    prerequisites = {
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            always = yes
+        }
+    }
+}

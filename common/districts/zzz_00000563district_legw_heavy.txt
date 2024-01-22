@@ -1,0 +1,120 @@
+district_legw_heavy = {
+    base_buildtime = 600
+    min_for_deposits_on_planet = 3
+    max_for_deposits_on_planet = 15
+    show_on_uncolonized = {
+        AND = {
+            OR = {
+                uses_district_set = habitat
+                uses_district_set = ring_world
+            }
+            has_district_legw_heavy = yes
+        }
+    }
+    potential = {
+        AND = {
+            OR = {
+                uses_district_set = habitat
+                uses_district_set = ring_world
+            }
+            has_district_legw_heavy = yes
+        }
+    }
+    planet_modifier = {
+        planet_housing_add = 1
+    }
+    resources = {
+        category = planet_districts_hab_mining
+        cost = {
+            minerals = 2100
+        }
+        upkeep = {
+            energy = 8
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_regular_empire = yes
+            }
+        }
+        modifier = {
+            job_matconverter_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        modifier = {
+            job_matconverter_gestalt_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        modifier = {
+            job_matconverter_gestalt_add = 1
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        modifier = {
+            job_odd_factory_drone_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        modifier = {
+            job_odd_factory_drone_add = 2
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        modifier = {
+            job_odd_factory_worker_add = 2
+        }
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        text = job_odd_factory_drone_effect_desc
+    }
+    triggered_desc = {
+        trigger = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_fallen_empire_spiritualist = no
+            }
+        }
+        text = job_odd_factory_worker_effect_desc
+    }
+}

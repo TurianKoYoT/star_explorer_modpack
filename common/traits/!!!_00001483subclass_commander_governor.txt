@@ -1,0 +1,33 @@
+subclass_commander_governor = {
+    custom_subtitle = commander_subclass
+    subclass_trait = yes
+    inline_script = {
+        script = trait/icon_subclass
+        SUBCLASS = commander_governor
+        COUNCIL = no
+    }
+    custom_tooltip_with_modifiers = governor_subclass_tt
+    planet_modifier = {
+        job_soldier_stability_add = 1
+    }
+    sector_modifier = {
+        job_soldier_stability_add = 0.5
+    }
+    ai_weight = {
+        modifier = {
+            is_councilor = yes
+            factor = 0
+        }
+        modifier = {
+            is_councilor = no
+            factor = 2
+        }
+    }
+    leader_potential_add = {
+        trait_is_crisis_faction_check = no
+    }
+    leader_class = {
+        commander
+    }
+    background_icon = "GFX_leader_subclass_commander_governor_background"
+}

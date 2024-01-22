@@ -1,0 +1,139 @@
+bio_trophy = {
+    rank = 0
+    clothes_texture_index = 1
+    change_job_threshold = 1.25
+    assign_to_pop = {
+        exists = owner
+        has_citizenship_type = {
+            type = citizenship_organic_trophy
+            country = owner
+        }
+    }
+    weight = {
+        weight = 5
+    }
+    allow_resettlement = {
+        always = yes
+    }
+    resettlement_cost = {
+        energy = 100
+        unity = 25
+    }
+    triggered_pop_modifier = {
+        potential = {
+            NOT = {
+                has_trait = trait_noxious
+            }
+        }
+        key = trait_noxious
+        pop_happiness = 1
+        mult = modifier:pop_non_noxious_happiness
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_trait = trait_noxious
+        }
+        key = trait_noxious
+        pop_non_noxious_happiness = @noxious_happiness_penalty
+    }
+    triggered_planet_modifier = {
+        potential = {
+            can_assemble_budding_pop = yes
+        }
+        planet_pop_assembly_organic_add = @plantoid_budding_rate
+    }
+    triggered_planet_modifier = {
+        potential = {
+            can_assemble_tiyanki_pop = yes
+        }
+        planet_pop_assembly_organic_add = @tiyanki_budding_rate
+    }
+    inline_script = "pop_categories/social_classes_triggered_modifiers"
+    pop_modifier = {
+        pop_political_power = 10
+        pop_housing_usage_base = 1
+        pop_amenities_usage_no_happiness_base = 1
+    }
+    resources = {
+        category = pop_category_bio_trophy
+        inline_script = "pop_categories/regular_upkeep"
+        inline_script = "pop_categories/cyborg_upkeep"
+        upkeep = {
+            trigger = {
+                is_organic_species = yes
+                has_trait = trait_exotic_metabolism
+            }
+            exotic_gases = @exotic_metabolism
+        }
+        inline_script = "pop_categories/trait_production"
+        produces = {
+            trigger = {
+                is_organic_species = yes
+                has_trait = trait_inorganic_breath
+            }
+            exotic_gases = @inorganic_breath
+        }
+        produces = {
+            trigger = {
+                has_trait = trait_drake_scaled
+            }
+            alloys = @drake_scaled_trait_resource_production
+        }
+        inline_script = "pop_categories/v_traits_upkeep"
+        inline_script = "pop_categories/v_traits_production"
+        inline_script = "pop_categories/v_traits_cyborg_upkeep"
+        produces = {
+            trigger = {
+                has_trait = trait_yanz_neon_fur
+            }
+            sr_zro = 0.05
+        }
+        produces = {
+            trigger = {
+                has_trait = trait_yanz_crystal_skin
+            }
+            rare_crystals = 0.05
+        }
+        produces = {
+            trigger = {
+                has_trait = trait_yanz_unique_thick_fur
+            }
+            volatile_motes = 0.05
+        }
+    inline_script = "pop_categories/v_traits_effects"
+        produces = {
+            trigger = {
+                has_trait = trait_yanz_living_metal_fluids
+            }
+            sr_living_metal = 0.05
+        }
+        produces = {
+            trigger = {
+                has_trait = trait_yanz_decentralized_mind
+            }
+            influence = 0.01
+            physics_research = 1
+            society_research = 1
+            engineering_research = 1
+            unity = 1
+        }
+    }
+    unemployment_penalties = {
+        pop_happiness = -0.8
+    }
+    triggered_pop_modifier = {
+        potential = {
+            has_global_flag = galactic_community_resolution_divinity_comfort_the_fallen
+            is_unemployed = yes
+            NOR = {
+                has_very_high_living_standard_type = yes
+                has_high_living_standard_type = yes
+                has_shared_burden_living_standard_type = yes
+            }
+            owner = {
+                is_galactic_community_member = yes
+            }
+        }
+        pop_happiness = 0.1
+    }
+}

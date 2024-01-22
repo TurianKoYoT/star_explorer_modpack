@@ -1,0 +1,2 @@
+l_english:
+ pc_whc_star_desc:1000 "Constructed by §BThe Creators§! to shield darkmatter beings from Negative-Mass."

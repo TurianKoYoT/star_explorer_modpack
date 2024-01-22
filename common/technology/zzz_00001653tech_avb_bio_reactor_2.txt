@@ -1,0 +1,31 @@
+tech_avb_bio_reactor_2 = {
+    cost = @tier5cost3
+    area = physics
+    tier = 5
+    category = {
+        field_manipulation
+    }
+    prerequisites = {
+        "tech_bio_reactor"
+        "tech_avb_capital_4"
+    }
+    weight = @avbtier6weight3
+    is_rare = yes
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            NOR = {
+                has_technology = tech_mine_exotic_gases
+                has_technology = tech_exotic_gases
+                has_country_flag = has_market_access
+            }
+        }
+        modifier = {
+            factor = 2
+            has_tradition = tr_prosperity_adopt
+        }
+    }
+    ai_weight = {
+        factor = 4
+    }
+}

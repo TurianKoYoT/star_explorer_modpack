@@ -1,0 +1,17 @@
+terraform_link = {
+    from = "pc_molten"
+    to = "pc_barren_cold"
+    resources = {
+        category = terraforming
+        cost = {
+            energy = 500
+        }
+    }
+    duration = 360
+    condition = {
+        has_technology = "tech_ult_geological_reconstruction"
+    }
+    ai_weight = {
+        weight = 100
+    }
+}

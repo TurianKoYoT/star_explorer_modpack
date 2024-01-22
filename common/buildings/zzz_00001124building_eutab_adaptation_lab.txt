@@ -1,0 +1,55 @@
+building_eutab_adaptation_lab = {
+    base_buildtime = @b4_time
+    empire_limit = {
+        base = 1
+    }
+    category = research
+    potential = {
+        exists = owner
+        owner = {
+            has_ethic = ethic_fanatic_egalitarian
+        }
+    }
+    allow = {
+        has_upgraded_capital = yes
+    }
+    planet_modifier = {
+        job_eutab_master_bio_add = 2
+        job_researcher_add = 6
+    }
+    country_modifier = {
+        country_society_tech_research_speed = 0.05
+        planet_jobs_food_produces_mult = 0.1
+    }
+    resources = {
+        category = planet_buildings
+        cost = {
+            minerals = @b4_minerals
+            exotic_gases = @b3_rare_cost
+            alloys = @b3_rare_cost
+        }
+        upkeep = {
+            energy = @b4_upkeep
+        }
+    }
+    prerequisites = {
+        "tech_eutab_adaptation_lab"
+    }
+    show_tech_unlock_if = {
+        is_regular_empire = yes
+    }
+    triggered_desc = {
+        text = job_eutab_master_bio_effect_desc
+    }
+    triggered_desc = {
+        text = job_researcher_effect_desc
+    }
+    destroy_trigger = {
+        exists = owner
+        owner = {
+            NOT = {
+                has_ethic = ethic_fanatic_egalitarian
+            }
+        }
+    }
+}

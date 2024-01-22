@@ -1,0 +1,46 @@
+building_delta_unity_crim = {
+    icon = building_dm_bureaucratic
+    base_buildtime = 360
+    base_cap_amount = 1
+    owner_type = corporate
+    category = unity
+    potential = {
+        has_branch_office = yes
+        branch_office_owner = {
+            is_criminal_syndicate = yes
+        }
+        has_global_flag = has_aot_mod
+    }
+    planet_modifier = {
+        planet_crime_add = 160
+        job_dm_clerk_add = 2
+    }
+    resources = {
+        category = planet_branch_office_buildings
+        cost = {
+            minerals = 500
+            sr_dark_matter = 200
+        }
+        produces = {
+            unity = 30
+        }
+        upkeep = {
+            energy = 10
+            sr_dark_matter = 1
+            acot_sr_dark_energy = 1
+        }
+    }
+    prerequisites = {
+        tech_dm_bureau
+    }
+    upgrades = {
+        building_alpha_unity_crim
+    }
+    show_tech_unlock_if = {
+        is_megacorp = yes
+        is_criminal_syndicate = yes
+    }
+    ai_weight = {
+        weight = 10
+    }
+}

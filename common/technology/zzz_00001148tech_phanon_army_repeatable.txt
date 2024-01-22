@@ -1,0 +1,41 @@
+tech_phanon_army_repeatable = {
+    area = society
+    category = {
+        military_theory
+    }
+    tier = 8
+    cost = @acot_tier9cost3
+    cost_per_level = 0
+    weight = @tier5weight1
+    ai_update_type = all
+    is_reverse_engineerable = no
+    is_rare = yes
+    levels = -1
+    potential = {
+        has_technology = tech_dark_matter_power_core_re
+        NOT = {
+            has_global_flag = acot_phanon_forbidden
+        }
+        NOT = {
+            has_global_flag = acot_army_forbidden
+        }
+        check_variable = {
+            which = acot_phanon_dutyman_count
+            value < 3
+        }
+    }
+    prerequisites = {
+        tech_phanon_army
+    }
+    weight_modifier = {
+        modifier = {
+            factor = 0
+            NOT = {
+                has_technology = tech_dark_matter_power_core_re
+            }
+        }
+    }
+    ai_weight = {
+        factor = 20
+    }
+}
